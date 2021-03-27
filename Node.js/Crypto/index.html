@@ -1455,8 +1455,451 @@
 </td>
 </tr>
 </table>
-    
-    
+    <br>
+<table class="table">
+<caption>
+    Diffie-Hellman key exchange
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
+    <tr>
+        <th style="width:30%;"> Method </th>
+        <th> Description </th>
+    </tr>
+<tr class="11.01">
+<td> 
+            <strong>crypto</strong>.checkPrime(<strong class="openable">candidate:bigint|...<div>
+                <p>  <strong>bigint|buf|ArrayBuffer|SharedArrayBuffer|TypedArray|DataView</strong> (must be big-endian encoded) </p>
+            </div></strong>, <i class="openable">option:obj<div>
+                <p> checks: <strong>nr</strong> - the number of Miller-Rabin probabilistic primality iterations to perform. When the value is 0 (zero), a number of checks is used that yields a false positive rate of at most 2-64 for random input. Care must be used when selecting a number of checks. Refer to the OpenSSL documentation for the BN_is_prime_ex function nchecks options for more details (Default: <mark>0</mark>) </p>
+            </div></i>, <strong>fn(err, res)</strong>)
+</td>
+<td> 
+            - asynchronously checks if the passed <strong>candidate</strong> is a prime number and returns a boolean accordingly  
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 15.8.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="11.02">
+<td> 
+            <strong>crypto</strong>.checkPrimeSync(<strong class="openable">candidate:bigint|...<div>
+                <p>  <strong>bigint|buf|ArrayBuffer|SharedArrayBuffer|TypedArray|DataView</strong> (must be big-endian encoded) </p>
+            </div></strong>, <i class="openable">option:obj<div>
+                <p> checks: <strong>nr</strong> - the number of Miller-Rabin probabilistic primality iterations to perform. When the value is 0 (zero), a number of checks is used that yields a false positive rate of at most 2-64 for random input. Care must be used when selecting a number of checks. Refer to the OpenSSL documentation for the BN_is_prime_ex function nchecks options for more details (Default: <mark>0</mark>) </p>
+            </div></i>)            
+</td>
+<td> 
+            - synchronously checks if the passed <strong>candidate</strong> is a prime number and returns a boolean accordingly 
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 15.8.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="10.01">
+<td> 
+            <strong>crypto</strong>.generatePrime(<strong class="openable">size:nr<div>
+                <p> - size in bits (ex: <mark>8</mark>bit = 1byte can be up to 255) </p>
+            </div></strong>, <i class="openable">option:obj<div>
+                <p> bigint: <strong>bol</strong> - if <mark>true</mark> the returned result is a <strong>bigint</strong> (Default: <mark>false</mark>) </p>
+                <p> safe: <strong>bol</strong> - if <mark>true</mark> the returned result is a safe prime (<mark>(<strong>prime</strong> - 1) / 2</mark> also result in a prime) (Default <mark>false</mark>) </p>
+                <p> add: <strong>bigint|buf|ArrayBuffer|SharedArrayBuffer|TypedArray|DataView</strong> (must be big-endian encoded) </p>
+                <p> rem: <strong>bigint|buf|ArrayBuffer|SharedArrayBuffer|TypedArray|DataView</strong> (must be big-endian encoded) </p>
+                    <hr>
+                <p><b> The <mark>add</mark> and <mark>rem</mark> options can be used to provide additional requirements for Diffiel-Hellman </b></p>
+                <p> - if both <mark>add</mark> and <mark>rem</mark> set the generated prime will satisfy that <mark><strong>prime</strong> % <strong>add</strong> = <strong>rem</strong></mark> </p>
+                <p> - if <mark>add</mark> is set and <mark>safe</mark> is false the generated prime will satisfy that <mark><strong>prime</strong> % <strong>add</strong> = 1</mark> </p>
+                <p> - if <mark>add</mark> is set and <mark>safe</mark> is true the generated prime will satisfy that <mark><strong>prime</strong> % <strong>add</strong> = 3</mark> </p>
+                
+            </div></i>, <strong>fn(err, prime)</strong>)
+</td>
+<td> 
+            - asynchronously generates a pseudo-random prime number of the specified length <br>
+            - the generated prime is stored in a big-endian sequence <strong>ArrayBuffer</strong> (by Default)  
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 15.8.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="10.02">
+<td> 
+            <strong>crypto</strong>.generatePrimeSync(<strong class="openable">size:nr<div>
+                <p> - size in bits (ex: <mark>8</mark>bit = 1byte can be up to 255) </p>
+            </div></strong>, <i class="openable">option:obj<div>
+                <p> bigint: <strong>bol</strong> - if <mark>true</mark> the returned result is a <strong>bigint</strong> (Default: <mark>false</mark>) </p>
+                <p> safe: <strong>bol</strong> - if <mark>true</mark> the returned result is a safe prime (<mark>(<strong>prime</strong> - 1) / 2</mark> also result in a prime) (Default <mark>false</mark>) </p>
+                <p> add: <strong>bigint|buf|ArrayBuffer|SharedArrayBuffer|TypedArray|DataView</strong> (must be big-endian encoded) </p>
+                <p> rem: <strong>bigint|buf|ArrayBuffer|SharedArrayBuffer|TypedArray|DataView</strong> (must be big-endian encoded) </p>
+                    <hr>
+                <p><b> The <mark>add</mark> and <mark>rem</mark> options can be used to provide additional requirements for Diffiel-Hellman </b></p>
+                <p> - if both <mark>add</mark> and <mark>rem</mark> set the generated prime will satisfy that <mark><strong>prime</strong> % <strong>add</strong> = <strong>rem</strong></mark> </p>
+                <p> - if <mark>add</mark> is set and <mark>safe</mark> is false the generated prime will satisfy that <mark><strong>prime</strong> % <strong>add</strong> = 1</mark> </p>
+                <p> - if <mark>add</mark> is set and <mark>safe</mark> is true the generated prime will satisfy that <mark><strong>prime</strong> % <strong>add</strong> = 3</mark> </p>
+                
+            </div></i>)
+</td>
+<td> 
+            - synchronously generates a pseudo-random prime number of the specified length and returns it <br>
+            - the generated prime is stored in a big-endian sequence <strong>ArrayBuffer</strong> (by Default)  
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 15.8.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="20.01">
+<td colspan="2"> 
+            Diffie-Hellman (key exchange utility)
+</td>
+</tr>
+<tr class="20.02">
+<td> 
+            <strong>crypto</strong>.createDiffieHellman(<strong class="openable">prime:str|...<div>
+                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
+                <p> - prime value (number) </p>
+            </div></strong>, <i class="openable">primeEncode:str<div>
+                <p> - <strong>prime</strong> encoding if string passed </p>
+            </div></i>, <i class="openable">gen:nr|...<div>
+                <p> <strong>nr|str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
+                <p> - generator value (Default: <mark>2</mark>) </p>
+            </div></i>, <i class="openable">genEncode:str<div>
+                <p> - <i>gen</i> encoding if string passed </p>
+            </div></i>) <br>
+            <strong>crypto</strong>.createDiffieHellman(<strong class="openable">primeLength:nr<div>
+                <p> - internally generates a prime of the specified <u>bit</u> length </p>
+            </div></strong>, <i class="openable">gen:nr<div>
+                <p> - generator value (Default: <mark>2</mark>) </p>
+            </div></i>)
+</td>
+<td> 
+            - creates and returns a <strong>diffieHellman</strong> object with the provided prime and generator 
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.11.12 </span>
+                <span class="openable"> more...<div>
+                <p> 6.0.0 </p>
+                <p> - default encoding changed from <mark>binary</mark> to <mark>utf-8</mark> </p>
+                <p> 8.0.0 </p>
+                <p> - <strong>prime</strong> can be <strong>TypedArray|DataView</strong> </p>
+                    <hr>
+                <p> 0.5.0 </p>
+                <p> <mark><strong>crypto</strong>.createDiffieHellman(<strong>primeLength</strong>, <i>gen</i>)</mark> syntax support </p>
+                </div></span>
+            </span>
+</td>
+</tr>
+<tr class="20.03">
+<td> 
+            <strong>crypto</strong>.createDiffieHellmanGroup(<strong class="openable">diffHellGroup:str<div>
+                <p> - Diffie-Hellman group (pre defined fixed Diffie-Hellman primes) <u>bigger prime = better security</u> </p>
+                <p> <mark>'modp1'</mark> = 768bit prime </p>
+                <p> <mark>'modp2'</mark> = 1024bit prime </p>
+                <p> <mark>'modp5'</mark> = 1536bit prime </p>
+                <p> <mark>'modp14'</mark> = 2048bit prime (minimal recommended) </p>
+                <p> <mark>'modp15'</mark> = 3072bit prime </p>
+                <p> <mark>'modp16'</mark> = 4096bit prime </p>
+                <p> <mark>'modp17'</mark> = 6144bit prime </p>
+                <p> <mark>'modp18'</mark> = 8192bit prime </p>
+            </div></strong>) <br>
+            <strong>crypto</strong>.getDiffieHellman(<strong class="openable">diffHellGroup:str<div>
+                <p> - Diffie-Hellman group (pre defined fixed Diffie-Hellman primes) <u>bigger prime = better security</u> </p>
+                <p> <mark>'modp1'</mark> = 768bit prime </p>
+                <p> <mark>'modp2'</mark> = 1024bit prime </p>
+                <p> <mark>'modp5'</mark> = 1536bit prime </p>
+                <p> <mark>'modp14'</mark> = 2048bit prime (minimal recommended) </p>
+                <p> <mark>'modp15'</mark> = 3072bit prime </p>
+                <p> <mark>'modp16'</mark> = 4096bit prime </p>
+                <p> <mark>'modp17'</mark> = 6144bit prime </p>
+                <p> <mark>'modp18'</mark> = 8192bit prime </p>
+            </div></strong>)
+</td>
+<td> 
+            - creates and returns a <strong>diffieHellman</strong> object with the provided diffie-hellman group <br>
+            - in this case we cannot set diffie-hellman keys to the returned <strong>diffieHellman</strong> object (calling the <mark>setPrivateKey()</mark> and <mark>setPublicKey()</mark> is not allowed) 
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.9.3 </span>
+            </span>
+</td>
+</tr>
+<tr class="26.01">
+<td> 
+            <strong>diffieHellman</strong>.computeSecret(<strong class="openable">pubKeyDiffHell:str|...<div>
+                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
+                <p> - the diffie-hellman public key that is received from the other party </p>
+            </div></strong>, <i class="openable">encodeKey:str<div>
+                <p> - <strong>pubKeyDiffHell</strong> encoding if string passed </p>
+            </div></i>, <i class="openable">encodeOut:str<div>
+                <p> - encoding of the returned string </p>
+                <p> - if this option is not provided <strong>buf</strong> is returned </p>
+            </div></i>)
+</td>
+<td> 
+            - <span class="openable">computes<div>
+                <p> - takes the internal diffie-hellman private key and the received other party's diffie-hellman public key then calculates the shared secret </p> 
+            </div></span> and returns the shared diffie-hellman secret as <strong>buf</strong> (by Default)
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="21.01">
+<td> 
+            <strong>diffieHellman</strong>.generateKeys(<i class="openable">encode:str<div>
+                <p> - the returned public diffie-hellman key is encoded in this format </p>
+                <p> - if this option is not provided <strong>buf</strong> will be returned </p>
+            </div></i>)
+</td>
+<td> 
+            - generates the private and public <u>Diffie-Hellman keys</u> <br>
+            - the public diffie-hellman key is kept internally and also returned (as <strong>buf</strong>), it should be transfered to the other party <br>
+            - the private diffie-hellman key is kept internally (can be retrieved with <mark>getPrivateKey()</mark>)
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="24.02">
+<td> 
+            <strong>diffieHellman</strong>.getGenerator(<i class="openable">encode:str<div>
+                <p> - encoding for the returned string </p>
+                <p> - if this option is not provided <strong>buf</strong> is returned </p>
+            </div></i>)
+</td>
+<td> 
+            - returns the diffie-hellman <strong>gen</strong> (generator) in a <strong>buf</strong> (by Default)
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="24.01">
+<td> 
+            <strong>diffieHellman</strong>.getPrime(<i class="openable">encode:str<div>
+                <p> - encoding for the returned string </p>
+                <p> - if this option is not provided <strong>buf</strong> is returned </p>
+            </div></i>)
+<td> 
+            - returns the diffie-hellman <strong>prime</strong> in a <strong>buf</strong> (by Default)
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="22.01">
+<td> 
+            <strong>diffieHellman</strong>.getPrivateKey(<i class="openable">encode:str<div>
+                <p> - the returned private diffie-hellman key is encoded in this format </p>
+                <p> - if this option is not provided <strong>buf</strong> will be returned </p>
+            </div></i>)
+</td>
+<td> 
+            - returns the <u>diffie-hellman private key</u> as <strong>buf</strong> (previously generated by <mark>generateKeys()</mark> or set by <mark>setPrivateKey()</mark>)  
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="22.02">
+<td> 
+            <strong>diffieHellman</strong>.getPublicKey(<i class="openable">encode:str<div>
+                <p> - the returned public diffie-hellman key is encoded in this format </p>
+                <p> - if this option is not provided <strong>buf</strong> will be returned </p>
+            </div></i>)
+</td>
+<td> 
+            - returns the <u>diffie-hellman public key</u> as <strong>buf</strong> (previously generated by <mark>generateKeys()</mark> or set by <mark>setPublicKey()</mark>)  
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="23.01">
+<td> 
+            <strong>diffieHellman</strong>.setPrivateKey(<strong class="openable">privKeyDiffHell:str|...<div>
+                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
+                <p> - Diffie-Hellman private key (previously generated by <mark><strong>diffieHellman</strong>.generateKeys()</mark>) </p>
+            </div></strong>, <i class="openable">encode:str<div>
+                <p> - <strong>privKeyDiffHell</strong> encoding if string passed </p>
+            </div></i>)
+</td>
+<td> 
+            - sets a diffie-hellman private key to the <strong>diffieHellman</strong> object     
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="23.02">
+<td> 
+            <strong>diffieHellman</strong>.setPublicKey(<strong class="openable">pubKeyDiffHell:str|...<div>
+                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
+                <p> - Diffie-Hellman public key (previously generated by <mark><strong>diffieHellman</strong>.generateKeys()</mark>) </p>
+            </div></strong>, <i class="openable">encode:str<div>
+                <p> - <strong>pubKeyDiffHell</strong> encoding if string passed </p>
+            </div></i>)
+</td>
+<td> 
+            - sets a diffie-hellman public key to the <strong>diffieHellman</strong> object     
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="25.01">
+<td> 
+            <strong>diffieHellman</strong>.verifyError 
+</td>
+<td> 
+            - contains a <span class="openable">number<div>
+                <p> <mark>1</mark> = <mark><strong>crypto</strong>.constants.DH_CHECK_P_NOT_PRIME</mark> </p>
+                <p> <mark>2</mark> = <mark><strong>crypto</strong>.constants.DH_CHECK_P_NOT_SAFE_PRIME</mark> </p>
+                <p> <mark>4</mark> = <mark><strong>crypto</strong>.constants.DH_UNABLE_TO_CHECK_GENERATOR</mark> </p>
+                <p> <mark>8</mark> = <mark><strong>crypto</strong>.constants.DH_NOT_SUITABLE_GENERATOR</mark> </p>
+            </div></span> which indicates any <strong>diffieHellman</strong> warnings/errors   
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.11.12 </span>
+            </span>
+</td>
+</tr>
+<tr class="30.01">
+<td colspan="2"> 
+            ECDH (Elliptic Curve Diffie-Hellman key exchange utility)
+</td>
+</tr>
+<tr class="30.02">
+<td> 
+            <strong>crypto</strong>.ECDH.convertKey(<strong class="openable">pubKeyECDH:str|...<div>
+                <p><strong>str|buf|ArrayBuffer|TypedArray|DataView</strong></p>
+            </div></strong>, <strong>eCurve:str</strong>, <i>inEncode:str</i>, <i class="openable">outEncode:str<div>
+                <p> - if this option is specified the returned value will be a string in this encoded format, otherwise the returned value is a <i>buf</strong> </p>
+            </div></i>, <i class="openable">format:str<div>
+                <p> <mark>'uncompressed'</mark> (Default) / <mark>'compressed'</mark> / <mark>'hybrid'</mark> </p>
+            </div></i>)
+</td>
+<td> 
+            - converts the passed <strong>pubKeyECDH</strong> and <strong>eCurve</strong> into the specified format (compressed or uncompressed) and returns the converted <strong>pubKeyECDH</strong> 
+            <span class="browserSupport" title="updated : 2021-03-27">
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="31.01">
+<td> 
+            <strong>crypto</strong>.createECDH(<strong>eCurve:str</strong>)
+</td>
+<td> 
+            - creates and returns an <strong>ecdh</strong> object with the provided elliptic curve  
+            <span class="browserSupport" title="updated : 2021-03-27">
+                <span><i class="fab fa-node-js"></i> 0.11.14 </span>
+            </span>
+</td>
+</tr>
+<tr class="35.01">
+<td> 
+            <strong>ecdh</strong>.computeSecret(<strong class="openable">pubKeyECDH:str|...<div>
+                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
+                <p> - the ECDH public key that is received from the other party </p>
+            </div></strong>, <i class="openable">encodeKey:str<div>
+                <p> - <strong>pubKeyECDH</strong> encoding if string passed </p>
+            </div></i>, <i class="openable">encodeOut:str<div>
+                <p> - encoding of the returned string </p>
+                <p> - if this option is not provided <strong>buf</strong> is returned </p>
+            </div></i>)
+</td>
+<td> 
+            - <span class="openable">computes<div>
+                <p> - takes the internal ECDH private key and the received other party's ECDH public key then calculates the shared secret </p> 
+            </div></span> and returns the shared ECDH secret as <strong>buf</strong> (by Default)
+            <span class="browserSupport" title="updated : 2021-03-27">
+                <span><i class="fab fa-node-js"></i> 0.11.14 </span>
+                <span class="openable"> more...<div>
+                    <p> 6.0.0 </p>
+                    <p> - default encoding changed from <mark>binary</mark> to <mark>utf-8</mark> </p>
+                </div></span>
+            </span>
+</td>
+</tr>
+<tr class="32.01">
+<td> 
+            <strong>ecdh</strong>.generateKeys(<i class="openable">encode:str<div>
+                <p> - the returned public ECDH key is encoded in this format </p>
+                <p> - if this option is not provided <strong>buf</strong> will be returned </p>
+            </div></i>, <i class="openable">format:str<div>
+                <p> - <mark>'uncompressed'</mark> (Default) / <mark>'compressed'</mark> </p>
+            </div></i>)
+</td>
+<td> 
+            - generates the private and public <u>ECDH keys</u> <br>
+            - the public ECDH key is kept internally and also returned (as <strong>buf</strong> in the specified <i>format</i> (uncompressed or compressed)), it should be transfered to the other party <br>
+            - the private ECDH key is kept internally (can be retrieved with <mark>getPrivateKey()</mark>)
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.11.14 </span>
+            </span>
+</td>
+</tr>
+<tr class="33.01">
+<td> 
+            <strong>ecdh</strong>.getPrivateKey(<i class="openable">encode:str<div>
+                <p> - the returned private ecdh key is encoded in this format </p>
+                <p> - if this option is not provided <strong>buf</strong> will be returned </p>
+            </div></i>)
+</td>
+<td> 
+            - returns the <u>ecdh private key</u> as <strong>buf</strong> (previously generated by <mark>generateKeys()</mark> or set by <mark>setPrivateKey()</mark>)  
+            <span class="browserSupport" title="updated : 2021-03-27">
+                <span><i class="fab fa-node-js"></i> 0.11.14 </span>
+            </span>
+</td>
+</tr>
+<tr class="33.02">
+<td> 
+            <strong>ecdh</strong>.getPublicKey(<i class="openable">encode:str<div>
+                <p> - the returned public ecdh key is encoded in this format </p>
+                <p> - if this option is not provided <strong>buf</strong> will be returned </p>
+            </div></i>, <i class="openable">format:str<div>
+                <p> - <mark>'uncompressed'</mark> (Default) / <mark>'compressed'</mark> </p>
+            </div></i>)
+</td>
+<td> 
+            - returns the <u>ecdh public key</u> as <strong>buf</strong> (previously generated by <mark>generateKeys()</mark> or set by <mark>setPublicKey()</mark>) 
+            <span class="browserSupport" title="updated : 2021-03-27">
+                <span><i class="fab fa-node-js"></i> 0.11.14 </span>
+            </span>
+</td>
+</tr>
+<tr class="34.01">
+<td> 
+            <strong>ecdh</strong>.setPrivateKey(<strong class="openable">privKeyECDH:str|...<div>
+                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
+                <p> - ECDH private key (previously generated by <mark><strong>ecdh</strong>.generateKeys()</mark>) </p>
+            </div></strong>, <i class="openable">encode:str<div>
+                <p> - <strong>privKeyECDH</strong> encoding if string passed </p>
+            </div></i>)
+</td>
+<td> 
+            - sets an ECDH private key to the <strong>ecdh</strong> object     
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.11.14 </span>
+            </span>
+</td>
+</tr>
+<tr class="34.02">
+<td> 
+            <strong>ecdh</strong>.setPublicKey(<strong class="openable">pubKeyECDH:str|...<div>
+                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
+                <p> - ECDH public key (previously generated by <mark><strong>ecdn</strong>.generateKeys()</mark>) </p>
+            </div></strong>, <i class="openable">encode:str<div>
+                <p> - <strong>pubKeyECDH</strong> encoding if string passed </p>
+            </div></i>)
+</td>
+<td> 
+            - <u class="openable">[DEPRECATED v5.2.0]<div>
+                <p> - because the <strong>ecdh</strong> only needs the ECDH private key and the other party's public key to compute the shared secret </p>
+            </div></u> sets an ECDH public key to the <strong>ecdh</strong> object     
+            <span class="browserSupport" title="updated : 2021-03-26">
+                <span><i class="fab fa-node-js"></i> 0.11.14 </span>
+            </span>
+</td>
+</tr>
+</table>
+
     
     
     
@@ -2552,349 +2995,8 @@
 </details>
 <hr>
 <!---------------------------------------------------------------------------------------------------------------->
-<h2 style="color:darkblue;"><u> Diffie-Hellman key exchange protocol </u></h2>
-
-
-
-
-
-
-<table class="table">
-<caption>
-    Diffie-Hellman key exchange
-    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
-</caption>
-    <tr>
-        <th style="width:30%;"> Method </th>
-        <th> Description </th>
-    </tr>
-<tr class="10.01">
-<td> 
-            <strong>crypto</strong>.generatePrime(<strong class="openable">size:nr<div>
-                <p> - size in bits (ex: <mark>8</mark>bit = 1byte can be up to 255) </p>
-            </div></strong>, <i class="openable">option:obj<div>
-                <p> bigint: <strong>bol</strong> - if <mark>true</mark> the returned result is a <strong>bigint</strong> (Default: <mark>false</mark>) </p>
-                <p> safe: <strong>bol</strong> - if <mark>true</mark> the returned result is a safe prime (<mark>(<strong>prime</strong> - 1) / 2</mark> also result in a prime) (Default <mark>false</mark>) </p>
-                <p> add: <strong>bigint|buf|ArrayBuffer|SharedArrayBuffer|TypedArray|DataView</strong> (must be big-endian encoded) </p>
-                <p> rem: <strong>bigint|buf|ArrayBuffer|SharedArrayBuffer|TypedArray|DataView</strong> (must be big-endian encoded) </p>
-                    <hr>
-                <p><b> The <mark>add</mark> and <mark>rem</mark> options can be used to provide additional requirements for Diffiel-Hellman </b></p>
-                <p> - if both <mark>add</mark> and <mark>rem</mark> set the generated prime will satisfy that <mark><strong>prime</strong> % <strong>add</strong> = <strong>rem</strong></mark> </p>
-                <p> - if <mark>add</mark> is set and <mark>safe</mark> is false the generated prime will satisfy that <mark><strong>prime</strong> % <strong>add</strong> = 1</mark> </p>
-                <p> - if <mark>add</mark> is set and <mark>safe</mark> is true the generated prime will satisfy that <mark><strong>prime</strong> % <strong>add</strong> = 3</mark> </p>
-                
-            </div></i>, <strong>fn(err, prime)</strong>)
-</td>
-<td> 
-            - asynchronously generates a pseudo-random prime number of the specified length <br>
-            - the generated prime is stored in a big-endian sequence <strong>ArrayBuffer</strong> (by Default)  
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 15.8.0 </span>
-            </span>
-</td>
-</tr>
-<tr class="10.02">
-<td> 
-            <strong>crypto</strong>.generatePrimeSync(<strong class="openable">size:nr<div>
-                <p> - size in bits (ex: <mark>8</mark>bit = 1byte can be up to 255) </p>
-            </div></strong>, <i class="openable">option:obj<div>
-                <p> bigint: <strong>bol</strong> - if <mark>true</mark> the returned result is a <strong>bigint</strong> (Default: <mark>false</mark>) </p>
-                <p> safe: <strong>bol</strong> - if <mark>true</mark> the returned result is a safe prime (<mark>(<strong>prime</strong> - 1) / 2</mark> also result in a prime) (Default <mark>false</mark>) </p>
-                <p> add: <strong>bigint|buf|ArrayBuffer|SharedArrayBuffer|TypedArray|DataView</strong> (must be big-endian encoded) </p>
-                <p> rem: <strong>bigint|buf|ArrayBuffer|SharedArrayBuffer|TypedArray|DataView</strong> (must be big-endian encoded) </p>
-                    <hr>
-                <p><b> The <mark>add</mark> and <mark>rem</mark> options can be used to provide additional requirements for Diffiel-Hellman </b></p>
-                <p> - if both <mark>add</mark> and <mark>rem</mark> set the generated prime will satisfy that <mark><strong>prime</strong> % <strong>add</strong> = <strong>rem</strong></mark> </p>
-                <p> - if <mark>add</mark> is set and <mark>safe</mark> is false the generated prime will satisfy that <mark><strong>prime</strong> % <strong>add</strong> = 1</mark> </p>
-                <p> - if <mark>add</mark> is set and <mark>safe</mark> is true the generated prime will satisfy that <mark><strong>prime</strong> % <strong>add</strong> = 3</mark> </p>
-                
-            </div></i>)
-</td>
-<td> 
-            - synchronously generates a pseudo-random prime number of the specified length and returns it <br>
-            - the generated prime is stored in a big-endian sequence <strong>ArrayBuffer</strong> (by Default)  
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 15.8.0 </span>
-            </span>
-</td>
-</tr>
-<tr class="11.01">
-<td> 
-            <strong>crypto</strong>.checkPrime(<strong class="openable">candidate:bigint|...<div>
-                <p>  <strong>bigint|buf|ArrayBuffer|SharedArrayBuffer|TypedArray|DataView</strong> (must be big-endian encoded) </p>
-            </div></strong>, <i class="openable">option:obj<div>
-                <p> checks: <strong>nr</strong> - the number of Miller-Rabin probabilistic primality iterations to perform. When the value is 0 (zero), a number of checks is used that yields a false positive rate of at most 2-64 for random input. Care must be used when selecting a number of checks. Refer to the OpenSSL documentation for the BN_is_prime_ex function nchecks options for more details (Default: <mark>0</mark>) </p>
-            </div></i>, <strong>fn(err, res)</strong>)
-</td>
-<td> 
-            - asynchronously checks if the passed <strong>candidate</strong> is a prime number and returns a boolean accordingly  
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 15.8.0 </span>
-            </span>
-</td>
-</tr>
-<tr class="11.02">
-<td> 
-            <strong>crypto</strong>.checkPrimeSync(<strong class="openable">candidate:bigint|...<div>
-                <p>  <strong>bigint|buf|ArrayBuffer|SharedArrayBuffer|TypedArray|DataView</strong> (must be big-endian encoded) </p>
-            </div></strong>, <i class="openable">option:obj<div>
-                <p> checks: <strong>nr</strong> - the number of Miller-Rabin probabilistic primality iterations to perform. When the value is 0 (zero), a number of checks is used that yields a false positive rate of at most 2-64 for random input. Care must be used when selecting a number of checks. Refer to the OpenSSL documentation for the BN_is_prime_ex function nchecks options for more details (Default: <mark>0</mark>) </p>
-            </div></i>)            
-</td>
-<td> 
-            - synchronously checks if the passed <strong>candidate</strong> is a prime number and returns a boolean accordingly 
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 15.8.0 </span>
-            </span>
-</td>
-</tr>
-<tr class="20.01">
-<td colspan="2"> 
-            Diffie-Hellman (key exchange utility)
-</td>
-</tr>
-<tr class="20.02">
-<td> 
-            <strong>crypto</strong>.createDiffieHellman(<strong class="openable">prime:str|...<div>
-                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
-                <p> - prime value (number) </p>
-            </div></strong>, <i class="openable">primeEncode:str<div>
-                <p> - <strong>prime</strong> encoding if string passed </p>
-            </div></i>, <i class="openable">gen:nr|...<div>
-                <p> <strong>nr|str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
-                <p> - generator value (Default: <mark>2</mark>) </p>
-            </div></i>, <i class="openable">genEncode:str<div>
-                <p> - <i>gen</i> encoding if string passed </p>
-            </div></i>) <br>
-            <strong>crypto</strong>.createDiffieHellman(<strong class="openable">primeLength:nr<div>
-                <p> - internally generates a prime of the specified <u>bit</u> length </p>
-            </div></strong>, <i class="openable">gen:nr<div>
-                <p> - generator value (Default: <mark>2</mark>) </p>
-            </div></i>)
-</td>
-<td> 
-            - creates and returns a <strong>diffieHellman</strong> object with the provided prime and generator 
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 0.11.12 </span>
-                <span class="openable"> more...<div>
-                <p> 6.0.0 </p>
-                <p> - default encoding changed from <mark>binary</mark> to <mark>utf-8</mark> </p>
-                <p> 8.0.0 </p>
-                <p> - <strong>prime</strong> can be <strong>TypedArray|DataView</strong> </p>
-                    <hr>
-                <p> 0.5.0 </p>
-                <p> <mark><strong>crypto</strong>.createDiffieHellman(<strong>primeLength</strong>, <i>gen</i>)</mark> syntax support </p>
-                </div></span>
-            </span>
-</td>
-</tr>
-<tr class="20.03">
-<td> 
-            <strong>crypto</strong>.createDiffieHellmanGroup(<strong class="openable">diffHellGroup:str<div>
-                <p> - Diffie-Hellman group (pre defined fixed Diffie-Hellman primes) <u>bigger prime = better security</u> </p>
-                <p> <mark>'modp1'</mark> = 768bit prime </p>
-                <p> <mark>'modp2'</mark> = 1024bit prime </p>
-                <p> <mark>'modp5'</mark> = 1536bit prime </p>
-                <p> <mark>'modp14'</mark> = 2048bit prime (minimal recommended) </p>
-                <p> <mark>'modp15'</mark> = 3072bit prime </p>
-                <p> <mark>'modp16'</mark> = 4096bit prime </p>
-                <p> <mark>'modp17'</mark> = 6144bit prime </p>
-                <p> <mark>'modp18'</mark> = 8192bit prime </p>
-            </div></strong>) <br>
-            <strong>crypto</strong>.getDiffieHellman(<strong class="openable">diffHellGroup:str<div>
-                <p> - Diffie-Hellman group (pre defined fixed Diffie-Hellman primes) <u>bigger prime = better security</u> </p>
-                <p> <mark>'modp1'</mark> = 768bit prime </p>
-                <p> <mark>'modp2'</mark> = 1024bit prime </p>
-                <p> <mark>'modp5'</mark> = 1536bit prime </p>
-                <p> <mark>'modp14'</mark> = 2048bit prime (minimal recommended) </p>
-                <p> <mark>'modp15'</mark> = 3072bit prime </p>
-                <p> <mark>'modp16'</mark> = 4096bit prime </p>
-                <p> <mark>'modp17'</mark> = 6144bit prime </p>
-                <p> <mark>'modp18'</mark> = 8192bit prime </p>
-            </div></strong>)
-</td>
-<td> 
-            - creates and returns a <strong>diffieHellman</strong> object with the provided diffie-hellman group <br>
-            - in this case we cannot set diffie-hellman keys to the returned <strong>diffieHellman</strong> object (calling the <mark>setPrivateKey()</mark> and <mark>setPublicKey()</mark> is not allowed) 
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 0.9.3 </span>
-            </span>
-</td>
-</tr>
-<tr class="21.01">
-<td> 
-            <strong>diffieHellman</strong>.generateKeys(<i class="openable">encode:str<div>
-                <p> - the returned public diffie-hellman key is encoded in this format </p>
-                <p> - if this option is not provided <strong>buf</strong> will be returned </p>
-            </div></i>)
-</td>
-<td> 
-            - generates the private and public <u>Diffie-Hellman keys</u> <br>
-            - the public diffie-hellman key is kept internally and also returned, it should be transfered to the other party <br>
-            - the private diffie-hellman key is kept internally (can be retrieved with <mark>getPrivateKey()</mark>)
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
-            </span>
-</td>
-</tr>
-<tr class="22.01">
-<td> 
-            <strong>diffieHellman</strong>.getPrivateKey(<i class="openable">encode:str<div>
-                <p> - the returned private diffie-hellman key is encoded in this format </p>
-                <p> - if this option is not provided <strong>buf</strong> will be returned </p>
-            </div></i>)
-</td>
-<td> 
-            - returns the <u>diffie-hellman private key</u> (previously generated by <mark>generateKeys()</mark> or set by <mark>setPrivateKey()</mark>)  
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
-            </span>
-</td>
-</tr>
-<tr class="22.02">
-<td> 
-            <strong>diffieHellman</strong>.getPublicKey(<i class="openable">encode:str<div>
-                <p> - the returned public diffie-hellman key is encoded in this format </p>
-                <p> - if this option is not provided <strong>buf</strong> will be returned </p>
-            </div></i>)
-</td>
-<td> 
-            - returns the <u>diffie-hellman public key</u> (previously generated by <mark>generateKeys()</mark> or set by <mark>setPublicKey()</mark>)  
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
-            </span>
-</td>
-</tr>
-<tr class="23.01">
-<td> 
-            <strong>diffieHellman</strong>.setPrivateKey(<strong class="openable">privKeyDiffHell:str|...<div>
-                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
-                <p> - Diffie-Hellman private key (previously generated by <mark><strong>diffieHellman</strong>.generateKeys()</mark>) </p>
-            </div></strong>, <i class="openable">encode:str<div>
-                <p> - <strong>privKeyDiffHell</strong> encoding if string passed </p>
-            </div></i>)
-</td>
-<td> 
-            - sets a diffie-hellman private key to the <strong>diffieHellman</strong> object     
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
-            </span>
-</td>
-</tr>
-<tr class="23.02">
-<td> 
-            <strong>diffieHellman</strong>.setPublicKey(<strong class="openable">pubKeyDiffHell:str|...<div>
-                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
-                <p> - Diffie-Hellman public key (previously generated by <mark><strong>diffieHellman</strong>.generateKeys()</mark>) </p>
-            </div></strong>, <i class="openable">encode:str<div>
-                <p> - <strong>pubKeyDiffHell</strong> encoding if string passed </p>
-            </div></i>)
-</td>
-<td> 
-            - sets a diffie-hellman public key to the <strong>diffieHellman</strong> object     
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
-            </span>
-</td>
-</tr>
-<tr class="24.01">
-<td> 
-            <strong>diffieHellman</strong>.getPrime(<i class="openable">encode:str<div>
-                <p> - encoding for the returned string </p>
-                <p> - if this option is not provided <strong>buf</strong> is returned </p>
-            </div></i>)
-<td> 
-            - returns the diffie-hellman <strong>prime</strong> in a <strong>buf</strong> (by Default)
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
-            </span>
-</td>
-</tr>
-<tr class="24.02">
-<td> 
-            <strong>diffieHellman</strong>.getGenerator(<i class="openable">encode:str<div>
-                <p> - encoding for the returned string </p>
-                <p> - if this option is not provided <strong>buf</strong> is returned </p>
-            </div></i>)
-</td>
-<td> 
-            - returns the diffie-hellman <strong>gen</strong> (generator) in a <strong>buf</strong> (by Default)
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 0.5.0 </span>
-            </span>
-</td>
-</tr>
-<tr class="25.01">
-<td> 
-            <strong>diffieHellman</strong>.verifyError 
-</td>
-<td> 
-            - contains a <span class="openable">number<div>
-                <p> <mark>1</mark> = <mark><strong>crypto</strong>.constants.DH_CHECK_P_NOT_PRIME</mark> </p>
-                <p> <mark>2</mark> = <mark><strong>crypto</strong>.constants.DH_CHECK_P_NOT_SAFE_PRIME</mark> </p>
-                <p> <mark>4</mark> = <mark><strong>crypto</strong>.constants.DH_UNABLE_TO_CHECK_GENERATOR</mark> </p>
-                <p> <mark>8</mark> = <mark><strong>crypto</strong>.constants.DH_NOT_SUITABLE_GENERATOR</mark> </p>
-            </div></span> which indicates any <strong>diffieHellman</strong> warnings/errors   
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i> 0.11.12 </span>
-            </span>
-</td>
-</tr>
-<tr class="26.01">
-<td> 
-            <strong>diffieHellman</strong>.computeSecret(<strong class="openable">pubKeyDiffHell:str|...<div>
-                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
-                <p> - the diffie-hellman public key that is received from the other party </p>
-            </div></strong>, <i class="openable">encodeKey:str<div>
-                <p> - <strong>pubKeyDiffHell</strong> encoding if string passed </p>
-            </div></i>, <i class="openable">encodeOut:str<div>
-                <p> - encoding of the returned string </p>
-                <p> - if this option is not provided <strong>buf</strong> is returned </p>
-            </div></i>)
-</td>
-<td> 
-            - <span class="openable">computes<div>
-                <p> - takes the internal diffie-hellman private key and the received other party's diffie-hellman public key then calculates the shared secret </p> 
-            </div></span> and returns the shared diffie-hellman secret as <strong>buf</strong> (by Default)
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i>  </span>
-            </span>
-</td>
-</tr>
-<tr class="30.01">
-<td colspan="2"> 
-            ECDH (Elliptic Curve Diffie-Hellman key exchange utility)
-</td>
-</tr>
-
-
-
-
-
-
-
-
-
-<tr class="99.99">
-<td> 
-            
-</td>
-<td> 
-            - 
-            <span class="browserSupport" title="updated : 2021-03-26">
-                <span><i class="fab fa-node-js"></i>  </span>
-            </span>
-</td>
-</tr>
-
-
-
-</table>
-
-
-
-
-<details class="example" open> 
+<h2 style="color:darkblue;"><u> Diffie-Hellman key exchange protocol <mark>generatePrime()</mark> / <mark>generatePrimeSync()</mark> / <mark>checkPrime()</mark> / <mark>checkPrimeSync()</mark> / <mark>createDiffieHellman()</mark> / <mark>createDiffieHellmanGroup()</mark> / <mark>getDiffieHellman()</mark> / <mark>createECDH()</mark> / <mark>generateKeys()</mark> / <mark>getPrivateKey()</mark> / <mark>getPublicKey()</mark> / <mark>setPrivateKey()</mark> / <mark>setPublicKey()</mark> / <mark>getPrime()</mark> / <mark>getGenerator()</mark> / <mark>verifyError</mark> / <mark>computeSecret()</mark> / <mark>ECDH.convertKey()</mark> </u></h2>
+<details class="example"> 
 <summary> DEMO </summary>
 <h4 style="color:darkblue;"><u> Prime <mark>generatePrime()</mark> / <mark>generatePrimeSync()</mark> / <mark>checkPrime()</mark> / <mark>checkPrimeSync()</mark> </u></h4>
     <pre>
@@ -2918,15 +3020,197 @@
     crypto.checkPrimeSync(239n);                                                       // -> true               // synchronous version   
     crypto.checkPrimeSync(240n);                                                       // -> false 
     </pre>
+<h4 style="color:darkblue;"><u> Diffie-Hellman key exchange <mark>createDiffieHellman()</mark> / <mark>generateKeys()</mark> / <mark>computeSecret()</mark> / <mark>verify</mark> </u></h4>
+    <pre>
+    const crypto = require('crypto');
+    const util = require('util');
+    
+    const prime = crypto.generatePrimeSync(2048);                                      // a 2048bit prime length is the minimal recommended prime for diffie-hellman key exchanges    
+    
+// Alice ------------------------------------------------------------------------------
+    const alice = crypto.createDiffieHellman(prime, 2);                                // alice creates its Diffie-Hellman   
+    const alicePubKey = alice.generateKeys();                                          // alice generates its diffie-hellman private and public key pair (the public key is returned)   
     
     
+// Bob --------------------------------------------------------------------------------
+    const bob = crypto.createDiffieHellman(prime, 2);                                  // bob creates it's diffie-hellman
+    const bobPubKey = bob.generateKeys();                                              // bob generates its diffie-hellman private and public key pair (the public key is returned)   
     
     
+// exchanging diffie-hellman public keys ----------------------------------------------
+// ------------------------------------------------------------------------------------
+    // Alice ------------------------------------------------------
+    const aliceSecret = alice.computeSecret(bobPubKey);                                // Alice takes Bob's public key and generates the shared secret (symmetric key)   
+    
+    // Bob --------------------------------------------------------
+    const bobSecret = bob.computeSecret(alicePubKey);                                  // Bob takes Alice's public key and generates the shared secret (symmetric key)   
+    
+// ------------------------------------------------------------------------------------
+    util.isDeepStrictEqual(aliceSecret, bobSecret);                                    // -> true                // Alice and Bob has a shared secret that can be used as secret key 
+    
+    alice.verifyError;                                                                 // -> 2                   // crypto.constants.DH_CHECK_P_NOT_SAFE_PRIME (the used prime is not a 'safe-prime')     
+    bob.verifyError;                                                                   // -> 2                   // crypto.constants.DH_CHECK_P_NOT_SAFE_PRIME (the used prime is not a 'safe-prime')     
+    </pre>
+<h4 style="color:darkblue;"><u> Diffie-Hellman <mark>getPrivateKey()</mark> / <mark>getPublicKey()</mark> / <mark>setPrivateKey()</mark> / <mark>setPublicKey()</mark> TEST </u></h4>
+    <pre>
+    const crypto = require('crypto');
+    const util = require('util');
+    
+// prestored diffie hellman keys ------------------------------------------------------    
+    const prime = crypto.generatePrimeSync(2048);                         
+    const alice = crypto.createDiffieHellman(prime, 3);
+    
+    alice.generateKeys();
+    const alicePubKey = alice.getPublicKey();                                          // returns the generated diffie-hellman public key    
+    const alicePrivKey = alice.getPrivateKey();                                        // returns the generated diffie-hellman private key    
+    
+    const bob = crypto.createDiffieHellman(prime, 3);
+    bob.generateKeys();
+    const bobPubKey = bob.getPublicKey();                                              // returns the generated diffie-hellman public key    
+    const bobPrivKey = bob.getPrivateKey();                                            // returns the generated diffie-hellman private key    
+    
+    
+// Charlie ----------------------------------------------------------------------------
+    const charlie = crypto.createDiffieHellman(prime, 4);                              // same prime and generator used 
+    charlie.setPublicKey(alicePubKey);                                                 // charlie uses alice's keys (sets the prestored diffie-hellman keys)    
+    charlie.setPrivateKey(alicePrivKey);
+    
+    
+// Dany -------------------------------------------------------------------------------
+    const dany = crypto.createDiffieHellman(prime, 4);                                 // same prime and generator used 
+    dany.setPublicKey(bobPubKey);                                                      // dany uses bob's keys (sets the prestored diffie-hellman keys)    
+    dany.setPrivateKey(bobPrivKey);
+    
+    
+// exchanging diffie-hellman public keys ----------------------------------------------
+// ------------------------------------------------------------------------------------
+// Charlie ----------------------------------------------------------------------------
+    const charlieSecret = charlie.computeSecret(bobPubKey);                            // Charlie takes Dany's public key and generates the shared secret 
+    
+// Dany -------------------------------------------------------------------------------
+    const danySecret = dany.computeSecret(alicePubKey);                                // Dany takes Chariles's public key and generates the shared secret 
+    
+// ------------------------------------------------------------------------------------
+    util.isDeepStrictEqual(charlieSecret, danySecret);                                 // -> true       // Charlie and Dany has a shared secret that can be used as secret key   
+    </pre>
+<h4 style="color:darkblue;"><u> Diffie-Hellman Group <mark>createDiffieHellmanGroup()</mark> / <mark>getDiffieHellman()</mark> </u></h4>
+    <pre>
+    const crypto = require('crypto');
+    const util = require('util');
+    
+// Alice ------------------------------------------------------------------------------
+    const alice = crypto.createDiffieHellmanGroup('modp14');                           // the modp14 is a predefined 2048bit diffie-hellman prime basically (diffie-hellman group)    
+      // const alice = crypto.getDiffieHellman('modp14');                                // would do the same as above 
+
+    const alicePubKey = alice.generateKeys();  
+    
+// Bob --------------------------------------------------------------------------------
+    const bob = crypto.createDiffieHellmanGroup('modp14');                             // the modp14 is a predefined 2048bit diffie-hellman prime basically (diffie-hellman group)    
+      // const bob = crypto.getDiffieHellman('modp14');                                  // would do the same as above 
+    const bobPubKey = bob.generateKeys();  
+    
+    
+// exchanging diffie-hellman public keys ----------------------------------------------
+// ------------------------------------------------------------------------------------
+    // Alice ------------------------------------------------------
+    const aliceSecret = alice.computeSecret(bobPubKey);                                // Alice takes Bob's public key and generates the shared secret (symmetric key)   
+    
+    // Bob --------------------------------------------------------
+    const bobSecret = bob.computeSecret(alicePubKey);                                  // Bob takes Alice's public key and generates the shared secret (symmetric key)   
+    
+// ------------------------------------------------------------------------------------
+    util.isDeepStrictEqual(aliceSecret, bobSecret);                                    // -> true                // Alice and Bob has a shared secret that can be used as secret key 
+    </pre>
+<h4 style="color:darkblue;"><u> Elliptic Curve Diffie-Hellman <mark>createECDH()</mark> / <mark>generateKeys()</mark> / <mark>computeSecret()</mark> </u></h4>
+    <pre>
+    const crypto = require('crypto');
+    const util = require('util');
+    
+// Alice ------------------------------------------------------------------------------
+    const alice = crypto.createECDH('secp521r1');                                      // uses the 'secp521r1' curve for for this ECDH key exchange utility    
+    const alicePubKey = alice.generateKeys();                                          // the generated public ECDH key is returned 
+    
+// Bob --------------------------------------------------------------------------------
+    const bob = crypto.createECDH('secp521r1');                                        // uses the 'secp521r1' curve for for this ECDH key exchange utility    
+    const bobPubKey = bob.generateKeys();                                              // the generated public ECDH key is returned 
+    
+    
+// exchanging ECDH public keys --------------------------------------------------------
+// ------------------------------------------------------------------------------------
+    // Alice ------------------------------------------------------
+    const aliceSecret = alice.computeSecret(bobPubKey);                                // Alice takes Bob's ECHD public key and generates the shared secret (symmetricy key)   
+    
+    // Bob --------------------------------------------------------
+    const bobSecret = bob.computeSecret(alicePubKey);                                  // Bob takes Alice's ECDH public key and generates the shared secret (symmetricy key)   
+    
+// ------------------------------------------------------------------------------------
+    util.isDeepStrictEqual(aliceSecret, bobSecret);                                    // -> true                // Alice and Bob has a shared secret now   
+    </pre>
+<h4 style="color:darkblue;"><u> Elliptic Curve Diffie-Hellman <mark>getPrivateKey()</mark> / <mark>getPublicKey()</mark> / <mark>setPrivateKey()</mark> / <mark>setPublicKey()</mark> </u></h4>
+    <pre>
+    const crypto = require('crypto');
+    const util = require('util');
+    
+// prestored ECDH keys ----------------------------------------------------------------
+    const alice = crypto.createECDH('secp224k1');
+    alice.generateKeys();
+    const alicePrivKey = alice.getPrivateKey();                                        // getting alice's ECDH private key
+    const alicePubKey = alice.getPublicKey();                                          // getting alice's ECDH public key 
+    
+    const bob = crypto.createECDH('secp224k1');
+    bob.generateKeys();
+    const bobPrivKey = bob.getPrivateKey();                                            // getting bob's ECDH private key
+    const bobPubKey = bob.getPublicKey();                                              // getting bob's ECDH public key 
+    
+    
+// Charlie ----------------------------------------------------------------------------
+    const charlie =crypto.createECDH('secp224k1');                                     // same curve used    
+    charlie.setPrivateKey(alicePrivKey);                                               // charlie uses alice's key
+    // charlie.setPublicKey(alicePubKey);                                              // -! ECDH utility only need the private key to be set (this method is deprecated node v5.2.0) 
+    
+    
+// Dany -------------------------------------------------------------------------------
+    const dany = crypto.createECDH('secp224k1');                                       // same curve used     
+    dany.setPrivateKey(bobPrivKey);                                                    // dany uses bob's key 
+    // dany.setPublicKey(bobPubKey);                                                   // -! ECDH utility only need the private key to be set (this method is deprecated node v5.2.0)  
+    
+    
+// exchanging diffie-hellman public keys ----------------------------------------------
+// ------------------------------------------------------------------------------------
+// Charlie ----------------------------------------------------------------------------
+    const charlieSecret = charlie.computeSecret(bobPubKey);                            // Charlie takes Dany's public key and generates the shared secret (symmetric key)   
+    
+// Dany -------------------------------------------------------------------------------
+    const danySecret = dany.computeSecret(alicePubKey);                                // Dany takes Chariles's public key and generates the shared secret (symmetric key)   
+    
+// ------------------------------------------------------------------------------------
+    util.isDeepStrictEqual(charlieSecret, danySecret);                                 // -> true       // Charlie and Dany have a shared secret now 
+    </pre>
+<hr>
+<!---------------------------------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> Elliptic Curve Diffie-Hellman <mark>ECHD.convertKey()</mark> </u></h4>    
+    <pre>
+    const crypto = require('crypto');
+    const util = require('util');
+    
+    const ecdh = crypto.createECDH('c2pnb176v1');
+    const ecdhPubKey = ecdh.generateKeys();
+    
+    const uncompressedKey = crypto.ECDH.convertKey(ecdhPubKey, 'c2pnb176v1', null, 'hex', 'uncompressed');
+    const compressedKey = crypto.ECDH.convertKey(ecdhPubKey, 'c2pnb176v1', null, 'hex', 'compressed');
+    const hybridKey = crypto.ECDH.convertKey(ecdhPubKey, 'c2pnb176v1', null, 'hex', 'hybrid');
+    
+    uncompressedKey;                                                                   // -> '041ad485a2666bc9edd90e53a33fd966ca6be61fa02259d4a8afb0f9b8efe2bbb541f3ebea3614a28dcac7e767'    
+    uncompressedKey.length;                                                            // -> 90  
+    
+    compressedKey;                                                                     // -> '021ad485a2666bc9edd90e53a33fd966ca6be61fa02259'
+    compressedKey.length;                                                              // -> 46
+    
+    hybridKey;                                                                         // -> '041ad485a2666bc9edd90e53a33fd966ca6be61fa02259d4a8afb0f9b8efe2bbb541f3ebea3614a28dcac7e767'    
+    hybridKey.length;                                                                  // -> 90  
+    </pre>
 </details>
-
-
-
-<details class="example" open> 
+<details class="example"> 
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>generatePrime()</mark> / <mark>generatePrimeSync()</mark> / <mark>checkPrime()</mark> / <mark>checkPrimeSync()</mark> TEST </u></h4>
     <pre>
@@ -3057,11 +3341,11 @@
     
     
 // Alice ------------------------------------------------------------------------------
-    const alice = crypto.createDiffieHellmanGroup('modp14', 2);                        // the modp14 is a predefined 2048bit diffie-hellman prime basically (diffie-hellman group)    
+    const alice = crypto.createDiffieHellmanGroup('modp14');                           // the modp14 is a predefined 2048bit diffie-hellman prime basically (diffie-hellman group)    
     const alicePubKey = alice.generateKeys();  
     
 // Bob --------------------------------------------------------------------------------
-    const bob = crypto.createDiffieHellmanGroup('modp14', 2);                          // the modp14 is a predefined 2048bit diffie-hellman prime basically (diffie-hellman group)    
+    const bob = crypto.createDiffieHellmanGroup('modp14');                             // the modp14 is a predefined 2048bit diffie-hellman prime basically (diffie-hellman group)    
     const bobPubKey = bob.generateKeys();  
     
     
@@ -3178,13 +3462,53 @@
 <!---------------------------------------------------------------------------------------------------------------->
 <h4 style="color:darkblue;"><u> Elliptic Curve Diffie-Hellman <mark>ECHD.convertKey()</mark> TEST </u></h4>    
     <pre>
+    const crypto = require('crypto');
+    const util = require('util');
+    
+    const ecdh = crypto.createECDH('c2pnb176v1');
+    const ecdhPubKey = ecdh.generateKeys();
+    
+    const uncompressedKey = crypto.ECDH.convertKey(ecdhPubKey, 'c2pnb176v1', null, 'hex', 'uncompressed');
+    const compressedKey = crypto.ECDH.convertKey(ecdhPubKey, 'c2pnb176v1', null, 'hex', 'compressed');
+    const hybridKey = crypto.ECDH.convertKey(ecdhPubKey, 'c2pnb176v1', null, 'hex', 'hybrid');
     
     
+    console.log( uncompressedKey );                                                    // -> '041ad485a2666bc9edd90e53a33fd966ca6be61fa02259d4a8afb0f9b8efe2bbb541f3ebea3614a28dcac7e767'    
+    console.log( uncompressedKey.length );                                             // -> 90  
     
+    console.log( compressedKey );                                                      // -> '021ad485a2666bc9edd90e53a33fd966ca6be61fa02259'
+    console.log( compressedKey.length );                                               // -> 46
     
+    console.log( hybridKey );                                                          // -> '041ad485a2666bc9edd90e53a33fd966ca6be61fa02259d4a8afb0f9b8efe2bbb541f3ebea3614a28dcac7e767'    
+    console.log( hybridKey.length );                                                   // -> 90  
     </pre>
+<hr>
+<!---------------------------------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> compressed ECDH public keys TEST </u></h4>    
+    <pre>
+    const crypto = require('crypto');
+    const util = require('util');
+    
+// Alice ------------------------------------------------------------------------------
+    const alice = crypto.createECDH('secp521r1'); 
+    const alicePubKey = alice.generateKeys(null, 'compressed');                        // the generated public ECDH key is compressed and returned 
+    
+// Bob --------------------------------------------------------------------------------
+    const bob = crypto.createECDH('secp521r1'); 
+    const bobPubKey = bob.generateKeys(null, 'compressed');                            // the generated public ECDH key is compressed and returned 
     
     
+// exchanging ECDH public keys --------------------------------------------------------
+// ------------------------------------------------------------------------------------
+    // Alice ------------------------------------------------------
+    const aliceSecret = alice.computeSecret(bobPubKey); 
+    
+    // Bob --------------------------------------------------------
+    const bobSecret = bob.computeSecret(alicePubKey);  
+    
+// ------------------------------------------------------------------------------------
+    console.log( util.isDeepStrictEqual(aliceSecret, bobSecret) );                     // -> true   
+    </pre>
 </details>
 
 
