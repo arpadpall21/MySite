@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Media Queries </title>    
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" media="only print" href="styles-media.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../Assets/stylesPages.css">
+    <script src="../../Assets/scriptPages.js"></script>
+</head>
+<body>
+<h1> Media Queries (ver 2.9) </h1>
+    <p> Updated (2017-02-25 / 2017-06-14 / 2018-03-16)</p>
+    <p class="sitenav"> <a href="../../index.html">MySite></a>
+        <a href="../index.html" title="CSS">CSS></a> Media Queries  
+    </p>
+<table class="table">
+    <tr>
+        <th> types / operators / expressions </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td colspan="2"> media types </td>
+    </tr>
+    <tr>
+        <td> all </td>
+        <td> all devices </td>
+    </tr>
+    <tr>
+        <td> screen </td>
+        <td> computer screens, tablets, phones ect... </td>
+    </tr>
+    <tr>
+        <td> print </td>
+        <td> for printers (you can see on the printer screen) </td>
+    </tr>
+    <tr>
+        <td> speech </td>
+        <td> for screen readers </td>
+    </tr>
+    <tr>
+        <td colspan="2"> operators </td>
+    </tr>
+    <tr>
+        <td> and </td>
+        <td> combines multiple media features together </td>
+    </tr>
+    <tr>
+        <td> only </td>
+        <td> applies only the specified media type (slightly depricated) </td>
+    </tr>
+    <tr>
+        <td> not </td>
+        <td> negates the query on the specified media type </td>
+    </tr>
+    <tr>
+        <td> , (comma) </td>
+        <td> separates media query conditions </td>
+    </tr>
+    <tr>
+        <td colspan="2"> media features (conditions) </td>
+    </tr>
+    <tr>
+        <td> width:<strong>value</strong>px / em / cm;<br>  min-width:<strong>value</strong>px / em / cm;<br> max-width:<strong>value</strong>px / em / cm;<br> height:<strong>value</strong>px / em / cm;<br> min-height:<strong>value</strong>px / em / cm;<br> max-height:<strong>value</strong>px / em / cm; </td>
+        <td> determines the dimension of the display area </td>
+    </tr>
+    <tr>
+        <td> orientation:landscape / portrait; </td>
+        <td> determines the orientation of the viewport </td>
+    </tr>
+    <tr>
+        <td> color:<strong>value</strong>;<br> min-color:<strong>value</strong>;<br> max-color:<strong>value</strong>; </td>
+        <td> determines the number of <u>bits per color component</u> </td>
+    </tr>
+    <tr>
+        <td> color-index:<strong>value</strong>;<br> min-color-index:<strong>value</strong>;<br> max-color-index:<strong>value</strong>; </td>
+        <td> determines the <u> number of colors in a pixel </u> </td>
+    </tr>
+    <tr>
+        <td> aspect-ratio:16/9 / ...;<br> min-aspect-ratio:16/9 / ...;<br> max-aspect-ratio:16/9 / ...; </td>
+        <td> determines the aspect-ratio </td>
+    </tr>
+    <tr>
+        <td> resolution:<strong>value</strong>dpi / dpcm; <br>min-resolution:<strong>value</strong>dpi / dpcm; <br>max-resolution:<strong>value</strong>dpi / dpcm;  </td>
+        <td> determines the resolution expressed by "dpi" or "dpcm" </td>
+    </tr>
+    <tr>
+        <td> pointer:fine / coarse / none </td>
+        <td> determines the presence  and the accuracy of the pointing device  </td>
+    </tr>
+    <tr>
+        <td> hover: hover / none </td>
+        <td> determines if the device is able to hover or not </td>
+    </tr>
+</table>
+<h2 style="color:green;"><ins> Useful Links : </ins></h2>
+    <p><a href="https://www.w3schools.com/css/css3_mediaqueries.asp" title="Go to W3School Media Queries site!" target="_blank"> Go to W3School Media Queries site! </a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries" title="Go To MDN @media queries site!" target="_blank">Go To MDN @media queries site!</a></p>
+    <p><a href="https://www.sitepoint.com/media-queries-look-different-media-features/" title="Sitepoint Medea Queries" target="_blank">Sitepoint Medea Queries</a></p>
+    <p><a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp" title="W3School @media" target="_blank">W3School @media</a></p>
+    <p><a href="https://www.w3.org/TR/2017/CR-mediaqueries-4-20170905/" target="_blank" class="important-link">W3.org Media Queries (level 4) </a></p>
+<h2 style="color:green;"><ins> Remember This : </ins></h2>
+    <p> - (2018-03-16) TESTED media queries are now very well supported especially level 4 and 5, (use basic and simple things) </p>
+<h2 style="color:green;"><ins> Description and Demonstration : </ins></h2>
+    <p> - Media Queries are an efficient technique for delivering tailored styles for different media types and screen sizes</p>
+    <pre class="syntax">
+SYNTAX:     @media <i>not|only mediaType and (features)</i> {}                      // if conditions are true CSS executes the code block
+            
+    </pre>
+    <p> - Media Queries level 4 Syntax </p>
+    <img src="Media Queries level 4 - Syntax.jpg" height="250px">
+    <pre>
+    @media all and (min-width:800px), not print {               // all devices at least 800px width excluding printers 
+        color: green;
+    }       
+    </pre>
+<h2 style="color:darkblue;"><u> Implement Mediaqueries (2 ways) </u></h2>    
+    <pre>
+// entire stylesheet dedicated to the targeted conditions (by using the "media" attribute) 
+-- CODE (HTML) --
+&lt;head&gt;
+    &lt;link rel="stylesheet" media="only print" href="styles-media.css"&gt;                            // sheet only implemented on printers
+    &lt;link rel="stylesheet" media="(max-width: 800px)" href="sytles-max-width-800px.css"&gt;          // sheet only implemented on devices less than 800 pixels
+&lt;/head&gt;
+    
+
+// mediaquery condition specified separately on the stylesheet
+-- CODE (CSS) --
+    @media screen and (max-width:500px) {
+        // CSS code for the specified media device
+    }
+    // other CSS code 
+    </pre>
+<!------------------------------------------------------------------------------------------------------------------------------->
+<hr>    
+<h2><u>Media Types for media queries</u></h2>
+    <p><mark>all</mark> - all media type devices</p>
+    <p><mark>screen</mark> - computer screens, tablets, phones ect...</p>
+    <p><mark>print</mark> - for printers (see exemple for this page)</p>
+    <p><mark>speech</mark> - for screen readers</p>
+    <p> - there are some more but they are mostly depricated  </p>
+<!------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2><u> Operatros </u></h2>
+<h2 style="color:darkblue;"><u> the <mark>and</mark> operator </u></h2>
+    <p> - the <mark>and</mark> operator combines multiple media features togehter, as well as combining media features with media types</p>
+    <pre>
+    @media (min-width:700px) and (orientation:landscape) { }                // only applies if device screen is wider than 700px and landscape oriented 
+    @media tv and (min-width:700px) and (orientation:landscape) { }         // this does the same but only applies ot TV screen
+    </pre>
+<!------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> the <mark>only</mark> operator </u></h2>
+    <p> - the <mark>only</mark> operator applies only on the explicit media type (partially deprecated) </p>
+    <p> - mostly used for preventing older browsers that do not support media queries with media features from applying the given styles</p>
+    <pre>
+    @media only screen                                                      // applies only on screen 
+    </pre>
+<!------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> the <mark>not</mark> operator </u></h2>
+    <p> - the <mark>not</mark> operator negates an entire media query (must specify an explicit media type) (partially deprecated) </p>
+    <pre>
+    @media not print { }                                                    // declarations won't apply on any printing devices 
+    </pre>
+<!------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> the <mark>,</mark>(comma) operator </u></h2>    
+    <p> - the <mark>,</mark>(comma) operator separates multiple media query conditions, each query is treated individually </p>
+    <pre>
+    @media (max-width: 500px), (min-width: 800px) { }                       // style only applies if screen width is smaller than 500px or larger than 800px
+    </pre>
+<!-------------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2><u> Media Query Features  </u></h2>    
+    <p><i class="fa fa-asterisk"></i> <mark>width</mark> / <mark>min-width</mark> / <mark>max-width</mark> / <mark>height</mark> / <mark>min-height</mark> / <mark>max-height</mark> - sets the dimension of the display area such as browser window </p>
+        <pre>
+    @media screen and (min-width:500px) and (max-width:800px) and (min-height:350px) and (max-height:600px) { }
+        </pre>
+<!-------------------------------------------------------------------------------------------------------------------------------------->
+<hr>    
+<p><i class="fa fa-asterisk"></i> <mark>orientation</mark> (landscape or portrait) - orientation of the viewport </p>
+        <pre>
+    @media screen and (orientation:landscape) { } 
+        </pre>
+<!-------------------------------------------------------------------------------------------------------------------------------------->
+<hr>    
+<p><i class="fa fa-asterisk"></i> <mark>color</mark> / <mark>min-color</mark> / <mark>max-color</mark> - can check if the device is color device or indicates the minimum and maximun number of <ins>bits per color component</ins></p>
+    <p><a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank" title="Wikipedia color depth">Wikipedia color depth explained</a></p>
+        <pre>
+    @media not (color) { }                                                  // for black and white screens only 
+    @media (min-color:8) { }                                                // parameters will be used only on 8bits (256 colors) or higher screens --*/ 
+        </pre>
+<!-------------------------------------------------------------------------------------------------------------------------------------->
+<hr>     
+    <p><i class="fa fa-asterisk"></i> <mark>color-index</mark> / <mark>min-color-index</mark> / <mark>max-color-index</mark> - indicates the <ins>number of colors</ins> the device can display </p>
+        <pre>
+    @media all and (color-index) { }                                        // targets color indexed displays (at least 256 colors) 
+    @media (max-color-index:255) { }                                        // displays less than 256 colors
+        </pre>
+<!-------------------------------------------------------------------------------------------------------------------------------------->
+<hr>     
+    <p><i class="fa fa-asterisk"></i> <mark>aspect-ratio</mark> / <mark>min-aspect-ratio</mark> / <mark>max-aspect-ratio</mark> - targeting or limiting aspect ratios (<mark>5:4 / 4:3 / 16:10 / 16:9</mark>)</p>
+    <p><a href="https://en.wikipedia.org/wiki/Display_aspect_ratio" target="_blank" title="Wikipedia aspect ratio explained">Wikipedia aspect ratio explained</a></p>
+        <pre>
+    @media screen and (aspect-ratio:16/9), screen and (aspect-ratio:16/10) { }  // targetes set aspect ratio
+    @media screen and (min-aspect-ratio:1/1) { }                             // screens minimum square or wider 
+    @media screen and (max-aspect-ratio:1/1) { }                             // screens at least square or narrower 
+        </pre>
+<!-------------------------------------------------------------------------------------------------------------------------------------->
+<hr>     
+    <p><i class="fa fa-asterisk"></i> <mark>resolution</mark> / <mark>min-resolution</mark> / <mark>max-resolution</mark> - the resolution of the output device using <mark>dpi</mark> or <mark>dpcm</mark></p>
+    <pre>
+    @media (min-dpi:300dpi) { }                                             // device at least 300dpi
+    </pre>
+<details class="example">
+    <summary> Example : </summary>
+<h4><u> try to print this page </u></h4>
+    <p> - Display the printing screen for this page, fonts will be green italic and bold, the media type changes the printing style</p>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+-- HTML --
+    (stylesheet exclusive for pirnting)
+    &lt;link rel="stylesheet" media="only print" href="styles-media.css"&gt;
+                
+-- CSS --
+    *{
+        font-style: italic;
+        font-weight: bold;
+        color: green;
+    }
+    </pre>
+    </details>
+<h4><u> simple example </u></h4>
+    <div class="media-one"> (width=1000px) Background Color is green between 500px and 800px </div>
+    <div class="media-two"> (width=1000px) Background Color is green below 500px and above 800px </div>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+-- HTML --
+    &lt;div class="media-one"&gt; (width=1000px) Background Color is green between 500px and 800px &lt;/div&gt;
+    &lt;div class="media-two"&gt; (width=1000px) Background Color is green below 500px and above 800px &lt;/div&gt;
+                
+-- CSS --
+    [class|=media]{
+        background-color: orange;
+        max-width: 1000px;
+        height: 50px;
+        margin: auto;
+        text-align: center;
+        border: 3px black solid;
+    }
+    @media screen and (max-width:800px) and (min-width:500px){
+        .media-one{
+            background-color: green; 
+        }
+    }
+    @media screen and (max-width:500px), screen and (min-width:800px){
+        .media-two{
+            background-color: green;
+        }
+    }
+    </pre>
+    </details>
+</details>
+    
+    <br><br>
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> CSS Transition </title>    
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="../../Assets/stylesPages.css"> 
+    <script src="../../Assets/scriptPages.js"></script>
+</head>
+<body>
+<h1>Transition (ver 3.1) </h1>
+	<p> Updated (2017-01-14 / 2018-01-07 / 2019-05-16)</p>
+    <p class="sitenav"> <a href="../../index.html">MySite></a>
+        <a href="../index.html" title="CSS">CSS></a> Transition  
+    </p>
+<table class="table">    
+    <tr>
+        <th> Property </th>
+        <th> Value </th>
+        <th style="width:60%"> Description </th>
+    </tr>
+    <tr>
+        <td> transition </td>
+        <td> <i>property duration timing-function delay, ...</i> </td>
+        <td> 
+            <i class="fab fa-css3-alt"></i> shorthand property  
+            <span id="browserSupport" title="updated : 2019-05-16">
+                <span><i class="fab fa-chrome"></i> 26/4 -webkit- </span>
+                <span><i class="fab fa-firefox"></i> 16/4 -webkit- </span>
+                <span><i class="fab fa-opera"></i> 12.1/10.5 -o- </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> 6.1/3.1 </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> transition-delay </td>
+        <td>
+            <strong>nr</strong>s|ms <span style="color:blue;">(default <mark>0</mark>)</span>
+        </td>
+        <td> 
+            <i class="fab fa-css3-alt"></i> specify the delay before the transition starts 
+            <span id="browserSupport" title="updated : 2019-05-16">
+                <span><i class="fab fa-chrome"></i> 26/4 -webkit- </span>
+                <span><i class="fab fa-firefox"></i> 16/4 -webkit- </span>
+                <span><i class="fab fa-opera"></i> 12.1/10.5 -o- </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> 6.1/3.1 </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> transition-duration </td>
+        <td> 
+            <strong>nr</strong>s|ms <span style="color:blue;">(default <mark>0</mark>)</span>
+        </td>
+        <td> 
+            <i class="fab fa-css3-alt"></i> specifies the transition duration 
+            <span id="browserSupport" title="updated : 2019-05-16">
+                <span><i class="fab fa-chrome"></i> 26/4 -webkit- </span>
+                <span><i class="fab fa-firefox"></i> 16/4 -webkit- </span>
+                <span><i class="fab fa-opera"></i> 12.1/10.5 -o- </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> 6.1/3.1 </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> transition-property </td>
+        <td> 
+            all  <span style="color:blue;">((default) all the properties)</span><br>
+            none<br>
+            <strong>cssProperty</strong><i>, cssProperty ...</i>
+        </td>
+        <td> 
+            <i class="fab fa-css3-alt"></i> defines the property name(s) the transition effect is(are) for
+            <span id="browserSupport" title="updated : 2019-05-16">
+                <span><i class="fab fa-chrome"></i> 26/4 -webkit- </span>
+                <span><i class="fab fa-firefox"></i> 16/4 -webkit- </span>
+                <span><i class="fab fa-opera"></i> 12.1/10.5 -o- </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> 6.1/3.1 </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> transition-timing-function </td>
+        <td>  
+            ease <span style="color:blue;">(default)</span><br>
+            linear<br>
+            ease-in<br>
+            ease-out<br>
+            ease-in-out<br>
+            step-start <span style="color:blue;">(same as <mark>step(1, start)</mark>)</span><br>
+            step-end <span style="color:blue;">(same as <mark>step(1, end)</mark>)</span><br>
+            steps(<strong>nr</strong>, <i>start|end</i>) <span style="color:blue;">(breaks the fluid animation into steps (2nd parameter default <mark>end</mark> = animation starts from step 0 | <mark>start</mark> animation starts from step 1))</span><br>
+            cubic-bezier(<strong>nr</strong>, <strong>nr</strong>, <strong>nr</strong>,<strong>nr</strong>) <span style="color:blue;">(sets a custom animation speed curve <a href="http://cubic-bezier.com/#1,.19,0,.81" target="_blank">cubic-bezier generator [link]</a>)</span>
+        </td>
+        <td> 
+            <i class="fab fa-css3-alt"></i> specifies the speed curve of the transition effect 
+            <span id="browserSupport" title="updated : 2019-05-16">
+                <span><i class="fab fa-chrome"></i> 26/4 -webkit- </span>
+                <span><i class="fab fa-firefox"></i> 16/4 -webkit- </span>
+                <span><i class="fab fa-opera"></i> 12.1/10.5 -o- </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> 6.1/3.1 </span>
+            </span>        
+        </td>
+    </tr>
+</table>
+<h2 style="color:green;"><u> Notes : </u></h2>
+    <details class="example" id="notes">
+    <summary> Notes :</summary>
+<h2 style="color:darkblue;"><u> Chrome and Opera transition problem </u></h2>
+    <p> - I had this weird problem in Chrome and Opara about one year ago [time now: 2019-05-17], they fired the transtion automatically uppon the page loading, apparently it is fixed now (TESTED below) </p>
+    <p> - that was the fix for that problem </p>
+<pre>
+// HTML ------------------------------------------
+    &lt;body class="preload"&gt;                            // add a class to your body element "preload"
+    
+    &lt;script&gt;                                          // script must run after the below CSS code 
+        $(window).load(function() {
+          $("body").removeClass("preload");
+        });     
+    &lt;/script&gt;
+    
+// CSS -------------------------------------------         
+    .preload * {
+        transition: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        -o-transition: none;
+    }
+</pre>
+    <p class="preloadFix"> DEMO DEMO </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+-- CODE (HTML) --
+    &lt;p class="preloadFix"&gt; DEMO DEMO &lt;/p&gt;
+    
+-- CODE (CSS) --
+    .preloadFix {
+        transition: color 3s;
+        color: red;
+        background-color: yellow;
+    }
+        </pre>
+        </details>
+<!---------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> <mark>timing-function</mark> other step parameters </u></h2>
+    <p> - for the <mark>animation-timing-function</mark> and <mark>transition-timing-function</mark> step function we have some other paramters (<mark>jump-start</mark> / <mark>jump-end</mark> / <mark>jump-both</mark> / <mark>jump-none</mark>) but they are supported only in Firefox 65 [2019-05-17] </p>
+    </details>
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+    <p><a href="http://www.w3schools.com/css/css3_transitions.asp" target="_blank"> W3Schools Transition </a></p>
+    <p><a class="important-link" href="http://cubic-bezier.com/#1,.19,0,.81" target="_blank"> cubic-bezier.com (awesome cubic-bezier generator)</a></p>
+<h2 style="color:green;"><u> Remember This : </u></h2>
+    <p> - </p>
+<h2 style="color:green;"><u> Some Description : </u></h2>
+    <p> - web browsers perform  animations by changing CSS property values, the change between the two values is handeled (animated) by the browser, this is the <u>transformation phase</u> </p>
+    <p> - CSS allows us to control this transformation phase </p>
+<h2 style="color:darkblue;"><u> The <mark>transition</mark> / <mark>transition-property</mark> / <mark>transition-duration</mark> / <mark>transition-delay</mark> properties </u></h2>
+    <pre class="syntax">
+SYNTAX :    transition-property: all       <span style="color:skyblue;">// (default) all the properties</span>  // <i class="fab fa-css3-alt"></i> defines the property name(s) the transition effect is(are) for 
+                               : none
+                               : <strong>cssProperty</strong><i>, cssProperty ...</i>
+                               
+            transition-duration: <strong>nr</strong>s|ms    <span style="color:skyblue;">// (default <mark>0</mark>) </span>                  // <i class="fab fa-css3-alt"></i> specifies the transition duration 
+            
+            transition-delay: <strong>nr</strong>s|ms       <span style="color:skyblue;">// (default <mark>0</mark>) </span>                  // <i class="fab fa-css3-alt"></i> specify the delay before the transition starts  
+            
+            transition: <i>property duration timing-function delay, ...</i>        // <i class="fab fa-css3-alt"></i> shorthand property 
+    </pre>
+    <pre>
+// HTML ------------------------------------------
+    &lt;div class="demo"&gt;&lt;/div&gt;
+    
+// CSS -------------------------------------------
+    .demo {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        transition-property: background-color, width;                       // multiple transition properties are set 
+        transition-duration: 2s, 4s;
+        transition-delay: 250ms, 1000ms;
+    // shorthand property  ---------------
+        transition: background-color 2s 250ms, width 4s 1000ms;             // does the same as the 3 properties above 
+    }
+    .demo:hover {                                                           // we set the desired end states here 
+        background-color: red;
+        width: 400px;
+    }
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> TEST-1 </u></h4>
+    <div class="transition_1">
+        <p> The width of this box will change when hover for 2 seconds</p>
+    </div>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+-- CODE (HTML) --
+    &lt;div class="transition_1"&gt;
+        &lt;p&gt; The width of this box will change when hover for 2 seconds&lt;/p&gt;
+    &lt;/div&gt;
+    
+-- CODE (CSS) --
+    .transition_1{
+        width: 400px;
+        height: 50px;
+        background-color: indianred;
+        -webkit-transition: width 2s;
+        transition: width 2s;
+    }
+    .transition_1:hover{
+        width: 800px;
+    }
+        </pre>
+        </details>
+<!----------------------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> multiple properties TEST </u></h4>
+    <div class="transition_2">
+        <p> The width and the height of this box will change when hover for 2 and 4 seconds</p>
+    </div>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+-- CODE (HTML) --
+    &lt;div class="transition_2"&gt;
+        &lt;p&gt; The width and the height of this box will change when hover for 2 and 4 seconds&lt;p&gt;
+    &lt;/div&gt;
+    
+-- CODE (CSS) --
+    .transition_2{
+        width: 400px;
+        height: 50px;
+        background-color: indianred;
+        -webkit-transition: width 2s, height 4s;
+        transition: width 2s, height 4s;
+    }
+    .transition_2:hover{
+        width: 800px;
+        height: 150px;
+    }
+        </pre>
+        </details>
+<!----------------------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> <mark>transition-delay</mark> TEST </u></h4>
+    <div class="box-delay">
+        <p> This box's transition effect is delayed 1.5 seconds</p>
+    </div>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+-- CODE (HTML) --
+    &lt;div class="box-delay"&gt;
+        &lt;p&gt; This box's transition effect is delayed 1.5 seconds&lt;/p&gt;
+    &lt;/div&gt;
+    
+-- CODE (CSS) --
+    .box-delay{
+        background-color: forestgreen;
+        height: 70px;
+        width: 35%;
+        transform: rotate(0deg) scale(1.0) translate(0,0);
+        transition: transform 2s;
+        transition-delay: 1.5s;
+    }
+    .box-delay:hover{
+        transform: rotate(360deg) scale(2.7) translate(150px,0);
+    }
+        </pre>
+        </details>
+        
+
+
+    
+
+
+
+
+</details>
+<!----------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> The <mark>transition-timing-function</mark>  property </u></h2>
+    <pre class="syntax">
+SYNTAX :    transition-timing-function: ease <span style="color:skyblue;">// (default)</span>                   // <i class="fab fa-css3-alt"></i> specifies the speed curve of the transition effect 
+                                      : linear
+                                      : ease-in
+                                      : ease-out
+                                      : ease-in-out
+                                      : step-start                    <span style="color:skyblue;">// same as <mark>step(1, start)</mark></span>
+                                      : step-end                      <span style="color:skyblue;">// same as <mark>step(1, end)</mark></span>
+                                      : steps(<strong>nr</strong>, <i>start|end</i>)          <span style="color:skyblue;">// breaks the fluid animation into steps (2nd parameter default <mark>end</mark> = animation starts from step 0 | <mark>start</mark> animation starts from step 1)</span>   
+                                      : cubic-bezier(<strong>nr</strong>, <strong>nr</strong>, <strong>nr</strong>,<strong>nr</strong>)   <span style="color:skyblue;">// sets a custom animation speed curve <a href="http://cubic-bezier.com/#1,.19,0,.81" target="_blank">cubic-bezier generator [link]</a> </span>
+    </pre>
+    <pre>
+// HTML ------------------------------------------
+    &lt;div class="demo"&gt;&lt;/div&gt;
+    
+// CSS -------------------------------------------
+    .demo {
+        width: 100px;
+        height: 50px;
+        border: solid black 1px;
+        transition: width 3s;
+        transition-timing-function: linear;                                 // continuous transition animation 
+    // steps -----------------------------
+        transition-timing-function: steps(15);                              // transition animation starts form step 0 (same as "step(15, end)")   
+        transition-timing-function: steps(15, start);                       // transition animation starts from step 1 
+    }
+    .demo:hover { width: 500px; } 
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> <mark>transition-timing-function</mark> TEST-1 </u></h4>
+    <div class="timing-function_1">
+        <p> Timing function = ease (start slow end slow) (default)</p>
+    </div>
+    <div class="timing-function_2">
+        <p> Timing function = linear (same animation speed)</p>
+    </div>
+    <div class="timing-function_3">
+        <p> Timing function = ease-in (start slow)</p>
+    </div>
+    <div class="timing-function_4">
+        <p> Timing function = ease-out (end slow)</p>
+    </div>
+    <div class="timing-function_5">
+        <p> Timing function = ease-in-out (start slow end slow)</p>
+        <p> (Starts and ends slower than default) </p>
+    </div>
+    <div class="timing-function_6">
+        <p> Timing function = personalized (cubic-bezier)</p>
+    </div>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+-- CODE (HTML) --
+    &lt;div class="timing-function_1"&gt;
+        &lt;p&gt; Timing function = ease (start slow end slow) (default)&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="timing-function_2"&gt;
+        &lt;p&gt; Timing function = linear (same animation speed)&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="timing-function_3"&gt;
+        &lt;p&gt; Timing function = ease-in (start slow)&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="timing-function_4"&gt;
+        &lt;p&gt; Timing function = ease-out (end slow)&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="timing-function_5"&gt;
+        &lt;p&gt; Timing function = ease-in-out (start slow end slow)&lt;/p&gt;
+        &lt;p&gt; (Starts and ends slower than default) &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="timing-function_6"&gt;
+        &lt;p> Timing function = personalized (cubic-bezier)&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="timing-function_7"&gt;
+        &lt;p&gt; Timing function = steps (5steps)&lt;/p&gt;
+    &lt;/div&gt;
+    
+-- CODE (CSS) ---
+    .timing-function_1{
+        background-color: orange;
+        height: 70px;
+        width: 35%;
+        transition: width 2s;
+        transition-timing-function: ease;
+    }
+    .timing-function_1:hover{
+        width: 100%;
+    }
+    .timing-function_2{
+        background-color: orange;
+        height: 70px;
+        width: 35%;
+        transition: width 2s;
+        transition-timing-function: linear;
+    }
+    .timing-function_2:hover{
+        width: 100%;
+    }
+    .timing-function_3{
+        background-color: orange;
+        height: 70px;
+        width: 35%;
+        transition: width 2s;
+        transition-timing-function: ease-in;
+    }
+    .timing-function_3:hover{
+        width: 100%;
+    }
+    .timing-function_4{
+        background-color: orange;
+        height: 70px;
+        width: 35%;
+        transition: width 2s;
+        transition-timing-function: ease-out;
+    }
+    .timing-function_4:hover{
+        width: 100%;
+    }
+    .timing-function_5{
+        background-color: orange;
+        height: 70px;
+        width: 35%;
+        transition: width 2s;
+        transition-timing-function: ease-in-out;
+    }
+    .timing-function_5:hover{
+        width: 100%;
+    }
+    .timing-function_6{
+        background-color: orange;
+        height: 70px;
+        width: 35%;
+        transition: width 2s;
+        transition-timing-function: cubic-bezier(1,.19,.6,.29);
+    }
+    .timing-function_6:hover{
+        width: 100%;
+    }
+    </pre>
+        </details>
+<!----------------------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> timing-function step TEST </u></h4>
+    <p> - this property is the same for both <mark>transition-timing-function</mark> and <mark>animation-timing-function</mark> </p>
+    <p> - <mark>end</mark> starts the animation from step 0 but misses the last step before the animation restarts (this is the default) </p>
+    <p> - <mark>start</mark> starts the animation from step 1 and ends the animation at the last step before it restarts </p>
+    <button onclick="startAnim()">start animation</button>
+    <div class="stepParent">
+        <div class="stepTest st1">timing-function: step(5)</div>
+        <div class="stepTest st2">timing-function: step(5, end)</div>
+        <div class="stepTest st3">timing-function: step(5, start)</div>
+    </div>
+<script>
+    var startAnim = function() {
+        document.getElementsByClassName('st1')[0].style.animationName = "st1";
+        document.getElementsByClassName('st2')[0].style.animationName = "st2";
+        document.getElementsByClassName('st3')[0].style.animationName = "st3";
+    }
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+-- CODE (HTML) --
+    &lt;button onclick="startAnim()"&gt;start animation&lt;/button&gt;
+    &lt;div class="stepParent"&gt;
+        &lt;div class="stepTest st1"&gt;timing-function: step(5)&lt;/div&gt;
+        &lt;div class="stepTest st2"&gt;timing-function: step(5, end)&lt;/div&gt;
+        &lt;div class="stepTest st3"&gt;timing-function: step(5, start)&lt;/div&gt;
+    &lt;/div&gt;
+    
+-- CODE (CSS) --
+    .stepParent {
+        border: solid 2px black;
+        width: 1000px;
+        margin: auto;
+    }
+    .stepTest {
+        height: 30px;
+        width: 250px;
+        background-color: orange;
+        border: solid 1px black;
+        margin: 2px 0;
+    }
+    .st1 { 
+        animation: 5s 2 forwards;
+        animation-timing-function: steps(5); 
+    }
+    .st2 { 
+        animation: 5s 2 forwards;
+        animation-timing-function: steps(5, end); 
+    }
+    .st3 { 
+        animation: 5s 2 forwards;
+        animation-timing-function: steps(5, start); 
+    }
+    @keyframes st1 {
+        from {width: 250px;}
+        to {width: 998px;}
+    }
+    @keyframes st2 {
+        from {width: 250px;}
+        to {width: 998px;}
+    }
+    @keyframes st3 {
+        from {width: 250px;}
+        to {width: 998px;}
+    }
+        </pre>
+        </details>
+</details>
+    
+    <br><br>
+</body>
+</html>

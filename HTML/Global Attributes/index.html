@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Global Attributes </title> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="../../Assets/stylesPages.css"> 
+    <script src="../../Assets/scriptPages.js"></script>
+</head>
+<body>
+<h1> Global Attributes (ver 3.1) </h1>
+	<p> Updated ( 2019-02-26 )</p>
+    <p class="sitenav"> <a href="../../index.html">MySite></a>
+        <a href="../index.html">HTML></a> Global Attributes 
+    </p>
+<table class="table">
+    <tr>
+        <th> Attribute </th>
+        <th style="width:15%;"> Value </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td> accesskey </td>
+        <td> <strong>character</strong> </td>
+        <td> 
+            specifies a shortcut key to focus/activate the element (key combination depends on browser) 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> class </td>
+        <td> <strong>idName</strong> <i>idName ...</i> </td>
+        <td> 
+            specifies <u>one or more</u> identifier(s) for the element<br> 
+            - identifier must start with a letter it can contain <mark>a-zA-Z</mark>(letters) <mark>0-9</mark>(digits) <mark>_</mark>(undersocre) <mark>-</mark>(hyphen)) <u>(in HTML5 identifiers can use ANY characters except white space and cannot start with a digit)</u> 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> contenteditable </td>
+        <td>  
+            true<br>
+            false<br>
+            <span style="color:blue;">(boolean) (same as "true")</span>
+        </td>
+        <td> 
+            <i class="fab fa-html5"></i> specifies whether the content of the element is editable or not (if no attribute is specified this value is inherited from the parent element) 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 4 </span>
+                <span><i class="fab fa-firefox"></i> 3.5 </span>
+                <span><i class="fab fa-opera"></i> 10.1  </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 6 </span>
+                <span><i class="fab fa-safari"></i> 3.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> data-<strong>property</strong> </td>
+        <td> <strong>value</strong> </td>
+        <td> 
+            <span class="fab fa-html5"></span> set a new property/value in the <mark>dataset</mark> object of the element 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 4 </span>
+                <span><i class="fab fa-firefox"></i> 2 </span>
+                <span><i class="fab fa-opera"></i> 9.6 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> 3.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> 
+            <strong>element</strong>.dataset<br>
+            <strong>element</strong>.dataset.<i>property</i>
+        </td>
+        <td>  </td>
+        <td> 
+            <span class="fab fa-html5"></span> returns the <mark>DOMStringMap</mark> object of the element which holds the properties (and their values) set by the <mark>data</mark> global attribute (we can get or set these properties form here)  
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 8 </span>
+                <span><i class="fab fa-firefox"></i> 6 </span>
+                <span><i class="fab fa-opera"></i> 11 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 11 </span>
+                <span><i class="fab fa-safari"></i> 10 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> dir </td>
+        <td>  
+            ltr <span style="color:blue;">(default)</span><br>
+            rtl<br>
+            auto <span style="color:blue;">(browsers defines the direction)</span>
+        </td>
+        <td> 
+            specifies the direction of the element's content  
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> draggable </td>
+        <td>  
+            true<br>
+            false<br>
+            auto <span style="color:blue;">(default behaviour of the browser)</span>
+        </td>
+        <td> 
+            <i class="fab fa-html5"></i> sets the element draggable or not (images and links are draggable by default) 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 4 </span>
+                <span><i class="fab fa-firefox"></i> 3.5 </span>
+                <span><i class="fab fa-opera"></i> 12 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> 6 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> dropzone </td>
+        <td>  
+            move<br>
+            copy<br>
+            link
+        </td>
+        <td>  
+            <i class="fab fa-html5"></i> specifies whether the dragged data is copied, moved or linked <u>(no support [2019-04-05])</u>
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> NO </span>
+                <span><i class="fab fa-firefox"></i> NO </span>
+                <span><i class="fab fa-opera"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                <span><i class="fab fa-safari"></i> NO </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> hidden </td>
+        <td> <span style="color:blue;">(boolean)</span> </td>
+        <td> 
+            <i class="fab fa-html5"></i> hides the element (does not remove it from the DOM) 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 6 </span>
+                <span><i class="fab fa-firefox"></i> 4 </span>
+                <span><i class="fab fa-opera"></i> 11.1 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 11 </span>
+                <span><i class="fab fa-safari"></i> 5.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> id </td>
+        <td> <strong>idName</strong> </td>
+        <td> 
+            specifies a <u>unique identifier</u> for the element <br>
+            - identifier must start with a letter it can contain <mark>a-zA-Z</mark>(letters) <mark>0-9</mark>(digits) <mark>_</mark>(undersocre) <mark>-</mark>(hyphen)) <u>(in HTML5 identifiers can use ANY characters except white space and cannot start with a digit)</u> 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>   
+    <tr>
+        <td> inputmode </td>
+        <td>  
+            none <span style='color:blue;'>(no virtual keyboard)</span><br>
+            text <span style='color:blue;'>(standard text keyboard)</span><br>
+            decimal <span style='color:blue;'>(fractional numeric keyboard)</span><br>
+            numeric <span style='color:blue;'>(numeric keyboard)</span><br>
+            tel <span style='color:blue;'>(telephone keypad)</span><br>
+            search <span style='color:blue;'>(search input keyboard)</span><br>
+            email <span style='color:blue;'>(email input keyboard)</span><br>
+            url <span style='color:blue;'>(url input keyboard)</span>
+        </td>
+        <td> <i class="fab fa-html5"></i> specifies a hint for the entered data type (for virtual keyboards) </td>
+    </tr>
+    <tr>
+        <td> lang </td>
+        <td> <strong>langCode</strong> </td>
+        <td> 
+            specify the language of the element's content <a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_blank">W3C language codes [link]</a> 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> spellcheck </td>
+        <td>  
+            true<br>
+            false
+        </td>
+        <td>  
+            <i class="fab fa-html5"></i> specifies if the element should be checked for spell errors (text value in the &lt;input&gt; elements (except passwords) / &lt;textarea&gt; element / text in editable elements)
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 9 </span>
+                <span><i class="fab fa-firefox"></i> 2 </span>
+                <span><i class="fab fa-opera"></i> 10.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> 5.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> style </td>
+        <td> <strong>cssStyle</strong> </td>
+        <td> 
+            specifies an inline style for the element 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> tabindex </td>
+        <td> <strong>nr</strong> </td>
+        <td> 
+            defines the tabbing order of the element (not focusable elements become focusable in HTML5) (<strong>posNr</strong> = tabbing order withing a <mark>tabindex</mark> element group | <mark>0</mark> = document flow tabbing order | <strong>negNr</strong> = NO tabbing order (element becomes focusable only!)) 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>    
+    <tr>
+        <td> title </td>
+        <td> <strong>text</strong> </td>
+        <td> 
+            specify extra informations about the element (shown as toolpit) 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> translate </td>
+        <td>  
+            yes<br>
+            no
+        </td>
+        <td>  
+            <i class="fab fa-html5"></i> specifies it the content of the element should be translated or not <u>(no support [2019-04-05])</u>
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> NO </span>
+                <span><i class="fab fa-firefox"></i> NO </span>
+                <span><i class="fab fa-opera"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                <span><i class="fab fa-safari"></i> NO </span>
+            </span>
+        </td>
+    </tr>
+</table> 
+<h2 style="color:green;"><u> Notes : </u></h2>
+    <details class="example" id="notes">
+    <summary> Notes :</summary>
+    </details>
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+    <p><a href="https://www.w3schools.com/tags/ref_standardattributes.asp" target="_blank"> W3Schools - HTML Global Attributes</a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes" target="_blank"> MDN - HTML Global Attributes </a></p>
+<h2 style="color:green;"><u> Remember This : </u></h2>
+    <p> - </p>
+<h2 style="color:green;"><u> Description and Demonstration : </u></h2>
+    <p> - global attributes are usable on <u>any</u> HTML elements, although some of them might have no effect in specific situations </p>
+    <p> - In addition to the basic HTML global attributes the following also exist </p>
+    <ul type="circle">  
+        <li> <mark>xml:lang</mark> / <mark>xml:base</mark> inherited from the XHTML specification </li>
+        <li> <mark>aira-*</mark> multiple attribute for assistive technology </li>
+        <li> <mark>onabort</mark> / <mark>onclick</mark> / ect.. event handler attributes </li> 
+    </ul>
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr>
+<h2 style="color:darkblue;"><u> <mark>class</mark> / <mark>id</mark> / <mark>tilte</mark> / <mark>lang</mark> / <mark>style</mark> attributes </u></h2>
+    <p> - in HTML5 we can use any characters as Identifiers but it complicates thigs </p>
+    <pre class="syntax">
+SYNTAX :    class="<strong>idName</strong> <i>idName ...</i>"                    // specifies <u>one or more</u> identifier(s) for the element    
+            id="<strong>idName</strong>"                                  // specifies a <u>unique identifier</u> for the element     
+            title="<strong>text</strong>"                                 // specify extra informations about the element (shown as toolpit)
+            lang="<strong>langCode</strong>"                              // specify the language of the element's content <a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_blank">W3C language codes [link]</a>
+            style="<strong>cssStyle</strong>"                             // specifies an inline style for the element 
+            
+                - <strong>idName</strong> : identifier must start with a letter it can contain <mark>a-zA-Z</mark>(letters) <mark>0-9</mark>(digits) <mark>_</mark>(undersocre) <mark>-</mark>(hyphen)) <u>(in HTML5 identifiers can use ANY characters except white space and cannot start with a digit)</u>  
+    </pre>
+    <pre>
+// id / class ----------------------------------------------------
+-- HTML -- 
+    &lt;p id="@yd" class="myClass"&gt; test_paragraph_1 &lt;/p&gt;   // id must be unique 
+    &lt;p class="myClass"&gt; test_paragraph_2 &lt;/p&gt;            // same class identifiers identify multiple elements at once  
+    &lt;p class="myClass 2yourClass"&gt; test_paragraph_3 &lt;/p&gt; // element is identified by 2 different class ids 
+    
+-- CSS -- 
+    #\@yd { color: green; }                              // escape character    // -! this makes kind of pointless and complicated to use weird identifier names 
+    
+// title / lang -------------------------------------------------- 
+    &lt;p title="myTitle"&gt; this element has a title &lt;/p&gt;
+    &lt;p lang="hu"&gt; ez magyar nyelven van irval &lt;/p&gt;
+    
+// style --------------------------------------------------------- 
+    &lt;p style="color:green;"&gt; inline styled element &lt;/p&gt;
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> using weird identifiers TEST </u></h4>
+    <p id="#.#.#"> weird identifier tester </p>
+    <p class="`@%"> weird identifier tester </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+-- CODE (HTML) -- 
+    &lt;p id="#.#.#"&gt; weird identifier tester &lt;/p&gt;
+    &lt;p class="`@%"&gt; weird identifier tester &lt;/p&gt;
+    
+-- CODE (CSS) -- 
+#\#\.\#\.\# {               // using escape character to insert these wierd characters
+    color: green;
+}
+.\`\@\% {
+    color: green;
+}
+        </pre>
+        </details>
+</details>
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr>
+<h2 style="color:darkblue;"><u> <span class="fab fa-html5"></span> <mark>data-</mark> attribute </u></h2>
+    <p> - the "data" attribute stores <u>custom data <u style="background-color:yellow;">(string only)</u></u> which can be handeled through JS </p>
+    <p> - these informations are stored in the <mark>dataset</mark> property (object) (called <mark>DOMStringMap</mark>) of the element </p>
+    <p> - the property should contain only lowercase letters and <u>dashes are converted to (<span style="background-color:yellow;">camel-case</span> JS=> <span style="background-color:yellow;">camelCase</span></u>) in JS</p>
+    <pre class="syntax">
+SYNTAX :    data-<strong>property</strong>="<strong>value</strong>" 
+
+    // API --------------------------- 
+            <strong>element</strong>.dataset                              // returns the <mark>DOMStringMap</mark> object of the element which holds the properties (and their values) set by the <mark>data</mark> global attribute   
+            <strong>element</strong>.dataset.<strong>property</strong>                     // gets or sets the targeted property of the <mark>DOMStringMap</mark> object
+    </pre>
+    <pre>
+    &lt;p id="demo" data-demo-prop1="myValue" data-demo-prop2="2"&gt; myParagraph &lt;/p&gt;
+&lt;script&gt;
+    var element = document.getElementById("demo");
+    element.dataset;                                     // -> {demoProp1:"myValue", demoProp2:"2"}
+    typeof element.dataset.demoProp2;                    // -> string (stores only string)
+// add new data property -------
+    element.dataset.demoProp3 = true;
+    element.dataset;                                     // -> {demoProp1:"myValue", demoProp2:"2", demoProp3:"true"}
+&lt;/script&gt;
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+    <p id="storeData" data-information-alpha="value_A" customAttr="myValue"> myParagraph </p>
+    <p> </p>
+<script>
+    var element = document.getElementById("storeData");                         
+// set information 
+    element.setAttribute("data-information-bravo", "value_B");          // a second "data-" attribute set as an attribute 
+    element.dataset.informationCharlie = "value_C";                     // a third "data-" attribute set with value 
+// get information 
+    var data_1 = element.dataset.informationAlpha;                      // get information by using the "dataset" object
+    var data_2 = element.getAttribute("data-information-charlie");      // get information as an attribute 
+// print 
+    document.querySelector("#storeData + p").innerHTML = "Data-1 = " + data_1 + " / Data-2 = " + data_2;
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="storeData" data-information-alpha="value_A" customAttr="myValue"&gt; myParagraph &lt;/p&gt;
+    &lt;p&gt; &lt;/p&gt;
+&lt;script&gt;
+    var element = document.getElementById("storeData");                         
+// set information 
+    element.setAttribute("data-information-bravo", "value_B");          // a second "data-" attribute set as an attribute 
+    element.dataset.informationCharlie = "value_C";                     // a third "data-" attribute set with value 
+// get information 
+    var data_1 = element.dataset.informationAlpha;                      // get information by using the "dataset" object
+    var data_2 = element.getAttribute("data-information-charlie");      // get information as an attribute 
+// print 
+    document.querySelector("#storeData + p").innerHTML = "Data-1 = " + data_1 + " / Data-2 = " + data_2;
+&lt;/script&gt;
+        </pre>
+        </details>
+</details>    
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr>
+<h2 style="color:darkblue;"><u> <mark>tabindex</mark> attribute </u></h2>
+    <pre class="syntax">
+SYNTAX :    tabindex="<strong>nr</strong>"                                // defines the tabbing order of the element (not focusable elements become focusable in HTML5) 
+                - <strong>nr</strong> : <strong>positiveValue</strong> - defines the tabbing order within a group having the <mark>tabindex</mark> attribute 
+                       <mark>0</mark>             - browser defines the tabbing order 
+                       <strong>negativeValue</strong> - element becomes focusable <u>(not reachable by navigating with the "tab" button)</u>
+    </pre>
+    <pre>
+    &lt;p tabindex="2"&gt; element &lt;/p&gt;                        -|
+    &lt;p tabindex="3"&gt; element &lt;/p&gt;                         | // this is a tabbing group element, (when the "Tab" button is hit these elements are the first to get focus on this page in the defined tabbing order!)    
+    &lt;p tabindex="1"&gt; element &lt;/p&gt;                        -|
+    
+    &lt;p tabindex="0"&gt; element &lt;/p&gt;                        // element becomes focusable and the browser defines its tabbing order (document flow)
+    &lt;p tabindex="-1"&gt; element &lt;/p&gt;                       // element becomes focusable only! <u>(not reachable by hitting the "Tab" or "Shift + Tab" buttons)</u>  
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4><u> <mark>tabindex</mark> TEST </u></h4>    
+    <p style="color:yellow;"> - in HTML5 the <mark>tabindex</mark> attribute works in all elements! By default the <mark>&lt;p&gt;</mark> element is not tabbable! but by specifying the <mark>tabindex</mark> attribute they become tabbable <b><u>(SHIFT + TAB) to backtab</u></b>   </p>
+    <p tabindex="3"> tabindex order 3 </p>
+    <p tabindex="6"> tabindex order 6 </p>
+    <p tabindex="1"> tabindex order 1 </p>
+    <p tabindex="5"> tabindex order 5 </p>
+    <p tabindex="7"> tabindex order 7 </p>
+    <p tabindex="2"> tabindex order 2 </p>
+    <p tabindex="4"> tabindex order 4 </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+-- CODE (HTML) -- 
+    &lt;p tabindex="3"&gt; tabindex order 3 &lt;/p&gt;
+    &lt;p tabindex="6"&gt; tabindex order 6 &lt;/p&gt;
+    &lt;p tabindex="1"&gt; tabindex order 1 &lt;/p&gt;
+    &lt;p tabindex="5"&gt; tabindex order 5 &lt;/p&gt;
+    &lt;p tabindex="7"&gt; tabindex order 7 &lt;/p&gt;
+    &lt;p tabindex="2"&gt; tabindex order 2 &lt;/p&gt;
+    &lt;p tabindex="4"&gt; tabindex order 4 &lt;/p&gt;
+    
+-- CODE (CSS) -- 
+    [tabindex]:focus {
+        outline: 3px solid red;
+    }
+        </pre>
+        </details>
+</details>
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr>
+<h2 style="color:darkblue;"><u> <mark>dir</mark> / <mark>hidden</mark> attributes </u></h2>
+    <pre class="syntax">
+SYNTAX :    dir="ltr" <span style="color:skyblue;">(default)</span>                          // specifies the direction of the element's content 
+                "rtl"
+                "auto" <span style="color:skyblue;">(browsers defines the direction)</span>
+            hidden <span style="color:skyblue;">(boolean)</span>                             // <i class="fab fa-html5"></i> hides the element (does not remove it from the DOM)
+    </pre>
+    <pre>
+    <p dir="rtl"> Writing direction changed to right-to-left </p>
+    &lt;p hidden&gt; this element is hidden &lt;/p&gt;
+    </pre>
+<details class='example'>
+<summary> Example : </summary>
+<h4><u> <mark>dir</mark> attribute test </u></h4>
+    <p dir="rtl"> Text Direction Right-to-left </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p dir="rtl"&gt; Text Direction Right-to-left &lt;/p&gt;   
+        </pre>
+        </details>
+<!------------------------------------------------------------------------------------------------>
+<h4><u> <mark>hidden</mark> attribute TEST </u></h4>
+    <p hidden> this element is hidden </p>
+<script>
+    var hiddenElement = document.querySelector("[hidden]");
+    if (hiddenElement) document.write("hidden element is still part of the DOM!");
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p hidden&gt; this element is hidden &lt;/p&gt;
+&lt;script&gt;
+    var hiddenElement = document.querySelector("[hidden]");
+    if (hiddenElement) document.write("hidden element is still part of the DOM!");
+&lt;/script&gt;        
+        </pre>
+        </details>
+</details>
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr>
+<h2 style="color:darkblue;"><u> <mark>accesskey</mark> / <mark>contenteditable</mark> attributes </u></h2>
+    <pre class="syntax">
+SYNTAX :    accesskey="<strong>character</strong>"                        // specifies a shortcut key to focus/activate the element (key combination depends on browser)  
+            contenteditable="false"                      // <i class="fab fa-html5"></i> specifies whether the content of the element is editable or not (if no attribute is specified this value is inherited from the parent element)   
+                            "true"
+                            <span style="color:skyblue;">(boolean) (same as "true")</span>
+    </pre>
+    <pre>
+// accesskey -------------------------------------------------------- 
+    <a href="d" accesskey="l"> demo lingk </a>           // when user the hits the shortcut key combination this link is activated (clicked) (Chrome: Alt + l)
+    <input type="tel" accesskey="t">                     // when user the hits the shortcut key combination this element is focused (Chrome: Alt + t)
+        
+// contenteditable -------------------------------------------------- 
+    &lt;p&gt; uneditable content &lt;/p&gt;                          // -! value inherited from the parent element automatically 
+    &lt;p contenteditable&gt; editable content &lt;/p&gt;            
+    &lt;p contenteditable="true"&gt; editable content &lt;/p&gt;
+    &lt;p contenteditable="false"&gt; uneditable content &lt;/p&gt; 
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> <mark>accesskey</mark> attribute TEST </u></h4>
+    <p> - accesskey combination vary among browsers (Chrome Alt + <i>accesskey</i>) (Mozilla Shift + Alt + <i>accesskey</i>) </p>
+    <input type="text" accesskey="a" placeholder="accesskey = a"> 
+    <input type="text" accesskey="b" placeholder="accesskey = b">
+    <input type="text" accesskey="c" placeholder="accesskey = c">
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+-- CODE (HTML) -- 
+    &lt;input type="text" accesskey="a" placeholder="accesskey = a"&gt; 
+    &lt;input type="text" accesskey="b" placeholder="accesskey = b"&gt;
+    &lt;input type="text" accesskey="c" placeholder="accesskey = c"&gt;
+    
+-- CODE (CSS) -- 
+    input[accesskey]:focus {
+        background-color:greenyellow;
+    }
+        </pre>
+        </details>
+<!------------------------------------------------------------------------------------------------------------------------>
+<h4 style="color:darkblue;"><u> <mark>contenteditable</mark> attribute TEST </u></h4>
+    <p contenteditable> this paragraph is editable </p>
+    <p contenteditable="true"> this paragraph is editable </p>
+    <p contenteditable="false"> this paragraph is NOT editable </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p contenteditable&gt; this paragraph is editable &lt;/p&gt;
+    &lt;p contenteditable="true"&gt; this paragraph is editable &lt;/p&gt;
+    &lt;p contenteditable="false"&gt; this paragraph is NOT editable &lt;/p&gt;
+        </pre>
+        </details>
+</details>
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr>
+<h2 style="color:darkblue;"><u> <mark>draggable</mark> / <mark>dropzone</mark> attributes </u></h2>
+    <pre class="syntax">
+SYNTAX :    draggable="true"                             // <i class="fab fa-html5"></i> sets the element draggable or not (images and links are draggable by default)   
+                      "false"
+                      "auto" <span style="color:skyblue;">(default behaviour of the browser)</span>
+            dropzone="copy"                              // <i class="fab fa-html5"></i> specifies whether the dragged data is copied, moved or linked <u>(no support [2019-04-05])</u>   
+                     "move"
+                     "link"
+    </pre>
+    <pre>
+    &lt;img src="../../../../Pictures/Picasso.jpg" src="demo"&gt;
+    &lt;p draggable="true"&gt; this element is draggable in HTML5 &lt;/p&gt;
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> <mark>draggable</mark> attribute TEST </u></h4>
+<p> - picture is draggable by default (in HTML5) </p>
+    <img src="../../Assets/Pictures/Picasso.jpg" alt="picasso">
+    <p draggable="true"> I'm a draggable paragraph (grab me!) </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;img src="../../../../Pictures/Picasso.jpg" alt="picasso"&gt;
+    &lt;p draggable="true"&gt; I'm a draggable paragraph (grab me!) &lt;/p&gt;
+        </pre>
+        </details>
+</details>
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr>
+<h2 style="color:darkblue;"><u> <mark>spellcheck</mark> / <mark>translate</mark> attributes </u></h2>
+    <pre class="syntax">
+SYNTAX :    spellcheck="true"                            // <i class="fab fa-html5"></i> specifies if the element should be checked for spell errors (text value in the &lt;input&gt; elements (except passwords) / &lt;textarea&gt; element / text in editable elements)    
+                       "false"
+            translate="yes"                              // <i class="fab fa-html5"></i> specifies it the content of the element should be translated or not <u>(no support [2019-04-05])</u>
+                      "no"
+    </pre>
+    <pre>
+    &lt;p spellecheck="true"&gt; this ellement is subject of spellchecking &lt;/p&gt;
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> <mark>spellcheck</mark> / <mark>translate</mark> attribute test </u></h4>
+    <p spellcheck="true"> This element is subject of spellecheck </p>
+    <p translate="yes"> This element is subject of translation </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p spellcheck="true"&gt; This element is subject of spellecheck &lt;/p&gt;
+        </pre>
+        </details>
+</details>
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr>
+<h2 style="color:darkblue;"><u> <mark>inputmode</mark> attribute </u></h2>
+    <pre class="syntax">
+SYNTAX :    inputmode="none" <span style='color:skyblue;'>(no virtual keyboard)</span>       // <i class="fab fa-html5"></i> specifies a hint for the entered data type (for virtual keyboards)  
+                      "text" <span style='color:skyblue;'>(standard text keyboard)</span>
+                      "decimal" <span style='color:skyblue;'>(fractional numeric keyboard)</span>
+                      "numeric" <span style='color:skyblue;'>(numeric keyboard)</span>
+                      "tel" <span style='color:skyblue;'>(telephone keypad)</span>
+                      "search" <span style='color:skyblue;'>(search input keyboard)</span>
+                      "email" <span style='color:skyblue;'>(email input keyboard)</span>
+                      "url" <span style='color:skyblue;'>(url input keyboard)</span>
+    </pre>
+    <pre>
+    <p inputmode="tel" contenteditable="true"></p>       // virtual telephone keypad will appear on modile devices on focus 
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> <mark>inputmode</mark> attribute test </u></h4>
+    <p inputmode="numeric" contenteditable="true"> Input mode numberi (brings up a numeric keyboard on devices with virtual keyboards (ex: phone)) </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    <p inputmode="numeric" contenteditable="true"> Input mode numberi (brings up a numeric keyboard on devices with virtual keyboards (ex: phone)) </p>
+        </pre>
+        </details>
+</details>
+   
+   <br><br>
+</body>
+</html>

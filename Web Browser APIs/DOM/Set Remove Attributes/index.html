@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> Create Remove Attributes </title> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="../../../Assets/stylesPages.css"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../../Assets/scriptPages.js"></script>
+</head>
+<body>
+<h1> Create Remove Attributes (ver 3.1) </h1>
+    <p> Updated ( 2018-02-02 / 2018-09-03 / 2018-10-18 / 2018-12-23 / 2019-05-23 / 2019-11-13 )</p>
+    <p class="sitenav"> <a href="../../../index.html">MySite></a>
+        <a href="../../index.html"> Web Browser APIs> </a> 
+        <a href="../index.html"> DOM> </a> Create Remove Attributes 
+    </p>
+<table class="table">
+<caption> Create Remove Attributes </caption>
+    <tr>
+        <th style="width:30%;"> Method / Property </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.id<i> = "value"</i> </td>
+        <td> 
+            get or set element's <mark>id</mark> attribute 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.attributes </td>
+        <td> 
+            returns the element's attributes as a <mark>NamedNodeMap</mark> (Attribute Node List) 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.classList </td>
+        <td> 
+            returns the <mark>DOMTokenList</mark> object which contains the element's class attribute data (read only property) 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> 8 </span>
+                <span><i class="fab fa-firefox"></i> 3.6 </span>
+                <span><i class="fab fa-opera"></i> 11.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> 5.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.className </td>
+        <td> 
+            gets or sets the <mark>class</mark> attribute of the element (used instead of the <mark>class</mark> attribute to avoid conflict with the "class" keyword) 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.createAttribute("<strong>newAttribute</strong>") </td>
+        <td> 
+            creates a new attribute Node and returns it 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.getAttribute("<strong>attributeName</strong>") </td>
+        <td> 
+            returns the specified attribute's value 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+     <tr>
+        <td> <strong>element</strong>.getAttributeNode("<strong>attributeName</strong>") </td>
+        <td> 
+            returns an element's attribute 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.hasAttribute("<strong>attributeName</strong>") </td>
+        <td> 
+            returns a boolean value indicating if the element has the specified attribute 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.hasAttributes() </td>
+        <td> 
+            returns a boolean value indicating if the element has <u>any</u> attributes 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.removeAttribute("<strong>attributeName</strong>") </td>
+        <td> 
+            removes the specified attribute 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.removeAttributeNode(<strong>attributeNode</strong>) </td>
+        <td> 
+            removes an <u>attribute Node</u> form an element 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.setAttribute("<strong>attributeName</strong>", "<strong>value</strong>") </td>
+        <td> 
+            creates and sets or overwrites an attribute 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 8 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.setAttributeNode(<strong>attributeNode</strong>) </td>
+        <td> 
+            sets an attribute Node to an element 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"> <mark>NamedNodeMap</mark> (Attribute Node List)</td>
+    </tr>
+    <tr>
+        <td> <strong>namedNodeMap</strong>[<strong>index|attrKey:str</strong>] </td>
+        <td>  
+            returns the targeted attribute from a "NamedNodeMap"
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> 
+            <strong>namedNodeMap</strong>.getNamedItem(<strong>attrKey:str</strong>)
+        </td>
+        <td> 
+            returns the targeted attribute from a "NamedNodeMap" 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>namedNodeMap</strong>.removeNamedItem("<strong>attrKey</strong>") </td>
+        <td> 
+            removes the targeted attribute node from the "NamedNodeMap" and returns it 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>namedNodeMap</strong>.setNamedItem(<strong>attrNode</strong>) </td>
+        <td> 
+            sets (adds) an attribute node to the "NamedNodeMap" 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"> <mark>DOMTokenList</mark> (Class Attribute List)</td>
+    </tr>
+    <tr>
+        <td> <strong>domTokenList</strong>.add(<strong>classId:str</strong><i>, ...</i>) </td>
+        <td> 
+            add new class id(s) to the Class List 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>domTokenList</strong>.contains(<strong>classId:str</strong>) </td>
+        <td> 
+            returns a boolean indicating if the specified class id is present in the Class List 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>domTokenList</strong>.eitries() </td>
+        <td> 
+            returns an iterable object which contains the key/value pairs of the classList 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> 45 </span>
+                <span><i class="fab fa-firefox"></i> 50 </span>
+                <span><i class="fab fa-opera"></i> 32 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> ? </span>
+                <span><i class="fab fa-safari"></i> ? </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>domTokenList</strong>.forEach(<strong>fn(val, index, domTokenList)</strong><i>, thisVal</i>) </td>
+        <td> 
+            runs the callback function for each item in the classList 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> 45 </span>
+                <span><i class="fab fa-firefox"></i> 50 </span>
+                <span><i class="fab fa-opera"></i> 32 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 16 </span>
+                <span><i class="fab fa-safari"></i> ? </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>domTokenList</strong>.intem(<strong>index</strong>) </td>
+        <td> 
+            returns the targeted classId in the sequence 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>domTokenList</strong>.keys() </td>
+        <td> 
+            returns an iterable object which contains the keys of the classList 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> 45 </span>
+                <span><i class="fab fa-firefox"></i> 50 </span>
+                <span><i class="fab fa-opera"></i> 32 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> ? </span>
+                <span><i class="fab fa-safari"></i> ? </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>domTokenList</strong>.length </td>
+        <td> 
+            returns the number of class id's in the Class List 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 50 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12/? </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>domTokenList</strong>.remove(<strong>classId:str</strong><i>, ...</i>) </td>
+        <td> 
+            remove the specified classId(s) from the Class List 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>domTokenList</strong>.replace(<strong>oldClassId:str, newClassId:str</strong>) </td>
+        <td> 
+            replaces the targeted classId with the passed new classId 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> 61 </span>
+                <span><i class="fab fa-firefox"></i> 49 </span>
+                <span><i class="fab fa-opera"></i> 48 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 17 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>domTokenList</strong>.toggle(<strong>classId:str</strong><i>, force:bol</i>) </td>
+        <td> 
+            toggles the specified classId every time it's called and returns a boolean indicating of the current toggle state 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 11 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+            (<i>force:bol</i> 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+            </span>
+            </span>
+            )
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>domTokenList</strong>.values() </td>
+        <td> 
+            returns an iterable object which contains the values of the classList 
+            <span id="browserSupport" title="updated : 2019-05-23">
+                <span><i class="fab fa-chrome"></i> 45 </span>
+                <span><i class="fab fa-firefox"></i> 50 </span>
+                <span><i class="fab fa-opera"></i> 32 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> ? </span>
+                <span><i class="fab fa-safari"></i> ? </span>
+            </span>
+        </td>
+    </tr>
+</table>
+<h2 style="color:green;"><u> Notes : </u></h2>
+    <details class="example" id="notes">
+    <summary> Notes : </summary>
+    </details>
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+<h2 style="color:green;"><u> Remember This : </u></h2>
+<h2 style="color:green;"><u> Description and Demonstration : </u></h2>
+    <p> - the relation between an element and its attributes in JavaScript is represented as object(element) and its properties(attributes) <u>but the <mark>delete</mark> operator stil cannot delete element Attributes</u> </p>
+    <p style="color:yellow;"> - attribute Node methods are sort of deprecated because takes extra work and code to deal with them! </p>
+    <pre class="syntax">
+SYNTAX :    <strong>element</strong>.id<i> = "value"</i>                                  // get or set element's <mark>id</mark> attribute 
+            <strong>element</strong>.className                                     // gets or sets the <mark>class</mark> attribute of the element (used instead of the <mark>class</mark> attribute to avoid conflict with the "class" keyword)
+
+            <strong>element</strong>.setAttribute("<strong>attributeName</strong>", "<strong>value</strong>")        // create or overwrite arguments               
+            <strong>element</strong>.getAttribute("<strong>attributeName</strong>")                 // gets the specified attribute's value        
+            <strong>element</strong>.removeAttribute("<strong>attributeName</strong>")              // removes the specified attribute and returns it      
+            <strong>element</strong>.hasAttribute("<strong>attributeName</strong>")                 // returns a boolean value indicating if the element has the specified attribute 
+            <strong>element</strong>.hasAttributes()                               // returns a boolean value indicating if the element has <u>any</u> attributes
+            
+            <em>document</em>.createAttribute("<strong>newAttribute</strong>")              // creates an attribute Node
+            <strong>element</strong>.setAttributeNode(<strong>attributeNode</strong>)               // sets an attribute Node to an element
+            <strong>element</strong>.getAttributeNode("<strong>attributeName</strong>")             // gets an attribute Node and returns it
+            <strong>element</strong>.removeAttributeNode(<strong>attributeNode</strong>)            // remove an attribute Node
+            
+            <strong>element</strong>.attributes                                    // returns a "NamedNodeMap" (Attribute Node List) of the element's attributes
+            <strong>namedNodeMap</strong>[<strong>index/"attrKey"</strong>]                         // returns the targeted attribute from a "NamedNodeMap"
+            <strong>namedNodeMap</strong>.getNamedItem("<strong>attrKey</strong>")                  // returns the targeted <u>attribute node</u> from a "NamedNodeMap"  
+            <strong>namedNodeMap</strong>.setNamedItem(<strong>attrNode</strong>)                   // sets (adds) an attribute node to the "NamedNodeMap"
+            <strong>namedNodeMap</strong>.removeNamedItem("<strong>attrKey</strong>")               // removes the targeted attribute node from the "NamedNodeMap" and returns it
+    </pre>
+<p id="test" class="myClass"></p>     
+    <pre>
+    &lt;img id="img_demo" align="center"&gt;
+&lt;script&gt;
+    var element = document.getElementById("img_demo");
+    
+    element.setAttribute("src", "demo.jpg");                                    // set new Attribute
+    element.src = "demo.jpg";                                                   // set new Attribute
+        
+    element.getAttribute('id');                                                 // -> "img_demo"        // return attribute
+    element.id;                                                                 // -> "img_demo"        // return attribute
+    
+    element.removeAttribute("align");                                           // remove attribute
+    
+// Attribute Nodes (Deprecated) ---------------------     
+    var newAttributeNode = document.createAttribute("style");                   // creates the "style" attribute Node
+    newAttributeNode.value = "border: solid 2px black";                         // setting a value to the newly created attribute Node
+    element.setAttributeNode(newAttributeNode);                                 // set the created attribute Node to the element
+    
+    var attrID = element.getAttributeNode('id');                                // -> id="img_demo"     // attribute Node is returned
+    
+    element.removeAttributeNode(attrID);                                        // removes the <u>Attribute Node! NO text accepted here!</u> 
+    
+// Attribute Check ----------------------------------
+    document.getElementById("img_demo").className = "newClass";                 // class added [equals "class='newClass'"]
+    document.getElementById("img_demo").hasAttribute("class");                  // -> true              // we just added a "class" attribute above
+    document.getElementById("img_demo").hasAttributes();                        // -> true              // this element has plenty of attributes
+&lt;/script&gt;
+    </pre>
+    <p> - NamedNodeMap manipulation / <mark>getNamedItem()</mark> / <mark>setNamedItem()</mark> / <mark>removeNamedItem()</mark> </p>
+    <pre>
+    &lt;p id="demoId" class="demoClass" style="color:red"&gt; test paragraph &lt;/p&gt;
+&lt;script&gt;
+    var myNamedNodeMap = document.getElementById('demoId').attributes;          // NamedNodeMap 
+    
+    myNamedNodeMap[0]                                                           // -> id="demoId"
+    myNamedNodeMap["class"]                                                     // -> class="demoClass"
+    myNamedNodeMap.getNamedItem("style")                                        // -> style="color:red"
+    myNamedNodeMap.removedNamedItem("style)                                     // -> style="color:red"     // attribute node removed from the namedNodeMap and returned
+    
+// add attribute Node to the namedNodeMap
+    var newAttr = document.createAttribute("style");                            // create a new attribute <u>Node</u>
+    newAttr.nodeValue = "color:yellow;";            
+    myNamedNodeMap.setNamedItem(newAttr);                                       // attribute <u>Node</u> added to the namedNodeMap
+&lt;/script&gt;    
+    </pre>
+<details class="example">
+    <summary> Example : </summary>
+<h4><u> <mark>setAttribute()</mark></u></h4>
+    <fieldset>
+    <form id="add_element_form">
+        <input>
+        <input type="submit" value="Submit">
+    </form>
+    </fieldset>
+<script>
+    var form_element = document.forms['add_element_form'].elements[0];      // load the targeted element in a variable
+    form_element.setAttribute("type", "number");                            // adding attributes
+    form_element.value = 125;
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;fieldset&gt;
+    &lt;form id="add_element_form"&gt;
+        &lt;input&gt;
+        &lt;input type="submit" value="Submit"&gt;
+    &lt;/form&gt;
+    &lt;/fieldset&gt;
+&lt;script&gt;
+    var form_element = document.forms['add_element_form'].elements[0];      // load the targeted element in a variable
+    form_element.setAttribute("type", "number");                            // adding attributes
+    form_element.value = 125;
+&lt;/script&gt;
+        </pre>
+        </details>
+<h4><u><mark>getAttribute</mark> / <mark>removeAttribute()</mark></u></h4>
+    <p id="attr_demo_rem" style="color:green; text-decoration:underline;"> Demo Text </p>
+<script>
+    document.write("return attribute = " + document.getElementById('attr_demo_rem').getAttribute('id'));
+    document.getElementById('attr_demo_rem').removeAttribute('style');                                      // specified attribute removed
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="attr_demo_rem" style="color:green; text-decoration:underline;"&gt; Demo Text &lt;/p&gt;
+&lt;script&gt;
+    document.write("return attribute = " + document.getElementById('attr_demo_rem').getAttribute('id'));
+    document.getElementById('attr_demo_rem').removeAttribute('style');                                      // specified attribute removed
+&lt;/script&gt;
+        </pre>
+        </details>
+<h4><u>Node Attributes Demo </u></h4>
+    <p id="node_attr" align="center"> Demo </p>
+<script>
+    var paraG = document.getElementById('node_attr');
+// create and set an attribute
+    var attrG = document.createAttribute('style');
+    attrG.value = "border:solid black 2px; padding:3px; background-color:orange;";
+    paraG.setAttributeNode(attrG);
+            /*  this is too much code it this whole thing can be done just with
+                "paraG.setAttribute('style', 'display:inline-block; border:solid black 2px; padding:3px; background-color:orange;');
+            */
+
+// get and remove an attribute
+    var attrAlign = paraG.getAttributeNode('align');
+    paraG.removeAttributeNode(attrAlign);
+            /*  this is overcomplicated, you need to get an attribute Node in order to remove it this could be done just with
+                "paraG.removeAttribute('align')"
+            */
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="node_attr" align="center"&gt; Demo &lt;/p&gt;
+&lt;script&gt;
+    var paraG = document.getElementById('node_attr');
+// create and set an attribute
+    var attrG = document.createAttribute('style');
+    attrG.value = "border:solid black 2px; padding:3px; background-color:orange;";
+    paraG.setAttributeNode(attrG);
+            /*  this is too much code it this whole thing can be done just with
+                "paraG.setAttribute('style', 'display:inline-block; border:solid black 2px; padding:3px; background-color:orange;');
+            */
+
+// get and remove an attribute
+    var attrAlign = paraG.getAttributeNode('align');
+    paraG.removeAttributeNode(attrAlign);
+            /*  this is overcomplicated, you need to get an attribute Node in order to remove it this could be done just with
+                "paraG.removeAttribute('align')"
+            */
+&lt;/script&gt;
+        </pre>
+        </details>    
+<h4><u> <mark>attributes</mark> propety TEST </u></h4>    
+    <p id="getAttributes" style="color:brown;"> get myAttributes </p>
+<script>
+    var getAttributes = document.getElementById("getAttributes").attributes;
+    
+    let getIdAttr = getAttributes["id"]                         // both returns the "id" attribute value
+    let getIdAttr2 = getAttributes[0]                           // <- order is NOT garanteed!! be careful
+    
+    let getStyleAttr = getAttributes.getNamedItem("style")      // returns the "style" attribute value
+</script>      
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="getAttributes" style="color:brown;"&gt; get myAttributes &lt;/p&gt;
+&lt;script&gt;
+    var getAttributes = document.getElementById("getAttributes").attributes;
+    
+    let getIdAttr = getAttributes["id"]                         // both returns the "id" attribute value
+    let getIdAttr2 = getAttributes[0]                           // &lt;- order is NOT garanteed!! be careful
+    
+    let getStyleAttr = getAttributes.getNamedItem("style")      // returns the "style" attribute value
+&lt;/script&gt;    
+        </pre>
+        </details>
+<h4><u> <mark>className</mark> / <mark>hasAttribute()</mark> / <mark>hasAttributes()</mark> property/methods TEST </u></h4>    
+    <p class="myTestClass"></p>
+<script>
+    var elementClass = document.getElementsByClassName("myTestClass").item("myTestClass").className;
+    var elementStyle = document.getElementsByClassName("myTestClass")[0].hasAttribute("style");
+    var anyAttribute = document.getElementsByClassName("myTestClass").item(0).hasAttributes();
+    
+    document.getElementsByClassName("myTestClass").item("myTestClass").innerHTML = 
+        "Element's class name = " + elementClass + "<br>" +
+        "Element has the \"style\" attribute = " + elementStyle + "<br>" +
+        "Element has <u>any</u> attributes = " + anyAttribute;
+</script>    
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p class="myTestClass"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var elementClass = document.getElementsByClassName("myTestClass").item("myTestClass").className;
+    var elementStyle = document.getElementsByClassName("myTestClass")[0].hasAttribute("style");
+    var anyAttribute = document.getElementsByClassName("myTestClass").item(0).hasAttributes();
+    
+    document.getElementsByClassName("myTestClass").item("myTestClass").innerHTML = 
+        "Element's class name = " + elementClass + "&lt;br&gt;" +
+        "Element has the \"style\" attribute = " + elementStyle + "&lt;br&gt;" +
+        "Element has &lt;u&gt;any&lt;/u&gt; attributes = " + anyAttribute;
+&lt;/script&gt;     
+        </pre>
+        </details>
+<h4><u> attribute as property TEST </u></h4>
+    <p class="addId"></p>
+    <p id="printAttrVal"> </p>
+<script>
+    document.querySelector(".addId").id = "addedId";                    // id attribute can be added as a property
+    document.getElementById("addedId").textContent = "id attribute added successfully!";
+    
+    document.getElementById("addedId").customAttr = "custom";           // DOES NOT ADD ATTRIBUTE (this is a simple property added to the object)
+    document.getElementById("addedId").class = "addCustomAttribute";    // CAREFUL! this does NOT sets the "class" attribute it adds a "class" property the this element
+    
+// print 
+    document.getElementById("printAttrVal").innerHTML = 
+        "element class attribute value = " + document.getElementById('addedId').getAttribute("class") + "<br>" +    // this is the class attribute's value
+        "element class property vlue = " + document.getElementById("addedId").class;                                // this is the class property value
+</script>  
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p class="addId"&gt;&lt;/p&gt;
+    &lt;p id="printAttrVal"&gt; &lt;/p&gt;
+&lt;script&gt;
+    document.querySelector(".addId").id = "addedId";                    // id attribute can be added as a property
+    document.getElementById("addedId").textContent = "id attribute added successfully!";
+    
+    document.getElementById("addedId").customAttr = "custom";           // DOES NOT ADD ATTRIBUTE (this is a simple property added to the object)
+    document.getElementById("addedId").class = "addCustomAttribute";    // CAREFUL! this does NOT sets the "class" attribute it adds a "class" property the this element
+    
+// print 
+    document.getElementById("printAttrVal").innerHTML = 
+        "element class attribute value = " + document.getElementById('addedId').getAttribute("class") + "&lt;br&gt;" +    // this is the class attribute's value
+        "element class property vlue = " + document.getElementById("addedId").class;                                // this is the class property value
+&lt;/script&gt;    
+        </pre>
+        </details>
+<h4><u> <mark>getNamedItem()</mark> / <mark>setNamedItem()</mark> / <mark>removeNamedItem()</mark> TEST </u></h4>    
+    <p id="namedIT_test" class="myClass"> named item Test paragraph </p>
+    <p id="printCollectedAttrs"></p>
+<script>
+    var myNamedItem = document.getElementById("namedIT_test").attributes;       // namedNodeMap
+    
+// create new attribute node
+    var attrNd = document.createAttribute("style");
+    attrNd.nodeValue = "color:blue;";
+    
+// set the newly created attribute node to the namedNodeMap
+    myNamedItem.setNamedItem(attrNd);
+    
+// get attribute node form the namedNodeMap
+    var getClass = myNamedItem.getNamedItem("class");
+    $("#namedIT_test").append("<u>" + getClass.value + "</u>");                 // insert the class attribute value at the end of the element
+    
+// remove attribute node form the namedNodeMap
+    var removedNode = myNamedItem.removeNamedItem("class");                     // removed attribute node is removed
+    
+// ----- print collected attributes   
+    var collectAttrs = "Collected Attributes = ";
+    
+    
+    for (let i = 0; i < myNamedItem.length; i++) {
+        collectAttrs += myNamedItem[i].nodeName + " : " + myNamedItem[i].nodeValue + " // ";
+    }
+    
+    document.getElementById("printCollectedAttrs").innerHTML = collectAttrs;
+</script>    
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="namedIT_test" class="myClass"&gt; named item Test paragraph &lt;/p&gt;
+    &lt;p id="printCollectedAttrs"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var myNamedItem = document.getElementById("namedIT_test").attributes;       // namedNodeMap
+    
+// create new attribute node
+    var attrNd = document.createAttribute("style");
+    attrNd.nodeValue = "color:blue;";
+    
+// set the newly created attribute node to the namedNodeMap
+    myNamedItem.setNamedItem(attrNd);
+    
+// get attribute node form the namedNodeMap
+    var getClass = myNamedItem.getNamedItem("class");
+    $("#namedIT_test").append("&lt;u&gt;" + getClass.value + "&lt;/u&gt;");                 // insert the class attribute value at the end of the element
+    
+// remove attribute node form the namedNodeMap
+    var removedNode = myNamedItem.removeNamedItem("class");                     // removed attribute node is removed
+    
+// ----- print collected attributes   
+    var collectAttrs = "Collected Attributes = ";
+    
+    
+    for (let i = 0; i &lt; myNamedItem.length; i++) {
+        collectAttrs += myNamedItem[i].nodeName + " : " + myNamedItem[i].nodeValue + " // ";
+    }
+    
+    document.getElementById("printCollectedAttrs").innerHTML = collectAttrs;
+&lt;/script&gt;      
+        </pre>
+        </details>
+</details>
+<!----------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> the <mark>classList</mark> property (DOMTokenList) </u></h2>
+<h3 style="color:darkblue;"><u> the <mark>length</mark> property and the <mark>add()</mark> / <mark>contains()</mark> / <mark>item()</mark> / <mark>remove()</mark> / <mark>replace()</mark> / <mark>toggle()</mark> methods </u></h3>
+    <pre class="syntax">
+SYNTAX :    <strong>element</strong>.classList                                                   // returns the <mark>DOMTokenList</mark> object which contains the element's class attribute data (read only property)
+            
+            <strong>domTokenList</strong>.length                                                 // returns the number of class id's in the Class List
+            
+            <strong>domTokenList</strong>.add(<strong>classId:str</strong><i>, ...</i>)                                  // add new class id(s) to the Class List
+            <strong>domTokenList</strong>.intem(<strong>index</strong>)                                           // returns the targeted classId in the sequence 
+            <strong>domTokenList</strong>.contains(<strong>classId:str</strong>)                                  // returns a boolean indicating if the specified class id is present in the Class List   
+            
+            <strong>domTokenList</strong>.remove(<strong>classId:str</strong><i>, ...</i>)                               // remove the specified classId(s) from the Class List   
+            <strong>domTokenList</strong>.replace(<strong>oldClassId:str, newClassId:str</strong>)                // replaces the targeted classId with the passed new classId 
+            
+            <strong>domTokenList</strong>.toggle(<strong>classId:str</strong><i>, force:bol</i>)                         // toggles the specified classId every time it's called and returns a boolean indicating of the current toggle state   
+                - <i>force:bol</i> : defines the permanent state of the of the classId (<mark>true</mark> = toggled on | <mark>false</mark> = toggled off)   
+    </pre>
+    <pre>
+    &lt;p class="one"&gt; myParagraph &lt;/p&gt;
+&lt;script&gt;
+    var clsList = document.getElementsByClassName('one')[0].classList;          // returns the DOMTokenList (classList) of the element 
+    
+// length / add() / item() / contains() ----------------------------------------
+    clsList.add('two', 'three');                                                // we added two new classIds to the element       
+    clsList.length;                                                             // -> 3         // number of classIds in the classList 
+    clsList.item(1);                                                            // -> 'two'     // returns the second classId in the sequence 
+    clsList.contains('three');                                                  // -> true      // classId is present in the classList   
+    
+// remove() / replace() --------------------------------------------------------
+    clsList.remove('three');                                                    // removes the targeted classId from the classList   
+    clsList.replace('one', 'first');                                            // replaces the 'one' classId with the 'first' classId in the classList  
+    
+// toggle() --------------------------------------------------------------------
+  // every time the toggle() is called will toggle the specified classId  
+    clsList.toggle('newCls');                                                   // -> true      // toggles on the 'newCls' classId 
+    clsList.toggle('newCls');                                                   // -> false     // toggles off the 'newCls' classId  
+    
+    clsList.toggle('newCls', false);                                            // -> false     // -! this forces the classId to stay toggled off
+    clsList.toggle('newCls', true);                                             // -> true   
+&lt;/script&gt;
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u>  TEST </u></h4>    
+    <p class="egy ketto"> myParagraph </p>
+    <button onmouseup="toggleFunc()"> toggle </button>
+<script>
+    var clsElem = document.getElementsByClassName('egy')[0].classList;
+    
+// length ----------------------------------------------------------
+    var clsLi_length = clsElem.leght;                               // -> 2             // contains 2 class id's
+    
+// add() -----------------------------------------------------------
+    clsElem.add('harom', 'negy')                                    // we added 2 new class id's 
+    
+// items() / contains() --------------------------------------------
+    var clsLi_2ndClass = clsElem.item(1);                           // -> 'ketto'       // we reference the second class id here 
+    var clsLi_contains = clsElem.contains('negy')                   // -> true          // class list contains the 'negy' class id
+    
+// remove() --------------------------------------------------------
+    clsElem.remove('ketto', 'negy');                                // we removed the 2 classId's form the Class List
+    clsElem.replace('harom', 'ketto');                              // we replaced the 'harom' classId with the 'ketto' classId   
+    
+// toggle() --------------------------------------------------------
+    var toggleFunc = function() {
+        console.log(  clsElem.toggle('addColor')  );                // in console we get the confirmation of the present or absence of the 'addColor' feedback  
+    }
+</script>    
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+-- CODE (HTML) --
+    &lt;p class="egy ketto"&gt; myParagraph &lt;/p&gt;
+    &lt;button onmouseup="toggleFunc()"&gt; toggle &lt;/button&gt;
+&lt;script&gt;
+    var clsElem = document.getElementsByClassName('egy')[0].classList;
+    
+// length ----------------------------------------------------------
+    var clsLi_length = clsElem.leght;                               // -> 2             // contains 2 class id's
+    
+// add() -----------------------------------------------------------
+    clsElem.add('harom', 'negy')                                    // we added 2 new class id's 
+    
+// items() / contains() --------------------------------------------
+    var clsLi_2ndClass = clsElem.item(1);                           // -> 'ketto'       // we reference the second class id here 
+    var clsLi_contains = clsElem.contains('negy')                   // -> true          // class list contains the 'negy' class id
+    
+// remove() --------------------------------------------------------
+    clsElem.remove('ketto', 'negy');                                // we removed the 2 classId's form the Class List
+    clsElem.replace('harom', 'ketto');                              // we replaced the 'harom' classId with the 'ketto' classId   
+    
+// toggle() --------------------------------------------------------
+    var toggleFunc = function() {
+        console.log(  clsElem.toggle('addColor')  );                // in console we get the confirmation of the present or absence of the 'addColor' feedback  
+    }
+&lt;/script&gt;    
+    
+-- CODE (HTML) --
+    .addColor { color: green; }  
+        </pre>
+        </details>
+</details>
+<!----------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h3 style="color:darkblue;"><u> the <mark>entries()</mark> / <mark>keys()</mark> / <mark>values()</mark> / <mark>forEach()</mark> methods </u></h3>
+    <pre class="syntax">
+SYNTAX :    <strong>domTokenList</strong>.eitries()                                              // returns an iterable object which contains the key/value pairs of the classList   
+            <strong>domTokenList</strong>.keys()                                                 // returns an iterable object which contains the keys of the classList     
+            <strong>domTokenList</strong>.values()                                               // returns an iterable object which contains the values of the classList   
+            
+            <strong>domTokenList</strong>.forEach(<strong>fn(val, index, domTokenList)</strong><i>, thisVal</i>)         // runs the callback function for each item in the classList  
+                - <i>thisVal</i> : defines the this value for the callback function 
+    </pre>
+    <pre>
+    var clsList = document.getElementsByClassName('one')[0].classList;          // returns the DOMTokenList (classList) of the element  
+        
+// entries() -------------------------------------------------------------------
+    var entryCollect = clsList.entries();                                       // iteralbe object contains the key/value pairs of the classList   
+    for(i of entryCollect) { i }                                                // -> [0, "one"] / [1, "two"] / [2, "three"]
+    
+// keys() ----------------------------------------------------------------------
+    var keysCollect = clsList.keys();                                           // iterable object contains the keys of the classList items
+    for(i of keysCollect) { i }                                                 // -> 0 / 1 / 2
+    
+// values() --------------------------------------------------------------------
+    var valuesCollect = clsList.values();                                       // iterable object contains the values of the classList items 
+    or(i of valuesCollect) { i }                                                // -> 'one' / 'two' / 'three'  
+    
+// forEach() -------------------------------------------------------------------
+    clsList.forEach( function(val, ind, clsL){                                  // run a pass for every classList item 
+        ind;                                                                    // -> 0 / 1 / 2
+        val;                                                                    // -> 'one' / 'two' / 'three'
+        clsl;                                                                   // -> clsList / clsList / clsList       // returns the DOMTokenList itself
+    });
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> <mark>entries()</mark> / <mark>keys()</mark> / <mark>values()</mark> TEST </u></h4>    
+    <p class="un deux trois"> demo paragraph </p>
+<script>
+    var clsList2 = document.getElementsByClassName('un')[0].classList;
+    
+// entries() ---------------------------------------------------
+    var clsListEntries = clsList2.entries();                    // iterable object (contains the key/value pairs)
+    
+    var entry_1 = clsListEntries.next();                        // -> {value:[0, 'un'], done:false}
+    var entry_2 = clsListEntries.next();                        // -> {value:[1, 'deux'], done:false}
+    var entry_3 = clsListEntries.next();                        // -> {value:[2, 'trois'], done:false}
+    var entry_4 = clsListEntries.next();                        // -> {value:undefined, done:true}          // end of iterable object
+    
+// keys() ------------------------------------------------------
+    var clsListKeys = clsList2.keys();                          // iterable object (contains the keys)
+    
+    var key_1 = clsListKeys.next();                             // -> {value:0, done:false}
+    var key_2 = clsListKeys.next();                             // -> {value:1, done:false}
+    var key_3 = clsListKeys.next();                             // -> {value:2, done:false}
+    var key_4 = clsListKeys.next();                             // -> {value:undefined, done:true}
+    
+// values() ----------------------------------------------------
+    var clsListValues = clsList2.values();                      // iterable object (contains the actual values)
+    var collectValues = [];
+    
+    for(i of clsListValues) {
+        collectValues.push(i);                                  // -> ['un', 'deux', 'trois']
+    }
+</script>    
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p class="un deux trois"&gt; demo paragraph &lt;/p&gt;
+&lt;script&gt;
+    var clsList2 = document.getElementsByClassName('un')[0].classList;
+    
+// entries() ---------------------------------------------------
+    var clsListEntries = clsList2.entries();                    // iterable object (contains the key/value pairs)
+    
+    var entry_1 = clsListEntries.next();                        // -> {value:[0, 'un'], done:false}
+    var entry_2 = clsListEntries.next();                        // -> {value:[1, 'deux'], done:false}
+    var entry_3 = clsListEntries.next();                        // -> {value:[2, 'trois'], done:false}
+    var entry_4 = clsListEntries.next();                        // -> {value:undefined, done:true}          // end of iterable object
+    
+// keys() ------------------------------------------------------
+    var clsListKeys = clsList2.keys();                          // iterable object (contains the keys)
+    
+    var key_1 = clsListKeys.next();                             // -> {value:0, done:false}
+    var key_2 = clsListKeys.next();                             // -> {value:1, done:false}
+    var key_3 = clsListKeys.next();                             // -> {value:2, done:false}
+    var key_4 = clsListKeys.next();                             // -> {value:undefined, done:true}
+    
+// values() ----------------------------------------------------
+    var clsListValues = clsList2.values();                      // iterable object (contains the actual values)
+    var collectValues = [];
+    
+    for(i of clsListValues) {
+        collectValues.push(i);                                  // -> ['un', 'deux', 'trois']
+    }
+&lt;/script&gt;    
+        </pre>
+        </details>
+<!----------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> <mark>forEach()</mark> TEST </u></h4>    
+    <p class="unu doi trei"> demo paragraph </p>
+<script>
+    var clsList3 = document.getElementsByClassName('unu')[0].classList;
+    var collectPairs = [];
+    
+    clsList3.forEach((val, index) => {
+        collectPairs.push(index + " - " + val);                     // -> ['0 - unu', '1 - doi', '2 - trei']
+    })
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p class="unu doi trei"&gt; demo paragraph &lt;/p&gt;
+&lt;script&gt;
+    var clsList3 = document.getElementsByClassName('unu')[0].classList;
+    var collectPairs = [];
+    
+    clsList3.forEach((val, index) => {
+        collectPairs.push(index + " - " + val);                     // -> ['0 - unu', '1 - doi', '2 - trei']
+    })
+&lt;/script&gt;    
+        </pre>
+        </details>
+</details>
+    
+    
+    
+<h2 class="test" style=""><a href="TEST/index.html"> TEST (empty) > </a></h2>
+</body>
+</html>

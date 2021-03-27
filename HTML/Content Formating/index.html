@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Content Formating </title> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="../../Assets/stylesPages.css"> 
+    <script src="../../Assets/scriptPages.js"></script>
+</head>
+<body>
+<h1> Content Formating (2.9) </h1>
+    <p> Updated (2016-05-27 / 2018-12-18)</p>
+    <p class="sitenav"> <a href="../../index.html">MySite></a>
+        <a href="../index.html">HTML></a> Content Formating  
+    </p>
+    <table class="table">
+    <tr>
+        <th> Tag / Property </th>
+        <th> Attribute </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td> &lt;b&gt; </td>
+        <td>  </td>
+        <td> defines a bold text (use as last resort) </td>
+    </tr>
+    <tr>
+        <td> &lt;br&gt; </td>
+        <td>  </td>
+        <td> defines a sigle line break </td>
+    </tr>    
+    <tr>
+        <td> &lt;code&gt; </td>
+        <td>  </td>
+        <td> defines a piece of computer code </td>
+    </tr> 
+    <tr>
+        <td> &lt;del&gt; </td>
+        <td>  
+            cite="<strong>URL</strong>" <span style="color:blue;">(URL that explains why the text was deleted)</span><br>
+            datetime="<strong>YYYY-MM-DD</strong>T<strong>HH:MM:SS</strong>Z" <span style="color:blue;">(time when text was deleted)</span>
+        </td>
+        <td> defines a deleted text </td>
+    </tr>
+    <tr>
+        <td> &lt;em&gt; </td>
+        <td>  </td>
+        <td> defines an emphasized (italic) text </td>
+    </tr>
+    <tr>
+        <td> &lt;hr&gt; </td>
+        <td>  </td>
+        <td> defines a thematic break (draws a horizontal (separation) line on the page) </td>
+    </tr>    
+    <tr>
+        <td> &lt;i&gt; </td>
+        <td>  </td>
+        <td> defines an italic text (use as last resort) </td>
+    </tr>
+    <tr>
+        <td> &lt;ins&gt; </td>
+        <td> 
+            cite="<strong>URL</strong>" <span style="color:blue;">(URL that explains why the text was inserted)</span><br>
+            datetime="<strong>YYYY-MM-DD</strong>T<strong>HH:MM:SS</strong>Z" <span style="color:blue;">(time when text was inserted/changed)</span>
+        </td>    
+        <td> defines an inserted text </td>
+    </tr>
+    <tr>
+        <td> &lt;kbr&gt; </td>
+        <td>  </td>
+        <td> defines a keyboard input </td>
+    </tr>    
+    <tr>
+        <td> &lt;mark&gt; </td>
+        <td>  </td>
+        <td> <i class="fab fa-html5"></i> defines a marked/highlighted text </td>
+    </tr>
+    <tr>
+        <td> &lt;s&gt; </td>
+        <td>  </td>
+        <td> specifies a text what is no longer correct (text line through) </td>
+    </tr>
+    <tr>
+        <td> &lt;samp&gt; </td>
+        <td>  </td>
+        <td> defines a sample output from a computer program </td>
+    </tr>    
+    <tr>
+        <td> &lt;small&gt; </td>
+        <td>  </td>
+        <td> defines a smaller text and side comments </td>
+    </tr>
+    <tr>
+        <td> &lt;span&gt; </td>
+        <td>  </td>
+        <td> groups inline elements (has no styling effects used to isolate and target text part) </td>
+    </tr>
+    <tr>
+        <td> &lt;strong&gt; </td>
+        <td>  </td>
+        <td> defines an important (bold) text </td>
+    </tr>
+    <tr>
+        <td> &lt;sub&gt; </td>
+        <td>  </td>
+        <td> defines a subscript text (text appears half a character below the normal line) </td>
+    </tr>    
+    <tr>
+        <td> &lt;sup&gt; </td>
+        <td>  </td>
+        <td> defines a superscript text (text appears half a character above the normal line) </td>
+    </tr>
+    <tr>
+        <td> &lt;template&gt; </td>
+        <td>  </td>
+        <td><i class="fab fa-html5"></i> holds its content hidden form the client in a separate document fragment (its content is <u>only</u> accessible through the <mark>content</mark> property)  </td>
+    </tr> 
+    <tr>
+        <td> <strong>templateElement</strong>.content </td>
+        <td>  </td>
+        <td> returns the content of the template element as a document fragment  </td>
+    </tr>
+    <tr>
+        <td> &lt;u&gt; </td>
+        <td>  </td>
+        <td> specifies a different text than the normal text (underlined) </td>
+    </tr>     
+    <tr>
+        <td> &lt;var&gt; </td>
+        <td>  </td>
+        <td> defines a variable (italic text) </td>
+    </tr>
+    <tr>
+        <td> &lt;wbr&gt; </td>
+        <td>  </td>
+        <td> 
+            <i class="fab fa-html5"></i> (word break opportunity) specifies a position in a text where a word-break would be ok 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 3 </span>
+                <span><i class="fab fa-opera"></i> 11.7 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 4 </span>
+            </span>
+        </td>
+    </tr>
+</table>
+    
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+    <p> <a href="http://www.w3schools.com/html/html_formatting.asp" target="_blank"> W3Schools HTML Text Formating </a></p>
+<h2 style="color:green;"><u> Remember This : </u></h2>
+    <p> - </p>
+<h2 style="color:green;"><u> Description and Demonstration : </u></h2>
+    <p> - HTML defines special elements for defining text </p>
+    <pre class="syntax">
+SYNTAX :    &lt;b&gt;                                           // defines a bold text (use as last resort)
+            &lt;strong&gt;                                      // defines an important (bold) text
+            &lt;i&gt;                                           // defines an italic text (use as last resort)
+            &lt;em&gt;                                          // defines an emphasized (italic) text 
+            &lt;u&gt;                                           // specifies a different text than the normal text (underlined)
+            &lt;s&gt;                                           // specifies a text what is no longer correct (text line through)
+            
+            &lt;del&gt;                                         // defines a deleted text
+            &lt;ins&gt;                                         // defines an inserted text
+            
+            &lt;mark&gt;                                        // <i class="fab fa-html5"></i> defines a marked/highlighted text
+            &lt;small&gt;                                       // defines a smaller text and side comments
+            &lt;span&gt;                                        // groups inline elements (has no styling effects used to isolate and target text part)
+            &lt;sub&gt;                                         // defines a subscript text (text appears half a character below the normal line)  
+            &lt;sup&gt;                                         // defines a superscript text (text appears half a character above the normal line) 
+            
+            &lt;code&gt;                                        // defines a piece of computer code
+            &lt;kbr&gt;                                         // defines a keyboard input 
+            &lt;samp&gt;                                        // defines a sample output from a computer program
+            &lt;var&gt;                                         // defines a variable (italic text)
+        <span style="color:darkgray;">--------------------------------</span>    
+            &lt;br&gt;                                          // defines a sigle line break 
+            &lt;hr&gt;                                          // defines a thematic break (draws a horizontal (separation) line on the page)
+            &lt;wbr&gt;                                         // <i class="fab fa-html5"></i> (word break opportunity) specifies a position in a text where a word-break would be ok <span style="color:orange;">(no IE support)</span>
+            
+    <span style="color:skyblue;">// <mark>del</mark> attributes - - - - - </span>   
+            cite="<strong>URL</strong>"                         <span style="color:skyblue;">// URL that explains why the text was deleted </span>
+            datetime="<strong>YYYY-MM-DD</strong>T<strong>HH:MM:SS</strong>Z"    <span style="color:skyblue;">// time when text was deleted</span>
+            
+    <span style="color:skyblue;">// <mark>ins</mark> attributes - - - - - </span>   
+            cite="<strong>URL</strong>"                         <span style="color:skyblue;">// URL that explains why the text was inserted </span>
+            datetime="<strong>YYYY-MM-DD</strong>T<strong>HH:MM:SS</strong>Z"    <span style="color:skyblue;">// time when text was inserted/changed</span>        
+    </pre>
+    <pre>
+    &lt;b&gt;bold text&lt;/b&gt;                                      // bold text
+    &lt;strong&gt;strong (bold) text&lt;/strong&gt;                   // strong but bold :)
+    &lt;i&gt;italic text&lt;/i&gt;                                    // italic text
+    &lt;em&gt;emphasized (italic) text&lt;/em&gt;                     // emphasized but italic text :)
+    &lt;u&gt;different text than normal&lt;/u&gt;                     // underlined (indicating a different text than normal)
+    &lt;s&gt;not a correct text any more&lt;/s&gt;                    // linethrough (indicating a no longer correct text)
+    
+    &lt;del datetime="2018-12-18T20:01"&gt;deleted text&lt;/del&gt;   // deleted text (text line through)
+    &lt;ins datetime="2018-12-18T20:02"&gt;inserted text&lt;/ins&gt;  // inserted text (underlined text)
+    
+    &lt;mark&gt;marked text &lt;/mark&gt;                             // marked/highlighted text
+    &lt;small&gt;smallert text &lt;/small&gt;                         // smaller text (smaller than the font size)
+    &lt;span&gt;unstyled text&lt;/span&gt;                            // unstyled text (element used to target specific inline lement parts)
+    &lt;sub&gt;supscript text&lt;/sub&gt;                             // subscript text (half a character below the normal)
+    &lt;sup&gt;superscript text&lt;/sup&gt;                           // superscript text (half a character above the normal)
+    
+    &lt;code&gt;computer code&lt;/code&gt;                            // tag specifies a computer code
+    &lt;kbr&gt;keyboard input&lt;/kbr&gt;                             // tag specifies a keyboard input
+    &lt;samp&gt;output sample&lt;/samp&gt;                            // tag specifies an output sample 
+    &lt;var&gt;variable&lt;/var&gt;                                   // tag specifies a variable
+    
+    &lt;p&gt;broken &lt;br&gt; line &lt;/p&gt;                              // breaks the current line
+    &lt;hr&gt;                                                  // draws a horizontal line
+    
+//  ------------------
+    &lt;p&gt; This is a longlonglonglonglonglonglonglonglonglong&lt;wbr&gt;longlonglonglonglonglonglonglong word &lt;/p&gt;     // browser will break the word at the "&lt;wbr&gt;" position if necessary
+    </pre>
+<details class="example">     
+<summary> Example : </summary>     
+<h4><ins> Bold letters <mark>&lt;b&gt;</mark> VS Strong Letters <mark>&lt;strong&gt;</mark> </ins></h4>
+    <p> - <b> Bold </b> element makes the text bold, the <strong> Strong </strong> element also makes the text bold but it means higher important content for search engines!</p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p&gt; - &lt;b&gt; Bold &lt;/b&gt; element makes the text bold, 
+    the &lt;strong&gt; Strong &lt;/strong&gt; element also makes the text bold but it means higher important content for search engines!&lt;/p&gt;
+        </pre>
+        </details>    
+<h4><u> Italic letters <mark>&lt;i&gt;</mark> VS Ephazised Lettres <mark>&lt;em&gt;</mark></u></h4>
+    <p> - The <i> italic </i> element makes the set text italic and just like in bold case the <em> empasize </em> element not only visualy changes the text but it ephasizes for search engines! </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+        &lt;p&gt; - The &lt;i&gt; italic &lt;/i&gt; "&lt;i&gt;" element makes the set text italic and just like in bold case 
+        the &lt;em&gt; empasize &lt;/em&gt; "&lt;em&gt;" element not only visualy changes the text but it ephasizes for search engines! &lt;/p&gt;
+        </pre>
+        </details>
+<h4><u> The <mark>&lt;mark&gt;</mark> element</u></h4>    
+    <p> - This is a <mark>marked</mark> text </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p&gt; - This is a &lt;mark&gt;marked&lt;/mark&gt; text &lt;/p&gt;
+        </pre>
+        </details>
+<h4><u> The <mark>&lt;del&gt;</mark> and <mark>ins</mark> elements </u></h4>
+    <p> - This as <del>inserted</del> and this is a <del>deleted</del> text </p>
+        <details>
+        <summary> CODE : </summary>    
+        <pre>
+    &lt;p&gt; - This as &lt;del&gt;inserted&lt;/del&gt; and this is a &lt;del&gt;deleted&lt;/del&gt; text &lt;/p&gt;
+        </pre>
+        </details>
+<h4><u> Superscript <mark>&lt;sup&gt;</mark> and Subscript <mark>&lt;sub&gt;</mark> elements </u></h4>
+    <p> - This is <sup> some superscript text </sup> and this one is <sub> Subscript </sub> Text. </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p&gt; - This is &lt;sup&gt; some superscript text &lt;/sup&gt; and this one is &lt;sub&gt; Subscript &lt;/sub&gt; Text. &lt;/p&gt;
+        </pre>
+        </details>
+<h4><u> The <mark>&lt;small&gt;</mark> element </u></h4> 
+    <p> - This tag makes the targeted text <small> One size smaller </small> like this. </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p&gt; - This tag makes the targeted text &lt;small&gt; One size smaller &lt;/small&gt; like this. &lt;/p&gt;
+        </pre>
+        </details>
+<h4><u> <mark>&lt;code&gt;</mark> / <mark>&lt;kbr&gt;</mark> / <mark>&lt;s&gt;</mark> / <mark>&lt;samp&gt;</mark> / <mark>&lt;span&gt;</mark> / <mark>&lt;u&gt;</mark> / <mark>&lt;var&gt;</mark> / <mark>&lt;hr&gt;</mark> / <mark>&lt;br&gt;</mark> TEST </u></h4>    
+    <u> different text than normal </u> <br>
+    <s> no longer a correct text </s> <br>
+    <span> unstyled text </span>
+    <hr>
+    <code> computer code </code> <br>
+    <kbr> keyboard input </kbr> <br>
+    <samp> sample output </samp> <br>
+    <var> variable </var>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;u&gt; different text than normal &lt;/u&gt; &lt;br&gt;
+    &lt;s&gt; no longer a correct text &lt;/s&gt; &lt;br&gt;
+    &lt;span&gt; unstyled text &lt;/span&gt;
+    &lt;hr&gt;
+    &lt;code&gt; computer code &lt;/code&gt; &lt;br&gt;
+    &lt;kbr&gt; keyboard input &lt;/kbr&gt; &lt;br&gt;
+    &lt;samp&gt; sample output &lt;/samp&gt; &lt;br&gt;
+    &lt;var&gt; variable &lt;/var&gt;    
+        </pre>
+        </details>
+<h4><u> <mark>&lt;template&gt;</mark> TEST </u></h4>    
+    <template>
+        <p> paragraph 1 </p>
+        <p> paragraph 2 </p>
+    </template>
+        <details>   
+        <summary> CODE : </summary>
+        <pre>
+    &lt;template&gt;                            // hides its content
+        &lt;p&gt; paragraph 1 &lt;/p&gt;
+        &lt;p&gt; paragraph 2 &lt;/p&gt;
+    &lt;/template&gt;   
+        </pre>
+        </details>
+<h4><u> <mark>&lt;wbr&gt;</mark> TEST </u></h4>    
+    <div style="width:150px; border:solid black 2px;">
+        <p> BlablablaBlablabla<wbr>BlablablaBlablabla<wbr>BlablablaBlablabla<wbr>BlablablaBlablabla </p>
+    </div>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;div style="width:150px; border:solid black 2px;"&gt;
+        &lt;p&gt; BlablablaBlablabla&lt;wbr&gt;BlablablaBlablabla&lt;wbr&gt;BlablablaBlablabla&lt;wbr&gt;BlablablaBlablabla &lt;/p&gt;
+    &lt;/div&gt;    
+                            // preferable word breaks specified by the &lt;wbr&gt; element
+        </pre>
+        </details>
+</details>    
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> the <mark>&lt;template&gt;</mark> element </u></h2>   
+    <p> - the <mark>&lt;template&gt;</mark> element's content is not rendered when the page loads but it is <u>parsed</u> </p>
+    <p> - the <mark>&lt;template&gt;</mark> element's content is <u>only</u> accessible through the <mark>content</mark> property of the <mark>template</mark> object by using JS, (not accessible by CSS or direct targeting!) </p>
+    <!-- only accessible through the "content" propety -->
+    <pre class="syntax">
+SYNTAX :    &lt;template&gt;                                    // <i class="fab fa-html5"></i> holds its content hidden form the client in a separate document fragment (its content is only accessible through the <mark>content</mark> property)   
+            <strong>templateElement</strong>.content                       // returns the content of the template element as a document fragment 
+    </pre>
+    <pre>
+    &lt;template id="myTemplate"&gt;
+        &lt;p id="first"&gt; first element &lt;/p&gt;                 // all neseted elements are hidden from the client
+        &lt;p&gt; second element &lt;/p&gt;
+    &lt;/template&gt;
+    
+&lt;script&gt;
+    var myTemplate = document.getElementById("myTemplate"); 
+    myTemplate.style.visibility = "visible";              // this doesn't do anything (not hidden with CSS)
+    document.getElementById("first");                     // -> null                                // <b>child elements cannot be targeted directly!</b> 
+    
+    myTemplate.content.nodeType;                          // -> 11                                  // 11 = document fragment
+    myTemplate.content.children[0]                        // -> &lt;p id="first"&gt; first element &lt;/p&gt;   // first child of the document fragment
+    myTemplate.content.children[1]                        // -> &lt;p&gt; second element &lt;/p&gt;             // second child of the document fragment
+&lt;/script&gt;
+    </pre>
+<details class="example">
+<summary> Example : </summary>    
+<h4><u> <mark>&lt;template&gt;</mark> element TEST </u></h4>    
+    <template id="testTemplate">
+        <p id="temp_child1"> first element </p>
+        <p> another element </p>
+    </template>
+    <p id="printTemplateCont"></p>
+<script>
+    var tempLate = document.getElementById("testTemplate");         // template element
+    tempLate.style.visibility = "visible";                          // not hidden by CSS (this doesn't do anything)
+    
+// get template content
+    var templateContent = "";
+    for(let i = 0; i < tempLate.content.children.length; i++) {
+        templateContent += tempLate.content.children[i].innerHTML + "<br>";
+    }
+    
+// print
+    document.getElementById("printTemplateCont").innerHTML =
+        "targeting element directly = " + document.getElementById("temp_child1") + "<br>" +     // this fails (element cannot targeted directly)
+        "<mark>template.content</mark> node type is a \"document fragment\" (11) = " + tempLate.content.nodeType + "<br>" +
+        templateContent;                                            // template element contents are printed
+</script>    
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="printTemplateCont"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var tempLate = document.getElementById("testTemplate");         // template element
+    tempLate.style.visibility = "visible";                          // not hidden by CSS (this doesn't do anything)
+    
+// get template content
+    var templateContent = "";
+    for(let i = 0; i &lt; tempLate.content.children.length; i++) {
+        templateContent += tempLate.content.children[i].innerHTML + "&lt;br&gt;";
+    }
+    
+// print
+    document.getElementById("printTemplateCont").innerHTML =
+        "targeting element directly = " + document.getElementById("temp_child1") + "&lt;br&gt;" +     // this fails (element cannot targeted directly)
+        "&lt;mark&gt;template.content&lt;/mark&gt; node type is a \"document fragment\" (11) = " + tempLate.content.nodeType + "&lt;br&gt;" +
+        templateContent;                                            // template element contents are printed
+&lt;/script&gt;       
+        </pre>
+        </details>
+</details>
+    
+    
+    <h2 class="test" style=""><a href="TEST/index.html"> TEST > </a></h2>
+</body>
+</html>

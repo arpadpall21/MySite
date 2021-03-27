@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> Arrays </title>   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Assets/stylesPages.css">
+    <script src="../../Assets/scriptPages.js" type="application/javascript"></script>
+</head>
+<body>
+<h1> Arrays (ver 3.1) </h1>
+    <p> Updated (2017-10-02 / 2017-10-15 / 2018-04-06 / 2019-03-18) </p>
+    <p class="sitenav"> <a href="../../index.html">MySite></a>
+        <a href="../index.html">JavaScript></a> Arrays
+    </p>
+<table class="table">
+    <tr>
+        <th style="width:30%;"> Property / Method </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td> 
+            [<i>item, item, ...</i>] <span style='color:blue;'>(Array literal)</span><br>
+            new Array(<i>item, ...</i>) <br>
+            new Array(<strong>nr</strong>) <span style='color:blue;'>(empty Array with the specified length)</span>
+        </td>
+        <td> creating Array </td>
+    </tr>
+    <tr>  
+        <td colspan="2"> Properties </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.constructor </td>
+        <td> 
+            returns the function that created the Array object's prototype 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.length </td>
+        <td> 
+            returns the number of elements in the Array as a number 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.prototype </td>
+        <td> 
+            allows you to add properties and methods to an Array object 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>  
+        <td colspan="2" id="methods"> Methods </td>
+    </tr>
+    <tr>
+        <td> <em>Array</em>.from(<strong>iterableObj</strong>, <i>mapFn(value, index, array)</i>, <i>thisValue</i>) </td>
+        <td> 
+            <i class="fab fa-js">6</i> returns a new shallow copied Array from the passed iterable object   
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 45 </span>
+                <span><i class="fab fa-firefox"></i> 32 </span>
+                <span><i class="fab fa-opera"></i> 25 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 9 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>Array</em>.isArray(<strong>value</strong>) </td>
+        <td> 
+            returns a boolean value indicating if the passed value is an Array 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 5 </span>
+                <span><i class="fab fa-firefox"></i> 4 </span>
+                <span><i class="fab fa-opera"></i> 10.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 5 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>Array</em>.of(<strong>val</strong>, <i>val</i>, <i>...</i>) </td>
+        <td> 
+            <i class="fab fa-js">6</i> creates a new Array with the passed values regardless of their data type (avoid pitfalls when creating an Array by using the "Array()" constructor) 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 45 </span>
+                <span><i class="fab fa-firefox"></i> 25 </span>
+                <span><i class="fab fa-opera"></i> ? </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 9 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.concat(<i>Array/item, ...</i>) </td>
+        <td> 
+            merges Arrays together or merges the passed items into the source Array and returns a new Array <u>(original Array is not modified)</u> 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.copyWithin(<strong>indexPaste</strong>, <i>stIndex(included), endIndex(excluded)</i>) </td>
+        <td> 
+            <i class="fab fa-js">6</i> copies items within the Array to the targeted index (replaces items) <u>(cannot extend Array size)</u> 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 45 </span>
+                <span><i class="fab fa-firefox"></i> 32 </span>
+                <span><i class="fab fa-opera"></i> 32 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 9 </span>
+            </span>
+        </td>
+    </tr>
+    
+    <tr>
+        <td> <strong>array</strong>.entries() </td>
+        <td> 
+            <i class="fab fa-js">6</i> returns an Iterable Object <a href="../Objects/Map Object/index.html#iteratorObj" target="_blank">[Iterable Objects (link)]</a> with the key(index)/value pairs of each item  
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 38 </span>
+                <span><i class="fab fa-firefox"></i> 28 </span>
+                <span><i class="fab fa-opera"></i> 25 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 8 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.every(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>) </td>
+        <td> 
+            returns "true" if all items passes a test provided by the callback function, otherwise returns "false" 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> 32 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>   
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.fill(<strong>item</strong>, <i>stIndex(included)</i>, <i>endIndex(excluded)</i>) </td>
+        <td> 
+            <i class="fab fa-js">6</i> fills the targeted index range with the passed value (all items are replaced with the passed item) (by default replaces all items) <u>(cannot extend Array size)</u>
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 45 </span>
+                <span><i class="fab fa-firefox"></i> 31 </span>
+                <span><i class="fab fa-opera"></i> 32 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 7.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.filter(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>) </td>
+        <td> 
+            returns all found elements provided by the callback function <u>in a new Array</u> 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 1.5 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.find(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>) </td>
+        <td> 
+            <i class="fab fa-js">6</i> returns the <u>first found</u> item provided by the callback function (than stop calling the callback function further) 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 45 </span>
+                <span><i class="fab fa-firefox"></i> 25 </span>
+                <span><i class="fab fa-opera"></i> 32 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 7.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.findIndex(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>) </td>
+        <td> 
+            <i class="fab fa-js">6</i> returns the index of the <u>first item</u> that passes the text provided by the callback function (than stop calling the callback function further) 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 45 </span>
+                <span><i class="fab fa-firefox"></i> 25 </span>
+                <span><i class="fab fa-opera"></i> 32 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 7.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.flat(<i>depth_nr</i>) </td>
+        <td> 
+            <i class="fab fa-js">10</i> concatenates nested-arrays into the original Array and <u>returns a new Array</u> (works only with nested Arrays (Objects are ignored), removes empty items) <u>(original Array is not modified)</u> 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 69 </span>
+                <span><i class="fab fa-firefox"></i> 62 </span>
+                <span><i class="fab fa-opera"></i> 56 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                <span><i class="fab fa-safari"></i> 12 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.forEach(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>) </td>
+        <td> 
+            runs the callback function for each element in the Array <u>but cannot return anything nor modifies the original Array</u> (the callback function have ONLY side effect, "return" has no effect)
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 1.5 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.includes(<strong>item</strong>, <i>index(included)</i>) </td>
+        <td> <i class="fab fa-js">7</i> searches for an item and returns a boolean indicating the result (if the <i>index</i> is specified the the array is checked <u>after</u> set index (negative index allowed))
+            <span id="browserSupport" title="updated: 2019-11-08">
+                <span><i class="fab fa-chrome"></i> 47 </span>
+                <span><i class="fab fa-firefox"></i> 43 </span>
+                <span><i class="fab fa-opera"></i> 34 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 14 </span>
+                <span><i class="fab fa-safari"></i> 9 </span>
+                <span><i class="fab fa-node-js"></i> 6.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.indexOf(<strong>item</strong>, <i>index(included)</i>) </td>
+        <td> searches for an item and returns <u>the first found</u> item's index (if the <i>index</i> is specified the the array is checked <u>after</u> set index (negative index allowed)) <u>(<mark>-1</mark> indicates not match)</u>    
+            <span id="browserSupport" title="updated: 2019-11-08">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 1.5 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+                <span><i class="fab fa-node-js"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.join("<i>separator</i>") </td>
+        <td> 
+            converts all the Array elemets to string and returns them in one string <u>separator can be defined</u> 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.keys() </td>
+        <td> 
+            <i class="fab fa-js">6</i> returns an Iterable Object <a href="../Objects/Map Object/index.html#iteratorObj" target="_blank">[Iterable Objects (link)]</a> with the keys (indexes) of each item 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 38 </span>
+                <span><i class="fab fa-firefox"></i> 28 </span>
+                <span><i class="fab fa-opera"></i> 25 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 8 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.lastIndexOf(<strong>item</strong>, <i>index(included)</i>) </td>
+        <td> searches for an item and returns <u>the last found</u> item's index (if the <i>index</i> is specified the the array is checked <u>before</u> set index (negative index allowed)) <u>(<mark>-1</mark> indicates not match)</u> 
+            <span id="browserSupport" title="updated: 2019-11-08">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+                <span><i class="fab fa-node-js"> yes</i> </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.map(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>) </td>
+        <td> 
+            runs the callback function for each element in the Array and returns the result <u>in a new Array</u> <u>(original Array is not modified)</u>
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 1.5 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>    
+    <tr>
+        <td> <strong>array</strong>.pop() </td>
+        <td> 
+            removes the last item of an Array and returns it 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.push(<strong>intem</strong><i>, item, ...</i>) </td>
+        <td> 
+            adds item(s) at the end of the Array and returns the new Array length 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.reduce(<strong>fn(total, value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>) </td>
+        <td> 
+            reduces the Array to a single value by running a callback function for every element (start-to-end) and accumulating them in a single value (does not modify the original Array) 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 3 </span>
+                <span><i class="fab fa-opera"></i> 10.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> 4 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.reduceRight(<strong>fn(total, value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>) </td>
+        <td> 
+            reduces the Array to a single value by running a callback function for every element (end-to-start) and accumulating them in a single value (does not modify the original Array)
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 3 </span>
+                <span><i class="fab fa-opera"></i> 10.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> 4 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.reverse() </td>
+        <td> 
+            reverses the Array order (modifies the original Array) 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.shift() </td>
+        <td> 
+            removes the first item of an Array and returns it 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.slice(<i>stIndex(included)</i>, <i>endIndex(excluded)</i>) </td>
+        <td> 
+            returns a new Array from the selected items <u>(original Array is not modified)</u>
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.some(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>) </td>
+        <td> 
+            retruns "true" if at least one item passes a test provided by the callback function, "false" if there is no match (if one item passes the test the callback function is not called any further)
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.sort(<i>compareFn(a, b)</i>) </td>
+        <td> 
+            sorts the Array items in ascending order according to the Unicode Table (optionally uses a callback function which converts the passed items to numbers and compares them against each other <u>if returned value is (negative <mark>a</mark> is lower than <mark>b</mark>) (positive <mark>a</mark> is higher than <mark>b</mark>) (<mark>0</mark> <mark>a</mark> and <mark>b</mark> are equals)</u>) (modifies the original Array)
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.splice(<strong>indexPosition</strong>, <i>NR_howmanyRemove</i>, <i>item, item, ...</i>) </td>
+        <td> 
+            add/removes items to/from the Array and returns the removed elements in a new Array <u>(original Array is modified)</u> 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.toLocaleString() </td>
+        <td> 
+            converst all the Array elements to locale-string (uses the user computer's string format) and retruns them in one string <u>(items are separated with commas)</u> 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.toString() </td>
+        <td> 
+            converts all the Array elemets to string and returns them in one string <u>items are separated with commas</u> 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>array</strong>.unshift(<strong>intem</strong><i>, item, ...</i>) </td>
+        <td> 
+            adds item(s) at the beginning of the Array and returns the new Array length 
+            <span id="browserSupport">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i>  </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+</table>  
+<h2 style="color:green;"><u> Notes : </u></h2>
+    <details class="example" id="notes">
+    <summary> Notes :</summary>
+    </details>
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+    <p><a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank"> W3Schools JavaScript Arrays </a></p>
+    <p><a href="https://www.w3schools.com/js/js_array_sort.asp" target="_blank"> W3Schools JavaScript Sorting Arrays </a></p>
+    <p><a href="https://www.w3schools.com/jsref/jsref_obj_array.asp" target="_blank"> W3Schools JavaScript Array Methods reference </a></p>
+<h2 style="color:green;"><u> Remember This : </u></h2>
+    <p> - avoid creating arrays with the <mark>new</mark> keyword, it complicates your code and slows down execution speed </p>
+    <p> - the <mark>indexOf()</mark> searches <span style="background-color:yellow;">after</span> the set index and the <mark>lastIndexOf()</mark> searches <span style="background-color:yellow;">before</span> set index </p>
+    <p> - the <mark>forEach()</mark> method has better performance over the <mark>map()</mark> method because it does not return anything (but it is situational which to use) </p>
+<h2 style="color:green;"><u> Description and Demonstration : </u></h2>
+    <p> - a JavaScript Array is a special variable, which can hold more than one value at the time and maintains their order in the array </p>
+    <pre class="syntax">
+SYNTAX :    [<i>item, item, ...</i>]                                   // Array literal, creates an array and returns with the passed items       
+            new Array(<i>item, ...</i>)                                // creates an array with the passed items (avoid it slows execution)
+            new Array(<strong>nr</strong>)                                       // creates an array empty Array with a set length (avoid it slows execution)
+    </pre>
+    <pre>
+    ["string", 21, {prop:true}];                                // Array literal 
+    ["string", 21, {prop:true},];                               // -! coma tailing is forbiden in IE8 and earlier 
+    
+    new Array("string", 21, {prop:true});                       // does the same as above but should be avoided to do 
+    new Array(21);                                              // creates an Array with 21 holes 
+    </pre>
+<h2 style="color:darkblue;"><u> Array items </u></h2>
+    <p> - we can basically store any valid data in an array even functions </p>
+    <pre>
+    var myArray = [ "Pall",                                     // String
+                    21,                                         // Number
+                    false,                                      // Boolean
+                    ["Bircsy", 33, false],                      // Array Object
+                    myFunction,                                 // function Object
+                    {'1st':"Me", '2nd':"You", '3rd':"he"}       // Object
+    ];
+    
+    function myFunction(a, b) { return a + b; };
+    
+// calling stored items ----------------------------------------- 
+    nyArray[1];                                                 // -> 21
+    myArray[3][0];                                              // -> "Bircsy"      // accessing an Array in the Array
+    myArray[4](3, 4);                                           // -> 7             // call a function stored in Array 
+    myArray[5].2nd;                                             // -> "You"         // accessing an Object in the Array
+    
+// create new or replace existing items ------------------------- 
+    myArray[3] = "Array Replaced";                              // 4th element is replaced 
+    myArray[6] = "new item";                                    // new item added at the end    // -! this creates a hole for myArray[5] item
+    
+// remove items ------------------------------------------------- 
+    delete myArray[5];
+    myArray[5] = undefined;                                     // this would do too
+    </pre>
+<details class="example">
+<summary> Example :</summary>
+<h4><u> TEST 1 </u></h4>
+    <p id="arr-nest"></p>
+    <script>
+    var arr = [ "Audi", 
+                "BMW", 
+                "Mercedess",
+                ["level-1", "level-3", 56, true],
+                58, 
+                false,
+                [45, 76, 78, "John", [20, 21, 22]],
+                thisFunction,
+                true,
+                {name:"Pall", nr:21, boolean:true},
+                Date.now,
+                ];
+    
+    function thisFunction(u, i){
+        return u + i
+    };
+    
+    document.getElementById('arr-nest').innerHTML = 
+        "Accessing to an element = ".fontcolor('white') + arr[4] + "<br>" + 
+        "Accessing to all elements of a nested Array = ".fontcolor('white') + arr[3] + "<br>" +
+        "Accessing to a single element of a nested Array = ".fontcolor('white') + arr[3][3] + "<br>" +
+        "Calling a nested function of an Array = ".fontcolor('white') + arr[7](14, 7) + "<br>" +
+        "Calling a member of an Object form a nested Oject of an Array = ".fontcolor('white') + arr[9].name;
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="arr-nest"&gt;&lt;/p&gt;
+    &lt;script&gt;
+    var arr = [ "Audi", 
+                "BMW", 
+                "Mercedess",
+                ["level-1", "level-3", 56, true],
+                58, 
+                false,
+                [45, 76, 78, "John", [20, 21, 22]],
+                thisFunction,
+                true,
+                {name:"Pall", nr:21, boolean:true},
+                ];
+    
+    function thisFunction(u, i){
+        return u + i
+    };
+    
+    document.getElementById('arr-nest').innerHTML = 
+        "Accessing to an element = ".fontcolor('white') + arr[4] + "&lt;br&gt;" + 
+        "Accessing to all elements of a nested Array = ".fontcolor('white') + arr[3] + "&lt;br&gt;" + 
+        "Accessing to a single element of a nested Array = ".fontcolor('white') + arr[3][3] + "&lt;br&gt;" + 
+        "Calling a nested function of an Array = ".fontcolor('white') + arr[7](14, 7) + "&lt;br&gt;" + 
+        "Calling a member of an Object form a nested Oject of an Array = ".fontcolor('white') + arr[9].name;
+&lt;/script&gt;
+    </pre>
+    </details>
+<!------------------------------------------------------------------------------------------------------------------->
+<h4><u> TEST 2 </u></h4>
+    <p id="array-syntax"></p>
+<script>
+    var arr_1 = ["Audi",                                                    // break and spaces no problem
+                 "BMW", 
+                 "Mercedess", 
+                 "Skoda", 
+                 "Opel"];
+    var arr_2 = new Array("Cookie", "Biscuit", "Cake", "Apple Pie");        // this does the same as the "arr_1" literal Array
+    
+    arr_1[2] = "Also AUDI";                                                 // this replaces the 3rd itme in the "arr_1" array
+    arr_1[arr_1.length] = "Dacia";                                          // new element added at the end of the Array
+    delete arr_1[1];                                                        // 2nd item deleted (a hole is created)
+    arr_2[6] = "Sweet";                                                     // this item is added in the "arr_2" 
+                                                                            // the "5th" place is empty
+    
+    
+    document.getElementById('array-syntax').innerHTML = 
+        "Display the full Array (1) = ".fontcolor('white') + arr_1 + "<br>" +
+        "Display the full Array (2) = ".fontcolor('white') + arr_2 + "<br>" +
+        "Display an Array Literal Item = ".fontcolor('white') + arr_1[0] + "<br>" +
+        "Display an Array Item crated with the 'new' keyword = ".fontcolor('white') + arr_2[2] + "<br>" +
+        "Display a replaced Array Item = ".fontcolor('white') + arr_1[2] + "<br>" +
+        "Display a Created Item = ".fontcolor('white') + arr_2[6] + "<br>" +
+        "Deleted item is = ".fontcolor('white') + arr_1[1];
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="array-syntax"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var arr_1 = ["Audi",                                                    // break and spaces no problem
+                 "BMW", 
+                 "Mercedess", 
+                 "Skoda", 
+                 "Opel"];
+    var arr_2 = new Array("Cookie", "Biscuit", "Cake", "Apple Pie");        // this does the same as the "arr_1" literal Array
+    
+    arr_1[2] = "Also AUDI";                                                 // this replaces the 3rd itme in the "arr_1" array
+    arr_2[6] = "Sweet";                                                     // this item is added in the "arr_2" 
+                                                                            // the "5th" place is empty
+    
+    document.getElementById('array-syntax').innerHTML = 
+        "Display an Array Literal Item = ".fontcolor('white') + arr_1[0] + "&lt;br&gt;" +
+        "Display an Array Item crated with the 'new' keyword = ".fontcolor('white') + arr_2[2] + "&lt;br&gt;" +
+        "Display the full Array = ".fontcolor('white') + arr_2 + "&lt;br&gt;" +
+        "Display a replaced Array Item = ".fontcolor('white') + arr_1[2] + "&lt;br&gt;" +
+        "Display a Created Item = ".fontcolor('white') + arr_2[6];
+&lt;/script&gt;
+    </pre>
+    </details>
+</details>
+<!------------------------------------------------------------------------------------------------------------------->
+<hr> 
+<h2><u> Arrays VS Objects </u></h2> 
+    <p> - JavaScript Array is a sequentian data structure elements are stored in a linear way, so <u style="color:yellow;">we acces items by refering to the order number "index" associated with the item</u> <u style="background-color:yellow;">(Array order starts with <mark>0</mark>)</u></p>
+    <p> - JavaScript Object stores items by using "key/value" pairs, so <u style="color:yellow;">we acces items by refering to the key associated with the item</u> <u style="background-color:yellow;">(item order is NOT maintainerd!)</u> </p>
+    <p> - at end Arrays are also an Objects, the just offer different ways to deal with the data </p>
+    <pre>
+    var this_array = ["Arpad", "Pall"];                             
+    var this_object= {firstName:"Arpad", lastName:"Pall"};
+    
+    this_array[0];                                              // -> "Arpad"       // accessing Array item
+    this_object.firstName;                                      // -> "Arpad"       // accessing Ojbect item
+    
+    typeof this_array                                           // -> "object"      // -! any non primitive data is returned as object in JavaScript (even null)
+    </pre>
+<details>
+<summary> Example : </summary>
+<h4><u> TEST </u></h4>
+    <p id="arrayVSobject"></p>
+<script>
+    var arr = ["Bircsy", "Biro", "Haver"];
+    var obj = {haverNickName:"Bircsy", haverName:"Biro", status:"Haver"};
+    
+    document.getElementById('arrayVSobject').innerHTML =
+        "(Array) = ".fontcolor('white') + arr[1] + " " + arr[0] + " = " + typeof arr + "<br>" +
+        "(Object) = ".fontcolor('white') + obj.haverName + " " + obj.haverNickName + " = " + typeof obj;
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="arrayVSobject"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var arr = ["Bircsy", "Biro", "Haver"];
+    var obj = {haverNickName:"Bircsy", haverName:"Biro", status:"Haver"};
+    
+    document.getElementById('arrayVSobject').innerHTML =
+        "(Array) = ".fontcolor('white') + arr[1] + " " + arr[0] + " = " + typeof arr + "&lt;br&gt;" +
+        "(Object) = ".fontcolor('white') + obj.haverName + " " + obj.haverNickName + " = " + typeof obj;
+&lt;/script&gt;
+    </pre>
+    </details> 
+</details>
+<!-------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2><u> Properties and Methods </u></h2>
+<h2 style="color:darkblue;"><u> Static methods (<mark>Array()</mark> constructor methods) <mark>isArray()</mark> / <mark>from()</mark> / <mark>of()</mark> </u></h2>
+    <pre class="syntax">
+SYNTAX :    <em>Array</em>.isArray(<strong>value</strong>)                                // returns a boolean value indicating if the passed value is an Array
+
+            <em>Array</em>.from(<strong>iterableObj</strong>, <i>mapFn(value, index, array)</i>, <i>thisValue</i>)      // <i class="fab fa-js">6</i> returns a new shallow copied Array from the passed iterable object   
+                - <strong>iterableObj</strong> : any iterable object
+                - <i>mapFn(value, index, array)</i> : map function used on the iterable objects items
+                - <i>thisValue</i> : passed "this" value used in the <i>mapFn(value, index, array)</i> function
+                
+            <em>Array</em>.of(<strong>val</strong>, <i>val</i>, <i>...</i>)                             // <i class="fab fa-js">6</i> creates a new Array with the passed values regardless of their data type (avoid pitfalls when creating an Array by using the "Array()" constructor)  
+    </pre>
+    <pre>
+// isArray() ---------------------------------------------------------------
+    Array.isArray([1, 3]);                                      // -> true
+    Array.isArray({1:3})                                        // -> false
+    Array.isArray("myString")                                   // -> false
+    
+// from() ------------------------------------------------------------------
+    Array.from("Pall");                                         // -> ["P", "a", "l", "l"]      // string has the "length" property 
+    Array.from(new Set([4, false, "myTxt"]));                   // -> [4, false, "myTxt"]       // "Set" is an iterable object
+    Array.from(["egy", "ketto", "harom"], (val, ind) => val = val + " ind = " + ind);   // -> ["egy ind = 0", "ketto ind = 1", "harom ind = 2"]   // callback function used to handle passed values   
+    Array.from({prop1:"val", prop2:"val", prop3:[1, 2, 4]})     // -> []                        // -! objects does not have the "length" property therefore the new array cannot be created! 
+    
+    // creates a new Array (a new copy) -------------- 
+    var myTestObj_1 = [1, 2, ["a", "b", "c"]];
+    var myTestObj_2 = Array.from(myTestObj_1);                  // -! a copy is created form the original Array in this situation 
+    myTestObj_1[1] = false;                                     // we modify the first Array 
+    delete myTestObj_1[2];
+    
+    myTestObj_2;                                                // -> [1, 2, ["a", "b", "c"]]   // the newly created Array is a new copy (never gets muted)
+    
+// of() --------------------------------------------------------------------
+    new Array(7);                                               // -> [,,,,,,,]     // an Array with 7 empty values
+    Array.of(7);                                                // -> [7]           // returns an Array with a value (numbers can be safely passed)
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4><u> find out If Array </u></h4>
+    <p id="find-Array"></p>
+<script>
+    var array = ["Dell", "IBM", "Lenovo", "Samsung", "Apple"];
+    var not_array = "Computer Science is Awesome";
+    
+    function isArray(x){
+        return x.constructor.toString().indexOf('Array') > -1;
+    }
+    
+    document.getElementById('find-Array').innerHTML =
+        "typeof operator = ".fontcolor('white') + (array instanceof Array) + " // " + (not_array instanceof Array) + "<br>" +
+        "Array.isArray() method = ".fontcolor('white') + Array.isArray(array) + " // " + Array.isArray(not_array) + "<br>" +
+        "function isArray() = ".fontcolor('white') + isArray(array) + " // " + isArray(not_array);
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="find-Array"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var array = ["Dell", "IBM", "Lenovo", "Samsung", "Apple"];
+    var not_array = "Computer Science is Awesome";
+    
+    function isArray(x){
+        return x.constructor.toString().indexOf('Array') > -1;
+    }
+    
+    document.getElementById('find-Array').innerHTML =
+        "typeof operator = ".fontcolor('white') + (array instanceof Array) + " // " + (not_array instanceof Array) + "&lt;br&gt;" +
+        "Array.isArray() method = ".fontcolor('white') + Array.isArray(array) + " // " + Array.isArray(not_array) + "&lt;br&gt;" +
+        "function isArray() = ".fontcolor('white') + isArray(array) + " // " + isArray(not_array);
+&lt;/script&gt;
+    </pre>
+    </details>
+<h4><u> split iterable object to a new Array  </u></h4>
+    <p id="shallowCopy"></p>
+<script>
+    var myMap = new Set(["Jasmine", "Boby", "Paula", "Frankie"]);
+    var shallowCopy = Array.from(myMap);                            // returns an Array
+// print
+    document.getElementById("shallowCopy").innerHTML = shallowCopy;
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &tl;p id="shallowCopy"&gl;&tl;/p&gl;
+&tl;script&gl;
+    var myMap = new Set(["Jasmine", "Boby", "Paula", "Frankie"]);
+    var shallowCopy = Array.from(myMap);                            // returns an Array
+// print
+    document.getElementById("shallowCopy").innerHTML = shallowCopy;
+&tl;/script&gl;        
+        </pre>
+        </details>
+<h4><u> test <mark>Array.of()</mark> </u></h4>    
+    <p id="arrOf"></p>
+<script>
+    var ofArray = Array.of(3);
+    document.getElementById('arrOf').innerHTML = ofArray;
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="arrOf"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var ofArray = Array.of(3);
+    document.getElementById('arrOf').innerHTML = ofArray;
+&lt;/script&gt;
+        </pre>
+        </details>
+</details>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<hr>
+<h2 style="color:darkblue;"><u> the <mark>length</mark> porperty and <mark>toString()</mark> / <mark>toLocaleString()</mark> / <mark>join()</mark> methods </u></h2>
+    <pre class="syntax">
+SYNTAX :    <strong>array</strong>.length                                        // returns the number of elements in the Array as a number
+            <strong>array</strong>.toString()                                    // converts all the Array elements to string and returns them in one string <u>items are separated with commas</u>
+            <strong>array</strong>.toLocaleString()                              // converst all the Array elements to locale-string (uses the user computer's string format) and retruns them in one string <u>(items are separated with commas)</u>
+            <strong>array</strong>.join("<i>separator</i>")                             // converts all the Array elemets to string and returns them in one string <u>separator can be defined</u>
+    </pre>
+    <pre>
+    var myArray = ["Bircsy", 21, true, {color_1:"blue", color_2:"red", arr:[21, true]}];
+    
+    myArray.length;                                             // -> 4 
+    myArray.toString());                                        // -> "Bircsy,21,true,[object Object]"
+    myArray.toLocaleString();                                   // -> "Bircsy,21,true,[object Object]"          // this method is mostly useful with dates  
+    myArray.join(" - ");                                        // -> "Bircsy - 21 - true - [object Object]"
+    </pre>
+<details class="example">
+<summary> Example : </summary> 
+<h4><u> <mark>length</mark> TEST </u></h4>
+    <p id="arr_length"></p>
+<script>
+    var ar = ["Pall", "Bircsy", "Pista", "Soni", "Kaposzta", "Vatras", "Lai"];
+    var br = ["Pall", "Bircsy", "Pista", "Soni", "Kaposzta", "Vatras", "Lai", true];
+    
+    document.getElementById('arr_length').innerHTML =
+        "This Arra is = ".fontcolor('white') + ar + " Its length is = ".fontcolor('white') + ar.length + "<br>" +
+        "Added element in an Array = ".fontcolor('white') + br + " Its length is = ".fontcolor('white') + br.length;
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="arr_length"&gt; &lt;/p&gt;
+ &lt;script&gt;
+    var ar = ["Pall", "Bircsy", "Pista", "Soni", "Kaposzta", "Vatras", "Lai"];
+    var br = ["Pall", "Bircsy", "Pista", "Soni", "Kaposzta", "Vatras", "Lai", true];
+    
+    document.getElementById('arr_length').innerHTML =
+        "This Arra is = ".fontcolor('white') + ar + " Its length is = ".fontcolor('white') + ar.length + "&lt;br&gt;" +
+        "Added element in an Array = ".fontcolor('white') + br + " Its length is = ".fontcolor('white') + br.length;
+ &lt;/script &gt;
+    </pre>
+    </details>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<h4><u> <mark>toString()</mark> / <mark>join()</mark></u></h4>
+    <p id="Arr_toString"></p>
+<script>
+    var arr1 = ["Samsung", "Apple", "Nokia", "Sony", "Blackberry"];
+    var arr1st = arr1.toString();
+    var arr1jn = arr1.join(' -|- ');
+    
+    document.getElementById('Arr_toString').innerHTML = 
+        "Array is = ".fontcolor('white') + arr1 + " is ".fontcolor('white') + typeof arr1 + "<br>" +
+        "Converted to String with the toString() method = ".fontcolor('white') + arr1st + " is ".fontcolor('white') + typeof arr1st + "<br>" +
+        "Converted to String with the join(' -|- ') method = ".fontcolor('white') + arr1jn + " is ".fontcolor('white') + typeof arr1jn;
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="Arr_toString"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var arr1 = ["Samsung", "Apple", "Nokia", "Sony", "Blackberry"];
+    var arr1st = arr1.toString();
+    var arr1jn = arr1.join(' -|- ');
+    
+    document.getElementById('Arr_toString').innerHTML = 
+        "Array is = ".fontcolor('white') + arr1 + " is ".fontcolor('white') + typeof arr1 + "&lt;br&gt;" +
+        "Converted to String with the toString() method = ".fontcolor('white') + arr1st + " is ".fontcolor('white') + typeof arr1st + "&lt;br&gt;" +
+        "Converted to String with the join(' -|- ') method = ".fontcolor('white') + arr1jn + " is ".fontcolor('white') + typeof arr1jn;
+&lt;/script&gt;
+    </pre>
+    </details>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<h4><u> <mark>toLocaleString()</mark> TEST </u></h4>
+    <p id="localStr_print"></p>
+<script>
+    var localeArray_test = [Date(), "string", false];
+
+    document.getElementById("localStr_print").innerHTML = 
+        "toString() = " + localeArray_test.toString() + "<br>" +
+        "toLocaleString() = " + localeArray_test.toLocaleString();
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    <p id="localStr_print"></p>
+<script>
+    var localeArray_test = [Date(), "string", false];
+
+    document.getElementById("localStr_print").innerHTML = 
+        "toString() = " + localeArray_test.toString() + "<br>" +
+        "toLocaleString() = " + localeArray_test.toLocaleString();
+</script>
+        </pre>
+        </details>
+</details>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<hr>
+<h2 style="color:darkblue;"><u> The <mark>pop()</mark> / <mark>push()</mark> / <mark>shift()</mark> / <mark>unshift()</mark> methods </u></h2>
+    <pre class="syntax">
+SYNTAX:     <strong>array</strong>.pop()                                                                // removes the last item of an Array and returns it
+            <strong>array</strong>.push(<strong>intem</strong><i>, item, ...</i>)                                               // adds item(s) at the end of the Array and returns the new Array length    
+                
+            <strong>array</strong>.shift()                                                              // removes the first item of an Array and returns it    
+            <strong>array</strong>.unshift(<strong>intem</strong><i>, item, ...</i>)                                            // adds item(s) at the beginning of the Array and returns the new Array length
+    </pre>
+<details class="example"> 
+<summary> DEMO </summary>
+    <pre>
+    var myArray  = ["Break", "Berlin", "Citadine", "SUV"]; 
+    
+// pop() ------------------------------------------------------------------------------ 
+    myArray.pop();                                                                     // -> "SUV"             // last item is removed and returned 
+    myArray;                                                                           // -> ["Break", "Berlin", "Citadine"]
+    
+// push() -----------------------------------------------------------------------------   
+    myArray.push("Convertable", "Sport");                                              // -> 5                 // new items are pushed at the END in the Array and new length is returned    
+    myArray;                                                                           // -> ["Break", "Berlin", "Citadine", "SUV", "Convertable", "Sport"]    
+    
+// shift() ----------------------------------------------------------------------------  
+    myArray.shift();                                                                   // -> "Break"           // first item is removed and returned 
+    myArray;                                                                           // -> ["Berlin", "Citadine", "SUV"]     
+    
+// unshift() -------------------------------------------------------------------------- 
+    myArray.unshift("Kombi");                                                          // -> 5                 // inserts the passed item at the beginning of the Array and returns the new Array length    
+    myArray;                                                                           // -> ["Kombi", "Break", "Berlin", "Citadine", "SUV"]    
+    </pre>
+</details>
+<details class="example"> 
+<summary> Example : </summary>
+<h4><u> <mark>pop()</mark> / <mark>push()</mark> / <mark>shift()</mark> / <mark>unshift()</mark> TEST </u></h4>
+    <p id="pop"></p>
+<script>
+    var arr_pop = ["Apple", "Pear", "Nut", "Plum", "Strawberry"]; 
+        var pop = arr_pop.pop();
+    var arr_push = ["Apple", "Pear", "Nut", "Plum", "Strawberry"]; 
+        var push = arr_push.push('Grapes');
+    var arr_shift = ["Apple", "Pear", "Nut", "Plum", "Strawberry"];
+        var shift = arr_shift.shift();
+    var arr_unshift = ["Apple", "Pear", "Nut", "Plum", "Strawberry"];
+        var unshift = arr_unshift.unshift('Peach');
+    
+    document.getElementById('pop').innerHTML =
+        'The Original Array is = '.fontcolor('white') + '["Apple", "Pear", "Nut", "Plum", "Strawberry"]' + "<br>" +
+        "pop() method, Array after method = ".fontcolor('white') + arr_pop + " | The pop value is = ".fontcolor('white') + pop + "<br>" +
+        "push() method, Array after method = ".fontcolor('white') + arr_push + " | The new Array length is = ".fontcolor('white') + push + "<br>" +
+        "shift() method, Array after method = ".fontcolor('white') + arr_shift + " | The shift value is = ".fontcolor('white') + shift + "<br>" +
+        "unshift() method, Array after method = ".fontcolor('white') + arr_unshift + " | The new Array length is = ".fontcolor('white') + unshift;
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="pop"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var arr_pop = ["Apple", "Pear", "Nut", "Plum", "Strawberry"]; 
+        var pop = arr_pop.pop();
+    var arr_push = ["Apple", "Pear", "Nut", "Plum", "Strawberry"]; 
+        var push = arr_push.push('Grapes');
+    var arr_shift = ["Apple", "Pear", "Nut", "Plum", "Strawberry"];
+        var shift = arr_shift.shift();
+    var arr_unshift = ["Apple", "Pear", "Nut", "Plum", "Strawberry"];
+        var unshift = arr_unshift.unshift('Peach');
+    
+    document.getElementById('pop').innerHTML =
+        'The Original Array is = '.fontcolor('white') + '["Apple", "Pear", "Nut", "Plum", "Strawberry"]' + "&lt;br&gt;" +
+        "pop() method, Array after method = ".fontcolor('white') + arr_pop + " | The pop value is = ".fontcolor('white') + pop + "&lt;br&gt;" +
+        "push() method, Array after method = ".fontcolor('white') + arr_push + " | The new Array length is = ".fontcolor('white') + push + "&lt;br&gt;" +
+        "shift() method, Array after method = ".fontcolor('white') + arr_shift + " | The shift value is = ".fontcolor('white') + shift + "&lt;br&gt;" +
+        "unshift() method, Array after method = ".fontcolor('white') + arr_unshift + " | The new Array length is = ".fontcolor('white') + unshift;
+&lt;/script&gt;
+    </pre>
+    </details>
+</details>
+
+
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------>    
+<hr>
+<h2 style="color:darkblue;"><u> - <mark>splice()</mark> / <mark>slice()</mark> / <mark>concat()</mark> / <mark>flat()</mark> methods </u></h2>
+    <pre class="syntax">
+SYNTAX:     <strong>array</strong>.splice(<strong>indexPosition</strong>, <i>NR_howmanyRemove</i>, <i>item, item, ...</i>)      // add/removes items to/from the Array and returns the removed elements in a new Array <u>(original Array is modified)</u>
+                - <strong>indexPosition</strong> : position to perform in
+                - <i>NR_howmanyRemove</i> : how many items to remove
+                - <i>item1</i>, <i>item2</i>, ... : items to be added in Array
+                
+            <strong>array</strong>.slice(<i>stIndex(included)</i>, <i>endIndex(excluded)</i>)  // returns a new Array from the selected items <u>(original Array is not modified)</u>
+            <strong>array</strong>.concat(<i>Array/item, ...</i>)                       // merges Arrays together or merges the passed items into the source Array and returns a new Array <u>(original Array is not modified)</u>
+            
+            <strong>array</strong>.flat(<i>depth_nr</i>)                                // <i class="fab fa-js">10</i> concatenates nested-arrays into the original Array and <u>returns a new Array</u> (works only with nested Arrays (Objects are ignored), removes empty items) <u>(original Array is not modified)</u>  
+                - <i>depth_nr</i> : defines how deep a nested Array should be flattened (default <mark>1</mark>)
+    </pre>
+    <pre>
+    var myArray = ["Audi", "BMW", "Mercedes", "Dacia", "Toyota"];
+    var myMultiArray = [1, false,  ,"string", {p1:"val", p2:[1, 3]}, ["egy", "ketto", ["un", "deux", ["one", "two"]]]];     // there is an empty item in this Array!
+    
+// splice() --------------------------------------------------------------------  
+    myArray.splice(1, 0, "Opel", "Ferrary");                    // -> []                    // 2 new items are added, nothing removed 
+    myArray;                                                    // -> ["Audi", "Opel", "Ferrary", "BMW", "Mercedes", "Dacia", "Toyota"]
+    myArray.splice(2, 2);                                       // -> ["Ferrary", "BMW"]    // 2 items are removed and returned 
+    myArray;                                                    // -> ["Audi", "Opel", "Mercedes", "Dacia", "Toyota"]
+    myArray.splice(3, 1, "Renault");                            // -> ["Dacia"]             // 1 item replaced 
+    myArray;                                                    // -> ["Audi", "Opel", "Mercedes", "Renault", "Toyota"] // -! original Array is modified
+        
+// slice() --------------------------------------------------------------------- 
+    myArray.slice();                                            // -> ["Audi", "BMW", "Mercedes", "Dacia", "Toyota"]    // copy of the original array
+    myArray.slice(1, 3);                                        // -> ["BMW", "Mecedess"]
+    myArray;                                                    // -> ["Audi", "BMW", "Mercedes", "Dacia", "Toyota"]    // !! original Array is not modified  
+    
+// concat() -------------------------------------------------------------------- 
+    myArray.concat(["Renault", "Citroen"]);                     // -> ["Audi", "BMW", "Mercedes", "Dacia", "Toyota", "Renault", "Citroen"]  // Array merged together and returns a new Array 
+    myArray.concat("Renault", "Citroen");                       // -> ["Audi", "BMW", "Mercedes", "Dacia", "Toyota", "Renault", "Citroen"]  // merges the passed values into the source Array and returns a new Array   
+    myArray;                                                    // -> ["Audi", "BMW", "Mercedes", "Dacia", "Toyota"]    // !! original Array is not modified
+    
+// flat() ----------------------------------------------------------------------  
+    // -! flattens nested Arrays Only! and removes empty items 
+    myMultiArray.flat();                                        // -> [1, false, "string", {p1:"val", p2:[1, 3]}, "egy", "ketto", ["un", "deux", ["one", "two"]]]           // 1 depth (default)
+    myMultiArray.flat(2);                                       // -> [1, false, "string", {p1:"val", p2:[1, 3]}, "egy", "ketto", "un", "deux", ["one", "two"]]             // 2 depth 
+    myMultiArray.flat(3);                                       // -> [1, false, "string", {p1:"val", p2:[1, 3]}, "egy", "ketto", "un", "deux", "one", "two"]               // 3 depth
+    myMultiArray;                                               // -> [1, false,  ,"string", {p1:"val", p2:[1, 3]}, ["egy", "ketto", ["un", "deux", ["one", "two"]]]]       // -! original Array is not modified   
+    </pre>
+<details class="example">
+<summary> Example : </summary>    
+<h4><u> <mark>splice()</mark> TEST </u></h4>
+    <p id="arr-splice"></p>
+<script>
+    var arr_sp = ["house-1", "house-2", "house-3", "house-4", "house-5", "house-6", "house-7", "house-8"];
+    var sp1 = arr_sp.splice(1, 2);
+    var sp2 = arr_sp.splice(3, 0, "flat-1", "flat-2", "flat-3");
+    var sp3 = arr_sp.splice(7, 1, "empty-1", "empty-2");
+    
+    document.getElementById('arr-splice').innerHTML =
+        "The Original Array is = ".fontcolor('white') + '["house-1", "house-2", "house-3", "house-4", "house-5" "house-6", "house-7", "house-8"]' + "<br>" +
+        "Splice method used for = ".fontcolor('white') + "(1)remove the 2nd and 3rd element ----- (2)add 3 new elements in the 4th positon ----- (3)remove elements form the 7th position and add new ones" + "<br>" +
+        "Array after all splice method used = ".fontcolor('white') + arr_sp + "<br>" +
+        "Spliced elements = ".fontcolor('yellow') + sp1 + sp3;
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="arr-splice"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var arr_sp = ["house-1", "house-2", "house-3", "house-4", "house-5", "house-6", "house-7", "house-8"];
+    var sp1 = arr_sp.splice(1, 2);
+    var sp2 = arr_sp.splice(3, 0, "flat-1", "flat-2", "flat-3");
+    var sp3 = arr_sp.splice(7, 1, "empty-1", "empty-2");
+    
+    document.getElementById('arr-splice').innerHTML =
+        "The Original Array is = ".fontcolor('white') + '["house-1", "house-2", "house-3", "house-4", "house-5" "house-6", "house-7", "house-8"]' + "&lt;br&gt;" +
+        "Splice method used for = ".fontcolor('white') + "(1)remove the 2nd and 3rd element ----- (2)add 3 new elements in the 4th positon ----- (3)remove elements form the 7th position and add new ones" + "&lt;br&gt;" +
+        "Array after all splice method used = ".fontcolor('white') + arr_sp + "&lt;br&gt;" +
+        "Spliced elements = ".fontcolor('yellow') + sp1 + sp3;
+&lt;/script&gt;
+    </pre>
+    </details>
+<!------------------------------------------------------------------------------------------------------------------------------>    
+<h4><u> <mark>concat()</mark> TEST </u></h4>
+    <p id="arr-concat"></p>
+<script>
+    var arr_a = ["string-1", "string-2"];
+    var arr_b = [101, 102];
+    var arr_c = [true, false];
+        var arr_d = arr_a.concat(arr_b, arr_c);
+        var arr_e = arr_a.concat(" - ", arr_b, " - ", arr_c);
+        var arr_f = arr_a.concat(["string-3", "string-4"]);
+    
+    document.getElementById('arr-concat').innerHTML =
+        "1st Array is = ".fontcolor('blue') + arr_a + "<br>" +
+        "2nd Array is = ".fontcolor('blue') + arr_b + "<br>" +
+        "3rd Array is = ".fontcolor('blue') + arr_c + "<br>" +
+        "All Arrays merged together = ".fontcolor('white') + arr_d + "<br>" +
+        "Arrays combined with elements = ".fontcolor('white') + arr_e + "<br>" +
+        "Values added to an Array = ".fontcolor('white') + arr_f + " = " + typeof arr_f + " is Array? = " + Array.isArray(arr_f);
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="arr-concat"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var arr_a = ["string-1", "string-2"];
+    var arr_b = [101, 102];
+    var arr_c = [true, false];
+        var arr_d = arr_a.concat(arr_b, arr_c);
+        var arr_e = arr_a.concat(" - ", arr_b, " - ", arr_c);
+        var arr_f = arr_a.concat(["string-3", "string-4"]);
+    
+    document.getElementById('arr-concat').innerHTML =
+        "1st Array is = ".fontcolor('blue') + arr_a + "&lt;br&gt;" +
+        "2nd Array is = ".fontcolor('blue') + arr_b + "&lt;br&gt;" +
+        "3rd Array is = ".fontcolor('blue') + arr_c + "&lt;br&gt;" +
+        "All Arrays merged together = ".fontcolor('white') + arr_d + "&lt;br&gt;" +
+        "Arrays combined with values = ".fontcolor('white') + arr_e + "&lt;br&gt;" +
+        "Values added to an Array = ".fontcolor('white') + arr_f + " = " + typeof arr_f + " is Array? = " + Array.isArray(arr_f);
+&lt;/script&gt;
+    </pre>
+    </details>
+<!------------------------------------------------------------------------------------------------------------------------------>    
+<h4><u> <mark>slice()</mark> TEST </u></h4>
+    <p id="arr_slice"></p>
+<script>
+    var arr_sl = ["Table", "Chair", "Closet", "Shelft", "Cupboard"];
+    var arr_sl_ext = arr_sl.slice(1, 4);
+    var arr_sl_sl = arr_sl.slice(2);
+    
+    document.getElementById('arr_slice').innerHTML =
+        "The Original Array is = ".fontcolor('white') + arr_sl + "<br>" +
+        "Slice method exctracts the middle 3 elements = ".fontcolor('white') + arr_sl_ext + "<br>" +
+        "Slice all elements after the 3rd(included) = ".fontcolor('white') + arr_sl_sl;
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="arr_slice"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var arr_sl = ["Table", "Chair", "Closet", "Shelft", "Cupboard"];
+    var arr_sl_ext = arr_sl.slice(1, 4);
+    var arr_sl_sl = arr_sl.slice(2);
+    
+    document.getElementById('arr_slice').innerHTML =
+        "The Original Array is = ".fontcolor('white') + arr_sl + "&lt;br&gt;" +
+        "Slice method exctracts the middle 3 elements = ".fontcolor('white') + arr_sl_ext + "&lt;br&gt;" +
+        "Slice all elements after the 3rd(included) = ".fontcolor('white') + arr_sl_sl;
+&lt;/script&gt;
+    </pre>
+    </details>
+<!------------------------------------------------------------------------------------------------------------------------------>    
+<h4><u> <mark>flat()</mark> TEST </u></h4>
+<script>
+    var multiDepthArray = [
+        "myString",                                                         // flat() method removes empty items 
+        ,
+        [1, 2, false, Date(), ["un", "deux", "trois", [100, 101, 102]]],
+        {p1:true, p2:[45, 46, 47]}                                          // Object won't be flated 
+    ];
+    
+    var flatArray_1 = multiDepthArray.flat();       // by default it flats 1 depth only 
+        // -> ["myString", 1, 2, false, "Mon Mar 25 2019 17:10:03 GMT+0200 (heure normale d’Europe de l’Est)", ["un", "deux", "trois", [100, 101, 102]], {p1:true, p2:[45, 46, 47]}]
+        
+    var flatArray_2 = multiDepthArray.flat(2);      // this flats 2 depth 
+        // -> ["myString", 1, 2, false, "Mon Mar 25 2019 17:13:17 GMT+0200 (heure normale d’Europe de l’Est)", "un", "deux", "trois", [100, 101, 102], {p1:true, p2:[45, 46, 47]}]
+        
+    var flatArray_3 = multiDepthArray.flat(4);      // this flats 4 depth (3 in this situation) 
+        // -> ["myString", 1, 2, false, "Mon Mar 25 2019 17:15:51 GMT+0200 (heure normale d’Europe de l’Est)", "un", "deux", "trois", 100, 101, 102, {p1:true, p2:[45, 46, 47]}]
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+<script>
+    var multiDepthArray = [
+        "myString",                                                         // flat() method removes empty items 
+        ,
+        [1, 2, false, Date(), ["un", "deux", "trois", [100, 101, 102]]],
+        {p1:true, p2:[45, 46, 47]}                                          // Object won't be flated 
+    ];
+    
+    var flatArray_1 = multiDepthArray.flat();       // by default it flats 1 depth only 
+        // -> ["myString", 1, 2, false, "Mon Mar 25 2019 17:10:03 GMT+0200 (heure normale d’Europe de l’Est)", ["un", "deux", "trois", [100, 101, 102]], {p1:true, p2:[45, 46, 47]}]
+        
+    var flatArray_2 = multiDepthArray.flat(2);      // this flats 2 depth 
+        // -> ["myString", 1, 2, false, "Mon Mar 25 2019 17:13:17 GMT+0200 (heure normale d’Europe de l’Est)", "un", "deux", "trois", [100, 101, 102], {p1:true, p2:[45, 46, 47]}]
+        
+    var flatArray_3 = multiDepthArray.flat(4);      // this flats 4 depth (3 in this situation) 
+        // -> ["myString", 1, 2, false, "Mon Mar 25 2019 17:15:51 GMT+0200 (heure normale d’Europe de l’Est)", "un", "deux", "trois", 100, 101, 102, {p1:true, p2:[45, 46, 47]}]
+</script>
+        </pre>
+        </details>
+</details>
+<!------------------------------------------------------------------------------------------------------------------------------>    
+<hr>
+<h2 style="color:darkblue;"><u> - <mark>indexOf()</mark> / <mark>lastIndexOf()</mark> / <mark>includes()</mark> methods </u></h2>
+    <pre class="syntax">
+SYNTAX :    <strong>array</strong>.indexOf(<strong>item</strong>, <i>index(included)</i>)                // searches for an item and returns <u>the first found</u> item's index (if the <i>index</i> is specified the the array is checked <u>after</u> set index (negative index allowed)) <u>(<mark>-1</mark> indicates not match)</u>    
+            <strong>array</strong>.lastIndexOf(<strong>item</strong>, <i>index(included)</i>)            // searches for an item and returns <u>the last found</u> item's index (if the <i>index</i> is specified the the array is checked <u>before</u> set index (negative index allowed)) <u>(<mark>-1</mark> indicates not match)</u>    
+            <strong>array</strong>.includes(<strong>item</strong>, <i>index(included)</i>)               // <i class="fab fa-js">7</i> searches for an item and returns a boolean indicating the result (if the <i>index</i> is specified the the array is checked <u>after</u> set index (negative index allowed))   
+    </pre>
+    <pre>
+    var myArray = ["Audi", "BMW", "Mercedes", "Dacia", "BMW", "Toyota", "Renault"];
+    
+// indexOf() ------------------------------------------------------------------- 
+    myArray.indexOf("BMW");                                     // -> 1             // searched item is at the 1 index (first found item)
+    myArray.indexOf("BMW", 2);                                  // -> 4             // search begins from the 2nd index(included)
+    myArray.indexOf("BMW", -2);                                 // -> -1            // search begins from the 5th index(included) in this situation (item not found)
+    
+// lastIndexOf() ---------------------------------------------------------------  
+    myArray.lastIndexOf("BMW");                                 // -> 4             // search starts from the end-to-start (first item found index returned)
+    myArray.lastIndexOf("BMW", 3);                              // -> 1             // search starts from the index 3 to the start 
+    
+// included() ------------------------------------------------------------------  
+    myArray.includes("BMW");                                    // -> true          
+    myArray.includes("BMW", -2);                                // -> false         // search begins from the 5th index(included) in this situation (item not found)
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4><u> <mark>indexOf()</mark> / <mark>lastIndexOf()</mark> TEST </u></h4>
+    <p id="search"></p>
+    <p> Value Found in = <span id="search_result"> N/A </span> </p>
+        <button onclick="sr1()"> Search for "Plum" after 3rd position </button>
+        <button onclick="sr2()"> Search for "Plum" after the -4th position </button>
+        <button onclick="sr3()"> Search for "Plum" from the back befor the 8th position  </button>
+        <button onclick="sr4()"> Search for "Plum" from the back befor the -4th position </button>
+<script>
+    var arr_sr = ["Apple", "Plum", "Grape", "Pear", "Peach", "Melon", "Plum", "Nut", "Raspberry"];
+    document.getElementById('search').innerHTML = "Array = " + arr_sr;
+    
+    var arr_position = ["First Position", "Second Position", "Third-Position", "Fourht Position", "Fifth Position", "Sixth Position", "Seventh Position", "Eigth Position"];
+    function sr1(){
+        document.getElementById('search_result').innerHTML = arr_position[arr_sr.indexOf("Plum", 2)];  
+    };
+    function sr2(){
+        document.getElementById('search_result').innerHTML = arr_position[arr_sr.indexOf("Plum", -4)];
+    };
+    function sr3(){
+        document.getElementById('search_result').innerHTML = arr_position[arr_sr.lastIndexOf("Plum", 8)];  
+    };
+    function sr4(){
+        document.getElementById('search_result').innerHTML = arr_position[arr_sr.lastIndexOf("Plum", -4)];
+    }
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="search"&gt;&lt;/p&gt;
+    &lt;p&gt; Value Found in = &lt;span id="search_result"&gt; N/A &lt;/span&gt; &lt;/p&gt;
+        &lt;button onclick="sr1()"&gt; Search for "Plum" after 3rd position &lt;/button&gt;
+        &lt;button onclick="sr2()"&gt; Search for "Plum" after the -4th position &lt;/button&gt;
+        &lt;button onclick="sr3()"&gt; Search for "Plum" from the back befor the 8th position &lt;/button&gt;
+        &lt;button onclick="sr4()"&gt; Search for "Plum" from the back befor the -4th position &lt;/button&gt;
+&lt;script&gt;
+    var arr_sr = ["Apple", "Plum", "Grape", "Pear", "Peach", "Melon", "Plum", "Nut", "Raspberry"];
+    document.getElementById('search').innerHTML = "Array = " + arr_sr;
+    
+    var arr_position = ["First Position", "Second Position", "Third-Position", "Fourht Position", "Fifth Position", "Sixth Position", "Seventh Position", "Eigth Position"];
+    function sr1(){
+        document.getElementById('search_result').innerHTML = arr_position[arr_sr.indexOf("Plum", 2)];  
+    };
+    function sr2(){
+        document.getElementById('search_result').innerHTML = arr_position[arr_sr.indexOf("Plum", -4)];
+    };
+    function sr3(){
+        document.getElementById('search_result').innerHTML = arr_position[arr_sr.lastIndexOf("Plum", 8)];  
+    };
+    function sr4(){
+        document.getElementById('search_result').innerHTML = arr_position[arr_sr.lastIndexOf("Plum", -4)];
+    }
+&lt;/script&gt;
+    </pre>
+    </details>
+<!------------------------------------------------------------------------------------------------------------------------------>    
+<h4><u> <mark>includes</mark> TEST </u></h4>
+    <p id="incLude"></p>
+<script>
+    var arrayInc = ["myString", 47, true, 444];
+    document.getElementById('incLude').innerHTML = 
+        "Array items = " + arrayInc + "<br>" +
+        " // check if contains '47' = " + arrayInc.includes(47) + "<br>" +
+        " // check if contains '21' = " + arrayInc.includes(21) + "<br>" +
+        " // check if contains '47' after the 2nd index = " + arrayInc.includes(47, 2);
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="incLude"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var arrayInc = ["myString", 47, true, 444];
+    document.getElementById('incLude').innerHTML = 
+        "Array items = " + arrayInc + "&lt;br&gt;" +
+        " // check if contains '47' = " + arrayInc.includes(47) + "&lt;br&gt;" +
+        " // check if contains '21' = " + arrayInc.includes(21) + "&lt;br&gt;" +
+        " // check if contains '47' after the 2nd index = " + arrayInc.includes(47, 2);
+&lt;/script&gt;
+        </pre>
+        </details>
+</details>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<hr>
+<h2 style="color:darkblue;"><u> - <mark>copyWithin()</mark> / <mark>fill()</mark> methods </u></h2>
+    <pre class="syntax">
+SYNTAX:     <strong>array</strong>.copyWithin(<strong>indexPaste</strong>, <i>stIndex(included), endIndex(excluded)</i>)    // <i class="fab fa-js">6</i> copies items within the Array to the targeted index (replaces items) <u>(cannot extend Array size)</u>
+                - <strong>indexPaste</strong> : Index position to paste elements 
+                - <i>stIndex(included)</i> : The Index position to start copying elements form (default 0)
+                - <i>endIndex(excluded)</i> : The Index position to stop copying elements form (if omitted all elements are copyed after "start")
+            
+            <strong>array</strong>.fill(<strong>item</strong>, <i>stIndex(included)</i>, <i>endIndex(excluded)</i>)                // <i class="fab fa-js">6</i> fills the targeted index range with the passed value (all items are replaced with the passed item) (by default replaces all items) <u>(cannot extend Array size)</u>    
+    </pre>
+    <pre>
+    var myArray = ["Audi", "BMW", "Mercedes", "Dacia", "BMW", "Toyota", "Renault"];
+    
+// copyWithin() ----------------------------------------------------------------   
+    myArray.copyWithin(3, 0, 3);                                // items from index 0 to 3 replaces items from the index 3
+    myArray;                                                    // -> ["Audi", "BMW", "Mercedes", "Audi", "BMW", "Mercedes", "Renault"]     // original Array is modified 
+    myArray.copyWithin(-1, 0, 3);                               // -! original Array length cannon be extended with this property 
+    myArray;                                                    // -> ["Audi", "BMW", "Mercedes", "Audi", "BMW", "Mercedes", "Audi"]     
+    
+// fill() ----------------------------------------------------------------------  
+    myArray.fill(" - ", 2, 4);                                  // items replaced between index 2 and 4 
+    myArray;                                                    // -> ["Audi", "BMW", " - ", " - ", "BMW", "Toyota", "Renault"]             // original Array is modified
+    myArray.fill("extend", -1);                                 // -! original Array length cannon be extended with this property
+    myArray;                                                    // -> ["Audi", "BMW", " - ", " - ", "BMW", "Toyota", "extend"]
+    </pre>
+<details class="example">
+<summary> Example : </summary> 
+<h4><u> <mark>copyWithin()</mark> / <mark>fill()</mark> TEST </u></h4>
+    <p id="arr_mod"></p>
+    <span><u> copyWithin method </u></span>
+    <button onclick="orig()"> Original Array </button>
+    <button onclick="rep1()"> Replace the last 3 elements with the first 3 </button>
+    <button onclick="rep2()"> Replace the first 2 elements with the last 2 elements </button>
+    <button onclick="rep3()"> Replace 2nd element with the 5th</button>
+    <button onclick="rep4()"> Replace 3rd element form 4th </button><br>
+    <span><u> fill method </u></span>
+    <button onclick="fill1()"> Replaces the 2nd Element </button>
+    <button onclick="fill2()"> Replaces the 1st and the 3rd Elements </button>
+    <button onclick="fill3()"> Replaces the 1st the 3rd and the 6th Elements </button>
+    <button onclick="fill4()"> Replaces all Elements </button>
+<script>
+    var arr_mod = ["Red", "Bule", "Yellow", "Green", "Purple", "Black"];
+    document.getElementById('arr_mod').innerHTML = arr_mod;
+    
+    function orig(){
+        document.getElementById('arr_mod').innerHTML = arr_mod = ["Red", "Bule", "Yellow", "Green", "Purple", "Black"];
+    };
+    function rep1(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.copyWithin(3, 0);
+    };
+    function rep2(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.copyWithin(0, 4);  
+    };
+    function rep3(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.copyWithin(1, 4, 5);  
+    };
+    function rep4(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.copyWithin(2, 3); 
+    };
+    function fill1(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill("(NEW-ITEM)", 1, 2);  
+    };
+    function fill2(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill("(NEW-ITEM)", 0, 1);
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill("(NEW-ITEM)", 2, 3);
+    };
+    function fill3(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill("(NEW-ITEM)", 0, 1);
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill('(NEW-ITEM)', 2, 3);
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill('(NEW-ITEM)', 5);
+    };
+    function fill4(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill("(NEW-ITEM)");
+    };
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="arr_mod"&gt;&lt;/p&gt;
+    &lt;span&gt;&lt;u&gt; copyWithin method &lt;/u&gt;&lt;/span&gt;
+    &lt;button onclick="orig()"> Original Array &lt;/button&gt;
+    &lt;button onclick="rep1()"> Replace the last 3 elements with the first 3 &lt;/button&gt;
+    &lt;button onclick="rep2()"> Replace the first 2 elements with the last 2 elements &lt;/button&gt;
+    &lt;button onclick="rep3()"> Replace 2nd element with the 5th &lt;/button&gt;
+    &lt;button onclick="rep4()"> Replace 3rd element form 4th &lt;/button&gt;&lt;br&tl;
+    &lt;span&gt;&lt;u&gt; fill method &lt;/u&gt;&lt;/span&gt;
+    &lt;button onclick="fill1()"> Replaces the 2nd Element &lt;/button&gt;
+    &lt;button onclick="fill2()"> Replaces the 1st and the 3rd Elements &lt;/button&gt;
+    &lt;button onclick="fill3()"> Replaces the 1st the 3rd and the 6th Elements &lt;/button&gt;
+    &lt;button onclick="fill4()"> Replaces all Elements &lt;/button&gt;
+&lt;script&gt;
+    var arr_mod = ["Red", "Bule", "Yellow", "Green", "Purple", "Black"];
+    document.getElementById('arr_mod').innerHTML = arr_mod;
+    
+    function orig(){
+        document.getElementById('arr_mod').innerHTML = arr_mod = ["Red", "Bule", "Yellow", "Green", "Purple", "Black"];
+    };
+    function rep1(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.copyWithin(3, 0);
+    };
+    function rep2(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.copyWithin(0, 4);  
+    };
+    function rep3(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.copyWithin(1, 4, 5);  
+    };
+    function rep4(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.copyWithin(2, 3); 
+    };
+    function fill1(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill("(NEW-ITEM)", 1, 2);  
+    };
+    function fill2(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill("(NEW-ITEM)", 0, 1);
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill("(NEW-ITEM)", 2, 3);
+    };
+    function fill3(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill("(NEW-ITEM)", 0, 1);
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill('(NEW-ITEM)', 2, 3);
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill('(NEW-ITEM)', 5);
+    };
+    function fill4(){
+        document.getElementById('arr_mod').innerHTML = arr_mod.fill("(NEW-ITEM)");
+    };
+&lt;/script&gt;
+    </pre>
+    </details>
+</details>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>    
+<h2 style="color:darkblue;"><u> - <mark>forEach()</mark> / <mark>map()</mark> methods </u></h2>
+    <p> - the <mark>forEach()</mark> method has better performance over the <mark>map()</mark> method because it does not return anything (but it is situational which to use) </p> 
+    <pre class="syntax">
+SYNTAX:     <strong>array</strong>.forEach(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>)   // runs the callback function for each element in the Array <u>but cannot return anything nor modifies the original Array</u> (the callback function have ONLY side effect, "return" has no effect)    
+            <strong>array</strong>.map(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>)       // runs the callback function for each element in the Array and returns the result <u>in a new Array</u> <u>(original Array is not modified)</u>   
+                - <strong>fn</strong> : callback function which runs for every element
+                    - <strong>value</strong> : curren item
+                    - <i>index</i> : current item index
+                    - <i>array</i> : the Array itself
+                - <i>thisValue</i> : value what can be used as "this" value in the callback function 
+    </pre>
+    <pre>
+    var myArray = [10, 20, 30];
+// map() -----------------------------------------------------------------------    
+    myArray.map(function(val, index) {                          // -> [11, 21, 31]      // new Array returned
+        return val +=1;
+    });
+    myArray;                                                    // -> [10, 20, 30]      // original Array is not modified  
+    
+// forEach() -------------------------------------------------------------------   
+    forEach(function(val, index) {                              // -> undefined         // -! the "forEach" method does not return values!
+       // do something with the passed values                   // the "forEach" method is designed to have ONLY side effects
+       return val +=1;                                          // -! this doesn't do anything because the "return" has no effect in the "forEach" callback function
+    });
+    myArray;                                                    // -> [10, 20, 30]      // original Array is not modified  
+    </pre>
+<details class="example">
+<summary> Example : </summary>    
+<h4><u> <mark>map()</mark> TEST </u></h4>
+    <p id="map_met"></p>
+    <p id="map_met_result" style="font-weight:bold; color:red;">...</p>
+    <span> Enter Number Here to MULTIPLY ALL Array elements with </span><input id="map_met_input" type="number" value="1">
+        <button onclick="mapFunction()"> Produce Result </button><br>
+    <span> Enter Number Here to ADD to ALL Array elements </span><input id="map_met_input2" type="number" value="1">
+        <button onclick="mapFunction2()"> Produce Result </button>
+<script>
+    var arr_one = [2, 4, 6, 8, 10];
+    
+    document.getElementById('map_met').innerHTML = "Original Array = ".fontcolor('white') + arr_one;
+    document.getElementById('map_met_result').innerHTML = "Produced Result = ".fontcolor('white');
+    
+    function mapFunction(){
+        document.getElementById('map_met_result').innerHTML = "Produced Result = ".fontcolor('yellow') + arr_one.map(subFunc);
+    }
+        function subFunc(a){
+            return a * document.getElementById('map_met_input').value;
+        }
+    function mapFunction2(){
+        map_met_result.innerHTML = "Produced Result = ".fontcolor('yellow') + arr_one.map(subFunc2);  
+    };
+        function subFunc2(a, b){
+            return a + Number(document.getElementById('map_met_input2').value);
+                    /*-- 
+                    the "Number()" golobal method is used here because the recovered value form the input filed is a string,
+                    without the "Number()" method number will concatenate instead of addition! 
+                    --*/
+        };
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="map_met"&gt;&lt;/p&gt;
+    &lt;p id="map_met_result" style="font-weight:bold; color:red;"&gt;...&lt;/p&gt;
+    &lt;span&gt; Enter Number Here to MULTIPLY ALL Array elements with &lt;/span&gt;&lt;input id="map_met_input" type="number" value="1"&gt;
+        &lt;button onclick="mapFunction()"&gt; Produce Result &lt;/button&gt;&lt;br&gt;
+    &lt;span&gt; Enter Number Here to ADD to ALL Array elements &lt;/span&gt;&lt;input id="map_met_input2" type="number" value="1"&gt;
+        &lt;button onclick="mapFunction2()"&gt; Produce Result &lt;/button&gt;
+&lt;script&gt;
+    var arr_one = [2, 4, 6, 8, 10];
+    
+    document.getElementById('map_met').innerHTML = "Original Array = ".fontcolor('white') + arr_one;
+    document.getElementById('map_met_result').innerHTML = "Produced Result = ".fontcolor('white');
+    
+    function mapFunction(){
+        document.getElementById('map_met_result').innerHTML = "Produced Result = ".fontcolor('yellow') + arr_one.map(subFunc);
+    }
+        function subFunc(a){
+            return a * document.getElementById('map_met_input').value;
+        }
+    function mapFunction2(){
+        map_met_result.innerHTML = "Produced Result = ".fontcolor('yellow') + arr_one.map(subFunc2);  
+    };
+        function subFunc2(a){
+            return a + Number(document.getElementById('map_met_input2').value);
+                    /*-- 
+                    the "Number()" golobal method is used here because the recovered value form the input filed is a string,
+                    without the "Number()" method number will concatenate instead of addition! 
+                    --*/
+        };
+&lt;/script&gt;
+    </pre>
+    </details>
+<h4><u> <mark>forEach()</mark> TEST </u></h4>
+    <p id="print_forEach"></p>
+<script>
+    var bordell_array = ["porte", 45, false, "bulle", 21]
+    bordell_array.forEach((val, index) => {document.write("item name = " + val + " // item index = " + index + " // item type = " + typeof val + "<br>")});
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="print_forEach"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var bordell_array = ["porte", 45, false, "bulle", 21]
+    bordell_array.forEach((val, index) => {document.write("item name = " + val + " // item index = " + index + " // item type = " + typeof val + "&lt;br&gt;")});
+&lt;/script&gt;
+        </pre>
+        </details>
+</details>  
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> - <mark>filter()</mark> / <mark>find()</mark> / <mark>findIndex()</mark> / <mark>every()</mark> / <mark>some()</mark> methods </u></h2>
+    <pre class="syntax">
+SYNTAX :    <strong>array</strong>.filter(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>)    // returns all found elements provided by the callback function in a new Array 
+            <strong>array</strong>.find(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>)      // <i class="fab fa-js">6</i> returns the <u>first found</u> item provided by the callback function (than stop calling the callback function further)   
+            <strong>array</strong>.findIndex(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>) // <i class="fab fa-js">6</i> returns the index of the <u>first item</u> that passes the text provided by the callback function (than stop calling the callback function further)   
+            
+            <strong>array</strong>.every(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>)     // returns "true" if all items passes a test provided by the callback function, otherwise returns "false"
+            <strong>array</strong>.some(<strong>fn(value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>)      // retruns "true" if at least one item passes a test provided by the callback function, "false" if there is no match (if one item passes the test the callback function is not called any further)   
+               
+                - <strong>fn</strong> : callback function which runs for every element
+                    - <strong>value</strong> : curren item
+                    - <i>index</i> : current item index
+                    - <i>array</i> : the Array itself
+                - <i>thisValue</i> : value what can be used as "this" value in the callback function 
+    </pre>
+    <pre>
+    var myArray = ["Audi", "BMW", "Mercedes", "Dacia", "BMW", "Toyota", "Renault"];
+    
+// filter() -------------------------------------------------------------------- 
+    myArray.filter((val, index, arr) => {                       // -> ["Mercedes", "Dacia", "Toyota", "Renault"]     // new Array returned 
+        if (val.length >= 5) return val;                        // we filter all items what is equal or longer than 5 characters 
+    });
+    
+// find() ----------------------------------------------------------------------  
+    myArray.find((val, index, arr) => {                         // -> "BMW"
+        if (index >= 2 && /W$/.exec(val)) return val;           // we filter for the first match which is after index 2(included) and ends with the letter "W"
+    });
+    
+// findIndex() ----------------------------------------------------------------- 
+    myArray.findIndex((val, ind, arr) => {                      // -> 1
+        return val == "BMW";                                    // index returned for the first item which passes the test 
+    });
+  
+// every() --------------------------------------------------------------------- 
+    myArray.every((val, index, arr) => {                        // -> true 
+        return typeof val == "string";                          // checks if all items are strings 
+    });
+             
+// some() ----------------------------------------------------------------------  
+    var result = myArray.some((val, index, arr) => {            // -> false
+        return typeof val == "number";                          // checks if there is any number in the Array
+    });
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4><u> <mark>some()</mark> TEST </u></h4>
+<h4><u> callback Function return values </u></h4>
+    <p id="testPrint"></p>
+<script>
+    var testArray = ["un", "deux"];
+    
+    testArray.some(callbackF, 2);                
+    function callbackF(value, index, arr) {                   // the second element's parameters are returned because the "filter" runs a test for each item
+        document.getElementById('testPrint').innerHTML = 
+            "passed value = ".fontcolor("yellow") + arguments[0] + "<br>" +         // returns the element's value
+            "passed Index = ".fontcolor("yellow") + arguments[1] + "<br>" +         // passes the element's index
+            "passed the whole array = ".fontcolor("yellow") + arguments[2] +        // passes the whole array 
+            " / " + typeof arguments[2] + "<br>" +       
+            "this value = ".fontcolor("yellow") + this;                             // returns the this value         
+    }
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="testPrint"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var testArray = ["un", "deux"];
+    
+    testArray.some(callbackF, 2);                
+    function callbackF(value, index, arr) {                   // the second element's parameters are returned because the "filter" runs a test for each item
+        document.getElementById('testPrint').innerHTML = 
+            "passed value = ".fontcolor("yellow") + arguments[0] + "&lt;br&gt;" +         // returns the element's value
+            "passed Index = ".fontcolor("yellow") + arguments[1] + "&lt;br&gt;" +         // passes the element's index
+            "passed the whole array = ".fontcolor("yellow") + arguments[2] +        // passes the whole array 
+            " / " + typeof arguments[2] + "&lt;br&gt;" +       
+            "this value = ".fontcolor("yellow") + this;                             // returns the this value         
+    }
+&lt;/script&gt;
+        </pre>
+        </details>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<h4><u> <mark>filter()</mark> / <mark>find()</mark> / <mark>findIndex()</mark> / <mark>every()</mark> / <mark>some()</mark> TEST </u></h4>
+        <fieldset>
+    <p id="search-array"></p>
+    <span>Input : </span><input type="number" id="search-input"><span> The Result is = <span id="search-result"></span></span><br><br>    
+    <div style="float:left; line-height:1.3em;">
+        <span><u><mark>filter()</mark> (returns all matched results)</u></span><br>
+        <span><u><mark>find()</mark> (returns the position of the first occurence match <span style="background-color:yellow;">In the Array order!)</span> </u></span><br>
+        <span><u><mark>findIndex()</mark> (returns only the first occurence match <span style="background-color:yellow;">In the Array order!)</span> </u></span><br>
+        <span><u><mark>every()</mark> (checks if <u>all</u> elements match the criteria)</u></span><br>
+        <span><u><mark>some()</mark> (checks if there is any element matches the criteria)</u></span>
+    </div>
+    <div style="float:left;">
+        <button onmouseup="filter_match()"> Check all match </button>
+        <button onmouseup="filter_lower()"> Check all lower  </button>
+        <button onmouseup="filter_greater()"> Check all greater </button><br>
+        <button onmouseup="find_match()"> Check the first match </button>
+        <button onmouseup="find_lower()"> Check the first lower </button>
+        <button onmouseup="find_greater()"> Check the first greater </button><br> 
+        <button onmouseup="findIndex_match()"> Check the first match position </button>
+        <button onmouseup="findIndex_lower()"> Check the first lower position </button>
+        <button onmouseup="findIndex_greater()"> Check the first greater position </button><br>
+        <button onmouseup="every_lower()"> Checks if all elements are lower </button>
+        <button onmouseup="every_greater()"> Check if all elements are greater </button><br>
+        <button onmouseup="some_lower()"> Check if any element is lower </button>
+        <button onmouseup="some_greater()"> Check if any element is greater </button>
+    </div>        
+        </fieldset>
+<script>
+    var arr_search = [43, 64, 30, 16, 30, 32, 43, 28, 78, 12, 27, 33, 50, 64, 254, 43];
+    document.getElementById('search-array').innerHTML = "Array Elements = " + arr_search;
+    var array_order = [ "position 1", "position 2", "position 3", "position 4", "position 5", "position 6", 
+                        "position 7", "position 8", "position 9", "position 10", "position 11", "position 12", 
+                        "position 13", "position 14", "position  15", "position 16",];
+    
+    function filter_match() {
+        document.getElementById('search-result').innerHTML = arr_search.filter(filter__match);  
+    };
+    function filter__match (value) {
+        return value == document.getElementById('search-input').value;  
+    };
+        function filter_lower() {
+            document.getElementById('search-result').innerHTML = arr_search.filter(filter__lower);  
+        };
+        function filter__lower (value) {
+            return value < document.getElementById('search-input').value;      
+        };
+            function filter_greater() {
+                document.getElementById('search-result').innerHTML = arr_search.filter(filter__greater);
+            };
+            function filter__greater (value){
+                return value > document.getElementById('search-input').value;  
+            };
+    /*-- anonymus functions here --*/
+    function find_match(){
+        document.getElementById('search-result').innerHTML = 
+            arr_search.find(function(value){return value == document.getElementById('search-input').value;});  
+    };
+        function find_lower(){
+            document.getElementById('search-result').innerHTML = 
+                arr_search.find(function(ertek){return ertek < document.getElementById('search-input').value;})
+        };
+            function find_greater(){
+                document.getElementById('search-result').innerHTML = 
+                    arr_search.find(function(sum){return sum > document.getElementById('search-input').value;})
+            };
+    function findIndex_match(){
+        document.getElementById('search-result').innerHTML = 
+            array_order[arr_search.findIndex(function(ide){return ide == document.getElementById('search-input').value;})]
+    };
+        function findIndex_lower(){
+            document.getElementById('search-result').innerHTML = 
+                array_order[arr_search.findIndex(function(ide){return ide < document.getElementById('search-input').value;})]
+        };
+            function findIndex_greater(){
+                document.getElementById('search-result').innerHTML = 
+                    array_order[arr_search.findIndex(function(ide){return ide > document.getElementById('search-input').value;})]
+            };
+    /*-- boolean checks --*/
+    function every_lower(){
+        document.getElementById('search-result').innerHTML =
+            arr_search.every(function(tango){return tango < document.getElementById('search-input').value;})
+    };
+    function every_greater(){
+        document.getElementById('search-result').innerHTML =
+            arr_search.every(function(value){return value > document.getElementById('search-input').value;})
+    };
+            function some_lower(){
+                document.getElementById('search-result').innerHTML = arr_search.some(lower_some);  
+            };
+                function lower_some (value){
+                    return value < document.getElementById('search-input').value;
+                }
+    function some_greater(){
+        document.getElementById('search-result').innerHTML = 
+            arr_search.some(function(value){return value > document.getElementById('search-input').value;})
+    };
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;fieldset&gt;
+    &lt;p id="search-array"&gt;&lt;/p&gt;
+    &lt;span&gt;Input : &lt;/span&gt;&lt;input type="number" id="search-input"&gt;&lt;span&gt; The Result is = &lt;span id="search-result"&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;    
+    &lt;div style="float:left; line-height:1.3em;"&gt;
+        &lt;span&gt;&lt;u&gt;&lt;mark&gt;filter()&lt;/mark&gt; (returns all matched results)&lt;/u&gt;&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;&lt;u&gt;&lt;mark&gt;find()&lt;/mark&gt; (returns the position of the first occurence match &lt;span style="background-color:yellow;"&gt;In the Array order!)&lt;/span&gt;&lt;/u&gt;&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;&lt;u&gt;&lt;mark&gt;findIndex()&lt;/mark&gt; (returns only the first occurence match &lt;span style="background-color:yellow;"&gt;In the Array order!)&lt;/span&gt;&lt;/u&gt;&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;&lt;u&gt;&lt;mark&gt;every()&lt;/mark&gt; (checks if &lt;u&gt;all&lt;/u&gt; elements match the criteria)&lt;/u&gt;&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;&lt;u&gt;&lt;mark&gt;some()&lt;/mark&gt; (checks if there is any element matches the criteria)&lt;/u&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div style="float:left;"&gt;
+        &lt;button onmouseup="filter_match()"&gt; Check all match &lt;/button&gt;
+        &lt;button onmouseup="filter_lower()"&gt; Check all lower &lt;/button&gt;
+        &lt;button onmouseup="filter_greater()"&gt; Check all greater &lt;/button&gt;
+        &lt;button onmouseup="find_match()"&gt; Check the first match &lt;/button&gt;
+        &lt;button onmouseup="find_lower()"&gt; Check the first lower &lt;/button&gt;
+        &lt;button onmouseup="find_greater()"&gt; Check the first greater &lt;/button&gt;
+        &lt;button onmouseup="findIndex_match()"&gt; Check the first match position &lt;/button&gt;
+        &lt;button onmouseup="findIndex_lower()"&gt; Check the first lower position &lt;/button&gt;
+        &lt;button onmouseup="findIndex_greater()"&gt; Check the first greater position &lt;/button&gt;
+        &lt;button onmouseup="every_lower()"&gt; Checks if all elements are lower &lt;/button&gt;
+        &lt;button onmouseup="every_greater()"&gt; Check if all elements are greater &lt;/button&gt;
+        &lt;button onmouseup="some_lower()"&gt; Check if any element is lower &lt;/button&gt;
+        &lt;button onmouseup="some_greater()"&gt; Check if any element is greater &lt;/button&gt;
+    &lt;/div&gt;        
+        &lt;/fieldset&gt;
+&lt;script&gt;
+    var arr_search = [43, 64, 30, 16, 30, 32, 43, 28, 78, 12, 27, 33, 50, 64, 254, 43];
+    document.getElementById('search-array').innerHTML = "Array Elements = " + arr_search;
+    var array_order = [ "position 1", "position 2", "position 3", "position 4", "position 5", "position 6", 
+                        "position 7", "position 8", "position 9", "position 10", "position 11", "position 12", 
+                        "position 13", "position 14", "position  15", "position 16",];
+    
+    function filter_match() {
+        document.getElementById('search-result').innerHTML = arr_search.filter(filter__match);  
+    };
+    function filter__match (value) {
+        return value == document.getElementById('search-input').value;  
+    };
+        function filter_lower() {
+            document.getElementById('search-result').innerHTML = arr_search.filter(filter__lower);  
+        };
+        function filter__lower (value) {
+            return value &lt; document.getElementById('search-input').value;      
+        };
+            function filter_greater() {
+                document.getElementById('search-result').innerHTML = arr_search.filter(filter__greater);
+            };
+            function filter__greater (value){
+                return value &gt; document.getElementById('search-input').value;  
+            };
+    /*-- anonymus functions here --*/
+    function find_match(){
+        document.getElementById('search-result').innerHTML = 
+            arr_search.find(function(value){return value == document.getElementById('search-input').value;});  
+    };
+        function find_lower(){
+            document.getElementById('search-result').innerHTML = 
+                arr_search.find(function(ertek){return ertek &lt; document.getElementById('search-input').value;})
+        };
+            function find_greater(){
+                document.getElementById('search-result').innerHTML = 
+                    arr_search.find(function(sum){return sum &gt; document.getElementById('search-input').value;})
+            };
+    function findIndex_match(){
+        document.getElementById('search-result').innerHTML = 
+            array_order[arr_search.findIndex(function(ide){return ide == document.getElementById('search-input').value;})]
+    };
+        function findIndex_lower(){
+            document.getElementById('search-result').innerHTML = 
+                array_order[arr_search.findIndex(function(ide){return ide &lt; document.getElementById('search-input').value;})]
+        };
+            function findIndex_greater(){
+                document.getElementById('search-result').innerHTML = 
+                    array_order[arr_search.findIndex(function(ide){return ide &gt; document.getElementById('search-input').value;})]
+            };
+    /*-- boolean checks --*/
+    function every_lower(){
+        document.getElementById('search-result').innerHTML =
+            arr_search.every(function(tango){return tango &lt; document.getElementById('search-input').value;})
+    };
+    function every_greater(){
+        document.getElementById('search-result').innerHTML =
+            arr_search.every(function(value){return value &gt; document.getElementById('search-input').value;})
+    };
+            function some_lower(){
+                document.getElementById('search-result').innerHTML = arr_search.some(lower_some);  
+            };
+                function lower_some (value){
+                    return value &lt; document.getElementById('search-input').value;
+                }
+    function some_greater(){
+        document.getElementById('search-result').innerHTML = 
+            arr_search.some(function(value){return value &gt; document.getElementById('search-input').value;})
+    };
+&lt;/script&gt;
+    </pre>
+    </details>
+</details>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> - <mark>reduce()</mark> / <mark>reduceRight()</mark> methods </u></h2>
+    <pre class="syntax">
+SYNTAX :    <strong>array</strong>.reduce(<strong>fn(total, value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>)        // reduces the Array to a single value by running a callback function for every element (start-to-end) and accumulating them in a single value (does not modify the original Array)    
+            <strong>array</strong>.reduceRight(<strong>fn(total, value</strong><i>, index, array</i><strong>)</strong><i>, thisValue</i>)   // reduces the Array to a single value by running a callback function for every element (end-to-start) and accumulating them in a single value (does not modify the original Array)   
+            
+             - <strong>fn()</strong> : callback function which runs for every element
+                - <strong>total</strong> : value previously returned by the callback function (in the first pass it is the <i>thisValue</i> if specified, otherwise it is the first/last item of the array) 
+                - <strong>value</strong> : current value (in the first pass if the <i>thisValue</i> is specified it is the second item of the Array)  
+                - <i>index</i> : current index of the element
+                - <i>array</i> : the Array object itself
+            - <i>initialValue</i> : is the <strong>total</strong> in the first pass
+    </pre>
+    <pre>
+    var myArray = ["egy", "ketto", "harom"];
+    
+// reduce() --------------------------------------------------------------------  
+    myArray.reduce(function(total, val, ind, arr){              // -> "egyketto harom"          // callback function runs 2 times 
+        return total + val + " ";                               // in the first pass (total = "egy") (val = "ketto")
+    });
+    myArray.reduce(function(total, val, ind, arr){              // -> "-> egy ketto harom"      // callback function runs 3 times 
+        return total + val + " ";                               // in the first pass (total = "-> ") (val = "egy")
+    }, "-> ");                                                  // -! the "this" value is the first item in the first pass
+    
+// reduceRight() ---------------------------------------------------------------  
+    reduceRight(function(total, val, ind, arr){                 // -> "haromketto egy"          // callback function runs (end-to-start) 2 times 
+        return total + val + " ";                               // in the first pass (total = "harom") (val = "ketto")
+    });
+    
+    myArray.reduceRight(function(total, val, ind, arr){         // -> "-> harom ketto egy"      // callback function runs (end-to-start) 3 times 
+        return total + val + " ";                               // in the first pass (total = "-> ") (val = "harom")
+    }, "-> ");                                                  // -! the "this" value is the first item in the first pass
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4><u> Initial value set VS not set </u></h4>
+    <p id="reduceResult"></p>
+<script>
+    var numberArr = [1, 2, 3];
+    var addition = numberArr.reduce(add);                       // ther is no initialValue first test = first element against second element
+    function add(acc, value) {
+        return acc + value;
+    }
+    
+    var addition_plus_In = numberArr.reduce(add_plus, 4);       // there is an initialValue first test = initialValue against first item
+    function add_plus(acc, value) {
+        return acc + value;
+    }
+    
+    document.getElementById('reduceResult').innerHTML =
+        "Result without Inital value = " + addition + "<br>" +
+        "Result with Initial value = " + addition_plus_In;
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="reduceResult"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var numberArr = [1, 2, 3];
+    var addition = numberArr.reduce(add);                       // ther is no initialValue first test = first element against second element
+    function add(acc, value) {
+        return acc + value;
+    }
+    
+    var addition_plus_In = numberArr.reduce(add_plus, 4);       // there is an initialValue first test = initialValue against first item
+    function add_plus(acc, value) {
+        return acc + value;
+    }
+    
+    document.getElementById('reduceResult').innerHTML =
+        "Result without Inital value = " + addition + "&lt;br&gt;" +
+        "Result with Initial value = " + addition_plus_In;
+&lt;/script&gt;
+        </pre>
+        </details>
+<h4><u> Simple string loop with the <mark>reduce()</mark> // <mark>reduceRight()</mark> methods </u></h4>
+    <p id="reduceLoop"></p>
+<script>
+    var szamok = ["egy", "ketto", "harom", "negy", "ot"];
+    var straightLoop = szamok.reduce(function(){return arguments[0] + (" / " + arguments[1])});
+    var reversedLoop = szamok.reduceRight(function(){return arguments[0] + (" / " + arguments[1])});
+    
+    document.getElementById('reduceLoop').innerHTML = 
+        "Straight Loop = ".fontcolor("white") + straightLoop + "<br>" +
+        "Reversed Loop = ".fontcolor("white") + reversedLoop;
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="reduceLoop"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var szamok = ["egy", "ketto", "harom", "negy", "ot"];
+    var straightLoop = szamok.reduce(function(){return arguments[0] + (" / " + arguments[1])});
+    var reversedLoop = szamok.reduceRight(function(){return arguments[0] + (" / " + arguments[1])});
+    
+    document.getElementById('reduceLoop').innerHTML = 
+        "Straight Loop = ".fontcolor("white") + straightLoop + "&lt;br&gt;" +
+        "Reversed Loop = ".fontcolor("white") + reversedLoop;
+&lt;/script&gt;
+        </pre>
+        </details>
+<h4><u> Reduce with Operators </u></h4>
+    <span style="color:blue;" id="reduce_arr"></span> <span> ||| Produced Result is = <span id="reduce_result"></span></span><br>
+    <button onclick="reduce_sum()"> Sum </button>
+    <button onclick="redcue_leftTright_subtract()"> Reduce (subtract) Ltr </button>
+    <button onclick="redcue_rightTleft_subtract()"> Reduce (subtract) Rtl </button>
+    <button onclick="redcue_leftTright_multiplicate()"> Reduce (multiplicate) Ltr </button>
+    <button onclick="redcue_rightTleft_divide()"> Reduce (divide) Rtl </button>
+    <button onclick="reduce_leftTright_concatenate()"> Reduce Concatenate Numbers Ltr </button>
+    <button onclick="reduce_rightTleft_concatenate()"> Reduce Concatenate Numbers Rtl </button>
+<script>
+    var arr_red = [50, 10, 25, 100];
+    document.getElementById('reduce_arr').innerHTML = "Original Array is " + arr_red;
+    
+    function reduce_sum(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduce(function(a, b){return a + b;});
+    };
+    function redcue_leftTright_subtract(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduce(function(a, b){return a - b;});
+    };
+    function redcue_rightTleft_subtract(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduceRight(function(a, b){return a - b;});
+    };
+    function redcue_leftTright_multiplicate(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduce(function(a, b){return a * b;});  
+    };
+    /*-- separated functions --*/
+    function redcue_rightTleft_divide(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduceRight(reduce_divFunc);  
+    };
+        function reduce_divFunc(a, b){
+            return a / b;  
+        };
+    function reduce_leftTright_concatenate(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduce(reduce_conc_LtrFunc);
+    };
+        function reduce_conc_LtrFunc(a, b){
+            return "" + a + b;  
+        };
+    function reduce_rightTleft_concatenate(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduceRight(reduce_conc_RtlFunc);  
+    };
+        function reduce_conc_RtlFunc(a, b){
+            return "" + a + b;
+        };
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;span style="color:blue;" id="reduce_arr"&gt; &lt;/span&gt;  &lt;span&gt; ||| Produced Result is =  &lt;span id="reduce_result"&gt; &lt;/span&gt; &lt;/span&gt; &lt;br&gt;
+     &lt;button onclick="reduce_sum()"> Sum  &lt;/button&gt;
+     &lt;button onclick="redcue_leftTright_subtract()"&gt; Reduce (subtract) Ltr  &lt;/button&gt;
+     &lt;button onclick="redcue_rightTleft_subtract()"&gt; Reduce (subtract) Rtl  &lt;/button&gt;
+     &lt;button onclick="redcue_leftTright_multiplicate()"&gt; Reduce (multiplicate) Ltr  &lt;/button&gt;
+     &lt;button onclick="redcue_rightTleft_divide()"&gt; Reduce (divide) Rtl  &lt;/button&gt;
+     &lt;button onclick="reduce_leftTright_concatenate()"&gt; Reduce Concatenate Numbers Ltr  &lt;/button&gt;
+     &lt;button onclick="reduce_rightTleft_concatenate()"&gt; Reduce Concatenate Numbers Rtl  &lt;/button&gt;
+    
+ &lt;script&gt;
+    var arr_red = [50, 10, 25, 100];
+    document.getElementById('reduce_arr').innerHTML = "Original Array is " + arr_red;
+    
+    function reduce_sum(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduce(function(a, b){return a + b;});
+    };
+    function redcue_leftTright_subtract(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduce(function(a, b){return a - b;});
+    };
+    function redcue_rightTleft_subtract(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduceRight(function(a, b){return a - b;});
+    };
+    function redcue_leftTright_multiplicate(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduce(function(a, b){return a * b;});  
+    };
+    /*-- separated functions --*/
+    function redcue_rightTleft_divide(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduceRight(reduce_divFunc);  
+    };
+        function reduce_divFunc(a, b){
+            return a / b;  
+        };
+    function reduce_leftTright_concatenate(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduce(reduce_conc_LtrFunc);
+    };
+        function reduce_conc_LtrFunc(a, b){
+            return "" + a + b;  
+        };
+    function reduce_rightTleft_concatenate(){
+        document.getElementById('reduce_result').innerHTML = arr_red.reduceRight(reduce_conc_RtlFunc);  
+    };
+        function reduce_conc_RtlFunc(a, b){
+            return "" + a + b;
+        };
+ &lt;/script&gt;
+    </pre>
+    </details>
+<h4><u> Gets the Sum of the rounded numbers in the array </u></h4>
+    <p> - a good example where the second argument "currentIndex" used </p>
+    <p id="get_round"></p>
+    <p> Rounded Sum Result = <span id="get_round_result"></span></p>
+<script>
+    var numbers = [15.5, 2.3, 1.1, 4.7];
+    document.getElementById('get_round').innerHTML = "Original Array = " + numbers;
+    
+    document.getElementById('get_round_result').innerHTML = numbers.reduce(getSum, 0);      // without the second argument the resutl will be "23.5"
+    
+    function getSum(a, b) {
+        return a + Math.round(b);
+    }
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="get_round"&gt;&lt;/p&gt;
+    &lt;p&gt; Rounded Sum Result = &lt;span id="get_round_result">&lt;/span&gt;&lt;/p&gt;
+&lt;script&gt;
+    var numbers = [15.5, 2.3, 1.1, 4.7];
+    document.getElementById('get_round').innerHTML = "Original Array = " + numbers;
+    
+    document.getElementById('get_round_result').innerHTML = numbers.reduce(getSum, 0);      // without the second argument the resutl will be "23.5"
+    
+    function getSum(a, b) {
+        return a + Math.round(b);
+    }
+&lt;/script&gt;
+    </pre>
+    </details>
+</details>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> - <mark>sort()</mark> / <mark>reverse()</mark> methods </u></h2>
+    <pre class="syntax">
+SYNTAX:     <strong>array</strong>.sort(<i>compareFn(a, b)</i>)                         // sorts the Array items in ascending order according to the Unicode Table (optionally uses a callback function to a special sort) (modifies the original Array)   
+                - <i>compareFn(a, b)</i> : converts the passed items to numbers and compares them against each other <u>if returned value is (negative <mark>a</mark> is lower than <mark>b</mark>) (positive <mark>a</mark> is higher than <mark>b</mark>) (<mark>0</mark> <mark>a</mark> and <mark>b</mark> are equals)</u> 
+                
+            <strong>array</strong>.reverse()                                     // reverses the Array order (modifies the original Array)
+    </pre>
+    <p> - the <mark>compareFn(a, b)</mark> (callback compare function) compares each Array items together by <u>converting them into a number</u> </p>
+    <p> - <u>(if returned value is negative than <mark>a</mark> is lower than <mark>b</mark>)</u> &nbsp; <u>(if the returned value is a positive than <mark>a</mark> is higher than <mark>b</mark>)</u> &nbsp; <u>(if the returned value is 0 than <mark>a</mark> and <mark>b</mark> are equals)</u> </p>
+    <p> - if any of the passed items cannot be converted to a number <span style="color:yellow;">the Array order is not changed!</span></p>
+    <pre>
+    var myArray_str = ["Bravo", 41, "Charlie", 4, 12, "Alpha"]; 
+    var myArray_nr = [40, 100, 1, 5, 25, 10];
+    var myArray_bol = [false, "34", 2, "8", true, 23, 1024];
+    
+// sort() ----------------------------------------------------------------------  
+  // !! default sort order without the compareFunction is the sequence of UTF-16 code unit values  
+    myArray_str.sort();                                         // -> [12, 4, 41, "Alpha", "Bravo", "Charlie"]      // returns the sorted Array
+    myArray_nr.sort();                                          // -> [1, 10, 100, 25, 40, 5]                       // -! does not work very well with numbers! 
+    myArray_bol.sort();                                         // -> [1024, 2, 23, "34", "8", false, true]         
+    
+  // use compare function ------------------------------------------------------  
+    // -! the compare callback function is designed to sort numbers 
+    myArray_str.sort((a, b) => {                                // -> ["Bravo", 41, "Charlie", 4, 12, "Alpha"]      // no changes because the Array contains strings
+        return a - b;                                           // -! because the strings in the Array are converted to NaN we cannot calculate the Array order 
+    });
+    myArray_nr.sort((a, b) => {                                 // -> [1, 5, 10, 25, 40, 100]                       // numbers are sorted correctly
+        return a - b;                                           // each value is compared against each other (explainded above) 
+    });
+    myArray_bol.sort((a, b) => {                                // -> [false, true, 2, "8", 23, "34", 1024]         // sorted correctly 
+        return a - b;                                           // -! because every element can be converted to a number we can sort this  
+    });
+    
+// reverse() -------------------------------------------------------------------  
+    myArray_str.reverse();                                      // -> ["Alpha", 12, 4, "Charlie", 41, "Bravo"]      // returns the reversed Array
+    myArray_nr.reverse();                                       // -> [10, 25, 5, 1, 100, 40]                       
+    myArray_bol.reverse();                                      // -> [1024, 23, true, "8", 2, "34", false]         
+    </pre>
+<details class="example">
+<summary> Example : </summary> 
+<h4><u> sort string by their length </u></h4>
+    <p id="stringSort"></p>
+<script>
+    var strings = ["yankee", "cup", "window", "screen", "ball", "computer-game"];
+    var sorted = strings.sort(function(a, b){return a.length - b.length});
+    
+    document.getElementById('stringSort').innerHTML =
+        "Strings are sorted by their length = " + sorted.join(" - ");
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="stringSort"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var strings = ["yankee", "cup", "window", "screen", "ball", "computer-game"];
+    var sorted = strings.sort(function(a, b){return a.length - b.length});
+    
+    document.getElementById('stringSort').innerHTML =
+        "Strings are sorted by their length = " + sorted.join(" - ");
+&lt;/script&gt;
+        </pre>
+        </details>
+<h4><u> Sort String and Numbers </u></h4>
+    <p> Original String is = "Golf, X-Ray, Bravo, Mike, Papa, Hotel, Fox-Trot, Charlie" </p>
+    <button onclick="reset_str()"> Reset </button>
+    <button onclick="sortABC()"> Sort Alphabecitally </button>
+    <button onclick="sort_reverse()"> Simple Reverse Sort </button>
+    <button onclick="sortCBA()"> Reverse Sort Alphabecital </button>
+    <span> Result = <span id="sort_string" style="color:red; font-weight:bold;"> ... </span></span><br>
+    <p> Original String is = "84, 4, 33, 9, 1, 500, 214, 55, 1100" </p>
+    <button onclick="reset_num()"> Reset </button>
+    <button onclick="sort123()"> Sort Ascending </button>
+    <button onclick="sort_num_reverse()"> Simple Reverse Sort </button>
+    <button onclick="sort321()"> Sort Descending </button>
+    <button onclick="sortHi()"> Find Highest Value </button>
+    <button onclick="sortLow()"> Find Lowest Value </button>
+    <button onclick="sortRandom()"> Sort in Random order </button>
+    <span> Result = <span id="sort_number" style="color:red; font-weight:bold;"> ... </span></span>
+<script>
+    var arr_str = ["Golf", "X-Ray", "Bravo", "Mike", "Papa", "Hotel", "Fox-Trot", "Charlie"];
+    var arr_num = [84, 4, 33, 9, 1, 500, 214, 55, 1100];
+    
+    function reset_str(){
+        document.getElementById('sort_string').innerHTML = 
+            arr_str = ["Golf", "X-Ray", "Bravo", "Mike", "Papa", "Hotel", "Fox-Trot", "Charlie"];
+    };
+    function sortABC(){
+        document.getElementById('sort_string').innerHTML = arr_str.sort();  
+    };
+    function sort_reverse(){
+        document.getElementById('sort_string').innerHTML = arr_str.reverse();
+    };
+    function sortCBA(){
+        document.getElementById('sort_string').innerHTML = arr_str.reverse(arr_str.sort());
+    };
+/*-- Number Sort --*/
+    function reset_num(){
+        document.getElementById('sort_number').innerHTML = 
+            arr_num = [84, 4, 33, 9, 1, 500, 214, 55, 1100];
+    };
+    function sort123(){
+        document.getElementById('sort_number').innerHTML = arr_num.sort(function(a, b){return a - b});  
+    };
+    function sort_num_reverse(){
+        document.getElementById('sort_number').innerHTML = arr_num.reverse();  
+    };
+    function sort321(){
+        document.getElementById('sort_number').innerHTML = arr_num.sort(function(a, b){return b - a});
+    };
+    function sortHi(){
+        arr_num.sort(function(a, b){return b - a});
+        document.getElementById('sort_number').innerHTML = arr_num[0];
+    };
+    function sortLow(){
+        arr_num.sort(function(a, b){return a - b});
+        document.getElementById('sort_number').innerHTML = arr_num[0];
+    };
+    function sortRandom(){
+        document.getElementById('sort_number').innerHTML = arr_num.sort(function(a, b){return 0.5 - Math.random()});  
+    };
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p&gt; Original String is = "Golf, X-Ray, Bravo, Mike, Papa, Hotel, Fox-Trot, Charlie" &lt;/p&gt;
+    &lt;button onclick="reset_str()"&gt; Reset &lt;/button&gt;
+    &lt;button onclick="sortABC()"&gt; Sort Alphabecitally &lt;/button&gt;
+    &lt;button onclick="sort_reverse()"&gt; Simple Reverse Sort &lt;/button&gt;
+    &lt;button onclick="sortCBA()"&gt; Reverse Sort Alphabecital &lt;/button&gt;
+    &lt;span&gt; Result = &lt;span id="sort_string" style="color:red; font-weight:bold;"&gt; ... &lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;p&gt; Original String is = "84, 4, 33, 9, 1, 500, 214, 55, 1100" &lt;/p&gt;
+    &lt;button onclick="reset_num()"&gt; Reset &lt;/button&gt;
+    &lt;button onclick="sort123()"&gt; Sort Ascending &lt;/button&gt;
+    &lt;button onclick="sort_num_reverse()"&gt; Simple Reverse Sort &lt;/button&gt;
+    &lt;button onclick="sort321()"&gt; Sort Descending &lt;/button&gt;
+    &lt;button onclick="sortHi()"&gt; Find Highest Value &lt;/button&gt;
+    &lt;button onclick="sortLow()"&gt; Find Lowest Value &lt;/button&gt;
+    &lt;button onclick="sortRandom()"&gt; Sort in Random order &lt;/button&gt;
+    &lt;span&gt; Result = &lt;span id="sort_number" style="color:red; font-weight:bold;"&gt; ... &lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+&lt;script&gt;
+    var arr_str = ["Golf", "X-Ray", "Bravo", "Mike", "Papa", "Hotel", "Fox-Trot", "Charlie"];
+    var arr_num = [84, 4, 33, 9, 1, 500, 214, 55, 1100];
+    
+    function reset_str(){
+        document.getElementById('sort_string').innerHTML = 
+            arr_str = ["Golf", "X-Ray", "Bravo", "Mike", "Papa", "Hotel", "Fox-Trot", "Charlie"];
+    };
+    function sortABC(){
+        document.getElementById('sort_string').innerHTML = arr_str.sort();  
+    };
+    function sort_reverse(){
+        document.getElementById('sort_string').innerHTML = arr_str.reverse();
+    };
+    function sortCBA(){
+        document.getElementById('sort_string').innerHTML = arr_str.reverse(arr_str.sort());
+    };
+/*-- Number Sort --*/
+    function reset_num(){
+        document.getElementById('sort_number').innerHTML = 
+            arr_num = [84, 4, 33, 9, 1, 500, 214, 55, 1100];
+    };
+    function sort123(){
+        document.getElementById('sort_number').innerHTML = arr_num.sort(function(a, b){return a - b});  
+    };
+    function sort_num_reverse(){
+        document.getElementById('sort_number').innerHTML = arr_num.reverse();  
+    };
+    function sort321(){
+        document.getElementById('sort_number').innerHTML = arr_num.sort(function(a, b){return b - a});
+    };
+    function sortHi(){
+        arr_num.sort(function(a, b){return b - a});
+        document.getElementById('sort_number').innerHTML = arr_num[0];
+    };
+    function sortLow(){
+        arr_num.sort(function(a, b){return a - b});
+        document.getElementById('sort_number').innerHTML = arr_num[0];
+    };
+    function sortRandom(){
+        document.getElementById('sort_number').innerHTML = arr_num.sort(function(a, b){return 0.5 - Math.random()});  
+    };
+&lt;/script&gt;
+    </pre>
+    </details>
+<h4><u> Sort Array Objects </u></h4>
+    <p id="sortObj"></p>
+    <button onclick="sortName()"> Sort by Name </button>
+    <button onclick="sortType()"> Sort by Type </button>
+    <button onclick="sortRating()"> Sort by Rating </button>
+<script>
+    var game = [
+        {Name:"Tomb Raider", Type:"FPS", Rating:8.3},
+        {Name:"Evil Within", Type:"3rd person", Rating:9.4},
+        {Name:"GTA5", Type:"3rd person", Rating:8.9},
+        {Name:"X-Com2", Type:"Turn Based Strategy", Rating:10},
+        {Name:"Deus-Ex-Human-Revolution", Type:"FPS-3rd person", Rating:7.8}
+    ];
+    function display(){
+    document.getElementById('sortObj').innerHTML =
+        game[0].Name + " | " + game[0].Type + " | " + game[0].Rating + "<br>" +
+        game[1].Name + " | " + game[1].Type + " | " + game[1].Rating + "<br>" +
+        game[2].Name + " | " + game[2].Type + " | " + game[2].Rating + "<br>" +
+        game[3].Name + " | " + game[3].Type + " | " + game[3].Rating + "<br>" +
+        game[4].Name + " | " + game[4].Type + " | " + game[4].Rating;
+    };
+    display();
+        
+    function sortName(){
+        game.sort(function(a, b){
+            var x = a.Name;
+            var y = b.Name;
+            if (x < y){return -1;}
+            if (y < x){return 1;}
+            else {return 0;};
+        });
+        display();
+    };
+    function sortType(){
+        game.sort(function(a, b){
+            var x = a.Type;
+            var y = b.Type;
+            if (x < y){return -1;}
+            if (y < x){return 1;}
+            else {return 0;};
+        });
+        display();
+    };
+    function sortRating(){
+        game.sort(function(a, b){return a.Rating - b.Rating});
+        display();
+    };
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="sortObj"&gt;&lt;/p&gt;
+    &lt;button onclick="sortName()"&gt; Sort by Name &lt;/button&gt;
+    &lt;button onclick="sortType()"&gt; Sort by Type &lt;/button&gt;
+    &lt;button onclick="sortRating()"&gt; Sort by Rating &lt;/button&gt;
+&lt;script&gt;
+    var game = [
+        {Name:"Tomb Raider", Type:"FPS", Rating:8.3},
+        {Name:"Evil Within", Type:"3rd person", Rating:9.4},
+        {Name:"GTA5", Type:"3rd person", Rating:8.9},
+        {Name:"X-Com2", Type:"Turn Based Strategy", Rating:10},
+        {Name:"Deus-Ex-Human-Revolution", Type:"FPS-3rd person", Rating:7.8}
+    ];
+    function display(){
+    document.getElementById('sortObj').innerHTML =
+        game[0].Name + " | " + game[0].Type + " | " + game[0].Rating + "&lt;br&gt;" +
+        game[1].Name + " | " + game[1].Type + " | " + game[1].Rating + "&lt;br&gt;" +
+        game[2].Name + " | " + game[2].Type + " | " + game[2].Rating + "&lt;br&gt;" +
+        game[3].Name + " | " + game[3].Type + " | " + game[3].Rating + "&lt;br&gt;" +
+        game[4].Name + " | " + game[4].Type + " | " + game[4].Rating;
+    };
+    display();
+        
+    function sortName(){
+        game.sort(function(a, b){
+            var x = a.Name;
+            var y = b.Name;
+            if (x &gt; y){return -1;}
+            if (y &lt; x){return 1;}
+            else {return 0;};
+        });
+        display();
+    };
+    function sortType(){
+        game.sort(function(a, b){
+            var x = a.Type;
+            var y = b.Type;
+            if (x &gt; y){return -1;}
+            if (y &lt; x){return 1;}
+            else {return 0;};
+        });
+        display();
+    };
+    function sortRating(){
+        game.sort(function(a, b){return a.Rating - b.Rating});
+        display();
+    };
+&lt;/script&gt;
+    </pre>
+    </details>
+</details>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> - <mark>entries()</mark> / <mark>keys()</mark> methods </u></h2>
+    <pre class="syntax">
+SYNTAX :    <strong>array</strong>.keys()                                        // <i class="fab fa-js">6</i> returns an Iterable Object <a href="../Objects/Map Object/index.html#iteratorObj" target="_blank">[Iterable Objects (link)]</a> with the keys (indexes) of each item 
+            <strong>array</strong>.entries()                                     // <i class="fab fa-js">6</i> returns an Iterable Object <a href="../Objects/Map Object/index.html#iteratorObj" target="_blank">[Iterable Objects (link)]</a> with the key(index)/value pairs of each item 
+    </pre>
+    <pre>
+    var myArray = [23, "myString", {prop1:"val", prop2:"val"}, [1, 2, 3]];
+    
+// keys() ----------------------------------------------------------------------  
+    var iterObj = myArray.keys();                               // iterable object returned with the Array's keys (indexes)
+    iterObj.next();                                             // -> {value:0, done:false}             // call items from the iterable Object 
+    iterObj.next();                                             // -> {value:1, done:false}
+    iterObj.next();                                             // -> {value:2, done:false}
+    iterObj.next();                                             // -> {value:3, done:false}
+    iterObj.next();                                             // -> {value:undefined, done:true}      // end of the iterable object 
+    
+// entries() ------------------------------------------------------------------- 
+    var iterObj = myArray.entries();                            // iterable object returned with the Array's key(index)/value pairs 
+    iterObj.next();                                             // -> {value:[0, 23], done:false}       // call items from the iterable Object 
+    iterObj.next();                                             // -> {value:[1, "myString"], done:false}
+    iterObj.next();                                             // -> {value:[2, {prop1:"val", prop2:"val"}], done:false}
+    iterObj.next();                                             // -> {value:[3, [1, 2, 3]], done:false}
+    iterObj.next();                                             // -> {value:undefined, done:true}      // end of the iterable object 
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4><u> <mark>keys()</mark> / <mark>entries()</mark> TEST </u></h4>
+    <p id="ArrayItems"></p>
+<script>
+    var simpleArray = [1, "string", false, ["hoe", "shovel", "rake"], {p1:true, p2:false}];
+
+    var simpleKeys = simpleArray.keys();                                // iterable Object returned containing the Array's keys 
+    var simpleEntries = simpleArray.entries();                          // iterable Object returned containing the Array's key/value pairs 
+    
+    document.getElementById("ArrayItems").innerHTML = 
+        "Original Array = ".fontcolor("blue") + JSON.stringify(simpleArray) + "<br>" +
+        "Array keys = ".fontcolor("green") + "<br>" +
+            JSON.stringify(simpleKeys.next()) + "<br>" +                // we call each items form the returned iterable Object one by one here 
+            JSON.stringify(simpleKeys.next()) + "<br>" + 
+            JSON.stringify(simpleKeys.next()) + "<br>" + 
+            JSON.stringify(simpleKeys.next()) + "<br>" +
+            JSON.stringify(simpleKeys.next()) + "<br>" +
+            JSON.stringify(simpleKeys.next()) + "<br>" +
+        "Array entries = ".fontcolor("green") + "<br>" +
+            JSON.stringify(simpleEntries.next()) + "<br>" + 
+            JSON.stringify(simpleEntries.next()) + "<br>" + 
+            JSON.stringify(simpleEntries.next()) + "<br>" +
+            JSON.stringify(simpleEntries.next()) + "<br>" +
+            JSON.stringify(simpleEntries.next()) + "<br>" +
+            JSON.stringify(simpleEntries.next());
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    <p id="ArrayItems"></p>
+<script>
+    var simpleArray = [1, "string", false, ["hoe", "shovel", "rake"], {p1:true, p2:false}];
+
+    var simpleKeys = simpleArray.keys();                                // iterable Object returned containing the Array's keys 
+    var simpleEntries = simpleArray.entries();                          // iterable Object returned containing the Array's key/value pairs 
+    
+    document.getElementById("ArrayItems").innerHTML = 
+        "Original Array = ".fontcolor("blue") + JSON.stringify(simpleArray) + "<br>" +
+        "Array keys = ".fontcolor("green") + "<br>" +
+            JSON.stringify(simpleKeys.next()) + "<br>" +                // we call each items form the returned iterable Object one by one here 
+            JSON.stringify(simpleKeys.next()) + "<br>" + 
+            JSON.stringify(simpleKeys.next()) + "<br>" + 
+            JSON.stringify(simpleKeys.next()) + "<br>" +
+            JSON.stringify(simpleKeys.next()) + "<br>" +
+            JSON.stringify(simpleKeys.next()) + "<br>" +
+        "Array entries = ".fontcolor("green") + "<br>" +
+            JSON.stringify(simpleEntries.next()) + "<br>" + 
+            JSON.stringify(simpleEntries.next()) + "<br>" + 
+            JSON.stringify(simpleEntries.next()) + "<br>" +
+            JSON.stringify(simpleEntries.next()) + "<br>" +
+            JSON.stringify(simpleEntries.next()) + "<br>" +
+            JSON.stringify(simpleEntries.next());
+</script>        
+        </pre>
+        </details>
+    
+    
+    
+    
+    
+</details>
+    
+    <br><br>
+</body>
+</html>

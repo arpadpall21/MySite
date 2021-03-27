@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Console </title> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../Assets/stylesPages.css"> 
+    <script src="../../Assets/scriptPages.js"></script>
+</head>
+<body>
+<h1> Console (ver 3.2) </h1>
+	<p> Updated ( 2019-06-10 )</p>
+    <p class="sitenav"> <a href="../../index.html">MySite></a>
+        <a href="../index.html">Node.js></a> Console  
+    </p>
+    <p> - the <mark>console</mark> object is <u>almost</u> the same as in the browser, I didn't tested it for Node.js [2019-06-10] (slight differences are specified) </p>
+    <p><a href="../../03 JS/Debugging/index.html#console" target="_blank"> JavaScript console object </a></p>
+<table class="table">
+    <tr>
+        <th> Method </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td> <em>console</em>.assert(<strong>exp|message</strong>) </td>
+        <td>  
+            prints the error in the console if the passed expression is <u>evaluated "false"</u> (otherwise does nothing)
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 0.0.101 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.clear() </td>
+        <td>  
+            clears the console and prints the message "console was cleared"
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 8.3.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.count(<i>"label"</i>) </td>
+        <td>  
+            outputs the counter to <mark>stdout</mark> the number of times it is called
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 8.3.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.countReset(<i>"label"</i>) </td>
+        <td>  
+            resets the <mark>console.count()</mark> counter (with the corresponding label if any)
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 8.3.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.debug(<strong>obj|str</strong>) </td>
+        <td> 
+            alias for <mark>console.log()</mark> 
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 8.0.0 </span>
+                <span><i class="fab fa-node-js"></i> alias console.log() 8.1.0 </span>
+            </span>
+        </td>
+    <tr>
+        <td> <em>console</em>.dir(<strong>obj</strong>) </td>
+        <td>  
+            displays the passed object in "Object View" in the console window
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 0.1.101 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.dirxml(<strong>obj</strong>) </td>
+        <td>  
+            displays the passed object in "Interactive Markup View" if possible, otherwise in object view (does the same as <mark>log</mark> [TESTED 2019-02-09])
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 8.0.0 </span>
+                <span><i class="fab fa-node-js"></i> alias console.log() 9.2.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.error(<strong>obj|message</strong>) </td>
+        <td>  
+            outputs the passed message as an error in <mark>stderr</mark> 
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 0.1.100 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.group(<i>"label"</i>) </td>
+        <td>  
+            creates a message group in the console
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 8.5.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.groupCollapsed(<i>"label"</i>) </td>
+        <td>  
+            creates a collapsed message group in the console (same as <mark>group()</mark> but collapsed by default)
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 8.5.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.groupEnd(<i>"label"</i>) </td>
+        <td>  
+            ends the message group in the console created by the <mark>group()</mark> or <mark>groupCollapsed()</mark> methods
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 8.5.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.info(<strong>obj|message</strong>) </td>
+        <td>  
+            prints the passed informational message in the console (same as <mark>console.log()</mark>)
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 0.1.100 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.log(<strong>obj|message</strong>) </td>
+        <td> 
+            prints the passed message in the <mark>stdout</mark>
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 0.1.100 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.time(<i>"label"</i>) </td>
+        <td> 
+            start the console execution timer counter
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.timeEnd(<i>"label"</i>) </td>
+        <td> 
+            ends the console execution timer counter and outputs to the <mark>stdout</mark> the result  
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 0.1.100 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.timeLog(<i>"label"</i>) </td>
+        <td> 
+            outputs the current execution timer to the <mark>stdout</mark> started by the <mark>time()</mark> method 
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 10.7.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.table(<strong>obj|arr</strong>, <i>["col", ...]</i>) </td>
+        <td>  
+            prints a table in the console which visually represents the passed object (can restrict which columns to print)
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.trace(<i>"label"</i>) </td>
+        <td>  
+            outputs the <u>stack trace</u> to the <mark>stderr</mark>
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 0.1.104 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>console</em>.warn(<strong>obj|message</strong>) </td>
+        <td>  
+            alias for <mark>console.error()</mark>
+            <span id="browserSupport" title="Updated : 2019-06-10">
+                <span><i class="fab fa-node-js"></i> 0.1.100 </span>
+            </span>
+        </td>
+    </tr>
+    </table>
+<h2 style="color:green;"><u> Notes : </u></h2>
+    <details class="example" id="notes">
+    <summary> Notes :</summary>
+    </details>
+    
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+    <p><a href="../../03 JS/Debugging/index.html#console" target="_blank"> JavaScript console object </a></p>
+<h2 style="color:green;"><u> Remember This : </u></h2>
+    
+<h2 style="color:green;"><u> Description and Demonstration : </u></h2>
+
+    <br><br>
+</body>
+</html>

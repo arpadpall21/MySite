@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Loops </title>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="../../Assets/stylesPages.css">
+    <script src="../../Assets/scriptPages.js"></script>
+</head>
+<body>
+<h1> Loops (ver 3.2) </h1>
+    <p> Updated (2017-11-01 / 2017-11-12 / 2018-04-11 / 2018-07-10 / 2019-10-12)</p>
+    <p class="sitenav"> <a href="../../index.html">MySite></a>
+        <a href="../index.html">JavaScript></a> Loops  
+    </p>
+<table class="table">
+    <tr>
+        <th style="width:30%;"> Statement </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td> break <i>labelName</i> </td>
+        <td> <u>(can break any <mark>{}</mark> code blocks)</u>, prevents all further code to be executed in the current block and blocks the loop 
+            <span id="browserSupport" title="updated : 2019-10-12">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+                <span><i class="fab fa-node-js"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> continue <i>labelName</i> </td>
+        <td> prevents all further code to be executed in the current block but it doesn't block the loop <u>(usable only by loops)</u>
+            <span id="browserSupport" title="updated : 2019-10-12">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+                <span><i class="fab fa-node-js"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>labelName</strong> : <i>statement</i> </td>
+        <td> provides an identifier for a statement, these labels only usable by <mark>break</mark> and <mark>continue</mark> statements to identify whitch statement to apply 
+            <span id="browserSupport" title="updated : 2019-10-12">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+                <span><i class="fab fa-node-js"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr> 
+        <td colspan="2"> <mark>for</mark> loops </td>
+    </tr>
+    <tr>
+        <td> for(<i>init</i>; <i>cond</i>; <i>final</i>) { } </td>
+        <td> - runs through the block of code <mark>{}</mark> a number of times <br>
+             - <i>init</i> = executend <u>once</u> before the loop starts / <i>cond</i> = if condition evaluates <mark>true</mark> runs <u>one pass</u> / <i>final</i> = executed at the end of <u>every pass</u>
+            <span id="browserSupport" title="updated : 2019-10-12">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+                <span><i class="fab fa-node-js"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> 
+            for(<strong>var</strong> in <strong>obj</strong>) {<strong>var</strong>} <br> 
+            '<strong>prop</strong>' in <strong>obj</strong>
+        </td>
+        <td> 
+            - iterates over an object's <u>enumerable properties</u> (<strong>var</strong> = current property) <br>
+            - returns <mark>true</mark> if the property appears anywhere in the object's prototype chain, otherwise returns <mark>false</mark>
+            <span id="browserSupport" title="updated : 2019-10-12">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 6 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+                <span><i class="fab fa-node-js"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> for(<strong>var</strong> of <strong>obj</strong>) {<strong>var</strong>} </td>
+        <td> 
+            - <i class="fab fa-js">6</i> iterates over an iterable object (object having the <mark>Symbol.iterator</mark> implemented) (<strong>var</strong> = current value) <br>
+            - iterates over 'real characters' in a string (characters combined by 2 UTF-16 blocks)
+            <span id="browserSupport" title="updated : 2019-10-12">
+                <span><i class="fab fa-chrome"></i> 38 </span>
+                <span><i class="fab fa-firefox"></i> 13 </span>
+                <span><i class="fab fa-opera"></i> 25 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 8 </span>
+                <span><i class="fab fa-node-js"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>async function(){</em> for await (<strong>var</strong> of <strong>obj</strong>) {<strong>var</strong>} <em>}</em> </td>
+        <td> - <i class="fas fa-flask" style="color:red;"></i> asynchronously iterates over an iterable object (object having the <mark>Symbol.asyncIterator</mark> or <mark>Symbol.iterator</mark> implemented) (<strong>var</strong> = current value) <br>
+            - iterates over 'real characters' in a string (characters combined by 2 UTF-16 blocks)
+            <span id="browserSupport" title="updated : 2019-10-15">
+                <span><i class="fab fa-chrome"></i> 63 </span>
+                <span><i class="fab fa-firefox"></i> 57 </span>
+                <span><i class="fab fa-opera"></i> 50 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                <span><i class="fab fa-safari"></i> 11 </span>
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr> 
+        <td colspan="2"> <mark>while</mark> loops </td>
+    </tr>
+    <tr>
+        <td> while(<strong>cond</strong>) { } </td>
+        <td> if the condition evaluates <mark>true</mark> runs through the block of code <mark>{}</mark>, then checks the condition again     
+            <span id="browserSupport" title="updated : 2019-10-12">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+                <span><i class="fab fa-node-js"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> do { } while(<strong>cond</strong>) </td>
+        <td> runs through the block of code <u>once</u>, then if the condition evaluates <mark>true</mark> runs through the block of code, then checks the condition again   
+            <span id="browserSupport" title="updated : 2019-10-12">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 6 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+                <span><i class="fab fa-node-js"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+</table>    
+<h2 style="color:green;"><u> Notes : </u></h2>
+    <details class="example" id="notes">
+    <summary> Notes :</summary>
+    </details>
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+    <p><a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank"> W3Schools JavaScript Loop For </a></p>
+    <p><a href="https://www.w3schools.com/js/js_loop_while.asp" target="_blank"> W3Schools JavaScript Loop While </a></p>
+    <p><a href="https://www.w3schools.com/js/js_break.asp" target="_blank"> W3Schools JavaScript Break and Continue </a></p>
+<h2 style="color:green;"><u> Remember This : </u></h2>
+    <p> - the <mark>for ...of</mark> loop has the ability the loop through <u>"real characters"</u> in a string (characters combined by 2 UTF-16 blocks) </p>
+<h2 style="color:green;"><u> Description and Demonstration : </u></h2>
+    <p> - JavaScript Loops are used to run the same code over and over again each time with a different value </p>
+<!--------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2><u> the <mark>for</mark> Loop </u></h2>
+    <pre class="syntax">
+SYNTAX:     for(<i>init</i>; <i>cond</i>; <i>final</i>) { }                                                 // runs through the block of code <mark>{}</mark> a number of times 
+                                                                                          <i>init</i> = executend <u>once</u> before the loop starts / <i>cond</i> = if condition evaluates <mark>true</mark> runs <u>one pass</u> / <i>final</i> = executed at the end of <u>every pass</u>   
+    </pre>
+    <pre>
+    for (let i = 0; i &lt; 5; i++) {                                                      // loop runs 5 times (i initialized once)
+        // some code                                                                   // code inside the block runs 5 times 
+    }
+    </pre>
+<details class="example">
+    <summary> Example : </summary>
+<h4><u> Simple Loop (repeat the same thing a number of times) </u></h4>
+<script>
+    var txt = " This is some Repeated Text / ";
+    var i, result = "";
+    for (i = 0; i < 5; i++){
+        result += txt;
+    }
+    
+    document.write(result);
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+&lt;script&gt;
+    var txt = " This is some Repeated Text / ";
+    var i, result = "";
+    for (i = 0; i &lt; 5; i++){
+        result += txt;
+    }
+    
+    document.write(result);
+&lt;/script&gt;
+    </pre>
+    </details>
+<h4><u> Extract and display Array elements with a Loop</u></h4>
+<script>
+    var numbers = ["one", "two", "three", "four", "five", "six"];
+    var i, arraydisp = "";
+    for (i = 0; i < numbers.length; i++){
+        arraydisp += (i + 1)  + " - " + numbers[i] + "<br>";        //added a bit of "spice" to fix the counter ;)
+    };
+    
+    document.write(arraydisp);
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+&lt;script&gt;
+    var numbers = ["one", "two", "three", "four", "five", "six"];
+    var i, arraydisp = "";
+    for (i = 0; i &lt; numbers.length; i++){
+        arraydisp += (i + 1)  + " - " + numbers[i] + "&lt;br&gt;";        //added a bit of "spice" to fix the counter ;)
+    };
+    
+    document.write(arraydisp);
+&lt;/script&gt;
+    </pre>
+    </details>
+<h4><u> Omitting Statements VS multiple values in a Statement </u></h4>
+    <p> all these statements are optional but we need the second statement to be declared otherwise an infinite loop is created and that crushes the browser! </p>
+    <p id="loops"></p>
+<script>
+    var nrArray = [" one ", " two ", " three ", " four ", " five "];
+    
+    var i = 0;
+    var store_1 = "";
+    for (; i < nrArray.length;){            // only the second statement is declared in the for loop other parameters declared out of it
+        store_1 += nrArray[i];
+        i++;    
+    };
+    
+    var k, store_2, len;
+    for (k = 0, len = nrArray.length, store_2 = ""; k < len; k++){      // multiple declarations needs to have commas between them in the statement
+        store_2 += nrArray[k];
+    };
+    
+    document.getElementById('loops').innerHTML = 
+        store_1 + "<br>" +
+        store_2;
+</script>
+    <details>
+    <summary> CODE: </summary>
+    <pre>
+    &lt;p id="loops">&lt;/p>
+&lt;script&gt;
+    var nrArray = [" one ", " two ", " three ", " four ", " five "];
+    
+    var i = 0;
+    var store_1 = "";
+    for (; i &lt; nrArray.length;){            // only the second statement is declared in the for loop other parameters declared out of it
+        store_1 += nrArray[i];
+        i++;    
+    };
+    
+    var k, store_2, len;
+    for (k = 0, len = nrArray.length, store_2 = ""; k &lt; len; k++){      // multiple declarations needs to have commas between them in the statement
+        store_2 += nrArray[k];
+    };
+    
+    document.getElementById('loops').innerHTML = 
+        store_1 + "&lt;br&gt;" +
+        store_2;
+&lt;/script&gt;
+    </pre>
+    </details>
+<h4><u> Step Change in Loops </u></h4>
+    <p id="loop_step"></p>                    
+<script>
+    var arrNR = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19, 20];
+    
+    var a, len, memoNR_1;
+    for (a = 1, len = arrNR.length, memoNR_1 = ""; a < len; a +=2){         // every second element is called
+        memoNR_1 += arrNR[a] + " - ";
+    };
+    
+    var k, len, memoNR_2;
+    for (k = 1, len = arrNR.length, memoNR_2 = ""; k < len; k = k + 4){     // every forth element is called
+        memoNR_2 += arrNR[k] + " - ";
+    }
+    
+    document.getElementById('loop_step').innerHTML = memoNR_1 + "<br>" + memoNR_2;
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="loop_step"&gt;&lt;/p&gt;                    
+&lt;script&gt;
+    var arrNR = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19, 20];
+    
+    var a, len, memoNR_1;
+    for (a = 1, len = arrNR.length, memoNR_1 = ""; a &lt; len; a +=2){         // every second element is called
+        memoNR_1 += arrNR[a] + " - ";
+    };
+    
+    var k, len, memoNR_2;
+    for (k = 1, len = arrNR.length, memoNR_2 = ""; k &lt; len; k = k + 4){     // every forth element is called
+        memoNR_2 += arrNR[k] + " - ";
+    }
+    
+    document.getElementById('loop_step').innerHTML = memoNR_1 + "&lt;br&gt;" + memoNR_2;
+&lt;/script&gt;
+    </pre>
+    </details>
+</details>
+<!---------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2><u> the <mark>for ...in</mark> , <mark>for ...of</mark> and <mark>for await ...of</mark> loops </u></h2>
+    <pre class="syntax">
+SYNTAX:     for(<strong>var</strong> in <strong>obj</strong>) {<strong>var</strong>}                                                      // iterates over an object's <u>enumerable properties</u> (<strong>var</strong> = current property)    
+            '<strong>prop</strong>' in <strong>obj</strong>                                                              // returns <mark>true</mark> if the property appears anywhere in the object's prototype chain, otherwise returns <mark>false</mark> 
+            
+            for(<strong>var</strong> of <strong>obj</strong>) {<strong>var</strong>}                                                      // iterates over an iterable object (object having the <mark>Symbol.iterator</mark> implemented) (<strong>var</strong> = current value) 
+                                                                                          iterates over 'real characters' in a string (characters combined by 2 UTF-16 blocks)
+                                                                                          
+            <em>async function(){</em> for await (<strong>var</strong> of <strong>obj</strong>) {<strong>var</strong>} <em>}</em>                           // asynchronously iterates over an iterable object (object having the <mark>Symbol.asyncIterator</mark> or <mark>Symbol.iterator</mark> implemented) (<strong>var</strong> = current value)    
+                                                                                          iterates over 'real characters' in a string (characters combined by 2 UTF-16 blocks)
+    </pre>    
+    <pre>
+    var myObject = {Name:"Arpad", surename:"Pall", age:32};
+    var newObject = Object.create(myObject, {});                                       // the 'myObject' is the prototype of thi object 
+    var myArray = ["Arpad", "Pall", 32];
+    
+// for ...in --------------------------------------------------------------------------
+    for (let i in myObject){                                                           // iterating over an object's properties 
+        i;                                                                             // -> Name | surename | age      // properties are returned
+    }
+    
+    for (let i in myArray) {                                                           // iterating over an Array 
+        i;                                                                             // -> 1 | 2 | 3                  // indexes are returned (this loop is not used for iterate over Arrays!)   
+    }
+    
+    'Name' in myObject                                                                 // -> true                       // native property of the object 
+    'Name' in newObject                                                                // -> true                       // property appears in the object's prototype chain   
+    'toString' in newObject                                                            // -> true                       // property appears in the object's prototype chain   
+    
+// for ...of --------------------------------------------------------------------------
+    for (let i of myArray) {                                                           // iterating over an Array's items 
+        i;                                                                             // -> "Arpad" | "Pall" | 32      // items are returned in the sequence 
+    }  
+    
+    for(let i of 'lo 🐴'){                                                            // this loop iterates over any objects or values that has the [Symbol.iterator] implemented (like strings)
+        i;                                                                             // ->  'l'| 'o' | ' ' | '🐴'     // the '🐴' character is composed of 4 bytes (2 x 2 byte block) but this loop can handle this    
+    }
+    
+// for await ...of --------------------------------------------------------------------
+    (async function(){                                                                 // -! asynchronous operation, this loop must be embeded in async function  
+        for await (let i of myArray) {                                                 // !! this object implements the [Symbol.iterator] but any object which implements the [Symbol.asyncIterator] does the same (no such object in front-end [TESTED: 2019-10-15])    
+            i;                                                                         // -> "Arpad" | "Pall" | 32      // items are returned in the sequence  
+        };
+    })();
+    </pre>
+<details class="example">
+    <summary> Example : </summary>
+<h4><u> <mark>for ...in</mark> loop used on Object </u></h4>
+<script>
+    var myAudi = {carName:"Audi", model:"A4", color:"blue", engine:"2.0 TDI", year:2010};
+    
+    var i, carMemory = "";
+    for (i in myAudi){
+        carMemory += myAudi[i] + "<br>";  
+    };
+    
+    document.write(carMemory);
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+&lt;script&gt;
+    var myAudi = {carName:"Audi", model:"A4", color:"blue", engine:"2.0 TDI", year:2010};
+    
+    var i, carMemory = "";
+    for (i in myAudi){
+        carMemory += myAudi[i] + "&lt;br&gt;";  
+    };
+    
+    document.write(carMemory);
+&lt;/script&gt;
+    </pre>
+    </details>
+<h4><u> <mark>for ...in</mark> loop used on Array (not recommended) </u></h4>
+<script>
+    var furniture = ["chair", "table", "cupboard", "bed", "closet"];
+    var i, furnitureMemory = "";
+    
+    for (i in furniture){
+        furnitureMemory += " - " + furniture[i] + "<br>";  
+    };
+    
+    document.write(furnitureMemory);
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+&lt;script&gt;
+    var furniture = ["chair", "table", "cupboard", "bed", "closet"];
+    var i, furnitureMemory = "";
+    
+    for (i in furniture){
+        furnitureMemory += " - " + furniture[i] + "&lt;br&gt;";  
+    };
+    
+    document.write(furnitureMemory);
+&lt;/script&gt;
+    </pre>
+    </details>
+<h4><u> <mark>for ...of</mark> loop </u></h4>    
+<script>
+    var myNumbers = [45, 11, 201, 478, 123, 5];
+    
+    for (let i of myNumbers) {
+        document.write(" - " + i + "<br>");
+    }    
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+&lt;script&gt;
+    var myNumbers = [45, 11, 201, 478, 123, 5];
+    
+    for (let i of myNumbers) {
+        document.write(" - " + i + "&lt;br&gt;");
+    }    
+&lt;/script&gt;
+        </pre>
+        </details>
+<h4><u> <mark>for ...in</mark> VS <mark>for ...of</mark></u></h4>    
+<script>
+    var bircsyBoy_obj = {name:"Attila", sureName:"Biro", age:31};
+    var bircsyBoy_arr = ["Attila", "Biro", 31];
+// ----------
+    for (let i in bircsyBoy_obj) {
+        document.write(i + " / ");          // returns the properties
+    }
+    document.write("<br>");
+    
+// ----------
+    for (let i of bircsyBoy_arr) {
+        document.write(i + " / ");          // returns the values
+    }
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+&lt;script&gt;
+    var bircsyBoy_obj = {name:"Attila", sureName:"Biro", age:31};
+    var bircsyBoy_arr = ["Attila", "Biro", 31];
+// ----------
+    for (let i in bircsyBoy_obj) {
+        document.write(i + " / ");          // returns the properties
+    }
+    document.write("&lt;br&gt;");
+    
+// ----------
+    for (let i of bircsyBoy_arr) {
+        document.write(i + " / ");          // returns the values
+    }
+&lt;/script&gt;
+        </pre>
+        </details>
+</details>
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2><u> the <mark>while</mark> and <mark>do...while</mark> loops </u></h2>
+    <p> - the <mark>while</mark> loop loops through a block of code until the condition is true </p>
+    <pre class="syntax">
+SYNTAX:     while(<strong>cond</strong>) { }                                                            // if the condition evaluates <mark>true</mark> runs through the block of code <mark>{}</mark>, then checks the condition again    
+            
+            do { } while(<strong>cond</strong>)                                                         // runs through the block of code <u>once</u>, then if the condition evaluates <mark>true</mark> runs through the block of code, then checks the condition again    
+    </pre>
+    <pre>
+    let i = 0;
+    
+// while ------------------------------------------------------------------------------
+    while (i &lt; 5){                                                                     // checks the condition before every pass 
+        i++                                                                            // code insdie the block runs 5 times 
+    } 
+    
+// do...white ------------------------------------------------------------------------- 
+    do {
+        i++                                                                            // -! the first pass is garanteed to run before the condition is checked    
+    } while(i &lt; 5);                                                                    // checks the condition before every pass (except the first pass)   
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> extract element form an Array with the <mark>while</mark> loop </u></h4>
+    <p> - this is a very interesting method </p>
+<script>
+    var phones = ["Samsung", "Apple", "Sony", "HTC"];
+    
+    var r = 0;
+    var memoryPhones = "";
+    while (phones[r]){
+        memoryPhones += phones[r] + "<br>";
+        r++;
+    };
+    
+    document.write(memoryPhones);
+</script>    
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+&lt;script&gt;
+    var phones = ["Samsung", "Apple", "Sony", "HTC"];
+    
+    var r = 0;
+    var memoryPhones = "";
+    while (phones[r]){
+        memoryPhones += phones[r] + "&lt;br&gt;";
+        r++;
+    };
+    
+    document.write(memoryPhones);
+&lt;/script&gt;   
+    </pre>
+    </details>
+<!-------------------------------------------------------------------------------------------------------------------------------------->    
+<hr>
+<h4 style="color:darkblue;"><u> the <mark>while</mark> VS <mark>for</mark> loop </u></h4>
+    <p> - execute the same procedure with different loops </p>
+    <p id="loopFight"></p>
+<script>
+    var cars = ["Audi", "Mercedess", "BMW", "Renault", "Peugeot", "Citroen"];
+    
+    var i, forMemory, len;
+    for (i = 0, forMemory = "", len = cars.length; i < len; i++){
+        forMemory += cars[i] + ", ";  
+    };
+    
+    var k = 0;
+    var whileMemory = "";
+    var leng = cars.length;
+    
+    while (k < leng){
+        whileMemory += cars[k] + ", ";
+        k++;
+    };
+    
+    document.getElementById('loopFight').innerHTML = 
+        forMemory + "<br>" +
+        whileMemory;
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="loopFight"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var cars = ["Audi", "Mercedess", "BMW", "Renault", "Peugeot", "Citroen"];
+    
+    var i, forMemory, len;
+    for (i = 0, forMemory = "", len = cars.length; i &lt; len; i++){
+        forMemory += cars[i] + ", ";  
+    };
+    
+    var k = 0;
+    var whileMemory = "";
+    var leng = cars.length;
+    
+    while (k &lt; leng){
+        whileMemory += cars[k] + ", ";
+        k++;
+    };
+    
+    document.getElementById('loopFight').innerHTML = 
+        forMemory + "&lt;br&gt;" +
+        whileMemory;
+&lt;/script&gt;
+    </pre>
+    </details>
+<!-------------------------------------------------------------------------------------------------------------------------------------->    
+<hr>
+<h4 style="color:darkblue;"><u> Incremented Variables </u></h4>
+<script>
+    var i = 0;
+    var memoryIncrement = "";
+    var k = 1;
+    var k1 = 1;
+    
+    do {
+        memoryIncrement += "loop executed = " + k + " / " + k1 + "<br>";
+        k1 += 2;
+        k++;
+        i++;
+    }
+    while (i < 10);
+    
+    document.write(memoryIncrement);
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+&lt;script&gt;
+    var i = 0;
+    var memoryIncrement = "";
+    var k = 1;
+    var k1 = 1;
+    
+    do {
+        memoryIncrement += "loop executed = " + k + " / " + k1 + "<br>";
+        k1 += 2;
+        k++;
+        i++;
+    }
+    while (i &lt; 10);
+    
+    document.write(memoryIncrement);
+&lt;/script&gt;
+    </pre>
+    </details>
+<!-------------------------------------------------------------------------------------------------------------------------------------->    
+<hr>
+<h4 style="color:darkblue;"><u> Double Chain </u></h4>
+    <p id="doubleChain"></p>
+<script>
+    var i = 1;
+    var k = 1;
+    
+    do {
+        document.getElementById('doubleChain').innerHTML += i + " times - " + k + "<br>";
+        k *= 2;
+        i++;
+    }
+    while (i <= 10);
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="doubleChain"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var i = 1;
+    var k = 1;
+    
+    do {
+        document.getElementById('doubleChain').innerHTML += i + " times - " + k + "&lt;br&gt;";
+        k *= 2;
+        i++;
+    }
+    while (i &lt;= 10);
+    
+    document.write(memoryChain);
+&lt;/script&gt;
+    </pre>
+    </details>
+<!-------------------------------------------------------------------------------------------------------------------------------------->    
+<hr>
+<h4 style="color:darkblue;"><u> the <mark>while</mark> VS <mark>do / while</mark> loop </u></h4>
+    <p> - the <mark>do / while</mark> executes the statement once in any case!</p>
+<script>
+    var i = 1;
+    var memoryDoWhile = "Loop Start:";
+    
+    do {                                        // the condition is false but the code is executed once before the while check
+        memoryDoWhile += i;
+        i++;
+    }
+    while (i > 10);
+    
+    
+    var k = 1;
+    var memoryWhile = "Loop Start:";            // condition is false no code executed at all!
+    
+    while (i > 10){
+        memoriWhile += k;
+        k++;
+    };
+    
+    document.write(memoryDoWhile + "<br>" + memoryWhile);
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+&lt;script&gt;
+    var i = 1;
+    var memoryDoWhile = "Loop Start:";
+    
+    do {                                        // the condition is false but the code is executed once before the while check
+        memoryDoWhile += i;
+        i++;
+    }
+    while (i &gt; 10);
+    
+    
+    var k = 1;
+    var memoryWhile = "Loop Start:";            // condition is false no code executed at all!
+    
+    while (i &gt; 10){
+        memoriWhile += k;
+        k++;
+    };
+    
+    document.write(memoryDoWhile + "&lt;br&gt;" + memoryWhile);
+&lt;/script&gt;
+    </pre>
+    </details>
+</details>
+<!--------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2><u> Nested Loops </u></h2>
+    <p> - loops can be nested, the child loop finishes all the cycles each time the parent loop calls for it </p>
+<details class="example">
+    <summary> Example : </summary>
+<script>
+    var arr = [
+        [1, 5, 4, 7, 9, 7, 11, 55, 47, 101, 254],
+        ["text", "byte", "number", "JS", "identifier"],
+        [true, false, true, true, false],
+        [21, "twenty-one", true, 00, "zero", false]
+    ];
+    var len_arr = arr.length;
+    
+    var memory_arr = "";
+        for (var i = 0; i < len_arr; i++){
+            var len_sub = arr[i].length;
+            for (var k = 0; k < len_sub; k++){
+               memory_arr += arr[i][k] + " | "; 
+            }
+        }
+    document.write(memory_arr);
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+&lt;script&gt;
+    var arr = [
+        [1, 5, 4, 7, 9, 7, 11, 55, 47, 101, 254],
+        ["text", "byte", "number", "JS", "identifier"],
+        [true, false, true, true, false],
+        [21, "twenty-one", true, 00, "zero", false]
+    ];
+    var len_arr = arr.length;
+    var memory_arr = "";
+        for (var i = 0; i &lt; len_arr; i++){
+            var len_sub = arr[i].length;
+            for (var k = 0; k &lt; len_sub; k++){
+               memory_arr += arr[i][k] + " | "; 
+            }
+        }
+    
+    document.write(memory_arr);
+&lt;/script&gt;
+    </pre>
+    </details>
+</details>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<hr>
+<h2><u> using <mark>break</mark> // <mark>continue</mark> // <mark>label</mark> statements in loops </u></h2>   
+    <p> - the <mark>label</mark> statement provides an identifier for a loop, these labels <u>only</u> usable by <mark>break</mark> and <mark>continue</mark> statements to identify whitch statement to apply </p>
+    <p> - the <mark>break</mark> statement <u style="color:yellow;">(can break any <mark>{}</mark> code blocks)</u>, prevents all further code to be executed in the current block and blocks the loop </p>
+    <p> - the <mark>continue</mark> statement (only usable by loops), prevents all further code to be executed in the current block but it desn't block the loop </p>
+    <pre class="syntax">
+SYNTAX :    <i>labelName</i> :                  // labels the loop   
+            <strong>for (;;){</strong>
+                break <i>labelName</i>          // if a label is declared the break is valid on that loop      
+            <strong>}</strong>
+            
+            <i>labelName</i> :                  
+            <strong>for (;;){</strong>
+                continue <i>labelName</i>       // if a label is declared the continue is valid on that loop      
+            <strong>}</strong>
+    </pre>
+    <pre>
+// break -------------------------------------
+    for (let i = 0; i &lt; 3; i++) {               // 3 passes
+        document.write("before break");
+        break;                                  
+        document.write("after break");          // further code is not executed and the loop is blocked
+    }
+    // -> "before break"                        // printed only once
+    
+// continue ----------------------------------
+    for (let i = 0; i &lt; 3; i++) {               // 3 passes
+        document.write("before continue");
+        continue;                                
+        document.write("after continue");       // further code is not executed
+    }
+    // -> "before continue" / "before continue" / "before continue"     // the code before the continue statement is printed every time but the code after it is not!
+    
+    //  --------------------------------------
+    let i = 0;
+    while (i &lt; 3) {
+        document.write("before continue");
+        continue;
+        i++;                                    <span style="color:orangered;">&lt;- this creates an infinite loop because the code after the "continue" statement is skipped every time!</span>
+    }
+    </pre>
+    <p> - labels </p>
+    <pre> 
+    loop1:
+    for (i = 0; i &lt; 3; i++) {                   // The first for statement is labeled "loop1"
+       loop2:
+       for (j = 0; j &lt; 3; j++) {                // The second for statement is labeled "loop2"
+          if (i === 1 &amp;&amp; j === 1) {
+             break loop1;                       // parent loop "loop1" will break when condition is true
+          }
+          console.log('i = ' + i + ', j = ' + j);
+       }
+    }
+    </pre>
+<details class="example">
+    <summary> Example : </summary>
+<h4><u> <mark>break</mark> VS <mark>continue</mark></u></h4>
+<script>
+    var i, k = 0;
+    var breakMemory = "";
+    var continueMemory = "";
+    
+    for (i = 0; i < 10; i++){
+        if (i === 5) {continue;}
+        breakMemory += i + " / ";
+    };
+// -----------------------------------------------------
+    while (k < 10){
+        if (k === 5) {break;}                   // the "continue" statement cannot be used here because that will skip all the remaining code                                  
+        continueMemory += k + " / ";
+        k++;
+    };
+    document.write(
+        "continue = " + breakMemory + "<br>" +
+        "break = " + continueMemory
+    );
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+&lt;script&gt;
+    var i, k = 0;
+    var breakMemory = "";
+    var continueMemory = "";
+    
+    for (i = 0; i &lt; 10; i++){
+        if (i === 5) {continue;}
+        breakMemory += i + " / ";
+    }
+// ------------------------------------------------------
+    while (k &lt; 10){
+        if (k === 5) {break;}                   // the "continue" statement cannot be used here because that will skip all the remaining code                                  
+        continueMemory += k + " / ";
+        k++;
+    };
+    document.write(
+        "continue = " + breakMemory + "&lt;br&gt;" +
+        "break = " + continueMemory
+    );
+&lt;/script&gt;
+    </pre>
+    </details>
+<h4><u> specifiend values skipped with the <mark>continue</mark> statement </u></h4>
+<script>
+    var i, memorySkip = "";
+    for (i = 10; i > 0; i--){
+        if ((i == 9) || (i == 8) || (i == 5) || (i == 2)) {continue;}
+        memorySkip += i + "<br>";
+    }
+    
+    document.write(memorySkip);
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+&lt;script&gt;
+    var i, memorySkip = "";
+    for (i = 10; i > 0; i--){
+        if ((i == 9) || (i == 8) || (i == 5) || (i == 2)) {continue;}
+        memorySkip += i + "&lt;br&gt;";
+    }
+    
+    document.write(memorySkip);
+&lt;/script&gt;
+    </pre>
+    </details>
+<h4><u> <mark>label</mark> example </u></h4>
+<script>
+    parent :
+    for (let i = 1; i <= 3; i++) {
+        child :
+        for (let k = 1; k <= 3; k++) {
+            if (i == 2) {continue parent};                      // this is how you skip all "2" iteration of the parent loop
+            document.write("i = " + i + " k = " + k + "<br>");
+        }
+    }
+</script>    
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+&lt;script&gt;
+    parent :
+    for (let i = 1; i &lt;= 3; i++) {
+        child :
+        for (let k = 1; k &lt;= 3; k++) {
+            if (i == 2) {continue parent};                      // this is how you skip all "2" iteration of the parent loop
+            document.write("i = " + i + " k = " + k + "&lt;br&gt;");
+        }
+    }
+&lt;/script&gt;
+        </pre>
+        </details>
+</details> 
+    
+    <br><br>
+</body>
+</html>

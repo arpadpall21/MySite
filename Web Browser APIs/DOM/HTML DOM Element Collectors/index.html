@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> HTML DOM Element Collectors </title> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="../../../Assets/stylesPages.css"> 
+    <script src="../../../Assets/scriptPages.js"></script>
+</head>
+<body>
+<h1> HTML DOM Element Collectors (ver 3.1) </h1>
+    <p> Updated ( 2018-02-02 / 2018-02-14 / 2018-09-03 / 2018-10-18 / 2018-12-23 / 2019-11-13 )</p>
+    <p class="sitenav"> <a href="../../../index.html">MySite></a>
+        <a href="../../index.html"> Web Browser APIs> </a> 
+        <a href="../index.html"> DOM> </a> HTML DOM Element Collectors 
+    </p>
+<table class="table">
+<caption> HTML Element Collectors </caption>
+    <tr>
+        <th style="width:30%;"> Method / Property </th>
+        <th> Description </th>
+        <th> DOM </th>
+    </tr>
+    <tr>
+        <td> <em>document</em>.anchors<i>[index/"name"]</i> </td>
+        <td> returns all <mark>&lt;a&gt;</mark> element which has a <u>"name" attribute</u> in a <u>HTMLCollection</u> (optionally can access them) 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 1 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.baseURI (getter only) </td>
+        <td> returns the absolute base URI (Uniform Resource Identifier) of the document 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 3 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.body </td>
+        <td> returns the <mark>&lt;body&gt;</mark> element 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 1 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.doctype </td>
+        <td> returns the document's doctype 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 3 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.documentElement </td>
+        <td> returns the <mark>&lt;html&gt;</mark> element 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 3 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.documentURI </td>
+        <td> returns the document's URI (Uniform Resource Identifier) 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 3 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.domain </td>
+        <td> retunrs the document's domain name 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 1 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.embeds<i>[index/"name"]</i> </td>
+        <td> returns all <mark>&lt;embed&gt;</mark> elements in a <u>HTMLCollection</u> (optionally can access them) 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 3 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.forms<i>[index/"name"]</i> </td>
+        <td> returns all <mark>&lt;form&gt;</mark> elements in a <u>HTMLCollection</u> (optionally can access them) 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 1 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.head </td>
+        <td> returns the <mark>&lt;head&gt;</mark> element 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> 4 </span>
+                <span><i class="fab fa-firefox"></i> 4 </span>
+                <span><i class="fab fa-opera"></i> 11 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> 5 </span>
+            </span>
+        </td>
+        <td> 3 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.images<i>[index/"name"]</i> </td>
+        <td> returns all <mark>&lt;img&gt;</mark> elements in a <u>HTMLCollection</u> (optionally can access them) 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 1 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.implementation </td>
+        <td> returns the DOM implementation 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 3 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.inputEncoding </td>
+        <td> returns the document's encoding (character set) 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> 15 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 3 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.lastModified </td>
+        <td> returns a time <u>as a string</u> when the document was last modified 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 3 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.links<i>[index/"name"]</i> </td>
+        <td> returns all <mark>&lt;a&gt;</mark> and <mark>&lt;area&gt;</mark> elements which contains a <u>"href" attribute</u> in a <u>HTMLCollection</u> (optionally can access them) 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 1 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.readyState </td>
+        <td> returns the loading status of the document 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 3.6 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 3 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.referrer </td>
+        <td> Returns the URI of the referrer (the linking document) 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 1 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.scripts<i>[index/"name"]</i> </td>
+        <td> retunrs all <mark>&lt;script&gt;</mark> elements in a <u>HTMLCollection</u> (optionally can access them) 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 9 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 3 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.scriptErrorChecking </td>
+        <td> returns if error checking is enforced 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> NO </span>
+                <span><i class="fab fa-firefox"></i> NO </span>
+                <span><i class="fab fa-opera"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                <span><i class="fab fa-safari"></i> NO </span>
+            </span>
+        </td>
+        <td> 3 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.title </td>
+        <td> returns the <mark>&lt;title&gt;</mark> element 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 1 </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.URL </td>
+        <td> returns the complet URL (Uniform Resource Locator) of the document 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+        <td> 1 </td>
+    </tr>
+</table>
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+<h2 style="color:green;"><u> Remember This : </u></h2>
+<h2 style="color:green;"><u> Description and Demonstration : </u></h2>
+    <p> - HTML DOM Object Collectors refer to a predefined Object type with JavaScript</p>
+    <pre class="syntax">
+SYNTAX :    <em>document</em>.head                         // returns the <mark>&lt;head&gt;</mark> element
+            <em>document</em>.body                         // returns the <mark>&lt;body&gt;</mark> element
+            <em>document</em>.documentElement              // returns the <mark>&lt;html&gt;</mark> element
+            <em>document</em>.title                        // returns the <mark>&lt;title&gt;</mark> element
+
+            <em>document</em>.links<i>[index/"name"]</i>          // returns all <mark>&lt;a&gt;</mark> and <mark>&lt;area&gt;</mark> elements which contains a <u>"href" attribute</u> in a <u>HTMLCollection</u> (optionally can access them)   
+            <em>document</em>.anchors<i>[index/"name"]</i>        // returns all <mark>&lt;a&gt;</mark> element which has a <u>"name" attribute</u> in a <u>HTMLCollection</u> (optionally can access them)
+            <em>document</em>.embeds<i>[index/"name"]</i>         // returns all <mark>&lt;embed&gt;</mark> elements in a <u>HTMLCollection</u> (optionally can access them)
+            <em>document</em>.forms<i>[index/"name"]</i>          // returns all <mark>&lt;form&gt;</mark> elements in a <u>HTMLCollection</u> (optionally can access them)
+            <em>document</em>.images<i>[index/"name"]</i>         // returns all <mark>&lt;img&gt;</mark> elements in a <u>HTMLCollection</u> (optionally can access them)
+            <em>document</em>.scripts<i>[index/"name"]</i>        // retunrs all <mark>&lt;script&gt;</mark> elements in a <u>HTMLCollection</u> (optionally can access them)
+            
+            <em>document</em>.baseURI                      // returns the absolute base URI (Uniform Resource Identifier) of the document    
+            <em>document</em>.documentURI                  // returns the document's URI (Uniform Resource Identifier)
+            <em>document</em>.URL                          // returns the complet URL (Uniform Resource Locator) of the document          
+            <em>document</em>.domain                       // retunrs the document's domain name 
+            <em>document</em>.inputEncoding                // returns the document's encoding (character set)
+            <em>document</em>.lastModified                 // returns a time <u>as a string</u> when the document was last modified
+    </pre>
+<details class="example">
+    <summary> Example : </summary>
+    <p style="color:mediumvioletred;;"> - NOT all collectos are demostrated because they could be tricky to demonstrat and the script of this demo is on the bottom of the page for accurate reading </p>
+    <p name="display"></p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p name="display"&gt;&lt;/p&gt;
+&lt;script&gt;
+    document.querySelector('[name="display"]').innerHTML = 
+        " Number of links with a \"href\" attribute  = " + document.links.length + "&lt;br&gt;" +
+        " Number of links with a \"name\" attribute  = " + document.anchors.length + "&lt;br&gt;" +
+        " Number of Embeds = " + document.embeds.length + "&lt;br&gt;" +
+        " Number of Forms = " + document.forms.length + "&lt;br&gt;" +
+        " Number of Images = " + document.images.length + "&lt;br&gt;" +
+        " Number of Scripts = " + document.scripts.length + "&lt;br&gt;" +
+        " ----------------------------------------------- " + "&lt;br&gt;" +
+        " Base URI = " + document.baseURI + "&lt;br&gt;" +
+        " Document URI = " + document.documentURI + "&lt;br&gt;" +
+        " URL = " + document.URL + "&lt;br&gt;" +
+        " Cookie Content = " + document.cookie + "&lt;br&gt;" +
+        " Domain name = " + document.domain + "&lt;br&gt;" +
+        " Input Encoding = " + document.inputEncoding + "&lt;br&gt;" +
+        " Document last modified = " + document.lastModified;
+&lt;/script&gt;   
+        </pre>
+        </details>
+</details>
+
+
+
+
+
+    
+<h2 class="test" style=""><a href="TEST/index.html"> TEST (empty) > </a></h2>
+</body>
+</html>

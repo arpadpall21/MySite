@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Links </title>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/stylesPages.css">
+    <script src="../../Assets/scriptPages.js"></script>
+</head>
+<body>
+<h1 id="home">Links (ver 2.9)</h1>
+    <p> Updated ( 2016-06-08 / 2018-06-21)</p>
+    <p class="sitenav"> <a href="../../index.html">MySite></a>
+        <a href="../index.html">HTML></a> Links
+    </p>
+<table class="table">
+    <tr>
+        <th> Attribute / Pseudo Class </th>
+        <th> Values </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td colspan="3"> <mark>&lt;a&gt;&lt;/a&gt;</mark> tag attributes </td>
+    </tr>
+    <tr>
+        <td> download </td>
+        <td> <i>file_name</i> <span style="color:blue;">(renames the downloaded file)</span> </td>
+        <td> <span style="color:orangered;">(new in HTML 5)</span> forces the targeted file to download </td>
+    </tr>
+    <tr>
+        <td> href </td>
+        <td> 
+            <strong>URL</strong> <br>
+            #<strong>id</strong> <span style="color:blue;">(target local page [bookmark])</span> <br>
+            javascript:<strong>JS code</strong> <span style="color:blue;">(executes a javaScript code)</span>
+        </td>
+        <td> specifies the URL of the targeted page </td>
+    </tr>
+    <tr>
+        <td> hreflang </td>
+        <td> <strong> language_code </strong> </td>
+        <td> specifies the language of the targeted page </td>
+    </tr>
+    <tr>
+        <td> media </td>
+        <td> <strong>media_query</strong> </td>
+        <td> <span style="color:orangered;">(new in HTML 5)</span> specifies what media/device the linked document is optimized for </td>
+    </tr>
+    <tr>
+        <td> name </td>
+        <td> <strong>name</strong> </td>
+        <td> <span style="color:orangered;">(NOT supported in HTML 5 use id instead)</span> specifies the anchor's name </td>
+    </tr>
+    <tr>
+        <td> ping </td>
+        <td> <strong>URL</strong> <i>URL</i> </td>
+        <td> specifies a list of URL's to which POST requests with the body PING will be sent by the browser (in the background) when the hyperlink is clicked (used for tracking) </td>
+    </tr>
+    <tr>
+        <td> rel </td>
+        <td>
+            alternate <span style="color:blue;">(alternated representation translated or mirror)</span><br>
+            author <span style="color:blue;">(author document)</span><br>
+            bookmark <span style="color:blue;">(bookmark document)</span><br>
+            external <span style="color:blue;">(external document (not part of the current site)</span><br>
+            help <span style="color:blue;">(help document)</span><br>
+            license <span style="color:blue;">(copyright document)</span><br>
+            next <span style="color:blue;">(next document in the series)</span><br>
+            nofollow <span style="color:blue;">(unendorsed document (like paid link used by Google)</span><br>
+            prev <span style="color:blue;">(previous document in a series)</span><br>
+            search <span style="color:blue;">((search tool)</span> 
+        </td>
+        <td> specifies the relation between the current document and the tageted document (informative usage, mostly used by search engines) </td>
+    </tr>
+    <tr>
+        <td> target </td>
+        <td> 
+            _blank <span style="color:blue;">(new window or tab)</span><br>
+            _self <span style="color:blue;">(same frame the link is on)</span><br>
+            _parent <span style="color:blue;">(parent frame)</span><br>
+            _top <span style="color:blue;">(in the full body of the window)</span><br>
+            <strong>frame_name</strong> <span style="color:blue;">(in the targeted frame)</span>
+        </td>
+        <td> specifies where to open the linked document </td>
+    </tr>
+    <tr>
+        <td> type </td>
+        <td> <strong>media_type (MIME)</strong> </td>
+        <td> specifies the media type (purely advisory with no functionality) </td>
+    </tr>
+</table>
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+    <p><a href="http://www.w3schools.com/html/html_links.asp" title="Go To W3Schools HTML Links site!" target="_blank">Go To W3Schools HTML Links site!</a></p>
+    <p><a href="http://www.w3schools.com/css/css_link.asp" title="Go To W3Schools CSS Links site!" target="_blank">Go To W3Schools CSS Links site!</a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types" rel="external"> possible <mark>rel</mark> attribute values MDN </a></p>
+<h2 style="color:green;"><u> Remember This : </u></h2>
+    
+<h2 style="color:green;"><u> Description and Demonstration: </u></h2>
+    <p> - the <mark>&lt;a&gt;&lt;/a&gt;</mark> (anchor) tag creates a hyperlink which allowes the user to navigate from a page to another </p>
+    <p> - hyperlinks can be used as bookmarks or can target documents to open within the browser window or download them (like .pdf files) </p>
+    <p> - ancors can also execute JavaScript code </p>
+    <pre class="syntax">
+SYNTAX :    &lt;a <i>attribute="value"</i>&gt;&lt;/a&gt;
+    </pre>
+    <pre>
+    &lt;a href="https://developer.mozilla.org/en-US/" target="_blank" title="Mozilla Developer Network"&gt; MDN &lt;/a&gt;      // opens MDN site
+    
+    &lt;a href="javascript:void(document.body.style.backgroundColor='red')"&gt; RED &lt;/a&gt;                                  // executes a javaScript code
+                                                                                                                    // "void" operator used to make sure the returned value is "undefined"
+    </pre>
+<details class="example">    
+<summary> Example : </summary>    
+<h4><u> simple example </u></h4>
+    <p> - This link goes to the W3Schools site (also styled)</p>
+    <a id="link" href="http://www.w3schools.com" title="W3Schools" target="_blanc"> W3SCHOOLS.COM </a>
+        <details>
+        <summary> CODE : </summary>
+    <pre>
+    -- CODE (HTML) --
+    &lt;a id="link" href="http://www.w3schools.com" title="W3Schools" target="_blanc"&gt; W3SCHOOLS.COM &lt;/a&gt;
+    
+    -- CODE (CSS) --
+    #link:link{                                                 #link:hover{
+        color: purple;                                              color: black;
+        background-color: black;                                    background-color: yellow;
+        text-decoration: underline;                                 text-decoration: overline;
+    }                                                           }
+    #link:visited{                                              #link:active{
+        color: black;                                               color: white;
+        background-color: lightgreen;                               background-color: red;
+        text-decoration: underline;                                 text-decoration: underline;
+    }                                                           }
+    </pre>
+        </details>
+<h4><u> image link </u></h4>
+<p> - This image is a link it leads to Youtube (changes when hover, it needs a fancy code for achive this)</p>
+    <p align="center"><a id="link_image" href="https://www.youtube.com" target="_blank" title="Youtube"></a></p>
+        <details>
+        <summary> CODE : </summary>
+    <pre>
+    -- CODE (HTML) --
+    &lt;p align="center"&gt;&lt;a id="link_image" href="https://www.youtube.com" target="_blanc" title="Youtube"&gt;&lt;/a&gt;&lt;/p&gt;
+    
+    -- CODE (CSS) --
+    #link_image{
+        display: block;
+        width: 50px;
+        height: 25px;
+        background-image: url(../../../../Pictures/Youtube.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        transition: .2s;
+    }
+    #link_image:hover{
+        background-image: url(../../../../Pictures/Youtube-hover.png);
+    }
+    </pre>
+        </details>
+<h4><u> bookmark </u></h4>
+    <p> 1- <a href="#home" title="home"> Jump to the top of the page </a>(this link navigates on the top of this page just use the "id" attribute)</p> 
+    <p> 2- <a href="../Tables/index.html" title="Jump To Tables!"> Jump To Tables!</a> (this link targets a specific area on a different page) </p>
+        <details>
+        <summary> CODE : </summary>
+    <pre>
+    &lt;h1 id="home"&gt;Links&lt;/h1&gt;
+    
+    &lt;p&gt; 1- &lt;a href="#home" title="home"&gt; Jump to the top of the page &lt;/a&gt;(this link navigates on the top of this page just use the "id" attribute)&lt;/p&gt; 
+    &lt;p&gt; 3- &lt;a href="../Tables/index.html" title="Jump To Tables!"&gt; Jump To Tables! &lt;/a&gt;(this link targets a specific area on a different page)&lt;/p&gt;
+    </pre>
+        </details>
+<h4> <mark>download</mark> attribute demo </h4>
+    <p> - When you target a file the browser will download it unles it is displayable in the browser like "pdf" files </p>
+        <p> 1 - Open <a href="../../../../Pictures/A Sarga Kapszula (Drugs Bunny).pdf" title="Sarga Kapszula" target="_blank"> Sarga Kapszula.pdf</a> (this is a "pdf" displayable file so it will be open in the Browser window)</p>
+        <p> 2 - Download <a href="../../../../Pictures/A Sarga Kapszula (Drugs Bunny).pdf" title="Sarga Kapszula" download> Sarga Kapszula.pdf</a> (this is the same file as above but it is forced to download by the browser using the <mark>download</mark> boolean atribute)</p>
+        <p> 3 - Download and Rename fiel <a href="../../../../Pictures/A Sarga Kapszula (Drugs Bunny).pdf" title="Sarga Kapszula" download="Yellow Pill"> Sarga Kapszula.pdf</a> (this downloads and renames the downloaded file) </p>
+        <details>
+        <summary> CODE : </summary>
+    <pre>
+    &lt;p&gt; 1 - Open &lt;a href="../../../../Pictures/A Sarga Kapszula (Drugs Bunny).pdf" title="Sarga Kapszula" target="_blank"&gt; Sarga Kapszula.pdf&lt;/a&gt; 
+        (this is a "pdf" displayable file so it will be open in the Browser window)&lt;/p&gt;
+    &lt;p&gt; 2 - Download &lt;a href="../../../../Pictures/A Sarga Kapszula (Drugs Bunny).pdf" title="Sarga Kapszula" download&gt; Sarga Kapszula.pdf&lt;/a&gt; 
+        (this is the same file as above but it is forced to download by the browser using the &lt;mark&g;download&lt;/mark&gt; boolean atribute)&lt;/p&gt;
+    &lt;p&gt; 3 - Download and Rename fiel &lt;a href="../../../../Pictures/A Sarga Kapszula (Drugs Bunny).pdf" 
+        title="Sarga Kapszula" download="Yellow Pill"> Sarga Kapszula.pdf&lt;/a&gt; (this downloads and renames the downloaded file) &lt;/p&gt;
+    </pre>
+        </details>
+<h4> style link with CSS </h4>
+    <p><a id="button" href="https://fr.yahoo.com" title="Yahoo-English" target="_blanc"> YAHOO </a></p>
+        <details>
+        <summary> CODE : </summary>
+    <pre>
+    -- CODE (HTML) --
+    &lt;a id="button" href="https://fr.yahoo.com" title="Yahoo-English" target="_blanc"&gt;YAHOO&lt;/a&gt;
+    
+    -- CODE (CSS) --
+    #button:link, #button:visited{
+        padding:15px 25px;
+        background-color:green;
+        color:white;
+        text-decoration:none;
+        border-radius: 8px;
+    }
+    #button:hover, #button:active{
+        background-color:red;
+    }	
+    </pre>
+        </details>
+<h4><u> execute javascript in <mark>"href"</mark> attribute TEST </u></h4>    
+    <a href="javascript: void(alert('javaScript Executed!'))"> Execute JS in a link </a>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;a href="javascript: void(alert('javaScript Executed!'))"&gt; Execute JS in a link &lt;/a&gt;    
+        </pre>
+        </details>    
+</details>    
+    
+    <br><br>
+</body>
+</html>

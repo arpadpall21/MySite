@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Colors </title>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../Assets/stylesPages.css">
+    <script src="../../Assets/scriptPages.js"></script>
+</head>
+<body>
+<h1> Colors (ver 2.9) </h1>
+    <p> Updated ( 2016-05-23 / 2018-09-10 ) </p>
+    <p class="sitenav"> <a href="../../index.html">MySite></a>
+        <a href="../index.html" title="CSS">CSS></a> Colors
+    </p>
+<table class="table">
+    <tr>
+        <th> Property </th>
+        <th> Value </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td>  </td>
+        <td> <strong>colorName</strong> </td>
+        <td> predefined names by CSS which expresses colors </td>
+    </tr>
+    <tr>
+        <td>  </td>
+        <td> #<strong>hexValue</strong> </td>
+        <td> hexadecimal value <mark>rrggbb</mark> which defines a color code </td>
+    </tr>
+    <tr>
+        <td>  </td>
+        <td> rgb(<strong>nr</strong>, <strong>nr</strong>, <strong>nr</strong>) </td>
+        <td> defines a color by the given (red, green, blue) values </td>
+    </tr>
+    <tr>
+        <td>  </td>
+        <td> rgba(<strong>nr</strong>, <strong>nr</strong>, <strong>nr</strong>, <strong>nr_A</strong>) </td>
+        <td> defines a color by the given (red, green, blue) values and the opacity level </td>
+    </tr>
+    <tr>
+        <td>  </td>
+        <td> hsl(<strong>hue_nr</strong>, <strong>sat_%</strong>, <strong>lig_%</strong>) </td>
+        <td> defines a color by the given (hue, saturation, light) parameters </td>
+    </tr>
+    <tr>
+        <td>  </td>
+        <td> hsla(<strong>hue_nr</strong>, <strong>sat_%</strong>, <strong>lig_%</strong>, <strong>nr_A</strong>) </td>
+        <td> defines a color by the given (hue, saturation, light) parameters and the opacity level </td>
+    </tr>
+    <tr>
+        <td> opacity </td>
+        <td> <strong>nr_A</strong> <span style="color:blue;">(0.0 - 1.0)</span> </td>
+        <td> defines the opacity level  </td>
+    </tr>
+    <tr>
+        <td> filter </td>
+        <td> alpha(opacity=<strong>nr_A</strong>) <span style="color:blue;">(0.0 - 1.0)</span> </td>
+        <td> defines the opacity level <u>(IE8 and earlier)</u> </td>
+    </tr>
+</table>    
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+    <p> <a href="http://www.w3schools.com/css/css_colors.asp" target="_blank"> W3School CSS Color </a></p>
+    <p> <a href="http://www.w3schools.com/css/css3_colors.asp" target="_blank"> W3School CSS3 Color </a></p>
+<h2 style="color:green;"><u> Remember This : </u></h2>
+    <p> - </p>
+<h2 style="color:green;"><u> Description and Demonstration : </u></h2>
+    <pre style="background-color:lemonchiffon; font-weight:bold;">
+         <u>bit per pixel</u>       <u>Number Of Colors</u>           <u>Name</u>
+                1 bit                       2           Monochrome    
+                2 bits                      4           CGA                                
+                4 bits                     16           EGA
+                8 bits                    256           VGA
+               16 bits                 65,536           High Colors
+               24 bits             16,777,216           True Colors
+               32 bits          4,294,967,296           Deep Colors
+    </pre>
+    <p> - in CSS we have the following color values </p>
+    <pre class="syntax">
+SYNTAX :    <strong>colorName</strong>                               // predefined names by CSS which expresses colors 
+            #<strong>hexValue</strong>                               // hexadecimal value <mark>rrggbb</mark> which defines a color code
+            
+            rgb(<strong>nr</strong>, <strong>nr</strong>, <strong>nr</strong>)                         // defines a color by the given (red, green, blue) values 
+            rgba(<strong>nr</strong>, <strong>nr</strong>, <strong>nr</strong>, <strong>nr_A</strong>)                  // defines a color by the given (red, green, blue) values and the opacity level 
+                - <strong>nr</strong> : defines the color number <mark>0 - 255</mark>
+                - <strong>nr_A</strong> : opacity lever <mark>0.0 - 1.0</mark> (0 is fully opaque)
+            
+            hsl(<strong>hue_nr</strong>, <strong>sat_%</strong>, <strong>lig_%</strong>)               // defines a color by the given (hue, saturation, light) parameters
+            hsla(<strong>hue_nr</strong>, <strong>sat_%</strong>, <strong>lig_%</strong>, <strong>nr_A</strong>)        // defines a color by the given (hue, saturation, light) parameters and the opacity level
+                - <strong>hue_nr</strong> : hue degree <mark>0 - 360</mark>
+                - <strong>sat_%</strong> : saturation percent <mark>0% - 100%</mark>
+                - <strong>lig_%</strong> : light percent <mark>0% - 100%</mark>
+                - <strong>nr_A</strong> : opcity lever <mark>0.0 - 1.0</mark> (0 is fully opaque)
+                
+            opacity:<strong>nr_A</strong>;                           // defines the opacity level 
+            filter:alpha(opacity=<strong>nr_A</strong>)              // defines the opacity lever (IE8 and earlier)
+                - <strong>nr_A</strong> : opacity lever <mark>0.0 - 1.0</mark> (0 is fully opaque)
+    </pre>
+    <pre>
+// same color different ways to display it -----------------
+
+    myElement {
+        color: cornflowerblue;                          // color name 
+        color: #6495ed;                                 // hexadecimal value
+        color: rgb(100, 149, 237)                       // rgb value
+        color: hsl(218.5, 79.2%, 66.1%)                 // hsl value
+    // control opacity (half opaque) ----------------------
+        color: rgba(100, 149, 237, 0.5)                 // rgb value with opacity level
+        color: hsla(218.5, 79.2%, 66.1%, 0.5)           // hsl value with opacity level
+        opacity: 0.5;                                   // opacity level porperty set!
+        filter: alpha(opacity=50);                      // -> IE8 and earlier
+    }
+    </pre>
+<details class="example">    
+    <summary> Example : </summary>
+<h3> RGB method </h3>
+    <p style="font-size:20px;color:rgb(150,360,68);"> This is paragrap's color is is made with RGB  code. "color:rgb(150,360,68);", this is the three color code</p>
+    <pre>
+    -- CODE (HTML) --
+    &lt;p style="font-size:20px;color:rgb(150,360,68);"&gt; This is paragrap's color is is made with RGB code. "color:rgb(150,360,68);", this is the three color code &lt;/p&gt;
+    </pre>
+<hr>
+<h3> Hexadecimal method </h3>
+    <p style="font-size:20px;color:#ec2e37;"> This is paragrap's color is made with Hexadecimal code. "color:#ec2e37;", these are basicaly color codes of photoshop</p>
+    <pre>
+    -- CODE (HTML) --
+    &lt;p style="font-size:20px;color:#ec2e37;"&gt; This is paragrap's color is made with Hexadecimal code. "color:#ec2e37;", these are basicaly color codes of photoshop&lt;/p&gt;
+    </pre>
+<hr>
+<h3> Typing method </h3>    
+    <p style="font-size:20px;color:teal;"> This is paragrap's color is is made with traditional code. "color:teal;", simple typing method</p>
+    <pre>
+    -- CODE (HTML) --
+    &lt;p style="font-size:20px;color:teal;"&gt; This is paragrap's color is is made with traditional code. "color:teal;", simple typing method&lt;/p&gt;
+    </pre>
+<hr>
+<h3> HLS method</h3>
+    <p style="font-family:Arial, sans-serif; font-size:20px; color:hsl(315, 100%, 50%);"> This paragrap is colored with HLS, it seems to be at first glance overcomplicated but it isn't. </p>
+    <pre>
+    -- CODE (HTML) --
+    &lt;p style="font-family:Arial, sans-serif; font-size:20px; color:hsl(315, 100%, 50%);"&gt; This paragrap is colored with HLS, 
+    it seems to be at first glance overcomplicated but it isn't. &lt;/p&gt;
+    </pre>
+<hr>
+<h3> Opacity Demonstrations </h3>
+    <p style="font-family:Arial, sans-serif; font-size:20px; color:rgba(0,0,0,0.7);"> This Paragraph is black colored 70% (0.7) opacity with RGBA property </p>
+    <p style="font-family:Arial, sans-serif; font-size:20px; color:hsla(0,0%,0%,0.5);"> This paragraph is also black colored 50% (0.5) opacity with HSLA property </p>
+    <p style="font-family:Arial, sans-serif; font-size:20px; color:black; opacity:0.2;"> This paragraph is colored with traditional typing method and added an "opacity" property 20% (0.2)</p>
+    <pre>
+    -- CODE (HTML) --
+    &lt;p style="font-family:Arial, sans-serif; font-size:20px; color:rgba(0,0,0,0.7);"&gt; This Paragraph is black colored 70% (0.7) opacity with RGBA property &lt;/p&gt;
+    &lt;p style="font-family:Arial, sans-serif; font-size:20px; color:hsla(0,0%,0%,0.5);"&gt; This paragraph is also black colored 50% (0.5) opacity with HSLA property &lt;/p&gt;
+    &lt;p style="font-family:Arial, sans-serif; font-size:20px; color:black; opacity:0.2;"&gt; This paragraph is colored with traditional typing method 
+    and added an "opacity" property 20% (0.2)&lt;/p&gt;
+    </pre>
+    <div id="opacityall"> <img src="../../../../Pictures/Smilie.jpg" alt="Smile Icon" style="height:100px; float:left;">
+        If you set the opacity property for an element that will change the opacity of every elements inside!
+        This Container is 50% Opaque with all its elements indise Font, Border, Image</div>
+    <div id="opacityfont"> <img src="../../../../Pictures/Smilie.jpg" alt="Smile Icon" style="height:100px; 
+        float:left;">This second example I used the opacity only for the text in this element, to to do that 
+        I HAD TO used the"color:RGBA;" property so it targets only the font color but the "HSLA" works as well!</div>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    -- CODE (HTML) --
+    &lt;div id="opacityall"&gt; &lt;img src="../../../../Pictures/Smilie.jpg" alt="Smile Icon" style="height:100px; float:left;"&gt;
+        If you set the opacity property for an element that will change the opacity of every elements inside!
+        This Container is 50% Opaque with all its elements indise Font, Border, Image&lt;/div&gt;
+    &lt;div id="opacityfont"&gt; &lt;img src="../../../../Pictures/Smilie.jpg" alt="Smile Icon" style="height:100px; 
+        float:left;">This second example I used the opacity only for the text in this element, to to do that 
+        I HAD TO used the"color:RGBA;" property so it targets only the font color but the "HSLA" works as well!&lt;/div&gt;
+    
+    -- CODE (CSS) --
+    div#opacityall{
+        font-size: 2.0em;
+        font-family: Arial, sans-serif;
+        border: solid blue 7px;
+        opacity: 0.5;
+    }
+    div#opacityfont{
+        font-size: 2.0em;
+        font-family: Arial, sans-serif;
+        color: RGBA(255,0,0,0.5);
+        border: solid blue 7px;
+    }
+    </pre>
+    </details>
+</details>    
+    
+    <br><br>
+</body>
+</html>

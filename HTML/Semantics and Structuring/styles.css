@@ -1,0 +1,100 @@
+        /* -- meter tester JS --*/
+.testerCont {
+    position: relative;
+    border: groove 2px brown;
+    background-color: brown;
+    height: 43px;
+    width: 355px;
+    margin-top: 10px;
+}
+.testerCont input[type="number"] {
+    width: 50px;
+    border: solid 1px black;
+    text-align: center;
+}
+.testerCont span {
+    color: white;
+}
+/*-- min input --*/
+.testerCont span:first-of-type {
+    position: absolute;
+    left: 15px;
+}
+.testerCont input:first-of-type {
+    position: absolute;
+    left: 0;
+    top: 20px;
+}
+/*-- low input --*/
+.testerCont span:nth-of-type(2) {
+    position: absolute;
+    left: 76px;
+}
+.testerCont input:nth-of-type(2) {
+    position: absolute;
+    left: 60px;
+    top: 20px;
+}
+/*-- optium --*/
+.testerCont span:nth-of-type(3) {
+    position: absolute;
+    left: 123px;
+}
+.testerCont input:nth-of-type(3) {
+    position: absolute;
+    left: 120px;
+    top: 20px;
+}
+/*-- high --*/
+.testerCont span:nth-of-type(4) {
+    position: absolute;
+    left: 192px;
+}
+.testerCont input:nth-of-type(4) {
+    position: absolute;
+    left: 180px;
+    top: 20px;
+}
+/*-- max --*/
+.testerCont span:nth-of-type(5) {
+    position: absolute;
+    left: 250px;
+}
+.testerCont input:nth-of-type(5) {
+    position: absolute;
+    left: 240px;
+    top: 20px;
+}
+/*-- max --*/
+.testerCont span:nth-of-type(6) {
+    position: absolute;
+    left: 308px;
+}
+.testerCont input:nth-of-type(6) {
+    position: absolute;
+    left: 300px;
+    top: 20px;
+    border: solid 2px green;
+    background-color:lightgreen;
+}
+    /*- meter element style -*/
+#myMeter {
+    width: 355px;
+}
+
+        /*-- meter CSS TEST --*/
+.meterCss_1 {
+    color: rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
+}
+
+        /*-- dialog box Styling TEST --*/
+#myDialogBox2 {
+    border: red dashed 5px;
+    text-decoration: underline;
+}
+#myDialogBox2::backdrop {
+    background-color: rgba(255, 0, 0, .8);
+}
+
+
