@@ -1,20 +1,25 @@
 const crypto = require('crypto');
-    const util = require('util');
+const https = require('https');
+const fs = require('fs');
+const tls = require('tls');
+
+var counter = 0;
+
+let clientReq = https.get('https://stackoverflow.com', {ca:tls.rootCertificates[21]}, function(incMsg){
+    let crt =  new crypto.X509Certificate(incMsg.socket.getPeerCertificate().raw);
     
-    const ecdh = crypto.createECDH('c2pnb176v1');
-    const ecdhPubKey = ecdh.generateKeys();
-    
-    const uncompressedKey = crypto.ECDH.convertKey(ecdhPubKey, 'c2pnb176v1', null, null, 'uncompressed');
-    const compressedKey = crypto.ECDH.convertKey(ecdhPubKey, 'c2pnb176v1', null, null, 'compressed');
-    const hybridKey = crypto.ECDH.convertKey(ecdhPubKey, 'c2pnb176v1', null, 'hex', 'hybrid');
     
     
-    console.log( uncompressedKey );                                                    // -> '041ad485a2666bc9edd90e53a33fd966ca6be61fa02259d4a8afb0f9b8efe2bbb541f3ebea3614a28dcac7e767'    
-    console.log( uncompressedKey.length );                                             // -> 90  
     
-    console.log( compressedKey );                                                      // -> '021ad485a2666bc9edd90e53a33fd966ca6be61fa02259'
-    console.log( compressedKey.length );                                               // -> 46
+    let parentCrt = new crypto.X509Certificate(fs.readFileSync('./download'));
+    console.log( crt.checkIssued(parentCrt) );    
+    // console.log( googleCert.verify(crt.publicKey) );
     
-    console.log( hybridKey );                                                          // -> '041ad485a2666bc9edd90e53a33fd966ca6be61fa02259d4a8afb0f9b8efe2bbb541f3ebea3614a28dcac7e767'    
-    console.log( hybridKey.length );                                                   // -> 90  
+    console.log( crt.infoAccess );
     
+    
+});
+    
+
+
+

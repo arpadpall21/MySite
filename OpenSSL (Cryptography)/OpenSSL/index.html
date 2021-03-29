@@ -145,7 +145,7 @@
     <tr class="19.01">
         <td> <em>openssl</em> req <small>[-days <i>nr</i>]</small> -x509 -newkey rsa:<strong>nr:bit</strong> <small>[-nodes]</small> <small>[-sha256]</small> -keyout <strong>privKey</strong> -out <strong>file</strong> </td>
         <td>  
-            - creates a self-signed certificate and private-key pair (will ask for certificate details) <u>(private-key will be encrypted)</u><br>
+            - creates a self-signed certificate and private-key pair in <mark>pem</mark> format (will ask for certificate details) <u>(private-key will be encrypted)</u><br>
             - (<small>-days</small>) certificate validity in days (Default: 60) <br>
             - (-newkey rsa:<strong>nr:bit</strong>) defines the size of the private-key in bits <br>
             - (<small>-nodes</small>) does not encrypts the created private-key <br>

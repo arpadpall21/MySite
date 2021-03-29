@@ -21,14 +21,14 @@
       <span style="color:deepskyblue;">---></span>  net.Socket <span style="color:deepskyblue;">-></span> tls.Socket <span style="color:deepskyblue;">-></span> net.Server <span style="color:deepskyblue;">-></span> tls.Server <span style="color:deepskyblue;">-></span> https.Server
     </pre>
 <table class="table">
-<caption> HTTPS Client <a href="../HTTP/HTTP Client/index.html#client" target="_blank">(worsk the same way as HTTP Client)</a> </caption>
+<caption> HTTPS Client <a href="../HTTP/HTTP Client/index.html#client" target="_blank">(works the same way as HTTP Client)</a> </caption>
     <tr>
         <th style="width:30%;"> Method / Property </th>
         <th> Description </th>
     </tr>
     <tr>
         <td>  
-            <strong>http</strong>.request(<strong class="openable">url:str|urlObj<div>
+            <strong>https</strong>.request(<strong class="openable">url:str|urlObj<div>
                 <p> - WHATWG URL object or a URL string, <u>(the string is automatically parsed by <mark>new URL()</mark>)</u> </p>
                 <p><u> - if both the url argument and the option object specifies the target host they are merged and if there is a confclit the object takes the precedence</u></p>
             </div></strong>, <i class="openable">option:obj<div>
@@ -51,11 +51,11 @@
                 <p> setHost: <strong>bol</strong> - automatically add the <mark>Host</mark> header (Default: <mark>true</mark>) </p>
                 <p> socketPath: <strong>str</strong> - Unix Domain socket (cannot be used if <mark>host</mark> or <mark>hostname</mark> is specified because those are TCP sockets) </p>
                 <p> timeout: <strong>nr:ms</strong> - after this time the client emits the <mark>timeout</mark> event <u>(this does NOT destroy the socket or drops the connection! it's simply a timeout indication for the client)</u> </p>
-                <p> - all <mark>tls.connect()</mark> options can be used </p>
+                <p> - any <mark>tls.connect()</mark> options <a href="../TLS/index.html#TLS_Client" target="_blank">[link]</a> </p>
             </div></i>, <i class="openable">fn(incMsg)<div>
                 <p> - <mark>response</mark> event listener's callback (called once) </p>
             </div></i>) <br>
-            <strong>http</strong>.request(<strong class="openable">option:obj<div>
+            <strong>https</strong>.request(<strong class="openable">option:obj<div>
                 <p> agent: <strong>agent</strong>|undefined|<strong>bol</strong> - cotrols the Agent behaviour (Default: <mark>https.globalAgent</mark>) (<mark>undefined</mark> = uses the <mark>https.globalAgent</mark>) (<mark>false</mark> = new Agent with default values) (<strong>agent</strong> = customised Agent passed) </p>
                 <p> auth: <strong>str</strong> - basic authentication (user, password) to compute Authorization header </p>
                 <p> createConnection: <strong>fn</strong> - overrides the <mark>agent.createConnection()</mark> method, function must return a Duplex stream </p>
@@ -75,7 +75,7 @@
                 <p> setHost: <strong>bol</strong> - automatically add the <mark>Host</mark> header (Default: <mark>true</mark>) </p>
                 <p> socketPath: <strong>str</strong> - Unix Domain socket (cannot be used if <mark>host</mark> or <mark>hostname</mark> is specified because those are TCP sockets) </p>
                 <p> timeout: <strong>nr:ms</strong> - after this time the client emits the <mark>timeout</mark> event <u>(this does NOT destroy the socket or drops the connection! it's simply a timeout indication for the client)</u> </p>
-                <p> - all <mark>tls.connect()</mark> options can be used </p>
+                <p> - any <mark>tls.connect()</mark> options <a href="../TLS/index.html#TLS_Client" target="_blank">[link]</a> </p>
             </div></strong>, <i class="openable">fn(incMsg)<div>
                 <p> - <mark>response</mark> event listener's callback (called once) </p>
             </div></i>)
@@ -94,7 +94,7 @@
     </tr>
     <tr>
         <td>  
-            <strong>http</strong>.get(<strong class="openable">url:str|urlObj<div>
+            <strong>https</strong>.get(<strong class="openable">url:str|urlObj<div>
                 <p> - WHATWG URL object or a URL string, <u>(the string is automatically parsed by <mark>new URL()</mark>)</u> </p>
                 <p><u> - if both the url argument and the option object specifies the target host they are merged and if there is a confclit the object takes the precedence</u></p>
             </div></strong>, <i class="openable">option:obj<div>
@@ -117,11 +117,11 @@
                 <p> setHost: <strong>bol</strong> - automatically add the <mark>Host</mark> header (Default: <mark>true</mark>) </p>
                 <p> socketPath: <strong>str</strong> - Unix Domain socket (cannot be used if <mark>host</mark> or <mark>hostname</mark> is specified because those are TCP sockets) </p>
                 <p> timeout: <strong>nr:ms</strong> - after this time the client emits the <mark>timeout</mark> event <u>(this does NOT destroy the socket or drops the connection! it's simply a timeout indication for the client)</u> </p>
-                <p> - all <mark>tls.connect()</mark> options can be used </p>
+                <p> - any <mark>tls.connect()</mark> options <a href="../TLS/index.html#TLS_Client" target="_blank">[link]</a> </p>
             </div></i>, <i class="openable">fn(incMsg)<div>
                 <p> - <mark>response</mark> event listener's callback (called once) </p>
             </div></i>) <br>
-            <strong>http</strong>.get(<strong class="openable">option:obj<div>
+            <strong>https</strong>.get(<strong class="openable">option:obj<div>
                 <p> agent: <strong>agent</strong>|undefined|<strong>bol</strong> - cotrols the Agent behaviour (Default: <mark>https.globalAgent</mark>) (<mark>undefined</mark> = uses the <mark>https.globalAgent</mark>) (<mark>false</mark> = new Agent with default values) (<strong>agent</strong> = customised Agent passed) </p>
                 <p> auth: <strong>str</strong> - basic authentication (user, password) to compute Authorization header </p>
                 <p> createConnection: <strong>fn</strong> - overrides the <mark>agent.createConnection()</mark> method, function must return a Duplex stream </p>
@@ -141,7 +141,7 @@
                 <p> setHost: <strong>bol</strong> - automatically add the <mark>Host</mark> header (Default: <mark>true</mark>) </p>
                 <p> socketPath: <strong>str</strong> - Unix Domain socket (cannot be used if <mark>host</mark> or <mark>hostname</mark> is specified because those are TCP sockets) </p>
                 <p> timeout: <strong>nr:ms</strong> - after this time the client emits the <mark>timeout</mark> event <u>(this does NOT destroy the socket or drops the connection! it's simply a timeout indication for the client)</u> </p>
-                <p> - all <mark>tls.connect()</mark> options can be used </p>
+                <p> - any <mark>tls.connect()</mark> options <a href="../TLS/index.html#TLS_Client" target="_blank">[link]</a> </p>
             </div></strong>, <i class="openable">fn(incMsg)<div>
                 <p> - <mark>response</mark> event listener's callback (called once) </p>
             </div></i>)

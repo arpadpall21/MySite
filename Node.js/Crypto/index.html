@@ -1911,38 +1911,6 @@
     
     
     
-<table class="table">
-<caption>
-    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
-</caption>
-    <tr>
-        <th style="width:30%;"> Method / Property / statement ect... </th>
-        <th> Description </th>
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-<!---------------------------------------------------->
-<tr class="0">
-<td> 
-            Demo Prop 
-</td>
-<td> 
-            demo description 
-            <span class="browserSupport" title="updated : yyyy-mm-dd">
-                <span><i class="fab fa-node-js"></i>  </span>
-            </span>
-</td>
-</tr>
-
-
-
-
-</table>
 
 
     <br>
@@ -3510,6 +3478,446 @@
     console.log( util.isDeepStrictEqual(aliceSecret, bobSecret) );                     // -> true   
     </pre>
 </details>
+<hr>
+<!---------------------------------------------------------------------------------------------------------------->
+<h2 style="color:darkblue;"><u> X509 Certificate </u></h2>
+
+
+
+
+
+<table class="table">
+<caption>
+    X509 Certificate 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
+    <tr>
+        <th style="width:30%;"> Method / Property  </th>
+        <th> Description </th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<!---------------------------------------------------->
+<tr class="99.99">
+<td> 
+            Demo Prop 
+</td>
+<td> 
+            demo description 
+            <span class="browserSupport" title="updated : 2021-03-27">
+                <span><i class="fab fa-node-js"></i>  </span>
+            </span>
+</td>
+</tr>
+
+
+
+
+</table>
+
+
+
+
+
+<details class="example" open> 
+<summary> DEMO </summary>
+
+    
+</details>
+
+<details class="example" open> 
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> x509 Certificate <mark>ca</mark> / <mark>subject</mark> / <mark>subjectAltName</mark> / <mark>infoAccess</mark> / <mark>issuer</mark> / <mark>issuerCertificate</mark> / <mark>checkEmail()</mark> / <mark>checkHost()</mark> / <mark>checkIP()</mark> / <mark>fingerprint</mark> / <mark>fingerprint256</mark> / <mark>keyUsage</mark> / <mark>publicKey</mark> / <mark>raw</mark> / <mark>serialNumber</mark> / <mark>toJSON()</mark> / <mark>toString()</mark> / <mark>validFrom</mark> / <mark>validTo</mark> / <mark>verify()</mark> TEST </u></h4>
+    <pre>
+    const crypto = require('crypto');
+    const util = require('util');
+    const fs = require('fs');
+        
+    const crt = fs.readFileSync('./pallCer.cer');
+    const privKey = crypto.createPrivateKey(fs.readFileSync('./pallKey.pem'));                          // private key pair of the certificate's    public key   
+    const privKey_ = crypto.generateKeyPairSync('rsa', {modulusLength:2048}).privateKey;                // a random private key 
+    const pubKey_ = crypto.generateKeyPairSync('rsa', {modulusLength:2048}).publicKey;                  // a random public key 
+    
+    
+    const x509Cert = new crypto.X509Certificate(crt);                   // wraps the x509 certificate 
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'is ca -> ' + x509Cert.ca ); 
+        
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'subject -> ' + x509Cert.subject ); 
+        
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'subjectAltName -> ' + x509Cert.subjectAltName ); 
+        
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'infoAccess -> ' + x509Cert.infoAccess ); 
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'issuer -> ' + x509Cert.issuer );  
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'issuerCertificate -> ');    
+        console.log( x509Cert.issuerCertificate );    
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'checkEmail \'a.pall21@yahoo.fr\'-> ' + x509Cert.checkEmail('a.pall21@yahoo.fr') );  
+        console.log( 'checkEmail \'a.pall21@yahoo.com\'-> ' + x509Cert.checkEmail('a.pall21@yahoo.com') ); 
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'checkHost \'localhost:1000\'-> ' + x509Cert.checkHost('localhost:1000') ); 
+        console.log( 'checkHost \'localhost:8080\'-> ' + x509Cert.checkHost('localhost:8080') ); 
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'check IP \'127.0.0.1\' -> '+ x509Cert.checkIP('127.0.0.1') ); 
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'check private key -> ' + x509Cert.checkPrivateKey(privKey) );   
+        console.log( 'check private key -> ' + x509Cert.checkPrivateKey(privKey_) );  
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'fingerprint -> ' + x509Cert.fingerprint );    
+        console.log( 'fingerprint256 -> ' + x509Cert.fingerprint256 );  
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'keyUsage -> ' + x509Cert.keyUsage );    
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'publicKey -> ' );
+        console.log( x509Cert.publicKey );   
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'raw -> ' );  
+        console.log( x509Cert.raw );  
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'serialNumber -> ' + x509Cert.serialNumber );  
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'toJSON() -> ' );  
+        console.log( x509Cert.toJSON() );  
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'toString() ->' );   
+        console.log( x509Cert.toString() );   
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'validFrom -> ' + x509Cert.validFrom );  
+        console.log( 'validTo -> ' + x509Cert.validTo );  
+    
+    console.log('-----------------------------------------------------------------------------');
+        console.log( 'verify() -> ' + x509Cert.verify(pubKey_) );  
+    </pre>
+    <pre class="cmd">
+    pall@Ryzen:~/Documents/CodePlus/My Site/Node.js/Crypto$ node main
+    -----------------------------------------------------------------------------
+    is ca -> true
+    -----------------------------------------------------------------------------
+    subject -> C=RO
+    ST=-
+    L=Zetea
+    O=Pall21 Ltd
+    OU=-
+    CN=localhost:1000
+    emailAddress=a.pall21@yahoo.fr
+    -----------------------------------------------------------------------------
+    subjectAltName -> undefined
+    -----------------------------------------------------------------------------
+    infoAccess -> undefined
+    -----------------------------------------------------------------------------
+    issuer -> C=RO
+    ST=-
+    L=Zetea
+    O=Pall21 Ltd
+    OU=-
+    CN=localhost:1000
+    emailAddress=a.pall21@yahoo.fr
+    -----------------------------------------------------------------------------
+    issuerCertificate -> 
+    undefined
+    -----------------------------------------------------------------------------
+    checkEmail 'a.pall21@yahoo.fr'-> a.pall21@yahoo.fr
+    checkEmail 'a.pall21@yahoo.com'-> undefined
+    -----------------------------------------------------------------------------
+    checkHost 'localhost:1000'-> localhost:1000
+    checkHost 'localhost:8080'-> undefined
+    -----------------------------------------------------------------------------
+    check IP '127.0.0.1' -> undefined
+    -----------------------------------------------------------------------------
+    check private key -> true
+    check private key -> false
+    -----------------------------------------------------------------------------
+    fingerprint -> F4:E2:24:A2:A1:0D:AB:10:57:FE:88:B4:90:46:53:27:A3:6D:49:47
+    fingerprint256 -> C9:01:82:BF:63:CA:8B:E4:22:F9:11:2B:1D:E8:DF:86:A2:D7:7C:3E:5F:52:BE:66:5C:E2:29:F3:0A:9C:C9:4E
+    -----------------------------------------------------------------------------
+    keyUsage -> undefined
+    -----------------------------------------------------------------------------
+    publicKey -> 
+    PublicKeyObject { [Symbol(kKeyType)]: 'public' }
+    -----------------------------------------------------------------------------
+    raw -> 
+    &lt;Buffer 30 82 03 ed 30 82 02 d5 a0 03 02 01 02 02 14 46 ae fe 0f 1a 3f 07 e9 66 56 81 b3 7e fe 2a 5d b5 2c 53 3d 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 959 more bytes&gt;
+    -----------------------------------------------------------------------------
+    serialNumber -> 46AEFE0F1A3F07E9665681B37EFE2A5DB52C533D
+    -----------------------------------------------------------------------------
+    toJSON() -> 
+    -----BEGIN CERTIFICATE-----
+    MIID7TCCAtWgAwIBAgIURq7+Dxo/B+lmVoGzfv4qXbUsUz0wDQYJKoZIhvcNAQEL
+    BQAwgYUxCzAJBgNVBAYTAlJPMQowCAYDVQQIDAEtMQ4wDAYDVQQHDAVaZXRlYTET
+    MBEGA1UECgwKUGFsbDIxIEx0ZDEKMAgGA1UECwwBLTEXMBUGA1UEAwwObG9jYWxo
+    b3N0OjEwMDAxIDAeBgkqhkiG9w0BCQEWEWEucGFsbDIxQHlhaG9vLmZyMB4XDTIx
+    MDMyNzE1NDc1M1oXDTIxMDUyNjE1NDc1M1owgYUxCzAJBgNVBAYTAlJPMQowCAYD
+    VQQIDAEtMQ4wDAYDVQQHDAVaZXRlYTETMBEGA1UECgwKUGFsbDIxIEx0ZDEKMAgG
+    A1UECwwBLTEXMBUGA1UEAwwObG9jYWxob3N0OjEwMDAxIDAeBgkqhkiG9w0BCQEW
+    EWEucGFsbDIxQHlhaG9vLmZyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+    AQEAnQvNFSLdw4ZbXlq7Piv0gv9uGStLiZtoPjzLe8I1XQfFd8yDAt5Fu2GQJdTe
+    FDrkgcwRJFodFJoK2cSMM5t0Ar1rmJEfklhMGRZ79gBfxeuwKuKY/Kkpy0H1SqJj
+    fMpDXBGGcJueZGDkkroXEYIv7OaFJLJARCByB2NvVVCeEdlZUzYSf7jqmnfhNEUE
+    yENe5Gmz+kjJiEAvj3o5AwX7crAy1KPsY33pK6EQVpN8Q8UoJ82RbnK+VBcxmh3p
+    rikpVTnL8fLmkb0CSg6BNY0Nz0huJKSXSq31lvpWuns8n5AiCFqNtXNF7L31zpMr
+    tXlNjfivA2874jSojwl9rvXzrwIDAQABo1MwUTAdBgNVHQ4EFgQUZ43Q+zvUslbN
+    EPJ1+zKYcbsBwHowHwYDVR0jBBgwFoAUZ43Q+zvUslbNEPJ1+zKYcbsBwHowDwYD
+    VR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAbtzUwY6Yh7CCjCpUV3wz
+    AkC6fVPwl2tA2SZB1zq9Yq46AOXOJhEDgteIqx87lQhZTUGTGBzP43ih7gAtViel
+    cPKLWCBk+2qm5PSusIc+MwR1OPqUozvS5lt7T79slj18mnmHo/7vf6oH7UbXF9jS
+    aGZM2vhkFcY8XaHV8c7wYQpDEGi9HBpBr/CyC6HXeISb+P2zarM0sgnUEIpG79vt
+    zyxeXrc6o6dvSlXu4T6P1jqdZ4jSldxFMiK43LIdwBizHKVP7hn8/3HZJaAELSW7
+    fU7tP7luK9pns4nQhc2YVWSjh+M+F+Yp7kKlWX35JtOf0bkDDk80fhp4QzZZfY2N
+    YA==
+    -----END CERTIFICATE-----
+    
+    -----------------------------------------------------------------------------
+    toString() ->
+    -----BEGIN CERTIFICATE-----
+    MIID7TCCAtWgAwIBAgIURq7+Dxo/B+lmVoGzfv4qXbUsUz0wDQYJKoZIhvcNAQEL
+    BQAwgYUxCzAJBgNVBAYTAlJPMQowCAYDVQQIDAEtMQ4wDAYDVQQHDAVaZXRlYTET
+    MBEGA1UECgwKUGFsbDIxIEx0ZDEKMAgGA1UECwwBLTEXMBUGA1UEAwwObG9jYWxo
+    b3N0OjEwMDAxIDAeBgkqhkiG9w0BCQEWEWEucGFsbDIxQHlhaG9vLmZyMB4XDTIx
+    MDMyNzE1NDc1M1oXDTIxMDUyNjE1NDc1M1owgYUxCzAJBgNVBAYTAlJPMQowCAYD
+    VQQIDAEtMQ4wDAYDVQQHDAVaZXRlYTETMBEGA1UECgwKUGFsbDIxIEx0ZDEKMAgG
+    A1UECwwBLTEXMBUGA1UEAwwObG9jYWxob3N0OjEwMDAxIDAeBgkqhkiG9w0BCQEW
+    EWEucGFsbDIxQHlhaG9vLmZyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+    AQEAnQvNFSLdw4ZbXlq7Piv0gv9uGStLiZtoPjzLe8I1XQfFd8yDAt5Fu2GQJdTe
+    FDrkgcwRJFodFJoK2cSMM5t0Ar1rmJEfklhMGRZ79gBfxeuwKuKY/Kkpy0H1SqJj
+    fMpDXBGGcJueZGDkkroXEYIv7OaFJLJARCByB2NvVVCeEdlZUzYSf7jqmnfhNEUE
+    yENe5Gmz+kjJiEAvj3o5AwX7crAy1KPsY33pK6EQVpN8Q8UoJ82RbnK+VBcxmh3p
+    rikpVTnL8fLmkb0CSg6BNY0Nz0huJKSXSq31lvpWuns8n5AiCFqNtXNF7L31zpMr
+    tXlNjfivA2874jSojwl9rvXzrwIDAQABo1MwUTAdBgNVHQ4EFgQUZ43Q+zvUslbN
+    EPJ1+zKYcbsBwHowHwYDVR0jBBgwFoAUZ43Q+zvUslbNEPJ1+zKYcbsBwHowDwYD
+    VR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAbtzUwY6Yh7CCjCpUV3wz
+    AkC6fVPwl2tA2SZB1zq9Yq46AOXOJhEDgteIqx87lQhZTUGTGBzP43ih7gAtViel
+    cPKLWCBk+2qm5PSusIc+MwR1OPqUozvS5lt7T79slj18mnmHo/7vf6oH7UbXF9jS
+    aGZM2vhkFcY8XaHV8c7wYQpDEGi9HBpBr/CyC6HXeISb+P2zarM0sgnUEIpG79vt
+    zyxeXrc6o6dvSlXu4T6P1jqdZ4jSldxFMiK43LIdwBizHKVP7hn8/3HZJaAELSW7
+    fU7tP7luK9pns4nQhc2YVWSjh+M+F+Yp7kKlWX35JtOf0bkDDk80fhp4QzZZfY2N
+    YA==
+    -----END CERTIFICATE-----
+    
+    -----------------------------------------------------------------------------
+    validFrom -> Mar 27 15:47:53 2021 GMT
+    validTo -> May 26 15:47:53 2021 GMT
+    -----------------------------------------------------------------------------
+    verify() -> false
+    pall@Ryzen:~/Documents/CodePlus/My Site/Node.js/Crypto$    
+    </pre>
+<hr>
+<!---------------------------------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> Google's Certificate TEST </u></h4>
+    <pre>
+    const crypto = require('crypto');
+    const https = require('https');
+        
+    https.get('https://www.google.com', function(incMsg){
+        let x509Cert =  new crypto.X509Certificate(incMsg.socket.getPeerCertificate(true).raw);
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'is ca -> ' + x509Cert.ca ); 
+            
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'subject -> ' + x509Cert.subject ); 
+            
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'subjectAltName -> ' + x509Cert.subjectAltName ); 
+            
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'infoAccess -> ' + x509Cert.infoAccess ); 
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'issuer -> ' + x509Cert.issuer );  
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'issuerCertificate -> ');    
+            console.log( x509Cert.issuerCertificate );    
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'checkEmail \'a.pall21@yahoo.fr\'-> ' + x509Cert.checkEmail('a.pall21@yahoo.fr') );  
+            console.log( 'checkEmail \'a.pall21@yahoo.com\'-> ' + x509Cert.checkEmail('a.pall21@yahoo.com') ); 
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'checkHost \'localhost:1000\'-> ' + x509Cert.checkHost('localhost:1000') ); 
+            console.log( 'checkHost \'localhost:8080\'-> ' + x509Cert.checkHost('localhost:8080') ); 
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'check IP \'127.0.0.1\' -> '+ x509Cert.checkIP('127.0.0.1') ); 
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'fingerprint -> ' + x509Cert.fingerprint );    
+            console.log( 'fingerprint256 -> ' + x509Cert.fingerprint256 );  
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'keyUsage -> ' + x509Cert.keyUsage );    
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'publicKey -> ' );
+            console.log( x509Cert.publicKey );   
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'raw -> ' );  
+            console.log( x509Cert.raw );  
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'serialNumber -> ' + x509Cert.serialNumber );  
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'toJSON() -> ' );  
+            console.log( x509Cert.toJSON() );  
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'toString() ->' );   
+            console.log( x509Cert.toString() );   
+        
+        console.log('-----------------------------------------------------------------------------');
+            console.log( 'validFrom -> ' + x509Cert.validFrom );  
+            console.log( 'validTo-> ' + x509Cert.validTo );  
+    });
+    </pre>
+    <pre class="cmd">
+    pall@Ryzen:~/Documents/CodePlus/My Site/Node.js/Crypto$ node main
+    -----------------------------------------------------------------------------
+    is ca -> false
+    -----------------------------------------------------------------------------
+    subject -> C=US
+    ST=California
+    L=Mountain View
+    O=Google LLC
+    CN=www.google.com
+    -----------------------------------------------------------------------------
+    subjectAltName -> DNS:www.google.com
+    -----------------------------------------------------------------------------
+    infoAccess -> OCSP - URI:http://ocsp.pki.goog/gts1o1core
+    CA Issuers - URI:http://pki.goog/gsr2/GTS1O1.crt
+    
+    -----------------------------------------------------------------------------
+    issuer -> C=US
+    O=Google Trust Services
+    CN=GTS CA 1O1
+    -----------------------------------------------------------------------------
+    issuerCertificate -> 
+    undefined
+    -----------------------------------------------------------------------------
+    checkEmail 'a.pall21@yahoo.fr'-> undefined
+    checkEmail 'a.pall21@yahoo.com'-> undefined
+    -----------------------------------------------------------------------------
+    checkHost 'localhost:1000'-> undefined
+    checkHost 'localhost:8080'-> undefined
+    -----------------------------------------------------------------------------
+    check IP '127.0.0.1' -> undefined
+    -----------------------------------------------------------------------------
+    fingerprint -> 06:CB:C1:ED:3F:D8:18:B6:14:EE:10:02:2A:D8:2B:F3:BF:63:0F:20
+    fingerprint256 -> 21:AE:85:DA:B9:79:5E:07:77:46:F3:4E:DD:AB:5A:45:98:23:0D:83:5C:82:5F:D3:52:11:61:0B:B4:A6:B0:C9
+    -----------------------------------------------------------------------------
+    keyUsage -> 1.3.6.1.5.5.7.3.1
+    -----------------------------------------------------------------------------
+    publicKey -> 
+    PublicKeyObject { [Symbol(kKeyType)]: 'public' }
+    -----------------------------------------------------------------------------
+    raw -> 
+    &lt;Buffer 30 82 04 c5 30 82 03 ad a0 03 02 01 02 02 10 16 70 31 0c 7d 9d aa 61 05 00 00 00 00 87 9c 53 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b     05 00 30 42 31 0b ... 1175 more bytes&gt;
+    -----------------------------------------------------------------------------
+    serialNumber -> 1670310C7D9DAA610500000000879C53
+    -----------------------------------------------------------------------------
+    toJSON() -> 
+    -----BEGIN CERTIFICATE-----
+    MIIExTCCA62gAwIBAgIQFnAxDH2dqmEFAAAAAIecUzANBgkqhkiG9w0BAQsFADBC
+    MQswCQYDVQQGEwJVUzEeMBwGA1UEChMVR29vZ2xlIFRydXN0IFNlcnZpY2VzMRMw
+    EQYDVQQDEwpHVFMgQ0EgMU8xMB4XDTIxMDMxMTE1MDAxOVoXDTIxMDYwMzE1MDAx
+    OFowaDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcT
+    DU1vdW50YWluIFZpZXcxEzARBgNVBAoTCkdvb2dsZSBMTEMxFzAVBgNVBAMTDnd3
+    dy5nb29nbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkKwCO3F+CLZS
+    Sg+3bWtpkBxRUKit/ajkf9jo0Jd0Nk2gdSo+W+ghmPn6WbkokLMLbhy8mABdl7wT
+    boW3K+hpkKOCAlowggJWMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF
+    BQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSGFNwu21Y1Z6EebdR87O8hylYs
+    1TAfBgNVHSMEGDAWgBSY0fhuEOvPm+xgnxiQG6DrfQn9KzBoBggrBgEFBQcBAQRc
+    MFowKwYIKwYBBQUHMAGGH2h0dHA6Ly9vY3NwLnBraS5nb29nL2d0czFvMWNvcmUw
+    KwYIKwYBBQUHMAKGH2h0dHA6Ly9wa2kuZ29vZy9nc3IyL0dUUzFPMS5jcnQwGQYD
+    VR0RBBIwEIIOd3d3Lmdvb2dsZS5jb20wIQYDVR0gBBowGDAIBgZngQwBAgIwDAYK
+    KwYBBAHWeQIFAzAzBgNVHR8ELDAqMCigJqAkhiJodHRwOi8vY3JsLnBraS5nb29n
+    L0dUUzFPMWNvcmUuY3JsMIIBAgYKKwYBBAHWeQIEAgSB8wSB8ADuAHUAfT7y+I//
+    iFVoJMLAyp5SiXkrxQ54CX8uapdomX4i8NcAAAF4IgR1iAAABAMARjBEAiAhJIWk
+    b0A26eM9MicbpnzcvYsm2VXeelStNgXCX5Kb7wIgfezamNQ76CJcS1QZSu+iJ790
+    wOspdChno1GMr+71y5UAdQBElGUusO7Or8RAB9io/ijA2uaCvtjLMbU/0zOWtbaB
+    qAAAAXgiBHZ+AAAEAwBGMEQCICeKKe6oidw1ud7jYiinzWAhoQOFFPWd+jokQy53
+    oE7mAiB2u9eBaVSE2J3k21IMML8aoYiX1n7jsCmXXhgPVGOqXDANBgkqhkiG9w0B
+    AQsFAAOCAQEApNg6C1SFm0HyMhQqxrFnfQ3RbQktzaaWnOlhxeEslJMgYLjzM8Mh
+    qcjOPMRIewpN4qOIhOYKM/Gx+TjZs1kjcZk3NUp8XrZ1+a5B7GyiOBifzsg6UJZD
+    wdI4GhE9MXbwVFKJZduW8uTrMXHxGMBHmgeWg2qEVO7OGHSq+xhX9Yc1LSWeO5gk
+    EnSfonccn5qx9VX2cHwS2MQYjPIxS8xaxoKVdduP2RwrO/G9E8Irn3yzh4HFPj19
+    +/otsLAIETHfaN0pjYT57V3TJJpfS+BRo/qEBUBkgV16qTx3k3LX81j1Pv2th16V
+    NeBdIOuRs4f5l747/NR2dPR3g5/4O8B/IA==
+    -----END CERTIFICATE-----
+    
+    -----------------------------------------------------------------------------
+    toString() ->
+    -----BEGIN CERTIFICATE-----
+    MIIExTCCA62gAwIBAgIQFnAxDH2dqmEFAAAAAIecUzANBgkqhkiG9w0BAQsFADBC
+    MQswCQYDVQQGEwJVUzEeMBwGA1UEChMVR29vZ2xlIFRydXN0IFNlcnZpY2VzMRMw
+    EQYDVQQDEwpHVFMgQ0EgMU8xMB4XDTIxMDMxMTE1MDAxOVoXDTIxMDYwMzE1MDAx
+    OFowaDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcT
+    DU1vdW50YWluIFZpZXcxEzARBgNVBAoTCkdvb2dsZSBMTEMxFzAVBgNVBAMTDnd3
+    dy5nb29nbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkKwCO3F+CLZS
+    Sg+3bWtpkBxRUKit/ajkf9jo0Jd0Nk2gdSo+W+ghmPn6WbkokLMLbhy8mABdl7wT
+    boW3K+hpkKOCAlowggJWMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF
+    BQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSGFNwu21Y1Z6EebdR87O8hylYs
+    1TAfBgNVHSMEGDAWgBSY0fhuEOvPm+xgnxiQG6DrfQn9KzBoBggrBgEFBQcBAQRc
+    MFowKwYIKwYBBQUHMAGGH2h0dHA6Ly9vY3NwLnBraS5nb29nL2d0czFvMWNvcmUw
+    KwYIKwYBBQUHMAKGH2h0dHA6Ly9wa2kuZ29vZy9nc3IyL0dUUzFPMS5jcnQwGQYD
+    VR0RBBIwEIIOd3d3Lmdvb2dsZS5jb20wIQYDVR0gBBowGDAIBgZngQwBAgIwDAYK
+    KwYBBAHWeQIFAzAzBgNVHR8ELDAqMCigJqAkhiJodHRwOi8vY3JsLnBraS5nb29n
+    L0dUUzFPMWNvcmUuY3JsMIIBAgYKKwYBBAHWeQIEAgSB8wSB8ADuAHUAfT7y+I//
+    iFVoJMLAyp5SiXkrxQ54CX8uapdomX4i8NcAAAF4IgR1iAAABAMARjBEAiAhJIWk
+    b0A26eM9MicbpnzcvYsm2VXeelStNgXCX5Kb7wIgfezamNQ76CJcS1QZSu+iJ790
+    wOspdChno1GMr+71y5UAdQBElGUusO7Or8RAB9io/ijA2uaCvtjLMbU/0zOWtbaB
+    qAAAAXgiBHZ+AAAEAwBGMEQCICeKKe6oidw1ud7jYiinzWAhoQOFFPWd+jokQy53
+    oE7mAiB2u9eBaVSE2J3k21IMML8aoYiX1n7jsCmXXhgPVGOqXDANBgkqhkiG9w0B
+    AQsFAAOCAQEApNg6C1SFm0HyMhQqxrFnfQ3RbQktzaaWnOlhxeEslJMgYLjzM8Mh
+    qcjOPMRIewpN4qOIhOYKM/Gx+TjZs1kjcZk3NUp8XrZ1+a5B7GyiOBifzsg6UJZD
+    wdI4GhE9MXbwVFKJZduW8uTrMXHxGMBHmgeWg2qEVO7OGHSq+xhX9Yc1LSWeO5gk
+    EnSfonccn5qx9VX2cHwS2MQYjPIxS8xaxoKVdduP2RwrO/G9E8Irn3yzh4HFPj19
+    +/otsLAIETHfaN0pjYT57V3TJJpfS+BRo/qEBUBkgV16qTx3k3LX81j1Pv2th16V
+    NeBdIOuRs4f5l747/NR2dPR3g5/4O8B/IA==
+    -----END CERTIFICATE-----
+    
+    -----------------------------------------------------------------------------
+    validFrom -> Mar 11 15:00:19 2021 GMT
+    validTo-> Jun  3 15:00:18 2021 GMT
+    pall@Ryzen:~/Documents/CodePlus/My Site/Node.js/Crypto$ 
+    </pre>
+    
+    
+    
+    
+    
+</details>
 
 
 
@@ -3520,12 +3928,73 @@
 ---------------------------------------------------------------------------------------------
 WRITE DOWN EVERYTHING NEW
 ---------------------------------------------------------------------------------------------
+- X509Certificate                               - x509 certificate (read-only!)
+    
+    x509.ca                                     // ca = certificate authority certificate certificate that is used to verify if the server's certificate was signed with (it is a root certificate)   
+    x509.subject
+    x509.issuer
+    x509.issuerCertificate
+    x509.infoAccess                             // access info (other cert maybe?)
     
     
+    x509.checkEmail()
+    x509.checkHost()
+    x509.checkIP()
     
     
+    x509.checkIssued()                          // this certificate was issued by the passed cert 
+    x509.checkPrivateKey()
+    x509.verify()
+    
+    
+    x509.fingerprint
+    x509.fingerprint256
+    
+    
+    x509.serialNumber
+    x509.publicKey
+    
+    
+    x509.keyUsage
+    x509.raw
+    
+    
+    x509.toLegacyObject()
+    x509.toJSON()
+    x509.toString()
+    
+    
+    x509.validFrom
+    x509.validTo
     
 ---------------------------------------------------------------------------------------------
+    
+    
+    crypto.verify()     - ugy lehet elmaradt!
+    
+    await import (dynamic import TEST!!!)
+    
+    openssl x509 -req -days 360 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt ???
+---------------------------------------------------------------------------------------------
+Documents/CodePlus/My Site/Node.js/Crypto
+?????????????????????????????????????????????????????????????????????????????????????????????
+WRITE DOWN WHAT YOU DON'T UNDERSTAD OR MUST BE TESTED AS QUESTIONS HERE
+?????????????????????????????????????????????????????????????????????????????????????????????
+    - Chain of trust (Document it )
+        - the root certificate is the 'root CA' (ICA Intermediate Certificate Authority is the delegated authority that signs on behave of CA)
+        - root certificate authorities alread set up ICAs
+        
+        - CSR are made to ICAs (Intermediate Certificate Authorities)
+        
+        
+        openssl x509 -req -days 360 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt
+        
+        openssl ca -cert ca.crt -keyfile ca.key -in server.csr -out server.crt
+-->
+    
+    
+    
+<!--
     crypto.generatePrime()
     crypto.generatePrimeSync()
     
@@ -3573,50 +4042,6 @@ WRITE DOWN EVERYTHING NEW
     
     
     
-    
-    
-    
-    
-    
----------------------------------------------------------------------------------------------
-- X509Certificate                               - x509 certificate (read-only!)
-    x509.ca 
-    x509.checkEmail()
-    x509.checkHost()
-    x509.checkIP()
-    x509.checkIssued()
-    x509.checkPrivateKey()
-    x509.fingerprint
-    x509.fingerprint256
-    x509.infoAccess
-    x509.issuer
-    x509.issuedCertificate
-    x509.keyUsage
-    x509.publicKey
-    x509.raw
-    x509.serialNumber
-    x509.subject
-    x509.toJSON()
-    x509.toLegacyObject()
-    x509.toString()
-    x509.validTo
-    x509.verify()
----------------------------------------------------------------------------------------------
-    
-    
-    
-    
-    await import (dynamic import TEST!!!)
----------------------------------------------------------------------------------------------
-Documents/CodePlus/My Site/Node.js/Crypto
-?????????????????????????????????????????????????????????????????????????????????????????????
-WRITE DOWN WHAT YOU DON'T UNDERSTAD OR MUST BE TESTED AS QUESTIONS HERE
-?????????????????????????????????????????????????????????????????????????????????????????????
--->
-    
-    
-    
-<!--
     crypto.createHash()
     crypto.createHmac()
     
