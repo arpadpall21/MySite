@@ -60,37 +60,10 @@
 <h2 style="color:darkblue;"><u> SSL Certificate </u></h2>
     <p> - an SSL Certificate is a digital certificate taht authenticates a web server, it was signed by a ICA (Intermediate Certificate Authority) </p>
     <p> - a Certificate Authority (CA) checks (in different levels) the identity of the requesting organisation before signing its CSR (Certificate Signing Request) </p> 
-    <p> - an SSL Certificate contains : </p>
-    <p style="text-indent: 25px;"> - the certificate's issuing authority </p>
-    <p style="text-indent: 25px;"> - AIA (Authority Infor Access) </p>
-    <p style="text-indent: 25px;"> - the certificate's version (like: V3) </p>
-    <p style="text-indent: 25px;"> - the certificate's serial number  </p>
-    <p style="text-indent: 25px;"> - signature algorithm that the CA used to signe the certificate (like: sha256) </p>
-    <p style="text-indent: 25px;"> - signature hash algorithm (the algorithm that hashes the certificate which is actually signed) </p>
-    <p style="text-indent: 25px;"> - subject information (CA (Common Name), location, email, etc...) </p>
-    <p style="text-indent: 25px;"> - valide dates (from - to) (max up to 39 months) </p>
-    <p style="text-indent: 25px;"> - public key </p>
-    <pre class="syntax">
-SSL Certificate Types :     Self-Signed Certificate                                    // certificate is not issued by any Certificate Authorities   
-                            DV (Domain Validation)                                     // SSL Certificate's owner identity checked on a basic level by the CA
-                            OV (Organisation Validation)                               // SSL Certificate's owner identity checked on an average level by the CA
-                            EV (Extended Validation)                                   // SSL Certificate's owner identity checked on a high level by the CA <u>(green address bar)</u>
-    </pre>
-    <p> - the Client has a list of root certificates (certificates issued by <u>trusted</u> Certificate Authorities) </p>
-    <p> - the Client uses these root certificates in order to verify if the Server's Certificate was signed by a trusted Certificate Authority (CA) </p>
+    <p> - an SSL Certificate contains : issuing authority /  AIA (Authority Infor Access (ICA informations)) / version (like: V3) / serial number / signature algorithm (like: sha256) / signature hash algorithm (the algorithm that hashes the certificate which is actually signed) / subject information (CA (Common Name), location, email, etc...) / valid dates (from - to) (max up to 39 months) / public key / etc.. </p>
 <img src="Chain Of Trust.jpg" alt="Chain Of Trust" height="350">
 <hr>
 <!-------------------------------------------------------------------------------------------------------------------------------->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 <h2 style="color:darkblue;"><u> Perfect Forward Secrecy </u></h2>
     <p> - the Perefect Forward Secrecy is an <u>additional</u> TLS feature which generates a new key pair for each TLS handshake (communication session) (ephemeral method)</p>
     <p> - currently [2020-06-19] there are 2 methods are used to achive Perfect Forward Secrecy (<mark>DHE</mark> = Diffie Hellman) (<mark>ECDHE</mark> = Elliptic Curve Diffie Hellman) <u>(the trailing <mark>E</mark> is appended for traditional abbreviations)</u> </p>

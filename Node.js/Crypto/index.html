@@ -1128,6 +1128,79 @@
         <th style="width:30%;"> Method </th>
         <th> Description </th>
     </tr>
+<tr class="05.01">
+<td> 
+            <strong>crypto</strong>.sign(<strong>hashAlgorithm:str</strong>, <strong class="openable">data:str|...<div>
+                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
+            </div></strong>, <strong class="openable">privKey:str|...<div>
+                <p> <strong>obj|str|bur|ArrayBuffer|TypedArray|DataView|keyObj|cryptoKey</strong> </p>
+                <p> - if not <strong>keyObj</strong> is passed the <mark><strong>crypto</strong>.createPrivateKey()</mark> is called internally</p> 
+                <hr>
+                <p> <strong>obj</strong> </p>
+                <p> key: <strong>str|bur|ArrayBuffer|TypedArray|DataView|keyObj|cryptoKey</strong> - key to sign with </p>
+                <p> dsaEncoding: 'der'|'ieee-p1363' - for DSA and ECDSA specifies the format of the generated signature (Default: <mark>der</mark>) </p>
+                <p> padding: <strong>nr</strong> - optional padding for RSA (<mark><strong>crypto</strong>.constants.RSA_PKCS1_PADDING</mark> (default) or <mark><strong>crypto</strong>.constants.RSA_PKCS1_PSS_PADDING</mark>) </p>
+                <p> saltLength: <strong>nr</strong> - salt length when padding is <mark>RSA_PKCS1_PSS_PADDING</mark> </p>
+            </div></strong>, <i>fn(err, signature)</i>)
+</td>
+<td> 
+            - signs the passed <strong>data</strong> with the <strong>hashAlgorithm</strong> and <strong>privKey</strong> <br>
+            - no callback provided = synchronous operation | callback provided = asynchronous operation 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 12.0.0 </span>
+                <span class="openable"> more...<div>
+                    <p> 13.2.0 / 12.16.0 </p>
+                    <p> IEEE-P1363 DSA and ECDSA support </p>
+                        <hr>
+                    <p> 15.0.0 </p>
+                    <p> <strong>ArrayBuffer</strong> support  </p>
+                        <hr>
+                    <p> 15.12.0 </p>
+                    <p> asynchronous version support (callback added) </p>
+                </div> </span>
+            </span>
+</td>
+</tr>
+<tr class="05.02">
+<td> 
+            <strong>crypto</strong>.verify(<strong>hashAlgorithm:str</strong>, <strong class="openable">data:str|...<div>
+                <p> <strong>str|buf|ArrayBuffer|TypedArray|DataView</strong> </p>
+            </div></strong>, <strong class="openable">pubKey:str|...<div>
+                <p> <strong>obj|str|bur|ArrayBuffer|TypedArray|DataView|keyObj|cryptoKey</strong> </p>
+                <p> - if not <strong>keyObj</strong> is passed the <mark><strong>crypto</strong>.createPublicKey()</mark> is called internally</p> 
+                <hr>
+                <p> <strong>obj</strong> </p>
+                <p> key: <strong>str|bur|ArrayBuffer|TypedArray|DataView|keyObj|cryptoKey</strong> - key to sign with </p>
+                <p> dsaEncoding: 'der'|'ieee-p1363' - for DSA and ECDSA specifies the format of the generated signature (Default: <mark>der</mark>) </p>
+                <p> padding: <strong>nr</strong> - optional padding for RSA (<mark><strong>crypto</strong>.constants.RSA_PKCS1_PADDING</mark> (default) or <mark><strong>crypto</strong>.constants.RSA_PKCS1_PSS_PADDING</mark>) </p>
+                <p> saltLength: <strong>nr</strong> - salt length when padding is <mark>RSA_PKCS1_PSS_PADDING</mark> </p>
+            </div></strong>, <strong class="openable">signature:buf|...<div>
+                <p> <strong>buf|ArrayBuffer|TypedArray|DataView</strong> </p>
+            </div></strong>, <i>fn(err, res)</i>)
+</td>
+<td> 
+            - verifies if <strong>signature</strong> matches the passed <strong>data</strong> and returns a boolean accordingly <br>
+            - no callback provided = synchronous operation | callback provided = asynchronous operation 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 12.0.0 </span>
+                <span class="openable"> more...<div>
+                    <p> 13.2.0 / 12.16.0 </p>
+                    <p> IEEE-P1363 DSA and ECDSA support </p>
+                        <hr>
+                    <p> 15.0.0 </p>
+                    <p> <strong>ArrayBuffer</strong> support  </p>
+                        <hr>
+                    <p> 15.12.0 </p>
+                    <p> asynchronous version support (callback added) </p>
+                </div> </span>
+            </span>
+</td>
+</tr>
+
+    
+    
+    
+    
 <tr class="10.01">
 <td colspan="2"> 
             Sing 
@@ -1899,20 +1972,332 @@
 </td>
 </tr>
 </table>
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
+    <br>
+<table class="table">
+<caption>
+    X509 Certificate 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
+    <tr>
+        <th style="width:30%;"> Method / Property  </th>
+        <th> Description </th>
+    </tr>
+<tr class="05.01">
+<td> 
+            new <strong>crypto</strong>.X509Certificate(<strong class="openable">cert:buf<div>
+                <p> <strong>str|buf|TypedArray|DataView</strong></p>
+                <p> - <mark>pem</mark> or <mark>der</mark> encoded X509 Certificate </p>
+            </div></strong>)
+</td>
+<td> 
+            - wraps the passed <mark>pem</mark> or <mark>der</mark> encoded certifiate and returns it in a new <strong>x509</strong> object 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="06.01">
+<td> 
+            <strong>x509</strong>.ca
+</td>
+<td> 
+            - returns <mark>true</mark> if the Certificate is a Certificate Authority certificate (certificate that is used to sign <span class="openable">CRS<div>
+                <p> Certificate Signing Request </p>
+            </div></span>), otherwise <mark>false</mark>  
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i>  </span>
+            </span>
+</td>
+</tr>
+<tr class="08.01">
+<td> 
+            <strong>x509</strong>.checkEmail(<strong>eMail:str</strong>, <i class="openable">option:obj<div>
+                <p> subject: 'always|never' - (Default: <mark>always</mark>) </p>
+                <p> wildcards: <strong>bol</strong> - (Default: <mark>true</mark>) </p>
+                <p> partialWildcards: <strong>bol</strong> - (Default: <mark>true</mark>) </p>
+                <p> multiLabelWildcards: <strong>bol</strong> - (Default: <mark>false</mark>) </p>
+                <p> singleLableSubdomains: <strong>bol</strong> - (Default: <mark>false</mark>) </p>
+            </div></i>)
+</td>
+<td> 
+            - returns the <strong>eMail</strong> if the passed <strong>eMail</strong> matches the certificate, <mark>undefined</mark> otherwise 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="08.02">
+<td> 
+            <strong>x509</strong>.checkHost(<strong class="openable">hostName:str<div>
+                <p> hostname = FQDN (ex: <mark>www.google.com</mark>) </p>
+            </div></strong>, <i class="openable">option:obj<div>
+                <p> subject: 'always|never' - (Default: <mark>always</mark>) </p>
+                <p> wildcards: <strong>bol</strong> - (Default: <mark>true</mark>) </p>
+                <p> partialWildcards: <strong>bol</strong> - (Default: <mark>true</mark>) </p>
+                <p> multiLabelWildcards: <strong>bol</strong> - (Default: <mark>false</mark>) </p>
+                <p> singleLableSubdomains: <strong>bol</strong> - (Default: <mark>false</mark>) </p>
+            </div></i>)
+</td>
+<td> 
+            - returns the <strong>hostName</strong> if the passed <strong>hostName</strong> matches the certificate, <mark>undefined</mark> otherwise 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="14.01">
+<td> 
+            <strong>x509</strong>.checkIssued(<strong>ca:x509</strong>)
+</td>
+<td> 
+            - returns <mark>true</mark> if the <strong>x509</strong> certificate was issued by the passed Certificate Authority's certificate <strong>ca</strong>, otherwise returns <mark>false</mark> 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="14.03">
+<td> 
+            <strong>x509</strong>.checkPrivateKey(<strong>privKey:keyObj</strong>)
+</td>
+<td> 
+            - returns <mark>true</mark> if the passed <strong>privKey</strong> is the pair of the certificate's public key, otherwiser <mark>false</mark>  
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="11.01">
+<td> 
+            <strong>x509</strong>.fingerprint
+</td>
+<td> 
+            - returns the SHA-1 fingerprint of the certificate in a string 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="11.02">
+<td> 
+            <strong>x509</strong>.fingerprint256
+</td>
+<td> 
+            - returns the SHA-256 fingerprint of the certificate in a string 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="08.03">
+<td> 
+            <strong>x509</strong>.checkIP(<strong>ip:str</strong>, <i class="openable">option:obj<div>
+                <p> subject: 'always|never' - (Default: <mark>always</mark>) </p>
+                <p> wildcards: <strong>bol</strong> - (Default: <mark>true</mark>) </p>
+                <p> partialWildcards: <strong>bol</strong> - (Default: <mark>true</mark>) </p>
+                <p> multiLabelWildcards: <strong>bol</strong> - (Default: <mark>false</mark>) </p>
+                <p> singleLableSubdomains: <strong>bol</strong> - (Default: <mark>false</mark>) </p>
+            </div></i>)
+</td>
+<td> 
+            - returns the <strong>ip</strong> if the passed <strong>ip</strong> matches the certificate, <mark>undefined</mark> otherwise (can be IPv4 or IPv6) 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="07.05">
+<td> 
+            <strong>x509</strong>.infoAccess
+</td>
+<td> 
+            - returns the information access content of this certificate (returned the URL to the ICA's certificate) 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="07.03">
+<td> 
+            <strong>x509</strong>.issuer
+</td>
+<td> 
+            - returns the certificate's issuers identification 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="07.04">
+<td> 
+            <strong>x509</strong>.issuerCertificate 
+</td>
+<td> 
+            - returns the issuers <strong>x509</strong> certificate (if available)
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.9.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="12.02">
+<td> 
+            <strong>x509</strong>.keyUsage
+</td>
+<td> 
+            - return an Array which defines how the public key may be used (I don't know what is this)
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="12.01">
+<td> 
+            <strong>x509</strong>.publicKey
+</td>
+<td> 
+            - returns the certificate's public key in a <strong>keyObj</strong> 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="13.01">
+<td> 
+            <strong>x509</strong>.raw
+</td>
+<td> 
+            - returns the <mark>der</mark> encoded certificate in a <strong>buf</strong>
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="07.06">
+<td> 
+            <strong>x509</strong>.serialNumber
+</td>
+<td> 
+            - returns certificate serial number in a string 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="07.01">
+<td> 
+            <strong>x509</strong>.subject 
+</td>
+<td> 
+            - returns the complete certificate's <span class="openable">subject<div>
+                <p> <mark>C</mark> = countryName </p>
+                <p> <mark>O</mark> = organizationName </p>
+                <p> <mark>OU</mark> =  organizationalUnitName </p>
+                <p> <mark>dnQualifier</mark> =  distinguished name qualifier </p>
+                <p> <mark>ST</mark> = state or province name </p>
+                <p> <mark>CN</mark> = common name (FQDN like <mark>www.google.com</mark>) </p>
+                <p> <mark>serialNumber</mark> = serial number </p>
+                <p> <mark>OCSP</mark> - </p>
+                <p> <mark>CA Issuers</mark> = Certificate Authority Isuer (the ICA that signed this certificate) </p>
+            </div><span>
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="07.02">
+<td> 
+            <strong>x509</strong>.subjectAltName 
+</td>
+<td> 
+            - returns the certificate's alternative names (domain name / IP)            
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="13.03">
+<td> 
+            <strong>x509</strong>.toJSON()
+</td>
+<td> 
+            - returns the <mark>pem</mark> encoded certificate in a <strong>str</strong> (there's no JSON standard encoding for X509 Certificates)   
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="13.04">
+<td> 
+            <strong>x509</strong>.toLegacyObject()
+</td>
+<td> 
+            - returns the certificate in a <span class="openable">JavaScript (legacy) object<div>
+                <p> subject: <strong>str</strong> </p>
+                <p> issuer: <strong>str</strong> </p>
+                <p> subjectaltname: <strong>str</strong> </p>
+                <p> infoAccess: <strong>str</strong> </p>
+                <p> bits: <strong>nr</strong> </p>
+                <p> pubkey: <strong>buf</strong> </p>
+                <p> asn1Curve: <strong>str</strong> </p>
+                <p> nistCurve: <strong>str</strong> </p>
+                <p> valid_from: <strong>date/time:str</strong> </p>
+                <p> valid_to: <strong>date/time:str</strong> </p>
+                <p> fingerprint: <strong>str</strong> </p>
+                <p> fingerprint256: <strong>str</strong> </p>
+                <p> ext_key_usage: <strong>arr</strong> </p>
+                <p> serialNumber: <strong>nr</strong> </p>
+                <p> raw: <strong>buf</strong> </p>
+            </div></span>
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="13.02">
+<td> 
+            <strong>x509</strong>.toString()
+</td>
+<td> 
+            - returns the <mark>pem</mark> encoded certificate in a <strong>str</strong>   
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="10.01">
+<td> 
+            <strong>x509</strong>.validFrom
+</td>
+<td> 
+            - date/time the certificate is valid from 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="10.02">
+<td> 
+            <strong>x509</strong>.validTo
+</td>
+<td> 
+            - date/time the certificate is valid to   
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="14.02">
+<td> 
+            <strong>x509</strong>.verify(<strong>pubKey:keyObj</strong>)
+</td>
+<td> 
+            - returns <mark>true</mark> if the certificate was signed with the passed <strong>pubKey</strong>, otherwise <mark>false</mark> 
+            <span class="browserSupport" title="updated : 2021-03-30">
+                <span><i class="fab fa-node-js"></i> 15.6.0 </span>
+            </span>
+</td>
+</tr>
+</table>
     <br>
     <details class="example" id="notes">
     <summary> Notes :</summary>
@@ -2719,9 +3104,21 @@
 </details>
 <hr>
 <!---------------------------------------------------------------------------------------------------------------->
-<h2 style="color:darkblue;"><u> Sign / Verify <mark>Sign</mark> / <mark>Verify</mark> / <mark>update()</mark> / <mark>end()</mark> / <mark>sign()</mark> / <mark>verify()</mark> </u></h2>
+<h2 style="color:darkblue;"><u> Sign / Verify <mark>sign()</mark> / <mark>verify()</mark> / <mark>Sign</mark> / <mark>Verify</mark> / <mark>update()</mark> / <mark>end()</mark> / <mark>sign()</mark> / <mark>verify()</mark> </u></h2>
 <details class="example"> 
 <summary> DEMO </summary>
+    <pre>
+    const crypto = require('crypto');
+    
+    let keyPair = crypto.generateKeyPairSync('rsa', {modulusLength:2048});
+    let privKey = keyPair.privateKey;
+    let pubKey = keyPair.publicKey;
+    
+    const signature = crypto.sign('sha256', 'some data...', privKey);                  // signs the data with 'sha256' hash algorithm and the passed private key   
+    signature;                                                                         // -> &lt;Buffer ...&gt;           // generated signature   
+    
+    crypto.verify('sha256', 'some data...', pubKey, signature);                        // -> true                   // signature verifed (with the hash algoritm public key and the signature)    
+    </pre>
     <pre>
     const crypto = require('crypto');
     
@@ -2769,6 +3166,19 @@
 </details>
 <details class="example"> 
 <summary> Example : </summary>
+<h4 style="color:darkblue;"><u> <mark>sign()</mark> / <mark>verify()</mark> TEST </u></h4>
+    <pre>
+    const crypto = require('crypto');
+    
+    let keyPair = crypto.generateKeyPairSync('rsa', {modulusLength:2048});
+    let privKey = keyPair.privateKey;
+    let pubKey = keyPair.publicKey;
+    
+    const signature = crypto.sign('sha256', 'some data...', privKey);                  // signs the data with 'sha256' hash algorithm and the passed private key   
+    console.log( signature );                                                          // -> &lt;Buffer ...&gt;           // generated signature   
+    
+    console.log( crypto.verify('sha256', 'some data...', pubKey, signature) );         // -> true                   // signature verifed (with the hash algoritm public key and the signature)    
+    </pre>
 <h4 style="color:darkblue;"><u> <mark>Sign</mark> / <mark>Verify</mark> / <mark>update()</mark> / <mark>sign()</mark> / <mark>verify()</mark> TEST </u></h4>
     <pre>
     const crypto = require('crypto');
@@ -3480,796 +3890,239 @@
 </details>
 <hr>
 <!---------------------------------------------------------------------------------------------------------------->
-<h2 style="color:darkblue;"><u> X509 Certificate </u></h2>
-
-
-
-
-
-<table class="table">
-<caption>
-    X509 Certificate 
-    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
-</caption>
-    <tr>
-        <th style="width:30%;"> Method / Property  </th>
-        <th> Description </th>
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-<!---------------------------------------------------->
-<tr class="99.99">
-<td> 
-            Demo Prop 
-</td>
-<td> 
-            demo description 
-            <span class="browserSupport" title="updated : 2021-03-27">
-                <span><i class="fab fa-node-js"></i>  </span>
-            </span>
-</td>
-</tr>
-
-
-
-
-</table>
-
-
-
-
-
-<details class="example" open> 
+<h2 style="color:darkblue;"><u> X509 Certificate / <mark>new X509Certificate()</mark> / <mark>ca</mark> / <mark>subject</mark> / <mark>subjectAltName</mark> / <mark>issuer</mark> / <mark>issuerCertificate</mark> / <mark>infoAccess</mark> / <mark>serialNumber</mark> / <mark>checkEmail()</mark> / <mark>checkHost()</mark> / <mark>checkIP()</mark> / <mark>validFrom</mark> / <mark>validTo</mark> / <mark>fingerprint</mark> / <mark>fingerprint256</mark> / <mark>publicKey</mark> / <mark>keyUsage</mark> / <mark>raw</mark> / <mark>toString()</mark> / <mark>toJSON()</mark> / <mark>toLegacyObject()</mark> / <mark>checkIssued()</mark> / <mark>verify()</mark> / <mark>checkPrivateKey()</mark> </u></h2>
+<details class="example"> 
 <summary> DEMO </summary>
-
+    <pre>
+    const crypto = require('crypto');
+    const https = require('https');
+    const fs = require('fs');
+    const tls = require('tls');
     
+    let ca = new crypto.X509Certificate(fs.readFileSync('./GTS1O1.crt'));              // the ICA's certificate (the certificate that actually signed the received certificate from the server)  
+    let somePrivKey = crypto.generateKeyPairSync('rsa', {modulusLength:2048}).privateKey;
+    
+    let clientReq = https.get('https://www.google.com', function(incMsg){
+        let crt =  new crypto.X509Certificate(incMsg.socket.getPeerCertificate().raw); // server's certificate wrapped in an x509 certificate object   
+    
+// ca ---------------------------------------------------------------------------------
+        crt.ca;                                                                        // -> false                         // not a Certificate Authority Certificate (it's a server certificate)    
+        ca.ca;                                                                         // -> true                          // ICA's certificate is a CA certificate (certificate that is used to sign CSRs)    
+    
+// subject / subjectAltName / issuer / issuerCertificate / infoAccess / serialNumber --
+        crt.subject;                                                                   // -> 'C=US ...'                    // the complete certificate's subject 
+        crt.subjectAltName;                                                            // -> 'DNS...'                      // domain name and     
+        
+        crt.issuer;                                                                    // -> 'C=US ...                     // issuer's identifications 
+        crt.issuerCertificate;                                                         // -> undefined                     // issuer's certificate 
+        
+        crt.infoAccess;                                                                // -> OCSP - ...'                   // access information of the certifiate 
+        
+        crt.serialNumber;                                                              // -> '1670310C..'                  // serial number of the certificate 
+    
+// checkEmail() / checkHost() / checkIP() ---------------------------------------------
+        crt.checkEmail('somemail@gmail.com');                                          // -> undefined                     // certificate does not match the passed email  
+        crt.checkHost('www.google.com');                                               // -> 'www.google.com'              // certificate matches the passed hostname   
+        crt.checkHost('127.0.0.1');                                                    // -> undefined                     // certificate does not match the passed ip address    
+    
+// validFrom / validTo ----------------------------------------------------------------
+        crt.validFrom;                                                                 // -> 'Mar 11 15:00:19 2021 GMT'  
+        crt.validTo;                                                                   // -> 'Jun  3 15:00:18 2021 GMT'   
+    
+// fingerpirnt / fingerprint256 -------------------------------------------------------
+        crt.fingerprint;                                                               // -> '06:CB:C1:ED:3F:...'           // certificate SHA-1 fingerprint    
+        crt.fingerprint256;                                                            // -> '21:AE:85:DA:B9:...'           // certificate SHA-256 fingerprint    
+    
+// publicKey / keyUsage ---------------------------------------------------------------
+        crt.publicKey;                                                                 // -> keyObj                        // the public key of the certificate     
+        crt.keyUsage;                                                                  // -> ['1.3.6.1.5....']             // how the public key ma be used 
+    
+// raw / toString() / toJSON() / toLegacyObject() -------------------------------------
+        crt.raw;                                                                       // -> &lt;Buffer ...&gt;                  // returns a buffer containing the der encoded certificate   
+        crt.toString();                                                                // -> '-----BEGIN CER...'           // returns the pem encoded certificate in a string  
+        crt.toJSON();                                                                  // -> '-----BEGIN CER...'           // returns the pem encoded certificate in a string  
+        crt.toLegacyObject();                                                          // -> {subject:..., ...}            // returns the certificate in a JS (legacy) object    
+    
+// checkIssued() / verify() / checkPrivateKey() ---------------------------------------
+        crt.checkIssued(ca);                                                           // -> true                          // certificate issued by the passed ca (Certificate Authority certificate)    
+        crt.verify(ca.publicKey);                                                      // -> true                          // certificate was signed with the passed public key 
+        crt.checkPrivateKey(somePrivKey);                                              // -> false                         // private key is not the certificate's private key pair   
+    }); 
+    </pre>
 </details>
-
-<details class="example" open> 
+<details class="example"> 
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> x509 Certificate <mark>ca</mark> / <mark>subject</mark> / <mark>subjectAltName</mark> / <mark>infoAccess</mark> / <mark>issuer</mark> / <mark>issuerCertificate</mark> / <mark>checkEmail()</mark> / <mark>checkHost()</mark> / <mark>checkIP()</mark> / <mark>fingerprint</mark> / <mark>fingerprint256</mark> / <mark>keyUsage</mark> / <mark>publicKey</mark> / <mark>raw</mark> / <mark>serialNumber</mark> / <mark>toJSON()</mark> / <mark>toString()</mark> / <mark>validFrom</mark> / <mark>validTo</mark> / <mark>verify()</mark> TEST </u></h4>
     <pre>
     const crypto = require('crypto');
-    const util = require('util');
-    const fs = require('fs');
-        
-    const crt = fs.readFileSync('./pallCer.cer');
-    const privKey = crypto.createPrivateKey(fs.readFileSync('./pallKey.pem'));                          // private key pair of the certificate's    public key   
-    const privKey_ = crypto.generateKeyPairSync('rsa', {modulusLength:2048}).privateKey;                // a random private key 
-    const pubKey_ = crypto.generateKeyPairSync('rsa', {modulusLength:2048}).publicKey;                  // a random public key 
-    
-    
-    const x509Cert = new crypto.X509Certificate(crt);                   // wraps the x509 certificate 
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'is ca -> ' + x509Cert.ca ); 
-        
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'subject -> ' + x509Cert.subject ); 
-        
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'subjectAltName -> ' + x509Cert.subjectAltName ); 
-        
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'infoAccess -> ' + x509Cert.infoAccess ); 
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'issuer -> ' + x509Cert.issuer );  
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'issuerCertificate -> ');    
-        console.log( x509Cert.issuerCertificate );    
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'checkEmail \'a.pall21@yahoo.fr\'-> ' + x509Cert.checkEmail('a.pall21@yahoo.fr') );  
-        console.log( 'checkEmail \'a.pall21@yahoo.com\'-> ' + x509Cert.checkEmail('a.pall21@yahoo.com') ); 
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'checkHost \'localhost:1000\'-> ' + x509Cert.checkHost('localhost:1000') ); 
-        console.log( 'checkHost \'localhost:8080\'-> ' + x509Cert.checkHost('localhost:8080') ); 
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'check IP \'127.0.0.1\' -> '+ x509Cert.checkIP('127.0.0.1') ); 
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'check private key -> ' + x509Cert.checkPrivateKey(privKey) );   
-        console.log( 'check private key -> ' + x509Cert.checkPrivateKey(privKey_) );  
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'fingerprint -> ' + x509Cert.fingerprint );    
-        console.log( 'fingerprint256 -> ' + x509Cert.fingerprint256 );  
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'keyUsage -> ' + x509Cert.keyUsage );    
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'publicKey -> ' );
-        console.log( x509Cert.publicKey );   
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'raw -> ' );  
-        console.log( x509Cert.raw );  
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'serialNumber -> ' + x509Cert.serialNumber );  
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'toJSON() -> ' );  
-        console.log( x509Cert.toJSON() );  
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'toString() ->' );   
-        console.log( x509Cert.toString() );   
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'validFrom -> ' + x509Cert.validFrom );  
-        console.log( 'validTo -> ' + x509Cert.validTo );  
-    
-    console.log('-----------------------------------------------------------------------------');
-        console.log( 'verify() -> ' + x509Cert.verify(pubKey_) );  
-    </pre>
-    <pre class="cmd">
-    pall@Ryzen:~/Documents/CodePlus/My Site/Node.js/Crypto$ node main
-    -----------------------------------------------------------------------------
-    is ca -> true
-    -----------------------------------------------------------------------------
-    subject -> C=RO
-    ST=-
-    L=Zetea
-    O=Pall21 Ltd
-    OU=-
-    CN=localhost:1000
-    emailAddress=a.pall21@yahoo.fr
-    -----------------------------------------------------------------------------
-    subjectAltName -> undefined
-    -----------------------------------------------------------------------------
-    infoAccess -> undefined
-    -----------------------------------------------------------------------------
-    issuer -> C=RO
-    ST=-
-    L=Zetea
-    O=Pall21 Ltd
-    OU=-
-    CN=localhost:1000
-    emailAddress=a.pall21@yahoo.fr
-    -----------------------------------------------------------------------------
-    issuerCertificate -> 
-    undefined
-    -----------------------------------------------------------------------------
-    checkEmail 'a.pall21@yahoo.fr'-> a.pall21@yahoo.fr
-    checkEmail 'a.pall21@yahoo.com'-> undefined
-    -----------------------------------------------------------------------------
-    checkHost 'localhost:1000'-> localhost:1000
-    checkHost 'localhost:8080'-> undefined
-    -----------------------------------------------------------------------------
-    check IP '127.0.0.1' -> undefined
-    -----------------------------------------------------------------------------
-    check private key -> true
-    check private key -> false
-    -----------------------------------------------------------------------------
-    fingerprint -> F4:E2:24:A2:A1:0D:AB:10:57:FE:88:B4:90:46:53:27:A3:6D:49:47
-    fingerprint256 -> C9:01:82:BF:63:CA:8B:E4:22:F9:11:2B:1D:E8:DF:86:A2:D7:7C:3E:5F:52:BE:66:5C:E2:29:F3:0A:9C:C9:4E
-    -----------------------------------------------------------------------------
-    keyUsage -> undefined
-    -----------------------------------------------------------------------------
-    publicKey -> 
-    PublicKeyObject { [Symbol(kKeyType)]: 'public' }
-    -----------------------------------------------------------------------------
-    raw -> 
-    &lt;Buffer 30 82 03 ed 30 82 02 d5 a0 03 02 01 02 02 14 46 ae fe 0f 1a 3f 07 e9 66 56 81 b3 7e fe 2a 5d b5 2c 53 3d 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 ... 959 more bytes&gt;
-    -----------------------------------------------------------------------------
-    serialNumber -> 46AEFE0F1A3F07E9665681B37EFE2A5DB52C533D
-    -----------------------------------------------------------------------------
-    toJSON() -> 
-    -----BEGIN CERTIFICATE-----
-    MIID7TCCAtWgAwIBAgIURq7+Dxo/B+lmVoGzfv4qXbUsUz0wDQYJKoZIhvcNAQEL
-    BQAwgYUxCzAJBgNVBAYTAlJPMQowCAYDVQQIDAEtMQ4wDAYDVQQHDAVaZXRlYTET
-    MBEGA1UECgwKUGFsbDIxIEx0ZDEKMAgGA1UECwwBLTEXMBUGA1UEAwwObG9jYWxo
-    b3N0OjEwMDAxIDAeBgkqhkiG9w0BCQEWEWEucGFsbDIxQHlhaG9vLmZyMB4XDTIx
-    MDMyNzE1NDc1M1oXDTIxMDUyNjE1NDc1M1owgYUxCzAJBgNVBAYTAlJPMQowCAYD
-    VQQIDAEtMQ4wDAYDVQQHDAVaZXRlYTETMBEGA1UECgwKUGFsbDIxIEx0ZDEKMAgG
-    A1UECwwBLTEXMBUGA1UEAwwObG9jYWxob3N0OjEwMDAxIDAeBgkqhkiG9w0BCQEW
-    EWEucGFsbDIxQHlhaG9vLmZyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
-    AQEAnQvNFSLdw4ZbXlq7Piv0gv9uGStLiZtoPjzLe8I1XQfFd8yDAt5Fu2GQJdTe
-    FDrkgcwRJFodFJoK2cSMM5t0Ar1rmJEfklhMGRZ79gBfxeuwKuKY/Kkpy0H1SqJj
-    fMpDXBGGcJueZGDkkroXEYIv7OaFJLJARCByB2NvVVCeEdlZUzYSf7jqmnfhNEUE
-    yENe5Gmz+kjJiEAvj3o5AwX7crAy1KPsY33pK6EQVpN8Q8UoJ82RbnK+VBcxmh3p
-    rikpVTnL8fLmkb0CSg6BNY0Nz0huJKSXSq31lvpWuns8n5AiCFqNtXNF7L31zpMr
-    tXlNjfivA2874jSojwl9rvXzrwIDAQABo1MwUTAdBgNVHQ4EFgQUZ43Q+zvUslbN
-    EPJ1+zKYcbsBwHowHwYDVR0jBBgwFoAUZ43Q+zvUslbNEPJ1+zKYcbsBwHowDwYD
-    VR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAbtzUwY6Yh7CCjCpUV3wz
-    AkC6fVPwl2tA2SZB1zq9Yq46AOXOJhEDgteIqx87lQhZTUGTGBzP43ih7gAtViel
-    cPKLWCBk+2qm5PSusIc+MwR1OPqUozvS5lt7T79slj18mnmHo/7vf6oH7UbXF9jS
-    aGZM2vhkFcY8XaHV8c7wYQpDEGi9HBpBr/CyC6HXeISb+P2zarM0sgnUEIpG79vt
-    zyxeXrc6o6dvSlXu4T6P1jqdZ4jSldxFMiK43LIdwBizHKVP7hn8/3HZJaAELSW7
-    fU7tP7luK9pns4nQhc2YVWSjh+M+F+Yp7kKlWX35JtOf0bkDDk80fhp4QzZZfY2N
-    YA==
-    -----END CERTIFICATE-----
-    
-    -----------------------------------------------------------------------------
-    toString() ->
-    -----BEGIN CERTIFICATE-----
-    MIID7TCCAtWgAwIBAgIURq7+Dxo/B+lmVoGzfv4qXbUsUz0wDQYJKoZIhvcNAQEL
-    BQAwgYUxCzAJBgNVBAYTAlJPMQowCAYDVQQIDAEtMQ4wDAYDVQQHDAVaZXRlYTET
-    MBEGA1UECgwKUGFsbDIxIEx0ZDEKMAgGA1UECwwBLTEXMBUGA1UEAwwObG9jYWxo
-    b3N0OjEwMDAxIDAeBgkqhkiG9w0BCQEWEWEucGFsbDIxQHlhaG9vLmZyMB4XDTIx
-    MDMyNzE1NDc1M1oXDTIxMDUyNjE1NDc1M1owgYUxCzAJBgNVBAYTAlJPMQowCAYD
-    VQQIDAEtMQ4wDAYDVQQHDAVaZXRlYTETMBEGA1UECgwKUGFsbDIxIEx0ZDEKMAgG
-    A1UECwwBLTEXMBUGA1UEAwwObG9jYWxob3N0OjEwMDAxIDAeBgkqhkiG9w0BCQEW
-    EWEucGFsbDIxQHlhaG9vLmZyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
-    AQEAnQvNFSLdw4ZbXlq7Piv0gv9uGStLiZtoPjzLe8I1XQfFd8yDAt5Fu2GQJdTe
-    FDrkgcwRJFodFJoK2cSMM5t0Ar1rmJEfklhMGRZ79gBfxeuwKuKY/Kkpy0H1SqJj
-    fMpDXBGGcJueZGDkkroXEYIv7OaFJLJARCByB2NvVVCeEdlZUzYSf7jqmnfhNEUE
-    yENe5Gmz+kjJiEAvj3o5AwX7crAy1KPsY33pK6EQVpN8Q8UoJ82RbnK+VBcxmh3p
-    rikpVTnL8fLmkb0CSg6BNY0Nz0huJKSXSq31lvpWuns8n5AiCFqNtXNF7L31zpMr
-    tXlNjfivA2874jSojwl9rvXzrwIDAQABo1MwUTAdBgNVHQ4EFgQUZ43Q+zvUslbN
-    EPJ1+zKYcbsBwHowHwYDVR0jBBgwFoAUZ43Q+zvUslbNEPJ1+zKYcbsBwHowDwYD
-    VR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAbtzUwY6Yh7CCjCpUV3wz
-    AkC6fVPwl2tA2SZB1zq9Yq46AOXOJhEDgteIqx87lQhZTUGTGBzP43ih7gAtViel
-    cPKLWCBk+2qm5PSusIc+MwR1OPqUozvS5lt7T79slj18mnmHo/7vf6oH7UbXF9jS
-    aGZM2vhkFcY8XaHV8c7wYQpDEGi9HBpBr/CyC6HXeISb+P2zarM0sgnUEIpG79vt
-    zyxeXrc6o6dvSlXu4T6P1jqdZ4jSldxFMiK43LIdwBizHKVP7hn8/3HZJaAELSW7
-    fU7tP7luK9pns4nQhc2YVWSjh+M+F+Yp7kKlWX35JtOf0bkDDk80fhp4QzZZfY2N
-    YA==
-    -----END CERTIFICATE-----
-    
-    -----------------------------------------------------------------------------
-    validFrom -> Mar 27 15:47:53 2021 GMT
-    validTo -> May 26 15:47:53 2021 GMT
-    -----------------------------------------------------------------------------
-    verify() -> false
-    pall@Ryzen:~/Documents/CodePlus/My Site/Node.js/Crypto$    
-    </pre>
-<hr>
-<!---------------------------------------------------------------------------------------------------------------->
-<h4 style="color:darkblue;"><u> Google's Certificate TEST </u></h4>
-    <pre>
-    const crypto = require('crypto');
     const https = require('https');
-        
-    https.get('https://www.google.com', function(incMsg){
-        let x509Cert =  new crypto.X509Certificate(incMsg.socket.getPeerCertificate(true).raw);
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'is ca -> ' + x509Cert.ca ); 
-            
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'subject -> ' + x509Cert.subject ); 
-            
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'subjectAltName -> ' + x509Cert.subjectAltName ); 
-            
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'infoAccess -> ' + x509Cert.infoAccess ); 
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'issuer -> ' + x509Cert.issuer );  
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'issuerCertificate -> ');    
-            console.log( x509Cert.issuerCertificate );    
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'checkEmail \'a.pall21@yahoo.fr\'-> ' + x509Cert.checkEmail('a.pall21@yahoo.fr') );  
-            console.log( 'checkEmail \'a.pall21@yahoo.com\'-> ' + x509Cert.checkEmail('a.pall21@yahoo.com') ); 
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'checkHost \'localhost:1000\'-> ' + x509Cert.checkHost('localhost:1000') ); 
-            console.log( 'checkHost \'localhost:8080\'-> ' + x509Cert.checkHost('localhost:8080') ); 
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'check IP \'127.0.0.1\' -> '+ x509Cert.checkIP('127.0.0.1') ); 
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'fingerprint -> ' + x509Cert.fingerprint );    
-            console.log( 'fingerprint256 -> ' + x509Cert.fingerprint256 );  
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'keyUsage -> ' + x509Cert.keyUsage );    
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'publicKey -> ' );
-            console.log( x509Cert.publicKey );   
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'raw -> ' );  
-            console.log( x509Cert.raw );  
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'serialNumber -> ' + x509Cert.serialNumber );  
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'toJSON() -> ' );  
-            console.log( x509Cert.toJSON() );  
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'toString() ->' );   
-            console.log( x509Cert.toString() );   
-        
-        console.log('-----------------------------------------------------------------------------');
-            console.log( 'validFrom -> ' + x509Cert.validFrom );  
-            console.log( 'validTo-> ' + x509Cert.validTo );  
-    });
+    const fs = require('fs');
+    const tls = require('tls');
+    
+    let ca = new crypto.X509Certificate(fs.readFileSync('./GTS1O1.crt'));              // the ICA's certificate (the certificate that actually signed the received certificate from the server)  
+    let somePrivKey = crypto.generateKeyPairSync('rsa', {modulusLength:2048}).privateKey;
+    
+    let clientReq = https.get('https://www.google.com', function(incMsg){
+        let crt =  new crypto.X509Certificate(incMsg.socket.getPeerCertificate().raw);
+    
+// ca ---------------------------------------------------------------------------------
+        console.log( crt.ca );                                                         // -> false                         // not a Certificate Authority Certificate (it's a server certificate)    
+        console.log( ca.ca );                                                          // -> true                          // ICA's certificate is a CA certificate (certificate that is used to sign CSRs)    
+    
+    
+// subject / subjectAltName / issuer / issuerCertificate / infoAccess / serialNumber --
+        console.log( crt.subject );                                                    // -> 'C=US ...'                    // the complete certificate's subject 
+        console.log( crt.subjectAltName );                                             // -> 'DNS...'                      // domain name and     
+        console.log( crt.issuer );                                                     // -> 'C=US ...                     // issuer's identifications 
+        console.log( crt.issuerCertificate );                                          // -> undefined                     // issuer's certificate 
+        console.log( crt.infoAccess );                                                 // -> OCSP - ...'                   // access information of the certifiate 
+        console.log( crt.serialNumber );                                               // -> '1670310C..'                  // serial number of the certificate 
+    
+    
+// checkEmail() / checkHost() / checkIP() ---------------------------------------------
+        console.log( crt.checkEmail('somemail@gmail.com') );                           // -> undefined                     // certificate does not match the passed email  
+        console.log( crt.checkHost('www.google.com') );                                // -> 'www.google.com'              // certificate matches the passed hostname   
+        console.log( crt.checkHost('127.0.0.1') );                                     // -> undefined                     // certificate does not match the passed ip address    
+    
+    
+// validFrom / validTo ----------------------------------------------------------------
+        console.log( crt.validFrom );                                                  // -> 'Mar 11 15:00:19 2021 GMT'  
+        console.log( crt.validTo );                                                    // -> 'Jun  3 15:00:18 2021 GMT'   
+    
+    
+// fingerpirnt / fingerprint256 -------------------------------------------------------
+        console.log( crt.fingerprint );                                                // -> '06:CB:C1:ED:3F:...'           // certificate SHA-1 fingerprint    
+        console.log( crt.fingerprint256 );                                             // -> '21:AE:85:DA:B9:...'           // certificate SHA-256 fingerprint    
+    
+    
+// publicKey / keyUsage ---------------------------------------------------------------
+        console.log( crt.publicKey );                                                  // -> keyObj                        // the public key of the certificate     
+        console.log( crt.keyUsage );                                                   // -> ['1.3.6.1.5....']             // how the public key ma be used 
+    
+    
+// raw / toString() / toJSON() / toLegacyObject() -------------------------------------
+        console.log( crt.raw );                                                        // -> &lt;Buffer ...&gt;            // returns a buffer containing the der encoded certificate   
+        console.log( crt.toString() );                                                 // -> '-----BEGIN CER...'           // returns the pem encoded certificate in a string  
+        console.log( crt.toJSON() );                                                   // -> '-----BEGIN CER...'           // returns the pem encoded certificate in a string  
+        console.log( crt.toLegacyObject() );                                           // -> {subject:..., ...}            // returns the certificate in a JS (legacy) object    
+    
+    
+// checkIssued() / verify() / checkPrivateKey() ---------------------------------------
+        console.log( crt.checkIssued(ca) );                                            // -> true                          // certificate issued by the passed ca (Certificate Authority certificate)    
+        console.log( crt.verify(ca.publicKey) );                                       // -> true                          // certificate was signed with the passed public key 
+        console.log( crt.checkPrivateKey(somePrivKey) );                               // -> false                         // private key is not the certificate's private key pair   
+    }); 
     </pre>
     <pre class="cmd">
     pall@Ryzen:~/Documents/CodePlus/My Site/Node.js/Crypto$ node main
-    -----------------------------------------------------------------------------
-    is ca -> false
-    -----------------------------------------------------------------------------
-    subject -> C=US
-    ST=California
-    L=Mountain View
-    O=Google LLC
-    CN=www.google.com
-    -----------------------------------------------------------------------------
-    subjectAltName -> DNS:www.google.com
-    -----------------------------------------------------------------------------
-    infoAccess -> OCSP - URI:http://ocsp.pki.goog/gts1o1core
-    CA Issuers - URI:http://pki.goog/gsr2/GTS1O1.crt
+        false
+        true
+        C=US
+        ST=California
+        L=Mountain View
+        O=Google LLC
+        CN=www.google.com
+        DNS:www.google.com
+        C=US
+        O=Google Trust Services
+        CN=GTS CA 1O1
+        undefined
+        OCSP - URI:http://ocsp.pki.goog/gts1o1core
+        CA Issuers - URI:http://pki.goog/gsr2/GTS1O1.crt
+        C15EA0383C79E3440300000000CBCFBA
+        undefined
+        www.google.com
+        undefined
+        Mar 16 19:35:00 2021 GMT
+        Jun  8 19:34:59 2021 GMT
+        82:ED:34:E0:23:5F:0A:96:32:D1:58:9D:1E:66:62:90:34:42:AD:AF
+        E1:1F:58:0D:A5:75:BB:7F:3E:17:BB:0D:31:EE:2D:E0:C7:20:B6:6A:FF:EE:F6:9C:D2:33:88:7C:D8:AD:54:10
+        PublicKeyObject { [Symbol(kKeyType)]: 'public' }
+        [ '1.3.6.1.5.5.7.3.1' ]
+        &lt;Buffer 30 82 04 c8 30 82 03 b0 a0 03 02 01 02 02 11 00 c1 5e a0 38 3c 79 e3 44 03 00 00 00 00 cb cf ba 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 30 42 31 ... 1178 more bytes&gt;
+        -----BEGIN CERTIFICATE-----
+        MIIEyDCCA7CgAwIBAgIRAMFeoDg8eeNEAwAAAADLz7owDQYJKoZIhvcNAQELBQAw
+        QjELMAkGA1UEBhMCVVMxHjAcBgNVBAoTFUdvb2dsZSBUcnVzdCBTZXJ2aWNlczET
+        MBEGA1UEAxMKR1RTIENBIDFPMTAeFw0yMTAzMTYxOTM1MDBaFw0yMTA2MDgxOTM0
+        NTlaMGgxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH
+        Ew1Nb3VudGFpbiBWaWV3MRMwEQYDVQQKEwpHb29nbGUgTExDMRcwFQYDVQQDEw53
+        d3cuZ29vZ2xlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABFmtG1hqQopw
+        vwO0CIf5xfHU5ci/665r+JmBPDybtzPK7JmT840m7q1/yPcES/a0BqqLTPTNJyZI
+        796ZAFcqbbijggJcMIICWDAOBgNVHQ8BAf8EBAMCB4AwEwYDVR0lBAwwCgYIKwYB
+        BQUHAwEwDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQUS/14JW+kX3ax4OPTiPrRbuIn
+        STwwHwYDVR0jBBgwFoAUmNH4bhDrz5vsYJ8YkBug630J/SswaAYIKwYBBQUHAQEE
+        XDBaMCsGCCsGAQUFBzABhh9odHRwOi8vb2NzcC5wa2kuZ29vZy9ndHMxbzFjb3Jl
+        MCsGCCsGAQUFBzAChh9odHRwOi8vcGtpLmdvb2cvZ3NyMi9HVFMxTzEuY3J0MBkG
+        A1UdEQQSMBCCDnd3dy5nb29nbGUuY29tMCEGA1UdIAQaMBgwCAYGZ4EMAQICMAwG
+        CisGAQQB1nkCBQMwMwYDVR0fBCwwKjAooCagJIYiaHR0cDovL2NybC5wa2kuZ29v
+        Zy9HVFMxTzFjb3JlLmNybDCCAQQGCisGAQQB1nkCBAIEgfUEgfIA8AB2AESUZS6w
+        7s6vxEAH2Kj+KMDa5oK+2MsxtT/TM5a1toGoAAABeDy/udIAAAQDAEcwRQIgVY40
+        WyUysNidcbnrylA4SESze0CQvUWMQKMI4gHzi34CIQDidQzVoDiSGdDqrDp5yKDR
+        6z0zKd1mm0MQjpYoUD+TPgB2AH0+8viP/4hVaCTCwMqeUol5K8UOeAl/LmqXaJl+
+        IvDXAAABeDy/ucoAAAQDAEcwRQIhAOohO9kpFZYdIyC57GAtfHQTXK78ovv3VIVn
+        SP1bhW1qAiANrObfVpLoprzfwqyPpzczU3u1xqIsNIZ+BDPJm+XvbjANBgkqhkiG
+        9w0BAQsFAAOCAQEALRKpgqxd0etTPsoYcQrDReuVq+4x5NdgA31vliZuX7liwPT9
+        3E/5kRtElaeW3G3SqPKBURKAr1AG20WWIeYqv9SXz6kI4hoU5ZEPMbW3L2fetXiq
+        WZM3TAEyiOCYuO1nenmaHCzu3dEzwAts8xqOq6tq0fktZom+V8WRyD3IMnsydMWu
+        GtOUxbIE8T/1JWBMMMJv8NxT3Ia2uv1OK0Zr2WKNpoiziq2YFs4hMhCg3nvSYb7/
+        FXZ0bKq0nU88Ve409XsKe4LkPCRVO725R/NtsfsPtPE8vWYgyUXOSN1tBwLNjIva
+        bTMkzuKeiopJoGQI75BoQejw+Y53N9YRaKCbiA==
+        -----END CERTIFICATE-----
     
-    -----------------------------------------------------------------------------
-    issuer -> C=US
-    O=Google Trust Services
-    CN=GTS CA 1O1
-    -----------------------------------------------------------------------------
-    issuerCertificate -> 
-    undefined
-    -----------------------------------------------------------------------------
-    checkEmail 'a.pall21@yahoo.fr'-> undefined
-    checkEmail 'a.pall21@yahoo.com'-> undefined
-    -----------------------------------------------------------------------------
-    checkHost 'localhost:1000'-> undefined
-    checkHost 'localhost:8080'-> undefined
-    -----------------------------------------------------------------------------
-    check IP '127.0.0.1' -> undefined
-    -----------------------------------------------------------------------------
-    fingerprint -> 06:CB:C1:ED:3F:D8:18:B6:14:EE:10:02:2A:D8:2B:F3:BF:63:0F:20
-    fingerprint256 -> 21:AE:85:DA:B9:79:5E:07:77:46:F3:4E:DD:AB:5A:45:98:23:0D:83:5C:82:5F:D3:52:11:61:0B:B4:A6:B0:C9
-    -----------------------------------------------------------------------------
-    keyUsage -> 1.3.6.1.5.5.7.3.1
-    -----------------------------------------------------------------------------
-    publicKey -> 
-    PublicKeyObject { [Symbol(kKeyType)]: 'public' }
-    -----------------------------------------------------------------------------
-    raw -> 
-    &lt;Buffer 30 82 04 c5 30 82 03 ad a0 03 02 01 02 02 10 16 70 31 0c 7d 9d aa 61 05 00 00 00 00 87 9c 53 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b     05 00 30 42 31 0b ... 1175 more bytes&gt;
-    -----------------------------------------------------------------------------
-    serialNumber -> 1670310C7D9DAA610500000000879C53
-    -----------------------------------------------------------------------------
-    toJSON() -> 
-    -----BEGIN CERTIFICATE-----
-    MIIExTCCA62gAwIBAgIQFnAxDH2dqmEFAAAAAIecUzANBgkqhkiG9w0BAQsFADBC
-    MQswCQYDVQQGEwJVUzEeMBwGA1UEChMVR29vZ2xlIFRydXN0IFNlcnZpY2VzMRMw
-    EQYDVQQDEwpHVFMgQ0EgMU8xMB4XDTIxMDMxMTE1MDAxOVoXDTIxMDYwMzE1MDAx
-    OFowaDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcT
-    DU1vdW50YWluIFZpZXcxEzARBgNVBAoTCkdvb2dsZSBMTEMxFzAVBgNVBAMTDnd3
-    dy5nb29nbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkKwCO3F+CLZS
-    Sg+3bWtpkBxRUKit/ajkf9jo0Jd0Nk2gdSo+W+ghmPn6WbkokLMLbhy8mABdl7wT
-    boW3K+hpkKOCAlowggJWMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF
-    BQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSGFNwu21Y1Z6EebdR87O8hylYs
-    1TAfBgNVHSMEGDAWgBSY0fhuEOvPm+xgnxiQG6DrfQn9KzBoBggrBgEFBQcBAQRc
-    MFowKwYIKwYBBQUHMAGGH2h0dHA6Ly9vY3NwLnBraS5nb29nL2d0czFvMWNvcmUw
-    KwYIKwYBBQUHMAKGH2h0dHA6Ly9wa2kuZ29vZy9nc3IyL0dUUzFPMS5jcnQwGQYD
-    VR0RBBIwEIIOd3d3Lmdvb2dsZS5jb20wIQYDVR0gBBowGDAIBgZngQwBAgIwDAYK
-    KwYBBAHWeQIFAzAzBgNVHR8ELDAqMCigJqAkhiJodHRwOi8vY3JsLnBraS5nb29n
-    L0dUUzFPMWNvcmUuY3JsMIIBAgYKKwYBBAHWeQIEAgSB8wSB8ADuAHUAfT7y+I//
-    iFVoJMLAyp5SiXkrxQ54CX8uapdomX4i8NcAAAF4IgR1iAAABAMARjBEAiAhJIWk
-    b0A26eM9MicbpnzcvYsm2VXeelStNgXCX5Kb7wIgfezamNQ76CJcS1QZSu+iJ790
-    wOspdChno1GMr+71y5UAdQBElGUusO7Or8RAB9io/ijA2uaCvtjLMbU/0zOWtbaB
-    qAAAAXgiBHZ+AAAEAwBGMEQCICeKKe6oidw1ud7jYiinzWAhoQOFFPWd+jokQy53
-    oE7mAiB2u9eBaVSE2J3k21IMML8aoYiX1n7jsCmXXhgPVGOqXDANBgkqhkiG9w0B
-    AQsFAAOCAQEApNg6C1SFm0HyMhQqxrFnfQ3RbQktzaaWnOlhxeEslJMgYLjzM8Mh
-    qcjOPMRIewpN4qOIhOYKM/Gx+TjZs1kjcZk3NUp8XrZ1+a5B7GyiOBifzsg6UJZD
-    wdI4GhE9MXbwVFKJZduW8uTrMXHxGMBHmgeWg2qEVO7OGHSq+xhX9Yc1LSWeO5gk
-    EnSfonccn5qx9VX2cHwS2MQYjPIxS8xaxoKVdduP2RwrO/G9E8Irn3yzh4HFPj19
-    +/otsLAIETHfaN0pjYT57V3TJJpfS+BRo/qEBUBkgV16qTx3k3LX81j1Pv2th16V
-    NeBdIOuRs4f5l747/NR2dPR3g5/4O8B/IA==
-    -----END CERTIFICATE-----
-    
-    -----------------------------------------------------------------------------
-    toString() ->
-    -----BEGIN CERTIFICATE-----
-    MIIExTCCA62gAwIBAgIQFnAxDH2dqmEFAAAAAIecUzANBgkqhkiG9w0BAQsFADBC
-    MQswCQYDVQQGEwJVUzEeMBwGA1UEChMVR29vZ2xlIFRydXN0IFNlcnZpY2VzMRMw
-    EQYDVQQDEwpHVFMgQ0EgMU8xMB4XDTIxMDMxMTE1MDAxOVoXDTIxMDYwMzE1MDAx
-    OFowaDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcT
-    DU1vdW50YWluIFZpZXcxEzARBgNVBAoTCkdvb2dsZSBMTEMxFzAVBgNVBAMTDnd3
-    dy5nb29nbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkKwCO3F+CLZS
-    Sg+3bWtpkBxRUKit/ajkf9jo0Jd0Nk2gdSo+W+ghmPn6WbkokLMLbhy8mABdl7wT
-    boW3K+hpkKOCAlowggJWMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF
-    BQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSGFNwu21Y1Z6EebdR87O8hylYs
-    1TAfBgNVHSMEGDAWgBSY0fhuEOvPm+xgnxiQG6DrfQn9KzBoBggrBgEFBQcBAQRc
-    MFowKwYIKwYBBQUHMAGGH2h0dHA6Ly9vY3NwLnBraS5nb29nL2d0czFvMWNvcmUw
-    KwYIKwYBBQUHMAKGH2h0dHA6Ly9wa2kuZ29vZy9nc3IyL0dUUzFPMS5jcnQwGQYD
-    VR0RBBIwEIIOd3d3Lmdvb2dsZS5jb20wIQYDVR0gBBowGDAIBgZngQwBAgIwDAYK
-    KwYBBAHWeQIFAzAzBgNVHR8ELDAqMCigJqAkhiJodHRwOi8vY3JsLnBraS5nb29n
-    L0dUUzFPMWNvcmUuY3JsMIIBAgYKKwYBBAHWeQIEAgSB8wSB8ADuAHUAfT7y+I//
-    iFVoJMLAyp5SiXkrxQ54CX8uapdomX4i8NcAAAF4IgR1iAAABAMARjBEAiAhJIWk
-    b0A26eM9MicbpnzcvYsm2VXeelStNgXCX5Kb7wIgfezamNQ76CJcS1QZSu+iJ790
-    wOspdChno1GMr+71y5UAdQBElGUusO7Or8RAB9io/ijA2uaCvtjLMbU/0zOWtbaB
-    qAAAAXgiBHZ+AAAEAwBGMEQCICeKKe6oidw1ud7jYiinzWAhoQOFFPWd+jokQy53
-    oE7mAiB2u9eBaVSE2J3k21IMML8aoYiX1n7jsCmXXhgPVGOqXDANBgkqhkiG9w0B
-    AQsFAAOCAQEApNg6C1SFm0HyMhQqxrFnfQ3RbQktzaaWnOlhxeEslJMgYLjzM8Mh
-    qcjOPMRIewpN4qOIhOYKM/Gx+TjZs1kjcZk3NUp8XrZ1+a5B7GyiOBifzsg6UJZD
-    wdI4GhE9MXbwVFKJZduW8uTrMXHxGMBHmgeWg2qEVO7OGHSq+xhX9Yc1LSWeO5gk
-    EnSfonccn5qx9VX2cHwS2MQYjPIxS8xaxoKVdduP2RwrO/G9E8Irn3yzh4HFPj19
-    +/otsLAIETHfaN0pjYT57V3TJJpfS+BRo/qEBUBkgV16qTx3k3LX81j1Pv2th16V
-    NeBdIOuRs4f5l747/NR2dPR3g5/4O8B/IA==
-    -----END CERTIFICATE-----
-    
-    -----------------------------------------------------------------------------
-    validFrom -> Mar 11 15:00:19 2021 GMT
-    validTo-> Jun  3 15:00:18 2021 GMT
+        -----BEGIN CERTIFICATE-----
+        MIIEyDCCA7CgAwIBAgIRAMFeoDg8eeNEAwAAAADLz7owDQYJKoZIhvcNAQELBQAw
+        QjELMAkGA1UEBhMCVVMxHjAcBgNVBAoTFUdvb2dsZSBUcnVzdCBTZXJ2aWNlczET
+        MBEGA1UEAxMKR1RTIENBIDFPMTAeFw0yMTAzMTYxOTM1MDBaFw0yMTA2MDgxOTM0
+        NTlaMGgxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH
+        Ew1Nb3VudGFpbiBWaWV3MRMwEQYDVQQKEwpHb29nbGUgTExDMRcwFQYDVQQDEw53
+        d3cuZ29vZ2xlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABFmtG1hqQopw
+        vwO0CIf5xfHU5ci/665r+JmBPDybtzPK7JmT840m7q1/yPcES/a0BqqLTPTNJyZI
+        796ZAFcqbbijggJcMIICWDAOBgNVHQ8BAf8EBAMCB4AwEwYDVR0lBAwwCgYIKwYB
+        BQUHAwEwDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQUS/14JW+kX3ax4OPTiPrRbuIn
+        STwwHwYDVR0jBBgwFoAUmNH4bhDrz5vsYJ8YkBug630J/SswaAYIKwYBBQUHAQEE
+        XDBaMCsGCCsGAQUFBzABhh9odHRwOi8vb2NzcC5wa2kuZ29vZy9ndHMxbzFjb3Jl
+        MCsGCCsGAQUFBzAChh9odHRwOi8vcGtpLmdvb2cvZ3NyMi9HVFMxTzEuY3J0MBkG
+        A1UdEQQSMBCCDnd3dy5nb29nbGUuY29tMCEGA1UdIAQaMBgwCAYGZ4EMAQICMAwG
+        CisGAQQB1nkCBQMwMwYDVR0fBCwwKjAooCagJIYiaHR0cDovL2NybC5wa2kuZ29v
+        Zy9HVFMxTzFjb3JlLmNybDCCAQQGCisGAQQB1nkCBAIEgfUEgfIA8AB2AESUZS6w
+        7s6vxEAH2Kj+KMDa5oK+2MsxtT/TM5a1toGoAAABeDy/udIAAAQDAEcwRQIgVY40
+        WyUysNidcbnrylA4SESze0CQvUWMQKMI4gHzi34CIQDidQzVoDiSGdDqrDp5yKDR
+        6z0zKd1mm0MQjpYoUD+TPgB2AH0+8viP/4hVaCTCwMqeUol5K8UOeAl/LmqXaJl+
+        IvDXAAABeDy/ucoAAAQDAEcwRQIhAOohO9kpFZYdIyC57GAtfHQTXK78ovv3VIVn
+        SP1bhW1qAiANrObfVpLoprzfwqyPpzczU3u1xqIsNIZ+BDPJm+XvbjANBgkqhkiG
+        9w0BAQsFAAOCAQEALRKpgqxd0etTPsoYcQrDReuVq+4x5NdgA31vliZuX7liwPT9
+        3E/5kRtElaeW3G3SqPKBURKAr1AG20WWIeYqv9SXz6kI4hoU5ZEPMbW3L2fetXiq
+        WZM3TAEyiOCYuO1nenmaHCzu3dEzwAts8xqOq6tq0fktZom+V8WRyD3IMnsydMWu
+        GtOUxbIE8T/1JWBMMMJv8NxT3Ia2uv1OK0Zr2WKNpoiziq2YFs4hMhCg3nvSYb7/
+        FXZ0bKq0nU88Ve409XsKe4LkPCRVO725R/NtsfsPtPE8vWYgyUXOSN1tBwLNjIva
+        bTMkzuKeiopJoGQI75BoQejw+Y53N9YRaKCbiA==
+        -----END CERTIFICATE-----
+        
+        {
+        subject: 'C=US\nST=California\nL=Mountain View\nO=Google LLC\nCN=www.google.com',
+        issuer: 'C=US\nO=Google Trust Services\nCN=GTS CA 1O1',
+        subjectaltname: 'DNS:www.google.com',
+        infoAccess: 'OCSP - URI:http://ocsp.pki.goog/gts1o1core\n' +
+            'CA Issuers - URI:http://pki.goog/gsr2/GTS1O1.crt\n',
+        bits: 256,
+        pubkey: &lt;Buffer 04 59 ad 1b 58 6a 42 8a 70 bf 03 b4 08 87 f9 c5 f1 d4 e5 c8 bf eb ae 6b f8 99 81 3c 3c 9b b7 33 ca ec 99 93 f3 8d 26 ee ad 7f c8 f7 04 4b f6 b4 06 aa ... 15 more bytes&gt;,
+        asn1Curve: 'prime256v1',
+        nistCurve: 'P-256',
+        valid_from: 'Mar 16 19:35:00 2021 GMT',
+        valid_to: 'Jun  8 19:34:59 2021 GMT',
+        fingerprint: '82:ED:34:E0:23:5F:0A:96:32:D1:58:9D:1E:66:62:90:34:42:AD:AF',
+        fingerprint256: 'E1:1F:58:0D:A5:75:BB:7F:3E:17:BB:0D:31:EE:2D:E0:C7:20:B6:6A:FF:EE:F6:9C:D2:33:88:7C:D8:AD:54:10',
+        ext_key_usage: [ '1.3.6.1.5.5.7.3.1' ],
+        serialNumber: 'C15EA0383C79E3440300000000CBCFBA',
+        raw: &lt;Buffer 30 82 04 c8 30 82 03 b0 a0 03 02 01 02 02 11 00 c1 5e a0 38 3c 79 e3 44 03 00 00 00 00 cb cf ba 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 30 42 31 ... 1178 more bytes&gt;
+        }
+        true
+        true
+        false
     pall@Ryzen:~/Documents/CodePlus/My Site/Node.js/Crypto$ 
     </pre>
-    
-    
-    
-    
-    
-</details>
-
-
-
-
-
-
-<!--
----------------------------------------------------------------------------------------------
-WRITE DOWN EVERYTHING NEW
----------------------------------------------------------------------------------------------
-- X509Certificate                               - x509 certificate (read-only!)
-    
-    x509.ca                                     // ca = certificate authority certificate certificate that is used to verify if the server's certificate was signed with (it is a root certificate)   
-    x509.subject
-    x509.issuer
-    x509.issuerCertificate
-    x509.infoAccess                             // access info (other cert maybe?)
-    
-    
-    x509.checkEmail()
-    x509.checkHost()
-    x509.checkIP()
-    
-    
-    x509.checkIssued()                          // this certificate was issued by the passed cert 
-    x509.checkPrivateKey()
-    x509.verify()
-    
-    
-    x509.fingerprint
-    x509.fingerprint256
-    
-    
-    x509.serialNumber
-    x509.publicKey
-    
-    
-    x509.keyUsage
-    x509.raw
-    
-    
-    x509.toLegacyObject()
-    x509.toJSON()
-    x509.toString()
-    
-    
-    x509.validFrom
-    x509.validTo
-    
----------------------------------------------------------------------------------------------
-    
-    
-    crypto.verify()     - ugy lehet elmaradt!
-    
-    await import (dynamic import TEST!!!)
-    
-    openssl x509 -req -days 360 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt ???
----------------------------------------------------------------------------------------------
-Documents/CodePlus/My Site/Node.js/Crypto
-?????????????????????????????????????????????????????????????????????????????????????????????
-WRITE DOWN WHAT YOU DON'T UNDERSTAD OR MUST BE TESTED AS QUESTIONS HERE
-?????????????????????????????????????????????????????????????????????????????????????????????
-    - Chain of trust (Document it )
-        - the root certificate is the 'root CA' (ICA Intermediate Certificate Authority is the delegated authority that signs on behave of CA)
-        - root certificate authorities alread set up ICAs
-        
-        - CSR are made to ICAs (Intermediate Certificate Authorities)
-        
-        
-        openssl x509 -req -days 360 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt
-        
-        openssl ca -cert ca.crt -keyfile ca.key -in server.csr -out server.crt
--->
-    
-    
-    
-<!--
-    crypto.generatePrime()
-    crypto.generatePrimeSync()
-    
-    crypto.checkPrime()                         - check is th passed value is a prime
-    crypto.checkPrimeSync()       
-    
-    
-    
-    crypto.diffieHellman()                      - computes the Diffie-Hellman secret 
-    
-    
-    
-    crypto.createECDH()
-    crypto.createDiffieHellmanGroup()
-    
-    
-    crypto.getDiffieHellman()                   - Diffie Hellman group
-    
-    
-    
-- DiffieHellman                                 - utility for creating Diffie-Hellman exchanges 
-    crypto.createDiffieHellman()
-    
-    diffieHellman.computeSecret()               - computes the shared secret (from the other paritie's Public key)
-    diffieHellman.generateKeys()                - What the fuck generate keys ???
-    diffieHellman.getGenerator()                - returns the shared generator value 
-    diffieHellman.getPrime()                    - returns the shared prime value 
-    diffieHellman.getPrivateKey()               - returns the private key 
-    diffieHellman.getPublicKey()                - returns the public key 
-    diffieHellman.setPrivateKey()               - sets the private key 
-    diffieHellman.setPublicKey()                - sets the public key 
-    diffieHellman.verifyError                   - contains errors/warnings 
-    
-- DiffieHellmanGroup                            - same as DiffieHellman with some group
-    
-    
-- ECDH                                          - utility for creating Elliptic Curve Diffie-Hellmane key exchanges 
-    ECDH.convertKey()                           - converts ECDH publicKey
-    ecdh.computeSecret()
-    ecdh.generateKeys()
-    ecdh.getPrivateKey()
-    ecdh.getPublicKey()
-    ecdh.setPrivateKey()
-    
-    
-    
-    
-    crypto.createHash()
-    crypto.createHmac()
-    
-    
-    
-- Hash                                          - utility for creating hash digests 
-    hash.copy()                                 - creates a copy
-    hash.digest()                               - spits out the digest 
-    hash.update()                               - feeds the hash 
-    
-    
-- Hmac                                          - 
-    hmac.digest()
-    hmac.update()
-    
-    
-    
-    
-    crypto.createSign()
-    crypto.createVerify()
-    
-    
-    crypto.sign()
-    crypto.verify()
-    
-- Sign                                          - utility for generating signatures 
-    sign.sing()                                 - calculates the signature on the passed data 
-    sign.update()
-    sign.end()
-    
-- Verify
-    verify.verify()
-    verify.update()
-    verify.end()
-    
-    
-    
-    
-    crypto.createCipheriv()                     - creates a Cipher object 
-    crypto.createDecipheriv()                   - creates a Decipher object 
-    
-    
-    crypto.privateEncrypt()
-    crypto.publicDecrypt()
-    crypto.publicEncrypt()
-    crypto.privateDecrypt()
-    
-    
-- Cipher                                        - extends the Transform Stream 
-                                                    - used to encrypt the data 
-                                                    - can be used in 2 ways (stream / using update() and final())
-    cipher.final()                              - end the cipher 
-                                                - returns the remaining encripted content r 
-    cipher.getAuthTag()                         - returns a Buffer (the authentication tag) when using authenticated encryption mode (GCM, CCM and OCB)
-                                                - should be called when the encryption is fully ended 
-    cipher.setAAD()                             - sets the additional authenticated data authenticated encryption mode (GCM, CCM and OCB)
-                                                - must called before update()
-    cipher.setAutoPadding()                     - enables or disables the auto padding (for block ciphers)
-    cipher.update()                             - updates the cipher with data (feeds the cipher)
-    
-    
-- Decipher                                      - extends the Transform Stream 
-                                                    - used to decrypt the data 
-                                                    - can be used in 2 ways (stream / using update() and final())
-    decipher.final()
-    decipher.setAAD()
-    decipher.setAuthTag()
-    decipher.setAutoPadding()
-    decipher.update()
-    
-    
-    
-- Certificate                               - mechanism used by old Netscape => Won't be tested!
-    Certificate.exportChallenge()
-    Certificate.exportPublicKey()
-    Certificate.verifySpack()
-    
-    
-    
-    - provides cryptographyc functionalities, it's a wrapper of OpenSSL 
-    - careful how to use utf-8 encodings (problem on conversion) = not recommended
-    - when using CCM mode the stream might fail 
-
-
-
-
-
-    crypto.constants
-    
-    
-    crypto.getCiphers() 
-    crypto.getCurvers()
-    crypto.getHashes()
-    
-    
-    crypto.getFips()                            - (Federal Information Processing Standard) some kind of crypto standard 
-                                                - FIPS certified = crypto module is certified by FIPS = FIPS standard compliant 
-                                                - some Institute must validated your crypto module 
-                                                - hardware as well as software level 
-    crypto.setFips()
-    
-    
-    crypto.randomBytes()
-    crypto.randomFill()
-    crypto.randomFillSync()
-    crypto.randomInt()
-    crypto.randomUUID()                         - Universally Unique Identifier
-    
-    
-    crypto.secureHeapUsed()                     - --secure-head-n CLI flags (document them!)
-    
-    
-    crypto.setEngine()                          - path to a library 
-    crypto.timingSafe()                         - time comparison 
-    crypto.webcrypto
-
-
-
-
-    crypto.createSecretKey()                    - creates a key what can be used for symmetric encryptions 
-    
-    
-    crypto.generateKey()                        - asynchronously generates a random key with the 
-    crypto.generateKeySync()
-    
-    
-    crypto.generateKeyPair()
-    crypto.generateKeyPairSync()
-    
-    
-    crypto.createPrivateKey()                   - for these 2 guys i need an origina key material 
-    crypto.createPublicKey()    
-    
-    
-    crypto.hkdf()                               - derive many keys from one key ((Hash based) Key Derivation Function)
-    crypto.hkdfSync()                           
-    
-    
-    crypto.pbkdf2()                             - password-based key deirvation function 2 implementation 
-    crypto.pbkdf2Sync()
-    
-    
-    crypto.scrypt()                             - password based key derivation function 
-    crypto.scryptSync()                         - 
-    
-    
-    
-- KeyObject                                     - represents private or public key (Key API)
-    KeyObject.from()                                - convert cryto key to KeyObject 
-    keyObject.export()                              
-    
-    keyObject.type
-    keyObject.asymmetcirKeyDetails                  - asym key details 
-    keyObject.asymmetcirKeyType                     - 
-    keyObject.symmetricKeySize
-    
-
--->
-
-
-
-
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <hr><hr><hr><hr><hr>
-    
-    
-<h2><u> Title 1 </u></h2>
-<h2 style="color:darkblue;"> Title 1.1 </h2>
-<h3 style="color:darkblue;"> Title 1.1.1 </h3>
-<h4 style="color:darkblue;"> Title 1.1.1.1 </h4>
-    <p> - stuff to learn <mark>keywords_are_highlighted()</mark> bla bla bla </p>
-    <p style="text-decoration:underline;"> - important information is underlined </p>
-    <p style="color:yellow;"> - very important information is written with yellow colors </p>
-    <p style="background-color:yellow;"> - highly important information has yellow background color </p>
-    <div style="background-color:red;">
-        <p> - red background block means not learned or not tested information! </p>
-        <p> - </p>
-    </div>
-    
-    <pre class="syntax">
-SYNTAX :    main syntax
-            <em>literally used </em>
-            <small>literally used optional </small>
-            <prot style="color:#049500;">prototype chain</prot>
-            <strong>required value </strong>
-            <i>optional value </i>
-                - some descriptions will come here (like arguments)
-                - ??? (3 question marks) in syntax means not tested or not learned yet
-                
-            <span class="openable"> this is an openable element<div>
-                <p> - openable elements listed here in paragraphs </p>
-                <p> - </p>
-            </div></span>
-    </pre>
-    
-<details class="example">
-<summary> DEMO </summary>
-    <pre>
-    examples of the current lessons 
-    
-// -----------------------------------------
-
-// -----------------------------------------
-    </pre>
 </details>
     
-    
-    <pre class="cmd">
-    command line demo 
-    </pre>
-    <pre class="formula">
-    formula code (like conversion meter...)
-    </pre>
-<details class="example">
-<summary> Example : </summary>
-<h4 style="color:darkblue;"><u> example title </u></h4>
-    <p> - live tests will come here </p>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    copy of the exaple code 
-        </pre>
-        </details>
-</details>
-<!---------------------------------------------------------------------------------------------------------------------------------->    
-<hr>
-    
-<h2 class="test" style=""><a href="TEST/index.html"> TEST > </a></h2>
+    <br><br>
 </body>
 </html>

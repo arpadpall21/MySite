@@ -86,7 +86,7 @@
     <tr class="15.02">
         <td> <em>openssl</em> genrsa -out <strong>file</strong> <small>[nr:bit]</small> </td>
         <td> 
-            - generates a private-key file (should be <mark>.pem</mark>) (generated key file also contains data to generate its public key) <br>
+            - generates a private-key file (in <mark>.pem</mark> format) <br>
             - (<small>nr:bit</small>) key size in bits (Default <mark>2048</mark> bits)
         </td>
     </tr>
@@ -132,12 +132,12 @@
         </td>
     </tr> 
     <tr class="18.01">
-        <td colspan="2"> certificate </td>
+        <td colspan="2"> certificates </td>
     </tr>
-    <tr class="20.01">
+    <tr class="25.01">
         <td> <em>openssl</em> pkcs12 -export -in <strong>cert</strong> -inkey <strong>privKey</strong> <small>[-certfile <strong>caCert</strong>]</small> <small>[-out <strong>file</strong>]</small> </td>
         <td>  
-            - generates a <mark>.pfx</mark> or <mark>.p12</mark> file (file containing both the private-key and certificate encrypted) <br>
+            - generates a <mark>.pfx</mark> or <mark>.p12</mark> file (file containing both the private-key and certificate) <u>(the generated file is password protected)</u> <br>
             - (<small>-certfile <strong>caCert</strong></small>) additional Certificate Authority certificates <br>
             - (<small>-out <strong>file</strong></small>) stores the <mark>.pfx</mark> or <mark>.p12</mark> file in the specified file 
         </td>
@@ -145,7 +145,7 @@
     <tr class="19.01">
         <td> <em>openssl</em> req <small>[-days <i>nr</i>]</small> -x509 -newkey rsa:<strong>nr:bit</strong> <small>[-nodes]</small> <small>[-sha256]</small> -keyout <strong>privKey</strong> -out <strong>file</strong> </td>
         <td>  
-            - creates a self-signed certificate and private-key pair in <mark>pem</mark> format (will ask for certificate details) <u>(private-key will be encrypted)</u><br>
+            - creates a CA (Certificate Authority) Certificate and Private key pair (in <mark>pem</mark> format) <u>(private-key will be encrypted by default)</u> (the returned certificate is self-signed with the private key) <br>
             - (<small>-days</small>) certificate validity in days (Default: 60) <br>
             - (-newkey rsa:<strong>nr:bit</strong>) defines the size of the private-key in bits <br>
             - (<small>-nodes</small>) does not encrypts the created private-key <br>
@@ -153,39 +153,34 @@
             - (<small>-out <strong>file</strong></small>) stores the certificate in the specified file 
         </td>
     </tr>
-    <tr class="18.02">
-        <td> <em>openssl</em> req -new <small>[-sha256]</small> -key <strong>privKey</strong> <small>[-out <strong>file</strong>]</small> </td>
+    <tr class="20.01">
+        <td> <em>openssl</em> req -new <small>[-sha256]</small> -key <strong>privKey</strong> <small>[-out <strong>csrFile</strong>]</small> </td>
         <td>  
-            - creates a new Certificate Signing Request (CSR) <br>
+            - creates a new Certificate Signing Request (CSR) (in <mark>pem</mark> format) <br>
             - (<small>-sha256</small>) uses sha-256 bit encryption algorithms <br> 
-            - (<small>-out <strong>file</strong></small>) stores the Certificate Signing Request in the specified file 
+            - (<small>-out <strong>csrFile</strong></small>) outputs the Certificate Signing Request in the specified file 
         </td>
     </tr>
-    <tr class="21.02">
+    <tr class="18.03">
         <td> <em>openssl</em> x509 -enddate -noout -in <strong>cert</strong> </td>
         <td> 
             - prints the expiration date of the passed certificate (-in <strong>cert</strong>) 
         </td>
     </tr>
-    <tr class="22.01">
-        <td> <em>openssl</em> rsautl -encrypt -in <strong>file</strong> <small>[-out <strong>file</strong>]</small> -inkey <strong>cert</strong> -certin </td>
+    <tr class="21.01">
         <td> 
-            - uses a certificate (-inkey <strong>cert</strong>) to encrypt the passed file (-in <strong>file</strong>) (which can be decrypted with the private key pair) <br>
-            - (<small>-out <strong>file</strong></small>) stores the encrypted data in the specified file 
+            <em>openssl</em> x509 -req <small>[-days <strong>nr</strong>]</small> -in <strong>csr</strong> -CA <strong>caCer</strong> -CAkey <strong>caPrivKey</strong> -CAcreateserial -out <strong>cerFile</strong>  
         </td>
-    </tr> 
-    <tr class="18.03">
-        <td> <em>openssl</em> x509 -req -in <strong>csr</strong> -signkey <strong>privKey</strong> <small>[-out <strong>file</strong>]</small> </td>
         <td>  
-            - self-signes (with the passed private-key (-signkey <strong>privKey</strong>)) the passed Certificate Signing Request (-in <strong>csr</strong>) <br>
-            - (<small>-out <strong>file</strong></small>) stores the self-signed certificate in the specified file (should be <mark>.pem</mark> or <mark>.cer</mark>)
+            - signs the CSR (Certificate Signing Request) (with the CA certificate and private key)  <br>
+            - (<small>-days <strong>nr</strong></small>) certificate validity in days (Default: <mark>90</mark>)
         </td>
     </tr>
-    <tr class="21.01">
+    <tr class="18.02">
         <td> <em>openssl</em> x509 -in <strong>cer</strong> -text </td>
         <td> 
             - prints the certificate <br>
-            - (<small>-text</small>) prints detailes information about the certificate (expiration, comon name (hostname), certificate itself, etc...)   
+            - (<small>-text</small>) prints certificate details (expiration, comon name (hostname), certificate itself, etc...)   
         </td>
     </tr>
 </table>
@@ -197,7 +192,7 @@
 <h2 style="color:green;"><u> Useful Links : </u></h2>
     <p><a href="https://www.openssl.org/" target="_blank">OpenSSL.org</a></p>
 <h2 style="color:green;"><u> Remember This : </u></h2>
-    <p> - the certificate's <mark>CN</mark> (Common Name) must match the server's hostname </p>
+    <p> - the certificate's <mark>CN</mark> (Common Name) must match the server's hostname (ex: <mark>localhost</mark> / <mark>www.google.com</mark>) (hostname without port) </p>
 <h2 style="color:green;"><u> Description and Demonstration : </u></h2>
     <p> - OpenSSL is a general purpose cryptography library, can be used for general cryptography (encrypting, decrypting, signing, ect.. files) </p> 
     <p> - it's also a toolkit for TLS/SSL (TLS Certificate Singning Request, Certificate, etc...) </p>
@@ -254,30 +249,67 @@
     </pre>
 <hr>
 <!--------------------------------------------------------------------------------------------------------->
-<h3 style="color:darkblue;"><u> Certificate Signing Request / Self-Signed Certificate </u></h3>
-    <ol>
-        <li> Creating a Certificate Signing Request (CSR) </li>
-        <li> Self-Sign the CSR with the private-key </li>
-        <li> creating a <mark>.pfx</mark> file (which contains both the private-key and the certificate) </li>
-    </ol>
+<h2 style="color:darkblue;"><u> Certificates </u></h2>
+<details class="example" open>
+<summary> DEMO </summary>
+<h4 style="color:darkblue;"><u> Creating Certificat Authority -> Certificate Signing Request -> Server's certificate </u></h4>
     <pre class="cmd">
-// creating a Certificat Signing Request ----------------------------------------------
-pall@Ryzen:~/TestDir$ openssl req -new -sha256 -key pallKey.pem -out pallCsr.csr       // creates a certificate signing request created with the associated private-key   
-    You are about to be asked to enter information that will be incorporated
-    into your certificate request.  // ... CSR form
-    
-// self-signing -----------------------------------------------------------------------
-pall@Ryzen:~/TestDir$ openssl x509 -req -in pallCsr.csr -signkey pallKey.pem -out pallCer.cer       // self-signing the csr 'pallcsr.csr'  
-    Signature ok                    // ... Certificate Signed  
-    
-// creating a .pfx file ---------------------------------------------------------------
-pall@Ryzen:~/TestDir$ openssl pkcs12 -export -in pallCer.cer -inkey pallKey.pem -out pallKyes.pfx   // creates a .pfx file (which contains both the private-key and the certificate)   
-    Enter Export Password:          // ... 
+// creating CA (Certificate Authority) Certificate and Private key pair ---------------
+    pall@Ryzen:~/Documents$ openssl req -days 120 -x509 -newkey rsa:2048 -sha256 -keyout caKey.pem -out caCer.cer    
+        // will ask for details...
+    pall@Ryzen:~/Documents$ ls
+        caCer.cer  caKey.pem                                                           // the generated self-signed certificate and private key (CA) Certificate   
+        
+// generate a private key and a CSR ---------------------------------------------------
+    pall@Ryzen:~/Documents$ openssl genrsa -out srvKey.pem 2048                        // generate the privat key 
+        Generating RSA private key, 2048 bit long modulus (2 primes)
+    pall@Ryzen:~/Documents$ openssl req -new -sha256 -key srvKey.pem -out srvCsr.pem   // create CSR with the private key    
+    pall@Ryzen:~/Documents$ ls
+        caCer.cer  caKey.pem  srvCsr.pem  srvKey.pem
+        
+// signs the CSR ----------------------------------------------------------------------
+    pall@Ryzen:~/Documents$ openssl x509 -req -days 360 -in srvCsr.pem -CA caCer.cer -CAkey caKey.pem -CAcreateserial -out srvCer.cer
     </pre>
-    <p> - creating a self-signed certificate and private-key pair </p>
+<h4 style="color:darkblue;"><u> Creating .pfx or .p12 files </u></h4>
     <pre class="cmd">
-    pall@Ryzen:~/TestDir$ openssl req -x509 -newkey rsa:2048 -nodes -sha256 -keyout pallKey.pem -out pallCer.cer    
+    pall@Ryzen:~/Documents$ openssl pkcs12 -export -in srvCer.cer -inkey srvKey.pem -out srvBulk.pfx    
+        Enter Export Password:                                                         // password requested 
+    pall@Ryzen:~/Documents$ ls
+        caCer.cer  caKey.pem  srvCer.cer  srvKey.pem  caCer.srl  srvBulk.pfx  srvCsr.pem    // srvBulk.pfx file cerated 
     </pre>
+<h4 style="color:darkblue;"><u> TLS handshake with public certificates </u></h4>
+    <p> - Client </p>
+    <pre>
+    const https = require('https');
+    const fs = require('fs');
+    
+    const ca = fs.readFileSync('./caCer.cer')                                          // public root certificate (CA certificate)
+    
+    let client = https.get('https://localhost:1000', {ca:ca});                         // setting the root certificate to the client 
+    
+    client.on('response', function(incMsg){
+        incMsg.on('data', (chunk) => console.log( chunk.toString()))
+    })    
+    </pre>
+    <p> - Server </p>
+    <pre>
+    const https = require('https');
+    const fs = require('fs');
+    
+    let cert = fs.readFileSync('./srvCer.cer');                                        // certificate signed with 'caCer.cer' CA certificate 
+    let key = fs.readFileSync('./srvKey.pem');
+    
+    let srv = https.createServer({cert:cert, key:key});                                // setting the certificate and key to the server 
+    
+    srv.on('request', function(incMsg, srvResp){
+        srvResp.end('srv response')
+    })
+    
+    srv.listen(1000, 'localhost', () => console.log('srv is listening!'));    
+    </pre>
+    
+    
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> creating Certificate Signing Request filet then self-sign it TEST </u></h4>
@@ -346,11 +378,6 @@ pall@Ryzen:~/TestDir$ ls
     janVit  pallCert.cer  pallCsr.csr  pallKey.pem  pall.pfx
 pall@Ryzen:~/TestDir$     
     </pre>
-    
-    
-    
-    
-    
 </details>
 
 <br><br>
