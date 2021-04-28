@@ -609,18 +609,30 @@ the
 </details>    
 <!-------------------------------------------------------------------------------------------------------------------------------->    
 <hr>
-<h2><u> Objects are mutable but <b>primitives are NOT!</b></u></h2>
-    <p> - JavaScript Objects are addressed by reference not by value therefore they are mutable </p>
+<h2><u> Primitives are Unmutable VS Objects are mutable </u></h2>
+    <p> - Objects are addressed by reference not by value therefore they are mutable </p>
+    <p style="text-indent: 40px;"> - the same underlying object can be referenced by multiple variables </p>
+    <p style="text-indent: 40px;"> - a primitive can be referenced by a single variable </p>
     <pre>
-    var x = {prop:original_Value};                  
-    var y = x;                                      // -! "y" BECOMES "x" (they are the same object)
-         x.prop = modified_Value;                   // modifying the original "x" object                    
-    y.prop;                                         // -> "modified_Value "     // -! containts te modified data because they are the same objects!
-                            
-    var a = original_Value;                         
-    var b = a;                                      // -! "b" is a copy of "a" (they become different primitives, each is unique)
-        a = modified_Value;                         // modifying the original "a" primitive
-    b;                                              // -> "original_Value"      // -! value is not modified becasue it is a different primitive value now!
+// pbjects mutation -------------------------------------------------------------------
+    var obj1 = {p1:'origVal'};                  
+    var obj2 = obj1;                                                                   // both varialbes ('obj1' and 'obj2') reference the same underlying object from now 
+    
+    obj2.p1 = 'modVal';                                                                // the same underlying object is modified 
+    obj1.p2 = 'newVal';
+    
+    obj1;                                                                              // -> {p1:'modVal', p2:'newVal'}     // same object 
+    obj2;                                                                              // -> {p1:'modVal', p2:'newVal'}
+    
+// primitive unmutability -------------------------------------------------------------
+    var p1 = 21;
+    var p2 = p1;                                                                       // a copy is made so each variables have their unique primitives now    
+    
+    p1 = 11;                                                                           // each variables hold their unique values  
+    p2 = 31;
+    
+    p1;                                                                                // -> 11                             // different primitives   
+    p2;                                                                                // -> 31
     </pre>
 <details class="example">
     <summary> Example : </summary> 
