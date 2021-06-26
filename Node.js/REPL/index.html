@@ -9,149 +9,250 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> REPL (ver 3.2) </h1>
-    <p> Updated ( 2019-09-01 )</p>
+<h1> REPL (ver 4.0.0) </h1>
+    <p> Updated ( 2019-09-01 / 2021-06-09 )</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">Node.js></a> REPL   
     </p>
 <table class="table">
-<caption> REPL Commands and Key Combinations </caption>
-    <thead>
+<caption> 
+    REPL Commands and Key Combinations 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <th> Command / Key Combination </th>
+        <th style="width:30%;"> Command / Key Combination </th>
         <th> Description </th>
     </tr>
-    </thead>
-    <tbody>
-    <tr>
+    <tr class="30.01">
         <td> _ </td>
-        <td title="updated : 2019-09-05"> returns the most recently evaluated expression </td>
+        <td> 
+            - returns the most recently evaluated expression 
+            <span id="browserSupport" title="Updated: 2021-06-09">
+                <span><i class="fab fa-node-js"></i> 0.1.14 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="30.02">
         <td> _error </td>
-        <td> returns the last seen (thrown) error
+        <td> 
+            - returns the last seen (thrown) error
             <span id="browserSupport" title="updated : 2019-09-05">
                 <span><i class="fab fa-node-js"></i> 9.8.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.01">
         <td> .break </td>
-        <td title="updated : 2019-09-05"> abort further input or processing ( <mark style="background-color:lightskyblue;">Ctrl + C</mark> ) </td>
+        <td> 
+            - aborts further input or processing ( <mark style="background-color:lightskyblue;">Ctrl + C</mark> ) 
+            <span id="browserSupport" title="Updated: 2021-06-09">
+                <span><i class="fab fa-node-js"></i> 0.1.14 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td> .clear </td>
-        <td title="updated : 2019-09-05"> resets (deletes) the REPL <mark>context</mark> property (empties REPL local scope) <u>(works only if REPL was launched by a Node.js process [TESTED : 2019-09-05]</u>)    </td>
+        <td> 
+            - resets (deletes) the REPL <mark>context</mark> property (empties REPL local scope) <u>(works only if REPL was launched by a Node.js process [TESTED : 2019-09-05]</u>)    
+            <span id="browserSupport" title="Updated: 2021-06-09">
+                <span><i class="fab fa-node-js"></i> 0.1.14 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="20.01">
         <td> .editor </td>
-        <td title="updated : 2019-09-05"> enter editor mode (multiline expressions can be typed) (<mark style="background-color:lightskyblue;">Ctrl + D</mark> = finish | <mark style="background-color:lightskyblue;">Ctrl + C</mark> = cancel)  </td>
+        <td> 
+            - enter editor mode (multiline expressions can be typed) (<mark style="background-color:lightskyblue;">Ctrl + D</mark> = finish | <mark style="background-color:lightskyblue;">Ctrl + C</mark> = cancel)  
+            <span id="browserSupport" title="Updated: 2021-06-09">
+                <span><i class="fab fa-node-js"></i> 0.1.14 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td> .exit </td>
-        <td title="updated : 2019-09-05"> closes the I/O stream, causing REPL to exit ( <mark style="background-color:lightskyblue;">Ctrl + C</mark> ) </td>
+        <td> 
+            - closes the I/O stream, causing REPL to exit ( <mark style="background-color:lightskyblue;">Ctrl + C</mark> ) 
+            <span id="browserSupport" title="Updated: 2021-06-09">
+                <span><i class="fab fa-node-js"></i> 0.1.14 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> .help </td>
-        <td title="updated : 2019-09-05"> show available REPL commands </td>
+        <td> 
+            - show available REPL commands 
+            <span id="browserSupport" title="Updated: 2021-06-09">
+                <span><i class="fab fa-node-js"></i> 0.1.14 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="35.01">
         <td> .load <strong>file|URL</strong> </td>
-        <td title="updated : 2019-09-05"> loads the targeted file into the current REPL session </td>
+        <td> 
+            - loads the targeted file into the current REPL session 
+            <span id="browserSupport" title="Updated: 2021-06-09">
+                <span><i class="fab fa-node-js"></i> 0.1.14 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="35.02">
         <td> .save <strong>file|URL</strong> </td>
-        <td title="updated : 2019-09-05"> saves the current REPL session to the targeted file </td>
+        <td> 
+            - saves the current REPL session to the targeted file 
+            <span id="browserSupport" title="Updated: 2021-06-09">
+                <span><i class="fab fa-node-js"></i> 0.1.14 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="40.01">
         <td colspan="2"> Key Combinations </td>
     </tr>
-    <tr>
+    <tr class="40.02">
         <td> Ctrl + C </td>
-        <td title="updated : 2019-09-05"> <u>one press</u> = abort further input or processing (same as <mark>.break</mark> command)  |  <u>second press</u> = exit REPL (same as <mark>.exit</mark> command) </td>
+        <td> 
+            - <u>one press</u> = abort further input or processing (same as <mark>.break</mark> command)  |  <u>second press</u> = exit REPL (same as <mark>.exit</mark> command) 
+            <span id="browserSupport" title="Updated: 2021-06-09">
+                <span><i class="fab fa-node-js"></i> 0.1.14 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="40.03">
         <td> Ctrl + D </td>
-        <td title="updated : 2019-09-05"> closes the I/O stream, causing REPL to exit (same as <mark>.exit</mark> command) </td>
+        <td> 
+            - closes the I/O stream, causing REPL to exit (same as <mark>.exit</mark> command) 
+            <span id="browserSupport" title="Updated: 2021-06-09">
+                <span><i class="fab fa-node-js"></i> 0.1.14 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="40.04">
         <td> Tab </td>
-        <td title="updated : 2019-09-05"> displays global and local scope variables  </td>
+        <td> 
+            - displays global and local scope variables  
+            <span id="browserSupport" title="Updated: 2021-06-09">
+                <span><i class="fab fa-node-js"></i> 0.1.14 </span>
+            </span>
+        </td>
     </tr>
-    </tbody>
 </table>
+    <br>
 <table class="table">
-<caption> Methods and Events </caption>
+<caption> 
+    Methods and Events 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <th> Method / Event </th>
+        <th style="width:30%;"> Method / Event </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="25.01">
         <td> <strong>replServer</strong>.clearBufferedCommand() </td>
-        <td> this suppose to clear buffered commands (clear custom added commands as I understod that) but it's not working, maybe I'm not using as it sholud be [TESTED : 2019-09-05] <a href="https://nodejs.org/dist/latest-v12.x/docs/api/repl.html#repl_replserver_clearbufferedcommand" taget="_blanc">Node.js 'clearBufferedCommand()' method</a>  
+        <td> 
+            - this suppose to clear buffered commands (clear custom added commands as I understod that) but it's not working, maybe I'm not using as it sholud be [TESTED : 2019-09-05] <a href="https://nodejs.org/dist/latest-v12.x/docs/api/repl.html#repl_replserver_clearbufferedcommand" target="_blank">Node.js 'clearBufferedCommand()' method</a>  
             <span id="browserSupport" title="updated : 2019-09-05">
                 <span><i class="fab fa-node-js"></i> 9.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td> <strong>replServer</strong>.context </td>
-        <td> holds the properties of the current replServer (this is where we can add properties to the current replServer)
+        <td> 
+            - holds the properties of the current replServer (this is where we can add properties and methods to the REPL environment) 
             <span id="browserSupport" title="updated : 2019-09-05">
                 <span><i class="fab fa-node-js"></i> 0.1.19 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td>  
-            <strong>replServer</strong>.defineCommand(<strong>cmdName:str</strong>, <strong>fn(arg)</strong>) <br>
-            <strong>replServer</strong>.defineCommand(<strong>cmdName:str</strong>, <small>{help:<strong>helpMessage:str</strong>, <small>action:</small><strong>fn(arg)</strong>}</small>)
+            <strong>replServer</strong>.defineCommand(<strong>cmd:str</strong>, <strong>fn</strong>) 
         </td>
-        <td> defines a custom REPL command (command called in REPL <mark>.<strong>cmdName</strong></mark>)
+        <td> 
+            - defines a custom REPL command (function called in REPL when <mark>.<strong>cmd</strong> entered </mark>)
             <span id="browserSupport" title="updated : 2019-09-05">
                 <span><i class="fab fa-node-js"></i> 0.3.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+        <tr class="15.02"><td></td><td></td></tr>
+    <tr class="15.03">
+        <td>  
+            <strong>replServer</strong>.defineCommand(<strong>cmd:str</strong>, <i class="openable">option:obj<div>
+                <p> help: <strong>str</strong> - message when <mark>.help</mark> entered in REPL </p>
+                <p> action: <strong>fn</strong> - function to execute when the command is entered </p>
+            </div></i>) 
+        </td>
+        <td> </td>
+    </tr>
+    <tr class="20.01">
         <td> <strong>replServer</strong>.displayPrompt(<i>bol</i>) </td>
-        <td> prints the prompt line in REPL (when tested the argument does nothing maybe I'm not using it as it sholud be used [TESTED : 2019-09-05])
+        <td> 
+            - prints the prompt line in REPL (when tested the argument does nothing maybe I'm not using it as it sholud be used [TESTED : 2019-09-05])
             <span id="browserSupport" title="updated : 2019-09-05">
                 <span><i class="fab fa-node-js"></i> 0.1.91 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="30.01">
         <td> <strong>replServer</strong>.setupHistory(<strong>file|URL</strong>, <strong>fr(err, replServer)</strong>) </td>
-        <td> initializes a history log file (history log file = data never overridden, new data added on top) for this REPL instance
+        <td> 
+            - initializes a history log file (history log file = data never overridden, new data added on top) for this REPL instance
             <span id="browserSupport" title="updated : 2019-09-05">
                 <span><i class="fab fa-node-js"></i> 11.10.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>repl</strong>.start(<i>option:obj|prompt:str</i>) </td>
-        <td> creates a replServer instance and launches REPL (<i>option:obj</i> not fully tested : 2019-09-05)
-            <span id="browserSupport" title="updated : 2019-09-05">
+    <tr class="05.01">
+        <td> 
+            <strong>repl</strong>.start(<i class="openable">option:obj|prompt:str<div>
+                <p> <i>prompt:str</i> </p>
+                <p> - prompt to display (Default: <mark>&gt;</mark>) </p>
+                <hr>
+                <p> <i>option:obj</i> </p>
+                <p> prompt: <strong>str</strong> - pormpt to display (Default: <mark>&gt;</mark>) </p>
+                <p> input: <strong>readableStream</strong> - stream from which REPL input will be read (Default: <mark>process.stdin</mark>) </p>
+                <p> output: <strong>writableStream</strong> - stream to which REPL outputs (Default: <mark>process.stdout</mark>) </p>
+                <p> terminal: <strong>bol</strong> - if <mark>true</mark> the output is treated as TTY terminal </p>
+                <p> eval: <strong>fn</strong> - function used to evaluate each line of input </p>
+                <p> useColors: <strong>bol</strong> - if <mark>true</mark> ANSI color styles REPL output </p>
+                <p> useGlobal: <strong>bol</strong> - uses the <mark>global</mark> object instead of creating a separate REPL context (Default: <mark>false</mark>) </p>
+                <p> ignoreUndefined: <strong>bol</strong> - if <mark>true</mark> undefined utput is not printed (Default: <mark>false</mark>) </p>
+                <p> writer: <strong>fn</strong> - function to invoke to format the output (Default: <mark>util.inspect()</mark>) </p>
+                <p> completer: <strong>fn</strong> - optional custom tab auto completition </p>
+                <p> replMode: <strong>symbol</strong> - strict or 'sloppy' mode each line (possible values: <mark>repl.REPL_MODE_SLOPPY</mark> or <mark>repl.REPL_MODE_STRICT</mark> symbols) </p>
+                <p> breakEvalOnSiging: <strong>bol</strong> - stops evaluating the current piece of code when <mark>SIGINT</mark> is received (Default: <mark>false</mark>) </p>
+                <p> preview: <strong>bol</strong> - autocomplete and preview in REPl (Default: <mark>true</mark>) </p>
+            </div></i>) 
+        </td>
+        <td> 
+            - creates and returns a <strong>replServer</strong> instance and launches REPL 
+            <span id="browserSupport" title="Updated: 2021-06-09">
                 <span><i class="fab fa-node-js"></i> 0.1.19 </span>
-                <span><i class="fab fa-node-js"></i> 5.8.0 <i>option:obj|prompt:str</i> optional </span>
+                <span class="openable"> more... <div>
+                    <p> v5.8.0</p>
+                    <p> - the <i>option:obj</i> is optional </p>
+                    <p> v13.4.0 / 12.17.0 </p>
+                    <p> - the <i>preview</i> option available </p>
+                </div></span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="35.01">
         <td colspan="2"> Events </td>
     </tr>
-    <tr>
+    <tr class="35.02">
         <td> <strong>replServer.listener</strong><em>(</em>'exit', <strong>fn</strong><em>)</em> </td>
-        <td> event emitted when this REPL instance exit
+        <td> 
+            - event emitted when this REPL instance exit
             <span id="browserSupport" title="updated : 2019-09-05">
                 <span><i class="fab fa-node-js"></i> 0.7.7 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="35.03">
         <td> <strong>replServer.listener</strong><em>(</em>'reset', <strong>fn(replContext)</strong><em>)</em> </td>
-        <td> event emitted when the repl context resets (when the <mark>.clear</mark> command is received)
+        <td> 
+            - event emitted when the repl context resets (when the <mark>.clear</mark> command is received)
             <span id="browserSupport" title="updated : 2019-09-05">
                 <span><i class="fab fa-node-js"></i> 0.11.0 </span>
             </span>
@@ -250,23 +351,9 @@
 <!------------------------------------------------------------------------------------------------------------------------>
 <hr>
 <h2><u> Commands and Key Combinations in REPL </u></h2>
-    <pre class="syntax">
-<span style="color:lightgreen;">// REPL Commands ----------------------------------------------------------------</span>
-    .break                                                                       // abort further input or processing ( <mark style="background-color:lightskyblue;">Ctrl + C</mark> )   
-    .clear                                                                       // resets (deletes) the REPL <mark>context</mark> property (empties REPL local scope) <u>(works only if REPL was launched by a Node.js process [TESTED : 2019-09-05]</u>)   
-    .exit                                                                        // closes the I/O stream, causing REPL to exit ( <mark style="background-color:lightskyblue;">Ctrl + C</mark> )
-    .help                                                                        // show available REPL commands 
-    .save <strong>file|URL</strong>                                                               // saves the current REPL session to the targeted file 
-    .load <strong>file|URL</strong>                                                               // loads the targeted file into the current REPL session 
-    .editor                                                                      // enter editor mode (multiline expressions can be typed) (<mark style="background-color:lightskyblue;">Ctrl + D</mark> = finish | <mark style="background-color:lightskyblue;">Ctrl + C</mark> = cancel)   
-    _                                                                            // returns the most recently evaluated expression
-    _error                                                                       // returns the last seen (thrown) error 
-    
-<span style="color:lightgreen;">// Key Combinations -------------------------------------------------------------</span>
-    Ctrl + C                                                                     // <u>one press</u> = abort further input or processing (same as <mark>.break</mark> command)  |  <u>second press</u> = exit REPL (same as <mark>.exit</mark> command)    
-    Ctrl + D                                                                     // closes the I/O stream, causing REPL to exit (same as <mark>.exit</mark> command)
-    Tab                                                                          // displays global and local scope variables 
-    </pre>
+<h3 style="color:darkblue;"><u> The <mark>.help</mark> / <mark>.exit</mark> / <mark>.clear</mark> / <mark>.editor</mark> / <mark>.break</mark> / <mark>_</mark> / <mark>_error</mark> / <mark>.load</mark> / <mark>.save</mark> commands and <mark>Ctrl + C</mark> / <mark>Ctrl + D</mark> / <mark>Tab</mark> key combinations </u></h3>
+<details class="example">
+<summary> DEMO </summary>
     <pre class="cmd">
     PS D:\safe\code +\my site\03 improuve\learn webdesign\04 node.js\repl\03 .save .load TEST> node                  
         Welcome to Node.js v12.4.0.
@@ -315,6 +402,7 @@
         > .exit                                                                  // exit REPL 
         PS D:\safe\code +\my site\03 improuve\learn webdesign\04 node.js\repl\03 .save .load TEST>
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> REPL Commands <mark>.clear</mark> / <mark>.help</mark> / <mark>.editor</mark> / <mark>.exit</mark> TEST </u></h4> 
@@ -472,32 +560,9 @@
 <!------------------------------------------------------------------------------------------------------------------------>
 <hr>
 <h2><u> Methods and Events </u></h2>
-<h2 style="color:darkblue;"><u> Methods <mark>start()</mark> / <mark>context</mark> / <mark>defineCommand()</mark> / <mark>displayPrompt()</mark> / <mark>clearBufferedCommand()</mark> / <mark>setupHistory()</mark> </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>repl</strong>.start(<i>option:obj|prompt:str</i>)                                    // creates a replServer instance and launches REPL (<i>option:obj</i> not fully tested : 2019-09-05)   
-                - <i>prompt:str</i> : prompt to display (Default: <mark>&gt; </mark>)  
-                - <i>option:obj</i> {
-                    prompt: <strong>str</strong>                    // prompt to display (Default: <mark>&gt; </mark>)  
-                    input: <strong>readableStream</strong>          // REPL input (Default : <mark>process.stdin</mark>)
-                    output: <strong>writableStream</strong>         // REPL output (Default : <mark>process.stdout</mark>)  
-                    eval: <strong>fn</strong>                       // evaluates the given input line (custom REPL evaluator function can replace the defalut one)
-                    <a href="https://nodejs.org/dist/latest-v12.x/docs/api/repl.html#repl_repl_start_options" target="_blanc">other properties...</a>
-                    
-            <strong>replServer</strong>.context                                                   // holds the properties of the current replServer (this is where we can add properties to the current replServer)   
-            
-            <strong>replServer</strong>.defineCommand(<strong>cmdName:str</strong>, <strong>fn(arg)</strong>)                       // defines a custom REPL command (command called in REPL <mark>.<strong>cmdName</strong></mark>)   
-            <strong>replServer</strong>.defineCommand(<strong>cmdName:str</strong>, <small>{help:<strong>helpMessage:str</strong>, <small>action:</small><strong>fn(arg)</strong>}</small>)                 
-                - <strong>cmdName:str</strong> : keyword to call this custom command in REPL (without <mark>.</mark>)
-                - <small>{help:<strong>helpMessage:str</strong>,</small>        // command description when <mark>.help</mark> entered
-                   <small>action:<strong>fn(arg)</strong>}</small></small>              // function to be executed when the command is called (can have an argument)
-                - <strong>fn(arg)</strong>                       // function to be executed when the command is called (can have an argument)
-                
-            <strong>replServer</strong>.displayPrompt(<i>bol</i>)                                        // prints the prompt line in REPL (when tested the argument does nothing maybe I'm not using it as it sholud be used [TESTED : 2019-09-05])   
-            
-            <strong>replServer</strong>.clearBufferedCommand()                                    // this suppose to clear buffered commands (clear custom added commands as I understod that) but it's not working, maybe I'm not using as it sholud be [TESTED : 2019-09-05] <a href="https://nodejs.org/dist/latest-v12.x/docs/api/repl.html#repl_replserver_clearbufferedcommand" taget="_blanc">Node.js 'clearBufferedCommand()' method</a>   
-            
-            <strong>replServer</strong>.setupHistory(<strong>file|URL</strong>, <strong>fr(err, replServer)</strong>)               // initializes a history log file (history log file = data never overridden, new data added on top) for this REPL instance 
-    </pre>
+<h3 style="color:darkblue;"><u> Methods <mark>start()</mark> / <mark>context</mark> / <mark>defineCommand()</mark> / <mark>displayPrompt()</mark> / <mark>clearBufferedCommand()</mark> / <mark>setupHistory()</mark> </u></h3>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const repl = require('repl');
     
@@ -527,6 +592,7 @@ SYNTAX :    <strong>repl</strong>.start(<i>option:obj|prompt:str</i>)           
         replServer                                                               // current replServer instance 
     });
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue"><u> <mark>start()</mark> / <mark>context</mark> TEST </u></h4>
@@ -703,11 +769,9 @@ SYNTAX :    <strong>repl</strong>.start(<i>option:obj|prompt:str</i>)           
 </details>
 <!------------------------------------------------------------------------------------------------------------------------>
 <hr>
-<h2 style="color:darkblue;"><u> Events <mark>exit</mark> / <mark>reset</mark> </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>replServer.listener</strong><em>(</em>'exit', <strong>fn</strong><em>)</em>                                      // event emitted when this REPL instance exit  
-            <strong>replServer.listener</strong><em>(</em>'reset', <strong>fn(replContext)</strong><em>)</em>                        // event emitted when the repl context resets (when the <mark>.clear</mark> command is received)   
-    </pre>
+<h3 style="color:darkblue;"><u> Events <mark>exit</mark> / <mark>reset</mark> </u></h3>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const repl = require('repl');
      
@@ -718,6 +782,7 @@ SYNTAX :    <strong>replServer.listener</strong><em>(</em>'exit', <strong>fn</st
         ctx                                                                      // context of this REPL session ('replServer.context')
     });                                            
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>exit</mark> / <mark>reset</mark> events TEST </u></h4>

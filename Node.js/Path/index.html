@@ -9,7 +9,7 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Path (ver 3.2) </h1>
+<h1> Path (ver 4.0.0) </h1>
     <p> Updated ( 2019-09-09 )</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">Node.js></a> Path
@@ -23,44 +23,59 @@
                         <em>└──────┴──────────────┴──────┴─────┘</em>                                   <em>└──────┴──────────────┴──────┴─────┘</em>
     </pre>
 <table class="table">
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
         <th> Method / Property  </th>
         <th> Description </th>
     </tr>
-    <tr>
-        <td> <strong>path</strong>.basename(<strong>path:str</strong>, <i>fileExt:str</i>) </td>
-        <td> returns the last portion of the given path (no path segment separator trailing) (<i>fileExt:str</i> = removes this from the end of the returned result)   
+    <tr class="10.02">
+        <td> 
+            <strong>path</strong>.basename(<strong>path:str</strong>, <i class="openable">exclude:str<div>
+                <p> - this string part will be excluded from the <u>end</u> returned result </p>
+            </div></i>) 
+        </td>
+        <td> - returns the last portion of the <strong>path</strong> (part after the last path segment separator)
             <span id="browserSupport" title="updated : 2019-09-10">
                 <span><i class="fab fa-node-js"></i> 0.1.25 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="06.02">
         <td> <strong>path</strong>.delimiter </td>
-        <td> returns the <u>path-delimiter</u> in a string for the current platform (windows = <mark>;</mark> | posix = <mark>:</mark>)
+        <td> - returns the <u>path-delimiter</u> in a string for the current platform (windows = <mark>;</mark> | posix = <mark>:</mark>)
             <span id="browserSupport" title="updated : 2019-09-10">
                 <span><i class="fab fa-node-js"></i> 0.9.3 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>path</strong>.dirname(<strong>path:str</strong>) </td>
-        <td> returns the directory path of the passed <u>file path</u> in a string (Ex: file path = <mark>C:/Program Files/node/node.js</mark>)
+    <tr class="10.01">
+        <td> <strong>path</strong>.dirname(<strong>filePath:str</strong>) </td>
+        <td> - returns the directory path of the passed <u>file path</u> in a string (Ex: file path = <mark>C:/Program Files/node/node.js</mark>)
             <span id="browserSupport" title="updated : 2019-09-10">
                 <span><i class="fab fa-node-js"></i> 0.1.16 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>path</strong>.extname(<strong>path:str</strong>) </td>
-        <td> returns the file extension of the file path (portion after the <u>last</u> <mark>.</mark>(period) character in the last portions of the path)
+    <tr class="10.03">
+        <td> <strong>path</strong>.extname(<strong>filePath:str</strong>) </td>
+        <td> returns the file extension in a string of the <strong>filePath</strong> (portion after the <u>last</u> <mark>.</mark>(period) character in the last portions of the path)  
             <span id="browserSupport" title="updated : 2019-09-10">
                 <span><i class="fab fa-node-js"></i> 0.1.25 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>path</strong>.format(<em>{dir:<strong>str</strong>, root:<strong>str</strong>, base:<strong>str</strong>, name:<strong>str</strong>, ext:<strong>str</strong>}</em>) </td>
+    <tr class="20.02">
+        <td> 
+            <strong>path</strong>.format(<i class="openable">option:obj<div>
+                <p> dir: <strong>str</strong> - if provided <mark>root</mark> ignored </p>
+                <p> root: <strong>str</strong> </p>
+                <p> base: <strong>str</strong> - if provided <mark>name</mark> and <mark>ext</mark> ignored </p>
+                <p> name: <strong>str</strong> </p>
+                <p> ext: <strong>str</strong> </p>
+            </div></i>) 
+        </td>
         <td> - returns a path string from the passed object's elements <br>
              - opposite of the <mark>parse()</mark> method 
             <span id="browserSupport" title="updated : 2019-09-10">
@@ -68,34 +83,34 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="30.02">
         <td> <strong>path</strong>.isAbsolute(<strong>path:str</strong>) </td>
-        <td> returns <mark>true</mark> if the passed path is an absolute path, otherwise returns <mark>false</mark> (<mark>""</mark>(zero-length string) = <mark>false</mark>)
+        <td> - returns <mark>true</mark> if the passed path is an absolute path, otherwise returns <mark>false</mark> (<mark>""</mark>(zero-length string) = <mark>false</mark>)
             <span id="browserSupport" title="updated : 2019-09-11">
                 <span><i class="fab fa-node-js"></i> 0.11.2 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.02">
         <td> <strong>path</strong>.join(<i>path:str, ...</i>) </td>
         <td> - joins path segments together by using the platform specific path segment separator <br>
-             - normalizes the joined path with the <mark>normalize()</mark> method
+             - normalizes the joined path with the <mark>normalize()</mark> method 
             <span id="browserSupport" title="updated : 2019-09-11">
                 <span><i class="fab fa-node-js"></i> 0.1.16 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.01">
         <td> <strong>path</strong>.normalize(<strong>path:str</strong>) </td>
         <td> - normalizes (resolves) the <mark>..</mark> character as parent directory and the <mark>.</mark> character as current directory (<mark>""</mark>(zero-length string) same as <mark>.</mark>) <br>
              - multiple path segment separators will be reduced to one platform specific (<mark>/</mark> on POSIX and <mark>\</mark> on windows) <br>
-             - trailing separators are reserved  
+             - trailing separators are preserved  
             <span id="browserSupport" title="updated : 2019-09-11">
                 <span><i class="fab fa-node-js"></i> 0.1.23 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.01">
         <td> <strong>path</strong>.parse(<strong>path:str</strong>) </td>
         <td> - returns an object whose properties represent the passed path's elements (object properties : <mark>dir</mark> / <mark>root</mark> / <mark>base</mark> / <mark>name</mark> / <mark>ext</mark>) <br>
              - opposite of the <mark>format()</mark> method
@@ -104,25 +119,30 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.02">
         <td> <strong>path</strong>.posix<strong>.pathMethod</strong> </td>
-        <td> implements the following method for posix platforms
+        <td> - implements the following method for posix platforms
             <span id="browserSupport" title="updated : 2019-09-10">
                 <span><i class="fab fa-node-js"></i> 0.11.15 </span>
+                <span class="openable"> more... <div>
+                    <p> 15.3.0 </p>
+                    <p> - directly can be required as <mark>path/posix</mark> </p>
+                </div></span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="30.01">
         <td> <strong>path</strong>.relative(<strong>fromPath:str</strong>, <strong>toPath:str</strong>) </td>
-        <td> returns the relative path to the <strong>toPath:str</strong> assuming the <strong>fromPath:str</strong> as current directory (<mark>""</mark>(zero-length string) same as current directory's absolute path)
+        <td> 
+            - returns the path from the <strong>fromPath</strong> to the <strong>toPath</strong> location in a string (<mark>""</mark>(zero-length string) = current directory)  
             <span id="browserSupport" title="updated : 2019-09-11">
                 <span><i class="fab fa-node-js"></i> 0.5.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.03">
         <td> <strong>path</strong>.resolve(<i>path:str, ...</i>) </td>
-        <td> - joins path segments together by resolving them into an <u>absolute path</u> (no path segment separator trailing allowed) <br>
+        <td> - joins path segments together by resolving them into an <u>absolute path</u> (trailing path segment separators are removed) <br>
              - path segments are processed from left to right until an absolute path is constructed <br>
              - if no arguments are passed the current absolute path will be returned <br>
              - normalizes the returned absolute path with the <mark>normalize()</mark> method
@@ -131,32 +151,36 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="06.01">
         <td> <strong>path</strong>.sep </td>
-        <td> returns the <u>path segment separator</u> in a string for the current platform (windows = <mark>\</mark> | posix = <mark>/</mark>)
+        <td> - returns the <u>path segment separator</u> in a string for the current platform (windows = <mark>\</mark> | posix = <mark>/</mark>)
             <span id="browserSupport" title="updated : 2019-09-10">
                 <span><i class="fab fa-node-js"></i> 0.7.9 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="30.03">
         <td> <strong>path</strong>.toNamespacedPath(<strong>path:str</strong>) </td>
-        <td> returns the equivalent namespace-prefixed path for the given path, <u>(only for Windows systems! on POSIX returns the path unmodified)</u>
+        <td> - returns the equivalent namespace-prefixed path for the given path, <u>(only for Windows systems! on POSIX returns the path unmodified)</u>  
             <span id="browserSupport" title="updated : 2019-09-11">
                 <span><i class="fab fa-node-js"></i> 9.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> <strong>path</strong>.win32<strong>.pathMethod</strong> </td>
-        <td> implements the following method for windows platforms
+        <td> - implements the following method for windows platforms  
             <span id="browserSupport" title="updated : 2019-09-10">
                 <span><i class="fab fa-node-js"></i> 0.11.15 </span>
+                <span class="openable"> more... <div>
+                    <p> 15.3.0 </p>
+                    <p> - directly can be required as <mark>path/win32</mark> </p>
+                </div></span>
             </span>
         </td>
     </tr>
 </table>
-<h2 style="color:green;"><u> Notes : </u></h2>
+<br>    
     <details class="example" id="notes">
     <summary> Notes :</summary>
     </details>
@@ -169,14 +193,9 @@
     <p> - Windows and POSIX uses different path forms, Node.js detects the current platform and uses the current platform specific path methods </p>
     <p> - we can explicitly use windows specific methods through the <mark>win32</mark> property and POSIX specific methods through the <mark>posix</mark> property </p>
 <h2><u> Methods and Properties </u></h2>
-<h2 style="color:darkblue;"><u> the <mark>win32</mark> / <mark>posix</mark> / <mark>sep</mark> / <mark>delimiter</mark> properties </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>path</strong>.win32<strong>.pathMethod</strong>                                                // implements the following method for windows platforms    
-            <strong>path</strong>.posix<strong>.pathMethod</strong>                                                // implements the following method for posix platforms    
-            
-            <strong>path</strong>.sep                                                             // returns the <u>path segment separator</u> in a string for the current platform (windows = <mark>\</mark> | posix = <mark>/</mark>)
-            <strong>path</strong>.delimiter                                                       // returns the <u>path-delimiter</u> in a string for the current platform (windows = <mark>;</mark> | posix = <mark>:</mark>)   
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>win32</mark> / <mark>posix</mark> / <mark>sep</mark> / <mark>delimiter</mark> properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const path = require('path');
     
@@ -192,6 +211,7 @@ SYNTAX :    <strong>path</strong>.win32<strong>.pathMethod</strong>             
     path.win32.delimiter                                                         // -> ';'          // windows path delimiter 
     path.posix.delimiter                                                         // -> ':'          // posix path delimiter 
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>win32</mark> / <mark>posix</mark> TEST </u></h4>
@@ -237,15 +257,9 @@ SYNTAX :    <strong>path</strong>.win32<strong>.pathMethod</strong>             
 </details>
 <!----------------------------------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> the <mark>dirname()</mark> / <mark>basename()</mark> / <mark>extname()</mark> methods </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>path</strong>.dirname(<strong>path:str</strong>)                                               // returns the directory path of the passed <u>file path</u> in a string (Ex: file path = <mark>C:/Program Files/node/node.js</mark>)   
-            
-            <strong>path</strong>.basename(<strong>path:str</strong>, <i>fileExt:str</i>)                                 // returns the last portion of the given path (no path segment separator trailing) (<i>fileExt:str</i> = removes this from the end of the returned result)   
-                - <i>fileExt:str</i> : file extension (removes this from the end of the returned result)
-                
-            <strong>path</strong>.extname(<strong>path:str</strong>)                                               // returns the file extension of the file path (portion after the <u>last</u> <mark>.</mark>(period) character in the last portions of the path)   
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>dirname()</mark> / <mark>basename()</mark> / <mark>extname()</mark> methods </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const path = require('path');
     
@@ -274,6 +288,7 @@ SYNTAX :    <strong>path</strong>.dirname(<strong>path:str</strong>)            
     path.posix.extname('dev/nodeFolder/node.js');                                // -> '.js'
     path.posix.extname('dev/Program.Files');                                     // -> '.Files'
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>dirname()</mark> / <mark>basename()</mark> / <mark>extname()</mark> TEST </u></h4>
@@ -319,15 +334,9 @@ SYNTAX :    <strong>path</strong>.dirname(<strong>path:str</strong>)            
 </details>
 <!----------------------------------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> the <mark>parse()</mark> / <mark>format()</mark> methods </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>path</strong>.parse(<strong>path:str</strong>)                                                 // returns an object whose properties represent the passed path's elements (object properties : <mark>dir</mark> / <mark>root</mark> / <mark>base</mark> / <mark>name</mark> / <mark>ext</mark>)
-                                                                                    opposite of the <mark>format()</mark> method
-            
-            <strong>path</strong>.format(<em>{dir:<strong>str</strong>, root:<strong>str</strong>, base:<strong>str</strong>, name:<strong>str</strong>, ext:<strong>str</strong>}</em>)        // returns a path string from the passed object's elements
-                - if <em>{dir:<strong>str</strong>}</em> is provided = <em>{root:<strong>str</strong>}</em> is ignored                  opposite of the <mark>parse()</mark> method 
-                - if <em>{base:<strong>str</strong>}</em> is provided = <em>{name:<strong>str</strong>, ext:<strong>str</strong>}</em> are ignored 
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>parse()</mark> / <mark>format()</mark> methods </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const path = require('path');
     
@@ -348,6 +357,7 @@ SYNTAX :    <strong>path</strong>.parse(<strong>path:str</strong>)              
                        name:'something other',                                                                      // this is ignored
                        ext:'.css'})                                                                                 // this is ignored
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>parse()</mark> / <mark>format()</mark> TEST </u></h4>
@@ -393,21 +403,10 @@ SYNTAX :    <strong>path</strong>.parse(<strong>path:str</strong>)              
 </details>
 <!----------------------------------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> the <mark>normalize()</mark> / <mark>join()</mark> / <mark>resolve()</mark> methods </u></h2>
+<h2 style="color:darkblue;"><u> The <mark>normalize()</mark> / <mark>join()</mark> / <mark>resolve()</mark> methods </u></h2>
     <p style="color:yellow;"> - <mark>join()</mark> simply joins path segments together VS <mark>resolve()</mark> resolves path segments into an absolute path </p>
-    <pre class="syntax">
-SYNTAX :    <strong>path</strong>.normalize(<strong>path:str</strong>)                                             // normalizes (resolves) the <mark>..</mark> character as parent directory and the <mark>.</mark> character as current directory (<mark>""</mark>(zero-length string) same as <mark>.</mark>)   
-                                                                                    multiple path segment separators will be reduced to one platform specific (<mark>/</mark> on POSIX and <mark>\</mark> on windows)
-                                                                                    trailing separators are reserved  
-                
-            <strong>path</strong>.join(<i>path:str, ...</i>)                                             // joins path segments together by using the platform specific path segment separator 
-                                                                                    normalizes the joined path with the <mark>normalize()</mark> method
-                
-            <strong>path</strong>.resolve(<i>path:str, ...</i>)                                          // joins path segments together by resolving them into an <u>absolute path</u> (no path segment separator trailing allowed)   
-                                                                                    path segments are processed from left to right until an absolute path is constructed   
-                                                                                    if no arguments are passed the current absolute path will be returned 
-                                                                                    normalizes the returned absolute path with the <mark>normalize()</mark> method
-    </pre>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const path = require('path');
     
@@ -434,6 +433,7 @@ SYNTAX :    <strong>path</strong>.normalize(<strong>path:str</strong>)          
     path.posix.resolve('/srv', '/dev', 'app', 'Call of Duty', 'run.exe////');    // -> '/dev/app/Call of Duty/run.exe'              // no segment separator trailing (obviously this is an absolute path)   
     path.posix.resolve();                                                        // -> 'current absolute path'                      // if no arguments are passed the current absolute path will be returned   
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>normalize()</mark> / <mark>join()</mark> / <mark>resolve()</mark> TEST </u></h4>
@@ -497,14 +497,9 @@ SYNTAX :    <strong>path</strong>.normalize(<strong>path:str</strong>)          
 </details>
 <!----------------------------------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> the <mark>relative()</mark> / <mark>isAbsolute()</mark> / <mark>toNamespacedPath()</mark> methods </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>path</strong>.relative(<strong>fromPath:str</strong>, <strong>toPath:str</strong>)                              // returns the relative path to the <strong>toPath:str</strong> assuming the <strong>fromPath:str</strong> as current directory (<mark>""</mark>(zero-length string) same as current directory's absolute path)   
-                
-            <strong>path</strong>.isAbsolute(<strong>path:str</strong>)                                            // returns <mark>true</mark> if the passed path is an absolute path, otherwise returns <mark>false</mark> (<mark>""</mark>(zero-length string) = <mark>false</mark>)   
-            
-            <strong>path</strong>.toNamespacedPath(<strong>path:str</strong>)                                      // returns the equivalent namespace-prefixed path for the given path, <u>(only for Windows systems! on POSIX returns the path unmodified)</u>    
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>relative()</mark> / <mark>isAbsolute()</mark> / <mark>toNamespacedPath()</mark> methods </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const path = require('path');
     
@@ -533,6 +528,7 @@ SYNTAX :    <strong>path</strong>.relative(<strong>fromPath:str</strong>, <stron
     
     path.posix.toNamespacedPath('/dev/app/Call of Duty');                        // -> '/dev/app/Call of Duty'                         // on POSIX systems returns the passed argument as it is   
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>relative()</mark> / <mark>isAbsolute()</mark> / <mark>toNamespacedPath()</mark> TEST </u></h4>

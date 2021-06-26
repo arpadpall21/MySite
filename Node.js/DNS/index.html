@@ -32,7 +32,7 @@
                 <p> verbatim: <strong>bol</strong> - (if <mark>true</mark> the received address order is returned as the DNS server returnes them) (if <mark>false</mark> IPv4 addresses placed before IPv6 addresses) (Default: <mark>false</mark>) </p>
             </div></strong>, <strong>fn(err, add, fam)</strong>) 
         </td>
-        <td> asynchronously resolves the passed host name into the first found <mark>A</mark> or <mark>AAAA</mark> record <u>(uses OS facilities)</u>    
+        <td> - asynchronously resolves the passed host name into the first found <mark>A</mark> or <mark>AAAA</mark> record <u>(uses OS facilities)</u>    
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.1.90 </span>
                 <span><i class="fab fa-node-js"></i> 1.2.0 <mark>all</mark> option </span>
@@ -42,7 +42,7 @@
     </tr>
     <tr class="1.2">
         <td> <strong>dns</strong>.lookupService(<strong>add:str</strong>, <strong>port:nr</strong>, <strong>fn(err, host, srv)</strong>) </td>
-        <td> (reverse lookup) asynchronously resolves the passed IP address and port into a <u>host (PTR record)</u> and <u>service (port = service name (ex:<mark>http</mark>))</u> <u>(uses OS facilities)</u>
+        <td> - (reverse lookup) asynchronously resolves the passed IP address and port into a <u>host (PTR record)</u> and <u>service (port = service name (ex:<mark>http</mark>))</u> <u>(uses OS facilities)</u>
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.11.14 </span>
             </span>
@@ -60,7 +60,7 @@
                 <p> verbatim: <strong>bol</strong> - (if <mark>true</mark> the received address order is returned as the DNS server returnes them) (if <mark>false</mark> IPv4 addresses placed before IPv6 addresses) (Default: <mark>false</mark>) </p>
             </div></strong>)
         </td>
-        <td> resolves the passed host name into the first found <mark>A</mark> or <mark>AAAA</mark> record by using Promise API <u>(uses OS facilities)</u> 
+        <td> - resolves the passed host name into the first found <mark>A</mark> or <mark>AAAA</mark> record by using Promise API <u>(uses OS facilities)</u> 
             <span class="browserSupport" title="updated : 2020-06-02">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -68,7 +68,7 @@
     </tr>
     <tr class='2.3'>
         <td> <strong>dns</strong><em>.promises</em>.lookupService(<strong>add:str</strong>, <strong>port:nr</strong>) </td>
-        <td> (reverse lookup) resolves the passed IP address and port into a <u>host (PTR record)</u> and <u>service (port = service name (ex:<mark>http</mark>))</u> by using Promise API <u>(uses OS facilities)</u>
+        <td> - (reverse lookup) resolves the passed IP address and port into a <u>host (PTR record)</u> and <u>service (port = service name (ex:<mark>http</mark>))</u> by using Promise API <u>(uses OS facilities)</u>
             <span class="browserSupport" title="updated : 2020-06-02">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -87,7 +87,7 @@
     </tr>
     <tr class="01">
         <td> new <strong>dns</strong>.Resolver() </td>
-        <td> returns an independent resolver object (<strong>resolver</strong>) (for independent DNS requests) <u>(uses default DNS server settings)</u>    
+        <td> - returns an independent resolver object (<strong>resolver</strong>) (for independent DNS requests) <u>(uses default DNS server settings)</u>    
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 8.3.0 </span>
             </span>
@@ -95,7 +95,7 @@
     </tr>
     <tr class="02">
         <td> <strong>resolver</strong>.cancel() </td>
-        <td> cancels the curren dns request
+        <td> - cancels the curren dns request
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 8.3.0 </span>
             </span>
@@ -103,7 +103,7 @@
     </tr>
     <tr class="03.01">
         <td> <strong>dns|resolver</strong>.getServers() </td>
-        <td> returns in an Array DNS servers (their IP addresses) used by the resolver
+        <td> - returns in an Array DNS servers (their IP addresses) used by the resolver
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.11.3 </span>
             </span>
@@ -124,7 +124,7 @@
                 <p> <mark>'NAPTR'</mark> - Name Authority Pointer records </p>
                 <p> <mark>'ANY'</mark> - all record are resolved </p>
             </div></i>, <strong>fn(err, rec)</strong>) </td>
-        <td> asynchronously resolves and returns the host name's specified records (Default: <mark>A</mark>)
+        <td> - asynchronously resolves and returns the host name's specified records (Default: <mark>A</mark>)
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.1.27 </span>
             </span>
@@ -136,7 +136,7 @@
                 <p> ttl: <strong>bol</strong> - when <mark>true</mark> also returns the records' Time To Live value (Default: <mark>false</mark>) </p>
             </div></i>, <strong>fn(err, rec)</strong>) 
         </td>
-        <td> asynchronously resolves and returns the host name's <mark>A</mark> (IPv4) records
+        <td> - asynchronously resolves and returns the host name's <mark>A</mark> (IPv4) records
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.1.16 </span>
                 <span><i class="fab fa-node-js"></i> 7.2.0 <mark>option</mark> argument </span>
@@ -149,7 +149,7 @@
                 <p> ttl: <strong>bol</strong> - when <mark>true</mark> also returns the records' Time To Live value (Default: <mark>false</mark>) </p>
             </div></i>, <strong>fn(err, rec)</strong>)
         </td>
-        <td> asynchronously resolves and returns the host name's <mark>AAAA</mark> (IPv6) records
+        <td> - asynchronously resolves and returns the host name's <mark>AAAA</mark> (IPv6) records
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.1.16 </span>
                 <span><i class="fab fa-node-js"></i> 7.2.0 <mark>option</mark> argument </span>
@@ -158,7 +158,7 @@
     </tr>
     <tr class="04.02">
         <td> <strong>dns|resolver</strong>.resolveAny(<strong>hostName:str</strong>, <strong>fn(err, rec)</strong>) </td>
-        <td> asynchronously resolves and returns the host name's all records
+        <td> - asynchronously resolves and returns the host name's all records
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.1.27 </span>
             </span>
@@ -166,7 +166,7 @@
     </tr>
     <tr class="05.03">
         <td> <strong>dns|resolver</strong>.resolveCname(<strong>hostName:str</strong>, <strong>fn(err, rec)</strong>) </td>
-        <td> asynchronously resolves and returns the host name's <mark>CNAME</mark> (Canonical Name) records
+        <td> - asynchronously resolves and returns the host name's <mark>CNAME</mark> (Canonical Name) records
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.3.2 </span>
             </span>
@@ -174,7 +174,7 @@
     </tr>
     <tr class="05.04">
         <td> <strong>dns|resolver</strong>.resolveMx(<strong>hostName:str</strong>, <strong>fn(err, rec)</strong>) </td>
-        <td> asynchronously resolves and returns the host name's <mark>MX</mark> (Mail Exchanger) records
+        <td> - asynchronously resolves and returns the host name's <mark>MX</mark> (Mail Exchanger) records
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.1.27 </span>
             </span>
@@ -182,7 +182,7 @@
     </tr>
     <tr class="05.10">
         <td> <strong>dns|resolver</strong>.resolveNaptr(<strong>hostName:str</strong>, <strong>fn(err, rec)</strong>) </td>
-        <td> asynchronously resolves and returns the host name's <mark>NAPTR</mark> (Name Authority Pointer) records
+        <td> - asynchronously resolves and returns the host name's <mark>NAPTR</mark> (Name Authority Pointer) records
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.9.12 </span>
             </span>
@@ -190,7 +190,7 @@
     </tr>
     <tr class="05.09">
         <td> <strong>dns|resolver</strong>.resolveNs(<strong>hostName:str</strong>, <strong>fn(err, rec)</strong>) </td>
-        <td> asynchronously resolves and returns the host name's <mark>NS</mark> (Name Server) records
+        <td> - asynchronously resolves and returns the host name's <mark>NS</mark> (Name Server) records
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.1.90 </span>
             </span>
@@ -198,7 +198,7 @@
     </tr>
     <tr class="05.08">
         <td> <strong>dns|resolver</strong>.resolvePtr(<strong>hostName:str</strong>, <strong>fn(err, rec)</strong>) </td>
-        <td> asynchronously resolves and returns the host name's <mark>PTR</mark> (Pointer) records <u>[TESTED: 2020-06-01 doesn't seems to have any purpose]</u>
+        <td> - asynchronously resolves and returns the host name's <mark>PTR</mark> (Pointer) records <u>[TESTED: 2020-06-01 doesn't seems to have any purpose]</u>
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 6.0.0 </span>
             </span>
@@ -206,7 +206,7 @@
     </tr>
     <tr class="05.07">
         <td> <strong>dns|resolver</strong>.resolveSoa(<strong>hostName:str</strong>, <strong>fn(err, rec)</strong>) </td>
-        <td> asynchronously resolves and returns the host name's <mark>SOA</mark> (Start Of Authority) records
+        <td> - asynchronously resolves and returns the host name's <mark>SOA</mark> (Start Of Authority) records
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.11.10 </span>
             </span>
@@ -214,7 +214,7 @@
     </tr>
     <tr class="05.05">
         <td> <strong>dns|resolver</strong>.resolveSrv(<strong>hostName:str</strong>, <strong>fn(err, rec)</strong>) </td>
-        <td> asynchronously resolves and returns the host name's <mark>SRV</mark> (Service) records
+        <td> - asynchronously resolves and returns the host name's <mark>SRV</mark> (Service) records
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.1.27 </span>
             </span>
@@ -222,7 +222,7 @@
     </tr>
     <tr class="05.06">
         <td> <strong>dns|resolver</strong>.resolveTxt(<strong>hostName:str</strong>, <strong>fn(err, rec)</strong>) </td>
-        <td> asynchronously resolves and returns the host name's <mark>TXT</mark> (Text) records
+        <td> - asynchronously resolves and returns the host name's <mark>TXT</mark> (Text) records
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.1.27 </span>
             </span>
@@ -230,7 +230,7 @@
     </tr>
     <tr class="06">
         <td> <strong>dns|resolver</strong>.reverse(<strong>ip:srt</strong>, <strong>fn(err, hostName)</strong>) </td>
-        <td> (revers lookup) asynchronously resolves and returns an IPv4 or IPv6 address into a host name
+        <td> - (revers lookup) asynchronously resolves and returns an IPv4 or IPv6 address into a host name
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.1.16 </span>
             </span>
@@ -238,7 +238,7 @@
     </tr>
     <tr class="03.02">
         <td> <strong>dns|resolver</strong>.setServers(<strong>[svrIp:str, ...]</strong>) </td>
-        <td> sets DNS servers (by IP address) for the resolver
+        <td> - sets DNS servers (by IP address) for the resolver
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 0.11.3 </span>
             </span>
@@ -249,7 +249,7 @@
     </tr>
     <tr class="07.02">
         <td> new <strong>dns<em>.promises</em></strong>.Resolver() </td>
-        <td> returns an independent Promise resolver object (<strong>resolverProm</strong>) (for independent DNS requests) <u>(uses default DNS server settings)</u>
+        <td> - returns an independent Promise resolver object (<strong>resolverProm</strong>) (for independent DNS requests) <u>(uses default DNS server settings)</u>
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -257,7 +257,7 @@
     </tr>
     <tr class="08.01">
         <td> <strong>dns<em>.promises</em>|resolverProm</strong>.getServers() </td>
-        <td> returns in an Array DNS servers (their IP addresses) used by the promise resolver
+        <td> - returns in an Array DNS servers (their IP addresses) used by the promise resolver
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -279,7 +279,7 @@
                 <p> <mark>'ANY'</mark> - all record are resolved </p>
             </div></i>)
         </td>
-        <td> resolves the host name's specified records by using the Promise API (Default: <mark>A</mark> record)
+        <td> - resolves the host name's specified records by using the Promise API (Default: <mark>A</mark> record)
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -291,7 +291,7 @@
                 <p> ttl: <strong>bol</strong> - when <mark>true</mark> also returns the records' Time To Live value (Default: <mark>false</mark>) </p>
             </div></i>)
         </td>
-        <td> resolves the host name's <mark>A</mark> (IPv4) records by using the Promise API
+        <td> - resolves the host name's <mark>A</mark> (IPv4) records by using the Promise API
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -303,7 +303,7 @@
                 <p> ttl: <strong>bol</strong> - when <mark>true</mark> also returns the records' Time To Live value (Default: <mark>false</mark>) </p>
             </div></i>)
         </td>
-        <td> resolves the host name's <mark>AAAA</mark> (IPv6) records by using the Promise API 
+        <td> - resolves the host name's <mark>AAAA</mark> (IPv6) records by using the Promise API 
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -311,7 +311,7 @@
     </tr>
     <tr class="09.02">
         <td> <strong>dns<em>.promises</em>|resolverProm</strong>.resolveAny(<strong>hostName:str</strong>) </td>
-        <td> resolves the host name's all records by using the Promise API
+        <td> - resolves the host name's all records by using the Promise API
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -319,7 +319,7 @@
     </tr>
     <tr class="10.03">
         <td> <strong>dns<em>.promises</em>|resolverProm</strong>.resolveCname(<strong>hostName:str</strong>) </td>
-        <td> resolves the host names <mark>CNAME</mark> (Canonical name) records by using the Promise API
+        <td> - resolves the host names <mark>CNAME</mark> (Canonical name) records by using the Promise API
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -327,7 +327,7 @@
     </tr>
     <tr class="10.04">
         <td> <strong>dns<em>.promises</em>|resolverProm</strong>.resolveMx(<strong>hostName:str</strong>) </td>
-        <td> resolves the host names <mark>MX</mark> (Mail Exchanger) records by using the Promise API
+        <td> - resolves the host names <mark>MX</mark> (Mail Exchanger) records by using the Promise API
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -335,7 +335,7 @@
     </tr>
     <tr class="10.10">
         <td> <strong>dns<em>.promises</em>|resolverProm</strong>.resolveNaptr(<strong>hostName:str</strong>) </td>
-        <td> resolves the host names <mark>NAPTR</mark> (Name Authority Pointer) records by using the Promise API
+        <td> - resolves the host names <mark>NAPTR</mark> (Name Authority Pointer) records by using the Promise API
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -343,7 +343,7 @@
     </tr>
     <tr class="10.09">
         <td> <strong>dns<em>.promises</em>|resolverProm</strong>.resolveNs(<strong>hostName:str</strong>) </td>
-        <td> resolves the host names <mark>NS</mark> (Name Server) records by using the Promise API
+        <td> - resolves the host names <mark>NS</mark> (Name Server) records by using the Promise API
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -351,7 +351,7 @@
     </tr>
     <tr class="10.08">
         <td> <strong>dns<em>.promises</em>|resolverProm</strong>.resolvePtr(<strong>hostName:str</strong>) </td>
-        <td> resolves the host names <mark>PTR</mark> (Pointer) records by using the Promise API <u>[TESTED: 2020-06-02 doesn't seems to have any purpose]</u>
+        <td> - resolves the host names <mark>PTR</mark> (Pointer) records by using the Promise API <u>[TESTED: 2020-06-02 doesn't seems to have any purpose]</u>
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -359,7 +359,7 @@
     </tr>
     <tr class="10.07">
         <td> <strong>dns<em>.promises</em>|resolverProm</strong>.resolveSoa(<strong>hostName:str</strong>) </td>
-        <td> resolves the host names <mark>SOA</mark> (Start Of Authority) records by using the Promise API
+        <td> - resolves the host names <mark>SOA</mark> (Start Of Authority) records by using the Promise API
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -367,7 +367,7 @@
     </tr>
     <tr class="10.05">
         <td> <strong>dns<em>.promises</em>|resolverProm</strong>.resolveSrv(<strong>hostName:str</strong>) </td>
-        <td> resolves the host names <mark>SRV</mark> (Service) records by using the Promise API
+        <td> - resolves the host names <mark>SRV</mark> (Service) records by using the Promise API
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -375,7 +375,7 @@
     </tr>
     <tr class="10.06">
         <td> <strong>dns<em>.promises</em>|resolverProm</strong>.resolveTxt(<strong>hostName:str</strong>) </td>
-        <td> resolves the host names <mark>TXT</mark> (Text) records by using the Promise API
+        <td> - resolves the host names <mark>TXT</mark> (Text) records by using the Promise API
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -383,7 +383,7 @@
     </tr>
     <tr class="11">
         <td> <strong>dns<em>.promises</em>|resolverProm</strong>.reverse(<strong>ip:str</strong>) </td>
-        <td> (reverse lookup) resolves an IPv4 or IPv6 address into a host name by using the Promise API
+        <td> - (reverse lookup) resolves an IPv4 or IPv6 address into a host name by using the Promise API
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
@@ -391,14 +391,14 @@
     </tr>
     <tr class="08.02">
         <td> <strong>dns<em>.promises</em>|resolverProm</strong>.setServers(<strong>[srvIp:str, ...]</strong>) </td>
-        <td> sets DNS servers (by IP address) for the promise resolver 
+        <td> - sets DNS servers (by IP address) for the promise resolver 
             <span class="browserSupport" title="updated : 2020-06-01">
                 <span><i class="fab fa-node-js"></i> 10.6.0 </span>
             </span>
         </td>
     </tr>
 </table>
-<h2 style="color:green;"><u> Notes : </u></h2>
+<br>
     <details class="example" id="notes">
     <summary> Notes :</summary>
         <!-- <p> - paragraph removes the 'empty' message from the detail TAG -->

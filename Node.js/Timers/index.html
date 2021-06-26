@@ -9,114 +9,125 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Timers (ver 3.2) </h1>
+<h1> Timers (ver 4.0.0) </h1>
     <p> Updated ( 2019-07-24 )</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">Node.js></a> Timers  
     </p>
 <table class="table">
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
         <th style="width:30%;"> Method </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="05.00">
         <td colspan="2"> Timers </td>
-    <tr>
+    <tr class="06.01">
         <td> clearImmediate(<strong>immediate:obj</strong>) </td>
-        <td> cancels the immediate timer referenced by the <mark>immediate</mark> object
-            <span id="browserSupport" title="updated : yyyy-mm-dd">
+        <td> - cancels the immediate timer referenced by the <strong>immediate</strong> object
+            <span id="browserSupport" title="updated : 2021-05-20">
                 <span><i class="fab fa-node-js"></i> 0.9.1 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="06.03">
         <td> clearInterval(<strong>timeout:obj</strong>) </td>
-        <td> cancels the interval timer referenced by the <mark>timeout</mark> object
-            <span id="browserSupport" title="updated : yyyy-mm-dd">
+        <td> - cancels the interval timer referenced by the <mark>timeout</mark> object
+            <span id="browserSupport" title="updated : 2021-05-20">
                 <span><i class="fab fa-node-js"></i> 0.0.1 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="06.02">
         <td> clearTimeout(<strong>timeout:obj</strong>) </td>
-        <td> cancels the timeout timer referenced by the <mark>timeout</mark> object
-            <span id="browserSupport" title="updated : yyyy-mm-dd">
+        <td> - cancels the timeout timer referenced by the <mark>timeout</mark> object
+            <span id="browserSupport" title="updated : 2021-05-20">
                 <span><i class="fab fa-node-js"></i> 0.0.1 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> setImmediate(<strong>fn</strong><i>, arg, ...</i>) </td>
-        <td> - calls the callback function immediately after the main thread and after any I/O event callbacks<br>
-             - returns <u>a unique <mark>Immediate</mark> object</u> which is used to control <u>this</u> timer 
+        <td> 
+            - calls the callback function immediately after the main thread and after any I/O event callbacks<br>
+            - returns a unique <strong>immediate</strong> object which is used to control <u>this</u> timer  
             <span id="browserSupport" title="updated : 2019-07-29">
                 <span><i class="fab fa-node-js"></i> 0.9.1 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> setInterval(<strong>fn</strong>, <strong>delayMs:nr</strong><i>, arg, ...</i>) </td>
-        <td> - calls the callback function every set time (<strong>delayMs:nr</strong>)<br>
-             - returns <u>a unique <mark>Timeout</mark> object</u> which is used to control <u>this</u> timer 
+    <tr class="05.03">
+        <td> setInterval(<strong>fn</strong>, <strong class="openable">delayMs:nr<div>
+                <p> - milliseconds (from <mark>1</mark> to <mark>2147483647</mark>, offset will be <mark>1</mark>) </p>
+            </div></strong><i>, arg, ...</i>) </td>
+        <td> 
+            - calls the callback function every set time (<strong>delayMs:nr</strong>)<br>
+            - returns a unique <strong>timeout</strong> object which is used to control <u>this</u> timer 
             <span id="browserSupport" title="updated : yyyy-mm-dd">
                 <span><i class="fab fa-node-js"></i> 0.0.1 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> setTimeout(<strong>fn</strong>, <strong>delayMs:nr</strong><i>, arg, ...</i>) </td>
-        <td> - calls the callback function after the specified time (<strong>delayMs:nr</strong>)<br>
-             - returns <u>a unique <mark>Timeout</mark> object</u> which is used to control <u>this</u> timer
+    <tr class="05.02">
+        <td> 
+            setTimeout(<strong>fn</strong>, <strong class="openable">delayMs:nr<div>
+                <p> - milliseconds (from <mark>1</mark> to <mark>2147483647</mark>, offset will be <mark>1</mark>) </p>
+            </div></strong><i>, arg, ...</i>) </td>
+        <td> 
+            - calls the callback function after the specified time (<strong>delayMs:nr</strong>)<br>
+            - returns a unique <strong>timeout</strong> object which is used to control <u>this</u> timer 
             <span id="browserSupport" title="updated : yyyy-mm-dd">
                 <span><i class="fab fa-node-js"></i> 0.0.1 </span>
             </span>
         </td>
     </tr>
-    <tr> 
+    <tr class="20.01">
         <td colspan="2"> timer control methods </td>
     </tr>
-    <tr>
+    <tr class="20.04">
         <td> 
-            <strong>immediate</strong>.hasRef()<br>
-            <strong>timeout</strong>.hasRef()
+            <strong>immediate|timeout</strong>.hasRef()<br>
         </td>
-        <td> returns <mark>true</mark> it the timer is attached (referenced) to the Node.js event loop otherwise returns <mark>false</mark>
+        <td> 
+            - returns <mark>true</mark> if the timer is in the event loop, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-07-30">
                 <span><i class="fab fa-node-js"></i> 11.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.03">
         <td> 
-            <strong>immediate</strong>.ref() <br>
-            <strong>timeout</strong>.ref()
+            <strong>immediate|timeout</strong>.ref() <br>
         </td>
-        <td> - reattaches (references) the timer back to the event loop so the Node.js process will wait till this timer ends <br>
-             - returns the <mark>Immediate</mark> | <mark>Timeout</mark> object 
+        <td> 
+            - (re)attaches the timer to the event loop (so the Node.js process will wait till this timer ends) <br>
+            - returns the <strong>immediate|timeout</strong> object 
             <span id="browserSupport" title="updated : 2019-07-30">
                 <span><i class="fab fa-node-js"></i> 0.9.1 <mark>timeout</mark></span>
                 <span><i class="fab fa-node-js"></i> 9.7.0 <mark>immediate</mark></span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.05">
         <td> <strong>timeout</strong>.refresh() </td>
-        <td> - restarts the timer counted from this method's execution <br>
-             - restarts an already expired timer <br>
-             - returns the <mark>Timeout</mark> object
+        <td> 
+            - restarts this timer <br>
+            - restarts an already expired timer <br>
+            - returns the <strong>timer</strong> object
             <span id="browserSupport" title="updated : 2019-07-30">
                 <span><i class="fab fa-node-js"></i> 10.2.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.02">
         <td> 
-            <strong>immediate</strong>.unref()<br>
-            <strong>timeout</strong>.unref()
+            <strong>immediate|timeout</strong>.unref()<br>
         </td>
-        <td> - removes (unreferences) the timer from the event loop so the Node.js process can exit without waiting to this timer <br>
-             - returns the <mark>Immediate</mark> | <mark>Timeout</mark> object <br>
-             - creates an internal timer that will wake the Node.js envent loop <u>(this silet timer can affect the performance)</u> [TESTED: 2019-07-30 (but I couldn't confirm this behavior)]
+        <td> 
+            - removes the timer from the event loop (so the Node.js process can exit without waiting to this timer) <br>
+            - returns the <strong>immediate|timeout</strong> object 
             <span id="browserSupport" title="updated : 2019-07-30">
                 <span><i class="fab fa-node-js"></i> 0.9.1 <mark>timeout</mark></span>
                 <span><i class="fab fa-node-js"></i> 9.7.0 <mark>immediate</mark></span>
@@ -140,17 +151,8 @@
     <p> - Node.js does not guarantee the exact timing nor the the execution order of timer callbacks, but executes as close as possible to the specified time </p>
 <h2><u> Timers <mark>setImmediate()</mark> / <mark>setTimeout()</mark> / <mark>setInterval()</mark> / <mark>clearImmediate()</mark> / <mark>clearTimeout()</mark> / <mark>clearInterval()</mark> </u></h2>
         <p> - Node.js timer counter starts as soon as the timer statement is executed (not after the main thread) but the callback function is still executed after the main thread</p> 
-    <pre class="syntax">
-SYNTAX :    setImmediate(<strong>fn</strong><i>, arg, ...</i>)                                          // calls the callback function immediately after the main thread and after any I/O event callbacks, returns <u>a unique <mark>Immediate</mark> object</u> which is used to control <u>this</u> timer   
-            setTimeout(<strong>fn</strong>, <strong>delayMs:nr</strong><i>, arg, ...</i>)                                // calls the callback function after the specified time (<strong>delayMs:nr</strong>), returns <u>a unique <mark>Timeout</mark> object</u> which is used to control <u>this</u> timer   
-            setInterval(<strong>fn</strong>, <strong>delayMs:nr</strong><i>, arg, ...</i>)                               // calls the callback function every set time (<strong>delayMs:nr</strong>), returns <u>a unique <mark>Timeout</mark> object</u> which is used to control <u>this</u> timer
-                - <strong>delayMs:nr</strong> : time specified in <u>milliseconds</u> (from <mark>1</mark> to <mark>2147483647</mark>, if the time is specified out of this range = <mark>1</mark>)
-                - <i>arg, ...</i> : arguments to pass to the callback function   
-    
-            clearImmediate(<strong>immediate:obj</strong>)                                       // cancels the immediate timer referenced by the <mark>immediate</mark> object   
-            clearTimeout(<strong>timeout:obj</strong>)                                           // cancels the timeout timer referenced by the <mark>timeout</mark> object   
-            clearInterval(<strong>timeout:obj</strong>)                                          // cancels the interval timer referenced by the <mark>timeout</mark> object   
-    </pre>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
 // setImmediate() / clearImmediate() -------------------------------------------
     var immediate = setImmediate(() => {});                                     // callback function immediately called after the main thread  
@@ -169,6 +171,7 @@ SYNTAX :    setImmediate(<strong>fn</strong><i>, arg, ...</i>)                  
     clearInterval(interval);                                                    // cancels the interval timer 
     // clearTimeout(interval);                                                  // -! this would do the same as the 'clearInterval()' above (so basically they do the same thing)   
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>setImmediate()</mark> / <mark>clearImmediate()</mark> TEST </u></h4>
@@ -243,21 +246,8 @@ SYNTAX :    setImmediate(<strong>fn</strong><i>, arg, ...</i>)                  
 <hr>
 <!--------------------------------------------------------------------------------------------------------------------->
 <h2><u> Methods <mark>unref()</mark> / <mark>ref()</mark> / <mark>hasRef()</mark> / <mark>refresh()</mark> </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>immediate</strong>.unref()                                                   // removes (unreferences) the timer from the event loop so the Node.js process can exit without waiting to this timer    
-            <strong>timeout</strong>.unref()                                                        returns the <mark>Immediate</mark> | <mark>Timeout</mark> object
-                                                                                   creates an internal timer that will wake the Node.js envent loop <u>(this silet timer can affect the performance)</u> [NOT TESTED : 2019-07-30 (I couldn't figure out how to test)]   
-            
-            <strong>immediate</strong>.ref()                                                     // reataches (references) the timer back to the event loop so the Node.js process will wait till this timer ends 
-            <strong>timeout</strong>.ref()                                                          returns the <mark>Immediate</mark> | <mark>Timeout</mark> object 
- 
-            <strong>immediate</strong>.hasRef()                                                  // returns <mark>true</mark> it the timer is attached (referenced) to the Node.js event loop otherwise returns <mark>false</mark>
-            <strong>timeout</strong>.hasRef()
-            
-            <strong>timeout</strong>.refresh()                                                   // restarts the timer counted from this method's execution             
-                                                                                   restarts an already expired timer    
-                                                                                   returns the <mark>Timeout</mark> object 
-    </pre>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     var timeout = setTimeout(function(){ }, 5000);
     
@@ -273,6 +263,7 @@ SYNTAX :    <strong>immediate</strong>.unref()                                  
 // refresh() -------------------------------------------------------------------
     timeout.refresh();                                                          // -> Timeout {}        // the 5 seconds are basically restarted here (if the timer would be expired by now this would reactivate it)   
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>unref()</mark> / <mark>ref()</mark> / <mark>hasRef()</mark> TEST </u></h4>

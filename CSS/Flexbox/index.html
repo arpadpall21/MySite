@@ -11,27 +11,30 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Flexbox (ver 3.2)</h1>
+<h1> Flexbox (ver 4.0.0)</h1>
 	<p> Updated ( 2017-02-05 / 2017-02-12 / 2019-03-13 / 2019-05-30)</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html" title="CSS">CSS></a> Flexbox  
     </p>
 <table class="table">
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <th> Property </th>
-        <th style="width:50%;"> Value </th>
+        <th style="width:15%"> Property </th>
+        <th style="width:40%;"> Value </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="20.02">
         <td> align-content </td>
         <td>  
-            stretch	<span style="color:blue;">((default) the "main-flex-axis" placed at the beginning of the "cross-flex-axis" and wraps (if necessary) evenly)</span><br>	
-            center <span style="color:blue;">(the "main-flex-axis" placed in the center of the "cross-flex-axis" and if it is wraped it is disptributed around the center)</span><br>	
-            flex-start <span style="color:blue;">(the "main-flex-axis" is placed at the beginning of the "cross-flex-axis" and wraps (if necessary) at the start)</span><br>	
-            flex-end <span style="color:blue;">(the "main-flex-axis" is placed at the end of the "cross-flex-axis" and wraps (if necessary) at the end)</span><br>	
-            space-between <span style="color:blue;">(the "main-flex-axis" is placed at the beginning of the "cross-flex-axis", when it wraps (if necessary) evenly distribute the space between them <u>but the first an the last line will stay at the start and at the end</u>)</span><br>	
-            space-around <span style="color:blue;">(the "main-flex-axis" is placed in the center of the "cross-flex-axis", when it wraps (if necessary) the space is evenly distributed around items)</span><br>
-            space-evenly     <span style="color:blue;">(the "main-flex-axis" is placed in the center of the "cross-flex-axis", when it wraps (if necessary) the space is evenly distributed between the elements)</span>
+            stretch <span class="cssAV">(Default: the "main-flex-axis" placed at the beginning of the "cross-flex-axis" and wraps (if necessary) evenly)</span><br> 
+            center <span class="cssAV">(the "main-flex-axis" placed in the center of the "cross-flex-axis" and if it is wraped it is disptributed around the center)</span><br>	
+            flex-start <span class="cssAV">(the "main-flex-axis" is placed at the beginning of the "cross-flex-axis" and wraps (if necessary) at the start)</span><br>	
+            flex-end <span class="cssAV">(the "main-flex-axis" is placed at the end of the "cross-flex-axis" and wraps (if necessary) at the end)</span><br>	
+            space-between <span class="cssAV">(the "main-flex-axis" is placed at the beginning of the "cross-flex-axis", when it wraps (if necessary) evenly distribute the space between them <u>but the first an the last line will stay at the start and at the end</u>)</span><br>	
+            space-around <span class="cssAV">(the "main-flex-axis" is placed in the center of the "cross-flex-axis", when it wraps (if necessary) the space is evenly distributed around items)</span><br>
+            space-evenly     <span class="cssAV">(the "main-flex-axis" is placed in the center of the "cross-flex-axis", when it wraps (if necessary) the space is evenly distributed between the elements)</span>
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 60 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -40,18 +43,8 @@
                 <span><i class="fab fa-safari"></i> 11 </span>
             </span>        
         </td>
-        
-        
-<!--
-    : space-around     <span style="color:skyblue;">// the "main-flex-axis" is placed in the center of the "cross-flex-axis", when it wraps (if necessary) the space is evenly distributed around items </span>
--->
-        
-        
-        
-        
-        
         <td> 
-            <i class="fab fa-css3-alt"></i> places the "main-flex-axis" along the "cross-flex-axis" and defines how the "main-flex-axis" wraps if necessary <u>(only when the <mark>flex-wrap</mark> property is set)</u> 
+            - <i class="fab fa-css3-alt"></i> set the position of the "main-flex-axis" along the "cross-flex-axis" and defines how the "main-flex-axis" wraps if necessary <u>(only when the <mark>flex-wrap</mark> property is set)</u> (set on the flex container)  
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 21 </span>
                 <span><i class="fab fa-firefox"></i> 28 </span>
@@ -61,17 +54,17 @@
             </span>        
         </td>
     </tr>
-    <tr>
+    <tr class="21.01">
         <td> align-items </td>
         <td>  
-            stretch	<span style="color:blue;">((default) stretched along the "cross-flex-axis" <u>(works only if the element has no height set)</u>)</span><br>	
-            center <span style="color:blue;">(centered along the "cross-flex-axis")</span><br>	
-            flex-start <span style="color:blue;">(placed at the start of the "cross-flex-axis")</span><br>
-            flex-end <span style="color:blue;">(placed at the end of the "cross-flex-axis")</span><br>
-            baseline <span style="color:blue;">(positioned at the baseline (text line) of the container)</span><br>
+            stretch <span class="cssAV">(Default: stretched along the "cross-flex-axis" <u>(works only if the element has no height set)</u>)</span><br>	
+            center <span class="cssAV">(centered along the "cross-flex-axis")</span><br>	
+            flex-start  <span class="cssAV">(placed at the start of the "cross-flex-axis")</span><br>
+            flex-end  <span class="cssAV">(placed at the end of the "cross-flex-axis")</span><br>
+            baseline  <span class="cssAV">(positioned at the baseline (text line) of the container)</span><br>
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> defines the alignement of the flex-container's child elements along the "cross-flex-axis" <u>(the <mark>align-content</mark> and <mark>align-self</mark> properties override this property)</u> 
+            - <i class="fab fa-css3-alt"></i> defines the alignement of flex items along the "cross-flex-axis" <u>(the <mark>align-content</mark> and <mark>align-self</mark> properties override this property)</u> (set on the flex container)   
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 21 </span>
                 <span><i class="fab fa-firefox"></i> 20 </span>
@@ -81,18 +74,18 @@
             </span> 
         </td>
     </tr>
-    <tr>
+    <tr class="21.02">
         <td> align-self </td>
         <td>  
-            auto <span style="color:blue;">((default) inherits the <mark>align-itmes</mark> property value from the parent element or "stretch" if there is no parent element)</span><br>
-            stretch	<span style="color:blue;">(stretched along the "cross-flex-axis" <u>(works only if the element has no height set)</u>)</span><br>	
-            center <span style="color:blue;">(centered on the 'flex-line")</span><br>	
-            flex-start <span style="color:blue;">(placed at the beginning of the "cross-flex-axis")</span><br>
-            flex-end <span style="color:blue;">(placed at the end of the "cross-flex-axis")</span><br>
-            baseline <span style="color:blue;">(positioned at the baseline (text line) of the container)</span><br>
+            auto <span class="cssAV">(Default: inherits the <mark>align-itmes</mark> property value from the parent element or "stretch" if there is no parent element)</span><br>
+            stretch <span class="cssAV">(stretched along the "cross-flex-axis" <u>(works only if the element has no height set)</u>)</span><br>	
+            center <span class="cssAV">(centered on the 'flex-line")</span><br>	
+            flex-start <span class="cssAV">(placed at the beginning of the "cross-flex-axis")</span><br>
+            flex-end <span class="cssAV">(placed at the end of the "cross-flex-axis")</span><br>
+            baseline <span class="cssAV">(positioned at the baseline (text line) of the container)</span><br>
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> defines the alignement of the flex-container's child elements individually along the "cross-flex-axis" <u>(property is set on the child element)</u> (this property overrides the <mark>align-items</mark> property but it is overriden by the <mark>align-content</mark> property) 
+            - <i class="fab fa-css3-alt"></i> defines the alignement of the flex item along the "cross-flex-axis" (overrides the <mark>align-items</mark> property but it is overriden by the <mark>align-content</mark> property) (set on the flex item)  
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 21 </span>
                 <span><i class="fab fa-firefox"></i> 20 </span>
@@ -102,12 +95,13 @@
             </span> 
         </td>
     </tr> 
-    <tr>
+    <tr class="05.01">
         <td> display </td>
-        <td> flex <span style="color:blue;">(<i class="fab fa-css3-alt"></i> block-level flex element)</span><br>
-            inline-flex <span style="color:blue;">(<i class="fab fa-css3-alt"></i> inline flex element)</span></td>
+        <td> flex <span class="cssAV">(<i class="fab fa-css3-alt"></i> block-level flex element)</span><br>
+            inline-flex <span class="cssAV">(<i class="fab fa-css3-alt"></i> inline flex element)</span>
+        </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> specifies the display behavior of the element 
+            - <i class="fab fa-css3-alt"></i> specifies the display behavior of the element 
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 29/21 -webkit- </span>
                 <span><i class="fab fa-firefox"></i> 20 </span>
@@ -117,13 +111,13 @@
             </span>        
         </td>
     </tr>
-    <tr>
+    <tr class="15.04">
         <td> flex </td>
         <td> 
-            <strong>flex-grow flex-shrink flex-basis</strong> <span style="color:blue;">(default <mark>0</mark> <mark>1</mark> <mark>auto</mark>)</mark></span> 
+            <strong>flex-grow flex-shrink flex-basis</strong> <span class="cssAV">(Default: <mark>0</mark> <mark>1</mark> <mark>auto</mark>)</mark></span> 
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> shrothand property for the "flex-grow" "flex-shrink" and "flex-basis" properties 
+            - <i class="fab fa-css3-alt"></i> shrothand property for <mark>flex-grow</mark>, <mark>flex-shrink</mark> and <mark>flex-basis</mark> (set on the flex item)   
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 29/21 -webkit- </span>
                 <span><i class="fab fa-firefox"></i> 28/18 -moz- </span>
@@ -133,14 +127,14 @@
             </span>    
         </td>
     </tr>    
-    <tr>
+    <tr class="15.01">
         <td> flex-basis </td>
         <td>  
-            auto <span style="color:blue;">((default) equlas to the element's current size (width or height depending on the flex-line direction))</span><br>
+            auto <span class="cssAV">(Default: equlas to the element's current size (width or height depending on the flex-line direction))</span><br>
             <strong>cssLength</strong><br>
         </td>
         <td>
-            sets the size of the element <u>along the "main-flex-axis</u>
+            - sets the initial length of the element <u>along the "main-flex-axis</u> (set on the flex item)
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 29/21 -webkit- </span>
                 <span><i class="fab fa-firefox"></i> 28/18 -moz- </span>
@@ -150,16 +144,16 @@
             </span> 
         </td>
     </tr>    
-    <tr>
+    <tr class="10.01">
         <td> flex-direction </td>
         <td> 
-            row <span style="color:blue;">(default, left-to-righ)</span><br>	
-            row-reverse	<span style="color:blue;">(right-to-left)</span><br>	
-            column <span style="color:blue;">(top-to-bottom)</span><br>	
-            column-reverse	<span style="color:blue;">(bottom-to-top)</span><br>
+            row <span class="cssAV">(default, left-to-righ)</span><br>	
+            row-reverse <span class="cssAV">(right-to-left)</span><br>	
+            column <span class="cssAV">(top-to-bottom)</span><br>	
+            column-reverse <span class="cssAV">(bottom-to-top)</span><br>
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> sets the "main-flex-axise" direction 
+            - <i class="fab fa-css3-alt"></i> sets the "main-flex-axis" direction (set on the flex container)
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 29/21 -webkit- </span>
                 <span><i class="fab fa-firefox"></i> 28/18 -moz- </span>
@@ -169,11 +163,11 @@
             </span>  
         </td>
     </tr>
-    <tr>
+    <tr class="10.03">
         <td> flex-flow </td>
         <td> <strong>flex-direction flex-wrap</strong> </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> shorthand property for the <mark>flex-direction</mark> and <mark>flex-wrap</mark> properties 
+            - <i class="fab fa-css3-alt"></i> shorthand property for the <mark>flex-direction</mark> and <mark>flex-wrap</mark> properties  (set on the flex container)
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 29/21 -webkit- </span>
                 <span><i class="fab fa-firefox"></i> 28/18 -moz- </span>
@@ -183,13 +177,15 @@
             </span>  
         </td>
     </tr>    
-    <tr>
+    <tr class="15.02">
         <td> flex-grow </td>
         <td> 
-            <strong>nr</strong> <span style="color:blue;">(default <mark>0</mark> <u>not growing</u>)</span> <br>
+            <strong>nr</strong>  <span class="cssAV">(Default: <mark>0</mark> <u>not growing</u>)</span> <br>
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> defines how much the item grows <u>(along the "main-flex-axis)</u> (relative to the "flex-basis" size) relative to the other elements in the same flex-container (relative to other elements' <mark>flex-grow</mark> property)
+            - <i class="fab fa-css3-alt"></i> specifies how much the flex item grows <u>(along the "main-flex-axis)</u> relative to other elements in the container (set on the flex item) <br>
+            - Ex: if we have 3 elements with each flex-flow set to 1 they will grow equaly <br>
+            - Ex: if we have 3 elements that the flex-flow value set to 2 elements to 1 and one element to 3 the last element will take up 3 out of 5 space 
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 29/21 -webkit- </span>
                 <span><i class="fab fa-firefox"></i> 28/18 -moz- </span>
@@ -199,13 +195,15 @@
             </span> 
         </td>
     </tr>    
-    <tr>
+    <tr class="15.03">
         <td> flex-shrink </td>
         <td> 
-            <strong>nr</strong> <span style="color:blue;">((default <mark>1</mark>) <mark>0</mark> means no shrink)</span> <br>
+            <strong>nr</strong>  <span class="cssAV">(Default: <mark>1</mark>) <mark>0</mark> means no shrink)</span> <br>
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> defines how much the element shrinks <u>(along the "main-flex-axis)</u> (relative to the "flex-basis" size) relative to the other elements in the same flex-container (relative to other elements' <mark>flex-shrink</mark> property) (element shrinks only if the flex-container forces it get smaller than the <makr>flex-basis</makr> size) (element never shrinks smaller than "content + padding") (the <mark>flex-wrap</mark> property overrides this property)
+            - <i class="fab fa-css3-alt"></i> specifies how much the flex item shrinks <u>(along the "main-flex-axis)</u> relative to other elements in the container (set on the flex item) <br>
+            - Ex: if we have 3 elements with each flex-shrink set to 1 they will shrink equaly <br>
+            - Ex: if we have 3 elements that the flex-shrink value set to 2 elements to 1 and one element to 3 the last element will whrink 3 times faster than the other 2   
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 29/21 -webkit- </span>
                 <span><i class="fab fa-firefox"></i> 28/18 -moz- </span>
@@ -215,15 +213,15 @@
             </span>  
         </td>
     </tr>    
-    <tr>
+    <tr class="10.02">
         <td> flex-wrap </td>
         <td>  
-            nowrap <span style="color:blue;">(default) flex-line doesn't wrap)</span><br>
-            wrap <span style="color:blue;">(wraps the flex-line when necessary)</span><br>	
-            wrap-reverse <span style="color:blue;">(wraps the flex-line when necessary in inverse order)</span><br>
+            nowrap <span class="cssAV">(Default: flex-line doesn't wrap)</span><br>
+            wrap <span class="cssAV">(wraps the flex-line when necessary)</span><br>	
+            wrap-reverse  <span class="cssAV">(wraps the flex-line when necessary in inverse order)</span><br>
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> specifies if/how the "main-flex-axis" is wrappwed when the flex children have no more space along the "main-flex-axis" 
+            - <i class="fab fa-css3-alt"></i> specifies if/how the "main-flex-axis" is wrappwed when the flex children have no more space along the "main-flex-axis" (set on the flex container)
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 29/21 -webkit- </span>
                 <span><i class="fab fa-firefox"></i> 28/18 -moz- </span>
@@ -233,15 +231,15 @@
             </span>        
         </td>
     </tr>
-    <tr>
+    <tr class="20.01">
         <td> justify-content </td>
         <td> 
-            flex-start <span style="color:blue;">((default) at the start of the "main-flex-axis")</span><br>
-            flex-end <span style="color:blue;">(at the end of the "main-flex-axis")</span><br>	
-            center <span style="color:blue;">(centered on the "main-flex-axis")</span><br>
-            space-between <span style="color:blue;">(space envely distributed between the elements <u>(first and last element stays at the start and end on the "main-flex-axis")</u>)</span><br>
-            space-around <span style="color:blue;">(space evenly distributed around each element along the "main-flex-axis")</span><br>
-            space-evenly   <span style="color:blue;">(space evenly distributed between elements along the "main-flex-axis")</span>
+            flex-start  <span class="cssAV">(Default: at the start of the "main-flex-axis")</span><br>
+            flex-end  <span class="cssAV">(at the end of the "main-flex-axis")</span><br>	
+            center  <span class="cssAV">(centered on the "main-flex-axis")</span><br>
+            space-between  <span class="cssAV">(space envely distributed between the elements <u>(first and last element stays at the start and end on the "main-flex-axis")</u>)</span><br>
+            space-around  <span class="cssAV">(space evenly distributed around each element along the "main-flex-axis")</span><br>
+            space-evenly    <span class="cssAV">(space evenly distributed between elements along the "main-flex-axis")</span>
             <span id="browserSupport" title="upated: 2019-05-30">
                 <span><i class="fab fa-chrome"></i> 60 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -251,7 +249,7 @@
             </span>  
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> defines the alignement of the flex-container's child emenets along the "main-flex-axis" 
+            - <i class="fab fa-css3-alt"></i> specifies the flex items alignement on the "main-flex-axis" (set on the flex container)  
             <span id="browserSupport" title="upated: 2019-05-30">
                 <span><i class="fab fa-chrome"></i> 29/21 -webkit- </span>
                 <span><i class="fab fa-firefox"></i> 28/18 -moz- </span>
@@ -261,13 +259,14 @@
             </span>  
         </td>
     </tr>
-    <tr>
+    <tr class="16.01">
         <td> order </td>
         <td>  
-            <strong>nr</strong> <span style="color:blue;">((<mark>0</mark> default) defines the element order)</span><br>
+            <strong>nr</strong>  <span class="cssAV">((Default: <mark>0</mark>) defines the element order)</span><br>
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> defines the order of the flex-container's child elements relative to each other <u>(property is set on the child element)</u>  
+            - <i class="fab fa-css3-alt"></i> specifies the flex item order relative to each other (set on the flex item) <br>
+            - flex items having this property will be placed <u>after</u> flex items not having this property 
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 29/21 -webkit- </span>
                 <span><i class="fab fa-firefox"></i> 28/18 -moz- </span>
@@ -277,34 +276,34 @@
             </span>  
         </td>
     </tr>
-    <tr>
+    <tr class="20.03">
         <td> place-content </td>
         <td>  
             <strong>align-content justify-content</strong><br>
-            <strong>align-content/justify-content</strong>  <span style="color:blue;">(one value applies for both properties)</span>
+            <strong>align-content/justify-content</strong> <span class="cssAV">(one value applies for both properties)</span>
             <span id="browserSupport" title="updated: 2019-05-30">
                 <span><i class="fab fa-firefox"></i> 60 </span>
             </span>  
         </td>
         <td> 
-            shorthand property for the <mark>align-content</mark> and <mark>justify-content</mark> properties 
-            <span id="browserSupport" title="updated: 2019-05-30">
-                <span><i class="fab fa-chrome"></i> 55 </span>
-                <span><i class="fab fa-firefox"></i> 53 </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
-                <span><i class="fab fa-safari"></i> NO </span>
+            - shorthand property for <mark>align-content</mark> and <mark>justify-content</mark> (set on the flex container)  
+            <span id="browserSupport" title="updated: 2021-05-21">
+                <span><i class="fab fa-chrome"></i> 59 </span>
+                <span><i class="fab fa-firefox"></i> 45 </span>
+                <span><i class="fab fa-opera"></i> 46 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 9 </span>
             </span>  
         </td>
     </tr>
     
 </table>   
-<h2 style="color:green;"><u> Notes : </u></h2>
+<br>    
     <details class="example" id="notes">
     <summary> Notes :</summary>
     </details>
 <h2 style="color:green;"><u> Useful Links : </u></h2>
-    <p><a href="http://www.w3schools.com/css/css3_flexbox.asp"> W3Schools Flexbox </a></p>
+    <p><a href="http://www.w3schools.com/css/css3_flexbox.asp" target="_blank"> W3Schools Flexbox </a></p>
 <h2 style="color:green;"><u> Remember This : </u></h2>
     <p> - the <mark>align-items: stretch;</mark> and <mark>align-content: stretch;</mark> works only if the element does not have the size set in that direction (depending on the "main-flex-axis" current direction) </p>
     <p> - <mark>float</mark> , <mark>clear</mark> and <mark>vertical-align</mark> does not have any effent on felxbox items!</p>
@@ -315,29 +314,9 @@
     <p> - Everything <u>outside a flex container</u> and <u>inside a flex item</u> are not affected by any of the flex properties </p>
     <p> - The flex-box layout is "flex-line" oriented design, all elements are positioned relative to this line </p>
     <p><img src="flexbox.png" alt="flexbox" width="500px"></p>
-    <pre class="syntax">
-SYNTAX :    display: flex                   <span style="color:skyblue;">//<i class="fab fa-css3-alt"></i> block-level flex element </span>         // specifies the display behavior of the element 
-                     inline-flex            <span style="color:skyblue;">//<i class="fab fa-css3-alt"></i> inline flex element </span>
-        
-            flex-direction: row             <span style="color:skyblue;">// (default) left-to-righ </span>             //<i class="fab fa-css3-alt"></i> sets the "main-flex-axis" direction 
-                          : row-reverse     <span style="color:skyblue;">// right-to-left</span>
-                          : column          <span style="color:skyblue;">// top-to-bottom</span>
-                          : column-reverse  <span style="color:skyblue;">// bottom-to-top</span>
-                 
-            flex-wrap: nowrap               <span style="color:skyblue;">// (default) flex-line doesn't wrap</span>    //<i class="fab fa-css3-alt"></i> specifies if/how the "main-flex-axis" is wrappwed when the flex children have no more space along the "main-flex-axis"    
-                     : wrap                 <span style="color:skyblue;">// wraps the flex-line when necessary</span>
-                     : wrap-reverse         <span style="color:skyblue;">// wraps the flex-line when necessary in inverse order</span>
-    
-            flex-flow: <strong>flex-direction flex-wrap</strong>                                    // <i class="fab fa-css3-alt"></i> shorthand property for the <mark>flex-direction</mark> and <mark>flex-wrap</mark> properties
-                           
-            order: <strong>nr</strong>                       <span style="color:skyblue;">// (<mark>0</mark> default) element order</span>           // <i class="fab fa-css3-alt"></i> defines the order of the flex-container's child elements relative to each other <u>(property is set on the child element)</u>
-                           
-            flex-basis: <strong>cssLength</strong>                                                  // <i class="fab fa-css3-alt"></i> sets the size of the element <u>along the "main-flex-axis</u>
-                      : auto                <span style="color:skyblue;">// (default) equlas to the element's current size (width or height depending on the flex-line direction)</span>
-            flex-grow: <strong>nr</strong>                   <span style="color:skyblue;">// (default <mark>0</mark> <u>not growing</u>)</span>             // <i class="fab fa-css3-alt"></i> defines how much the item grows <u>(along the "main-flex-axis)</u> (relative to the "flex-basis" size) relative to the other elements in the same flex-container (relative to other elements' <mark>flex-grow</mark> property)
-            flex-shrink: <strong>nr</strong>                 <span style="color:skyblue;">// (default <mark>1</mark>) <mark>0</mark> means no shrink</span>       // <i class="fab fa-css3-alt"></i> defines how much the element shrinks <u>(along the "main-flex-axis)</u> (relative to the "flex-basis" size) relative to the other elements in the same flex-container (relative to other elements' <mark>flex-shrink</mark> property) (element shrinks only if the flex-container forces it get smaller than the <makr>flex-basis</makr> size) (element never shrinks smaller than "content + padding") (the <mark>flex-wrap</mark> property overrides this property)   
-            flex: <strong>flex-grow flex-shrink flex-basis</strong>   <span style="color:skyblue;">// (default <mark>0</mark> <mark>1</mark> <mark>auto</mark>)</span>         // <i class="fab fa-css3-alt"></i> shrothand property for the "flex-grow" "flex-shrink" and "flex-basis" properties  
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>display</mark> / <mark>flex-direction</mark> / <mark>flex-wrap</mark> / <mark>flex-flow</mark> / <mark>order</mark> / <mark>flex-basis</mark> / <mark>flex-grow</mark> / <mark>flex-shrink</mark> / <mark>flex</mark> properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     &lt;div class="myElement"&gt;
         &lt;div&gt;1&lt;/div&gt;
@@ -360,7 +339,7 @@ SYNTAX :    display: flex                   <span style="color:skyblue;">//<i cl
     }
     
 // order --------------------------------------------------------------------------  
-// -! the "order" property must be set on ALL the elements otherwise the "counted elements" will be placed AFTER the uncounted ones (in this case "<div>3</div> <div>2</div> <div>1</div>")     
+// -! the "order" property must be set on ALL the elements otherwise the "counted elements" will be placed AFTER the uncounted ones (in this case "&lt;div&gt;3&lt;/div&gt; &lt;div&gt;2&lt;/div&gt; &lt;div&gt;1&lt;/div&gt;")     
     .myElement div:first-child { order: 2; }                                       // element placed as 2nd in the element order 
     .myElement div:nth-child(2) { order: 1; }                                      // element placed as 1st in the element order 
                                                                                    // the "order" property works only on flex-container children elements
@@ -392,6 +371,7 @@ SYNTAX :    display: flex                   <span style="color:skyblue;">//<i cl
     }
     // -! this is how the above "flex-grow" is calculated, (0+1+3+2=6) the available space is slit up to 6 pieces than the "flex-grow" property defines how much of this shared space is distributed to each individual element  
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> - Perfect Centering : </u></h4>
@@ -819,38 +799,9 @@ SYNTAX :    display: flex                   <span style="color:skyblue;">//<i cl
 </details>
 <!------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> the <mark>justify-content</mark> / <mark>align-content</mark> / <mark>place-content</mark> / <mark>justify-items</mark> / <mark>align-itmes</mark> / <mark>place-items</mark> / <mark>justify-self</mark> / <mark>align-self</mark> / <mark>place-self</mark> properties </u></h2>
-    <pre class="syntax">
-SYNTAX :    justify-content: flex-start     <span style="color:skyblue;">// (default) at the start of the "main-flex-axis"</span>   // <i class="fab fa-css3-alt"></i> defines the alignement of the flex-container's child emenets along the "main-flex-axis"
-                           : flex-end       <span style="color:skyblue;">// at the end of the "main-flex-axis"</span>
-                           : center         <span style="color:skyblue;">// centered on the "main-flex-axis"</span>
-                           : space-between  <span style="color:skyblue;">// space envely distributed between the elements <u>(first and last element stays at the start and end on the "main-flex-axis")</u></span>
-                           : space-around   <span style="color:skyblue;">// space evenly distributed around each element along the "main-flex-axis"</span>
-                           : space-evenly   <span style="color:skyblue;">// space evenly distributed between elements along the "main-flex-axis"</span>
-                        
-            align-content: stretch          <span style="color:skyblue;">// (default) the "main-flex-axis" placed at the beginning of the "cross-flex-axis" and wraps (if necessary) evenly</span>   // <i class="fab fa-css3-alt"></i> places the "main-flex-axis" along the "cross-flex-axis" and defines how the "main-flex-axis" wraps if necessary <u>(only when the <mark>flex-wrap</mark> property is set)</u>   
-                         : center           <span style="color:skyblue;">// the "main-flex-axis" placed in the center of the "cross-flex-axis" and if it is wraped it is disptributed around the center</span>   
-                         : flex-start       <span style="color:skyblue;">// the "main-flex-axis" is placed at the beginning of the "cross-flex-axis" and wraps (if necessary) at the start </span>
-                         : flex-end         <span style="color:skyblue;">// the "main-flex-axis" is placed at the end of the "cross-flex-axis" and wraps (if necessary) at the end </span>
-                         : space-between    <span style="color:skyblue;">// the "main-flex-axis" is placed at the beginning of the "cross-flex-axis", when it wraps (if necessary) evenly distribute the space between them <u>but the first an the last line will stay at the start and at the end</u></span>
-                         : space-around     <span style="color:skyblue;">// the "main-flex-axis" is placed in the center of the "cross-flex-axis", when it wraps (if necessary) the space is evenly distributed around items </span>
-                         : space-evenly     <span style="color:skyblue;">// the "main-flex-axis" is placed in the center of the "cross-flex-axis", when it wraps (if necessary) the space is evenly distributed between the elements</span>
-                         
-            place-content: <strong>align-content justify-content</strong>                           // shorthand property for the <mark>align-content</mark> and <mark>justify-content</mark> properties   
-                         : <strong>align-content/justify-content</strong>  <span style="color:skyblue;">// one value applies for both properties</span>
-                         
-            aling-items: stretch            <span style="color:skyblue;">// (default) stretched along the "cross-flex-axis" <u>(works only if the element has no height set)</u></span>   // <i class="fab fa-css3-alt"></i> defines the alignement of the flex-container's child elements along the "cross-flex-axis" <u>(the <mark>align-content</mark> and <mark>align-self</mark> properties override this property)</u>
-                       : center             <span style="color:skyblue;">// centered along the "cross-flex-axis"</span>
-                       : flex-start         <span style="color:skyblue;">// placed at the start of the "cross-flex-axis"</span>
-                       : flex-end           <span style="color:skyblue;">// placed at the end of the "cross-flex-axis"</span>
-                       : baseline           <span style="color:skyblue;">// positioned at the baseline (text line) of the container </span>
-                         
-            align-self: auto                <span style="color:skyblue;">// (default) inherits the <mark>align-itmes</mark> property value from the parent element or "stretch" if there is no parent element </span>   // <i class="fab fa-css3-alt"></i> defines the alignement of the flex-container's child elements individually along the "cross-flex-axis" <u>(property is set on the child element)</u> (this property overrides the <mark>align-items</mark> property but it is overriden by the <mark>align-content</mark> property)   
-                      : stretch             <span style="color:skyblue;">// stretched along the "cross-flex-axis" <u>(works only if the element has no height set)</u></span> 
-                      : flex-start          <span style="color:skyblue;">// placed at the beginning of the "cross-flex-axis"</span>
-                      : flex-end            <span style="color:skyblue;">// placed at the end of the "cross-flex-axis"</span> 
-                      : baseline            <span style="color:skyblue;">// positioned at the baseline (text line) of the container</span> 
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>justify-content</mark> / <mark>align-content</mark> / <mark>place-content</mark> / <mark>justify-items</mark> / <mark>align-itmes</mark> / <mark>place-items</mark> / <mark>justify-self</mark> / <mark>align-self</mark> / <mark>place-self</mark> properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
 // align-content / justify-content / place-content --------------------------------
     .myElement {
@@ -869,6 +820,7 @@ SYNTAX :    justify-content: flex-start     <span style="color:skyblue;">// (def
         align-self: flex-start;                                                    // places this element at the start along the "cross-flex-axis"   
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example </summary>
 <h4 style="color:darkblue;"><u> - <mark>justify-content</mark> TEST </u></h4>

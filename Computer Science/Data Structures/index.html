@@ -623,36 +623,8 @@ module.exports = class HashTable {
     <p> - in a Binary Tree each node can have up to 2 child nodes (left and right child node)) </p>
     <p> - in a Binary Search Tree (BST) each node's left child is smaller than the parent and and the right child is larger than the parent, so searching in BST is <mark>O(log n)</mark> / <mark>O(n)</mark>  </p>
     <img src="Binary Tree.jpg" height="210">
-    <pre class="syntax">
-<span style="color:darkgray;">// accessing binary tree nodes </span>
-    (2 * <strong class="openable">i<div>
-        <p> - node in question </p>
-    </div></strong>) + 1                                                                       // get left child 
-    (2 * <strong class="openable">i<div>
-        <p> - node in question </p>
-    </div></strong>) + 2                                                                       // get right child 
-    Math.floor( (<strong class="openable">i<div>
-        <p> - left or right child </p>
-    </div></strong> - 1) / 2 )                                                         // get parent 
-    </pre>
-<h3 style="color:darkblue;"><u> Binary Search Tree (time complexity = ???????????????????) </u></h3>
-        
-        
-        
-        
-        
-        
-        
-    <br><br><br><br><br><br><br><br><br><br>
-        
-<h3 style="color:darkblue;"><u> Heap (time complexity = insert and remove <mark>O(log n)</mark> / create <mark>O(n)</mark>) </u></h3>
-    <p> - the Heap is essentially a <u>complete</u> binary tree but with the data is stored in a special way, there are 2 types of heaps, <u>Min Heap</u> and <u>Max Heap</u> </p>
-    <p> - in a Min Heap the smallest data is stored on the top and the largest data is in the leaves, the general rule is that each parent node has smaller or equal child nodes </p>
-    <p> - in a Max Heap the largest data is stored on the top and the smallest data is in the leaves, the general rule is that each parent node has larger or equal child nodes </p>
-    <p> - so when getting the root value of a Heap we take the smallest|largest data of that Min|Max Heap </p>
 <details class="example">
 <summary> DEMO  </summary>
-    <p> - Binary Tree </p>
     <pre>
     var root = {                                                                       // binary tree data structure 
         data: 2, 
@@ -695,7 +667,245 @@ module.exports = class HashTable {
     
     treeSum(root);                                                                     // -> 50
     </pre>
-    <p> - Heap </p>
+</details>
+<h3 style="color:darkblue;"><u> Binary Search Tree (BST) (time complexity = <mark>O(log n)</mark> / <mark>O(n)</mark>) </u></h3>
+    <p> - in a Binary Search Tree nodes have their left child smaller and right child bigger than the parrent node </p> 
+    <p> - this structure allows us to store and handle data effectively O(log n), however in wors case this is O(n) </p>
+    <p> - there exist sereral implementations that balances the BST so operations are alwasy O(log n) (AVL tree, red-black tree, splay tree) </p>  
+<details class="example">
+<summary> DEMO  </summary>
+    <pre>
+    class BST{
+        constructor(arr){
+            this.val = undefined;
+            this.left = undefined;
+            this.right = undefined;
+            
+            if(arr){
+                for(let i of arr){
+                    this.set(i);
+                }
+            }
+        }
+        
+        set(val){ 
+            if(this.val === undefined) {
+                this.val = val; 
+                return true; 
+            }
+            
+            let currentParent = this;
+            
+            while(true){
+                currentParent = insert(val, currentParent);
+                
+                if (currentParent === true) return true;
+                if (currentParent === false) return false;
+            }
+            
+            function insert(val, parent){
+                if(val &lt; parent.val){
+                    if(parent.left === undefined){
+                        parent.left = {val:val, left:undefined, right:undefined};
+                        return true;
+                    } else{
+                        return parent.left;
+                    }
+                } else if(val > parent.val){
+                    if(parent.right === undefined){
+                        parent.right = {val:val, left:undefined, right:undefined};
+                        return true;
+                    } else{
+                        return parent.right;
+                    }
+                } else {
+                    return false
+                }
+            }
+        }
+        
+        get(val){ 
+            if(this.val === val) {
+                return true; 
+            }
+            
+            let currentParent = this;
+            
+            while(true){
+                currentParent = search(val, currentParent);
+                
+                if (currentParent === true) return true;
+                if (currentParent === false) return false;
+            }
+            
+            function search(val, parent){
+                if(val &lt; parent.val){
+                    if(parent.left === undefined){
+                        return false;
+                    } else if(parent.left.val === val){
+                        return true;  
+                    } else{
+                        return parent.left;
+                    }
+                } else if(val > parent.val){
+                    if(parent.right === undefined){
+                        return false;
+                    } else if(parent.right.val === val){
+                        return true;  
+                    } else {
+                        return parent.right;
+                    }
+                } else {
+                    return false
+                }
+            }
+        }
+        
+        delete(val){
+            let nodePath = '';
+            let nodeToDelete = ''
+            let currentParent = this;
+            
+            if(val !== this.val){ 
+                while(true){
+                    currentParent = search(val, currentParent);
+                    
+                    if (currentParent === true) break;
+                    if (currentParent === false) return false;
+                }
+            }
+            
+            nodeToDelete = nodePath;
+            nodePath = '';
+            
+            if(eval('this' + nodeToDelete).left !== undefined && eval('this' + nodeToDelete).right !== undefined){
+                if (eval('this' + nodeToDelete).left.right !== undefined) {            // remove if 2 subtrees 
+                    let left = eval('this' + nodeToDelete).left; 
+                    nodePath += '.left'
+                    
+                    while(left){
+                        left = search(Infinity, left);
+                    }
+                    
+                    eval( 'this' + nodeToDelete).val = eval( 'this' + nodeToDelete + nodePath).val;
+                    eval('this' + (nodeToDelete + nodePath).slice(0, (nodeToDelete + nodePath).lastIndexOf('.')))[(nodeToDelete + nodePath).slice((nodeToDelete + nodePath).lastIndexOf('.') + 1)] = undefined;
+                    
+                    return true; 
+                } else {
+                    eval( 'this' + nodeToDelete).val = eval( 'this' + nodeToDelete).left.val;
+                    eval( 'this' + nodeToDelete).left = eval( 'this' + nodeToDelete).left.left;
+                    
+                    return true;
+                }
+            } else if(eval('this' + nodeToDelete).left !== undefined){                 // remove if left subtree 
+                if(val === this.val){
+                    this.val = this.left.val;
+                    
+                    let subLeft = this.left.left;
+                    let subRight = this.left.right;
+                    
+                    this.left = subLeft;
+                    this.right = subRight;
+                    
+                    return true;
+                }
+                
+                eval( 'this' + nodeToDelete.slice(0, nodeToDelete.lastIndexOf('.')))[nodeToDelete.slice(nodeToDelete.lastIndexOf('.') + 1)] = 
+                    eval('this' + nodeToDelete).left;
+                
+                return true;
+            } else if (eval('this' + nodeToDelete).right !== undefined){               // remove if right subtree
+                if(val === this.val){
+                    this.val = this.right.val;
+                    
+                    let subLeft = this.right.left;
+                    let subRight = this.right.right;
+                    
+                    this.left = subLeft;
+                    this.right = subRight;
+                    
+                    return true;
+                }
+                
+                eval( 'this' + nodeToDelete.slice(0, nodeToDelete.lastIndexOf('.')))[nodeToDelete.slice(nodeToDelete.lastIndexOf('.') + 1)] = 
+                    eval('this' + nodeToDelete).right;
+                
+                return true;
+            } else {                                                                   // remove leaf node 
+                if(val === this.val) {
+                    this.val = undefined;
+                    return true;
+                }
+                
+                let parent = nodeToDelete.slice(0, nodeToDelete.lastIndexOf('.'));
+                eval('this' + parent)[nodeToDelete.slice(nodeToDelete.lastIndexOf('.') + 1)] = undefined;
+                
+                return true;
+            }
+            
+            function search(val, parent){
+                if(val &lt; parent.val){
+                    if(parent.left === undefined){
+                        return false;
+                    } else if(parent.left.val === val){
+                        nodePath += '.left'
+                        return true;  
+                    } else{
+                        nodePath += '.left'
+                        return parent.left;
+                    }
+                } else if(val > parent.val){
+                    if(parent.right === undefined){
+                        return false;
+                    } else if(parent.right.val === val){
+                        nodePath += '.right'
+                        return true;  
+                    } else {
+                        nodePath += '.right'
+                        return parent.right;
+                    }
+                } else {
+                    return false
+                }
+            }
+        }
+    }
+    
+    
+    var myBst = new BST([21, 15, 30, 10, 19, 25, 33, 7, 12, 18, 20,, 40, 45, 100, 35, 24, 22]);  
+    
+    myBst.set(55);                                                                     // adding extra values to the tree 
+    myBst.set(-4);
+    myBst.set(12);                                                                     // duplicates are ignored 
+    
+    console.log( myBst.get(100) );                                                     // -> true 
+    console.log( myBst.get(-4) );                                                      // -> true 
+    console.log( myBst.get(23) );                                                      // -> false 
+    
+    console.log( myBst.delete(21) );                                                   // -> true          // deletes the root node 
+    console.log( myBst.delete(100) );                                                  // -> true          // deletes the leaf node 
+    console.log( myBst.delete(21) );                                                   // -> false         // node isn't on the tree 
+    </pre>
+</details>
+<h3 style="color:darkblue;"><u> Heap (time complexity = insert and remove <mark>O(log n)</mark> / create <mark>O(n)</mark>) </u></h3>
+    <p> - the Heap is essentially a <u>complete</u> binary tree but with the data is stored in a special way, there are 2 types of heaps, <u>Min Heap</u> and <u>Max Heap</u> </p>
+    <p> - in a Min Heap the smallest data is stored on the top and the largest data is in the leaves, the general rule is that each parent node has smaller or equal child nodes </p>
+    <p> - in a Max Heap the largest data is stored on the top and the smallest data is in the leaves, the general rule is that each parent node has larger or equal child nodes </p>
+    <p> - so when getting the root value of a Heap we take the smallest|largest data of that Min|Max Heap </p>
+    <pre class="syntax">
+<span style="color:darkgray;">// accessing binary tree nodes </span>
+    (2 * <strong class="openable">i<div>
+        <p> - node in question </p>
+    </div></strong>) + 1                                                                       // get left child 
+    (2 * <strong class="openable">i<div>
+        <p> - node in question </p>
+    </div></strong>) + 2                                                                       // get right child 
+    Math.floor( (<strong class="openable">i<div>
+        <p> - left or right child </p>
+    </div></strong> - 1) / 2 )                                                         // get parent 
+    </pre>
+<details class="example">
+<summary> DEMO  </summary>
     <pre>
     class MinHeap{
         constructor(arr = []){

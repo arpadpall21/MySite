@@ -10,25 +10,28 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Formating Text (ver 2.9) </h1>
-    <p> Updated  ( 2016-05-25 / 2016-11-12 / 2018-10-31 )</p>
+<h1> Formating Text (ver 4.0.0) </h1>
+    <p> Updated  ( 2016-05-25 / 2016-11-12 / 2018-10-31 / 2021-05-24 )</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html" title="CSS">CSS></a> Text Formating 
     </p>
 <table class="table">    
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <th style="width:10%;"> Property </th>
-        <th> Value </th>
+        <th style="width:15%"> Property </th>
+        <th style="width:40%;"> Value </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> color </td>
         <td> 
-            <strong>colorValue</strong> <span style="color:blue;">(<a href="../Colors/index.html" target="_blank">colorValue [link]</a>)</span>
+            <strong>colorValue</strong> <span class="cssVA">(<a href="../Colors/index.html" target="_blank">colorValue [link]</a>)</span>
         </td>
         <td> 
-            specifies a color for the text 
-            <span id="browserSupport">
+            - specifies a color for the text 
+            <span id="browserSupport" title="Update: 2021-05-24">
                 <span><i class="fab fa-chrome"></i> 1 </span>
                 <span><i class="fab fa-firefox"></i> 1 </span>
                 <span><i class="fab fa-opera"></i> 3.5 </span>
@@ -37,32 +40,33 @@
             </span>        
         </td>
     </tr>
-    <tr>
-        <td> &lt;<strong>HTMLTag</strong> dir="<em>ltr/rtl</em>"&gt; </td>
-        <td>  
-            ltr <span style="color:blue;">(left-to-right)</span><br>
-            rtl <span style="color:blue;">(right-to-left)</span><br>
-        </td>
-        <td> <u style="color:orangered;">(Global Attribute)</u> specifies the writing direction of an element </td>
-    </tr>
-    <tr>
+    <tr class="50.01">
         <td> direction </td> 
-        <td>  
-            ltr <span style="color:blue;">([default] left-to-right)</span><br>
-            rtl <span style="color:blue;">(right-to-left)</span>
+        <td> 
+            ltr <span class="cssAV">((Default) left-to-right)</span><br>
+            rtl <span class="cssAV">(right-to-left)</span>
         </td>
-        <td> defines the writing direction in a <u>block level</u> element </td>
+        <td> 
+            - defines the writing direction in a <u>block level</u> element 
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 2 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 9.2 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="40.4">
         <td> hyphens </td>
         <td>  
-            none <span style="color:blue;">(no hyphenation)</span><br>
-            manual <span style="color:blue;">((default) words are hyphenated at <mark>-</mark>(hyphen characters))</span><br>
-            auto <span style="color:blue;">(browser hyphenate when algorithm is deciding (depending on the set language))</span>
+            none <span class="cssAV">(no hyphenation)</span><br>
+            manual <span class="cssAV">((Default) words are hyphenated at <mark>-</mark>(hyphen characters))</span><br>
+            auto <span class="cssAV">(browser hyphenate when algorithm is deciding (depending on the set language))</span> 
         </td>
         <td>
-            <i class="fab fa-css3-alt"></i> controls the text hyphenation (hyphen used when the text reaches the end of the line) 
-            <span id="browserSupport">
+            - controls the text hyphenation (hyphen used when the text reaches the end of the line) 
+            <span id="browserSupport" title="Updated: 2021-05-24">
                 <span><i class="fab fa-chrome"></i> 55 </span>
                 <span><i class="fab fa-firefox"></i> 43 </span>
                 <span><i class="fab fa-opera"></i> 44 </span>
@@ -71,151 +75,126 @@
             </span>
         </td>
     </tr>    
-    <tr>
+    <tr class="20.02">
         <td> letter-spacing </td>
-        <td>  
-            normal <span style="color:blue;">(default)</span><br>
-            <strong>cssLength</strong>  <span style="color:blue;">(default value 0)</span>
-        </td>
-        <td> increase or decrease the space between characters (negative values are allowed) </td>
-    </tr>
-    <tr>
-        <td> line-height </td>
-        <td>  
-            normal <span style="color:blue;">([default] font size height)</span><br>
-            <strong>nr</strong> <span style="color:blue;">(compared the current font size (default 0))</span><br>
-            <strong>cssLength</strong>  <span style="color:blue;">(fixed value)</span><br>
-            <strong>nr</strong>% <span style="color:blue;">(compared the current font size (default 100%))</span>
-        </td>
-        <td> specifies the height of a line </td>
-    </tr>
-    <tr>
-        <td> overflow-wrap </td>
-        <td>  
-            normal <span style="color:blue;">([default] no word break)</span><br>
-            break-word <span style="color:blue;">(allows unbreakable words to be broken)</s
+        <td> 
+            normal <span class="cssAV">(Default)</span><br>
+            <strong>cssLength</strong>  <span class="cssAV">(default value 0)</span>
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> long words <u>(longer the the parent element)</u> to be broken and wrap onto the next line (new version of <mark>word-wrap</mark> property  [does the exact same thing])
-            <span id="browserSupport">
+            - increases or decreases the space between characters (negative values allowed) 
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+            </span>        
+        </td>
+    </tr>
+    <tr class="60.01">
+        <td> line-height </td>
+        <td>  
+            normal <span class="cssAV">((Default) font size height)</span><br>
+            <strong>nr</strong> <span class="cssAV">(compared the current font size (Default <mark>0</mark>))</span><br>
+            <strong>cssLength</strong>  <span class="cssAV">(fixed value)</span><br>
+        </td>
+        <td> 
+            - sets the height of an inline box 
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 7 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+            </span>        
+        </td>
+    </tr>
+    <tr class="40.01">
+        <td> overflow-wrap </td>
+        <td>  
+            normal <span class="cssAV">(Default) no word break)</span><br>
+            break-word <span class="cssAV">(allows unbreakable words to be broken)</span><br>
+            anywhere <span class="cssAV">(allows unbreakable words to be broken)</span>
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 80 </span>
+                <span><i class="fab fa-firefox"></i> 65 </span>
+                <span><i class="fab fa-opera"></i> 67 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 80 </span>
+                <span><i class="fab fa-safari"></i> NO </span>
+            </span>
+        </td>
+        <td> 
+            - long words <u>(longer the the parent element)</u> to be broken and wrap onto the next line (newer version of <mark>word-wrap</mark> property)
+            <span id="browserSupport" title="Updated: 2021-05-24">
                 <span><i class="fab fa-chrome"></i> 23 </span>
                 <span><i class="fab fa-firefox"></i> 49 </span>
                 <span><i class="fab fa-opera"></i> 12.1 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 18 </span>
-                <span><i class="fab fa-safari"></i> 6.4 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> quotes </td>
-        <td>  
-            none <span style="color:blue;">(no quotation)</span><br>
-            <i>"stQuteLv1" "endQuteLv1" "stQuteLv2" "endQuteLv2" ...</i>
-        </td>
-        <td>  
-            defines the quotation value for the <mark>&lt;q&gt;</mark> element (no default value)
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 11 </span>
-                <span><i class="fab fa-firefox"></i> 1.5 </span>
-                <span><i class="fab fa-opera"></i> 4 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 8 </span>
-                <span><i class="fab fa-safari"></i> 5.1 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> tab-size </td>
-        <td>  
-            <strong>nr</strong> <span style="color:blue;">(character width (default <mark>8</mark>))</span><br>
-            <strong>cssLength</strong>
-        </td>
-        <td> 
-            <i class="fab fa-css3-alt"></i> specifies the width of the "tab" character <span style="color:orangered;">(Experimental Technology [TESTED 2019-04-09])</span> 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 21 </span>
-                <span><i class="fab fa-firefox"></i> 4 -moz </span>
-                <span><i class="fab fa-opera"></i> 15/10.6 -o- </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
                 <span><i class="fab fa-safari"></i> 6.1 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="70.02">
+        <td> quotes </td>
+        <td>  
+            none <span class="cssAV">(no quotation)</span><br>
+            <i>"stQuteLv1" "endQuteLv1" "stQuteLv2" "endQuteLv2" ...</i> <br>
+            auto <span class="cssAV">(quotation according to the elemnt's <mark>lang</mark> attribute)</span>
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 87 </span>
+                <span><i class="fab fa-firefox"></i> 70 </span>
+                <span><i class="fab fa-opera"></i> 73 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 87 </span>
+                <span><i class="fab fa-safari"></i> NO </span>
+            </span>
+        </td>
+        <td>  
+            - defines the quotation character for the <mark>&lt;q&gt;</mark> tag 
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 11 </span>
+                <span><i class="fab fa-firefox"></i> 1.5 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 8 </span>
+                <span><i class="fab fa-safari"></i> 9 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="70.01">
+        <td> tab-size </td>
+        <td>  
+            <strong>nr</strong> <span class="cssAV">(number of characters (Default <mark>8</mark>))</span><br>
+            <strong>cssLength</strong>            
+                <span id="browserSupport" title="Updated: 2021-05-24">
+                    <span><i class="fab fa-chrome"></i> 42 </span>
+                    <span><i class="fab fa-firefox"></i> 53 </span>
+                    <span><i class="fab fa-opera"></i> 29 </span>
+                    <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                    <span><i class="fab fa-safari"></i> NO </span>
+                </span>
+        </td>
+        <td> 
+            - specifies the width of the "tab" character </span> 
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 21 </span>
+                <span><i class="fab fa-firefox"></i> 4 -moz- </span>
+                <span><i class="fab fa-opera"></i> 10.5 -o- / 15 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 6.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="55.01">
         <td> text-align </td>
-        <td>  
-            left <span style="color:blue;">([default] left align)</span><br>
-            right <span style="color:blue;">(right align)</span><br>
-            center <span style="color:blue;">(center align)</span><br>
-            justify <span style="color:blue;">(stretches the lines so that each line has the same width)</span>
-        </td>
-        <td> specifies the horizontal alignement of text in an element </td>
-    </tr>
-    <tr>
-        <td> text-align-last </td>
-        <td>  
-            auto <span style="color:blue;">(last line justified and aligned left)</span><br>
-            left <span style="color:blue;">(left)</span><br>
-            right <span style="color:blue;">(right)</span><br>
-            center <span style="color:blue;">(centered)</span><br>
-            start <span style="color:blue;">(last line is aligned at the beginning of the line (right if <mark>direction:rtl</mark>))</span><br>
-            end <span style="color:blue;">(last line is aligned at the end of the line (left if <mark>direction:rtl</mark>))</span>
-        </td>
-        <td> specifies how the last line of the text is aligned <span style="color:orangered;">(no Saffari support / EDGE supports it only if <mark>text-align:justify</mark> is set [2018-11-03])</span> </td>
-    </tr>
-    <tr>
-        <td> text-decoration </td>
         <td> 
-            <strong>text-decoration-line</strong> <i>text-decoration-style</i> <i>text-decoration-color</i> <span style="color:blue;">(shorthand properties)</span>
-        </td>
-        <td> shorthand property for <mark>text-decoration-line</mark>, <mark>text-decoration-style</mark>, <mark>text-decoration-color</mark> properties </td>
-    </tr>
-    <tr>
-        <td> text-decoration-color </td>
-        <td>  
-            <strong>colorValue</strong> <span style="color:blue;">(<a href="../Colors/index.html" target="_blank">colorValue [link]</a>)</span>
-        </td>
-        <td> specifies the decorationcolor (<mark>text-decoration-line</mark> propety must be declared) <span style="color:orangered;">(no EDGE support [2018-10-31])</span> </td>
-    </tr>
-    <tr>
-        <td> text-decoration-line </td>
-        <td>  
-            underline<br>
-            overline<br>
-            linethrough
-        </td>
-        <td> set the kind of text decoration to use (multiple values can be combined) <span style="color:orangered;">(no EDGE support [2018-10-31])</span> </td>
-    </tr>
-    <tr>
-        <td> text-decoration-skip </td>
-        <td>  
-            none <span style="color:blue;">(default)</span><br> 
-            objects<br>
-            spaces<br>
-            edges<br>
-            box-decoration
-        </td>
-        <td> <span style="color:orangered;">(Experimental Technology (2018-10-31))</span> specifies what part of the decoration should be skipped (<mark>text-decoration-line</mark> propety must be declared)  </td>
-    </tr>
-    <tr>
-        <td> text-decoration-style </td>
-        <td>  
-            solid <span style="color:blue;">(default)</span><br>
-            double<br>
-            dotted<br>  
-            dashed<br>   
-            wavy
-        </td>
-        <td> sets the kind of decoration line to use (<mark>text-decoration-line</mark> propety must be declared) <span style="color:orangered;">(no EDGE and Safari support [2018-10-31])</span> </td>
-    </tr>
-    <tr>
-        <td> text-indent </td>
-        <td>  
-            <strong>cssLength</strong>  <span style="color:blue;">(default value 0)</span><br>
-            <strong>nr</strong>% <span style="color:blue;">(relative to the parent element's width)</span>
+            left <span class="cssAV">((Default) left align)</span><br>
+            right <span class="cssAV">(right align)</span><br>
+            center <span class="cssAV">(center align)</span><br>
+            justify <span class="cssAV">(stretches the lines so that each line has the same width)</span>
         </td>
         <td> 
-            defines the indentitation of the <u>first line</u> in a text-box (negative values are allowed) 
-            <span id="browserSupport">
+            - specifies the horizontal alignement of text in an element 
+            <span id="browserSupport" title="Update: 2021-05-24">
                 <span><i class="fab fa-chrome"></i> 1 </span>
                 <span><i class="fab fa-firefox"></i> 1 </span>
                 <span><i class="fab fa-opera"></i> 3.5 </span>
@@ -224,51 +203,207 @@
             </span>
         </td>
     </tr>
-    <tr>
-        <td> text-justify </td>
+    <tr class="55.02">
+        <td> text-align-last </td>
         <td>  
-            auto <span style="color:blue;">(browser choses the algorithm)</span><br>
-            inter-word <span style="color:blue;">(increase/decreas the space between words to justify the text)</span><br>
-            inter-character <span style="color:blue;">(increase/decreas the space between characters to justify the text)</span><br>
-            none <span style="color:blue;">(disables the justification method)</s
+            auto <span class="cssAV">(last line justified and aligned left)</span><br>
+            left <span class="cssAV">(left)</span><br>
+            right <span class="cssAV">(right)</span><br>
+            center <span class="cssAV">(centered)</span><br>
+            start <span class="cssAV">(last line is aligned at the beginning of the line (right if <mark>direction:rtl</mark>))</span><br>
+            end <span class="cssAV">(last line is aligned at the end of the line (left if <mark>direction:rtl</mark>))</span>
         </td>
-        <td> defines the justification type of the text <span style="color:orangered;">(properly works in Mozilla only, this is mostly experimental technology for now [2018-11-03])</span> </td>
-    </tr>
-    <tr>
-        <td> text-overflow </td>
         <td> 
-            clip <span style="color:blue;">([default] text clipped when reaches the border)</span><br>
-            ellipsis <span style="color:blue;">(<span style="color:black;">...</span>) represents the clipped text</span><br>
-            <strong>text</strong> <span style="color:blue;">(set the given text to represent clipping)<span style="color:orangered;">
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> NO </span>
-                <span><i class="fab fa-firefox"></i> 9 </span>
-                <span><i class="fab fa-opera"></i> NO </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+            - specifies how the last line of the text is aligned 
+            <span id="browserSupport" title="Update: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 47 </span>
+                <span><i class="fab fa-firefox"></i> 12 -moz- / 46 </span>
+                <span><i class="fab fa-opera"></i> 34 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
                 <span><i class="fab fa-safari"></i> NO </span>
             </span>
         </td>
+    </tr>
+    <tr class="10.05">
+        <td> text-decoration </td>
         <td> 
-            specifies how the overflowed content is signaled to the user 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 4 </span>
-                <span><i class="fab fa-firefox"></i> 7 </span>
-                <span><i class="fab fa-opera"></i> 11/9 -o- </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 6 </span>
-                <span><i class="fab fa-safari"></i> 3.1 </span>
+            <strong>text-decoration-line</strong> <i>text-decoration-style</i> <i>text-decoration-color</i> <i>text-decoration-thickness</i>
+        </td>
+        <td> 
+            - shorthand property for <mark>text-decoration-line</mark>, <mark>text-decoration-style</mark>, <mark>text-decoration-color</mark> and <mark>text-decoration-thickness</mark> properties  
+            <span id="browserSupport" title="Update: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3.1 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span class="openable"> more...<div>
+                    <p> - as shorthand property </p>
+                    <span id="browserSupport" title="Update: 2021-05-24">
+                        <span><i class="fab fa-chrome"></i> 57 </span>
+                        <span><i class="fab fa-firefox"></i> 36 </span>
+                        <span><i class="fab fa-opera"></i> 44 </span>
+                        <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                        <span><i class="fab fa-safari"></i> 8 implemented with vendor prefix <mark>-webkit-</mark> </span>
+                    </span>  
+                </div></span>
+            </span>  
+        </td>
+    </tr>
+    <tr class="10.03">
+        <td> text-decoration-color </td>
+        <td>  
+            <strong>colorValue</strong> <span class="cssVA">(<a href="../Colors/index.html" target="_blank">colorValue [link]</a>)</span>
+        </td>
+        <td> 
+            - specifies the decoration color (<mark>text-decoration-line</mark> propety must be set first) 
+            <span id="browserSupport" title="Update: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 57 </span>
+                <span><i class="fab fa-firefox"></i> 36 </span>
+                <span><i class="fab fa-opera"></i> 44 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 12.1 </span>
+            </span>  
+        </td>
+    </tr>
+    <tr class="10.01">
+        <td> text-decoration-line </td>
+        <td>  
+            underline<br>
+            overline<br>
+            linethrough
+        </td>
+        <td> 
+            - set the text decoration type to use (multiple values can be combined) 
+            <span id="browserSupport" title="Update: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 57 </span>
+                <span><i class="fab fa-firefox"></i> 36 </span>
+                <span><i class="fab fa-opera"></i> 44 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 12.1 </span>
+            </span>  
+        </td>
+    </tr>
+    <tr class="10.05">
+        <td> text-decoration-skip </td>
+        <td>  
+            none <span class="cssAV">(Default)</span><br> 
+            objects<br>
+            spaces<br>
+            edges<br>
+            box-decoration
+        </td>
+        <td> - <i class="fas fa-flask"></i> specifies what part of the decoration line should skipp the text (<mark>text-decoration-line</mark> propety must be set first)  
+            <span id="browserSupport" title="Update: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> NO </span>
+                <span><i class="fab fa-firefox"></i> NO </span>
+                <span><i class="fab fa-opera"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                <span><i class="fab fa-safari"></i> 12.1 </span>
+            </span>  
+        </td>
+    </tr>
+    <tr class="10.02">
+        <td> text-decoration-style </td>
+        <td>  
+            solid <span class="cssAV">(Default)</span><br>
+            double<br>
+            dotted<br>  
+            dashed<br>   
+            wavy
+        </td>
+        <td> 
+            - sets the kind of decoration line to use (<mark>text-decoration-line</mark> propety must be declared first) 
+            <span id="browserSupport" title="Update: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 57 </span>
+                <span><i class="fab fa-firefox"></i> 36 </span>
+                <span><i class="fab fa-opera"></i> 44 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 12.1 </span>
+            </span>  
+        </td>
+    </tr>
+    <tr class="10.03">
+        <td> text-decoration-thickness </td>
+        <td>  
+            auto <span class="cssAV">(Default)</span><br>
+            from-font <span class="cssAV">(font defined thickness, if the font file doesn't have this information = <mark>auto</mark>) </span> <br>
+            <strong>cssLength</strong>
+        </td>
+        <td> 
+            - sets the stroke thickness of the decoration line (<mark>text-decoration-line</mark> propety must be declared first) 
+            <span id="browserSupport" title="Update: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 89 </span>
+                <span><i class="fab fa-firefox"></i> 70 </span>
+                <span><i class="fab fa-opera"></i> 75 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 89 </span>
+                <span><i class="fab fa-safari"></i> 12.1 </span>
+            </span>  
+        </td>
+    </tr>
+    <tr class="35.01">
+        <td> text-indent </td>
+        <td> 
+            <strong>cssLength</strong>  <span class="cssAV">(Default <mark>0</mark>)</span>
+        </td>
+        <td> 
+            - defines the indentitation of the <u>first line</u> in a text-box (negative values allowed) 
+            <span id="browserSupport" title="Update: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> text-transform </td>
-        <td>  
-            none <span style="color:blue;">([default] no effect)</span><br>
-            capitalize <span style="color:blue;">(first character of each word capitalized)</span><br>
-            uppercase <span style="color:blue;">(all characters transformed to uppercase)</span><br>
-            lowercase <span style="color:blue;">(all characters transformed to lowercase)</span>
+    <tr class="55.03">
+        <td> text-justify </td>
+        <td> 
+            auto <span class="cssAV">(browser choses the algorithm)</span><br>
+            inter-word <span class="cssAV">(increase/decreas the space between words to justify the text)</span><br>
+            inter-character <span class="cssAV">(increase/decreas the space between characters to justify the text)</span><br>
+            none <span class="cssAV">(disables the justification method)</span>
         </td>
         <td> 
-            controls the capitalisation of text
+            - defines the text justification type 
+            <span id="browserSupport" title="Update: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> NO </span>
+                <span><i class="fab fa-firefox"></i> 55 </span>
+                <span><i class="fab fa-opera"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 11 </span>
+                <span><i class="fab fa-safari"></i> NO </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="35.02">
+        <td> text-overflow </td>
+        <td> 
+            clip <span class="cssAV">((Default) text clipped when reaches the border)</span><br>
+            ellipsis <span class="cssAV">(<mark>...</mark> represents the clipped text)</span><br>
+            <strong>text</strong> <span class="cssAV">(set the given text to represent clipping)
+        </td>
+        <td> 
+            - specifies how the overflowed content is signaled to the user 
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 7 </span>
+                <span><i class="fab fa-opera"></i> 11/9 -o- </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 6 </span>
+                <span><i class="fab fa-safari"></i> 1.3 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="05.02">
+        <td> text-transform </td>
+        <td>  
+            none <span class="cssAV">([default] no effect)</span><br>
+            capitalize <span class="cssAV">(first character of each word capitalized)</span><br>
+            uppercase <span class="cssAV">(all characters transformed to uppercase)</span><br>
+            lowercase <span class="cssAV">(all characters transformed to lowercase)</span>
+        </td>
+        <td> 
+            - controls the capitalisation of text
             <span id="browserSupport">
                 <span><i class="fab fa-chrome"></i> 1 </span>
                 <span><i class="fab fa-firefox"></i> 1 </span>
@@ -278,104 +413,77 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="50.04">
         <td> unicode-bidi </td>
         <td>  
-            embed <span style="color:blue;">(embed a additional unicode scope <u>which has no use for a Web Developer</u>)</span><br>
-            bidi-override <span style="color:blue;">(reorders the text defined by the <mark>direction</mark> property)</span>
+            normal <span class="cssAV">((Default) doesn't offer additional element embeding) </span><br>
+            embed <span class="cssAV">(for inline elements opens an additional level of embeding so the text direction is defined by the <mark>direction</mark> property)</span><br>
+            bidi-override <span class="cssAV">(for inline elements this creates and overrides, for block elements this creates an override for inline-level descendants)</span><br>
+            isolate <span class="cssAV">(the element is isolated from its siblings)</span> <br>
+            isolate-override <span class="cssAV">(the element is isolated from its siblings and the override behaviour of the <mark>bidi-override</mark> keyword to the inner content)</span> <br>
+            plaintext <span class="cssAV">(the element is isolated from its parent)</span>
         </td>
-        <td> used with the <mark>direction</mark> property, specifies if the text should be overridden to support multilanguage <u>(really damn wague apparenty for (DTD - document type definition) designers only, the only value which has any use is the <mark>bidi-override</mark>)</u>  </td>
+        <td> 
+            - used with the <mark>direction</mark> property to determine how <span class="openable">bidirectional text in a document is handled<div>
+                <p> - the user agent uses complex Unicode algorithms to decide how to display text, this property overrides this algorithm and allows the developer to control the text embeding </p>
+            </div></span>
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 2 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 9.2 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> 1.3 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="60.02">
         <td> vertical-align </td>
         <td>  
-            baseline <span style="color:blue;">(default)</span><br>
-            <strong>cssLength</strong>  <span style="color:blue;">(fixed value compared to the baseline (default 0))</span><br>
-            <strong>nr</strong>% <span style="color:blue;">(value compared to the <mark>line-height</mark> (default 0)</span><br>
-            sub <span style="color:blue;">(subscript baseline)</span><br>
-            super <span style="color:blue;">(superscript baseline)</span><br>
-            top <span style="color:blue;">(top of the tallest element on the line)</span><br>
-            text-top <span style="color:blue;">(top of the parent element's font)</span><br> 
-            bottom <span style="color:blue;">(bottom of the lowest element on the line)</span><br>
-            text-bottom <span style="color:blue;">(bottom of the parent element's font)</span>
+            baseline <span class="cssAV">(Default)</span><br>
+            <strong>cssLength</strong>  <span class="cssAV">(fixed value compared to the baseline (Default 0))</span><br>
+            <strong>nr</strong>% <span class="cssAV">(value compared to the <mark>line-height</mark> (Default 0)</span><br>
+            sub <span class="cssAV">(subscript baseline)</span><br>
+            super <span class="cssAV">(superscript baseline)</span><br>
+            top <span class="cssAV">(top of the tallest element on the line)</span><br>
+            text-top <span class="cssAV">(top of the parent element's font)</span><br> 
+            bottom <span class="cssAV">(bottom of the lowest element on the line)</span><br>
+            text-bottom <span class="cssAV">(bottom of the parent element's font)</span>
         </td>
-        <td> sets the vertical alignement of <u>an inline or a table cell element</u> (negative values are allowed) </td>
-    </tr>
-    <tr>
-        <td> white-space </td>
-        <td colspan="2" style="background-color:inherit;"> 
-            specifies how the white-space <u>inside an element</u> is handeled<br>
-            <table style="width:100%; border:solid 1px black; border-collapse:collapse; font-size:0.8em;">
-                <tr>
-                    <th> <mark>white-pace:</mark><strong style="color:lightcoral;">value</strong></th>
-                    <th> New Line Character <mark>&crarr;</mark> <br>
-                        <span style="color:skyblue;">(when carriage return encountered)</span>
-
-                    </th>
-                    <th> Spaces and Tabs<br>
-                        <span style="color:skyblue;">(extra space between words)</span>
-                    </th>
-                    <th> Text Wrap<br>
-                        <span style="color:skyblue;">(text wraps when necessary)</span>
-                    </th>
-                </tr>
-                <tr>
-                    <td> normal (default) </td>
-                    <td style="color:darkgreen; font-weight:bold;"> Ignored </td>
-                    <td style="color:darkgreen; font-weight:bold;"> Collapse </td>
-                    <td style="color:darkgreen; font-weight:bold;"> Wrap </td>
-                </tr>
-                <tr>
-                    <td> nowrap </td>
-                    <td style="color:darkgreen; font-weight:bold;"> Ignored </td>
-                    <td style="color:darkgreen; font-weight:bold;"> Collapse </td>
-                    <td style="color:orangered; font-weight:bold;"> No Wrap </td>
-                </tr>
-                <tr>
-                    <td> pre (like the <mark>&lt;pre&gt;</mark> tag) </td>
-                    <td style="color:orangered; font-weight:bold;"> New Line </td>
-                    <td style="color:orangered; font-weight:bold;"> Preserve </td>
-                    <td style="color:orangered; font-weight:bold;"> No Wrap </td>
-                </tr>
-                <tr>
-                    <td> pre-wrap </td>
-                    <td style="color:orangered; font-weight:bold;"> New Line </td>
-                    <td style="color:orangered; font-weight:bold;"> Preserve </td>
-                    <td style="color:darkgreen; font-weight:bold;"> Wrap </td>
-                </tr>
-                <tr>
-                    <td> pre-line </td>
-                    <td style="color:orangered; font-weight:bold;"> New Line </td>
-                    <td style="color:darkgreen; font-weight:bold;"> Collapse </td>
-                    <td style="color:darkgreen; font-weight:bold;"> Wrap </td>
-                </tr>
-            </table>            
+        <td> 
+            - sets the vertical alignement of an inline, inline-bloc or a table-cell element (negative values allowed) 
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+            </span>
         </td>
     </tr>
-    <tr>
+    <tr class="40.3">
         <td> word-break </td>
         <td>  
-            normal <span style="color:blue;">([default] no word break)</span><br>
-            break-all <span style="color:blue;">(break word between <u>any two</u> characters <u>(Prevents Overflow)</u>)</span><br>
-            keep-all <span style="color:blue;">(word break is allowed at <mark>-</mark> hyphens only (for Chinese/Japanese/Korean characters is the same as <mark>normal</mark> value) <u>(Does NOT Prevent Overflow)</u>)</span>
+            normal <span class="cssAV">(Default) no word break)</span><br>
+            break-all <span class="cssAV">(break word between <u>any two</u> characters <u>(Prevents Overflow)</u>)</span><br>
+            keep-all <span class="cssAV">(word break is allowed at <mark>-</mark> hyphens only (for Chinese/Japanese/Korean characters is the same as <mark>normal</mark> value) <u>(Does NOT Prevent Overflow)</u>)</span>
                 <span id="browserSupport">
                     <span><i class="fab fa-chrome"></i> 44 </span>
                     <span><i class="fab fa-firefox"></i> 15 </span>
                     <span><i class="fab fa-opera"></i> 31 </span>
                     <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
-                    <span><i class="fab fa-safari"></i> yes </span>
+                    <span><i class="fab fa-safari"></i> 9 </span>
                 </span><br>
-            break-word <span style="color:blue;">(wraps the word onto a new live if is possible otherwise breaks it <u>(Prevents Overflow)</u></span>      <span id="browserSupport">
-                    <span><i class="fab fa-chrome"></i> yes </span>
-                    <span><i class="fab fa-firefox"></i> NO </span>
-                    <span><i class="fab fa-opera"></i> yes </span>
-                    <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
-                    <span><i class="fab fa-safari"></i> yes </span>
+            break-word <span class="cssAV">(wraps the word onto a new live if is possible otherwise breaks it <u>(Prevents Overflow)</u></span>      <span id="browserSupport">
+                    <span><i class="fab fa-chrome"></i> 1 </span>
+                    <span><i class="fab fa-firefox"></i> 67 </span>
+                    <span><i class="fab fa-opera"></i> 15 </span>
+                    <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                    <span><i class="fab fa-safari"></i> 3 </span>
                 </span>
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> specifies how words should break when reaching the end of a line 
-            <span id="browserSupport">
+            - specifies how words should break when reaching the end of a line 
+            <span id="browserSupport" title="Updated: 2021-05-24">
                 <span><i class="fab fa-chrome"></i> 4 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
                 <span><i class="fab fa-opera"></i> 15 </span>
@@ -384,42 +492,152 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.01">
         <td> word-spacing </td>
         <td>  
-            normal <span style="color:blue;">(default)</span><br>
-            <strong>cssLength</strong>  <span style="color:blue;">(default value 0)</span>
-        </td>
-        <td> increase or decrease the space between words (negative values are allowed) </td>
-    </tr>
-    <tr>
-        <td> word-wrap </td>
-        <td>  
-            normal <span style="color:blue;">([default] no word break allowed)</span><br>
-            break-word <span style="color:blue;">(allows unbreakable words to be broken)</span>
+            normal <span class="cssAV">(Default)</span><br>
+            <strong>cssLength</strong>  <span class="cssAV">(Default <mark>0</mark>)</span>
         </td>
         <td> 
-            allows long words <u>(longer the the parent element)</u> to be broken and wrap onto the next line (predecessor of the <mark>overflow-wrap</mark> property [does the exact same thing])
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 4 </span>
+            - increases or decreases the space between words (negative values allowed) 
+            <span id="browserSupport" title='Update: 2021-05-24'>
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 6 </span>
+                <span><i class="fab fa-safari"></i> 6 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="40.02">
+        <td> word-wrap </td>
+        <td>  
+            normal <span class="cssAV">(Default) no word break)</span><br>
+            break-word <span class="cssAV">(allows unbreakable words to be broken)</span><br>
+        </td>
+        <td> 
+            - long words <u>(longer the the parent element)</u> to be broken and wrap onto the next line (newer version alias <mark>overflow-wrap</mark>)
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 1 </span>
                 <span><i class="fab fa-firefox"></i> 3.5 </span>
                 <span><i class="fab fa-opera"></i> 10.5 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
-                <span><i class="fab fa-safari"></i> 3.11 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
             </span>
-            
-        </td>   
+        </td>
     </tr>
-    <tr>
+    <tr class="51.01">
         <td> writing-mode </td>
         <td>  
-            horizontal-tb <span style="color:blue;">([default] horizontal, starts from the top, new lines are inserted under)</span><br>
-            vertical-lr <span style="color:blue;">(vertical, starts from the left new lines are inserted to right)</span><br>
-            vertical-rl <span style="color:blue;">(vertical, starts from the right new lines are inserted to left)</span>
+            horizontal-tb <span class="cssAV">((Default) horizontal, starts from the top, new lines are inserted under)</span><br>
+            vertical-lr <span class="cssAV">(vertical, starts from the left new lines are inserted to right)</span><br>
+            vertical-rl <span class="cssAV">(vertical, starts from the right new lines are inserted to left)</span>
         </td>
-        <td> specifies which direction the text lines are laid out </td>
+        <td> 
+            - specifies which direction the text lines are laid out 
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 8 -webkit- / 48 </span>
+                <span><i class="fab fa-firefox"></i> 41 </span>
+                <span><i class="fab fa-opera"></i> 15 -webkit- / 35 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> 5.1 -webkit- / 10.1 </span>
+            </span>
+        </td>
     </tr>
 </table>   
+<br>  
+<table class="table">
+<caption>
+    Handling white space with the <mark>white-space</mark> property 
+    <span id="browserSupport" title="Updated: 2021-05-24">
+        <span><i class="fab fa-chrome"></i> 1 </span>
+        <span><i class="fab fa-firefox"></i> 1 </span>
+        <span><i class="fab fa-opera"></i> 4 </span>
+        <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+        <span><i class="fab fa-safari"></i> 1 </span>
+    </span>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
+    <tr>
+        <th> <mark>white-pace:</mark><strong style="color:lightcoral;">value</strong></th>
+        <th> New Line Character <mark>&crarr;</mark> <br>
+            <span style="color:skyblue;">(when carriage return encountered)</span>
+        
+        </th>
+        <th> Spaces and Tabs<br>
+            <span style="color:skyblue;">(extra space between words)</span>
+        </th>
+        <th> Text Wrap<br>
+            <span style="color:skyblue;">(text wraps when necessary)</span>
+        </th>
+        <th> 
+            End-of-line spaces  
+        </th>
+        <th> 
+            End-of-line other space separators
+        </th>
+    </tr>
+    <tr>
+        <td> normal (Default) </td>
+        <td> Ignored </td>
+        <td> Collapse </td>
+        <td> Wrap </td>
+        <td> Remove </td>
+        <td> Hang </td>
+    </tr>
+    <tr>
+        <td> nowrap </td>
+        <td> Ignored </td>
+        <td> Collapse </td>
+        <td> No Wrap </td>
+        <td> Remove </td>
+        <td> Hang </td>
+    </tr>
+    <tr>
+        <td> pre (like the <mark>&lt;pre&gt;</mark> tag) </td>
+        <td> New Line </td>
+        <td> Preserve </td>
+        <td> No Wrap </td>
+        <td> Preserve </td>
+        <td> No Wrap </td>
+    </tr>
+    <tr>
+        <td> pre-wrap </td>
+        <td> New Line </td>
+        <td> Preserve </td>
+        <td> Wrap </td>
+        <td> Hang </td>
+        <td> Hang </td>
+    </tr>
+    <tr>
+        <td> pre-line </td>
+        <td> New Line </td>
+        <td> Collapse </td>
+        <td> Wrap </td>
+        <td> Remove </td>
+        <td> Hang </td>
+    </tr>
+    <tr>
+        <td> break-spaces 
+            <span id="browserSupport" title="Updated: 2021-05-24">
+                <span><i class="fab fa-chrome"></i> 79 </span>
+                <span><i class="fab fa-firefox"></i> 69 </span>
+                <span><i class="fab fa-opera"></i> 62 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 13.1 </span>
+            </span>
+        </td>
+        <td> Preserve </td>
+        <td> Preserve </td>
+        <td> Wrap </td>
+        <td> Wrap </td>
+        <td> Wrap </td>
+    </tr>
+</table> 
+    <br>
+    <details class="example" id="notes">
+    <summary> Notes :</summary>
+    </details>
 <h2 style="color:green;"><u> Useful Links : </u></h2>
     <p><a href="http://www.w3schools.com/css/css_text.asp" title="W3School's text formating" target="_blank"> Go To W3S Formating Text site </a></p>
     <p><a href="http://www.w3schools.com/css/css3_text_effects.asp" title="W3School's CSS3 text formating" target="_blank"> Go to W3School's CSS3 text site!</a></p>
@@ -429,22 +647,18 @@
     <p> - each browser calcuates their own baseline, there is no standard for this but they seems to be the same </p>
 <h2 style="color:green;"><u> Description and Demonstration </u></h2>    
     <p> - in CSS we have multiple awesome ways to style text </p>
-<h2 style="color:darkblue;"><u> the <mark>color</mark> / <mark>text-transform</mark> properties </u></h2>  
-    <pre class="syntax">
-SYNTAX :    color: <strong>colorValue</strong>                                       // specifies a color for the text
-            text-transform: none;                                   // controls the capitalisation of text
-                          : capitalize      <span style="color:skyblue;">// first character of each word capitalized</span>
-                          : uppercase       <span style="color:skyblue;">// all characters transformed to uppercase</span>
-                          : lowercase       <span style="color:skyblue;">// all characters transformed to lowercase</span>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>color</mark> / <mark>text-transform</mark> properties </u></h2>  
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     .myElement {
         color: red;                                    // red text
         text-transfomr: capitalize;                    // first character capitalized of each word 
     }
     </pre>
+</details>
 <details class="example">
-    <summary> Example : </summary>
+<summary> Example : </summary>
 <h4><u> <mark>color</mark> and <mark>text-transform</mark> property test </u></h4>    
     <p class="colorTest"> colored and capitalized paragraph </p>
         <details>
@@ -473,43 +687,28 @@ SYNTAX :    color: <strong>colorValue</strong>                                  
     &lt;p style="text-transform:capitalize;"&gt; This text is capitalized. &lt;/p&gt;
         </pre>
         </details>    
-</details>      
+</details>   
 <!------------------------------------------------------------------------------------------------------------------------>
 <hr>    
-<h2 style="color:darkblue;"><u> the <mark>text-docoration-line</mark> / <mark>text-docoration-color</mark> / <mark>text-docoration-style</mark> / <mark>text-decoration-skip</mark> / <mark>text-docoration</mark> properties </u></h2>    
-    <p style="color:yellow;"> - check for browser compatibility! </p>
-    <pre class="syntax">
-SYNTAX :    text-decoration-line: underline                         // set the kind of text decoration to use (multiple values can be combined) <span style="color:orange;">(no EDGE support)</span>
-                                : overline
-                                : linethrough
-            text-decoration-style: solid                            // sets the kind of decoration line to use <span style="color:orange;">(no EDGE and Safari support)</span>
-                                 : double    
-                                 : dotted   
-                                 : dashed   
-                                 : wavy      
-            text-decoration-color: <strong>colorValue</strong>                       // specifies the color of the decoration <span style="color:orange;">(no EDGE support)</span>                  
-            text-decoration-skip: none                              <span style="color:orange;">// [Experimental Technology (2018-10-31)]</span> specifies what part of the decoration should be skipped
-                                : objects
-                                : spaces
-                                : edges
-                                : box-decoration 
-                                
-            text-decoration: <strong>text-decoration-line</strong> <i>text-decoration-style</i> <i>text-decoration-color</i>        // shorthand property for <mark>text-decoration-line</mark> <mark>text-decoration-style</mark> <mark>text-decoration-color</mark> properties   
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>text-decoration-line</mark> / <mark>text-decoration-color</mark> / <mark>text-decoration-style</mark> / <mark>text-decoration-thickness</mark> / <mark>text-decoration</mark> / <mark>text-decoration-skip</mark>  properties </u></h2>   
+<details class="example" >
+<summary> DEMO </summary>
     <pre>
     .myElement {
         text-decoration-line: underline overline;                   // multiple decoration lines used 
         text-decoration-style: wavy; 
         text-decoration-color: green;
+        text-decoration-thickness: 5px;
     }
     
 // shorthand property does the same as above
     .myElement {
-        text-decoration: underline overline wavy green;
+        text-decoration: underline overline wavy green 5px;
     }
     </pre>
-<details class="example">
-    <summary> Example : </summary>
+</details>
+<details class="example" >
+<summary> Example : </summary>
 <h4><u> <mark>text-docoration-line</mark> / <mark>text-docoration-color</mark> / <mark>text-docoration-style</mark> TEST </u></h4>    
     <p class="textDeco"> Decorated Text </p>
         <details>
@@ -526,6 +725,8 @@ SYNTAX :    text-decoration-line: underline                         // set the k
     }
         </pre>
         </details>
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr>    
 <h4><u> <mark>text-decoration</mark> and <mark>text-docoration-skip</mark> TEST </u></h4>
     <p style="color:yellow;"> - the <mark>text-decoration-skip</mark> has no effect here (tested 2018-10-31 Chrome)</p>
     <p class="skipDeco1"> Hey grab a cup of coffe </p>
@@ -543,6 +744,8 @@ SYNTAX :    text-decoration-line: underline                         // set the k
     }
         </pre>
         </details>
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr>    
 <h4><u> multipe line decoration test</u></h4>
     <p style="text-decoration-line:underline line-through overline;"> Multiple decoration line used </p>
         <details>
@@ -552,24 +755,32 @@ SYNTAX :    text-decoration-line: underline                         // set the k
     &lt;p style="text-decoration-line:underline line-through overline;"&gt; Multiple decoration line used &lt;/p&gt;
         </pre>
         </details>
-</details>    
 <!------------------------------------------------------------------------------------------------------------------------>
 <hr>    
-<h2 style="color:darkblue;"><u> the <mark>word-spacing</mark> / <mark>letter-spacing</mark> properties </u></h2>        
-    <pre class="syntax">
-SYNTAX :    word-spacing: normal                                    // increase or decrease the space between words (negative values are allowed) 
-                        : <strong>cssLength</strong> 
-            letter-spacing : normal                                 // increase or decrease the space between characters (negative values are allowed) 
-                           : <strong>cssLength</strong> 
-    </pre>
+<h4><u> <mark>text-decoration-thickness</mark> property TEST</u></h4>
+    <p style="text-decoration:underline; text-decoration-thickness:7px;"> Decoration thickness demo </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+-- DODE (HTML) --
+    &lt;p style="text-decoration:underline; text-decoration-thickness:7px;"&gt; Decoration thickness demo &lt;/p&gt;
+        </pre>
+        </details>
+</details>  
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr>    
+<h2 style="color:darkblue;"><u> The <mark>word-spacing</mark> / <mark>letter-spacing</mark> properties </u></h2>  
+<details class="example">
+<summary> DEMO </summary>    
     <pre>
     .myElement {
         letter-spacing: 1em;                                        // space between letters are doubled
         word-spacing: 0.5;                                          // space betewen words are rised to 1/2
     }
     </pre>
+</details>
 <details class="example">
-    <summary> Example : </summary>
+<summary> Example : </summary>
 <h4><u> <mark>letter-spacing</mark> property TEST </u> </h4>
     <p style="letter-spacing: 1.1em;"> This text is letter spaced with the "letter-spacing" propriety </p>
     <details>
@@ -589,34 +800,12 @@ SYNTAX :    word-spacing: normal                                    // increase 
         &lt;p style="word-spacing: 1.4em;"&gt; This text is formated with the "word-spacing" property!&lt;/p&gt;
         </pre>
     </details>    
-</details>     
+</details>   
 <!------------------------------------------------------------------------------------------------------------------------>
 <hr>    
-<h2 style="color:darkblue;"><u> the <mark>text-indent</mark> / <mark>text-overflow</mark> / <mark>word-wrap</mark> / <mark>overflow-wrap</mark> / <mark>word-break</mark> / <mark>hyphens</mark> properties </u></h2>     
-    <pre class="syntax">
-SYNTAX :    text-indent: <strong>cssLength</strong>                                  // defines the indentitation of the <u>first line</u> in a text-box (negative values are allowed)
-                       : <strong>nr</strong>%                <span style="color:skyblue;">// relative to the parent element's width</span>
-                       
-            text-overflow: clip             <span style="color:skyblue;">// text clipped when reaches the border</span>         // specifies how the overflowed content is signaled to the user
-                         : ellipsis         <span style="color:skyblue;">// (...) represents the clipped text </span>
-                         : <strong>text</strong>             <span style="color:skyblue;">// set the given text to represent clipping</span>
-                         
-  // the below 4 properties are doing mostly the same with different approach ----------------------------------------------------------
-            word-wrap: normal               <span style="color:skyblue;">// no word break </span>       // <i class="fab fa-css3-alt"></i> long words <u>(longer the the parent element)</u> to be broken and wrap onto the next line (predecessor of the <mark>overflow-wrap</mark> property [does the exact same thing])  
-                     : break-word           <span style="color:skyblue;">// allows unbreakable words to be broken </span> 
-            
-            overflow-wrap : normal          <span style="color:skyblue;">// no word break </span>       // <i class="fab fa-css3-alt"></i> allows long words <u>(longer the the parent element)</u> to be broken and wrap onto the next line (new version of <mark>word-wrap</mark> property  [does the exact same thing])  
-                          : break-word      <span style="color:skyblue;">// allows unbreakable words to be broken </span>
-                          
-            word-break: normal              <span style="color:skyblue;">// no word break </span>       // <i class="fab fa-css3-alt"></i> specifies how words should break when reaching the end of a line 
-                      : break-all           <span style="color:skyblue;">// break word between <u>any</u> two characters <u>(Prevents Overflow)</u> </span>
-                      : keep-all            <span style="color:skyblue;">// word break is allowed at <mark>-</mark> hyphens only! <u>(Does NOT Prevent Overflow)</u> </span>
-                      : break-word          <span style="color:skyblue;">// wraps the word onto a new live if is possible otherwise breaks it <u>(Prevents Overflow)</u></span> 
-            
-            hyphens: none                   <span style="color:skyblue;">// no hyphenation</span>       // <i class="fab fa-css3-alt"></i> controls the text hyphenation (hyphen used when the text reaches the end of the line)
-                     manual                 <span style="color:skyblue;">// (default) words are hyphenated at <mark>-</mark>(hyphen characters) </span>
-                     auto                   <span style="color:skyblue;">// browser hyphenate when algorithm is deciding (depending on the set language) </span>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>text-indent</mark> / <mark>text-overflow</mark> / <mark>word-wrap</mark> / <mark>overflow-wrap</mark> / <mark>word-break</mark> / <mark>hyphens</mark> properties </u></h2>  
+<details class="example">
+<summary> DEMO </summary>
     <pre>
 // text-indent / text-overflow -------------------------------------------------
     .myElement {
@@ -634,9 +823,10 @@ SYNTAX :    text-indent: <strong>cssLength</strong>                             
       // ----------------------------------
         hyphens: auto;                                              // browser alogrithm manages the hyphenation of the text (language specific) (text is broken at manually set hyphen characters for now [TESTED 2019-04-10])   
     }
-    </pre>    
+    </pre> 
+</details>
 <details class="example">
-    <summary> Example : </summary>
+<summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>text-indent</mark> property </u></h4>
     <p style="text-indent:50px; max-width:700px;"> This text has a "text-indent" propriety used
     it is an interesting tool, I write some more text to demonstrate the effect what it does! Some text Some text 
@@ -843,19 +1033,9 @@ SYNTAX :    text-indent: <strong>cssLength</strong>                             
 </details> 
 <!------------------------------------------------------------------------------------------------------------------------>
 <hr>    
-<h2 style="color:darkblue;"><u> the <mark>direction</mark> / <mark>unicode-bidi</mark> / <mark>writing-mode</mark> properties and <mark>dir</mark> attribute </u></h2>
-    <pre class="syntax">
-SYNTAX :    &lt;<strong>HTMLTag</strong> dir="<em>ltr/rtl</em>"&gt;                                 // (global attribute) specifies the writing direction of an element 
-
-            direction: ltr                  <span style="color:skyblue;">// left-to-right</span>        // defines the writing direction in a <u>block level</u> element
-                     : rtl                  <span style="color:skyblue;">// right-to-left</span>
-            unicode-bidi: embed                                     // used with the <mark>direction</mark> property, specifies if the text should be overridden to support multilanguage 
-                        : bidi-override     <span style="color:skyblue;">// reorders the text defined by the <mark>direction</mark> property</span>
-                        
-            writing-mode: horizontal-tb     <span style="color:skyblue;">// normal flow</span>          // specifies which direction the text lines are laid out
-                        : vertical-lr       <span style="color:skyblue;">// vertical, starts from the left new lines are inserted to right </span>
-                        : vertical-rl       <span style="color:skyblue;">// vertical, starts from the right new lines are inserted to left </span>
-    </pre>          
+<h2 style="color:darkblue;"><u> The <mark>direction</mark> / <mark>unicode-bidi</mark> / <mark>writing-mode</mark> properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
 // HTML
     &lt;html lang="en" dir="rtl"&gt;                                      // the whole page's elements are rendered from right-to-left
@@ -867,8 +1047,9 @@ SYNTAX :    &lt;<strong>HTMLTag</strong> dir="<em>ltr/rtl</em>"&gt;             
         writing-mode: vertical-rl;                                  // text inserted vertically from right-to-left
     }
     </pre>
+</details>
 <details class="example">
-    <summary> Example : </summary>
+<summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>direction</mark> property TEST </u></h4>     
     <p style="direction:rtl;"> This text is writen from right-to-left </p>
         <details>
@@ -934,26 +1115,9 @@ SYNTAX :    &lt;<strong>HTMLTag</strong> dir="<em>ltr/rtl</em>"&gt;             
 </details>
 <!------------------------------------------------------------------------------------------------------------------------>
 <hr style="clear:left;">    
-<h2 style="color:darkblue;"><u> the <mark>text-aling</mark> / <mark>text-align-last</mark> / <mark>text-justify</mark> properties </u></h2>        
-    <pre class="syntax">
-SYNTAX :    text-align: left                                        // specifies the horizontal alignement of text in an element
-                      : right
-                      : center
-                      : justify             <span style="color:skyblue;">// stretches the lines so that each line has the same width </span>
-                      
-            text-align-last: auto                                   // specifies how the last line of the text is aligned <span style="color:orange;">(no Saffari support / EDGE supports it only if <mark>text-align:justify</mark> is set [2018-11-03])</span>
-                           : left
-                           : right
-                           : center
-                           : justify
-                           : start          <span style="color:skyblue;">// last line is aligned at the beginning of the line (right if <mark>direction:rtl</mark>) </span>
-                           : end            <span style="color:skyblue;">// last line is aligned at the end of the line (left if <mark>direction:rtl</mark>) </span>
-                           
-            text-justify: auto                                      // defines the justification type of the text <span style="color:orange;">(works in Mozilla properly only, this is mostly experimental technology for now [2018-11-03])</span>
-                        : inter-character   <span style="color:skyblue;">// increase/decreas the space between characters to justify the text </span>
-                        : inter-word        <span style="color:skyblue;">// increase/decreas the space between words to justify the text </span>
-                        : none              <span style="color:skyblue;">// disables the justification method </span>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>text-aling</mark> / <mark>text-align-last</mark> / <mark>text-justify</mark> properties </u></h2> 
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     .myElement {
         direction: rtl;
@@ -966,8 +1130,9 @@ SYNTAX :    text-align: left                                        // specifies
         text-justify: inter-character;      // spaces stretched between characters to justify text
     }
     </pre>
+</details>
 <details class="example">
-    <summary> Example : </summary>
+<summary> Example : </summary>
 <h4><u> <mark>text-align</mark> property TEST</u></h4>    
     <p style="text-align:center; width:500px; border:solid black 1px;"> Centered Text </p>
     <p style="text-align:right; width:500px; border:solid black 1px;"> Right Aligned Text </p>
@@ -1007,26 +1172,12 @@ SYNTAX :    text-align: left                                        // specifies
     &lt;p style="text-align:justify; text-justify:inter-word; max-width:500px; border:solid black 1px;"&gt; Justified text Justified text Justified text Justified text Justified text Justified text Justified text Justified text Justified text Justified text Justified text Justified text Justified text Justified text &lt;/p&gt;    
         </pre>
         </details>
-</details>     
+</details>  
 <!------------------------------------------------------------------------------------------------------------------------>
 <hr>    
-<h2 style="color:darkblue;"><u> the <mark>vertical-align</mark> / <mark>line-height</mark> properties </u></h2> 
-    <pre class="syntax">
-SYNTAX :    line-height: normal             <span style="color:skyblue;">// font size height </span>    // specifies the height of a line 
-                       : <strong>nr</strong>                 <span style="color:skyblue;">// compared the current font size (default 0) </span>
-                       : <strong>nr</strong>%                <span style="color:skyblue;">// compared the current font size (default 100%) </span>
-                       : <strong>cssLength</strong>          <span style="color:skyblue;">// fixed value </span>
-
-            vertical-align: baseline                                // sets the vertical alignement of <u>an inline or a table cell element</u> (negative values are allowed)
-                          : <strong>cssLength</strong>        <span style="color:skyblue;">// fixed value compared to the baseline (default 0) </span>
-                          : <strong>nr</strong>%              <span style="color:skyblue;">// value compared to the <mark>line-height</mark> (default 0) </span>
-                          : sub              <span style="color:skyblue;">// subscript baseline</span>
-                          : super            <span style="color:skyblue;">// superscript baseline</span>   
-                          : top              <span style="color:skyblue;">// top of the tallest element on the line</span>
-                          : text-top         <span style="color:skyblue;">// top of the parent element's font </span>
-                          : bottom           <span style="color:skyblue;">// bottom of the lowest element on the line</span>
-                          : text-bottom      <span style="color:skyblue;">// bottom of the parent element's font </span>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>vertical-align</mark> / <mark>line-height</mark> properties </u></h2> 
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     .myElement {
         line-height: 1.5;                   // line height is 1 and a half size compared to the set font-size
@@ -1044,8 +1195,9 @@ SYNTAX :    line-height: normal             <span style="color:skyblue;">// font
         vertical-align: bottom;             // table cell content aligned to the bottom
     }
     </pre>
+</details>
 <details class="example">
-    <summary> Example : </summary>
+<summary> Example : </summary>
 <h4><u> <mark>line-height</mark> property TEST </u></h4>  
     <p style="border:solid 1px black; width:200px; line-height:10px;"> line-height:10px; /  line-height:10px; / line-height:10px; </p>
     <p style="border:solid 1px black; width:200px; line-height:1.5;"> line-height:1.5; (compared to the current font size) / line-height:1.5; (compared to the current font size) </p>
@@ -1156,58 +1308,12 @@ SYNTAX :    line-height: normal             <span style="color:skyblue;">// font
     }
         </pre>
         </details>
-</details>    
+</details>  
 <!------------------------------------------------------------------------------------------------------------------------>
 <hr>    
-<h2 style="color:darkblue;"><u> the <mark>white-space</mark> property </u></h2> 
-    <pre class="syntax">
-SYNTAX :    white-space: <strong>value</strong>                                      // specifies how the white-space <u>inside an element</u> is handeled
-    </pre>
-    <table class="white-space_Table">
-    <tr>
-        <th> <mark>white-pace:</mark><strong style="color:lightcoral;">value</strong></th>
-        <th> New Line Character <mark>&crarr;</mark> <br>
-            <span style="color:skyblue;">(when carriage return encountered)</span>
-        
-        </th>
-        <th> Spaces and Tabs<br>
-            <span style="color:skyblue;">(extra space between words)</span>
-        </th>
-        <th> Text Wrap<br>
-            <span style="color:skyblue;">(text wraps when necessary)</span>
-        </th>
-    </tr>
-    <tr>
-        <td> normal (default) </td>
-        <td style="color:lightgreen; font-weight:bold;"> Ignored </td>
-        <td style="color:lightgreen; font-weight:bold;"> Collapse </td>
-        <td style="color:lightgreen; font-weight:bold;"> Wrap </td>
-    </tr>
-    <tr>
-        <td> nowrap </td>
-        <td style="color:lightgreen; font-weight:bold;"> Ignored </td>
-        <td style="color:lightgreen; font-weight:bold;"> Collapse </td>
-        <td style="color:orange; font-weight:bold;"> No Wrap </td>
-    </tr>
-    <tr>
-        <td> pre (like the <mark>&lt;pre&gt;</mark> tag) </td>
-        <td style="color:orange; font-weight:bold;"> New Line </td>
-        <td style="color:orange; font-weight:bold;"> Preserve </td>
-        <td style="color:orange; font-weight:bold;"> No Wrap </td>
-    </tr>
-    <tr>
-        <td> pre-wrap </td>
-        <td style="color:orange; font-weight:bold;"> New Line </td>
-        <td style="color:orange; font-weight:bold;"> Preserve </td>
-        <td style="color:lightgreen; font-weight:bold;"> Wrap </td>
-    </tr>
-    <tr>
-        <td> pre-line </td>
-        <td style="color:orange; font-weight:bold;"> New Line </td>
-        <td style="color:lightgreen; font-weight:bold;"> Collapse </td>
-        <td style="color:lightgreen; font-weight:bold;"> Wrap </td>
-    </tr>
-</table> 
+<h2 style="color:darkblue;"><u> The <mark>white-space</mark> / <mark>tab-size</mark> / <mark>quotes</mark> properties </u></h2> 
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     .myElement {
         white-space: normal;                // carriage return ignored           /  extra white space collapsed  /  text wraps when it hits the end of the element 
@@ -1217,8 +1323,26 @@ SYNTAX :    white-space: <strong>value</strong>                                 
         white-space: pre-line;              // carriage return creates new line  /  extra white space collapsed  /  text wraps when it hits the end of the element 
     }
     </pre>
+    <pre>
+// quotes ----------------------------------------
+// -- HTML -- 
+    &lt;p class="myElement"&gt; &lt;q&gt;text &lt;q&gt;nested&lt;/q&gt; text&lt;/q&gt;            // displays "&lt;text &#8649;nested&#8647; text&gt;"
+    
+// -- CSS -- 
+    .myElement {
+        quotes: "&lt;" "&gt;" "\21C9" "\21C7";                            // the "&lt;" "&gt;" are the first level quotation values and the "\21C9" "\21C7" (unicode characters) are the 2nd level quotation values (we could specify more)  
+    }
+    
+// tab-size -------------------------------------- 
+    pre {
+        tab-size: 16;                                               // tab size set to 16 characters width
+        -moztab-size: 16;
+        -o-tab-size: 16;
+    }
+    </pre>
+</details>
 <details class="example">
-    <summary> Example : </summary>
+<summary> Example : </summary>
 <h4><u> <mark>white-space</mark> prperty TEST </u></h4> 
     <pre>
 // Original Text
@@ -1305,36 +1429,8 @@ SYNTAX :    white-space: <strong>value</strong>                                 
     }    
         </pre>
         </details>
-</details>    
 <!------------------------------------------------------------------------------------------------------------------------>
 <hr>    
-<h2 style="color:darkblue;"><u> the <mark>quotes</mark> / <mark>tab-size</mark> properties </u></h2> 
-    <pre class="syntax">
-SYNTAX :    quotes: none                    <span style="color:skyblue;">// no quotation</span>         // defines the quotation value for the <mark>&lt;q&gt;</mark> element (no default value)
-                  : <i>"stQuteLv1" "endQuteLv1" "stQuteLv2" "endQuteLv2" ...</i>
-        
-            tab-size: <strong>nr</strong>                    <span style="color:skyblue;">// character width (default <mark>8</mark>)</span>  // <i class="fab fa-css3-alt"></i> specifies the width of the "tab" character <span style="color:orange;">(Experimental Technology [TESTED 2019-04-09])</span> 
-                    : <strong>cssLength</strong>
-    </pre>
-    <pre>
-// quotes ----------------------------------------
-// -- HTML -- 
-    &lt;p class="myElement"&gt; &lt;q&gt;text &lt;q&gt;nested&lt;/q&gt; text&lt;/q&gt;            // displays "&lt;text &#8649;nested&#8647; text&gt;"
-    
-// -- CSS -- 
-    .myElement {
-        quotes: "&lt;" "&gt;" "\21C9" "\21C7";                            // the "&lt;" "&gt;" are the first level quotation values and the "\21C9" "\21C7" (unicode characters) are the 2nd level quotation values (we could specify more)  
-    }
-    
-// tab-size -------------------------------------- 
-    pre {
-        tab-size: 16;                                               // tab size set to 16 characters width
-        -moztab-size: 16;
-        -o-tab-size: 16;
-    }
-    </pre>
-<details class="example">
-    <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>quotes</mark> property TEST </u></h4> 
     <p class="qouoteTest_1"> <q>Text between quotation</q> </p>
     <p class="qouoteTest_2"> <q>Text between quotation</q> </p>
@@ -1352,7 +1448,7 @@ SYNTAX :    quotes: none                    <span style="color:skyblue;">// no q
     &lt;p class="qouoteTest_5"&gt; &lt;q&gt;Text between quotation (quotation value removed) &lt;/q&gt; &lt;/p&gt;
     
 -- CODE (CSS) -- 
-    .qouoteTest_1 { quotes: "<" ">"; }
+    .qouoteTest_1 { quotes: "&lt;" ">"; }
     .qouoteTest_2 { quotes: "//" "\\\\"; }
     .qouoteTest_3 { quotes: "(" ")" "[" "]"; }
     .qouoteTest_4 { quotes: "\2192" "\2190" "\2937" "\2936"; }
@@ -1437,7 +1533,8 @@ test13em	test13em	test13em	test13em	test13em
     }
         </pre>
         </details>
-</details>    
+</details>  
+    
     
     <br><br>
 </body>

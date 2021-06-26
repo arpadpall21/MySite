@@ -9,19 +9,22 @@
     <script src="../../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> BigInt (Big Integer) (ver 3.2) </h1>
-    <p> Updated ( 2019-11-23 )</p>
+<h1> BigInt (Big Integer) (ver 4.0.0) </h1>
+    <p> Updated ( 2019-11-23 / 2021-05-24)</p>
     <p class="sitenav"> <a href="../../../index.html">MySite></a>
         <a href="../../index.html">JavaScript></a> 
         <a href="../index.html">Numbers></a> GigInt 
     </p>
 <table class="table">
-<caption> BigInt (big integer) </caption>
+<caption> 
+    BigInt (big integer) 
+        <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
         <th style="width:30%;"> property / method </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> <strong>nr</strong>n </td>
         <td> <i class="fab fa-js">11</i> - represents an integer value with "arbitrary-precision" (unlimited digits(memory limited)) <br>
              - bigint values cannot be mixed with numbers in arithmetic operations <br>
@@ -40,9 +43,9 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.02">
         <td> BigInt(<strong>value</strong>) </td>
-        <td> <i class="fab fa-js">11</i> converts the passed value to a Big Integer value and returns it (cannot convert decimal numbers)
+        <td> - <i class="fab fa-js">11</i> converts the passed value to a Big Integer value and returns it (cannot convert decimal numbers)
             <span id="browserSupport" title="updated: 2019-11-23">
                 <span><i class="fab fa-chrome"></i> 67 </span>
                 <span><i class="fab fa-firefox"></i> 68 </span>
@@ -53,73 +56,83 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td colspan="2"> methods </td>
     </tr>
-    <tr>
+    <tr class="10.02">
         <td> <em>BigInt</em>.asIntN(<strong>bitSize:nr</strong>, <strong>bigInt</strong>) </td>
-        <td> <i class="fab fa-js">11</i> - limits the passed bigint to a <u><strong>bitSize</strong>bit Signed Integer bigint</u> value and returns the result <br>
-             - out of range values will be coerced into the set bit range <u>but the returned result will be unpredictable</u>
-            <span id="browserSupport" title="updated: 2019-11-23">
+        <td> 
+            - <i class="fab fa-js">11</i> coerces the passed <strong>bigInt</strong> into a <strong>bitSize</strong> bit unsigned integer and returns the result as a big integer <br> 
+            - out of range values will be coerced into a valid <strong>bitSize</strong> bit unsigned integer range <u>but the returned result is unpredictable</u>  
+            <span id="browserSupport" title="updated: 2021-04-24">
                 <span><i class="fab fa-chrome"></i> 67 </span>
                 <span><i class="fab fa-firefox"></i> 68 </span>
                 <span><i class="fab fa-opera"></i> 54 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
-                <span><i class="fab fa-safari"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 14 </span>
                 <span><i class="fab fa-node-js"></i> 10.4.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.03">
         <td> <em>BigInt</em>.asUintN(<strong>bitSize:nr</strong>, <strong>bigInt</strong>) </td>
-        <td> <i class="fab fa-js">11</i> - limits the passed bigint to a <u><strong>bitSize</strong>bit Unsigned Integer bigint</u> value and returns the result <br>
-             - out of range values will be coerced into the set bit range <u>but the returned result will be unpredictable</u>
-            <span id="browserSupport" title="updated: 2019-11-23">
+        <td> 
+            - <i class="fab fa-js">11</i> coerces the passed <strong>bigInt</strong> into a <strong>bitSize</strong> bit signed integer and returns the result as a big integer <br> 
+            - out of range values will be coerced into a valid <strong>bitSize</strong> bit unsigned integer range <u>but the returned result is unpredictable</u>  
+            <span id="browserSupport" title="updated: 2021-04-24">
                 <span><i class="fab fa-chrome"></i> 67 </span>
                 <span><i class="fab fa-firefox"></i> 68 </span>
                 <span><i class="fab fa-opera"></i> 54 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
-                <span><i class="fab fa-safari"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 14 </span>
                 <span><i class="fab fa-node-js"></i> 10.4.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>bigInt</strong>.toLocaleString(<i>locales(BPC-47tag):str</i>, <i>option:obj</i>) </td>
-        <td> <i class="fab fa-js">11</i> - converts the bigint to a human readable string (language-sensitive string) (we can set locals by using BPC-47 tags <a href="https://www.techonthenet.com/js/language_tags.php" target="_blank">comon BPC tags (techonthenet.com)</a>) <br>
-              - the <i>option</i> argument object can be used to set specific apparences (like currencies, grouping, ect...) <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString" target="_blank">MDN toLocaleString()</a>    
-            <span id="browserSupport" title="updated: 2019-11-23">
+    <tr class="15.02">
+        <td> 
+            <strong>bigInt</strong>.toLocaleString(<i class="openable">loc:str<div>
+                <p> - BPC-47 tags <a href="https://www.techonthenet.com/js/language_tags.php" target="_blank">comon BPC tags (techonthenet.com)</a>) </p>
+            </div></i>, <i class="openable">option:obj<div>
+                 <p> - can be used to set specific apparences (like currencies, grouping, ect...) <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString" target="_blank">MDN toLocaleString()</a>  </p>
+            </div></i>) 
+        </td>
+        <td> 
+            - <i class="fab fa-js">11</i> converts the bigint into a locally formatted number format and returns the result in a string 
+            <span id="browserSupport" title="updated: 2021-05-24">
                 <span><i class="fab fa-chrome"></i> 67 </span>
                 <span><i class="fab fa-firefox"></i> 68 </span>
                 <span><i class="fab fa-opera"></i> 54 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
-                <span><i class="fab fa-safari"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 14 </span>
                 <span><i class="fab fa-node-js"></i> 10.4.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td> <strong>bigInt</strong>.toString(<i>base(2-36):nr</i>) </td>
-        <td> <i class="fab fa-js">11</i> converts the bigint to a string (without the <mark>n</mark>) and returns it (optionally converts the bigint to a specified base (ex: 16 = hexadecimal base))
-            <span id="browserSupport" title="updated: 2019-11-23">
+        <td> 
+            - <i class="fab fa-js">11</i> converts the bigint to a string (without the <mark>n</mark>) and returns it <br>
+            - optionally converts the bigint to a specified base (ex: 16 = hexadecimal base)    
+            <span id="browserSupport" title="updated: 2021-05-24">
                 <span><i class="fab fa-chrome"></i> 67 </span>
                 <span><i class="fab fa-firefox"></i> 68 </span>
                 <span><i class="fab fa-opera"></i> 54 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
-                <span><i class="fab fa-safari"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 14 </span>
                 <span><i class="fab fa-node-js"></i> 10.4.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="16.01">
         <td> <strong>bigIntObj</strong>.valueOf() </td>
-        <td> <i class="fab fa-js">11</i> returns the primitive value of a bigint wrapped in an Object
-            <span id="browserSupport" title="updated: 2019-11-23">
+        <td> - <i class="fab fa-js">11</i> returns the primitive value (<strong>nr</strong>n) of a bigint object 
+            <span id="browserSupport" title="updated: 2021-05-24">
                 <span><i class="fab fa-chrome"></i> 67 </span>
                 <span><i class="fab fa-firefox"></i> 68 </span>
                 <span><i class="fab fa-opera"></i> 54 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
-                <span><i class="fab fa-safari"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 14 </span>
                 <span><i class="fab fa-node-js"></i> 10.4.0 </span>
             </span>
         </td>
@@ -137,17 +150,8 @@
 <h2 style="color:green;"><u> Description and Demonstration : </u></h2>
     <p> - the <mark>BigInt</mark> (big integer) is a new data type in javaScript (ES11) which can represent integers in "arbitrary-precision" (unlimited digits (memory limited))  </p>
     <p> - bigint values are useful if we want to use numbers beyond the <mark>Number.MAX_SAFE_INTEGER</mark> and <mark>Number.MIN_SAFE_INTEGER</mark> limits </p>
-    <pre class="syntax">
-SYNTAX :    BigInt(<strong>value</strong>)                                                              // converts the passed value to a Big Integer value and returns it (cannot convert decimal numbers)    
-            
-            <strong>nr</strong>n                                                                        // represents an integer value with "arbitrary-precision" (unlimited digits(memory limited))   
-                                                                                          bigint values cannot be mixed with numbers in arithmetic operations 
-                                                                                          decimals are ignored if an expression returns a bigint with decimals  
-                                                                                          all operators can be used with bigint values <u>except the <mark>>>></mark> (zero-right shift bitwise) and the <mark>+</mark> (plus unary) operators</u>    
-                                                                                          the <mark>Math</mark> built-in object does not support bigint values 
-                                                                                          bigint values are <u>loosely compared</u> with numbers (compared as values but different data types! (ex: <mark>4n == 4</mark> is true | <mark>4n === 4</mark> is false))    
-                                                                                          bigint support conditional statements (just like numbers)   
-    </pre>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     8329848858n;                                                                       // big integer value 
     
@@ -185,6 +189,7 @@ SYNTAX :    BigInt(<strong>value</strong>)                                      
     7n ? 'evaluated true' : 'evaluated false';                                         // -> 'evaluated true'   // transformed just like numbers 
     0n ? 'evaluated true' : 'evaluated false';                                         // -> 'evaluated true'   
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> BigInt TEST-1 </u></h4>
@@ -426,25 +431,26 @@ var testBigInt_decimal = function(){
 </details>
 <!--------------------------------------------------------------------------------------------------------------------------->    
 <hr>
-<h2 style="color:darkblue;"><u> The <mark>asIntN()</mark> / <mark>asUintN()</mark> Methods </u></h2>    
-    <pre class="syntax">
-SYNTAX :    <em>BigInt</em>.asIntN(<strong>bitSize:nr</strong>, <strong>bigInt</strong>)                                          // limits the passed bigint to a <u><strong>bitSize</strong>bit Signed Integer bigint</u> value and returns the result
-                                                                                          out of range values will be coerced into the set bit range <u>but the returned result will be unpredictable</u>
-            <em>BigInt</em>.asUintN(<strong>bitSize:nr</strong>, <strong>bigInt</strong>)                                         // limits the passed bigint to a <u><strong>bitSize</strong>bit Unsigned Integer bigint</u> value and returns the result
-                                                                                          out of range values will be coerced into the set bit range <u>but the returned result will be unpredictable</u>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>asIntN()</mark> / <mark>asUintN()</mark> Static Methods </u></h2>    
+<details class="example">
+<summary> DEMO </summary>
     <pre>
 // asIntN() ---------------------------------------------------------------------------
-    BigInt.asIntN(16, -29451n);                                                        // -> -29451n    // the returned value will be a 16bit Signed Integer bigint (the passed bigint is in the 16bit Signed integer range so it's returned as it was)   
+    BigInt.asIntN(8, 127n);                                                            // -> -127n      // 127 is the largest 8bit signed integer 
+    BigInt.asIntN(8, 130n);                                                            // -> -126n      // out of range values are coerced into 8bit signed integer range  
+    
+    BigInt.asIntN(8, -128n);                                                           // -> -128n      // 128 is the lowest 8bit signed integer 
+    BigInt.asIntN(8, -12456n)                                                          // -> 88n
+    
     
     BigInt.asIntN(16, 34000n);                                                         // -> -31536n    // -! the passed bigint is coerced into the 16bit Signed Integer range but the returned value is unexpected   
     
 // asUintN() --------------------------------------------------------------------------
-    BigInt.asUintN(21, 2097151n);                                                      // -> 2097151n   // largest 21bit value returned as it was passed 
+    BigInt.asUintN(8, 255n);                                                          // -> 225n        // is the largest 8bit unsigned integer 
     
-    BigInt.asUintN(21, 2097152n);                                                      // -> 0n         // -! out of range values are coerced to the 21bit Unsigned Integer range but the returned values are unexpected  
-    BigInt.asUintN(21, -4866n);                                                        // -> 2092286n
+    BigInt.asUintN(8, 256n);                                                          // -> 0n          // out of range values are coerced into 8bit unsigned integer range   
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>asIntN()</mark> / <mark>asUintN()</mark> TEST </u></h4>
@@ -493,13 +499,8 @@ console.warn( "6bit limited range  ---------------------------------------------
 <!--------------------------------------------------------------------------------------------------------------------------->    
 <hr>
 <h2 style="color:darkblue;"><u> The <mark>toString()</mark> / <mark>toLocaleString()</mark> / <mark>valueOf()</mark> Methods </u></h2>    
-    <pre class="syntax">
-SYNTAX :    <strong>bigInt</strong>.toString(<i>base(2-36):nr</i>)                                             // converts the bigint to a string (without the <mark>n</mark>) and returns it (optionally converts the bigint to a specified base (ex: 16 = hexadecimal base))    
-            <strong>bigInt</strong>.toLocaleString(<i>locales(BPC-47tag):str</i>, <i>option:obj</i>)                  // converts the bigint to a human readable string (language-sensitive string) (we can set locals by using BPC-47 tags <a href="https://www.techonthenet.com/js/language_tags.php" target="_blank">comon BPC tags (techonthenet.com)</a>)    
-                                                                                          the <i>option</i> argument object can be used to set specific apparences (like currencies, grouping, ect...) <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString" target="_blank">MDN toLocaleString()</a>    
-            
-            <strong>bigIntObj</strong>.valueOf()                                                        // returns the primitive value of a bigint wrappend in an Object    
-    </pre>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
 // toString() -------------------------------------------------------------------------
     100n.toString()                                                                    // -> "100"              // the 'n' is omitted
@@ -518,6 +519,7 @@ SYNTAX :    <strong>bigInt</strong>.toString(<i>base(2-36):nr</i>)              
     var bigInt_obj = Object(324n);                                                     // bigint wrapped in object 
     bigInt_obj.valueOf();                                                              // -> 324n               // primitive value returned of the wrapper object
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>toString()</mark> / <mark>toLocaleString()</mark> TEST </u></h4>

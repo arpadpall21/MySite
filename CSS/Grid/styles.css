@@ -484,7 +484,6 @@ div.positioned {
     border: solid 1px black;
     background-color: green;
 }
-.just1 { justify-items: stretch; }
 .just2 { justify-items: start; }
 .just3 { justify-items: end; }
 .just4 { justify-items: center; }

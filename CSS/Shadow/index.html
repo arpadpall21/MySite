@@ -10,82 +10,84 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Shadow (3.0) </h1>
-    <p> Updated ( 2017-01-04 / 2018-11-05 )</p>
+<h1> Shadow (4.0.0) </h1>
+    <p> Updated ( 2017-01-04 / 2018-11-05 / 2021-06-04 )</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html" title="CSS">CSS></a> Shadow
     </p>
 <table class="table">    
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <th> Property </th>
-        <th> Value </th>
+        <th style="width:15%"> Property </th>
+        <th style="width:40%;"> Value </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> text-shadow </td>
         <td>  
-            none <span style="color:blue;">([default] no shadow)</span><br>
-            <strong>h-Shadow</strong> <strong>v-Shadow</strong> <i>blur</i> <i>color</i> <span style="color:blue;">(shadow parameters)</span><br>
-            initial <span style="color:blue;">(sets to default)</span><br>
-            inherit <span style="color:blue;">(inherits form its parent)</span>
+            none <span class="cssAV">(Default)</span><br>
+            <strong>cssLength:Y</strong> <strong>cssLength:Y</strong> <i>cssLength:blur</i> <i>cssColor</i>, <i class="openable">shadow2, ...<div>
+                <p> - multiple shadows can be set, each comma separated statement describes a shadow </p> 
+            </div></i>
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> attaches one (or multiple by using <mark>,</mark> coma separation) shadows to the text (if no color declared it uses the font color) 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 4 </span>
+            - sets one (or multiple) shadow(s) to the text 
+            <span id="browserSupport" title="Updated: 2021-06-04">
+                <span><i class="fab fa-chrome"></i> 2 </span>
                 <span><i class="fab fa-firefox"></i> 3.5 </span>
                 <span><i class="fab fa-opera"></i> 9.6 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
-                <span><i class="fab fa-safari"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1.1 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td> box-shadow </td>
         <td>  
-            none <span style="color:blue;">([default] no shadow)</span><br>
-            <strong>h-Offset</strong> <strong>v-Offset</strong> <i>blur</i> <i>spread</i> <i>color</i> <span style="color:blue;">(shadow parameters)</span><br>
-            <strong>shadowParameters</strong> inset <span style="color:blue;">(changes the shadow from outside to inside the element)</span><br>
-            initial <span style="color:blue;">(sets to default)</span><br>
-            inherit <span style="color:blue;">(inherits form its parent)</span>
+            none <span class="cssAV">(Default)</span><br>
+            <small class="openable">inset<div>
+                <p> - shadow placed inside the lement </p>
+            </div></small> <strong>cssLength:Y</strong> <strong>cssLength:Y</strong> <i>cssLength:blur</i> <i>cssLength:spread</i> <i>cssColor</i>, <i class="openable">shadow2, ...<div>
+                <p> - multiple shadows can be set, each comma separated statement describes a shadow </p> 
+            </div></i>
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> attaches one (or multiple by using <mark>,</mark> coma separation) shadows to the element (if no color declared it uses the font color) 
+            - sets one (or multiple) shadow(s) to the element   
             <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 10/4 -webkit- </span>
-                <span><i class="fab fa-firefox"></i> 4/3.5 -moz </span>
+                <span><i class="fab fa-chrome"></i> 10 </span>
+                <span><i class="fab fa-firefox"></i> 4 </span>
                 <span><i class="fab fa-opera"></i> 10.5 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
-                <span><i class="fab fa-safari"></i> 5.1/3.1 -webkit- </span>
+                <span><i class="fab fa-safari"></i> 5.1 </span>
             </span>
         </td>
     </tr>
 </table>
+<br>    
+    <details class="example" id="notes">
+    <summary> Notes :</summary>
+    </details>
 <h2 style="color:green;"><u> Useful Links : </u></h2>
     <a href="http://www.w3schools.com/css/css3_shadows.asp" target="_blank"> W3School Shadow </a>
 <h2 style="color:green;"><u> Remember This : </u></h2>
-    <p> - </p>
 <h2 style="color:green;"><u> Description and Demonstration </u></h2>    
     <p> - with CSS you can add shadow to text and to elements </p>
-    <pre class="syntax">
-SYNTAX :    text-shadow: none                                           // <i class="fab fa-css3-alt"></i> attaches one (or multiple by using <mark>,</mark> coma separation) shadows to the text (if no color declared it uses the font color)
-                       : <strong>h-Shadow</strong> <strong>v-Shadow</strong> <i>blur</i> <i>color</i>
-                       
-            box-shadow: none                                            // <i class="fab fa-css3-alt"></i> attaches one (or multiple by using <mark>,</mark> coma separation) shadows to the element (if no color declared it uses the font color)
-                      : <strong>h-Offset</strong> <strong>v-Offset</strong> <i>blur</i> <i>spread</i> <i>color</i>
-                      : <strong>shadowParameters</strong> inset      <span style="color:skyblue;">// changes the shadow from outside to inside the element </span>
-    </pre>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     .myElement {
-        text-shadow: 5px 5px red, -5px -5px green;                      // 2 shadows are added to the text
-        box-shadow: 0 0 5px 10px blue;                                  // spreaded box shadow 
+        text-shadow: 5px 5px red, -5px -5px green;                                     // 2 shadows are added to the text
+        box-shadow: 0 0 5px 10px blue;                                                 // spreaded box shadow 
     }
     .myElement {
-        box-shadow: 5px -2px 7px 0 blue, 5px -2px 7px 0 blue inset;     // outset and inset shadows declared (awesome stuff)
+        box-shadow: 5px -2px 7px 0 blue, 5px -2px 7px 0 blue inset;                    // outset and inset shadows declared (awesome stuff)
     }
     </pre>
+</details>
 <details class="example">
-    <summary> Example : </summary>
+<summary> Example : </summary>
 <h4><u> <mark>text-shadow</mark> property TEST </u></h4>  
     <p style="text-shadow:3px 3px red;"> Simple Text Shadow </p>
     <p style="text-shadow:-3px -3px white"> Negative Values </p>

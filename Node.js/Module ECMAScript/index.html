@@ -166,6 +166,26 @@
             </span>
         </td>
     </tr>
+        <tr class="01.12"><td></td><td></td></tr>
+    <tr class="01.13">
+        <td> 
+            await import(<strong class="openable">specifier:str<div>
+                <p><b><u>Relative Specifier</u></b></p>
+                <p> - <mark>./main.js</mark> - relative path from the current location <u>(file extensions are required)</u>
+                <p><b><u>Absolute Specifier</u></b></p>
+                <p> - <mark>/home/dev/main.js</mark> - absolute path <u>in ECMAscript modules we can also pass file protocol path <mark>"file:///home/dev/main.js</mark> (browser percent encoded)</u> </p>
+                <p><b><u>Bare Specifier</u></b></p>
+                <p> - <mark>main</mark> | <mark>mymodule/main</mark> - (no prefixed path given) - refers as package entry point to the nearest <mark>node_modules</mark> directory <u>(file extensions are required in some cases)</u> </p>
+            </div></strong>)
+        </td>
+        <td> 
+            - <u>statically requires</u> the <strong>specifier</strong> module (does the same as <mark>import * as <strong>name</strong> from <strong>specifier</strong></mark>) <br>
+            - returns a <mark>{default:<i>defVal, ...</i>}</strong></mark> object which holds the data exported by <strong>specifier</strong> module    <br>
+            <span class="browserSupport" title="updated : 2021-05-28">
+                <span><i class="fab fa-node-js"></i> 14.8.0 </span>
+            </span>
+        </td>
+    </tr>
     <tr class="02.00">
         <td> export <strong>exportSyntax</strong> </td>
         <td> 
@@ -484,7 +504,7 @@ pall@Ryzen:~/Documents/CodePlus/My Site/03 Improuve/Learn WebDesign/Node.js/Modu
 </details>
 <hr>
 <!---------------------------------------------------------------------------------------------------->
-<h2 style="color:darkblue;"><u> The <mark>import</mark> / <mark>export</mark> / <mark>import.meta.url</mark> statements and property </u></h2>
+<h2 style="color:darkblue;"><u> The <mark>import</mark> / <mark>import()</mark> / <mark>await import</mark> / <mark>export</mark> / <mark>import.meta.url</mark> statements and property </u></h2>
 <details class="example">
 <summary> DEMO </summary>
     <p> <mark>import</mark> </p>
@@ -565,9 +585,18 @@ pall@Ryzen:~/Documents/CodePlus/My Site/03 Improuve/Learn WebDesign/Node.js/Modu
     
     export { default } from './module2.mjs';                                           // imports the default value then exports it as default value 
     </pre>
-    <p> - other property </p>
+    <p> - other <mark>import.meta.url</mark> property </p>
     <pre>
     import.meta.url;                                                                   // -> 'file:///home/pall/Node.js/Module%20ECMAScript/main.mjs'       // absolute path of the module location (as file protocol (percent encoded))    
+    </pre>
+    <p> - top level <mark>await</mark> (<mark>await import()</mark>) </p>
+    <pre>
+    await import('./module1.mjs');                                                     // -> {default:'data from module-1'}     // statically imports the './module1.mjs' module   
+                                                                                       // does the same as 'import * as imp from './module1.mjs';'   
+    
+    function importFn1(){                                                              // the await import() is a satic import so cannot be used in a function body
+        await import('./module1.mjs');                                                 // -! throws a SyntaxError: Unexpected reserved word 
+    }
     </pre>
 </details>
 <details class="example">
@@ -759,7 +788,57 @@ pall@Ryzen:~/Documents/CodePlus/My Site/03 Improuve/Learn WebDesign/Node.js/Modu
     export default 0;
     export var egy = 1, ketto = 2, harom = 3;    
     </pre>
+<h4 style="color:darkblue;"><u> top level <mark>await</mark> (<mark>await import()</mark> TEST </u></h4>
+    <p> - <mark>main.mjs</mark> (file) </p>
+    <pre>
+// static import ----------------------------------------------------------------------// blocks this module untill './module1.mjs' is fully loaded 
+  // traditional static import in EC modules 
+    import * as imp from './module1.mjs'; 
+    console.log( imp );                                                                // -> {default:'data from module-1'}
+    
+  // static import with await import() (does the same as above but is prettier) 
+    console.log( await import('./module1.mjs') );                                      // -> {default:'data from module-1'}
+    
+    function importFn1(){                                                              // the await import() is a satic import so cannot be used in a function body
+        // await import('./module1.mjs');                                              // this would throw a SyntaxError: Unexpected reserved word 
+    }
+    
+    
+// dynamic import ---------------------------------------------------------------------// does not block this module, the './module2.mjs' loads once this module is fully loaded (not asynchronous)
+    import('./module2.mjs') 
+        .then((res)=>{ console.log(res) })                                             // -> {default:'data from module-2'}
+        .catch((err)=>{ console.log(err) });
+        
+    (function ImporFn2(){
+        import('./module2.mjs')                                                        // dynamic import inside a function body 
+            .then((res)=>{ console.log(res) })                                         // -> {default:'data from module-2'}
+            .catch((err)=>{ console.log(err) });
+    })();
+    
+    console.log( '----- MAIN MODULE END -----' );
+    </pre>
+    <p> - <mark>module1.mjs</mark> (file) </p>
+    <pre>
+    var x = 'data from module-1'
+    
+    export default x;    
+    </pre>
+    <p> - <mark>module2.mjs</mark> (file) </p>
+    <pre>
+    var x = 'data from module-2'
+    
+    export default x;    
+    </pre>
+    <pre class="cmd">
+    pall@Ryzen:~/Documents/CodePlus/My Site/Node.js/Module ECMAScript$ node main.mjs
+        [Module: null prototype] { default: 'data from module-1' }
+        [Module: null prototype] { default: 'data from module-1' }
+        ----- MAIN MODULE END -----
+        [Module: null prototype] { default: 'data from module-2' }
+        [Module: null prototype] { default: 'data from module-2' }
+    </pre> 
 </details>
+    
     
     <br><br>
 </body>

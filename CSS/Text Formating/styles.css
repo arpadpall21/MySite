@@ -114,20 +114,6 @@
     vertical-align: bottom;
 }
 
-       /*-- white-space TABLE --*/
-.white-space_Table {
-    border: solid 2px black;
-    border-collapse: collapse;
-    background-color: #4b4b4b;
-    color: white;
-    margin: auto;
-}
-.white-space_Table th, .white-space_Table td {
-    border: solid 1px black;
-    padding: 5px;
-    text-align: center;
-}
-
         /*-- white-space TEST --*/
 .whiteSpace {
     width: 200px;

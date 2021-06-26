@@ -10,91 +10,28 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> CSS Grid (ver 3.2) </h1>
-    <p> Updated ( 2019-05-24 )</p>
+<h1> CSS Grid (ver 4.0.0) </h1>
+    <p> Updated ( 2019-05-24 / 2021-06-09 )</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html" title="CSS">CSS></a> Grid  
     </p>
 <table class="table">
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <th style="width:10%"> Property </th>
-        <th style="width:50%"> Value </th>
+        <th style="width:15%"> Property </th>
+        <th style="width:40%;"> Value </th>
         <th> Description </th>
     </tr>
-    <tr>
-        <td> align-content </td>
-        <td>  
-            start<br>
-            end<br>
-            center<br> 
-            stretch                 <span style="color:blue;">((default) stretches <u>auto spaced row heights</u>)</span><br>
-            space-around            <span style="color:blue;">(space evenly distributed around each rows)</span>
-            space-between           <span style="color:blue;">(first and last columns stick to the side and the available space is evenly distributed between the other rows)</span>
-            space-evenly            <span style="color:blue;">(space evenly distributed between grid rows)</span>
-        </td>
-        <td> 
-            specifies the vertical placement for the grid itself inside the gird container 
-            <span id="browserSupport" title="updated : 2019-05-30">
-                <span><i class="fab fa-chrome"></i> 57 </span>
-                <span><i class="fab fa-firefox"></i> 52 </span>
-                <span><i class="fab fa-opera"></i> 44 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 16 </span>
-                <span><i class="fab fa-safari"></i> 10.1 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> align-items </td>    
-        <td>  
-            start
-            <span id="browserSupport" title="updated : 2019-05-31">
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
-            </span><br>
-            end
-             <span id="browserSupport" title="updated : 2019-05-31">
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
-            </span><br>
-            center<br>
-            stretch   <span style="color:blue;">((default) stretches <u>vertically auto sized</u> grid items)</span>
-        </td>    
-        <td> 
-            specifies the vertical placement for all grid elements <u>inside their gird cell</u> 
-            <span id="browserSupport" title="updated : 2019-05-31">
-                <span><i class="fab fa-chrome"></i> 57 </span>
-                <span><i class="fab fa-firefox"></i> 52 </span>
-                <span><i class="fab fa-opera"></i> 44 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 16 </span>
-                <span><i class="fab fa-safari"></i> 10.1 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> align-self </td>
-        <td>  
-            start<br>
-            end<br>
-            center<br>
-            stretch  <span style="color:blue;">((default) stretches a <u>vertically auto sized</u> grid item)</span>
-        </td>
-        <td> 
-            specifies the vertical placement of the gird item <u>inside its gird cell</u> (property is set on the grid item and overrides the <mark>align-items</mark> property) 
-            <span id="browserSupport" title="updated : 2019-05-31">
-                <span><i class="fab fa-chrome"></i> 57 </span>
-                <span><i class="fab fa-firefox"></i> 52 </span>
-                <span><i class="fab fa-opera"></i> 44 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 16/10 -ms- </span>
-                <span><i class="fab fa-safari"></i> 10.1 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
+    <tr class="04.01">
         <td> display </td>
         <td>  
             grid<br>
             inline-grid
         </td>
         <td>  
-            displays the element as block-level-grid element or inline-grid element 
+            - displays the element as block-level or inline grid element  
             <span id="browserSupport" title="updated : 2019-05-25">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -104,29 +41,30 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.01">
         <td> grid </td>
         <td>  
-            none      <span style="color:blue;">(default)</span><br>
+            none      <span class="cssAV">(Default)</span><br>
             <strong>grid-template-rows</strong> / <strong>grid-template-columns</strong><br>
             <strong>grid-template-areas</strong><br>
             <strong>grid-template-rows</strong> / <small>auto-flow dense</small> <i>grid-auto-columns</i><br>
             <small>auto-flow dense</small> <i>grid-auto-row</i> / <strong>grid-template-columns</strong> 
         </td>
         <td> 
-            shorthand property for the <mark>grid-template-rows</mark> / <mark>grid-template-columns</mark> / <mark>grid-template-areas</mark> / <mark>grid-auto-rows</mark> / <mark>grid-auto-columns</mark> / <mark>grid-auto-flow</mark> properties 
+            - shorthand property for the <mark>grid-template-rows</mark> / <mark>grid-template-columns</mark> / <mark>grid-template-areas</mark> / <mark>grid-auto-rows</mark> / <mark>grid-auto-columns</mark> / <mark>grid-auto-flow</mark> properties 
         
         </td>
     </tr>
-    <tr>
+    <tr class="15.07">
         <td> grid-area </td>
         <td>  
-            auto auto auto auto         <span style="color:blue;">(default)</span><br>
-            <i>grid-row-start</i> / <i>grid-column-start</i> / <i>grid-row-end</i> / <i>grid-column-end</i><br>     
-            <strong>areaId</strong>   <span style="color:blue;">(sizes on the tageted grid area)</span>
+            auto auto auto auto <span class="cssAV">(Default)</span><br>
+            <strong>grid-row-start</strong> / <strong>grid-column-start</strong> / <strong>grid-row-end</strong> / <strong>grid-column-end</strong><br>     
+            <strong>areaId</strong>   <span class="cssAV">(sizes on the tageted grid area)</span>  
         </td>
         <td> 
-            shorthand property for the <mark>grid-row-start</mark>, <mark>grid-column-start</mark>, <mark>grid-row-end</mark> and <mark>grid-column-end</mark> properties (property is set on the grid item)
+            - shorthand property for the <mark>grid-row-start</mark>, <mark>grid-column-start</mark>, <mark>grid-row-end</mark> and <mark>grid-column-end</mark> properties (property is set on the grid item)<br>
+            - set on the grid item 
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -136,19 +74,20 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.03">
         <td> grid-auto-columns </td>
         <td>  
-            auto      <span style="color:blue;">(default)</span><br>
+            auto  <span class="cssAV">(Default)</span><br>
             <strong>cssLength</strong><br>
-            min-content         <span style="color:blue;">(the largest minimal content (longest word))</span><br>
-            max-content         <span style="color:blue;">(the largest maximal content (full text width)</span><br>
-            fit-content(<strong>cssLength</strong>) <span style="color:blue;">(wide as the content (text) or <u>up to (maximum)</u> the set size)</span><br>
-            <strong>nr</strong>fr  <span style="color:blue;">((fraction) distributes the <u>available space</u> proportionally relative to other fraction grid colums (content size can stretch it bigger!))</span><br>
-            minmax(<strong>min</strong>, <strong>max</strong>)  <span style="color:blue;">(defines the minimal and maximal width (<strong>min/max</strong> : <strong>cssLength</strong>|<strong>nr</strong>fr|max-content|min-content|auto))</span>
+            min-content         <span class="cssAV">(the largest minimal content (longest word))</span><br>
+            max-content         <span class="cssAV">(the largest maximal content (full text width)</span><br>
+            fit-content(<strong>cssLength</strong>) <span class="cssAV">(wide as the content (text) or <u>up to (maximum)</u> the set size)</span><br>
+            <strong>nr</strong>fr  <span class="cssAV">((fraction) distributes the <u>available space</u> proportionally relative to other fraction grid colums (content size can stretch it bigger!))</span><br>
+            minmax(<strong>min:cssLength</strong>, <strong>max:cssLength</strong>)  <span class="cssAV">(defines the minimal and maximal width)</span>
         </td>
         <td> 
-            specifies the size for <u>all</u> grid columns <u>(the <mark>grid-template-columns</mark> overrides this property)</u> 
+            - specifies the size for <u>all</u> grid columns <u>(the <mark>grid-template-columns</mark> overrides this property)</u> <br>
+            - set on the grid container
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -158,17 +97,20 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.08">
         <td> grid-auto-flow </td>
         <td>  
-            row             <span style="color:blue;">(row by row (top to bottom) <u>maintains the element order (leaves empty gaps if necessary)</u>)</span><br> 
-            column          <span style="color:blue;">(column by column (left to right) <u>maintains the element order (leaves empty gaps if necessary)</u>)</span><br>
-            row dense       <span style="color:blue;">(row by row (left to right) <u>fills empty gaps if necessary (element order is not maintained in this case)</u>)</span><br>
-            column dense    <span style="color:blue;">(column by column (left to right) <u>fills empty gaps if necessary (element order is not maintained in this case)</u>)</span><br>
-            dense           <span style="color:blue;">(same as <mark>row dense)</mark>
+            row             <span class="cssAV">(row by row (top to bottom) <u>maintains the element order (leaves empty gaps if necessary)</u>)</span><br> 
+            column          <span class="cssAV">(column by column (left to right) <u>maintains the element order (leaves empty gaps if necessary)</u>)</span><br>
+            row dense       <span class="cssAV">(row by row (left to right) <u>fills empty gaps if necessary (element order is not maintained in this case)</u>)</span><br>
+            column dense    <span class="cssAV">(column by column (left to right) <u>fills empty gaps if necessary (element order is not maintained in this case)</u>)</span><br>
+            dense           <span class="cssAV">(same as <mark>row dense)</mark>
         </td>
         <td> 
-            controls how auto-placed items are layed in the grid 
+            - controls how auto place elements on the grid that are <u class="openable">not manually placed<div>
+                <p> - elements that are not placed by any of the <mark>grid-column-start</mark> / <mark>grid-column-end</mark> / <mark>grid-column</mark> / <mark>grid-row-start</mark> / <mark>grid-row-end</mark> / <mark>grid-row</mark> / <mark>grid-area</mark> propertyes </p>
+            </div></u> <br>
+            - set on the grid container 
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -178,19 +120,20 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.04">
         <td> grid-auto-rows </td>
         <td>  
-            auto <span style="color:blue;">(default)</span><br>
+            auto <span class="cssAV">(default)</span><br>
             <strong>cssLength</strong><br>
-            min-content    <span style="color:blue;">(the largest minimal content (longest word))</span><br>
-            max-content    <span style="color:blue;">(the largest maximal content (full text height))</span><br>
-            fit-content(<strong>cssLength</strong>) <span style="color:blue;">(tall as the content (text) or <u>up to (maximum)</u> the set size)</span><br>
-            <strong>nr</strong>fr      <span style="color:blue;">((fraction) distributes the <u>available space</u> proportionally relative to other fraction grid rows (content size can stretch it bigger!))</span><br>
-            minmax(<strong>min</strong>, <strong>max</strong>)   <span style="color:blue;">(defines the minimal and maximal height (<strong>min/max</strong> : <strong>cssLength</strong>|<strong>nr</strong>fr|max-content|min-content|auto))</span>
+            min-content    <span class="cssAV">(the largest minimal content (longest word))</span><br>
+            max-content    <span class="cssAV">(the largest maximal content (full text height))</span><br>
+            fit-content(<strong>cssLength</strong>) <span class="cssAV">(tall as the content (text) or <u>up to (maximum)</u> the set size)</span><br>
+            <strong>nr</strong>fr      <span class="cssAV">((fraction) distributes the <u>available space</u> proportionally relative to other fraction grid rows (content size can stretch it bigger!))</span><br>
+            minmax(<strong>min:cssLength</strong>, <strong>max:cssLength</strong>) <span class="cssAV">(defines the minimal and maximal height)</span>
         </td>
         <td> 
-            specifies the size for <u>all</u> grid rows <u>(the <mark>grid-template-rows</mark> overrides thid property)</u> 
+            - specifies the size for <u>all</u> grid rows <u>(the <mark>grid-template-rows</mark> overrides thid property)</u> <br>
+            - set on the grid container
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -200,11 +143,12 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.03">
         <td> grid-column </td>
         <td> <strong>grid-column-start</strong> / <strong>grid-column-end</strong> </td>
         <td> 
-            shorthand property for the <mark>grid-column-start</mark> and <mark>grid-column-end</mark> properties 
+            - shorthand property for the <mark>grid-column-start</mark> and <mark>grid-column-end</mark> properties <br>
+            - set on the grid item 
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -214,16 +158,17 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.02">
         <td> grid-column-end </td>
         <td>  
-            auto                            <span style="color:blue;">(default)</span><br>
-            <strong>columnLine:nr</strong><br>                  
-            span <strong>nr</strong>        <span style="color:blue;">(spans the number of columns to the right)</span><br> 
-            <strong>areaId</strong><small>-end|-start</small>     <span style="color:blue;">(grid area <i>end</i>-line (default) or <i>start</i>-line)</span>
+            auto <span class="cssAV">(Default)</span><br>
+            <strong>columnLine:nr</strong> <span class="cssAV">(starts at <mark>1</mark>)</span><br>
+            span <strong>nr</strong> <span class="cssAV">(counted from <mark>grid-column-start</mark> spans <strong>nr</strong> columns to the left)</span><br> 
+            <strong>areaId</strong><small>-start|-end</small>   <span class="cssAV">(the grid area spaned up to the <strong>areaId</strong> grid area (<small>-start</small> area start | <small>-end</small> area end)</span>
         </td>
         <td> 
-            defines the column-line or the area on which the grid item will end (property is set on the grid item) 
+            - specifies the end column of this grid area (item) <br>
+            - set on the grid item 
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -233,10 +178,12 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td> grid-column-gap </td>
         <td> <strong>cssLength</strong> </td>
-        <td> specifies the size of the gaps between grid columns 
+        <td> 
+            - specifies the size of the gaps between grid columns <br>
+            - set on the grid container
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -246,16 +193,20 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td> grid-column-start </td>
         <td>  
-            auto                        <span style="color:blue;">(default)</span><br>
-            <strong>columnLine:nr</strong><br>
-            span <strong>nr</strong>   <span style="color:blue;">(spans the number of columns to the left)</span><br> 
-            <strong>areaId</strong><small>-start|-end</small>   <span style="color:blue;">(grid area <i>start</i>-line (default) or <i>end</i>-line)</span>
+            auto <span class="cssAV">(Default)</span><br>
+            <strong>columnLine:nr</strong> <span class="cssAV">(starts at <mark>1</mark>)</span><br>
+            <span class="openable">span <strong>nr</strong><div>
+                <p> - ex: <mark>grid-column-start: span 2</mark> same as <mark>grid-column-start: 1; grid-column-end: 2;</mark> </p>
+                <p> - ex: <mark>grid-column-start: span 4</mark> same as <mark>grid-column-start: 1; grid-column-end: 4;</mark> </p>
+            </div></span>   <span class="cssAV">(counted from grid line 1 spans <strong>nr</strong> columns to the left)</span><br> 
+            <strong>areaId</strong><small>-start|-end</small>   <span class="cssAV">(the grid area starts from the <strong>areaId</strong> grid area (<small>-start</small> area start | <small>-end</small> area end)</span>
         </td>
         <td> 
-            defines the column-line or the area on which the grid item will start (property is set on the grid item) 
+            - specifies the start column of this grid area (item) <br>
+            - set on the grid item 
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -265,14 +216,15 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.03">
         <td> grid-gap </td>
-        <td>  
-            <strong>column-gap</strong> <strong>row-gap</strong><br>
-            <strong>column/row-gap</strong> <span style="color:blue;">(applies the same value for both columns and row gaps)</span>
+        <td> 
+            <strong>colGap:cssLength</strong> <strong>rowGap:cssLength</strong><br>
+            <strong>colRowGap:cssLength</strong> <span class="cssAV">(applies the same value for both columns and row gaps)</span>
         </td>
         <td> 
-            shorthand property for <mark>grid-column-gap</mark> and <mark>grid-row-gap</mark> 
+            - shorthand property for <mark>grid-column-gap</mark> and <mark>grid-row-gap</mark> <br>
+            - set on the grid container
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -282,11 +234,12 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.06">
         <td> grid-row </td>
         <td> <strong>grid-row-start</strong> / <strong>grid-row-end</strong> </td>
         <td> 
-            shorthand property for the <mark>grid-row-start</mark> and <mark>grid-row-end</mark> properties 
+            - shorthand property for the <mark>grid-row-start</mark> and <mark>grid-row-end</mark> properties <br>
+            - set on the grid item 
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -296,16 +249,17 @@
             </span>
         </td>   
     </tr>
-    <tr>
+    <tr class="15.05">
         <td> grid-row-end </td>
         <td>  
-            auto                        <span style="color:blue;">(default)</span><br>
-            <strong>columnLine:nr</strong><br>
-            span <strong>nr</strong>    <span style="color:blue;">(spans the number of columns to the right)</span><br> 
-            <strong>areaId</strong><small>-end|-start</small>   <span style="color:blue;">(grid area <i>end</i>-line (default) or <i>start</i>-line)</span>
+            auto <span class="cssAV">(Default)</span><br>
+            <strong>rowLine:nr</strong> <span class="cssAV">(starts at <mark>1</mark>)</span><br>
+            span <strong>nr</strong> <span class="cssAV">(counted from <mark>grid-row-start</mark> spans <strong>nr</strong> rows to down)</span><br> 
+            <strong>areaId</strong><small>-start|-end</small>   <span class="cssAV">(the grid area starts from the <strong>areaId</strong> grid area (<small>-start</small> area start | <small>-end</small> area end)</span>
         </td>
         <td> 
-            defines the row-line or the area on which the grid item will end (property is set on the grid item)
+            - specifies the end row of this grid item <br>
+            - set on the grid item 
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -315,11 +269,12 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.02">
         <td> grid-row-gap </td>
         <td> <strong>cssLength</strong> </td>
         <td> 
-            specifies the size of the gaps between grid rows 
+            - specifies the size of the gaps between grid rows <br>
+            - set on the grid container
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -329,16 +284,20 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.04">
         <td> grid-row-start </td>
         <td>  
-            auto                        <span style="color:blue;">(default)</span><br>
-            <strong>columnLine:nr</strong><br>                 
-            span <strong>nr</strong>    <span style="color:blue;">(spans the number of columns to the left)</span><br> 
-            <strong>areaId</strong><small>-start|-end</small>     <span style="color:blue;">(grid area <i>start</i>-line (default) or <i>end</i>-line)</span>
+            auto <span class="cssAV">(Default)</span><br>
+            <strong>rowLine:nr</strong> <span class="cssAV">(starts at <mark>1</mark>)</span><br>
+            <span class="openable">span <strong>nr</strong><div>
+                <p> - ex: <mark>grid-row-start: span 2</mark> same as <mark>grid-row-start: 1; grid-row-end: 2;</mark> </p>
+                <p> - ex: <mark>grid-row-start: span 4</mark> same as <mark>grid-row-start: 1; grid-row-end: 4;</mark> </p>
+            </div></span>   <span class="cssAV">(counted from grid row 1 spans <strong>nr</strong> rows to down )</span><br> 
+            <strong>areaId</strong><small>-start|-end</small>   <span class="cssAV">(the grid area starts from the <strong>areaId</strong> grid area (<small>-start</small> area start | <small>-end</small> area end)</span>
         </td>
         <td> 
-            defines the row-line or the area on which the grid item will start (property is set on the grid item) 
+            - specifies the start row of this grid item <br>
+            - set on the grid item 
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -348,16 +307,15 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.02">
         <td> grid-template </td>
         <td>  
-            none        <span style="color:blue;">(default)</span><br> 
+            none     <span class="cssAV">(Default)</span><br> 
             <strong>grid-template-rows</strong> / <strong>grid-template-columns</strong><br>
-            <strong>grid-template-areas</strong><br>
-            <strong>'cellId cellId ...' rowHeight</strong> <i>'cellId cellId ...' rowHeight</i> / <strong>columnWidth</strong> <i>columnWidth ...</i>    <span style="color:blue;">(combination of all 3 properties)</span> 
+            <strong>grid-template-areas</strong>
         </td>
         <td> 
-            shorthand property for the <mark>grid-template-rows</mark> / <mark>grid-template-columns</mark> / <mark>grid-template-areas</mark> properties 
+            - shorthand property for the <mark>grid-template-rows</mark> / <mark>grid-template-columns</mark> / <mark>grid-template-areas</mark> properties 
             <span id="browserSupport" title="updated : 2019-05-25">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -367,14 +325,20 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.01">
         <td> grid-template-areas </td>
         <td>  
-            none        <span style="color:blue;">(default)</span> <br>
-            <strong>'cellId cellId ...'</strong> <i>'cellId cellId ...'</i>
+            none   <span class="cssAV">(default)</span> <br>
+            <span class="openable">'<strong>cellId</strong> <i>...</i>' '<i>cellId ...</i><div>
+                <p> - each string is one row </p>
+                <hr>
+                <p> ex: </p>
+                <p> - a 3x3 grid can be mapped as <mark>grid-template-areas: 'head head head' 'bar cont cont' 'bar cont cont';</mark> </p>
+            </div></span>
         </td>
         <td> 
-            assign names to the grid cells (sort of maps the grid cells) (every <strong>' '</strong> (string) represent one row, the <mark>.</mark>(period) = no cell id)) 
+            - assigns names to grid cells (<strong>gridId</strong>), named cells can be targeted to easily place grid items on the grid <br>
+            - set on the gird container 
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -384,29 +348,29 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> grid-template-columns </td>
         <td> 
-            none  <span style="color:blue;">(default)</span><br>
-            <strong>cssLength</strong><br>
-            auto<br>
-            min-content     <span style="color:blue;">(the largest minimal content (longest word))</span><br>
-            max-content     <span style="color:blue;">(the largest maximal content (full text width))</span><br>
-            fit-content(<strong>cssLength</strong>) <span style="color:blue;">(wide as the content (text) or <u>up to (maximum)</u> the set size)</span>
-                <span id="browserSupport" title="updated : 2019-05-26"> 
-                    <span><i class="fab fa-chrome"></i> 29 </span>
-                    <span><i class="fab fa-firefox"></i> 51 </span>
-                </span><br>
-            <strong>nr</strong>fr  <span style="color:blue;">((fraction) distributes the <u>available space</u> proportionally relative to other fraction grid columns (content size can stretch it bigger!))</span><br>
-            minmax(<strong>min</strong>, <strong>max</strong>) <span style="color:blue;">(defines the minimal and maximal width (<strong>min/max</strong> = <strong>cssLength</strong>|<strong>nr</strong>fr|max-content|min-content|auto))</span>
-                <span id="browserSupport" title="updated : 2019-05-26"> 
-                    <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 11 </span>
-                </span><br>
-            repeat(<strong>nr</strong>|auto-fill|auto-fit, <strong>width</strong> <i>width ...</i>) <span style="color:blue;">(repeats the defined column(s) the number of times (auto-fill = as many times as possible without filling the available space | auto-fit = as many times as possible by using up the available space) (<strong>width</strong> : <strong>cssLength</strong>|<strong>nr</strong>fr|max-content|min-content|minmax()|fit-content()|auto) </span><br>
-            <strong>width</strong><i> width ...</i> <span style="color:blue;">(the number of size declarations define the number of grid-columns)</span>
+            none  <span class="cssAV">(Default)</span><br>
+            <strong class="openable">colWidth<div>
+                <p> - each propery defines a column width </p>
+                <p> <strong>cssLength</strong> </p>
+                <p> <mark>auto</mark> </p>
+                <p> <mark>min-content</mark> - the largest minimal content (longest word) </p>
+                <p> <mark>max-content</mark> - the largest maximal content (full text width) </p>
+                <p> <mark>fit-content(<strong>cssLength</strong>)</mark> - wide as the content (text) or <u>up to (maximum)</u> the set size </p> 
+                <p> <mark><strong>nr</strong>fr</mark> - (Fraction) distributes the <u>available space</u> proportionally relative to other fraction grid columns (content size can stretch it bigger!) </p>
+                <p> <mark>minmax(<strong>min:cssLength</strong>, <strong>max:cssLength</strong>)</mark> - defines the minimal and maximal width </p>
+            </div></strong> <i>...</i> <br>
+            repeat(<span class="openable"><strong>nr</strong>|auto-fill|auto-fit<div>
+                <p> <strong>nr</strong> - number of columns </p>
+                <p> <mark>auto-fill</mark> - as many times as possible without filling the remaining space at the end </p>
+                <p> <mark>auto-fill</mark> - as many times as possible by using up all the available space </p>
+            </div></span>, <strong>colWidth</strong> <i>...</i>) <span class="cssAV">(repeats the defined pattern <strong>nr</strong> times)</span>
         </td>
         <td> 
-            specifies the number and size of the grid-columns 
+            - specifies the number and size of the grid-columns <br>
+            - set on the grid container
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -416,26 +380,29 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.02">
         <td> grid-template-rows </td> 
         <td> 
-            none  <span style="color:blue;">(default)</span><br>
-            <strong>cssLength</strong><br>
-            auto<br>
-            min-content     <span style="color:blue;">(the largest minimal content (longest word))</span><br>
-            max-content     <span style="color:blue;">(the largest maximal content (full text width))</span><br>
-            fit-content(<strong>cssLength</strong>) <span style="color:blue;">(tall as the content (text) or <u>up to (maximum)</u> the set size)</span>
-                <span id="browserSupport" title="updated : 2019-05-26"> 
-                    <span><i class="fab fa-chrome"></i> 29 </span>
-                    <span><i class="fab fa-firefox"></i> 51 </span>
-                </span><br>
-            <strong>nr</strong>fr  <span style="color:blue;">((fraction) distributes the <u>available space</u> proportionally relative to other fraction grid rows (content size can stretch it bigger!))</span><br>
-            minmax(<strong>min</strong>, <strong>max</strong>) <span style="color:blue;">(defines the minimal and maximal height (<strong>min/max</strong> = <strong>cssLength</strong>|<strong>nr</strong>fr|max-content|min-content|auto))</span><br>
-            repeat(<strong>nr</strong>|auto-fill|auto-fit, <strong>height</strong> <i>height ...</i>) <span style="color:blue;">(repeats the defined column(s) the number of times (auto-fill = as many times as possible without filling the available space | auto-fit = as many times as possible by using up the available space) (<strong>width</strong> : <strong>cssLength</strong>|<strong>nr</strong>fr|max-content|min-content|minmax()|fit-content()|auto) </span><br>
-            <strong>height</strong><i> height ...</i> <span style="color:blue;">(the number of size declarations define the number of grid-rows)</span>
+            none  <span class="cssAV">(Default)</span><br>
+            <strong class="openable">colWidth<div>
+                <p> - each propery defines a column width </p>
+                <p> <strong>cssLength</strong> </p>
+                <p> <mark>auto</mark> </p>
+                <p> <mark>min-content</mark> - the largest minimal content (longest word) </p>
+                <p> <mark>max-content</mark> - the largest maximal content (full text width) </p>
+                <p> <mark>fit-content(<strong>cssLength</strong>)</mark> - wide as the content (text) or <u>up to (maximum)</u> the set size </p> 
+                <p> <mark><strong>nr</strong>fr</mark> - (Fraction) distributes the <u>available space</u> proportionally relative to other fraction grid columns (content size can stretch it bigger!) </p>
+                <p> <mark>minmax(<strong>min:cssLength</strong>, <strong>max:cssLength</strong>)</mark> - defines the minimal and maximal width </p>
+            </div></strong> <i>...</i> <br>
+            repeat(<span class="openable"><strong>nr</strong>|auto-fill|auto-fit<div>
+                <p> <strong>nr</strong> - number of columns </p>
+                <p> <mark>auto-fill</mark> - as many times as possible without filling the remaining space at the end </p>
+                <p> <mark>auto-fill</mark> - as many times as possible by using up all the available space </p>
+            </div></span>, <strong>colWidth</strong> <i>...</i>) <span class="cssAV">(repeats the defined pattern <strong>nr</strong> times)</span>
         </td>
         <td> 
-            specifies the number and size of the grid-rows 
+            - specifies the number and size of the grid-rows <br>
+            - set on the grid container
             <span id="browserSupport" title="updated : 2019-05-26">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -445,19 +412,31 @@
             </span>
         </td>
     </tr>
+</table>
+    <br>
+<table class="table">
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <td> justify-content </td>
+        <th style="width:15%"> Property </th>
+        <th style="width:40%;"> Value </th>
+        <th> Description </th>
+    </tr>
+    <tr class="05.02">
+        <td> align-content </td>
         <td>  
-            start<br>
+            start <span class="cssAV">(Default)</span> <br>
             end<br>
             center<br> 
-            stretch               <span style="color:blue;">((default) stretches <u>auto spaced column width</u>)</span><br>
-            space-around          <span style="color:blue;">(space evenly distributed around each columns)</span><br>
-            space-between         <span style="color:blue;">(first and last columns stick to the side and the available space is evenly distributed between the other columns)</span>
-            space-evenly          <span style="color:blue;">(space evenly distributed between grid columns)</span>
+            stretch                 <span class="cssAV">(stretches <u>auto spaced row heights</u>)</span><br>
+            space-around            <span class="cssAV">(the available space evenly distributed around each rows)</span>
+            space-between           <span class="cssAV">(first and last columns stick to the side and the available space is evenly distributed between the other rows)</span>
+            space-evenly            <span class="cssAV">(the available space evenly distributed between grid rows)</span>
         </td>
         <td> 
-            specifies the horizontal placement for the grid itself inside the gird container 
+            - vertically places the grid itself <u>inside the gird container</u> <br>
+            - used when the grid is smaller than the grid containter (set on the grid container)
             <span id="browserSupport" title="updated : 2019-05-30">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 52 </span>
@@ -467,16 +446,86 @@
             </span>
         </td>
     </tr>
-    <tr>
-        <td> justify-items </td>
+    <tr class="10.02">
+        <td> align-items </td>    
         <td>  
-            start<br>  
-            end<br>
+            stretch   <span class="cssAV">((Default) grid cells take up their maximum grid cell area)</span> <br>
+            start
+            <span id="browserSupport" title="updated : 2019-05-31">
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+            </span><br>
+            end
+             <span id="browserSupport" title="updated : 2019-05-31">
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+            </span><br>
             center<br>
-            stretch    <span style="color:blue;">((default) stretches <u>horizontally auto sized</u> grid items)</span>
+        </td>    
+        <td> 
+            - vertically places grid cells on their grid cell area <br>
+            - set on the grid container 
+            <span id="browserSupport" title="updated : 2019-05-31">
+                <span><i class="fab fa-chrome"></i> 57 </span>
+                <span><i class="fab fa-firefox"></i> 52 </span>
+                <span><i class="fab fa-opera"></i> 44 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 16 </span>
+                <span><i class="fab fa-safari"></i> 10.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="15.02">
+        <td> align-self </td>
+        <td>  
+            stretch   <span class="cssAV">((Default) grid cells take up their maximum grid cell area)</span> <br>
+            start<br>
+            end<br>
+            center
         </td>
         <td> 
-            specifies the horizontal placement for all grid elements <u>inside their gird cell</u> 
+            - vertically places the grid cell on its grid cell area <br>
+            - set on the grid item (overrides <mark>align-items</mark> for this gird cell) 
+            <span id="browserSupport" title="updated : 2019-05-31">
+                <span><i class="fab fa-chrome"></i> 57 </span>
+                <span><i class="fab fa-firefox"></i> 52 </span>
+                <span><i class="fab fa-opera"></i> 44 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 16/10 -ms- </span>
+                <span><i class="fab fa-safari"></i> 10.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="05.01">
+        <td> justify-content </td>
+        <td>  
+            start <span class="cssAV">(Default)</span> <br>
+            end<br>
+            center<br> 
+            stretch               <span class="cssAV">(stretches the grid)</span><br>
+            space-around          <span class="cssAV">(the available space evenly distributed around each columns)</span><br>
+            space-between         <span class="cssAV">(first and last columns stick to the side and the available space is evenly distributed between the other columns)</span>
+            space-evenly          <span class="cssAV">(the available space evenly distributed between grid columns)</span>
+        </td>
+        <td> 
+            - horizontally places the grid itself <u>inside the gird container</u> <br>
+            - used when the grid is smaller than the grid containter (set on the grid container)
+            <span id="browserSupport" title="updated : 2019-05-30">
+                <span><i class="fab fa-chrome"></i> 57 </span>
+                <span><i class="fab fa-firefox"></i> 52 </span>
+                <span><i class="fab fa-opera"></i> 44 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 16 </span>
+                <span><i class="fab fa-safari"></i> 10.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="10.01">
+        <td> justify-items </td>
+        <td>  
+            stretch    <span class="cssAV">((Default) grid cells take up their maximum grid cell area)</span> <br>
+            start<br>  
+            end<br>
+            center
+        </td>
+        <td> 
+            - horizontally places grid cells on their grid cell area <br>
+            - set on the grid container 
             <span id="browserSupport" title="updated : 2019-05-30">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 45 </span>
@@ -486,16 +535,17 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td> justify-self </td>
         <td>  
+            stretch    <span class="cssAV">((Default) grid cells take up their maximum grid cell area)</span> <br>
             start<br>
             end<br>
-            center<br>
-            stretch      <span style="color:blue;">((default) stretches a <u>horizontally auto sized</u> grid item)</span>
+            center
         </td>
         <td> 
-            specifies the horizontal placement of the gird item <u>inside its gird cell</u> (property is set on the grid item and overrides the <mark>justify-items</mark> property) 
+            - horizontally places the grid cell on its grid cell area <br>
+            - set on the grid item (overrides <mark>align-items</mark> for this gird cell) 
             <span id="browserSupport" title="updated : 2019-05-31">
                 <span><i class="fab fa-chrome"></i> 57 </span>
                 <span><i class="fab fa-firefox"></i> 45 </span>
@@ -505,14 +555,14 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.03">
         <td> place-content </td>
         <td>  
             <strong>align-content justify-content</strong><br>
-            <strong>align-content/justify-content</strong>   <span style="color:blue;">(one value applies the same for both properties)</span>        
+            <strong>align-content_justify-content</strong>   <span class="cssAV">(one value applies for both properties)</span>        
         </td>
         <td> 
-            shorthand property for <mark>align-content</mark> and <mark>justify-content</mark> properties 
+            - shorthand property for <mark>align-content</mark> and <mark>justify-content</mark> properties 
             <span id="browserSupport" title="updated : 2019-05-31">
                 <span><i class="fab fa-chrome"></i> 59 </span>
                 <span><i class="fab fa-firefox"></i> 53 </span>
@@ -522,41 +572,42 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.03">
         <td> place-items </td>
         <td>  
             <strong>align-items justify-items</strong><br>
-            <strong>align-items/justify-items</strong>    <span style="color:blue;">(one value applies the same for both properties)</span>
+            <strong>align-items_justify-items</strong>    <span class="cssAV">(one value applies for both properties)</span>
         </td>
         <td> 
-            shorthand property for the <mark>align-items</mark> and <mark>justify-items</mark> properties 
+            - shorthand property for the <mark>align-items</mark> and <mark>justify-items</mark> properties 
             <span id="browserSupport" title="updated : 2019-05-31">
                 <span><i class="fab fa-chrome"></i> 59 </span>
                 <span><i class="fab fa-firefox"></i> 45 </span>
                 <span><i class="fab fa-opera"></i> 46 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> ? </span>
-                <span><i class="fab fa-safari"></i> ? </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 11 </span>
+                <span><i class="fab fa-safari"></i> 79 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.03">
         <td> place-self </td>
         <td>  
             <strong>align-self justify-self</strong><br>
-            <strong>align-self/justify-self</strong>  <span style="color:blue;">(one value applies the same for both properties)</span>
+            <strong>align-self_justify-self</strong>  <span class="cssAV">(one value applies the same for both properties)</span>
         </td>
         <td> 
-            shorthand property for the <mark>align-self</mark> and <mark>justify-self</mark> properties 
+            - shorthand property for the <mark>align-self</mark> and <mark>justify-self</mark> properties <br>
+            - set on the grid item (overrides <mark>aling-items</mark> and <mark>justify-items</mark> for this grid cell)
             <span id="browserSupport" title="updated : 2019-05-31">
                 <span><i class="fab fa-chrome"></i> 59 </span>
                 <span><i class="fab fa-firefox"></i> 45 </span>
                 <span><i class="fab fa-opera"></i> 46 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> ? </span>
-                <span><i class="fab fa-safari"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 11 </span>
             </span>
         </td>
     </tr>
-</table>
+</table>    
 <h2 style="color:green;"><u> Notes : </u></h2>
     <details class="example" id="notes">
     <summary> Notes :</summary>
@@ -569,52 +620,15 @@
 <h2 style="color:green;"><u> Description and Demonstration : </u></h2>
     <p> - the grid layout system are made of columns and rows in order to make easier to place elements without float and positioning </p> 
     <p> - the <mark>display:grid</mark> and <mark>display:inline-grid</mark> properties displays the element as <u>grid block-level</u> or <u>grid inline</u> element </p>
-    <p> - all <u>direct children</u> elements will automatically become grid items </p>
+    <p> - all <u>direct children</u> elements will automatically become grid items, <u>(grid items are sized according to the grid)</u> </p>
     <p> - the gird does not affect its grid items it just lays a map for them, gird items sort of float on the grid, therefore they do not affect each other eighter, they can overlap withount interfering</p>
     <p> - the grid what we define is called <u>explicit grid</u>, if we force grid items to fall out of the explicid gird area the browser will automatically extend the grid area, this gird is called an <u>inplicid grid</u> <u style="background-color:yellow;">not to be confused with 'intrinsic' and 'extrinsic' sizing</u> </p>
     <img src="grid layout.jpg" alt="grid layout" width="400px">
 <!--------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> the <mark>grid-template-columns</mark> / <mark>grid-template-rows</mark> / <mark>grid-auto-columns</mark> / <mark>grid-auto-rows</mark> properties </u></h2>
-    <pre class="syntax">
-SYNTAX :    grid-template-columns: none            <span style="color:skyblue;">// (default)</span>                     // specifies the number and size of the grid-columns 
-                                 : <strong>cssLength</strong>
-                                 : auto 
-                                 : min-content     <span style="color:skyblue;">// the largest minimal content (longest word)</span>
-                                 : max-content     <span style="color:skyblue;">// the largest maximal content (full text width)</span>
-                                 : fit-content(<strong>cssLength</strong>)<span style="color:skyblue;">// wide as the content (text) or <u>up to (maximum)</u> the set size </span>
-                                 : <strong>nr</strong>fr            <span style="color:skyblue;">// (fraction) distributes the <u>available space</u> proportionally relative to other fraction grid columns (content size can stretch it bigger!)</span> 
-                                 : minmax(<strong>min</strong>, <strong>max</strong>)<span style="color:skyblue;">// defines the minimal and maximal width (<strong>min/max</strong> : : <strong>cssLength</strong>|<strong>nr</strong>fr|max-content|min-content|auto)</span>
-                                 : repeat(<strong>nr</strong>|auto-fill|auto-fit, <strong>width</strong> <i>width ...</i>)<span style="color:skyblue;">// repeats the defined column(s) the number of times (auto-fill = as many times as possible without filling the available space | auto-fit = as many times as possible by using up the available space) (<strong>width</strong> : <strong>cssLength</strong>|<strong>nr</strong>fr|max-content|min-content|minmax()|fit-content()|auto) </span> 
-                                 : <strong>width</strong><i> width ...</i> <span style="color:skyblue;">// the number of size declarations define the number of grid-columns</span>
-                                 
-            grid-template-rows: none               <span style="color:skyblue;">// (default)</span>                     // specifies the number and size of the grid-rows
-                              : <strong>cssLength</strong>
-                              : auto
-                              : min-content        <span style="color:skyblue;">// the largest minimal content (longest word)</span>
-                              : max-content        <span style="color:skyblue;">// the largest maximal content (full text height)</span>
-                              : fit-content(<strong>cssLength</strong>)<span style="color:skyblue;">// tall as the content (text) or <u>up to (maximum)</u> the set size </span>
-                              : <strong>nr</strong>fr               <span style="color:skyblue;">// (fraction) distributes the <u>available space</u> proportionally relative to other fraction grid rows (content size can stretch it bigger!)</span>
-                              : minmax(<strong>min</strong>, <strong>max</strong>)   <span style="color:skyblue;">// defines the minimal and maximal height (<strong>min/max</strong> : <strong>cssLength</strong>|<strong>nr</strong>fr|max-content|min-content|auto)</span>
-                              : repeat(<strong>nr</strong>|auto-fill|auto-fit, <strong>height</strong> <i>height ...</i>)<span style="color:skyblue;">// repeats the defined row(s) the number of times (auto-fill = as many times as possible without filling the available space | auto-fit = as many times as possible by using up the available space) (<strong>width</strong> : <strong>cssLength</strong>|<strong>nr</strong>fr|max-content|min-content|minmax()|fit-content()|auto) </span>
-                              : <strong>height</strong><i> height ...</i>  <span style="color:skyblue;">// the number of size declarations define the number of grid-rows</span> 
-                            
-            grid-auto-columns: auto                <span style="color:skyblue;">// (default)</span>                     // specifies the size for <u>all</u> grid columns <u>(the <mark>grid-template-columns</mark> overrides this property)</u>
-                             : <strong>cssLength</strong>
-                             : min-content         <span style="color:skyblue;">// the largest minimal content (longest word)</span>
-                             : max-content         <span style="color:skyblue;">// the largest maximal content (full text width)</span>
-                             : fit-content(<strong>cssLength</strong>)<span style="color:skyblue;">// wide as the content (text) or <u>up to (maximum)</u> the set size </span>
-                             : <strong>nr</strong>fr                <span style="color:skyblue;">// (fraction) distributes the <u>available space</u> proportionally relative to other fraction grid colums (content size can stretch it bigger!)</span>
-                             : minmax(<strong>min</strong>, <strong>max</strong>)    <span style="color:skyblue;">// defines the minimal and maximal width (<strong>min/max</strong> : <strong>cssLength</strong>|<strong>nr</strong>fr|max-content|min-content|auto)</span>
-            
-            grid-auto-rows: auto                   <span style="color:skyblue;">// (default)</span>                     // specifies the size for <u>all</u> grid rows <u>(the <mark>grid-template-rows</mark> overrides thid property)</u>
-                          : <strong>cssLength</strong>
-                          : min-content            <span style="color:skyblue;">// the largest minimal content (longest word)</span>
-                          : max-content            <span style="color:skyblue;">// the largest maximal content (full text height)</span>
-                          : fit-content(<strong>cssLength</strong>) <span style="color:skyblue;">// tall as the content (text) or <u>up to (maximum)</u> the set size </span>
-                          : <strong>nr</strong>fr                   <span style="color:skyblue;">// (fraction) distributes the <u>available space</u> proportionally relative to other fraction grid rows (content size can stretch it bigger!)</span>
-                          : minmax(<strong>min</strong>, <strong>max</strong>)       <span style="color:skyblue;">// defines the minimal and maximal height (<strong>min/max</strong> : <strong>cssLength</strong>|<strong>nr</strong>fr|max-content|min-content|auto)</span>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>grid-template-columns</mark> / <mark>grid-template-rows</mark> / <mark>grid-auto-columns</mark> / <mark>grid-auto-rows</mark> properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
 // HTML ------------------------------------
     &lt;div class="myElement"&gt;
@@ -648,6 +662,7 @@ SYNTAX :    grid-template-columns: none            <span style="color:skyblue;">
         grid-auto-rows: 50px;                                                       // all grid-row height set 
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>grid-template-columns</mark> / <mark>grid-template-rows</mark> / <mark>grid-column-gap</mark> / <mark>grid-row-gap</mark> / <mark>grid-gap</mark> TEST-1 </u></h4>
@@ -1131,15 +1146,9 @@ SYNTAX :    grid-template-columns: none            <span style="color:skyblue;">
 </details>
 <!--------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> the <mark>grid-column-gap</mark> / <mark>grid-row-gap</mark> / <mark>grid-gap</mark> properties </u></h2>
-    <pre class="syntax">
-SYNTAX :    grid-column-gap: <strong>cssLength</strong>                                              // specifies the size of the gaps between grid columns 
-            
-            grid-row-gap: <strong>cssLength</strong>                                                 // specifies the size of the gaps between grid rows 
-            
-            grid-gap: <strong>column-gap</strong> <strong>row-gap</strong>                                            // shorthand property for <mark>grid-column-gap</mark> and <mark>grid-row-gap</mark>
-                    : <strong>column/row-gap</strong>               <span style="color:skyblue;">// applies the same value for both columns and row gaps</span>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>grid-column-gap</mark> / <mark>grid-row-gap</mark> / <mark>grid-gap</mark> properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     .myElement {
         display: grid;
@@ -1149,6 +1158,7 @@ SYNTAX :    grid-column-gap: <strong>cssLength</strong>                         
         grid-gap: 5px;                                                              // sets both column and row gaps with a single value 
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>grid-column-gap</mark> / <mark>grid-row-gap</mark> / <mark>grid-gap</mark> TEST </u></h4>
@@ -1248,38 +1258,9 @@ SYNTAX :    grid-column-gap: <strong>cssLength</strong>                         
 </details>
 <!--------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> the <mark>grid-column-start</mark> / <mark>grid-column-end</mark> / <mark>grid-column</mark> / <mark>grid-row-start</mark> / <mark>grid-row-end</mark> / <mark>grid-row</mark> / <mark>grid-template-areas</mark> / <mark>grid-area</mark> properties </u></h2>
-    <pre class="syntax">
-SYNTAX :    grid-column-start: auto                <span style="color:skyblue;">// (default)</span>                     // defines the column-line or the area on which the grid item will start (property is set on the grid item)  
-                             : <strong>columnLine:nr</strong>                  
-                             : span <strong>nr</strong>             <span style="color:skyblue;">// spans the number of columns to the left</span> 
-                             : <strong>areaId</strong><small>-start|-end</small>   <span style="color:skyblue;">// grid area <i>start</i>-line (default) or <i>end</i>-line</span>
-            
-            grid-column-end: auto                  <span style="color:skyblue;">// (default)</span>                     // defines the column-line or the area on which the grid item will end (property is set on the grid item)  
-                           : <strong>columnLine:nr</strong>                  
-                           : span <strong>nr</strong>               <span style="color:skyblue;">// spans the number of columns to the right</span> 
-                           : <strong>areaId</strong><small>-end|-start</small>     <span style="color:skyblue;">// grid area <i>end</i>-line (default) or <i>start</i>-line</span>
-            
-            grid-row-start: auto                   <span style="color:skyblue;">// (default)</span>                     // defines the row-line or the area on which the grid item will start (property is set on the grid item)  
-                          : <strong>columnLine:nr</strong>                  
-                          : span <strong>nr</strong>                <span style="color:skyblue;">// spans the number of columns to the left</span> 
-                          : <strong>areaId</strong><small>-start|-end</small>      <span style="color:skyblue;">// grid area <i>start</i>-line (default) or <i>end</i>-line</span>
-                           
-            grid-row-end: auto                     <span style="color:skyblue;">// (default)</span>                     // defines the row-line or the area on which the grid item will end (property is set on the grid item)  
-                        : <strong>columnLine:nr</strong>                  
-                        : span <strong>nr</strong>                  <span style="color:skyblue;">// spans the number of columns to the right</span> 
-                        : <strong>areaId</strong><small>-end|-start</small>        <span style="color:skyblue;">// grid area <i>end</i>-line (default) or <i>start</i>-line</span>
-            
-            grid-row: <strong>grid-row-start</strong> / <strong>grid-row-end</strong>                                 // shorthand property for the <mark>grid-row-start</mark> and <mark>grid-row-end</mark> properties
-            grid-column: <strong>grid-column-start</strong> / <strong>grid-column-end</strong>                        // shorthand property for the <mark>grid-column-start</mark> and <mark>grid-column-end</mark> properties  
-            
-            grid-area: auto auto auto auto         <span style="color:skyblue;">// (default)</span>                     // shorthand property for the <mark>grid-row-start</mark>, <mark>grid-column-start</mark>, <mark>grid-row-end</mark> and <mark>grid-column-end</mark> properties (property is set on the grid item)   
-                     : <i>grid-row-start</i> / <i>grid-column-start</i> / <i>grid-row-end</i> / <i>grid-column-end</i>     
-                     : <strong>areaId</strong>                      <span style="color:skyblue;">// sizes on the tageted grid area</span>
-                                    
-            grid-template-areas: none              <span style="color:skyblue;">// (default)</span>                     // assign names to the grid cells (sort of maps the grid cells) (every <strong>' '</strong> (string) represent one row, the <mark>.</mark>(period) = no cell id))   
-                               : <strong>'cellId cellId ...'</strong> <i>'cellId cellId ...'</i>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>grid-column-start</mark> / <mark>grid-column-end</mark> / <mark>grid-column</mark> / <mark>grid-row-start</mark> / <mark>grid-row-end</mark> / <mark>grid-row</mark> / <mark>grid-area</mark> / <mark>grid-auto-flow</mark> properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
 // HTML ------------------------------------
     &lt;div class="myGrid"&gt;
@@ -1326,6 +1307,38 @@ SYNTAX :    grid-column-start: auto                <span style="color:skyblue;">
     }    
     .gridItem2 { grid-area: head; }                                                 // -! 2nd item is the 'head' area
     </pre>
+    <p> - <mark>grid-auto-flow</mark> </p>
+    <pre>
+// HTML -------------------------------------------------------------------------------
+    &lt;div class="myGrid"&gt;
+        &lt;div class="one_"&gt; ONE &lt;/div&gt; 
+        &lt;div class="two_"&gt; TWO &lt;/div&gt;
+        &lt;div&gt; 3 &lt;/div&gt;
+        &lt;div&gt; 4 &lt;/div&gt;
+        &lt;div&gt; 5 &lt;/div&gt;
+        &lt;div&gt; 6 &lt;/div&gt;
+        &lt;div&gt; 7 &lt;/div&gt;
+    &lt;/div&gt;
+    
+// CSS --------------------------------------------------------------------------------
+    .myGrid {
+        display: grid;
+        background-color: red; 
+        border: solid 2px black;
+        grid-template-columns: repeat(3, 1fr);  
+        grid-template-rows: repeat(3, 1fr);  
+        grid-auto-flow: column;                                                        // unplaced grid items are placed from top-to-bottom 
+    }
+    .one_ {
+        background-color: orange;
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    .two_ {
+        background-color: orange;
+        grid-area: 2 / 1 / 3 / 3;
+    }
+    </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>grid-column-start</mark> / <mark>grid-column-end</mark> / <mark>grid-column</mark> / <mark>grid-row-start</mark> / <mark>grid-row-end</mark> / <mark>grid-row</mark> TEST </u></h4>
@@ -1598,31 +1611,6 @@ SYNTAX :    grid-column-start: auto                <span style="color:skyblue;">
     }
         </pre>
         </details>
-</details>
-<!--------------------------------------------------------------------------------------------------->
-<hr>
-<h2 style="color:darkblue;"><u> the <mark>grid-auto-flow</mark> property </u></h2>
-    <pre class="syntax">
-SYNTAX :    grid-auto-flow: row                    <span style="color:skyblue;">// row by row (top to bottom) <u>maintains the element order (leaves empty gaps if necessary)</u> </span>     // controls how auto-placed items are layed in the grid    
-                          : column                 <span style="color:skyblue;">// column by column (left to right) <u>maintains the element order (leaves empty gaps if necessary)</u></span>
-                          : row dense              <span style="color:skyblue;">// row by row (left to right) <u>fills empty gaps if necessary (element order is not maintained in this case)</u></span>
-                          : column dense           <span style="color:skyblue;">// column by column (left to right) <u>fills empty gaps if necessary (element order is not maintained in this case)</u></span>
-                          : dense                  <span style="color:skyblue;">// same as <mark>row dense</mark>
-    </pre>
-    <pre>
-    .myGrid {
-        display: grid;
-        grid-template: repeat(10, 1fr) / repeat(10, 1fr);                           // 10 x 10 grid
-    }
-    .gridItems {
-        grid-auto-flow: column dense;                                               // not manually placed elements are layed column by column in a way that they do not leave empty grid cells    
-    }
-    .gridItemPlaced {                                                               // on this element the 'grid-auto-flow' has no effect because it is maunally placed on the grid  
-        grid-area: 3 / 4 / 5 / 6; 
-    }
-    </pre>
-<details class="example">
-<summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>grid-auto-flow</mark> TEST </u></h4>
     <p> - the <span style="background-color:rgb(180, 118, 175); padding:2px;">purple</span> elements is positioned so it's not layed with the grid flow! </p>
     <div class="autoFlow">
@@ -1750,19 +1738,90 @@ SYNTAX :    grid-auto-flow: row                    <span style="color:skyblue;">
 </details>
 <!--------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> the <mark>grid</mark> and <mark>grid-template</mark> properties </u></h2>
-    <pre class="syntax">
-SYNTAX :    grid-template: none                    <span style="color:skyblue;">// (default)</span>                     // shorthand property for the <mark>grid-template-rows</mark> / <mark>grid-template-columns</mark> / <mark>grid-template-areas</mark> properties
-                         : <strong>grid-template-rows</strong> / <strong>grid-template-columns</strong>
-                         : <strong>grid-template-areas</strong>
-                         : <strong>'cellId cellId ...' rowHeight</strong> <i>'cellId cellId ...' rowHeight</i> / <strong>columnWidth</strong> <i>columnWidth ...</i>    <span style="color:skyblue;">// combination of all 3 properties</span> 
-                         
-            grid: none                             <span style="color:skyblue;">// (default)</span>                     // shorthand property for the <mark>grid-template-rows</mark> / <mark>grid-template-columns</mark> / <mark>grid-template-areas</mark> / <mark>grid-auto-rows</mark> / <mark>grid-auto-columns</mark> / <mark>grid-auto-flow</mark> properties   
-                : <strong>grid-template-rows</strong> / <strong>grid-template-columns</strong>
-                : <strong>grid-template-areas</strong>
-                : <strong>grid-template-rows</strong> / <small>auto-flow dense</small> <i>grid-auto-columns</i>
-                : <small>auto-flow dense</small> <i>grid-auto-row</i> / <strong>grid-template-columns</strong> 
+<h2 style="color:darkblue;"><u> The <mark>grid-template-areas</mark> property </u></h2>
+<details class="example">
+<summary> DEMO </summary>
+    <pre>
+// HTML -------------------------------------------------------------------------------
+    &lt;div class="myGrid"&gt;
+        &lt;div class="head_"&gt; HEAD &lt;/div&gt; 
+        &lt;div class="cont_"&gt; CONTENT &lt;/div&gt; 
+    &lt;/div&gt;
+    
+// CSS --------------------------------------------------------------------------------
+    .myGrid {
+        padding: 0;
+        display: grid;
+        background-color: red;
+        border: solid 2px black;
+        grid-template-columns: repeat(3, 1fr);                                         // 3x3 grid
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 'head head head'                                          // defines the areas on the grid 
+                            ' .   cont cont' 
+                            ' .   cont cont';
+    }
+    .head_ {
+        background-color: orange;
+        grid-area: head;                                                               // grid items is simply placed on the grid area    
+    }
+    .cont_ {
+        background-color: green;
+        grid-area: cont;                                                               // grid items is simply placed on the grid area    
+    }
     </pre>
+</details>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> <mark>grid-template-areas</mark> / <mark>grid-area</mark> TEST </u></h4>
+    <div class="gridArange_3">
+        <div style="grid-area:titleL;"></div>
+        <div style="grid-column-start:title; grid-column-end:title;"></div>
+        <div style="grid-area:titleR;"></div>
+        <div style="grid-row-start:side2; grid-row-end:side2;"></div>
+        <div style="grid-area:side1;"></div>
+        <div style="grid-area:main;"></div>
+    </div>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+// HTML -----------------------------------------------
+    &lt;div class="gridArange_3"&gt;                                                  // area defined simply
+        &lt;div style="grid-area:titleL;"&gt;&lt;/div&gt;
+        &lt;div style="grid-column-start:title; grid-column-end:title;"&gt;&lt;/div&gt;     // we refer to the area's start and end line here 
+        &lt;div style="grid-area:titleR;"&gt;&lt;/div&gt;
+        &lt;div style="grid-row-start:side2; grid-row-end:side2;"&gt;&lt;/div&gt;           // -! we can mix the order no problem 
+        &lt;div style="grid-area:side1;"&gt;&lt;/div&gt;
+        &lt;div style="grid-area:main;"&gt;&lt;/div&gt;                                     // area defined simply
+    &lt;/div&gt;
+    
+// CSS ------------------------------------------------
+    .gridArange_3 {
+        width: 500px;
+        height: 150px;
+        border: solid 5px brown;
+        background-color: blueviolet;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 2px;
+        grid-template-areas: 'titleL title title title titleR'                  // this 'maps' the grid area (gives id to grid cells (. = no id))
+                            'side1 . . . .'
+                            'side2 . main main main'
+                            'side2 . main main main';
+    }
+    .gridArange_3 div {
+        background-color: lightcoral;
+        border: solid 2px black;
+    }
+        </pre>
+        </details>
+</details>
+<!--------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> The <mark>grid</mark> and <mark>grid-template</mark> properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
 // grid-template -------------------------------------------------------------------
     .myGrid {
@@ -1784,6 +1843,7 @@ SYNTAX :    grid-template: none                    <span style="color:skyblue;">
         grid: repeat(3, auto) / auto-flow dense 150px;                              // this does (grid-template-rows:repeat(3, auto)) (grid-auto-flow:row/column dense) (gird-auto-columns:150px;) 
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>grid-template</mark> TEST-1 </u></h4>
@@ -1909,53 +1969,10 @@ SYNTAX :    grid-template: none                    <span style="color:skyblue;">
 </details>
 <!--------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> the <mark>justify-content</mark> / <mark>align-content</mark> / <mark>place-content</mark> / <mark>justify-items</mark> / <mark>align-itmes</mark> / <mark>place-items</mark> / <mark>justify-self</mark> / <mark>align-self</mark> / <mark>place-self</mark> properties </u></h2>
-    <pre class="syntax">
-SYNTAX :    justify-content: start                                                  // specifies the horizontal placement for the grid itself inside the gird container 
-                           : end
-                           : center 
-                           : stretch               <span style="color:skyblue;">// (default) stretches <u>auto spaced column width</u></span>
-                           : space-around          <span style="color:skyblue;">// space evenly distributed around each columns</span>
-                           : space-between         <span style="color:skyblue;">// first and last columns stick to the side and the available space is evenly distributed between the other columns</span>
-                           : space-evenly          <span style="color:skyblue;">// space evenly distributed between grid columns</span>
-            
-            align-content: start                                                    // specifies the vertical placement for the grid itself inside the gird container 
-                         : end
-                         : center 
-                         : stretch                 <span style="color:skyblue;">// (default) stretches <u>auto spaced row heights</u></span>
-                         : space-around            <span style="color:skyblue;">// space evenly distributed around each rows</span>
-                         : space-between           <span style="color:skyblue;">// first and last columns stick to the side and the available space is evenly distributed between the other rows</span>
-                         : space-evenly            <span style="color:skyblue;">// space evenly distributed between grid rows</span>
-                
-            place-content: <strong>align-content justify-content</strong>                            // shorthand property for <mark>align-content</mark> and <mark>justify-content</mark> properties 
-                         : <strong>align-content/justify-content</strong>   <span style="color:skyblue;">// one value applies the same for both properties</span>
-    --------
-            justify-items: start                                                    // specifies the horizontal placement for all grid elements <u>inside their gird cell</u>   
-                         : end
-                         : center
-                         : stretch                 <span style="color:skyblue;">// (default) stretches <u>horizontally auto sized</u> grid items</span>
-            
-            align-items: start                                                      // specifies the vertical placement for all grid elements <u>inside their gird cell</u>   
-                       : end
-                       : center
-                       : stretch                   <span style="color:skyblue;">// (default) stretches <u>vertically auto sized</u> grid items</span>
-                 
-            place-items: <strong>align-items justify-items</strong>                                  // shorthand property for the <mark>align-items</mark> and <mark>justify-items</mark> properties   
-                       : <strong>align-items/justify-items</strong> <span style="color:skyblue;">// one value applies the same for both properties</span>
-    --------           
-            justify-self: start                                                     // specifies the horizontal placement of the gird item <u>inside its gird cell</u> (property is set on the grid item and overrides the <mark>justify-items</mark> property)  
-                        : end
-                        : center
-                        : stretch                  <span style="color:skyblue;">// (default) stretches a <u>horizontally auto sized</u> grid item </span>
-                        
-            align-self: start                                                       // specifies the vertical placement of the gird item <u>inside its gird cell</u> (property is set on the grid item and overrides the <mark>align-items</mark> property)  
-                      : end
-                      : center
-                      : stretch                    <span style="color:skyblue;">// (default) stretches a <u>vertically auto sized</u> grid item </span>
-                      
-            place-self: <strong>align-self justify-self</strong>                                     // shorthand property for the <mark>align-self</mark> and <mark>justify-self</mark> properties   
-                      : <strong>align-self/justify-self</strong>    <span style="color:skyblue;">// one value applies the same for both properties</span>
-    </pre>
+<h2><u> Grid inside the grid containter </u></h2>
+<h2 style="color:darkblue;"><u> The <mark>justify-content</mark> / <mark>align-content</mark> / <mark>place-content</mark> / <mark>justify-items</mark> / <mark>align-itmes</mark> / <mark>place-items</mark> / <mark>justify-self</mark> / <mark>align-self</mark> / <mark>place-self</mark> properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     .myElement {
         display: grid;
@@ -1984,12 +2001,14 @@ SYNTAX :    justify-content: start                                              
         place-self: start end;                                                      // does the same as the two properties above   
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>justify-content</mark> / <mark>align-content</mark> / <mark>place-content</mark> TEST  </u></h4>
-    <p> - the <span style="background-color:orange;">orange</span> area is the grid container and the <span style="background-color:green;">green</span> area inside is the acual grid </p>
+    <p> - the <span style="background-color:orange;">orange</span> area is the grid container and the <span style="background-color:green;">green</span> area inside is the acual grid <u>(the grid inside is smaller than the grid container)</u> </p>
     <p> - the <mark>stretch</mark> is the default value, it works if the grid columns and rows are sized automatically (I made this programatically <u style="color:yellow;">after clicking on stretch the grid size will stay AUTO</u>) </p> 
     <div style="display:grid; grid-template:200px/300px 200px 200px 1fr; height:200px;">
+    <!-- <div> -->
         <div class="contTest">
             <div></div><div></div><div></div>
             <div></div><div></div><div></div>
@@ -2064,7 +2083,7 @@ SYNTAX :    justify-content: start                                              
     document.getElementById('plc-space-around').onclick = () => { gridT.style.placeContent = 'space-around' }
     document.getElementById('plc-space-between').onclick = () => { gridT.style.placeContent = 'space-between' }
     document.getElementById('plc-space-evenly').onclick = () => { gridT.style.placeContent = 'space-evenly' }
-</script>
+</script> 
         <details style="clear:left;">
         <summary> CODE : </summary>
         <pre>
@@ -2294,7 +2313,7 @@ SYNTAX :    justify-content: start                                              
         border: solid 1px black;
         background-color: green;
     }
-    .just1 { justify-items: stretch; }
+    // .just1 justify-items: stretch;       // is the default  
     .just2 { justify-items: start; }
     .just3 { justify-items: end; }
     .just4 { justify-items: center; }
@@ -2444,6 +2463,8 @@ SYNTAX :    justify-content: start                                              
         </pre>
         </details>
 </details>
+    
+    
     
     <br><br>
 </body>

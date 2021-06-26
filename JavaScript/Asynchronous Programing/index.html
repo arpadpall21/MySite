@@ -9,27 +9,20 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Async Programing (ver 3.4.1) </h1>
+<h1> Async Programing (ver 4.0.0) </h1>
     <p> Updated ( 2018-08-19 / 2018-08-23 / 2019-09-17 / 2020-06-01 / 2021-01-14)</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">JavaScript></a> Async Programming 
     </p>
 <table class="table">
-<caption> Promise 
-    <span id="browserSupport" title="updated: 2019-08-06">
-        <span><i class="fab fa-chrome"></i> 32 </span>
-        <span><i class="fab fa-firefox"></i> 29 </span>
-        <span><i class="fab fa-opera"></i> 19 </span>
-        <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
-        <span><i class="fab fa-safari"></i> 8 </span>
-        <span><i class="fab fa-node-js"></i> 0.12 </span>
-    </span>
+<caption> 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
 </caption>
     <tr>
         <th style="width:30%;"> Method / Keyword </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> 
             <em>new</em> Promise(<strong class="openable">fn(res, rej)<div>
                 <p><b> The Code here does not run asynchronously! </b></p> 
@@ -51,10 +44,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td colspan="2"> consuming Promises </td>
     </tr>
-    <tr>
+    <tr class="10.02">
         <td> <strong>promise</strong>.then(<strong>fn(res)</strong><i>, fn(rej)</i>) </td>
         <td> 
             - if the Promise is resolved asynchronously calls the first callback with the resolved data as argument <br>
@@ -72,7 +65,7 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.03">
         <td> <strong>promise</strong>.catch(<strong>fn(rej)</strong>) </td>
         <td> 
             - if the Promise is rejected asynchronously calls the callback with the rejected data as argument <br>
@@ -88,7 +81,7 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.04">
         <td> <strong>promise</strong>.finally(<strong>fn</strong>) </td>
         <td> 
             - asynchronously calls the callback regardless of a resolved or rejected Promise <br>
@@ -103,10 +96,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td colspan="2"> Static Methods </td>
     </tr>
-    <tr>
+    <tr class="20.01">
         <td> <em>Promise</em>.all([<strong>val:any|promise</strong><i>, ...</i>]) </td>
         <td>
             - creates a resolved promise if all passed promises (or values) are resolved (resolved data is collected and returned in an Array)<br>  
@@ -121,7 +114,7 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.02">
         <td> <em>Promise</em>.any([<strong>val:any|prom</strong><i>, ...</i>]) </td>
         <td>
             - returns the fastest resolved Promise in the row (ignores rejected Promises) <br>
@@ -136,9 +129,9 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.02">
         <td> <em>Promise</em>.allSettled([<strong>val:any|promise</strong><i>, ...</i>]) </td>
-        <td> creates a resolved promise no matter if the passed promises are resolved or rejected (returs an object containing each passed promise data and status) 
+        <td> - creates a resolved promise no matter if the passed promises are resolved or rejected (returs an object containing each passed promise data and status) 
             <span id="browserSupport" title="updated: 2020-05-01">
                 <span><i class="fab fa-chrome"></i> 76 </span>
                 <span><i class="fab fa-firefox"></i> 71 </span>
@@ -149,9 +142,9 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.01">
         <td> <em>Promise</em>.race([<strong>val:any|promise</strong><i>, ...</i>]) </td>
-        <td> returns the fastest resolved or rejected Promise in the row  
+        <td> - returns the fastest resolved or rejected Promise in the row  
             <span id="browserSupport" title="updated: 2019-08-06">
                 <span><i class="fab fa-chrome"></i> 32 </span>
                 <span><i class="fab fa-firefox"></i> 29 </span>
@@ -162,9 +155,9 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.03">
         <td> <em>Promise</em>.reject(<strong>val:any|promise</strong>) </td>
-        <td> creates and returns a rejected Promise with the passed data 
+        <td> - creates and returns a rejected Promise with the passed data 
             <span id="browserSupport" title="updated: 2019-08-06">
                 <span><i class="fab fa-chrome"></i> 32 </span>
                 <span><i class="fab fa-firefox"></i> 29 </span>
@@ -175,9 +168,9 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.02">
         <td> <em>Promise</em>.resolve(<strong>val:any|promise</strong>) </td>
-        <td> creates and returns a resolved Promise with the passed data    
+        <td> - creates and returns a resolved Promise with the passed data    
             <span id="browserSupport" title="updated: 2019-08-06">
                 <span><i class="fab fa-chrome"></i> 32 </span>
                 <span><i class="fab fa-firefox"></i> 29 </span>
@@ -190,40 +183,6 @@
     </tr>
 </table>
     <br>
-<table class="table">
-<caption> async Function 
-    <span id="browserSupport" title="updated: 2019-09-19">
-        <span><i class="fab fa-chrome"></i> 55 </span>
-        <span><i class="fab fa-firefox"></i> 52 </span>
-        <span><i class="fab fa-opera"></i> 52 </span>
-        <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 17 </span>
-        <span><i class="fab fa-safari"></i> 10.1 </span>
-        <span><i class="fab fa-node-js"></i> 7.6.0 </span>
-    </span>
-</caption>
-    <tr>
-        <th style="width:30%;"> Statement </th>
-        <th> Description </th>
-    </tr>
-    <tr>
-        <td> async <em>function() {}</em> </td>
-        <td> 
-            - must be used in fornt of a <mark>function</mark> <br>
-            - when called the async function returns a resolved or rejected Promise <br>
-            - any returned data in the function body will be wrapped in a resolved promise by the async function (or we can return the awaited <u>resolved</u> Promise simply) <br>
-            - any thrown data in the function body will be wrappend in a rejected promise by the async function 
-    </tr>
-    <tr>
-        <td> <em>async function() {</em> await <strong>promise</strong> <em>}</em> </td>
-        <td> 
-            - available only inside an <mark>async function</mark> <br>
-            - pauses the async function body utill the promise is resolved or rejected <br>
-            - if the promise is resolved = function body continues execution <br>
-            - if the promise is rejected = blocks the function body and the rejected promise is returned by the async function  
-        </td>
-    </tr>
-</table>
-<h2 style="color:green;"><u> Notes : </u></h2>
     <details class="example" id="notes">
     <summary> Notes :</summary>
     </details>
@@ -234,47 +193,11 @@
     <h2 style="color:green;"><u> Description and Demonstration : </u></h2>
     <img src="Async.jpg" height="400">
 <h2><u> The <mark>Promise</mark> (async) object (new in ES6) </u></h2>
+<h2 style="color:darkblue;"><u> The <mark>then()</mark> / <mark>catch()</mark> / <mark>finally()</mark> / <mark>resolve()</mark> / <mark>reject()</mark> / <mark>all()</mark> / <mark>allSetteled()</mark> / <mark>race()</mark> / <mark>any()</mark> methods </u></h2>
     <p> - the Promise object represents the completition or failure of an asynchronous task (like the <mark>fentch()</mark> API) </p>
     <p> - the <mark>Promise()</mark> constructor can be uses as a <u>wrapper</u> for asynchronous APIs <u>(the code inside does not run asynchronously as I thought)</u>
     <p> - a Promise can have 3 states <mark>pending</mark> / <mark>resolved</mark> / <mark>rejected</mark> </p>
     <p> - the Promise API basically offers a more convenient way to handle asynchronously APIs </p>
-    <pre class="syntax">
-SYNTAX :    <em>new</em> Promise(<strong class="openable">fn(res, rej)<div>
-                <p><b> The Code here does not run asynchronously! </b></p> 
-                <p> - this callback should call the asynchronous API first </p>
-                <p> - calling <mark>res(<strong>resData</strong>)</mark> this Promise will be resolved as <strong>resData</strong> as result </p>
-                <p> - calling <mark>rej(<strong>rejData</strong>)</mark> this Promise will be rejected as <strong>resData</strong> as result </p>
-            </div></strong>)                                                 // creates a resolved or rejected promise object based on the returned argument in the callback function  
-                                                                                          can be used as a wrapper for an asynchronous API 
-            
-            
-  <span style="color:darkgray;">// Consuming Promises ---------------------------------------------------------------</span>
-            <strong>promise</strong>.then(<strong>fn(res)</strong><i>, fn(rej)</i>)                                             // if the Promise is resolved asynchronously calls the first callback with the resolved data as argument 
-                                                                                          returns a resolved Promise (the resolved data will be the returned data by the callback)    
-                                                                                          if the Promise is rejected asynchronously calls the second callback with the rejected data as argument    
-                                                                                          if the Promise is rejected and the 2nd callback is omitted returns the Promise as it is    
-                                                                                          if the Promise is resolved and the 2nd callback is present returns a resolved Promise (the resolved data will be the returned data by the callback)    
-            <strong>promise</strong>.catch(<strong>fn(rej)</strong>)                                                     // if the Promise is rejected asynchronously calls the callback with the rejected data as argument  
-                                                                                          returns a resolved Promise (the resolved data will be the returned data by the callback)   
-                                                                                          if the Promise is resolved returns it as it is 
-            <strong>promise</strong>.finally(<strong>fn</strong>)                                                        // asynchronously calls the callback regardless of a resolved or rejected Promise 
-                                                                                          returns the the Promise as it was received   
-            
-            
-  <span style="color:darkgray;">// Static methods -------------------------------------------------------------------</span>
-            <em>Promise</em>.resolve(<strong>val:any|promise</strong>)                                           // creates and returns a resolved Promise with the passed data
-            <em>Promise</em>.reject(<strong>val:any|promise</strong>)                                            // creates and returns a rejected Promise with the passed data
-            
-            
-            <em>Promise</em>.all([<strong>val:any|promise</strong><i>, ...</i>])                                        // creates a resolved promise if all passed promises (or values) are resolved (resolved data is collected and returned in an Array)
-                                                                                          creates a rejected promise if one of the passed promise is rejected (returns the first rejected promise data)    
-            <em>Promise</em>.allSettled([<strong>val:any|promise</strong><i>, ...</i>])                                 // creates a resolved promise no matter if the passed promises are resolved or rejected (returs an object containing each passed promise data and status)   
-            
-            
-            <em>Promise</em>.race([<strong>val:any|promise</strong><i>, ...</i>])                                       // returns the fastest resolved or rejected Promise in the row  
-            <em>Promise</em>.any([<strong>val:any|promise</strong><i>, ...</i>])                                        // returns the fastest resolved Promise in the row (ignores rejected Promises)
-                                                                                          if all Promises are rejected returns a rejected Promise with <mark>"AggregateError"</mark>   
-    </pre>
 <details class="example">
 <summary> DEMO </summary>
     <p> - "Promisifying" asynchronous APIs </p>
@@ -704,14 +627,14 @@ pall@Ryzen:~/Documents/CodePlus/My Site/03 Improuve/Learn WebDesign/03 JS/Asynch
 </details>
 <!--------------------------------------------------------------------------------------------------------------------->    
 <hr>
-<h2><u> Async function <mark>async</mark> / <mark>await</mark> (new in ES6) </u></h2>    
-    <p> - async functions allow us to write clean promise based APIs </p> 
+<h2 id="await_"><u> The async function <mark>async</mark> / <mark>await</mark> (new in ES6) </u></h2>    
+    <p> - we can use async functions to write custom promise based asynchronous APIs </p>
     <pre class="syntax">
-SYNTAX :    async function <strong>fnId</strong>() {                                                    // when called the async function returns a resolved or rejected Promise    
+SYNTAX :                                                                                 <span id="browserSupport" title="updated: 2019-08-06" style="color:yellow;"><span><i class="fab fa-chrome"></i> 32 </span><span><i class="fab fa-firefox"></i> 29 </span><span><i class="fab fa-opera"></i> 19 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span><span><i class="fab fa-safari"></i> 8 </span><span><i class="fab fa-node-js"></i> 0.12 </span></span>
+            async function <strong>fnId</strong>() {                                                    // returns a Promise    
                 <small>await</small> <strong>promise</strong>                                                          // pauses the async function body utill the promise is resolved or rejected    
                                                                                          <span style="color:lightgreen;">// resolved promise = function body continues execution</span> 
                                                                                          <span style="color:orange;">// rejected promise = blocks the function body and the rejected promise is returned by the async function </span>    
-                
                 
                 return <strong>promise|val:any</strong>                                                 // any returned data will be wrapped in a resolved promise by the async function 
                                                                                           or we can return the awaited resolved Promise simply  
@@ -952,7 +875,7 @@ console.warn("9) await resolve/reject demo");
     async function timerApi(delay){                                                    // awesome way to create promisified APIs 
         var delay = delay * 1000;
         var promise = new Promise(function(res){                                       // promise used to promisify the setTimeout api 
-            if(delay >= 0 && delay < 60000){
+            if(delay >= 0 && delay &lt; 60000){
                 setTimeout(() => res('time out!'), delay)
             } else {
                 res('Out of allowed time range (0-59)');
@@ -977,11 +900,6 @@ console.warn("9) await resolve/reject demo");
             err => console.log(err)                                                    // -> 'Out of allowed time range (0-59)'
         )    
     </pre>
-    
-    
-    
-    
-    
 </details>
     
 <script>

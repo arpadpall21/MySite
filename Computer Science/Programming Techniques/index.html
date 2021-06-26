@@ -142,6 +142,194 @@
 </details>
 <!---------------------------------------------------------------------------------------------------------->
 <hr>
+<h2 style="color:darkblue;"><u> Closure </u></h2>
+    <p> - a Closure is basically an isolated environemt (scope), in Javascript function bodies provide scopes (closures) </p>
+    <p> - code (variables, expressions, etc...) in the function body are isolated from the upper scope </p>
+<!---------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> Higher-Order Function </u></h2>
+    <p> - a Higher-Order function is a function which returns a function, the function which return the function sits in 'higher-order' </p>
+    <pre class="syntax">
+SYNTAX :    function highOrd() {                                                       // function higher in the closure hierarchy has "Higher-Order" 
+                return function() {};
+            } 
+            
+            highOrd();                                                                 // -> function() {}       // returns the nested function  
+            highOrd()();                                                               // executes the nested function    
+    </pre>
+<details class="example">
+<summary> DEMO </summary>
+    <pre>
+    function fnA(a) {
+        return function(b) {                                                           // enclosed function  
+            return b + " " + a;                                                        // enclosed function's return value     // -! the higher order function "encloses" its passed value in here 
+        };  
+    }
+    var fnB = fnA("Pie");                                                              // we "enclose" the "Pie" value here (the fnB holds the enclosed value) 
+    fnB("Apple");                                                                      // -> "Apple" Pie"                      // the enclosed value returned here (with another passed value)
+  // ---------------
+    fnA("Pie")("Apple");                                                               // we can call the enclosed function right away like this     
+    
+// Higher-Order Function calls an action  ---------------------------------------------
+    function fireAction(action) {                                                      // this is the "Higher-Order" function which is called first 
+        return action();                                                               // the "Lower-Order" function is returned and executed here 
+    }
+    function displayAlert() {                                                          // this function will be passed as the "action" argument of the function above (this is the "Lower-order" function)
+        alert("alert!");
+    }
+    
+    fireAction(displayAlert);                                                          // function is passed as argument here 
+    fireAction(() => {alert("alert!");});                                              // this does the same as the above call 
+    </pre>
+</details>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> simple counter with closure </u></h4>
+    <p id="closure"></p>
+<script>
+$(document).ready(function(){
+    function counterHost(){
+        var counter = 0;                // define collection container
+        return () => counter = counter + 1;
+    }
+    let count = counterHost();          // define closure
+    count();
+    count();
+    count();                            // no matter how many times the closure is called the parent function holds the value 
+// print
+    $("#closure").text("The result of the magical Closure is = " + count()); 
+});
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="closure"&gt;&lt;/p&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    function counterHost(){
+        var counter = 0;                // define collection container
+        return () => counter = counter + 1;
+    }
+    let count = counterHost();          // define closure
+    count();
+    count();
+    count();                            // no matter how many times the closure is called the parent function holds the value 
+// print
+    $("#closure").text("The result of the magical Closure is = " + count()); 
+});
+&lt;/script&gt;
+        </pre>
+        </details>
+<h4 style="color:darkblue;"><u> closure with multiple arguments </u></h4>
+    <p id="closureArg"></p>
+<script> 
+$(document).ready(function(){
+    function hostFn(a, b, c) {
+        return (d, e, f) => a + " " + b + " " + c + " " + d + " " + e + " " + f;    // both functions' arguments are passed and returned   
+    }
+    var closFn = hostFn("1", "2", "3");
+// print
+    $("#closureArg").text(closFn("4", "5", "6") );
+});    
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="closureArg"&gt;&lt;/p&gt;
+&lt;script&gt; 
+$(document).ready(function(){
+    function hostFn(a, b, c) {
+        return (d, e, f) => a + " " + b + " " + c + " " + d + " " + e + " " + f;    // both functions' arguments are passed and returned   
+    }
+    var closFn = hostFn("1", "2", "3");
+// print
+    $("#closureArg").text(closFn("4", "5", "6") );
+});    
+&lt;/script&gt;
+        </pre>
+        </details>
+<h4 style="color:darkblue;"><u> repeat Acttion with Higher-Order a function </u></h4>
+    <p id="addCars"></p>
+<script>
+    let cars = [];
+    
+    function repeatAction(nr, action) {
+        for(let i = 0; i < nr; i++) {
+            action(i);                          // this is where "addArr_items" function executed a number of times the loop calls it
+        }                                       // the value is passed by the "repeatAction" function ! 
+    }
+    
+    function addArr_items(i) {                  // this is a simple function which pushes a new item in the targeted array
+        cars.push("Car" + (i + 1));
+    }
+    repeatAction(4, addArr_items);              // call the parent functions, the second value is the nested function
+                                                    // 4 new items are added to the array
+    
+    repeatAction(4, (i) => {cars.push("Car" + (i + 1));});
+                                                // we do the same thing here but on the spot with an arrow function 
+    
+    document.getElementById("addCars").innerHTML = cars;
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="addCars"&gt;&lt;/p&gt;
+&lt;script&gt;
+    let cars = [];
+    
+    function repeatAction(nr, action) {
+        for(let i = 0; i &lt; nr; i++) {
+            action(i);                          // this is where "addArr_items" function executed a number of times the loop calls it
+        }                                       // the value is passed by the "repeatAction" function ! 
+    }
+    
+    function addArr_items(i) {                  // this is a simple function which pushes a new item in the targeted array
+        cars.push("Car" + (i + 1));
+    }
+    repeatAction(4, addArr_items);              // call the parent functions, the second value is the nested function
+                                                    // 4 new items are added to the array
+    
+    repeatAction(4, (i) => {cars.push("Car" + (i + 1));});
+                                                // we do the same thing here but on the spot with an arrow function 
+    
+    document.getElementById("addCars").innerHTML = cars;
+&lt;/script&gt;
+        </pre>
+        </details>
+<h4 style="color:darkblue;"><u> Double Call </u></h4>
+    <p id="doubleCall"></p>
+<script>
+    var doubleCall = function(a, b) {
+        return (c, d) => a + b + c + d;
+    }
+    document.getElementById("doubleCall").innerHTML = doubleCall(4, 5)(3, 7);     
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="doubleCall"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var doubleCall = function(a, b) {
+        return (c, d) =&gt; a + b + c + d;
+    }
+    document.getElementById("doubleCall").innerHTML = doubleCall(4, 5)(3, 7);     
+&lt;/script&gt;
+        </pre>
+        </details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+<!---------------------------------------------------------------------------------------------------------->
+<hr>
 <h2 style="color:darkblue;"><u> Divide & Conquer </u></h2>
     <p> - <u>by using recursion</u> breaking down a big problem into small pieces until this small piece can be solved with a base case, then rebuild the big solution from these small solutions </p>
     <p> - ex: Merge Sort uses this aproach, we recursively split in half the array until the smallest arrays has only 2 elements, then we sort and rebuild recursively the sorted array </p>

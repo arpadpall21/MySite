@@ -7,329 +7,1165 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/stylesPages.css">
-    <script src="../../Assets/scriptPages.js"></script>
+    <script src="../../Assets/scriptPages.js"></script>    
 </head>
 <body>
-<h1> Operators and Keywords (ver 2.9) </h1>
-	<p> Updated (2017-06-11 / 2017-06-24 / 2017-10-22 / 2017-11-20 / 2017-12-22 / 2018-03-19 / 2018-11-29) </p>
+<h1> Operators and Keywords (ver 4.0.0) </h1>
+    <p> Updated (2017-06-11 / 2017-06-24 / 2017-10-22 / 2017-11-20 / 2017-12-22 / 2018-03-19 / 2018-11-29 / 2021-05-25) </p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">JavaScript></a> Operators and Keywords  
     </p>
 <table class="table precedence">
-<caption> JAVASCRIPT OPERATOR PRECEDENCE </caption>
+<caption> 
+    JavaScript Operator Precedence    
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <th> Precedence </th>
-        <th> Operator / Syntax </th>
+        <th style="width:7%;"> Precedence </th>
+        <th style="width:25%"> Operator </th>
         <th> Description </th>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 20 </td>
-        <td> (<strong>expression</strong>) </td>
-        <td> expression grouping </td>
+    <tr class="38.01">
+        <td style="background-color:darkgreen;"> 21 </td>
+        <td> (<strong>exp</strong>) </td>
+        <td> 
+            - expression grouping <a href="../Basics/index.html#prec_" target="_blank">[link]</a>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 19 </td>
+    <tr class="40.02">
+        <td style="background-color:deepskyblue;"> 20 </td>
         <td> <strong>obj</strong><b>.</b><strong>prop</strong> </td>
-        <td> member acces </td>
+        <td> 
+            - member access <a href="../Objects/Object/index.html#del_" target="_blank">[link]</a>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 19 </td>
+    <tr class="40.03">
+        <td style="background-color:deepskyblue;"> 20 </td>
         <td> <strong>obj</strong>[<strong>prop</strong>] </td>
-        <td> member acces </td>
+        <td> 
+            - member access (computed member access) <a href="../Objects/Object/index.html#del_" target="_blank">[link]</a>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr> 
-    <tr>
-        <td style="background-color:deepskyblue;"> 19 </td>
+    <tr class="50.01">
+        <td style="background-color:deepskyblue;"> 20 </td>
         <td> <strong>functionId</strong>() </td>
-        <td> function call </td>
+        <td> 
+            - function call <a href="../Functions/index.html" target="_blank">[link]</a> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 19 </td>
-        <td> new <strong>Constructor(arg)</strong> </td>
-        <td> creates an instance of an object type <u>(with argument list)</u> </td>
+    <tr class="45.01">
+        <td style="background-color:deepskyblue;"> 20 </td>
+        <td> new <strong>Const(arg)</strong> </td>
+        <td> 
+            - creates an instance of an object type <u>(with argument list)</u> <a href="../Objects/Constructors and Prototypes/index.html" target="_blank">[link]</a>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 18 </td>
-        <td> new <strong>Constructor()</strong> </td>
-        <td> creates an instance of an object type <u>(without argument list)</u> </td>
+    <tr class="40.04">
+        <td style="background-color:deepskyblue;"> 20 </td>
+        <td> 
+            <strong>obj</strong><em>.</em><strong>prop1</strong>?.<strong>prop2|<em>[</em>prop2:str<em>]</em></strong> <br>
+            <strong>obj</strong><em>.</em><strong>arr</strong>?.<strong><em>[</em>idx:str<em>]</em></strong> <br>
+            <strong>obj</strong><em>.</em><strong>fn</strong>?.<strong><em>(</em>arg<i>, ...</i><em>)</em></strong> 
+        </td>
+        <td> 
+            - optional chaining <a href="../Objects/Object/index.html#del_" target="_blank">[link]</a> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 80 </span>
+                <span><i class="fab fa-firefox"></i> 74 </span>
+                <span><i class="fab fa-opera"></i> 67 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 80 </span>
+                <span><i class="fab fa-safari"></i> 13.1 </span>
+                <span><i class="fab fa-node-js"></i> 14.0.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 17 </td>
-        <td> <strong>variable</strong>++ </td>
-        <td> "postfix increment" increases the value but does <u>not return it</u> </td>
+    <tr class="45.02">
+        <td style="background-color:darkgreen;"> 19 </td>
+        <td> new <strong>Const()</strong> </td>
+        <td> 
+            - creates an instance of an object type <u>(without argument list)</u> <a href="../Objects/Constructors and Prototypes/index.html" target="_blank">[link]</a>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 17 </td>
-        <td> <strong>variable</strong>-- </td>
-        <td> "postfix decrement" decreases the value but does <u>not return it</u> </td>
+    <tr class="10.03">
+        <td style="background-color:deepskyblue;"> 18 </td>
+        <td> <strong>var</strong>++ </td>
+        <td> 
+            - postfix increment, increases the value by <mark>1</mark> but does not return the new value <br>
+            - return the old value before it was incremented 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 16 </td>
+    <tr class="10.04">
+        <td style="background-color:deepskyblue;"> 18 </td>
+        <td> <strong>var</strong>-- </td>
+        <td> 
+            - postfix decrement, decreases the value by <mark>1</mark> but does not return the new value <br>
+            - return the old value before it was decremented 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="25.04">
+        <td style="background-color:darkgreen;"> 17 </td>
         <td> !<strong>exp</strong> </td>
-        <td> "logical NOT" if the expression is "ture" it returns <mark>false</mark>, otherwise returns <mark>true</mark> </td>
+        <td> 
+            - logical NOT, <strong>exp</strong> evaluated <mark>true</mark> returns <mark>false</mark> <br>
+            - if <strong>exp</strong> evaluated <mark>false</mark> returns <mark>true</mark>   
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 16 </td>
+    <tr class="30.04">
+        <td style="background-color:darkgreen;"> 17 </td>
         <td> ~<strong>nr</strong> </td>
-        <td> "bitwise NOT" inverts all the bits </td>
+        <td> 
+            - bitwise NOT, performs a 32 bit signed integer <span class="openable">bitwise NOT operation<div>
+                <p> 1) the <strong>nr</strong> is converted to a 32bit signed integer </p>
+                <p> 2) flipps the bits <mark>1</mark> -> <mark>0</mark> / <mark>0</mark> -> <mark>1</mark> </p>
+                <p> EX: </p>
+                <pre style="white-space:pre-line;">
+                ~21;           // -> -22 
+                    //   21 (decimal) = 00000000000000000000000000010101 (32 bit singed integer binary representation) 
+                    //  -22 (decimal) = 11111111111111111111111111101010 (32 bit singed integer binary representation) 
+                </pre>
+                </div></span> on the <strong>nr</strong>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 16 </td>
-        <td> +<strong>value</strong> </td>
-        <td> "unary plus" converts a value into number </td>
+    <tr class="11.01">
+        <td style="background-color:darkgreen;"> 17 </td>
+        <td> +<strong>val:any</strong> </td>
+        <td> 
+            - unary plus, converts <strong>val</strong> into a number data type and returns it  
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 16 </td>
-        <td> -<strong>value</strong> </td>
-        <td> "unary minus" converts a value into number and flips <u style="color:orangered;">[Negative to Positive] / [Positive to Negative]</u> </td>
+    <tr class="11.02">
+        <td style="background-color:darkgreen;"> 17 </td>
+        <td> -<strong>val:any</strong> </td>
+        <td> 
+            - unary minus, converts <strong>val</strong> into a number data type and returns it <br>
+            - flips the returned number's sign (Negative -> Positive / Positive -> Negative) 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 16 </td>
-        <td> ++<strong>variable</strong> </td>
-        <td> "prefix increment" increases the value and returns it </td>
+    <tr class="10.01">
+        <td style="background-color:darkgreen;"> 17 </td>
+        <td> ++<strong>var</strong> </td>
+        <td> 
+            - prefix increment, increases the value by <mark>1</mark> and returns the result 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 16 </td>
-        <td> --<strong>variable</strong> </td>
-        <td> "prefix decrement" decreases the value and returns it </td>
+    <tr class="10.02">
+        <td style="background-color:darkgreen;"> 17 </td>
+        <td> --<strong>var</strong> </td>
+        <td> 
+            - prefix decrement, decreases the value by <mark>1</mark> and returns the result 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 2 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 16 </td>
+    <tr class="40.05">
+        <td style="background-color:darkgreen;"> 17 </td>
         <td> 
             delete <strong>obj.property</strong> <br>
             delete <strong>obj["property"]</strong>
         </td>
-        <td> deletes an object's <u>native</u> property and returns a boolean feedback (which is not reliable!) (cannot delete "non-configurable" properties or identifiers declared with <mark>var</mark> / <mark>let</mark> / <mark>const</mark>) </td>
-    </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 16 </td>
-        <td> typeof <strong>variable</strong> </td>
-        <td> returns the variable or expression's datatype as a string </td>
-    </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 16 </td>
-        <td> await <strong>expression</strong>  </td>
-        <td> waits for a Promise or any value (in an "async" function) </td>
-    </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 16 </td>
         <td> 
-            void <strong>expression</strong> <br>
-            void(<strong>expression</strong>) <span style="color:blue;">(used in the "href" attribute)</span>
+            - deletes an object's <u>native</u> property <a href="../Objects/Object/index.html#del_" target="_blank">[link]</a>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 9 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
         </td>
-        <td> evaluates an expression and always returns "undefined" </td>
     </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 15 </td>
+    <tr class="65.01">
+        <td style="background-color:darkgreen;"> 17 </td>
+        <td> typeof <strong>data</strong> </td>
+        <td> 
+            - returns the datatype of <strong>data</strong> in a string <a href="../Data Types/index.html#typeof_" target="_blank">[link]</a> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="55.01">
+        <td style="background-color:darkgreen;"> 17 </td>
+        <td> await <strong>exp</strong>  </td>
+        <td> 
+            - waits for a Promise or any value (in an async function) <a href="../Asynchronous Programing/index.html#await_" target="_blank">[link]</a>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 53 </span>
+                <span><i class="fab fa-firefox"></i> 52 </span>
+                <span><i class="fab fa-opera"></i> 42 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 14 </span>
+                <span><i class="fab fa-safari"></i> 10.1 </span>
+                <span><i class="fab fa-node-js"></i> 7.6.0 </span>
+                <span class="openable"> more... <div>
+                    <p> - top level <mark>await</mark> in ESM modules </p>
+                        <span id="browserSupport" title="updated: 2021-05-25">
+                            <span><i class="fab fa-chrome"></i> 89 </span>
+                            <span><i class="fab fa-firefox"></i> 89 </span>
+                            <span><i class="fab fa-opera"></i> 73 #enable-javascript-harmony </span>
+                            <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                            <span><i class="fab fa-safari"></i> NO </span>
+                            <span><i class="fab fa-node-js"></i> 14.8.0 </span>
+                        </span>
+                </div></span>
+            </span>
+        </td>
+    </tr>
+    <tr class="35.01">
+        <td style="background-color:darkgreen;"> 17 </td>
+        <td> 
+            void <strong>exp</strong> <br>
+            void(<strong>exp</strong>) 
+        </td>
+        <td> 
+            - evaluates an expression and always returns <mark>undefined</mark> (mostly used in the <mark>href</mark> HTML tag's attribute) 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5 </span>
+                <span><i class="fab fa-safari"></i> 3.1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="05.05">
+        <td style="background-color:deepskyblue;"> 16 </td>
         <td> <strong>nr</strong> ** <strong>nr</strong>  </td>
-        <td> exponentiation <span style="color:orangered">(NEW in ES7)</span> </td>
+        <td> 
+            - exponentiation 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 52 </span>
+                <span><i class="fab fa-firefox"></i> 52 </span>
+                <span><i class="fab fa-opera"></i> 39 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 14 </span>
+                <span><i class="fab fa-safari"></i> 10.1 </span>
+                <span><i class="fab fa-node-js"></i> 7.0.0 </span>
+            </span>
+         </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 14 </td>
+    <tr class="05.03">
+        <td style="background-color:darkgreen;"> 15 </td>
         <td> <strong>nr</strong> * <strong>nr</strong> </td>
-        <td> multiplication </td>
+        <td> 
+            - multiplication 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 14 </td>
+    <tr class="05.04">
+        <td style="background-color:darkgreen;"> 15 </td>
         <td> <strong>nr</strong> / <strong>nr</strong> </td>
-        <td> division </td>
+        <td> 
+            - division 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 14 </td>
+    <tr class="05.06">
+        <td style="background-color:darkgreen;"> 15 </td>
         <td> <strong>nr</strong> % <strong>nr</strong> </td>
-        <td> "modulo division" divides numbers as integers and returns the <u>reminder</u> of the operation </td>
+        <td> 
+            - modulo division, divides integers and returns the <u>reminder</u> of the operation 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 13 </td>
+    <tr class="05.01">
+        <td style="background-color:deepskyblue;"> 14 </td>
         <td> <strong>nr</strong> + <strong>nr</strong> </td>
-        <td> addition </td>
+        <td> 
+            - addition 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 13 </td>
+    <tr class="05.02">
+        <td style="background-color:deepskyblue;"> 14 </td>
         <td> <strong>nr</strong> - <strong>nr</strong> </td>
-        <td> subtraction </td>
+        <td> 
+            - subtraction 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 12 </td>
-        <td> <strong>nr</strong> &lt;&lt; <strong>nr</strong> </td>
-        <td> "bitwise Left Shift Zero-Fill" shifts the bits of the left operand to left specified by the right operand and fills the new space with <mark>0</mark> </td>
+    <tr class="30.05">
+        <td style="background-color:darkgreen;"> 13 </td>
+        <td> <strong>nr1</strong> &lt;&lt; <strong>nr2</strong> </td>
+        <td> 
+            - bitwise left shift (zero-fill), performs a 32 bit signed integer <span class="openable">bitwise left shift (zero-fill)<div>
+                <p> 1) the left operand (<strong>nr1</strong>) is converted to a 32bit signed integer </p>
+                <p> 2) bits are shifeted to the left by <strong>nr2</strong> </p>
+                <p> 3) fills <mark>0</mark> on the right while shifting </p>
+                <p> EX: </p>
+                <pre style="white-space:pre-line;">
+                21 &lt;&lt; 1;       // -> 42
+                    //  21 (decimal) = 00000000000000000000000000010101 (32 bit singed integer binary representation) 
+                    //  42 (decimal) = 00000000000000000000000000101010 (32 bit singed integer binary representation) 
+                
+                68 &lt;&lt; 3;       // -> 544
+                    //  68 (decimal) = 00000000000000000000000001000100 (32 bit singed integer binary representation) 
+                    // 544 (decimal) = 00000000000000000000001000100000 (32 bit singed integer binary representation) 
+                </pre>
+                </div></span> on the <strong>nr1</strong> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 12 </td>
-        <td> <strong>nr</strong> &gt;&gt;&gt; <strong>nr</strong> </td>
-        <td> "bitwise Right Shift Zero-Fill" shifts the bits of the left operand to right specified by the right operand and fills the new space with <mark>0</mark> </td>
-    </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 12 </td>
-        <td> <strong>nr</strong> &gt;&gt; <strong>nr</strong> </td>
-        <td> // "bitwise Right Shift Preserve-Fill" shifts the bits ot the left operand to right specified by the right operand and fills the new space by using the <u>current front bit</u> </td>
-    </tr>
-	<tr>
-		<td style="background-color:deepskyblue;"> 11 </td>
-		<td> <strong>object</strong> instanceof <strong>constructor</strong> </td>
-		<td> checks if an object is derived from the given constructor </td>
-	</tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 11 </td>
-        <td> <strong>value</strong> &lt; <strong>value</strong> </td>
-        <td> "less than" returns <mark>true</mark> if the left value is lower (no data type test) </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 11 </td>
-        <td>  <strong>value</strong> &lt;= <strong>value</strong> </td>
-        <td> "less or equal than" returns <mark>true</mark> if the left value is lower or equal (no data type test) </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 11 </td>
-        <td> <strong>value</strong> &gt; <strong>value</strong> </td>
-        <td> "greater than" returns <mark>true</mark> if the left value is greather (no data type test) </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 11 </td>
-        <td> <strong>value</strong> &gt;= <strong>value</strong> </td>
-        <td> "greater or equal than" returns <mark>true</mark> if the left value is greater or equal (no data type test) </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 11 </td>
-        <td> <strong>property</strong> in <strong>obj</strong> </td>
-        <td> checks if the the object or its prototype chain contains the specified property </td>
-    </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 10 </td>
-        <td> <strong>value</strong> == <strong>value</strong> </td>
-        <td> "abstract equality comparison", returns <mark>true</mark> if the values are equal (no data type test) </td>
-    </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 10 </td>
-        <td> <strong>value</strong> === <strong>value</strong> </td>
-        <td> "same value comparison", returns <mark>true</mark> if the values and the datatypes are equal </td>
-    </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 10 </td>
-        <td> <strong>value</strong> != <strong>value</strong> </td>
-        <td> "abstract equality comparison not" returns <mark>true</mark> if the values are <u>not</u> equal (no data type test) </td>
-    </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 10 </td>
-        <td> <strong>value</strong> !== <strong>value</strong> </td>
-        <td> "same value comparison not" returns <mark>true</mark> if the values and the datatypes are <u>not</u> equal </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 9 </td>
-        <td> <strong>nr</strong> &amp; <strong>nr</strong> </td>
-        <td> "bitwise AND" sets the current bit in the sequence to <mark>1</mark> if both bits are <mark>1</mark> </td>
-    </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 8 </td>
-        <td> <strong>nr</strong> ^ <strong>nr</strong> </td>
-        <td> "bitwise XOR" sets the current bit in the sequence to <mark>1</mark> if one of the two bits is <mark>1</mark> </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 7 </td>
-        <td> <strong>nr</strong> | <strong>nr</strong> </td>
-        <td> "bitwise OR" sets the current bit in the sequence to <mark>1</mark> if one of the two is <mark>1</mark> or both are <mark>1</mark> </td>
-    </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 6 </td>
-        <td> <strong>exp_1</strong> &amp;&amp; <strong>exp_2</strong> </td>
-        <td> "logical AND" if the 1st expression is "false" it returns the <u>1st exression</u> <u style="color:orangered;">(and never evaluates the 2nd one [Short-Circuits])</u>, otherwise returns the 2nd expression </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 5 </td>
-        <td> <strong>exp_1</strong> || <strong>exp_2</strong> </td>
-        <td> "logical OR" if the 1st expression is "true" it returns the <u>1st expression</u> <u style="color:orangered;">(and never evaluates the 2nd one [Short-Circuits])</u>, otherwise returns the 2nd expression </td>
-    </tr>
-    <tr>
-        <td style="background-color:darkgreen;"> 4 </td>
-        <td> <strong>condition</strong> ? <strong>expTrue</strong> : <strong>expFalse</strong> </td>
-        <td> "ternary conditional operator" if condition "true" returns the first expression, otherwise returns the second one </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>identifier</strong> = <strong>value</strong> </td>
-        <td> assigns a value to an identifier </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>variable</strong> += <strong>value</strong> </td>
-        <td> adds a value to the variable and returns it </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>variable</strong> -= <strong>value</strong> </td>
-        <td> subtracts a value from the variable and returns it </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>variable</strong> *= <strong>value</strong> </td>
-        <td> multiplies the variable by the value and returns it </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>variable</strong> /= <strong>value</strong> </td>
-        <td> divides the variable by the value and returns it </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>variable</strong> **= <strong>value</strong> </td>
-        <td> raises the variable to the power of the given value and returns it <span style="color:orangered;">(NEW in ES7)</span> </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>variable</strong> %= <strong>value</strong> </td>
-        <td> modulo divides the variable by the given value and returns it </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>variable</strong> &lt;&lt;= <strong>value</strong> </td>
-        <td> "bitwise operator" left shifts (zero fill) the variable by the passed value and returns the result </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>variable</strong> &gt;&gt;&gt;= <strong>value</strong> </td>
-        <td> "bitwise operator" right shifts (zero fill) the variable by the passed value and returns the result </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>variable</strong> &gt;&gt;= <strong>value</strong> </td>
-        <td> "bitwise operator" right shifts (preserve shift-fill) the variable by the passed value and returns the result </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>variable</strong> &amp;= <strong>value</strong> </td>
-        <td> "bitwise operator" uses the "AND" bitwise operator on the variable with the passed value and returns the result </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>variable</strong> &#94;= <strong>value</strong> </td>
-        <td> "bitwise operator" uses the "XOR" bitwise operator on the variable with the passed value and returns the result </td>
-    </tr>
-    <tr>
-        <td style="background-color:deepskyblue;"> 3 </td>
-        <td> <strong>variable</strong> |= <strong>value</strong> </td>
-        <td> "bitwise operator" uses the "OR" bitwise operator on the variable with the passed value and returns the result </td>
-    </tr>
+    <tr class="30.06">
+        <td style="background-color:darkgreen;"> 13 </td>
+        <td> <strong>nr1</strong> &gt;&gt;&gt; <strong>nr2</strong> </td>
+        <td> 
+            - bitwise right shift (zero-fill), performs a 32 bit signed integer <span class="openable">bitwise right shift (zero-fill)<div>
+                <p> 1) the left operand (<strong>nr1</strong>) is converted to a 32bit signed integer </p>
+                <p> 2) bits are shifeted to the right by <strong>nr2</strong> </p>
+                <p> 3) fills <mark>0</mark> on the left while shifting </p>
+                <p> EX: </p>
+                <pre style="white-space:pre-line;">
+                21 &gt;&gt;&gt; 1;      // -> 10
+                    // 21 (decimal) = 00000000000000000000000000010101 (32 bits binary) 
+                    // 10 (decimal) = 00000000000000000000000000001010 (32 bits binary) 
     
-    <tr>
+                -68 &gt;&gt;&gt; 6;     // -> 67108862
+                    //      -68 (decimal) = 11111111111111111111111110111100 (32 bits binary) 
+                    // 67108862 (decimal) = 00000011111111111111111111111110 (32 bits binary) 
+                </pre>
+                </div></span> on the <strong>nr1</strong> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="30.07">
+        <td style="background-color:darkgreen;"> 13 </td>
+        <td> <strong>nr1</strong> &gt;&gt; <strong>nr2</strong> </td>
+        <td> 
+            - bitwise right shift (left-bit-preserver), performs a 32 bit signed integer <span class="openable">bitwise right shift (left-bit-preserver)<div>
+                <p> 1) the left operand (<strong>nr1</strong>) is converted to a 32bit signed integer </p>
+                <p> 2) bits are shifeted to the right by <strong>nr2</strong> </p>
+                <p> 3) the leftmost bit is preserved and copied over to fill the space while shifting </p>
+                <p> EX: </p>
+                <pre style="white-space:pre-line;">
+                2607208886 &gt;&gt; 3;                                                    // -> -210969802
+                    //               (32bit signed integer binary representation)   
+                    //  2607208886      -> 10011011011001101101100110110110  
+                    //  -210969802      -> 11110011011011001101101100110110        // the leftmost bit is copied over while shifting    
+                
+                1801902518 &gt;&gt; 7;                                                    // -> 14077363
+                    //               (32bit signed integer binary representation)   
+                    //  1801902518      -> 01101011011001101101100110110110 
+                    //    14077363      -> 00000000110101101100110110110011        // the leftmost bit is copied over while shifting    
+                    
+                -2147483648 &gt;&gt; 5;                                                   // -> -67108864
+                    //               (32bit signed integer binary representation)   
+                    //  -2147483648     -> 10000000000000000000000000000000  
+                    //  -67108864       -> 11111100000000000000000000000000         // the leftmost bit is copied over while shifting    
+                </pre>
+                </div></span> on the <strong>nr1</strong> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="40.06">
+        <td style="background-color:deepskyblue;"> 12 </td>
+        <td> <strong>obj</strong> instanceof <strong>Const</strong> </td>
+        <td> 
+            - returns <mark>true</mark> if the object (<strong>obj</strong>) is an instance of the Constructor (<strong>Const</strong>) <a href="../Objects/Constructors and Prototypes/index.html#inst_" target="_blank">[link]</a>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="21.01">
+        <td style="background-color:deepskyblue;"> 12 </td>
+        <td> <strong>val1</strong> &lt; <strong>val2</strong> </td>
+        <td> 
+            - less than, returns <mark>true</mark> if <span class="openable"><strong>val1</strong> is smaller than <strong>val2</strong><div>
+                <p> - strings are compared in alphabetical order (numbers are placed before letters) </p>
+            </div></span> <br>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="21.02">
+        <td style="background-color:deepskyblue;"> 12 </td>
+        <td>  <strong>value</strong> &lt;= <strong>value</strong> </td>
+        <td> 
+            - less or equal, returns <mark>true</mark> if <span class="openable"><strong>val1</strong> is smaller or equal <strong>val2</strong><div>
+                <p> - strings are compared in alphabetical order (numbers are placed before letters) </p>
+            </div></span> <br>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="21.03">
+        <td style="background-color:deepskyblue;"> 12 </td>
+        <td> <strong>value</strong> &gt; <strong>value</strong> </td>
+        <td> 
+            - greater than, returns <mark>true</mark> if <span class="openable"><strong>val1</strong> is greater than <strong>val2</strong><div>
+                <p> - strings are compared in alphabetical order (numbers are placed before letters) </p>
+            </div></span> <br>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="21.04">
+        <td style="background-color:deepskyblue;"> 12 </td>
+        <td> <strong>value</strong> &gt;= <strong>value</strong> </td>
+        <td> 
+            - greater or equal, returns <mark>true</mark> if <span class="openable"><strong>val1</strong> is greater or equal <strong>val2</strong><div>
+                <p> - strings are compared in alphabetical order (numbers are placed before letters) </p>
+            </div></span> <br>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="40.07">
+        <td style="background-color:deepskyblue;"> 12 </td>
+        <td> <strong>prop</strong> in <strong>obj</strong> </td>
+        <td> 
+            - checks if the the object or its prototype chain contains the specified property <a href="../Loops/index.html#in_" target="_blank">[link]</a>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="20.01">
+        <td style="background-color:darkgreen;"> 11 </td>
+        <td> <strong>val</strong> == <strong>val</strong> </td>
+        <td> 
+            - abstract equality comparison, returns <mark>true</mark> if the values are equal <u>(doesn't perform data type comparison, value comparison only!)</u>   
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="20.02">
+        <td style="background-color:darkgreen;"> 11 </td>
+        <td> <strong>val</strong> === <strong>val</strong> </td>
+        <td> 
+            - strict value comparison, returns <mark>true</mark> if the <u>values and the datatypes are equal</u>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="20.03">
+        <td style="background-color:darkgreen;"> 11 </td>
+        <td> <strong>val</strong> != <strong>val</strong> </td>
+        <td> 
+            - abstract inequality comparison, returns <mark>true</mark> if the values are NOT equal <u>(doesn't perform data type comparison, value comparison only!)</u>   
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="20.04">
+        <td style="background-color:darkgreen;"> 11 </td>
+        <td> <strong>val</strong> !== <strong>val</strong> </td>
+        <td> 
+            - strict value inequality, returns <mark>true</mark> if the <u>values and the datatypes are NOT equal</u>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="30.01">
+        <td style="background-color:deepskyblue;"> 10 </td>
+        <td> <strong>nr</strong> &amp; <strong>nr</strong> </td>
+        <td> 
+            - bitwise AND, performs a 32 bit signed integer <span class="openable">bitwise AND operation<div>
+                <p> 1) both <strong>nr</strong>s are converted to a 32bit signed integer </p>
+                <p> 2) they are compared to each other </p>
+                <p> 3) where both values have <mark>1</mark>bit that bit is set to <mark>1</mark> in the result </p>
+                <p> EX: </p>
+                <pre style="white-space:pre-line;">
+                21 & 68;        // -> 4
+                
+                    // 21 (decimal) = 00000000000000000000000000010101 (32 bit signed integer representation)   
+                    // 68 (decimal) = 00000000000000000000000001000100 (32 bit signed integer representation)
+                    //  4 (decimal) = 00000000000000000000000000000100 (32 bit signed integer representation)
+                </pre>
+            </div></span> on the <strong>nr</strong>s 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="30.03">
+        <td style="background-color:darkgreen;"> 9 </td>
+        <td> <strong>nr</strong> ^ <strong>nr</strong> </td>
+        <td> 
+            - bitwise XOR, performs a 32 bit signed integer <span class="openable">bitwise XOR operation<div>
+                <p> 1) both <strong>nr</strong>s are converted to a 32bit signed integer </p>
+                <p> 2) they are compared to each other </p>
+                <p> 3) where one value has <mark>1</mark> that bit is set to <mark>1</mark> in the result </p>
+                <p> EX: </p>
+                <pre style="white-space:pre-line;">
+                21 ^ 68;       // -> 81     
+                    // 21 (decimal) = 00000000000000000000000000010101 (32 bit signed integer binary representation)   
+                    // 68 (decimal) = 00000000000000000000000001000100 (32 bit signed integer binary representation)   
+                    // 81 (decimal) = 00000000000000000000000001010001 (32 bit signed integer binary representation)  
+                </pre>
+            </div></span> on the <strong>nr</strong>s 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="30.02">
+        <td style="background-color:deepskyblue;"> 8 </td>
+        <td> <strong>nr</strong> | <strong>nr</strong> </td>
+        <td> 
+            - bitwise OR, performs a 32 bit signed integer <span class="openable">bitwise OR operation<div>
+                <p> 1) both <strong>nr</strong>s are converted to a 32bit signed integer </p>
+                <p> 2) they are compared to each other </p>
+                <p> 3) where one value has <mark>1</mark> and where both values have <mark>1</mark>bit that bit is set to <mark>1</mark> in the result </p>
+                <p> EX: </p>
+                <pre style="white-space:pre-line;">
+                21 | 68;       // -> 85  
+                    
+                    // 21 (decimal) = 00000000000000000000000000010101 (32 bit signed integer binary representation )   
+                    // 68 (decimal) = 00000000000000000000000001000100 (32 bit signed integer binary representation )
+                    // 85 (decimal) = 00000000000000000000000001010101 (32 bit signed integer binary representation )
+                </pre>
+            </div></span> on the <strong>nr</strong>s 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="25.01">
+        <td style="background-color:darkgreen;"> 7 </td>
+        <td> <strong>exp1</strong> &amp;&amp; <strong>exp2</strong> </td>
+        <td> 
+            - logical AND, if <strong>exp1</strong> evaluated <mark>true</mark> returns <strong>exp2</strong> <br>
+            - if <strong>exp1</strong> evaluated <mark>false</mark> returns <strong>exp1</strong> <u>and never evaluates <strong>exp2</strong> = short circuiting</u> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="25.02">
+        <td style="background-color:deepskyblue;"> 6 </td>
+        <td> <strong>exp1</strong> || <strong>exp2</strong> </td>
+        <td> 
+            - logical OR, if <strong>exp1</strong> evaluated <mark>false</mark> returns <strong>exp2</strong> <br>
+            - if <strong>exp1</strong> evaluated <mark>true</mark> returns <strong>exp1</strong> <u>and never evaluates <strong>exp2</strong> = short circuiting</u>  
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="25.03">
+        <td style="background-color:darkgreen;"> 5 </td>
+        <td> <strong>exp1</strong> ?? <strong>exp2</strong> </td>
+        <td> 
+            - logical NULLISH coalescing, if <strong>exp1</strong> evaluated <mark>undefined</mark> or <mark>null</mark> returns <strong>exp2</strong> <br>
+            - if <strong>exp1</strong> is NOT evaluated <mark>undefined</mark> or <mark>null</mark> returns <strong>exp1</strong> <u>and never evaluates <strong>exp2</strong> = short circuiting</u>  
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 80 </span>
+                <span><i class="fab fa-firefox"></i> 72 </span>
+                <span><i class="fab fa-opera"></i> 67 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 80 </span>
+                <span><i class="fab fa-safari"></i> 13.1 </span>
+                <span><i class="fab fa-node-js"></i> 14.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="70.01">
+        <td style="background-color:darkgreen;"> 4 </td>
+        <td> <strong>exp</strong> ? <strong>expTrue</strong> : <strong>expFalse</strong> </td>
+        <td> 
+            - ternary conditional operator, if <strong>exp</strong> returns <mark>true</mark> it returns <strong>expTrue</strong>, otherwise returns <mark>expFalse</mark> <a href="../Booleans and Conditional Statements/index.html#ternary_" target="_blank">[link]</a> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="14.01">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> = <strong>data:any</strong> </td>
+        <td> 
+            - assigns a the <strong>data</strong> to the <strong>var</strong>  
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="15.02">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> += <strong>nr</strong> </td>
+        <td> 
+            - additional assignement, add <strong>nr</strong> to <strong>var</strong> and assigns the result to the <strong>var</strong> <br>
+            - same as <mark><strong>var</strong> = <strong>var</strong> + <strong>nr</strong></mark> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="15.03">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> -= <strong>nr</strong> </td>
+        <td> 
+            - subtraction assignement, subtracts <strong>nr</strong> from <strong>var</strong> and assigns the result to the <strong>var</strong> <br>
+            - same as <mark><strong>var</strong> = <strong>var</strong> - <strong>nr</strong></mark> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="15.04">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> *= <strong>nr</strong> </td>
+        <td> 
+            - multiplication assignement, multiplies <strong>nr</strong> with <strong>var</strong> and assigns the result to the <strong>var</strong> <br>
+            - same as <mark><strong>var</strong> = <strong>var</strong> * <strong>nr</strong></mark> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="15.05">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> /= <strong>nr</strong> </td>
+        <td> 
+            - division assignement, dividies <strong>var</strong> by <strong>nr</strong> and assigns the result to the <strong>var</strong> <br>
+            - same as <mark><strong>var</strong> = <strong>var</strong> / <strong>nr</strong></mark> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="15.06">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> **= <strong>nr</strong> </td>
+        <td> 
+            - exponentiation assignement, raises <strong>var</strong> to the power of <strong>nr</strong> and assigns the result to the <strong>var</strong> <br>
+            - same as <mark><strong>var</strong> = <strong>var</strong> ** <strong>nr</strong></mark> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 52 </span>
+                <span><i class="fab fa-firefox"></i> 52 </span>
+                <span><i class="fab fa-opera"></i> 39 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 14 </span>
+                <span><i class="fab fa-safari"></i> 10.1 </span>
+                <span><i class="fab fa-node-js"></i> 7.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="15.07">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> %= <strong>nr</strong> </td>
+        <td> 
+            - remainder assignement, divides <strong>var</strong> by <strong>nr</strong> and assigns the remainder to the <strong>var</strong> <br>
+            - same as <mark><strong>var</strong> = <strong>var</strong> % <strong>nr</strong></mark> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="16.01">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> &lt;&lt;= <strong>nr</strong> </td>
+        <td> 
+            - bitwise left shift (zero fill) assignement, bitwise left shifts (zero fill) <strong>var</strong> by <strong>nr</strong> and assings the result to the <strong>var</strong> <br>
+            - same as <mark><strong>var</strong> = <strong>var</strong> &lt;&lt; <strong>nr</strong></mark> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="16.02">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> &gt;&gt;&gt;= <strong>nr</strong> </td>
+        <td> 
+            - bitwise right shift (zero fill) assignement, bitwise right shifts (zero fill) <strong>var</strong> by <strong>nr</strong> and assings the result to the <strong>var</strong> <br>
+            - same as <mark><strong>var</strong> = <strong>var</strong> &gt;&gt;&gt; <strong>nr</strong></mark> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="16.03">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> &gt;&gt;= <strong>nr</strong> </td>
+        <td> 
+            - bitwise right shift (left-bit-preserve) assignment, bitwise right shifts (preserver shift-fill) <strong>var</strong> by <strong>nr</strong> and assings the result to the <strong>var</strong> <br>
+            - same as <mark><strong>var</strong> = <strong>var</strong> &gt;&gt; <strong>nr</strong></mark> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="16.04">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> &amp;= <strong>nr</strong> </td>
+        <td> 
+            - bitwise AND assignement, coverts both operands to 32bit signed integer and does a bitwise AND operation on them, then assigns the result to the <strong>var</strong> <br>
+            - same as <mark><strong>var</strong> = <strong>var</strong> &amp; <strong>nr</strong></mark> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="16.06">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> &#94;= <strong>nr</strong> </td>
+        <td> 
+            - bitwise XOR assignement, coverts both operands to 32bit signed integer and does a bitwise XOR operation on them, then assigns the result to the <strong>var</strong> <br>
+            - same as <mark><strong>var</strong> = <strong>var</strong> &#94; <strong>nr</strong></mark> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="16.05">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> |= <strong>nr</strong> </td>
+        <td> 
+            - bitwise OR assignement, coverts both operands to 32bit signed integer and does a bitwise OR operation on them, then assigns the result to the <strong>var</strong> <br>
+            - same as <mark><strong>var</strong> = <strong>var</strong> | <strong>nr</strong></mark> 
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="17.01">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> &&= <strong>exp</strong> </td>
+        <td> 
+            - logical AND assignement, if <strong>var</strong> evaluated <mark>true</mark> the returned result of <strong>exp</strong> is assigned to <strong>var</strong> <br>
+            - if <strong>var</strong> evaluated <mark>false</mark> then <strong>var</strong> doesn't change (short circuits)
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 85 </span>
+                <span><i class="fab fa-firefox"></i> 79 </span>
+                <span><i class="fab fa-opera"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 85 </span>
+                <span><i class="fab fa-safari"></i> 14 </span>
+                <span><i class="fab fa-node-js"></i> 15.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="17.02">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> ||= <strong>exp</strong> </td>
+        <td> 
+            - logical OR assignement, if <strong>var</strong> evaluated <mark>false</mark> the returned result of <strong>exp</strong> is assigned to <strong>var</strong> <br>
+            - if <strong>var</strong> evaluated <mark>true</mark> then <strong>var</strong> doesn't change (short circuits)
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 85 </span>
+                <span><i class="fab fa-firefox"></i> 79 </span>
+                <span><i class="fab fa-opera"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 85 </span>
+                <span><i class="fab fa-safari"></i> 14 </span>
+                <span><i class="fab fa-node-js"></i> 15.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="17.03">
+        <td style="background-color:deepskyblue;"> 3 </td>
+        <td> <strong>var</strong> ??= <strong>exp</strong> </td>
+        <td> 
+            - logical NULLISH coalescing assignement, if <strong>var</strong> evaluated <mark>null</mark> or <mark>undefined</mark> the returned result of <strong>exp</strong> is assigned to <strong>var</strong> <br>
+            - if <strong>var</strong> is NOT evaluated  <mark>null</mark> or <mark>undefined</mark> then <strong>var</strong> doesn't change (short circuits)   
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 85 </span>
+                <span><i class="fab fa-firefox"></i> 79 </span>
+                <span><i class="fab fa-opera"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 85 </span>
+                <span><i class="fab fa-safari"></i> 14 </span>
+                <span><i class="fab fa-node-js"></i> 15.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="60.01">
         <td style="background-color:darkgreen;"> 2 </td>
         <td> yield <i>exp</i> </td>
-        <td> gives its expression when called in a "generator fucntion" (pause/play interface) </td>
+        <td> 
+            - gives its expression when called in a generator fucntion <a href="../Functions/index.html#genFN_" target="_blank">[link]</a>  
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 39 </span>
+                <span><i class="fab fa-firefox"></i> 26 </span>
+                <span><i class="fab fa-opera"></i> 26 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 10 </span>
+                <span><i class="fab fa-node-js"></i> 4.0.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="60.02">
         <td style="background-color:darkgreen;"> 2 </td>
         <td> yield* <i>exp</i> </td>
-        <td> gives its iterable object when called in a "generator fucntion" (pause/play interface) </td>
+        <td> 
+            - gives its iterable object when called in a generator fucntion <a href="../Functions/index.html#genFN_" target="_blank">[link]</a>  
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 39 </span>
+                <span><i class="fab fa-firefox"></i> 26 </span>
+                <span><i class="fab fa-opera"></i> 26 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 10 </span>
+                <span><i class="fab fa-node-js"></i> 4.0.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="38.02">
         <td style="background-color:deepskyblue;"> 1 </td>
-        <td> <strong>exp</strong> <b>,</b> <strong>exp</strong> <b>,</b> <strong>...</strong> </td>
-        <td> "comma / squence" evaluates all its operands and returns the value of the last one </td>
+        <td> <strong>exp</strong>, <i>exp, ...</i> </td>
+        <td> 
+            - comma / squence, evaluates all <strong>exp</strong>s and returns the result of the last one <a href="../Basics/index.html#prec_" target="_blank">[link]</a>
+            <span id="browserSupport" title="updated: 2021-05-25">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
+    <tr col3 class="05.00">
+        <td colspan="3"> Arithmetic Operators </td>
+    </tr>
+    <tr col3 class="10.00">
+        <td colspan="3"> Unary Operators </td>
+    </tr>
+    <tr col3 class="14.00">
+        <td colspan="3"> Assignement Operators </td>
+    </tr>
+    <tr col3 class="20.00">
+        <td colspan="3"> Comparison Operators </td>
+    </tr>
+    <tr col3 class="25.00">
+        <td colspan="3"> Logical Operators </td>
+    </tr>
+    <tr col3 class="30.00">
+        <td colspan="3"> Bitwise Operators </td>
+    </tr>
+    <tr col3 class="35.00">
+        <td colspan="3"> Other Operators </td>
+    </tr>
+</table> 
+<br>
+<table class="table">
+<caption> 
+    Keywords  
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <td> - </td>
+        <th style="width:30%;"> Keyword </th>
+        <th> Description </th>
+    </tr>
+    <tr class="10.01">
         <td> ...<strong>arr|obj</strong> </td>
         <td> 
-            - spreads an array's items or object's properties/values to the targeted area <br>
-            - the "spread operator" is not a real operator therefore has <u>no precedence</u>
+            - spreads an array's or object's items to the targeted area <br>
+            - called "spread operator" but it's not a real operator 
             <span class="browserSupport" title="updated : 2020-11-08">
                 <span class='openable'><i>Support (more ...)</i> <div>
                     <p><u>Spread in Array literals (ex: <mark>[...myArr]</mark></u></p> 
@@ -346,7 +1182,7 @@
                     <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
                     <span><i class="fab fa-safari"></i> 8 </span>
                     <span><i class="fab fa-node-js"></i> 5.0.0 </span><br><br>
-                    <p><u>[EXPERIMENTAL 2020-11-08] Spread in Object literals (ex: <mark>{...myObj}</mark>)</u></p> 
+                    <p><u>Spread in Object literals (ex: <mark>{...myObj}</mark>)</u></p> 
                     <span><i class="fab fa-chrome"></i> 60 </span>
                     <span><i class="fab fa-firefox"></i> 55 </span>
                     <span><i class="fab fa-opera"></i> 47 </span>
@@ -357,26 +1193,50 @@
             </span>
         </td>
     </tr>
-</table> 
-<br>
-<table class="table">
-<caption> SOME KEYWORDS (other keywords are explained in their refered subjects) </caption>
-    <tr>
-        <th> Keyword </th>
-        <th> Description </th>
-    </tr>
-    <tr>
-        <td> var <strong>identifier</strong><i> = value</i> </td>
-        <td> declares a <u>hoisted</u> variable (<span style="color:darkgreen;">Reassignable</span> / <span style="color:darkgreen;">Redeclarable</span>) (registered in the <b style="color:blue;">O</b>bject<b style="color:blue;">E</b>nvironment<b style="color:blue;">R</b>ecord = creates properties on the current scope)
+    <tr class="05.03">
+        <td> const <strong>id</strong><i> = value</i> </td>
+        <td> 
+            - declares a <u>non-hoisted block-scope <mark>{}</mark></u> local-variable (<span style="color:orangered;">NOT-Reassignable</span> / <span style="color:orangered;">NOT-Redeclarable</span>) <br>
+            - registered in the <b>D</b>eclarative <b>E</b>nvironment <b>R</b>ecord (DER) = does NOT create properties in the current scope 
+            <span id="browserSupport" title="updated: 2021-05-26">
+                <span><i class="fab fa-chrome"></i> 21 </span>
+                <span><i class="fab fa-firefox"></i> 36 </span>
+                <span><i class="fab fa-opera"></i> 9 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 11 </span>
+                <span><i class="fab fa-safari"></i> 5.1 </span>
+                <span><i class="fab fa-node-js"></i> 6.0.0 </span>
+            </span>
         </td>
     </tr>
-    <tr>
-        <td> let <strong>identifier</strong><i> = value</i> </td>
-        <td> declares a <u>non-hoisted block-scope <mark>{}</mark></u> local-variable (<span style="color:darkgreen;">Reassignable</span> / <span style="color:orangered;">NOT-Redeclarable</span>) (registered in the <b style="color:blue;">D</b>eclarative<b style="color:blue;">E</b>nvironment<b style="color:blue;">R</b>ecord = does NOT create properties on the current scope (registered-only)) <span style="color:orangered;">(new in ES6)</span></td>
+    <tr class="05.02">
+        <td> let <strong>id</strong><i> = value</i> </td>
+        <td> 
+            - declares a <u>non-hoisted block-scope <mark>{}</mark></u> local-variable (<span style="color:green;">Reassignable</span> / <span style="color:orangered;">NOT-Redeclarable</span>) <br>
+            - registered in the <b>D</b>eclarative <b>E</b>nvironment <b>R</b>ecord (DER) = does NOT create properties in the current scope 
+            <span id="browserSupport" title="updated: 2021-05-26">
+                <span><i class="fab fa-chrome"></i> 48 </span>
+                <span><i class="fab fa-firefox"></i> 44 </span>
+                <span><i class="fab fa-opera"></i> 17 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 14 </span>
+                <span><i class="fab fa-safari"></i> 10 </span>
+                <span><i class="fab fa-node-js"></i> 6.0.0 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td> const <strong>identifier</strong><i> = value</i> </td>
-        <td> declares a <u>non-hoisted block-scope <mark>{}</mark></u> local-variable (<span style="color:orangered;">NOT-Reassignable</span> / <span style="color:orangered;">NOT-Redeclarable</span>) (registered in the <b style="color:blue;">D</b>eclarative<b style="color:blue;">E</b>nvironment<b style="color:blue;">R</b>ecord = does NOT create properties on the current scope (registered-only)) <span style="color:orangered;">(new in ES6)</span></td>
+    <tr class="05.01">
+        <td> var <strong>id</strong><i> = value</i> </td>
+        <td> 
+            - declares a <u>hoisted</u> variable (<span style="color:green;">Reassignable</span> / <span style="color:green;">Redeclarable</span>) <br>
+            - registered in the <b>O</b>bject <b>E</b>nvironment <b>R</b>ecord (OER) = creates a property in the current scope   
+            <span id="browserSupport" title="updated: 2021-05-26">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+        </td>
     </tr>
 </table>
 <h2 style="color:green;"><ins> Useful Links : </ins></h2>
@@ -386,52 +1246,46 @@
     <p><a href="https://www.w3schools.com/js/js_comparisons.asp" target="_blank"> W3Schools JavaScript Comparisons </a></p>
     <p><a href="https://www.w3schools.com/js/js_bitwise.asp" target="_blank"> W3Schools JavaScript Bitwise Operatros </a></p>
 <h2 style="color:green;"><u> Remember This : </u></h2>
-    <p> - values declared with the <mark>const</mark> / <mark>let</mark> identifiers can still be changed by their methods/properties, because it is not considered as reassignement! (ex: <mark>myArray.push(4)</mark>)</p>
+    <p> - the <mark>const</mark> identifier only keeps primitives unchangable, complex data (objects) still can be changed (ex: <mark>myArray.push(4)</mark>)</p>
     <p> - the <mark>...</mark> spread operator also spreads nested items/objects </p>
-    <p> - comparison operators compare <u>primitive values</u>, therefore 2 objects cannot be compared (aways return <mark>false</mark>) </p>
+    <p> - comparison operators can compare <u>only primitives</u>, therefore 2 objects cannot be compared (aways return <mark>false</mark>) </p>
     <p> - comparison operators compare strings by their <u>Alphabetical Order</u> (numbers are placed before letters!) </p>
 <h2 style="color:green;"><ins> Description and Demonstration: </ins></h2>
     <p> - operators using <u>one</u> value called <u>Unary Operators</u> (<mark> typeof 1 </mark>)</p>
     <p> - operators using <u>two</u> values called <u>Binary Operators</u> (<mark> 1 + 1 </mark>) </p>
     <p> - operator using <u>three</u> values called <u>Ternary Operator</u> (<mark> (10 > 2) ? "ok" : "not-ok" </mark>) (only one in JS)</p>
-<h2><u> Operator Precedence </u></h2>
+<h2 style="color:darkblue;"><u> Operator Precedence </u></h2>
     <p> - operator precedence describes the order in wich order the operations will be performed in an arithmetic expression (like the <mark>*</mark> and <mark>/</mark> have higher precedence than the <mark>+</mark> and <mark>-</mark>)</p>
     <p> - equal precedence operators are computed form left to right</p>
     <pre>
-    var x = 100 + 50 * 3;                       // -> 250   // the multiplication have higher precedence
-    var x = (100 + 50) * 3;                     // -> 450   // precedence changed
-    var x = 100 + 50 - 3;                       // -> 147   // equal precedence operators are computed from left to right
+    var x = 100 + 50 * 3;                                                              // -> 250   // the multiplication have higher precedence
+    var x = (100 + 50) * 3;                                                            // -> 450   // precedence changed
+    var x = 100 + 50 - 3;                                                              // -> 147   // equal precedence operators are computed from left to right
     </pre>
 <!----------------------------------------------------------------------------------------------------------------------->
 <hr>
-<h2><u> Binary Arithmetic Operators </u></h2>
-    <p> - They take numerical values and return one single numerical value</p>
-    <pre class="syntax">
-SYNTAX :    <strong>nr</strong> + <strong>nr</strong>                             // addition
-            <strong>nr</strong> - <strong>nr</strong>                             // subtraction 
-            <strong>nr</strong> * <strong>nr</strong>                             // multiplication
-            <strong>nr</strong> / <strong>nr</strong>                             // division
-            <strong>nr</strong> ** <strong>nr</strong>                            // exponentiation (left <strong>nr</strong> on the power to the right <strong>nr</strong>) <u style="color:orange;">(NEW in ES7)</u>
-            <strong>nr</strong> % <strong>nr</strong>                             // modulo division, divides numbers as integers and returns the <u>reminder</u> of the operation 
-    </pre>
+<h2 style="color:darkblue;"><u> Arithmetic Operators <mark>+</mark> / <mark>-</mark> / <mark>*</mark> / <mark>/</mark> / <mark>**</mark> / <mark>%</mark> </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
-    10 + 2;                                     // -> 12       
-    10 - 2;                                     // -> 8
-    10 * 2;                                     // -> 20
-    10 / 2;                                     // -> 5
-    10 ** 2;                                    // -> 100   
+    10 + 2;                                                                            // -> 12       
+    10 - 2;                                                                            // -> 8
+    10 * 2;                                                                            // -> 20
+    10 / 2;                                                                            // -> 5
+    10 ** 2;                                                                           // -> 100   
 // modulo division ------    
-    5 % 2;                                      // -> 1                     // ((2*2=4) and  (5-4=1)) 
-    17 % 3;                                     // -> 2                     // ((3*5=15) and  (17-15=2)) 
-    15 % 5;                                     // -> 0                     // ((5*3=15) and  0) 
+    5 % 2;                                                                             // -> 1                     // ((2*2=4) and  (5-4=1)) 
+    17 % 3;                                                                            // -> 2                     // ((3*5=15) and  (17-15=2)) 
+    15 % 5;                                                                            // -> 0                     // ((5*3=15) and  0) 
     </pre>
     <p> - concatenation VS addition </p>
     <pre>
-    "Pall " + " Arpad"                          // -> "Pall Arpad"          // strings will concatenate
-    "2" + 5 + 4 + 3;                            // -> 2543                  // numbers <u>after a string</u> will concatenate! 
-    2 + 5 + 4 + "3";                            // -> 113                   // (2 + 5 + 4) = 11 concatenate 3
-    2 + 5 + "4" + 3;                            // -> 743                   // (2 + 5) = 7 concatenate 4 concatenate 3
+    "Pall " + " Arpad"                                                                 // -> "Pall Arpad"          // strings will concatenate
+    "2" + 5 + 4 + 3;                                                                   // -> 2543                  // numbers <u>after a string</u> will concatenate! 
+    2 + 5 + 4 + "3";                                                                   // -> 113                   // (2 + 5 + 4) = 11 concatenate 3
+    2 + 5 + "4" + 3;                                                                   // -> 743                   // (2 + 5) = 7 concatenate 4 concatenate 3
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4><u> Traditional Operations <mark>+</mark> / <mark>-</mark> / <mark>*</mark> / <mark>/</mark> </u></h4>
@@ -494,33 +1348,28 @@ SYNTAX :    <strong>nr</strong> + <strong>nr</strong>                           
 &lt;/script&gt;    
         </pre>
         </details>
-</details>       
+</details>  
 <!------------------------------------------------------------------------------------------------------------------------->    
 <hr>    
-<h2><u> Unary Operators  </u></h2>
-    <pre class="syntax">
-SYNTAX :    ++<strong>variable</strong>                          // "prefix increment" increases the value and returns it
-            --<strong>variable</strong>                          // "prefix decrement" decreases the value and returns it
-            <strong>variable</strong>++                          // "postfix increment" increases the value but does <u>not return it</u>
-            <strong>variable</strong>--                          // "postfix decrement" decreases the value but does <u>not return it</u>
-            
-            +<strong>value</strong>                              // converts the value into a number
-            -<strong>value</strong>                              // converts the value into a number <u style="color:orange;">and flips [Negative to Positive] / [Positive to Negative]</u>
-    </pre>
+<h2 style="color:darkblue;"><u> Unary Operators <mark>++</mark> (prefix/postfix) / <mark>--</mark> (prefix/postfix) / <mark>+</mark> / <mark>-</mark> </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     var myNumber = 10;
-    ++myNumber;                                 // -> 11        
-    --myNumber;                                 // -> 9
-    myNumber++;                                 // -> 10        // value modified <u>but NOT returned</u>
-    myNumber--;                                 // -> 10        // value modified <u>but NOT returned</u>
     
-//  --------------------------------------------    
-    +"21";                                      // -> 21        // values are converted to numbers
-    +"-21";                                     // -> -21
+    ++myNumber;                                                                        // -> 11        
+    --myNumber;                                                                        // -> 9
+    myNumber++;                                                                        // -> 10        // value increased <u>but NOT returned</u>
+    myNumber--;                                                                        // -> 10        // value decreased <u>but NOT returned</u>
     
-    -"55"                                       // -> -55       // value converted to number and flipped form positive to negative 
-    -"-55"                                      // -> 55        // value converted to number and flipped form negative to positive 
+  // ----------------------------------------------------------------------------------
+    +"21";                                                                             // -> 21        // values are converted to numbers
+    +"-21";                                                                            // -> -21
+    
+    -"55"                                                                              // -> -55       // value converted to number and flipped form positive to negative 
+    -"-55"                                                                             // -> 55        // value converted to number and flipped form negative to positive 
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4><u> Increment and Decrement  </u></h4>
@@ -627,47 +1476,63 @@ SYNTAX :    ++<strong>variable</strong>                          // "prefix incr
 &lt;/script&gt;    
         </pre>
         </details>
-</details>     
+</details>   
 <!------------------------------------------------------------------------------------------------------------------------->    
 <hr>
-<h2><u> Assignment Operators </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>identifier</strong> = <strong>value</strong>                  // assigns a value to an identifier
-
-            <strong>variable</strong> += <strong>value</strong>                   // adds a value to the variable and returns it
-            <strong>variable</strong> -= <strong>value</strong>                   // subtracts a value from the variable and returns it
-            <strong>variable</strong> *= <strong>value</strong>                   // multiplies the variable by the value and returns it
-            <strong>variable</strong> /= <strong>value</strong>                   // divides the variable by the value and returns it
-    
-            <strong>variable</strong> **= <strong>value</strong>                  // raises the variable to the power of the given value and returns it
-            <strong>variable</strong> %= <strong>value</strong>                   // modulo divides the variable by the given value and returns it
-            
-            <strong>variable</strong> &lt;&lt;= <strong>value</strong>                  // "bitwise operator" left shifts (zero fill) the variable by the passed value and returns the result
-            <strong>variable</strong> &gt;&gt;= <strong>value</strong>                  // "bitwise operator" right shifts (preserve shift-fill) the variable by the passed value and returns the result 
-            <strong>variable</strong> &gt;&gt;&gt;= <strong>value</strong>                 // "bitwise operator" right shifts (zero fill) the variable by the passed value and returns the result 
-            <strong>variable</strong> &amp;= <strong>value</strong>                   // "bitwise operator" uses the "AND" bitwise operator on the variable with the passed value and returns the result
-            <strong>variable</strong> |= <strong>value</strong>                   // "bitwise operator" uses the "OR" bitwise operator on the variable with the passed value and returns the result
-            <strong>variable</strong> &#94;= <strong>value</strong>                   // "bitwise operator" uses the "XOR" bitwise operator on the variable with the passed value and returns the result
-    </pre>
+<h2 style="color:darkblue;"><u> Assignment Operators <mark>=</mark> / <mark>+=</mark> / <mark>-=</mark> / <mark>*=</mark> / <mark>/=</mark> / <mark>**=</mark> / <mark>%=</mark> / <mark>&lt;&lt;=</mark> / <mark>&gt;&gt;=</mark> / <mark>&gt;&gt;&gt;=</mark> / <mark>&amp;=</mark> / <mark>|=</mark> / <mark>&#94;=</mark> / <mark>&&=</mark> / <mark>||=</mark> / <mark>??=</mark> </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     var myVariable = 10;
     
-    myVariable += 2;                            // -> 12                // same as ->       myVariable = myVariable + 2;
-    myVariable -= 2;                            // -> 8                 // same as ->       myVariable = myVariable - 2;
-    myVariable *= 2;                            // -> 20                // same as ->       myVariable = myVariable * 2;
-    myVariable /= 2;                            // -> 5                 // same as ->       myVariable = myVariable / 2;
+    myVariable += 2;                                                                   // -> 12                // same as ->       myVariable = myVariable + 2;
+    myVariable -= 2;                                                                   // -> 8                 // same as ->       myVariable = myVariable - 2;
+    myVariable *= 2;                                                                   // -> 20                // same as ->       myVariable = myVariable * 2;
+    myVariable /= 2;                                                                   // -> 5                 // same as ->       myVariable = myVariable / 2;
     
-    myVarialbe **=3;                            // -> 1000              // same as ->       myVariable = myVariable ** 3;
-    myVariable %=3;                             // -> 1;                // same as ->       myVariable = myVariable % 3;
+    myVarialbe **=3;                                                                   // -> 1000              // same as ->       myVariable = myVariable ** 3;
+    myVariable %=3;                                                                    // -> 1;                // same as ->       myVariable = myVariable % 3;
     
-// bitwise assignement operators ---------------------------------    
-    myVariable &lt;&lt;= 2;                           // -> 80;               // same as ->       myVariable = myVariable &lt;&lt; 2;
-    myVariable &gt;&gt;= 2;                           // -> 2;                // same as ->       myVariable = myVariable &gt;&gt; 2;
-    myVariable &gt;&gt;&gt;= 2;                          // -> 2;                // same as ->       myVariable = myVariable &gt;&gt;&gt; 2;
-    myVariable &amp;= 2;                            // -> 2;                // same as ->       myVariable = myVarialbe &amp; 2;
-    myVariable |= 2;                            // -> 10;               // same as ->       myVariable = myVarialbe | 2;
-    myVariable &#94;= 2;                            // -> 8;                // same as ->       myVariable = myVariable ^ 2;
+// bitwise assignement operators ------------------------------------------------------ 
+    myVariable &lt;&lt;= 2;                                                                  // -> 80;               // same as ->       myVariable = myVariable &lt;&lt; 2;
+    myVariable &gt;&gt;= 2;                                                                  // -> 2;                // same as ->       myVariable = myVariable &gt;&gt; 2;
+    myVariable &gt;&gt;&gt;= 2;                                                                 // -> 2;                // same as ->       myVariable = myVariable &gt;&gt;&gt; 2;
+    myVariable &amp;= 2;                                                                   // -> 2;                // same as ->       myVariable = myVarialbe &amp; 2;
+    myVariable |= 2;                                                                   // -> 10;               // same as ->       myVariable = myVarialbe | 2;
+    myVariable &#94;= 2;                                                                   // -> 8;                // same as ->       myVariable = myVariable ^ 2;
     </pre>
+    <pre>
+// AND assignement (&&=) --------------------------------------------------------------
+    var x = 1;
+    var y = 0;
+    
+    x &&= 'newVal';                                                                    // because x evaluates truthy the right operand is assigned to x     
+    y &&= 'newVal';                                                                    // because x evaluates falsy the right operand is NOT assigned to 7    
+    
+    console.log( x );                                                                  // -> 'newVal'
+    console.log( y );                                                                  // -> 0
+    
+// OR assignement (||=) ---------------------------------------------------------------
+    var x = 1;
+    var y = 0;
+    
+    x ||= 'newVal';                                                                    // because x evaluates truthy the right operand is NOT assigned to x     
+    y ||= 'newVal';                                                                    // because x evaluates falsy the right operand is assigned to y    
+    
+    console.log( x );                                                                  // -> 1
+    console.log( y );                                                                  // -> 'newVal'
+    
+// NULLISH coalescing assignement (??=) -----------------------------------------------
+    var x = 1;
+    var y = null;
+    
+    x ??= 'newVal';                                                                    // because x not evaluates null or undefined the right operand is NOT assigned to x 
+    y ??= 'newVal';                                                                    // because x evaluates null or undefined the right operand is assigned to y
+    
+    console.log( x );                                                                  // -> 1
+    console.log( y );                                                                  // -> 'newVal'
+    </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4><u> <mark>+=</mark> / <mark>-=</mark> / <mark>*=</mark> / <mark>/=</mark> / <mark>**=</mark> / <mark>%=</mark> TEST </u></h4>    
@@ -700,6 +1565,8 @@ SYNTAX :    <strong>identifier</strong> = <strong>value</strong>                
 &lt;/script&gt;    
         </pre>
         </details>
+<!-------------------------------------------------------------------------------------------------------------------->      
+<hr>
 <h4><u> <mark>&lt;&lt;=</mark> / <mark>&gt;&gt;=</mark> / <mark>&gt;&gt;&gt;=</mark> / <mark>&amp;=</mark> / <mark>|=</mark> / <mark>&#94;=</mark> TEST </u></h4>
     <p id="bitwiseAssign"></p>
 <script>
@@ -730,40 +1597,67 @@ SYNTAX :    <strong>identifier</strong> = <strong>value</strong>                
 &lt;/script&gt;    
         </pre>
         </details>
-</details>    
+<!-------------------------------------------------------------------------------------------------------------------->      
+<hr>
+<h4 style="color:darkblue;"><u> <mark>&&=</mark> / <mark>||=</mark> / <mark>??=</mark> TEST </u></h4>    
+    <pre>
+// AND assignement (&&=) --------------------------------------------------------------
+    var x = 1;
+    var y = 0;
+    
+    x &&= 'newVal';                                                                    // because x evaluates truthy the right operand is assigned to x     
+    y &&= 'newVal';                                                                    // because x evaluates falsy the right operand is NOT assigned to 7    
+    
+    console.log( x );                                                                  // -> 'newVal'
+    console.log( y );                                                                  // -> 0
+    
+// OR assignement (||=) ---------------------------------------------------------------
+    var x = 1;
+    var y = 0;
+    
+    x ||= 'newVal';                                                                    // because x evaluates truthy the right operand is NOT assigned to x     
+    y ||= 'newVal';                                                                    // because x evaluates falsy the right operand is assigned to y    
+    
+    console.log( x );                                                                  // -> 1
+    console.log( y );                                                                  // -> 'newVal'
+    
+// NULLISH coalescing assignement (??=) -----------------------------------------------
+    var x = 1;
+    var y = null;
+    
+    x ??= 'newVal';                                                                    // because x not evaluates null or undefined the right operand is NOT assigned to x 
+    y ??= 'newVal';                                                                    // because x evaluates null or undefined the right operand is assigned to y
+    
+    console.log( x );                                                                  // -> 1
+    console.log( y );                                                                  // -> 'newVal'
+    </pre>
+</details> 
 <!------------------------------------------------------------------------------------------------------------------------->        
 <hr>
-<h2><u> Comparison Operators </u></h2>
-    <p> - comparison operators compare 2 values and return a boolean result <mark>true</mark> or <mark>false</mark></p>
-    <p style="color:yellow;"> - comparison operators compare <u>primitive values</u>, therefore 2 objects cannot be compared (returns <mark>false</mark>) </p>
-    <pre class="syntax">
-SYNTAX :    <strong>value</strong> == <strong>value</strong>                      // "abstract equality comparison", returns <mark>true</mark> if the values are equal (no data type test)
-            <strong>value</strong> === <strong>value</strong>                     // "same value comparison", returns <mark>true</mark> if the values and the datatypes are equal 
-            <strong>value</strong> != <strong>value</strong>                      // "abstract equality comparison not" returns <mark>true</mark> if the values are <u>not</u> equal (no data type test)
-            <strong>value</strong> !== <strong>value</strong>                     // "same value comparison not" returns <mark>true</mark> if the values and the datatypes are <u>not</u> equal
-                
-            <strong>value</strong> &lt; <strong>value</strong>                       // "less than" returns <mark>true</mark> if the left value is lower (no data type test)
-            <strong>value</strong> &lt;= <strong>value</strong>                      // "less or equal than" returns <mark>true</mark> if the left value is lower or equal (no data type test)
-            <strong>value</strong> &gt; <strong>value</strong>                       // "greater than" returns <mark>true</mark> if the left value is greather (no data type test)
-            <strong>value</strong> &gt;= <strong>value</strong>                      // "greater or equal than" returns <mark>true</mark> if the left value is greater or equal (no data type test)
-    </pre>    
+<h2 style="color:darkblue;"><u> Comparison Operators <mark>==</mark> / <mark>===</mark> / <mark>!=</mark> / <mark>!==</mark> / <mark>&lt;</mark> / <mark>&lt;=</mark> / <mark>&gt;</mark> / <mark>&gt;=</mark> </u></h2>
+    <p> - comparison operators compare 2 values and return a boolean result (<mark>true</mark> or <mark>false</mark>) </p>
+    <p style="color:yellow;"> - comparison operators compare <u>only primitive values</u>, therefore 2 objects cannot be compared (comparign object always returns <mark>false</mark>) </p>
+<details class="example">
+<summary> DEMO </summary>  
     <pre>
-    myObj == myObj                              // -> false             <span style="color:orangered;">//objects cannot be compared! <u>always "false"</u></span>
-    "5" == 5                                    // -> true
-    "5" === 5                                   // -> false             // datatypes are not equal
-    "5" != 5                                    // -> false             // both values are equal
-    "5" !== 5                                   // -> true              // datatypes are not equal
+    myObj == myObj                                                                     // -> false             // -! cannot compare complex data types (always returns false)    
     
-    "3" &lt; 5                                     // -> true              // no datatype test
-    "5" &lt;= 5                                    // -> true              
-    "3" &gt; 5                                     // -> false              
-    "5" &gt;= 5                                    // -> true
+    "5" == 5                                                                           // -> true
+    "5" === 5                                                                          // -> false             // datatypes are not equal
+    "5" != 5                                                                           // -> false             // both values are equal
+    "5" !== 5                                                                          // -> true              // datatypes are not equal
     
-    "abc" &lt; "def"                               // -> true              // strings are compared in <u>Alphabetical Order</u> 
-    "apa" &lt; "anya"                              // -> false
-    "a" &gt; 15                                    // -> false             // letter compared to a number <u>always "false"</u>
-    "a" &gt; "15"                                  // -> true              // numbers are placed <u>before letters</u> when it comes to an Alphabetical comparison 
+    "3" &lt; 5                                                                            // -> true              // no datatype test
+    "5" &lt;= 5                                                                           // -> true              
+    "3" &gt; 5                                                                            // -> false              
+    "5" &gt;= 5                                                                           // -> true
+    
+    "abc" &lt; "def"                                                                      // -> true              // strings are compared in <u>Alphabetical Order</u> 
+    "apa" &lt; "anya"                                                                     // -> false
+    "a" &gt; 15                                                                           // -> false             // letter compared to a number <u>always "false"</u>
+    "a" &gt; "15"                                                                         // -> true              // numbers are placed <u>before letters</u> when it comes to an Alphabetical comparison 
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>  
 <h4><u> TEST 1 </u></h4>
@@ -825,31 +1719,40 @@ SYNTAX :    <strong>value</strong> == <strong>value</strong>                    
 &lt;/script&gt;    
         </pre>
         </details>
-</details>    
+</details>  
 <!-------------------------------------------------------------------------------------------------------------------->    
 <hr>
-<h2><u> Logical Operators </u></h2>
-    <p> - logical operators try to convert expression into boolean and act accordingly </p>
-    <pre class="syntax">
-SYNTAX :    <strong>exp_1</strong> &amp;&amp; <strong>exp_2</strong>                      // "logical AND" if the 1st expression is "false" it returns the <u>1st exression</u> <u style="color:orange;">(and never evaluates the 2nd one [Short-Circuits])</u>, otherwise returns the 2nd expression  
-            <strong>exp_1</strong> || <strong>exp_2</strong>                      // "logical OR" if the 1st expression is "true" it returns the <u>1st expression</u> <u style="color:orange;">(and never evaluates the 2nd one [Short-Circuits])</u>, otherwise returns the 2nd expression  
-            !<strong>exp</strong>                                // "logical NOT" if the expression is "ture" it returns <mark>false</mark>, otherwise returns <mark>true</mark>
-    </pre> 
+<h2 style="color:darkblue;"><u> Logical Operators <mark>&&</mark> / <mark>||</mark> / <mark>!</mark> / <mark>??</mark> </u></h2>
+<details class="example> 
+<summary> DEMO </summary>    
     <pre>
-    "myString" &amp;&amp; undefined;                    // -> undefined     // 1st exression is "true" it returns the 2nd one
-    null || 66;                                 // -> 66            // 1st expression is "false" it returns the 2nd one
-// SHORT-CIRCUITING ------------------------    
-    undefined &amp;&amp; ImaFucking_Virus               // -> undefined     // 1st expression is "false" so it is returned
-                                                                    <span style="color:orangered;">//2nd expression (ImaFucking_Virus) is <u>not even evaluated</u> [an exception should be trown but nothing happens = SHORT-CIRCUITING]</span>  
-    21 || ImaFucking_Virus                      // -> 21            // 1st expression is "ture" so it is returned
-                                                                    <span style="color:orangered;">//2nd expression (ImaFucking_Virus) is <u>not even evaluated</u> [an exception should be trown but nothing happens = SHORT-CIRCUITING]</span>  
-// logical NOT -----------------------------
-    !21                                         // -> false         // expression can be evalueate "true"
-    !null                                       // -> true          // expression cannot be evaluated "true"
+// logical AND (&&) -------------------------------------------------------------------
+    "myStr" &amp;&amp; "myStr2";                                                               // -> "myStr2"     // left exression evaluated true -> returns the right expression   
+    
+    0 &amp;&amp; nothing;                                                                      // -> 0            // left exression evaluated false -> returns the left expression  
+                                                                                                          // -! right expression 'nothing' never get evaluated (short circuiting)     
+    
+// logical OR (||) --------------------------------------------------------------------
+    null || "myStr";                                                                   // -> "myStr"      // left expression evaluated false -> returns the right expression    
+    
+    "myStr" || nothing;                                                                // -> 0            // left expression evaluated false -> returns the left expression    
+                                                                                                          // -! right expression 'nothing' never get evaluated (short circuiting)     
+    
+// logical NULLISH (??) ---------------------------------------------------------------
+    null ?? "myStr";                                                                   // -> "myStr"      // left expression evaluated null or undefined -> returns the right expression    
+    undefined ?? "myStr";                                                              // -> "myStr" 
+    
+    false ?? nothing;                                                                  // -> false        // left expression evaluated not null or undefined -> returns the left expression    
+                                                                                                          // -! right expression 'nothing' never get evaluated (short circuiting)     
+    
+// logical NOT ------------------------------------------------------------------------
+    !21                                                                                // -> false        // expression evaluated true -> returns false    
+    !null                                                                              // -> true         // expression evaluated false -> returns true 
     </pre>
+</details>
 <details class="example"> 
 <summary> Example : </summary>    
-<h4><u> Simple Comparaison </u></h4>
+<h4 style="color:darkblue;"><u> Simple Comparaison </u></h4>
     <p id="logicalOp"></p>
 <script>
     var a = (2 > 1);        // true expression
@@ -877,7 +1780,9 @@ SYNTAX :    <strong>exp_1</strong> &amp;&amp; <strong>exp_2</strong>            
 &lt;/script&gt;
     </pre>
     </details>
-<h4><u> logical <mark>!</mark> (NOT) TEST </u></h4>
+<!-------------------------------------------------------------------------------------------------------------------->      
+<hr>
+<h4 style="color:darkblue;"><u> logical <mark>!</mark> (NOT) TEST </u></h4>
     <p> - converted boolean values are flipped</p>
     <p id="logNot"></p>
 <script>
@@ -896,7 +1801,9 @@ SYNTAX :    <strong>exp_1</strong> &amp;&amp; <strong>exp_2</strong>            
 &lt;/script&gt;    
         </pre>
         </details>
-<h4><u> <mark>&amp;&amp;</mark> / <mark>||</mark> Short-Circuiting TEST </u></h4>    
+<!-------------------------------------------------------------------------------------------------------------------->      
+<hr>
+<h4 style="color:darkblue;"><u> <mark>&amp;&amp;</mark> / <mark>||</mark> Short-Circuiting TEST </u></h4>    
     <p id="shortCircuit"></p>
 <script>
     document.getElementById("shortCircuit").innerHTML = 
@@ -937,80 +1844,89 @@ SYNTAX :    <strong>exp_1</strong> &amp;&amp; <strong>exp_2</strong>            
         </details>
 </details>
 <!-------------------------------------------------------------------------------------------------------------------->      
-
-
 <hr>
-<h2><u> Bitwise Operators </u></h2>
-    <p> - JavaScript stores numbers in 64 bits floating point numbers, but when it comes to bitwise operation JS converts them into <u><b>32 bits binary signed integers</b></u>, after the operation numbers are converted back to 64 bits floating point again </p>
-    <p> - bitwise operators work with the binary representatinon of a number not with the number's value, (threat a set of bits instead of a single number) </p>
-    <pre class="syntax">
-SYNTAX :    <strong>nr</strong> &amp; <strong>nr</strong>                                                                    // "bitwise AND" sets the current bit in the sequence to <mark>1</mark> if both bits are <mark>1</mark>
-            <strong>nr</strong> | <strong>nr</strong>                                                                    // "bitwise OR" sets the current bit in the sequence to <mark>1</mark> if one of the two is <mark>1</mark> or both are <mark>1</mark>
-            <strong>nr</strong> ^ <strong>nr</strong>                                                                    // "bitwise XOR" sets the current bit in the sequence to <mark>1</mark> if one of the two bits is <mark>1</mark>
-            
-            ~<strong>nr</strong>                                                                        // "bitwise NOT" inverts all the bits
-            
-            <strong>nr</strong> &lt;&lt; <strong>nr</strong>                                                                   // "bitwise Left Shift Zero-Fill" shifts the bits of the left operand to left specified by the right operand and fills the new space with <mark>0</mark>
-            <strong>nr</strong> &gt;&gt;&gt; <strong>nr</strong>                                                                  // "bitwise Right Shift Zero-Fill" shifts the bits of the left operand to right specified by the right operand and fills the new space with <mark>0</mark>
-            <strong>nr</strong> &gt;&gt; <strong>nr</strong>                                                                   // "bitwise Right Shift Preserve-Fill" shifts the bits ot the left operand to right specified by the right operand and fills the new space by using the <u>current front bit</u>     
-    </pre>
+<h2 style="color:darkblue;"><u> Bitwise Operators <mark>&</mark> / <mark>|</mark> / <mark>^</mark> / <mark>~</mark> / <mark>&lt;&lt;</mark> / <mark>&gt;&gt;&gt;</mark> / <mark>&gt;&gt;</mark> </u></h2>
+    <p> - JavaScript stores numbers as 64 bit double precision floating points, but bitwise operations are performend on 32bit signed integers </p>
+    <p> - bitwise operations are performend on bit level </p>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
 // bitwise AND ------------------------------------------------------------------------
-    21 &amp; 68;                                                                           // -> 4      
-        // 21 (decimal) = 00000000000000000000000000010101 (32 bits binary)   
-        // 68 (decimal) = 00000000000000000000000001000100 (32 bits binary)
-        //  4 (decimal) = 00000000000000000000000000000100 (32 bits binary)            // sets the bit to 1 if both are 1
-                 
+    21 &amp; 68;                                                                           // -> 4 
+        //               (32bit signed integer binary representation)   
+        // 21               -> 00000000000000000000000000010101 
+        // 68               -> 00000000000000000000000001000100 
+        //  4               -> 00000000000000000000000000000100                        // sets the bits to 1 where both operands have 1 bits 
+    
+    
 // bitwise OR -------------------------------------------------------------------------
     21 | 68;                                                                           // -> 85       
-        // 21 (decimal) = 00000000000000000000000000010101 (32 bits binary)   
-        // 68 (decimal) = 00000000000000000000000001000100 (32 bits binary)
-        // 85 (decimal) = 00000000000000000000000001010101 (32 bits binary)            // sets the bit to 1 if one of the two is 1 or both are 1 
-                
+        // 21               -> 00000000000000000000000000010101 
+        // 68               -> 00000000000000000000000001000100 
+        // 85               -> 00000000000000000000000001010101                        // sets the bits to 1 where operands have 1 bits 
+    
+    
 // bitwise XOR ------------------------------------------------------------------------           
-    21 ^ 68;                                                                           // -> 81     
-        // 21 (decimal) = 00000000000000000000000000010101 (32 bits binary)   
-        // 68 (decimal) = 00000000000000000000000001000100 (32 bits binary)       
-        // 81 (decimal) = 00000000000000000000000001010001 (32 bits binary)            // sets the bit to 1 if both are 1 only
-                
-// bitwise NOT ------------------------------------------------------------------------    
+    21 ^ 68;                                                                           // -> 81 
+        //               (32bit signed integer binary representation)   
+        // 21               -> 00000000000000000000000000010101 
+        // 68               -> 00000000000000000000000001000100 
+        // 81               -> 00000000000000000000000001010001                        // sets the bits to 1 where operands have 1 bits 
+                                                                                       // sets the bits to 0 where both operands have 1 bits 
+    
+// bitwise NOT ------------------------------------------------------------------------  
     ~21;                                                                               // -> -22 
-        //   21 (decimal) = 00000000000000000000000000010101 (32 bits binary)                   
-        //  -22 (decimal) = 11111111111111111111111111101010 (32 bits binary)          // inverses the bit value 
-    ~68;                                                                               // -> - 69           
-        //   68 (decimal) = 00000000000000000000000001000100 (32 bits binary)                   
-        //  -69 (decimal) = 11111111111111111111111110111011 (32 bits binary)          // inverses the bit value
-               
-// bitwise Left Shift Zero-Fill -------------------------------------------------------
+        //               (32bit signed integer binary representation)   
+        //   21             -> 00000000000000000000000000010101  
+        //  -22             -> 11111111111111111111111111101010                        // inverses the bits 
+        
+    ~68;                                                                               // -> -69 
+        //               (32bit signed integer binary representation)   
+        //   68             -> 00000000000000000000000001000100                                 
+        //  -69             -> 11111111111111111111111110111011                        // inverses the bits 
+    
+    
+// bitwise left shift (zero-fill) -----------------------------------------------------
     21 &lt;&lt; 1;                                                                           // -> 42
-        //  21 (decimal) = 00000000000000000000000000010101 (32 bits binary)                   
-        //  42 (decimal) = 00000000000000000000000000101010 (32 bits binary)           // all bits are shifted to left by 1 and the added bit is 0
+        //               (32bit signed integer binary representation)   
+        //                  -> 00000000000000000000000000010101 
+        //                  -> 00000000000000000000000000101010                        // fills 0's on the right while shifting    
     
     68 &lt;&lt; 3;                                                                           // -> 544
-        //  68 (decimal) = 00000000000000000000000001000100 (32 bits binary)                   
-        // 544 (decimal) = 00000000000000000000001000100000 (32 bits binary)           // all bits are shifted to left by 3 and the added bits are 0
-               
-// bitwise Right Shift Zero-Fill ------------------------------------------------------
+        //               (32bit signed integer binary representation)   
+        //                  -> 00000000000000000000000001000100 
+        //                  -> 00000000000000000000001000100000                        // fills 0's on the right while shifting    
+        
+        
+// bitwise right shift (zero-fill) ----------------------------------------------------
     21 &gt;&gt;&gt; 1;                                                                          // -> 10
-        //       21 (decimal) = 00000000000000000000000000010101 (32 bits binary)           
-        //       10 (decimal) = 00000000000000000000000000001010 (32 bits binary)      // all bits are shifted to right by 1 and the added bit is 0
+        //               (32bit signed integer binary representation)   
+        //                  -> 00000000000000000000000000010101
+        //                  -> 00000000000000000000000000001010                        // fills 0's on the left while shifting    
     
     -68 &gt;&gt;&gt; 6;                                                                         // -> 67108862
-        //      -68 (decimal) = 11111111111111111111111110111100 (32 bits binary)                   
-        // 67108862 (decimal) = 00000011111111111111111111111110 (32 bits binary)      // all bits are shifted to right by 6 and the added bits are 0s
-          
-// bitwise Right Shift Preserve-Fill --------------------------------------------------
+        //               (32bit signed integer binary representation)   
+        //      -68         -> 11111111111111111111111110111100
+        // 67108862         -> 00000011111111111111111111111110                        // fills 0's on the left while shifting    
+    
+    
+// bitwise right shift (left-bit-preserve) --------------------------------------------
     2607208886 &gt;&gt; 3;                                                                   // -> -210969802
-        //  2607208886 (decimal) = 10011011011001101101100110110110 (32 bits binary)                   
-        //  -210969802 (decimal) = 11110011011011001101101100110110 (32 bits binary)   // all bits shifted to right by 3 and the added bits are 1 in this case because the binary representation starts with 1   
+        //               (32bit signed integer binary representation)   
+        //  2607208886      -> 10011011011001101101100110110110  
+        //  -210969802      -> 11110011011011001101101100110110                        // the leftmost bit is copied over while shifting    
     
     1801902518 &gt;&gt; 7;                                                                   // -> 14077363
-        //  1801902518 (decimal) = 01101011011001101101100110110110 (32 bits binary)                   
-        //    14077363 (decimal) = 00000000110101101100110110110011 (32 bits binary)   // all bits shifted to right by 7 and the added bits are 0 in this case because the binary representation starts with 0     
+        //               (32bit signed integer binary representation)   
+        //  1801902518      -> 01101011011001101101100110110110 
+        //    14077363      -> 00000000110101101100110110110011                        // the leftmost bit is copied over while shifting    
+        
+    -2147483648 &gt;&gt; 5;                                                                  // -> -67108864
+        //               (32bit signed integer binary representation)   
+        //  -2147483648     -> 10000000000000000000000000000000  
+        //  -67108864       -> 11111100000000000000000000000000                        // the leftmost bit is copied over while shifting    
     </pre>
-    
-
-    
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4><u> Bitwise awesome calculator </u></h4>
@@ -1297,422 +2213,77 @@ SYNTAX :    <strong>nr</strong> &amp; <strong>nr</strong>                       
 &lt;/script&gt;
     </pre>
     </details>
-</details>    
+</details> 
 <!-------------------------------------------------------------------------------------------------------------------->
 <hr>
-<h2><u> Other Operators </u></h2>    
-<h2 style="color:darkblue;"><u> the <mark>delete</mark> operator </u></h2>
-    <pre class="syntax">
-SYNTAX :    delete <strong>obj.property</strong>                                                        // deletes an object's <u>native</u> property and returns a boolean feedback (which is not reliable!) (cannot delete "non-configurable" properties or identifiers declared with <mark>var</mark> / <mark>let</mark> / <mark>const</mark>)  
-            delete <strong>obj["property"]</strong>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>void</mark> operator </u></h2>   
+<details class="example">
+<summary> DEMO </summary>
     <pre>
-    var myObj = {ex1:"first-row", ex2:"second-row", ex3:"third-row", ex4:"third-row"};
-        Object.defineProperty(myObjTEST, "ex2", {configurable:false});                 // property set to "non-configurable"
-    var myVar = "myString";
+// used as bookmarklet <u>(works with this syntax only!)</u> (common usage)    
+    &lt;a href="javascript:void( alert('JS fired!') )"&gt; open &lt;/a&gt;                         // does not force the browser to open a new window because the void returns "undefined"     
     
-    delete myObj.ex1;                                                                  // -> true         // property deleted
-    myObj.ex1;                                                                         // -> undefined
-    
-// pitfalls ---------------------------------------------------------------------------    
-    delete myObj.ex5;                                                                  // -> true         // -! has no effect because the property does not exist but "true" is returned (careful!)
-    delete myVar;                                                                      // -> true         // -! does not delete declared identifiers but returns "true" in "strict mode" this fails (careful!) 
-    delete myObjTEST.hasOwnProperty;                                                   // -> true         // -! cannot delete built-in properties but returns "true" (careful!)
-    delete myObjTEST.ex2;                                                              // -> false        // -! "non-configurable" property cannot be deleted in "strict mode" this fails
-    
-// undefined VS delete ----------------------------------------------------------------
-    myObjTEST.ex3 = undefined;  
-    delete myObjTEST.ex4;
-        
-    myObjTEST.hasOwnProperty("ex3");                                                   // -> true         // property still exist we only changed its value
-    myObjTEST.hasOwnProperty("ex4");                                                   // -> false        // property doesn't exist anymore
+//  --------------------------------------------    
+    void 10 + 10;                                                                      // -> undefined      // does not work with the "href" attribute! (throws error)  
+    void(10 + 10);                                                                     // -> undefined      // use this in 'href' attributes 
     </pre>
-<details class="example">    
-<summary> Example : </summary>    
-<h4><u> Delete an object property </u></h4>
-    <p id="del"></p>
-<script>
-    var testObj = {P1:"one", P2:"two", P3:"three", P4:"four"};
-    var i, ObjMemory = "";
-    delete testObj.P2;                          // property deleted (removed from memory)
-    testObj.P3 = null;                          // property set to null (property still in memory but without value)
-    
-    for (i in testObj){
-        ObjMemory += testObj[i] + "<br>";
-    }
-     
-    document.getElementById('del').innerHTML = ObjMemory;
-</script>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p id="del"&gt;&lt;/p&gt;
-&lt;script&gt;
-    var testObj = {P1:"one", P2:"two", P3:"three", P4:"four"};
-    var i, ObjMemory = "";
-    delete testObj.P2;                          // property deleted (removed from memory)
-    testObj.P3 = null;                          // property set to null (property still in memory but without value)                         
-    
-    for (i in testObj){
-        ObjMemory += testObj[i] + "&lt;br&gt;";
-    }
-     
-    document.getElementById('del').innerHTML = ObjMemory;
-&lt;/script&gt;
-        </pre>
-        </details>
-<h4><u> operator feedback </u></h4>
-    <p id="del-value"></p>
-<script>
-    var TObj = {p1:"one", p2:"two", p3:"three"};
-    var TVar = "I'm a variable";
-    
-    var delObj = delete TObj.p3;                        // "true" property successfully deleted
-    var delVar = delete TVar;                           // not an object property therefore cannot be deleted therefore returns "false"
-    
-    document.getElementById('del-value').innerHTML = 
-        "Object Property can be deleted = " + delObj + "<br>" +
-        "Variable can be deleted = " + delVar;
-</script>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p id="del-value"&gt;&lt;/p&gt;
-&lt;script&gt;
-    var TObj = {p1:"one", p2:"two", p3:"three"};
-    var TVar = "I'm a variable";
-    
-    var delObj = delete TObj.p3;                        // "true" property successfully deleted
-    var delVar = delete TVar;                           // not an object property therefore cannot be deleted therefore returns "false"
-    
-    document.getElementById('del-value').innerHTML = 
-        "Object Property can be deleted = " + delObj + "&lt;br&gt;" +
-        "Variable can be deleted = " + delVar;
-&lt;/script&gt;
-        </pre>
-        </details>
-<h4><u> delete operator in strict mode TEST</u></h4>  
-<script>
-"use strict";    
-    var myObjT = {prop1:"Pall", prop2:"Te"};
-    var primitiveValue = 20;
-    
-    delete myObjT.prop1;
-    delete primitiveValue;                  // throws an error because of strict mode (error cannot be caught by the catch statement because of the "strict mode" error handling)
-</script>    
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-&lt;script&gt;
-"use strict";    
-    var myObjT = {prop1:"Pall", prop2:"Te"};
-    var primitiveValue = 20;
-    
-    delete myObjT.prop1;
-    delete primitiveValue;                  // throws an error because of strict mode (error cannot be caught by the catch statement because of the "strict mode" error handling)
-&lt;/script&gt;          
-        </pre>
-        </details>
-<h4><u> delete not existing property returns "true" / can only delete native properties TEST </u></h4>    
-    <p id="deleteTEst"></p>
-<script>
-    var myObjA = {a:1, b:2, c:3, nestObj:{A:11, B:22, C:33}};
-    var myObjB = {name:"Arpad", surename:"Pall", age:33};
-    
-    Object.setPrototypeOf(myObjB, myObjA);                                          // myObjA is the prototype of myObjA
-    
-// print -------
-    document.getElementById("deleteTEst").innerHTML =
-        "Acces inherited property = " + myObjB.nestObj["A"] + "<br>" +              // we accessed an inherited property 
-        "Non existing property delete result = " + delete myObjA.d + "<br>" +       // non existing property delete result returns "true"
-        "delete inherited property will fail! = " + delete myObjB.c + "<br>" +      // deleting inherited property returns "true" but never deleted
-        "previously deleted attempt property still exist = " + myObjB.c;            // inherited property not deleted
-</script>    
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p id="deleteTEst"&gt;&lt;/p&gt;
-&lt;script&gt;
-    var myObjA = {a:1, b:2, c:3, nestObj:{A:11, B:22, C:33}};
-    var myObjB = {name:"Arpad", surename:"Pall", age:33};
-    
-    Object.setPrototypeOf(myObjB, myObjA);                                          // myObjA is the prototype of myObjA
-    
-// print -------
-    document.getElementById("deleteTEst").innerHTML =
-        "Acces inherited property = " + myObjB.nestObj["A"] + "&lt;br&gt;" +              // we accessed an inherited property 
-        "Non existing property delete result = " + delete myObjA.d + "&lt;br&gt;" +       // non existing property delete result returns "true"
-        "delete inherited property will fail! = " + delete myObjB.c + "&lt;br&gt;" +      // deleting inherited property returns "true" but never deleted
-        "previously deleted attempt property still exist = " + myObjB.c;            // inherited property not deleted
-&lt;/script&gt;     
-        </pre>
-        </details>
-<h4><u> attempt to delete properties declared by the <mark>var</mark> / <mark>let</mark> / <mark>const</mark> identifiers </u></h4>    
-    <p id="idDel"></p>
-<script>
-    var propVar = "A";
-    let propLet = "B";
-    const propConst = "C";
-    globalProp = "D";               // this can be deleted however "strict mode" does not like it at all!
-    
-// print ----------
-    document.getElementById("idDel").innerHTML =
-        "var delete = " + delete window.propVar + " | var content = " + propVar + "<br>" +            // var identifier delete fails
-        "let delete = " + delete window.propLet + " | let content = " + propLet + "<br>" +            // let identifier delete fails however it retruns "true"          
-        "const delete = " + delete window.propConst + " | const content = " + propConst + "<br>" +    // const identifier delete fails however it retruns "true"
-        "property declared without identifer on the global scope delete = " + delete window.globalProp + " global property content = " + window.globalProp;
-</script>    
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p id="idDel"&gt;&lt;/p&gt;
-&lt;script&gt;
-    var propVar = "A";
-    let propLet = "B";
-    const propConst = "C";
-    globalProp = "D";               // this can be deleted however "strict mode" does not like it at all!
-    
-// print ----------
-    document.getElementById("idDel").innerHTML =
-        "var delete = " + delete window.propVar + " | var content = " + propVar + "&lt;br&gt;" +            // var identifier delete fails
-        "let delete = " + delete window.propLet + " | let content = " + propLet + "&lt;br&gt;" +            // let identifier delete fails however it retruns "true"          
-        "const delete = " + delete window.propConst + " | const content = " + propConst + "&lt;br&gt;" +    // const identifier delete fails however it retruns "true"
-        "property declared without identifer on the global scope delete = " + delete window.globalProp + " global property content = " + window.globalProp;  
-&lt;/script&gt;    
-        </pre>
-        </details>
-<h4><u> not configurable property delete TEST </u></h4>    
-    <p id="notConf"></p>
-<script>
-    var nonConfObj = {configProp:"myValue_1", nonConfigProp:"myValue_2"};
-    
-    Object.defineProperty(nonConfObj, "nonConfigProp", {configurable:false});       // property set to non configurable
-    
-    delete nonConfObj.configProp;                                                   // delete attempt
-    delete nonConfObj.nonConfigProp;
-    
-// print ---
-    document.getElementById("notConf").innerHTML = 
-        "configurabe property delete result = " + nonConfObj.configProp + "<br>" + 
-        "non-configurable property delete result = " + nonConfObj.nonConfigProp;
-</script>    
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p id="notConf"&gt;&lt;/p&gt;
-&lt;script&gt;
-    var nonConfObj = {configProp:"myValue_1", nonConfigProp:"myValue_2"};
-    
-    Object.defineProperty(nonConfObj, "nonConfigProp", {configurable:false});       // property set to non configurable
-    
-    delete nonConfObj.configProp;                                                   // delete attempt
-    delete nonConfObj.nonConfigProp;
-    
-// print ---
-    document.getElementById("notConf").innerHTML = 
-        "configurabe property delete result = " + nonConfObj.configProp + "&lt;br&gt;" + 
-        "non-configurable property delete result = " + nonConfObj.nonConfigProp;
-&lt;/script&gt;    
-        </pre>
-        </details>
-<h4><u> delete functions and nested Objects TEST</u></h4>    
-    <p id="deleteMultipleLevel"></p>
-<script>
-    var bigMouse = {
-        name : "Mici Maci",
-        nameReturn : function() { return this.name; },
-        nestedObj : {a:"a", b:"b", c:"c"},
-        objDate : new Date()
-    }
-    
-    delete bigMouse.name;
-    delete bigMouse.nameReturn;
-    delete bigMouse.nestedObj;
-    delete bigMouse.objDate;
-    
-// print ---
-    document.getElementById("deleteMultipleLevel").innerHTML =
-        "simple property = " + bigMouse.name + "<br>" +
-        "function = " + bigMouse.nameReturn + "<br>" +              // if I wolud call a deleted function it would throw an exception
-        "nestedObj = " + bigMouse.nestedObj + "<br>" +                  // same goes here if a nested property is called 
-        "date = " + bigMouse.objDate;
-</script>    
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p id="deleteMultipleLevel"&gt;&lt;/p&gt;
-&lt;script&gt;
-    var bigMouse = {
-        name : "Mici Maci",
-        nameReturn : function() { return this.name; },
-        nestedObj : {a:"a", b:"b", c:"c"},
-        objDate : new Date()
-    }
-    
-    delete bigMouse.name;
-    delete bigMouse.nameReturn;
-    delete bigMouse.nestedObj;
-    delete bigMouse.objDate;
-    
-// print ---
-    document.getElementById("deleteMultipleLevel").innerHTML =
-        "simple property = " + bigMouse.name + "&lt;br&gt;" +
-        "function = " + bigMouse.nameReturn + "&lt;br&gt;" +              // if I wolud call a deleted function it would throw an exception
-        "nestedObj = " + bigMouse.nestedObj + "&lt;br&gt;" +                  // same goes here if a nested property is called 
-        "date = " + bigMouse.objDate;
-&lt;/script&gt;    
-        </pre>
-        </details>
-</details>    
-<!-------------------------------------------------------------------------------------------------------------------->
-<hr>
-<h2 style="color:darkblue;"><u> the spread operator <mark>...</mark> (new in ES6) </u></h2>
-    <pre class="syntax">
-SYNTAX :    ...<strong>obj</strong>                              // sprads an object's properties/values to the targeted area <span style="color:orange;">(new in ES6) (("spread operator") not a real operator therefore has no precedence)</span>  
-    </pre>
-    <p> - the <mark>...</mark> spread operator mostly used with arrays </p>
-    <pre>
-    var myArray = [1, 2, 3];
-
-// used on a function 
-    function myFunc(a, b, c) {
-        return a + b + c;
-    }
-    myFunc(...myArray);                         // returns "6" array items applied as function arguments
-    
-// combined arrays
-    var myArray_2 = [a, b, ...myArray, c, d];
-    myArray_2;                                  // returns "a,b,1,2,3,c,d" (gives position control)
-    </pre>
-    <p> - used on Objects </p>
-    <pre>
-    myObj = {prop_1:"value_1",
-             nestedObj:{nestProp:"nestValue"}   // nested object
-             };
-    
-    myObj_2 = {prop_1_Obj2:"value_1_Obj2", ...myObj};
-    
-// after combining the two objects with the spread operator this looks like this 
-    myObj_2 = {prop_1_Obj2:"value_1_Obj2", 
-               prop_1:"value_1",
-               nestedObj:{nestProp:"nestValue"}
-               };
-    </pre>
-    <p> - used on function call (this is amazing) </p>
-    <pre>
-    function min(...n) {                        // pased arguments are spreaded here
-        arguments[0];                           // -> 1
-        arguments[1];                           // -> 2
-        arguments[2];                           // -> 3
-        n                                       // -> [1, 2, 3]
-    }
-    min(1, 2, 3);
-    </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
-<h4><u> Array used as a function argument </u></h4>
-    <p id="spread_funcArg"></p>
-<script>
-    var maryBiography = ["Phoenix", "Marie", "blonde", 35];
-    var bobbiBiography = ["Bobbi", "Starr", "chestnut", 28];
-    
-    function printBiography () {
-        return "Name : " + arguments[0] + " " + arguments[1] + " / age : " + arguments[3] + " / haricolor : " + arguments[2];  
-    }
-    
-// print
-    document.getElementById('spread_funcArg').innerHTML =
-        printBiography(...maryBiography) + "<br>" +
-        printBiography(...bobbiBiography);
-</script>
+<h4><u> bookmarklets <mark>void</mark> TEST </u></h4>
+    <p> - some browsers (like Mozilla tested [2018-12-26]) returns the value of the expression on a new page, the <mark>void</mark> operator executes the expression but retruns always <mark>undefined</mark>, therefore the browser won't leave the page </p>
+    <a href="javascript: 1 + 3"> expression without "void" </a> <br>
+    <a href="javascript:void(1 + 3)"> expression with "void" </a>
         <details>
         <summary> CODE : </summary>
         <pre>
-    &lt;p id="spread_funcArg"&gt;&lt;/p&gt;
-&lt;script&gt;
-    var maryBiography = ["Phoenix", "Marie", "blonde", 35];
-    var bobbiBiography = ["Bobbi", "Starr", "chestnut", 28];
-    
-    function printBiography () {
-        return "Name : " + arguments[0] + " " + arguments[1] + " / age : " + arguments[3] + " / haricolor : " + arguments[2];  
-    }
-    
-// print
-    document.getElementById('spread_funcArg').innerHTML =
-        printBiography(...maryBiography) + "&lt;br&gt;" +
-        printBiography(...bobbiBiography);
-&lt;/script&gt;
+    &lt;a href="javascript: 1 + 3"> expression without "void" &lt;/a&gt; &lt;br&gt;
+    &lt;a href="javascript:void(1 + 3)"> expression with "void" &lt;/a&gt;    
         </pre>
         </details>
-<h4><u> Combine Objects </u></h4>
-    <p id="obj_Combine"></p>
+<h4><u> <mark>void <span style="color:orange;">exp</span></mark> VS <mark>void(<span style="color:orange;">exp</span>)</mark></u></h4>
+    <p id="barbie"></p>
+    <a href="javascript:void(document.body.style.color = 'red')"> Turn to RED </a>
 <script>
-    var mercedess = {color:"white",
-                     engine:{fuel:"diesel", 
-                             type:"V6",
-                             injection:{temperature:41,
-                                        order:[4, 1, 6, 2, 3, 5]
-                                       }
-                            },
-                     transmission:{type:["manual", "automatic"],
-                                   clutch:["single", "dual"]
-                                  }
-                    }; 
+    var callDoll = function() {
+        return "Barbie";
+    }
     
-    var audi = {wheelDrive:"Quatro", ...mercedess, sellPrice:75000};            // this object contains everythin what's in "mercedess" object
-
-// print spreaded values 
-    document.getElementById('obj_Combine').innerHTML =
-        audi.color + " / " +                                
-        audi["engine"]["type"] + " / " +  
-        audi.engine.injection.order[2] + " / " + 
-        audi["transmission"]["clutch"][1];
-</script>
+    var void1 = void callDoll();
+    var void2 = void( callDoll() );             // no difference here 
+    
+    document.getElementById("barbie").innerHTML = 
+        void1 + "<br>" +
+        void2;
+</script>    
         <details>
         <summary> CODE : </summary>
         <pre>
-    &lt;p id="obj_Combine"&gt;&lt;/p&gt;
+    &lt;a href="javascript:void(document.body.style.color = 'red')"&gt; Turn to RED &lt;/a&gt;      // the "void exp" is not usable here! (throws exception)
 &lt;script&gt;
-    var mercedess = {color:"white",
-                     engine:{fuel:"diesel", 
-                             type:"V6",
-                             injection:{temperature:41,
-                                        order:[4, 1, 6, 2, 3, 5]
-                                       }
-                            },
-                     transmission:{type:["manual", "automatic"],
-                                   clutch:["single", "dual"]
-                                  }
-                    }; 
+    var callDoll = function() {
+        return "Barbie";
+    }
     
-    var audi = {wheelDrive:"Quatro", ...mercedess, sellPrice:75000};            // this object contains everythin what's in "mercedess" object
-
-// print spreaded values 
-    document.getElementById('obj_Combine').innerHTML =
-        audi.color + " / " +                                
-        audi["engine"]["type"] + " / " +  
-        audi.engine.injection.order[2] + " / " + 
-        audi["transmission"]["clutch"][1];
-&lt;/script&gt;
+    var void1 = void callDoll();
+    var void2 = void( callDoll() );             // no difference here 
+    
+    document.getElementById("barbie").innerHTML = 
+        void1 + "&lt;br&gt;" +
+        void2;
+&lt;/script&gt; 
         </pre>
-        </details>
-    
-<script>
-    var spreadThis = 64864;
-    
-    console.log( {...spreadThis} );
-</script> 
-</details>    
+</details>
+</details>
 <!-------------------------------------------------------------------------------------------------------------------->
 <hr>
-<h2><u> Keywords </u></h2>  
+<h2><u> Keywords </u></h2>
     <p> - JavaScript keywords = actions to be performed, these words are reserverd in JS and cannot be used for names!</p>
-<h2 style="color:darkblue;"><u> declaring identifiers <mark>var</mark> / <mark>let</mark> / <mark>const</mark></u></h2>
-    <pre class="syntax">
-SYNTAX :    var <strong>identifier</strong><i> = value</i>              // declares a <u>hoisted</u> variable (<span style="color:lightgreen;">Reassignable</span> / <span style="color:lightgreen;">Redeclarable</span>) (registered in the <b style="color:deepskyblue;">O</b>bject<b style="color:deepskyblue;">E</b>nvironment<b style="color:deepskyblue;">R</b>ecord = creates properties on the current scope)
-            let <strong>identifier</strong><i> = value</i>              // declares a <u>non-hoisted block-scope <mark>{}</mark></u> local-variable (<span style="color:lightgreen;">Reassignable</span> / <span style="color:orange;">NOT-Redeclarable</span>) (registered in the <b style="color:deepskyblue;">D</b>eclarative<b style="color:deepskyblue;">E</b>nvironment<b style="color:deepskyblue;">R</b>ecord = does NOT create properties on the current scope (registered-only)) <span style="color:orange;">(new in ES6)</span>   
-            const <strong>identifier</strong><i> = value</i>            // declares a <u>non-hoisted block-scope <mark>{}</mark></u> local-variable (<span style="color:orange;">NOT-Redeclarable</span> / <span style="color:orange;">NOT-Redeclarable</span>) (registered in the <b style="color:deepskyblue;">D</b>eclarative<b style="color:deepskyblue;">E</b>nvironment<b style="color:deepskyblue;">R</b>ecord = does NOT create properties on the current scope (registered-only)) <span style="color:orange;">(new in ES6)</span>    
-    </pre>
+<!-------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;" id="var"><u> The <mark>var</mark> / <mark>let</mark> / <mark>const</mark> keywords </u></h2>
+<details class="example">
+<summary> DEMO </summary>    
     <pre>
     if (true) {                                 // this is a block scope not a local scope! 
         var x = 10;                             // this <b><span style="color:red;">{ }</span></b> is considered as a block scope  
@@ -1767,6 +2338,7 @@ SYNTAX :    var <strong>identifier</strong><i> = value</i>              // decla
     
     myArray[0];                                 // -> "element"
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>    
 <h4><u> block scope TEST </u></h4>
@@ -1933,70 +2505,142 @@ SYNTAX :    var <strong>identifier</strong><i> = value</i>              // decla
 &lt;/script&gt;
         </pre>
         </details>
-</details>    
+</details>  
 <!-------------------------------------------------------------------------------------------------------------------->
-<hr>    
-<h2 style="color:darkblue;"><u> the <mark>void</mark> operator </u></h2>    
-    <pre class="syntax">
-SYNTAX :    void <strong>expression</strong>                     // evaluates an expression and always returns "undefined"         
-            void(<strong>expression</strong>)   <span style="color:skyblue;">// "href" attribute syntax value</span>
-    </pre>
+<hr>
+<h2 style="color:darkblue;"><u> The <mark>...</mark> (spread operator) </u></h2>
+<details class="example">
+<summary> DEMO </summary>
+    <p> - the <mark>...</mark> spread operator mostly used with arrays </p>
     <pre>
-// used as bookmarklet <u>(works with this syntax only!)</u> (common usage)    
-    &lt;a href="javascript:void( alert('JS fired!') )"&gt; open &lt;/a&gt;       // does not force the browser to open a new window because the void returns "undefined"     
+    var myArray = [1, 2, 3];
+
+// used on a function 
+    function myFunc(a, b, c) {
+        return a + b + c;
+    }
+    myFunc(...myArray);                         // returns "6" array items applied as function arguments
     
-//  --------------------------------------------    
-    void 10 + 10;                               // -> undefined      // does not work with the "href" attribute! (throws error)  
-    void(10 + 10);                              // -> undefined
+// combined arrays
+    var myArray_2 = [a, b, ...myArray, c, d];
+    myArray_2;                                  // returns "a,b,1,2,3,c,d" (gives position control)
     </pre>
+    <p> - used on Objects </p>
+    <pre>
+    myObj = {prop_1:"value_1",
+             nestedObj:{nestProp:"nestValue"}   // nested object
+             };
+    
+    myObj_2 = {prop_1_Obj2:"value_1_Obj2", ...myObj};
+    
+// after combining the two objects with the spread operator this looks like this 
+    myObj_2 = {prop_1_Obj2:"value_1_Obj2", 
+               prop_1:"value_1",
+               nestedObj:{nestProp:"nestValue"}
+               };
+    </pre>
+    <p> - used on function call (this is amazing) </p>
+    <pre>
+    function min(...n) {                        // pased arguments are spreaded here
+        arguments[0];                           // -> 1
+        arguments[1];                           // -> 2
+        arguments[2];                           // -> 3
+        n                                       // -> [1, 2, 3]
+    }
+    min(1, 2, 3);
+    </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
-<h4><u> bookmarklets <mark>void</mark> TEST </u></h4>
-    <p> - some browsers (like Mozilla tested [2018-12-26]) returns the value of the expression on a new page, the <mark>void</mark> operator executes the expression but retruns always <mark>undefined</mark>, therefore the browser won't leave the page </p>
-    <a href="javascript: 1 + 3"> expression without "void" </a> <br>
-    <a href="javascript:void(1 + 3)"> expression with "void" </a>
+<h4><u> Array used as a function argument </u></h4>
+    <p id="spread_funcArg"></p>
+<script>
+    var maryBiography = ["Phoenix", "Marie", "blonde", 35];
+    var bobbiBiography = ["Bobbi", "Starr", "chestnut", 28];
+    
+    function printBiography () {
+        return "Name : " + arguments[0] + " " + arguments[1] + " / age : " + arguments[3] + " / haricolor : " + arguments[2];  
+    }
+    
+// print
+    document.getElementById('spread_funcArg').innerHTML =
+        printBiography(...maryBiography) + "<br>" +
+        printBiography(...bobbiBiography);
+</script>
         <details>
         <summary> CODE : </summary>
         <pre>
-    &lt;a href="javascript: 1 + 3"> expression without "void" &lt;/a&gt; &lt;br&gt;
-    &lt;a href="javascript:void(1 + 3)"> expression with "void" &lt;/a&gt;    
+    &lt;p id="spread_funcArg"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var maryBiography = ["Phoenix", "Marie", "blonde", 35];
+    var bobbiBiography = ["Bobbi", "Starr", "chestnut", 28];
+    
+    function printBiography () {
+        return "Name : " + arguments[0] + " " + arguments[1] + " / age : " + arguments[3] + " / haricolor : " + arguments[2];  
+    }
+    
+// print
+    document.getElementById('spread_funcArg').innerHTML =
+        printBiography(...maryBiography) + "&lt;br&gt;" +
+        printBiography(...bobbiBiography);
+&lt;/script&gt;
         </pre>
         </details>
-<h4><u> <mark>void <span style="color:orange;">exp</span></mark> VS <mark>void(<span style="color:orange;">exp</span>)</mark></u></h4>
-    <p id="barbie"></p>
-    <a href="javascript:void(document.body.style.color = 'red')"> Turn to RED </a>
+<h4><u> Combine Objects </u></h4>
+    <p id="obj_Combine"></p>
 <script>
-    var callDoll = function() {
-        return "Barbie";
-    }
+    var mercedess = {color:"white",
+                     engine:{fuel:"diesel", 
+                             type:"V6",
+                             injection:{temperature:41,
+                                        order:[4, 1, 6, 2, 3, 5]
+                                       }
+                            },
+                     transmission:{type:["manual", "automatic"],
+                                   clutch:["single", "dual"]
+                                  }
+                    }; 
     
-    var void1 = void callDoll();
-    var void2 = void( callDoll() );             // no difference here 
-    
-    document.getElementById("barbie").innerHTML = 
-        void1 + "<br>" +
-        void2;
-</script>    
+    var audi = {wheelDrive:"Quatro", ...mercedess, sellPrice:75000};            // this object contains everythin what's in "mercedess" object
+
+// print spreaded values 
+    document.getElementById('obj_Combine').innerHTML =
+        audi.color + " / " +                                
+        audi["engine"]["type"] + " / " +  
+        audi.engine.injection.order[2] + " / " + 
+        audi["transmission"]["clutch"][1];
+</script>
         <details>
         <summary> CODE : </summary>
         <pre>
-    &lt;a href="javascript:void(document.body.style.color = 'red')"&gt; Turn to RED &lt;/a&gt;      // the "void exp" is not usable here! (throws exception)
+    &lt;p id="obj_Combine"&gt;&lt;/p&gt;
 &lt;script&gt;
-    var callDoll = function() {
-        return "Barbie";
-    }
+    var mercedess = {color:"white",
+                     engine:{fuel:"diesel", 
+                             type:"V6",
+                             injection:{temperature:41,
+                                        order:[4, 1, 6, 2, 3, 5]
+                                       }
+                            },
+                     transmission:{type:["manual", "automatic"],
+                                   clutch:["single", "dual"]
+                                  }
+                    }; 
     
-    var void1 = void callDoll();
-    var void2 = void( callDoll() );             // no difference here 
-    
-    document.getElementById("barbie").innerHTML = 
-        void1 + "&lt;br&gt;" +
-        void2;
-&lt;/script&gt; 
-        </pre>
-</details>
-</details>
+    var audi = {wheelDrive:"Quatro", ...mercedess, sellPrice:75000};            // this object contains everythin what's in "mercedess" object
 
+// print spreaded values 
+    document.getElementById('obj_Combine').innerHTML =
+        audi.color + " / " +                                
+        audi["engine"]["type"] + " / " +  
+        audi.engine.injection.order[2] + " / " + 
+        audi["transmission"]["clutch"][1];
+&lt;/script&gt;
+        </pre>
+        </details>
+</details> 
+    
+    
     <br><br>
 </body>
 </html>

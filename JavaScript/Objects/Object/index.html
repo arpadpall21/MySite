@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1> Object (ver 4.0.0) </h1>
-	<p> Updated ( 2017-07-17 / 2017-09-24 / 2018-01-17 / 2018-01-27 / 2018-03-14 / 2018-03-24 / 2018-07-10 / 2018-07-18 )</p>
+    <p> Updated ( 2017-07-17 / 2017-09-24 / 2018-01-17 / 2018-01-27 / 2018-03-14 / 2018-03-24 / 2018-07-10 / 2018-07-18 / 2021-05-25 )</p>
     <p class="sitenav"> <a href="../../../index.html">MySite></a>
         <a href="../../index.html">JavaScript></a> 
         <a href="../index.html">Objects></a> Object   
@@ -609,7 +609,7 @@ the
 </details>    
 <!-------------------------------------------------------------------------------------------------------------------------------->    
 <hr>
-<h2><u> Primitives are Unmutable VS Objects are mutable </u></h2>
+<h2><u> Primitives are immutable VS Objects are mutable </u></h2>
     <p> - Objects are addressed by reference not by value therefore they are mutable </p>
     <p style="text-indent: 40px;"> - the same underlying object can be referenced by multiple variables </p>
     <p style="text-indent: 40px;"> - a primitive can be referenced by a single variable </p>
@@ -848,13 +848,18 @@ SYNTAX :    <i>var myObj = </i>{
 </details>
 <!---------------------------------------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> Modifying Object Properties <mark>delete</mark></u></h2>
+<h2 style="color:darkblue;" id="del_"><u> Access/Remove Object Properties <mark>.</mark> / <mark>[]</mark> / <mark>?.</mark> / <mark>delete</mark></u></h2>
     <pre class="syntax">
-SYNTAX :    <strong>object</strong>.<strong>property</strong> = <strong>value</strong>;                                                   // create or modify a property
+SYNTAX :    <strong>object</strong>.<strong>property</strong> = <strong>value</strong>;                                                   // member accessor, creates or modifies an object property    
             <strong>object</strong>.['<strong>property</strong>'] = <strong>value</strong>;
             
             delete <strong>obj.property</strong>	                                                       // deletes an object's <u>native</u> property 
             delete <strong>obj["property"]</strong>
+            
+  <span style="color:darkgray;">// <mark>?.</mark> (optional chaining) -----------------------------------------------------------</span>  <span id="browserSupport" style="color:yellow;" title="updated : 2021-05-26"><span><i class="fab fa-chrome"></i> 80 </span><span><i class="fab fa-firefox"></i> 74 </span><span><i class="fab fa-opera"></i> 67 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 80 </span><span><i class="fab fa-safari"></i> 13.1 </span><span><i class="fab fa-node-js"></i> 14.0.0 </span></span>    
+            <strong>obj</strong><em>.</em><strong>prop1</strong>?.<strong>prop2|<em>[</em>prop2:str<em>]</em></strong>                                               // works just like a member accessor
+            <strong>obj</strong><em>.</em><strong>arr</strong>?.<strong><em>[</em>idx:str<em>]</em></strong>                                                             // except if the property <u>preceding it</u> is <mark>undefined</mark> this operator returns <mark>undefined</mark> <u>and no further object code is executed (short-circuits)</u>     
+            <strong>obj</strong><em>.</em><strong>fn</strong>?.<strong><em>(</em>arg<i>, ...</i><em>)</em></strong>                                                             // this way objects missing properties/methods won't throw, instead they return <mark>undefined</mark>    
     </pre>
 <details class="example">
 <summary> DEMO </summary> 
@@ -884,10 +889,32 @@ SYNTAX :    <strong>object</strong>.<strong>property</strong> = <strong>value</s
     myObjTEST.hasOwnProperty("ex3");            // -> true              // property still exist we only changed its value
     myObjTEST.hasOwnProperty("ex4");            // -> false             // property doesn't exist anymore
     </pre>
+    <p> - optional chaining <mark>?.</mark> </p>
+    <pre>
+    var dog = {
+        name:'Koda', 
+        compName(){ return this.name },
+        food: ['meat', 'bacon', 'dog food']
+    };
+    
+    dog?.name;                                                                         // -> 'Koda'        // works just like a member accessor 
+    dog?.compName();                                                                   // -> 'Koda'
+    dog?.food[0];                                                                      // -> 'meat'
+    
+    dog.nickName.one;                                                                  // -! this would thronw an error (object doesn't have any 'nickName.one' property)    
+    dog.nickName?.one                                                                  // -> undefined     // because the 'nickName' property is undefined returns undefined and short circuits further calls   
+    
+    dog.getName();                                                                     // -! this would thron an error (object doesn't have any 'getName()' method)  
+    dog.getName?.();                                                                   // -> undefined     // because the 'getName' property is undefined returns undefined and short circuits further calls 
+    
+    dog.toy[0];                                                                        // -! this would thron an error (object doesn't have any 'toy[0]' array)    
+    dog.toy?.[0];                                                                      // -> undefined     // because the 'toy' property is undefined returns undefined and short circuits further calls 
+
+    </pre>
 </details>
 <details class="example">
 <summary> Example : </summary> 
-	<p id="objProperty_demo"></p>
+    <p id="objProperty_demo"></p>
 <script>
 	objProperty_modify();
 	delete objProperty_modify;							// this has no effect (function cannot be deleted with the delete keyword)
@@ -905,7 +932,7 @@ SYNTAX :    <strong>object</strong>.<strong>property</strong> = <strong>value</s
 			"created property = " + x.prop3;
 	}
 </script>
-		<details>
+        <details>
 		<summary> CODE : </summary>
 		<pre>
 	&lt;p id="objProperty_demo"&gt;&lt;/p&gt;
@@ -927,8 +954,10 @@ SYNTAX :    <strong>object</strong>.<strong>property</strong> = <strong>value</s
 	}
 &lt;/script&gt;
 		</pre>
-		</details>
-<h4><u> Delete an object property </u></h4>
+        </details>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> Delete an object property </u></h4>
     <p id="del"></p>
 <script>
     var testObj = {P1:"one", P2:"two", P3:"three", P4:"four"};
@@ -960,7 +989,9 @@ SYNTAX :    <strong>object</strong>.<strong>property</strong> = <strong>value</s
 &lt;/script&gt;
         </pre>
         </details>
-<h4><u> operator feedback </u></h4>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> operator feedback </u></h4>
     <p id="del-value"></p>
 <script>
     var TObj = {p1:"one", p2:"two", p3:"three"};
@@ -990,7 +1021,9 @@ SYNTAX :    <strong>object</strong>.<strong>property</strong> = <strong>value</s
 &lt;/script&gt;
         </pre>
         </details>
-<h4><u> delete operator in strict mode TEST</u></h4>  
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> delete operator in strict mode TEST</u></h4>  
 <script>
 "use strict";    
     var myObjT = {prop1:"Pall", prop2:"Te"};
@@ -1012,7 +1045,9 @@ SYNTAX :    <strong>object</strong>.<strong>property</strong> = <strong>value</s
 &lt;/script&gt;          
         </pre>
         </details>
-<h4><u> delete not existing property returns "true" / can only delete native properties TEST </u></h4>    
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> delete not existing property returns "true" / can only delete native properties TEST </u></h4>    
     <p id="deleteTEst"></p>
 <script>
     var myObjA = {a:1, b:2, c:3, nestObj:{A:11, B:22, C:33}};
@@ -1046,7 +1081,9 @@ SYNTAX :    <strong>object</strong>.<strong>property</strong> = <strong>value</s
 &lt;/script&gt;     
         </pre>
         </details>
-<h4><u> attempt to delete properties declared by the <mark>var</mark> / <mark>let</mark> / <mark>const</mark> identifiers </u></h4>    
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> attempt to delete properties declared by the <mark>var</mark> / <mark>let</mark> / <mark>const</mark> identifiers </u></h4>    
     <p id="idDel"></p>
 <script>
     var propVar = "A";
@@ -1080,7 +1117,9 @@ SYNTAX :    <strong>object</strong>.<strong>property</strong> = <strong>value</s
 &lt;/script&gt;    
         </pre>
         </details>
-<h4><u> not configurable property delete TEST </u></h4>    
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> not configurable property delete TEST </u></h4>    
     <p id="notConf"></p>
 <script>
     var nonConfObj = {configProp:"myValue_1", nonConfigProp:"myValue_2"};
@@ -1114,7 +1153,9 @@ SYNTAX :    <strong>object</strong>.<strong>property</strong> = <strong>value</s
 &lt;/script&gt;    
         </pre>
         </details>
-<h4><u> delete functions and nested Objects TEST</u></h4>    
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> delete functions and nested Objects TEST</u></h4>    
     <p id="deleteMultipleLevel"></p>
 <script>
     var bigMouse = {
@@ -1162,6 +1203,29 @@ SYNTAX :    <strong>object</strong>.<strong>property</strong> = <strong>value</s
 &lt;/script&gt;    
         </pre>
         </details>    
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> <mark>?.</mark> (optional chaining) TEST</u></h4>    
+    <pre>
+    var dog = {
+        name:'Koda', 
+        compName(){ return this.name },
+        food: ['meat', 'bacon', 'dog food']
+    };
+    
+    console.log( dog?.name );                                                          // -> 'Koda'        // works just like a member accessor 
+    console.log( dog?.compName() );                                                    // -> 'Koda'
+    console.log( dog?.food[0] );                                                       // -> 'meat'
+    
+    // console.log( dog.nickName.one );                                                // -! this would thronw an error (object doesn't have any 'nickName.one' property)    
+    console.log( dog.nickName?.one )                                                   // -> undefined     // because the 'nickName' property is undefined returns undefined and short circuits further calls   
+    
+    // console.log( dog.getName() );                                                   // -! this would thron an error (object doesn't have any 'getName()' method)  
+    console.log( dog.getName?.() );                                                    // -> undefined     // because the 'getName' property is undefined returns undefined and short circuits further calls 
+    
+    // console.log( dog.toy[0] );                                                      // -! this would thron an error (object doesn't have any 'toy[0]' array)    
+    console.log( dog.toy?.[0] );                                                       // -> undefined     // because the 'toy' property is undefined returns undefined and short circuits further calls 
+    </pre>
 </details>
 <!-------------------------------------------------------------------------------------------------------------------------------->
 <hr>

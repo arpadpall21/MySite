@@ -4,98 +4,161 @@
     <meta charset="utf-8">
     <title> Background </title> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" href="../../Assets/stylesPages.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="../../Assets/stylesPages.css"> 
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Background (ver 2.9) </h1>
-	<p> Updated (2016-05-20 / 2018-06-22) </p>
+<h1> Background (ver 4.0.0) </h1>
+	<p> Updated (2016-05-20 / 2018-06-22 / 2021-06-01) </p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html" title="CSS">CSS></a> Background  
     </p>
 <table class="table">
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <th> Property </th>
-        <th> Value </th>
+        <th style="width:15%"> Property </th>
+        <th style="width:40%;"> Value </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td> background </td>
         <td> 
-            <i>color image position/size repeat origin clip attachment</i><br>
-            initial <span style="color:blue;">(sets to default)</span><br>
-            inherit <span style="color:blue;">(inherits from its parent)</span>
+            <i>background-color background-image background-position background-size background-repeat background-origin background-clip background-attachment</i><br>
         </td>
-        <td> shorthand property can handle all background properties </td>
+        <td> 
+            - background shorthand property 
+            <span id="browserSupport" title="Updated: 2021-06-02">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td> background-attachment </td>
         <td> 
-            scroll <span style="color:blue;">((default) background scrolls with the page)</span><br>
-            fixed <span style="color:blue;">(background stay fixed, <u>relative to the <u>viewport</u></u>)</span><br>
-            local <span style="color:blue;">(background scroll with the element's content, <u>relative to the element's content</u>)</span><br>
-            initial <span style="color:blue;">(sets to default)</span><br>
-            inherit <span style="color:blue;">(inherits from its parent)</span>
+            scroll <span class="cssAV">((Default) scrolls with the page)</span><br>
+            fixed <span class="cssAV">(stays fixed, <u>relative to the <u>viewport</u></u>)</span>
+            <span id="browserSupport" title="Updated: 2021-06-02">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 25 </span>
+                <span><i class="fab fa-opera"></i> 10.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> NO </span>
+            </span><br>
+            local <span class="cssAV">(scrolls with the element's content, <u>relative to the element's content</u>)</span>
+            <span id="browserSupport" title="Updated: 2021-06-02">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 25 </span>
+                <span><i class="fab fa-opera"></i> 10.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> NO </span>
+            </span><br>
         </td>
-        <td> specifies if the background should scroll or stay fixed </td>
+        <td> 
+            - specifies if the background should scroll or stay fixed 
+            <span id="browserSupport" title="Updated: 2021-06-02">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="10.03">
         <td> background-clip </td>
         <td> 
-            border-box <span style="color:blue;">((default) background extended/clipped to the border)</span><br>
-            padding-box <span style="color:blue;">(background extended/clipped to the padding)</span><br>
-            content-box <span style="color:blue;">(background extended/clipped to the content)</span><br>
-            initial <span style="color:blue;">(sets to default)</span><br>
-            inherit <span style="color:blue;">(inherits from its parent)</span>
+            border-box <span class="cssAV">((Default) extended to the border)</span><br>
+            padding-box <span class="cssAV">(extended to the padding)</span><br>
+            content-box <span class="cssAV">(extended to the content)</span>
         </td>
-        <td> <i class="fab fa-css3-alt" style="color:inherit;"></i> clips / extends the background area </td>
+        <td> 
+            - clips (extends) the background to the (border, padding, content) area 
+            <span id="browserSupport" title="Updated: 2021-06-02">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 4 </span>
+                <span><i class="fab fa-opera"></i> 10.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> 3 -webkit- </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> background-color </td>
         <td> 
-            transparent <span style="color:blue;">(default value)</span><br>
-            <strong>CSScolor</strong> <span style="color:blue;">(css color values)</span><br>
-            initial <span style="color:blue;">(sets to default)</span><br>
-            inherit <span style="color:blue;">(inherits from its parent)</span>
+            transparent <span class="cssAV">(Default)</span><br>
+            <strong>CSScolor</strong> 
         </td>
-        <td> sets the element's background color </td>
+        <td> 
+            - sets the element's background color 
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="05.02">
         <td> background-image </td>
         <td> 
-            url('<strong>URL</strong>'), <i>url('URL'), ...</i> <span style="color:blue;">(URL of the image)</span><br>
-            none <span style="color:blue;">(image not displayed)</span><br>
-            linear-gradient() <span style="color:blue;">(sets a linear gradient as background)</span><br>
-            radial-gradient() <span style="color:blue;">(sets a radial gradient as background)</span><br>
-            repeating-linear-gradient()	<span style="color:blue;">(repeats a linear gradient)</span><br>
-            repeating-radial-gradient()	<span style="color:blue;">(repeats a radial gradient)</span><br>
-            initial <span style="color:blue;">(sets to default)</span><br>
-            inherit <span style="color:blue;">(inherits from its parent)</span>
+            url('<strong>URL</strong>')<i>, ...</i> <span class="cssAV">(url of the image)</span><br>
+            none <span class="cssAV">(image not displayed)</span><br>
+            linear-gradient() <span class="cssAV">(sets a linear gradient as background)</span><br>
+            radial-gradient() <span class="cssAV">(sets a radial gradient as background)</span><br>
+            repeating-linear-gradient()	<span class="cssAV">(repeats a linear gradient)</span><br>
+            repeating-radial-gradient()	<span class="cssAV">(repeats a radial gradient)</span>
         </td>
-        <td> sets one or more images as background </td>
+        <td> 
+            - sets one or more images or gradients as background 
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="10.02">
         <td> background-origin </td>
         <td>  
-            padding-box <span style="color:blue;">((default) background starts from the padding)</span><br>
-            border-box <span style="color:blue;">(background starts from the border)</span><br>
-            content-box <span style="color:blue;">(background starts from the content)</span><br>
-            initial <span style="color:blue;">(sets to default)</span><br>
-            inherit <span style="color:blue;">(inherits from its parent)</span>
+            padding-box <span class="cssAV">((Default) starts from the padding)</span><br>
+            border-box <span class="cssAV">(starts from the border)</span><br>
+            content-box <span class="cssAV">(starts from the content)</span>
         </td>
-        <td> <i class="fab fa-css3-alt" style="color:inherit;"></i> specifies the background's original (staring position) area </td>
+        <td> 
+            - specifies the background's original (staring position) area (from border, padding or content)
+            <span id="browserSupport" title="Updated: 2021-06-02">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 4 </span>
+                <span><i class="fab fa-opera"></i> 10 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 3 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="05.05">
         <td> background-position </td>
         <td> 
-            top|right|bottom|left<br>
-            <strong>WcssLength</strong> <i>HcssLength</i> <span style="color:blue;">(X and Y coordinates (negative values are allowed))</span>
+            <strong>x:cssLength</strong> <i>y:cssLength</i> <span class="cssAV">((Default <mark>0% 0%</mark>) X and Y coordinates (negative values are allowed))</span> <br>
+            top <br>
+            right <br>
+            bottom <br>
+            left<br>
+            center
         </td>
         <td> 
-            sets the starting position of the background image 
-            <span id="browserSupport">
+            - sets the starting position of the background image 
+            <span id="browserSupport" title="Updated: 2021-06-02">
                 <span><i class="fab fa-chrome"></i> 1 </span>
                 <span><i class="fab fa-firefox"></i> 1 </span>
                 <span><i class="fab fa-opera"></i> 3.5 </span>
@@ -104,48 +167,70 @@
             </span>
         </td>
     </tr>    
-    <tr>
+    <tr class="05.03">
         <td> background-repeat </td>
         <td> 
-            repeat <span style="color:blue;">((default) background repeated both vertically and horizontally)</span><br>
-            repeat-x <span style="color:blue;">(background repeated horizontally only)</span><br>	
-            repeat-y <span style="color:blue;">(background repeated vertically only)</span><br>
-            no-repeat <span style="color:blue;">( background not repeated)</span><br>
-            space <span style="color:blue;">(background image repeated as much as possible <u>without clipping or stretching</u> (white space distributed evenly between the images))</span><br>
-            round <span style="color:blue;">(background image repeated squished or stretched to fill the background area)</span><br>
-            initial <span style="color:blue;">(sets to default)</span><br>
-            inherit <span style="color:blue;">(inherits from its parent)</span>
-        </td>
-        <td> specifies if/how the background is repeated </td>
-    </tr>
-    <tr>
-        <td> background-size </td>
-        <td> 
-            auto <span style="color:blue;">((default) original size)</span><br>
-            <strong>WcssLength</strong> <i>HcssLength</i> <span style="color:blue;">(if only one value is specifies the other one is set to "auto")</span><br>
-            contain <span style="color:blue;">(aspect ratio maintained and scaled to fill the area "letterboxed")</span><br>
-            cover <span style="color:blue;">(aspect ratio maintained and scaled to <u>fill the whole area</u>)</span><br>
-        </td>
-        <td> 
-            <i class="fab fa-css3-alt" style="color:inherit;"></i> sets the size of the background image(s) 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 4/1 -webkit- </span>
-                <span><i class="fab fa-firefox"></i> 4/3.6 -moz- </span>
-                <span><i class="fab fa-opera"></i> 10.5/10 -o- </span>
+            repeat <span class="cssAV">((Default) repeated both vertically and horizontally)</span><br>
+            repeat-x <span class="cssAV">(repeated horizontally only)</span><br>	
+            repeat-y <span class="cssAV">(repeated vertically only)</span><br>
+            no-repeat <span class="cssAV">(not repeated)</span><br>
+            space <span class="cssAV">(background image repeated as much as possible <u>without clipping or stretching</u> (white space distributed evenly between the images))</span>
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 30 </span>
+                <span><i class="fab fa-firefox"></i> 49 </span>
+                <span><i class="fab fa-opera"></i> 17 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
-                <span><i class="fab fa-safari"></i> 4.1/3 -webkit- </span>
+                <span><i class="fab fa-safari"></i> 7 </span>
+            </span>
+            <br>
+            round <span class="cssAV">(background image repeated squished or stretched to fill the background area)</span>
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 30 </span>
+                <span><i class="fab fa-firefox"></i> 49 </span>
+                <span><i class="fab fa-opera"></i> 17 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> 7 </span>
+            </span>
+        </td>
+        <td> 
+            - specifies if/how the background is repeated 
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> box-decoration-break </td>
-        <td>  
-            slice <span style="color:blue;">((default) decorations will break with the fragments)</span><br>
-            clone <span style="color:blue;">(fragments are treated as individual elements for these decorations)</span>
+    <tr class="05.04">
+        <td> background-size </td>
+        <td> 
+            auto <span class="cssAV">((Default) original size)</span><br>
+            <strong>x:cssLength</strong><i>, y:cssLength</i> <span class="cssAV">(if only one value is specifies the other one is set to "auto")</span><br>  
+            contain <span class="cssAV">(aspect ratio maintained and scaled to fill the area "letterboxed")</span><br>
+            cover <span class="cssAV">(aspect ratio maintained and scaled to <u>fill the whole area</u>)</span><br>
         </td>
         <td> 
-            <i class="fab fa-css3-alt"></i> specifies how the <mark>background</mark> / <mark>padding</mark> / <mark>border</mark> / <mark>border-image</mark> / <mark>box-shadow</mark> / <mark>margin</mark> / <mark>clip-path</mark> is applied when the element is fragmented (broken into multiple parts)
-            <span id="browserSupport">
+            - sets the size of the background image
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 3 </span>
+                <span><i class="fab fa-firefox"></i> 4 </span>
+                <span><i class="fab fa-opera"></i> 10 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> 5 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="10.04">
+        <td> box-decoration-break </td>
+        <td>  
+            slice <span class="cssAV">((Default) decorations will break with the fragments)</span><br>
+            clone <span class="cssAV">(fragments are treated as individual elements for these decorations)</span>
+        </td>
+        <td> 
+            - specifies how an element's fragment should be rendered when broken across multiple lines   
+            <span id="browserSupport" title="Updated: 2021-06-02">
                 <span><i class="fab fa-chrome"></i> 22 -webkit- </span>
                 <span><i class="fab fa-firefox"></i> 32 </span>
                 <span><i class="fab fa-opera"></i> 11.5 -webkit- </span>
@@ -154,53 +239,176 @@
             </span>
         </td>
     </tr>
+</table>
+<br>    
+<table class="table">
+<caption>
+    Gradient Functions (generates an image basically)
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <td colspan="3"> <i class="fab fa-css3-alt" style="color:inherit;"></i> gradient functions </td>
+        <th style="width:30%;"> function </th>
+        <th> Descriptions </th>
     </tr>
-    <tr>
-        <td colspan="2" style="background-color:inherit; text-align:left;"> linear-gradient(<i>to right|to..|nr</i>deg, <strong>cssColor</strong> <i>nr</i>%, <strong>cssColor</strong> <i>nr</i>%, <i>...</i>) </td>
-        <td> sets a linear gradient </td>
+    <tr class="15.01">
+        <td> 
+            conic-gradient(<small class="openable">from <i>pos</i><div>
+                <p> - position from which the cone rotation starts </p>
+                <p> valid values : </p>
+                <p> <mark><strong>0.0 - 1.0</strong>turn</mark> (load factor) </p>
+                <p> <mark><strong>nr</strong>rad</mark> (radients) </p>
+                <p> <mark><strong>nr</strong>deg</mark> (degrees) </p>
+            </div></small> <small class="openable">at <i>pos</i><div>
+                <p> - defines where the gradient circle center is </p>
+                <p> valid values for <i>pos</i> : </p>
+                <p> - <mark>center</mark> | <mark>top</mark> | <mark>bottom</mark> | <mark>left</mark> | <mark>right</mark> (or combination of 2 words (ex: <mark>bottom left</mark>)) (Default: <mark>center</mark>) </p>
+                <p> - <mark><strong>x:cssLength y:cssLength</strong></mark> (X and Y coordinates) </p>
+            </div></small>, <span class="openable"><strong>cssColor</strong> <i>stColorStop endColorStop</i><div>
+                <p> <strong>cssColor</strong> - color at position </p>
+                <hr>
+                <p> <i>stColorStop</i> - postion where the <strong>cssColor</strong> starts </p>
+                <p> <i>endColorStop</i> - postion where the <strong>cssColor</strong> ends </p>
+                <p> - if both positions are specified the color between them is full (not gradient) (if omitted colors are equally distributed)</u> </p>
+                <p> valid values : </p>
+                <p> <mark><strong>0.0 - 1.0</strong>turn</mark> (load factor) </p>
+                <p> <mark><strong>nr</strong>rad</mark> (radients) </p>
+                <p> <mark><strong>nr</strong>deg</mark> (degrees) </p>
+            </div></span>) 
+        
+        </td>
+        <td>  
+            - generates an image which is a conic gradient (like a cone from the top) 
+            <span id="browserSupport" title="Updated: 2021-06-02">
+                <span><i class="fab fa-chrome"></i> 69 </span>
+                <span><i class="fab fa-firefox"></i> 83 </span>
+                <span><i class="fab fa-opera"></i> 56 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 12.1 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td colspan="2" style="background-color:inherit; text-align:left;"> repeating-linear-gradient(<i>to right|to..|nr</i>deg, <strong>cssColor</strong> <i>nr</i>%, <strong>cssColor</strong> <i>nr</i>%, <i>...</i>) </td>
-        <td> sets and repeats a linear gradient </td>
+    <tr class="05.01">
+        <td> 
+            linear-gradient(<i class="openable">side<div>
+                <p> - starting point of the gradient </p>
+                <p> valid values: </p>
+                <p> - <mark>to top</mark> | <mark>to bottom</mark> | <mark>to left</mark> | <mark>to right</mark> (or combination of 2 words (ex: <mark>to bottom left</mark>)) (Default: <mark>to bottom</mark>) </p>
+                <p> - <mark><strong>nr</strong>deg</mark> (angle) </p>
+            </div></i>, <span class="openable"><strong>cssColor</strong> <i>colorStop:nr</i>%<div>
+                <p> <strong>cssColor</strong> - color at position </p>
+                <p> <i>colorStop</i> - postion (in percent) where the <strong>cssColor</strong> starts <u>(if omitted colors are equally distributed)</u> </p>
+            </div></span><i>, ...</i>) </td>
+        <td> 
+            - generates an image which is a linear gradient (transition between the set collors create the gradient effect)
+            <span id="browserSupport" title="Updated: 2021-06-02">
+                <span><i class="fab fa-chrome"></i> 10 -webkit- / 26 </span>
+                <span><i class="fab fa-firefox"></i> 16 </span>
+                <span><i class="fab fa-opera"></i> 12.1 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> 6.1 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td colspan="2" style="background-color:inherit; text-align:left;"> radial-gradient(<i>ellipse|circle farthers-corner|closest-corner|closest-side|farthest-side at center|nrX% nrY%</i>, <strong>cssColor</strong> <i>nr</i>%, <strong>cssColor</strong> <i>nr</i>%, <i>...</i>) </td>
-        <td> sets a radial gradient </td>
+    <tr class="10.01">
+        <td> 
+            radial-gradient(<i class="openable">shape<div>
+                <p> <mark>ellipse</mark> - takes the shape of the element (Default) </p>
+                <p> <mark>circle</mark> - circle regardless of the element's shape</p>
+            </div></i> <i class="openable">size<div>
+                <p> <mark>farthest-corner</mark> - the outer gradient circle is limited by the farthest corner of the element (Default) </p>
+                <p> <mark>closest-corner</mark> - the outer gradient circle is limited by the closest corner of the element </p>
+                <p> <mark>closest-side</mark> - the outer gradient circle is limited by the closest side of the element </p>
+                <p> <mark>farthest-side</mark> - the outer gradient circle is limited by the farthest side of the element </p>
+            </div></i> <small class="openable">at <i>pos</i><div>
+                <p> - defines where the gradient circle center is </p>
+                <p> valid values for <i>pos</i> : </p>
+                <p> - <mark>center</mark> | <mark>top</mark> | <mark>bottom</mark> | <mark>left</mark> | <mark>right</mark> (or combination of 2 words (ex: <mark>bottom left</mark>)) (Default: <mark>center</mark>) </p>
+                <p> - <mark><strong>x:cssLength y:cssLength</strong></mark> (X and Y coordinates) </p>
+            </div></small>, <span class="openable"><strong>cssColor</strong> <i>colorStop:nr</i>%<div>
+                <p> <strong>cssColor</strong> - color at position </p>
+                <p> <i>colorStop</i> - postion (in percent) where the <strong>cssColor</strong> starts from the center <u>(if omitted colors are equally distributed)</u> </p>
+            </div></span><i>, ...</i>) </td>
+        <td> 
+            - generates an image which is a radial gradient (transition between the set colors create the gradient effect)
+            <span id="browserSupport" title="Updated: 2021-06-02">
+                <span><i class="fab fa-chrome"></i> 13 -webkit- / 26 </span>
+                <span><i class="fab fa-firefox"></i> 16 </span>
+                <span><i class="fab fa-opera"></i> 12.1 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> 6.1 </span>
+            </span>
+        </td>
     </tr>
-    <tr>
-        <td colspan="2" style="background-color:inherit; text-align:left;"> repeating-radial-gradient(<i>ellipse|circle farthers-corner|closest-corner|closest-side|farthest-side at center|nrX% nrY%</i>, <strong>cssColor</strong> <i>nr</i>%, <strong>cssColor</strong> <i>nr</i>%, <i>...</i>) </td>
-        <td> sets and repeats a radial gradient </td>
+    <tr class="05.02">
+        <td> 
+            repeating-linear-gradient(<i class="openable">side<div>
+                <p> - starting point of the gradient </p>
+                <p> valid values: </p>
+                <p> - <mark>to top</mark> | <mark>to bottom</mark> | <mark>to left</mark> | <mark>to right</mark> (or combination of 2 words (ex: <mark>to bottom left</mark>)) (Default: <mark>to bottom</mark>) </p>
+                <p> - <mark><strong>nr</strong>deg</mark> (angle) </p>
+            </div></i>, <span class="openable"><strong>cssColor</strong> <i>colorStop:nr</i>%<div>
+                <p> <strong>cssColor</strong> - color at position </p>
+                <p> <i>colorStop</i> - postion (in percent) where the <strong>cssColor</strong> starts <u>(if omitted colors are equally distributed)</u> </p>
+            </div></span><i>, ...</i>) </td>
+        <td> 
+            - generates an image which is a linear gradient (transition between the set collors create the gradient effect) <br>
+            - does the same as <mark>linear-gradient</mark> but if the gradient has an ufilled area this property automatically fills it by repeating the existing gradient pattern 
+            <span id="browserSupport" title="Updated: 2021-06-02">
+                <span><i class="fab fa-chrome"></i> 10 -webkit- / 26 </span>
+                <span><i class="fab fa-firefox"></i> 16 </span>
+                <span><i class="fab fa-opera"></i> 12.1 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> 6.1 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="10.02">
+        <td> 
+            repeating-radial-gradient(<i class="openable">shape<div>
+                <p> <mark>ellipse</mark> - takes the shape of the element (Default) </p>
+                <p> <mark>circle</mark> - circle regardless of the element's shape</p>
+            </div></i> <i class="openable">size<div>
+                <p> <mark>farthest-corner</mark> - the outer gradient circle is limited by the farthest corner of the element (Default) </p>
+                <p> <mark>closest-corner</mark> - the outer gradient circle is limited by the closest corner of the element </p>
+                <p> <mark>closest-side</mark> - the outer gradient circle is limited by the closest side of the element </p>
+                <p> <mark>farthest-side</mark> - the outer gradient circle is limited by the farthest side of the element </p>
+            </div></i> <small class="openable">at <i>pos</i><div>
+                <p> - defines where the gradient circle center is </p>
+                <p> valid values for <i>pos</i> : </p>
+                <p> - <mark>center</mark> | <mark>top</mark> | <mark>bottom</mark> | <mark>left</mark> | <mark>right</mark> (or combination of 2 words (ex: <mark>bottom left</mark>)) (Default: <mark>center</mark>) </p>
+                <p> - <mark><strong>x:cssLength y:cssLength</strong></mark> (X and Y coordinates) </p>
+                
+            </div></small>, <span class="openable"><strong>cssColor</strong> <i>colorStop:nr</i>%<div>
+                <p> <strong>cssColor</strong> - color at position </p>
+                <p> <i>colorStop</i> - postion (in percent) where the <strong>cssColor</strong> starts from the center <u>(if omitted colors are equally distributed)</u> </p>
+            </div></span><i>, ...</i>) </td>
+        <td> 
+            - generates an image which is a radial gradient (transition between the set colors create the gradient effect) <br>
+            - does the same as <mark>radial-gradient</mark> but if the gradient has an ufilled area this property automatically fills it by repeating the existing gradient pattern 
+            <span id="browserSupport" title="Updated: 2021-06-02">
+                <span><i class="fab fa-chrome"></i> 13 -webkit- / 26 </span>
+                <span><i class="fab fa-firefox"></i> 16 </span>
+                <span><i class="fab fa-opera"></i> 12.1 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> 6.1 </span>
+            </span>
+        </td> 
     </tr>
 </table>
+    <br>
+    <details class="example" id="notes">
+    <summary> Notes :</summary>
+    </details>
 <h2 style="color:green;"><u> Useful Links : </u></h2>
     <p> <a href="http://www.w3schools.com/css/css_background.asp" target="_blank"> W3Shool Background </a></p>
     <p> <a href="http://www.w3schools.com/css/css3_backgrounds.asp" target="-blank"> W3School CSS3 Background </a></p>
     <p><a href="http://www.w3schools.com/css/css3_gradients.asp" target="_blank"> W3Schools Gradient </a></p>
 <h2 style="color:green;"><u> Remember This : </u></h2>
-    <p> - it is possible to set a background property to the HTML tag to </p>
-    <p> - in CSS we always use <mark>url()</mark> method to target a source! </p>
     <p> - when set multiple background images in a single property, the leftmost images are the closest to the viewer </p>
     <p> - you can use CSS gradient functions anywhere you can use images (background, border, ect..) </p>
 <h2 style="color:green;"><u> Description and Demonstration : </u></h2>
     <p> - in HTML we can set a background by using various properties to nearly any elements, even for the <mark>html</mark> tag </p>
     <p> - it is possible set multiple background images, when we set in a single property value, the leftmost images are the closest to the viewer </p>
-    <pre>
-    &lt;div class="demo"&gt;&lt;/div&gt;
-    
--- CSS --
-    .demo {
-        width: 500px;
-        height: 400px;
-        background-repeat: no-repeat;
-    // multiple images as single property value --------   
-        background-image: url('myImage_1.png'), url('myImage_2.png');                   // "myImage_1.png" is the closest to the viewer in this situation
-    // multiple images in separated properties ---------
-        background-image: url('myImage_1.png');
-        background-image: url('myImage_2.png');                                         // "myImage_2.png" is the closest to the viewer in this situation 
-    }
-    </pre>
 <details class="example"> 
 <summary> Example : </summary>
 <h4><u> Multipe backgrounds in a single property value TEST</u></h4>
@@ -222,33 +430,9 @@
 </details>
 <!------------------------------------------------------------------------------------------------------------------>    
 <hr>    
-<h2 style="color:darkblue;"><u> <mark>background-color</mark> / <mark>background-image</mark> / <mark>background-repeat</mark> / <mark>background-size</mark> / <mark>background-position</mark> </u></h2>
-    <pre class="syntax">
-SYNTAX :    background-color: transparent           <span style="color:skyblue;">// default </span>                         // sets one or more images as background
-                            : <strong>CSScolor</strong>
-                            
-            background-image: url('<strong>URL</strong>')            <span style="color:skyblue;">// image location </span>                  // sets one or more images as background
-                            : none                  <span style="color:skyblue;">// image not displayed</span>
-                            : linear-gradient()     <span style="color:skyblue;">// sets a linear gradient as background</span>
-                            : radial-gradient()     <span style="color:skyblue;">// sets a radial gradient as background</span>
-                            : repeating-linear-gradient() <span style="color:skyblue;">// repeats a linear gradient</span>
-                            : repeating-radial-gradient() <span style="color:skyblue;">// repeats a radial gradient</span>         
-                            
-            background-repeat: repeat               <span style="color:skyblue;">// (default) background repeated both vertically and horizontally</span>       // specifies if/how the background is repeated
-                             : repeat-x             <span style="color:skyblue;">// background repeated horizontally only</span>
-                             : repeat-y             <span style="color:skyblue;">// background repeated vertically only</span>
-                             : no-repeat            <span style="color:skyblue;">// background not repeated </span>
-                             : space                <span style="color:skyblue;">// background image repeated as much as possible <u>without clipping or stretching</u> (white space distributed evenly between the images)</span>
-                             : round                <span style="color:skyblue;">// background image repeated squished or stretched to fill the background area</span>  
-                             
-            background-size: auto                   <span style="color:skyblue;">// (default) original size</span>          // <i class="fab fa-css3-alt" style="color:inherit;"></i> sets the size of the background image(s)
-                           : <strong>WcssLength</strong> <i>HcssLength</i>  <span style="color:skyblue;">// if only one value is specifies the other one is set to "auto"</span>
-                           : contain                <span style="color:skyblue;">// aspect ratio maintained and scaled to fill the area "letterboxed" </span>
-                           : cover                  <span style="color:skyblue;">// aspect ratio maintained and scaled to <u>fill the whole area</u></span>
-                           
-            background-position: top|right|bottom|left                                  // sets the starting position of the background image
-                               : <strong>WcssLength</strong> <i>HcssLength</i>    <span style="color:skyblue;">// X and Y coordinates (negative values are allowed) </span><br>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>background-color</mark> / <mark>background-image</mark> / <mark>background-repeat</mark> / <mark>background-size</mark> / <mark>background-position</mark> properties </u></h2>
+<details class="example">
+<summary> DEMO </summary> 
     <pre>
     &lt;div class="demo"&gt;&lt;/div&gt;
     
@@ -264,6 +448,7 @@ SYNTAX :    background-color: transparent           <span style="color:skyblue;"
     }
     </pre>
     <img src="contain VS cover.jpg" alt="contain VS cover">
+</details>
 <details class="example">
 <summary> CODE : </summary> 
 <h4><u> simple background : </u></h4>
@@ -470,23 +655,9 @@ SYNTAX :    background-color: transparent           <span style="color:skyblue;"
 </details>    
 <!------------------------------------------------------------------------------------------------------------------>    
 <hr>    
-<h2 style="color:darkblue;"><u> <mark>background-attachment</mark> / <mark>background-origin</mark> / <mark>background-clip</mark> / <mark>box-decoration-break</mark> properties </u></h2>    
-    <pre class="syntax">
-SYNTAX :    background-attachment: scroll           <span style="color:skyblue;">// (default) background scrolls with the page</span>   // specifies if the background should scroll or stay fixed      
-                                 : fixed            <span style="color:skyblue;">// background stay fixed, <u>relative to the viewport </u></span>
-                                 : local            <span style="color:skyblue;">// background scroll with the element's content, <u>relative to the element's content</u></span>
-            
-            background-origin: padding-box          <span style="color:skyblue;">// (default) background starts from the border</span>  // <i class="fab fa-css3-alt" style="color:inherit;"></i> specifies the background's original (staring position) area
-                             : border-box           <span style="color:skyblue;">// background starts from the border</span>
-                             : content-box          <span style="color:skyblue;">// background starts from the content</span>
-            
-            background-clip: border-box             <span style="color:skyblue;">// (default) background extended/clipped to the border</span>      // <i class="fab fa-css3-alt" style="color:inherit;"></i> clips/extends the background area
-                           : padding-box            <span style="color:skyblue;">// background extended/clipped to the padding</span>
-                           : content-box            <span style="color:skyblue;">// background extended/clipped to the content</span>
-            
-            box-decoration-break: slice             <span style="color:skyblue;">// decorations will break with the fragments </span>   // <i class="fab fa-css3-alt"></i> specifies how the <mark>background</mark> / <mark>padding</mark> / <mark>border</mark> / <mark>border-image</mark> / <mark>box-shadow</mark> / <mark>margin</mark> / <mark>clip-path</mark> is applied when the element is fragmented (broken into multiple parts)   
-                                : clone             <span style="color:skyblue;">// fragments are treated as individual elements for these decorations</span>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>background-attachment</mark> / <mark>background-origin</mark> / <mark>background-clip</mark> / <mark>box-decoration-break</mark> properties </u></h2>    
+<details class="example">
+<summary> DEMO </summary>    
     <pre>
     .myElement {
         width: 200px;
@@ -501,6 +672,7 @@ SYNTAX :    background-attachment: scroll           <span style="color:skyblue;"
         -webkit-box-decoration-break: clone;
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>    
 <h4 style="color:darkblue;"><u> fixed background TEST </u></h4>
@@ -812,14 +984,12 @@ SYNTAX :    background-attachment: scroll           <span style="color:skyblue;"
     }
         </pre>
         </details>
-</details>    <mark>
+</details>    
 <!------------------------------------------------------------------------------------------------------------------>    
 <hr>    
-<h2 style="color:darkblue;"><u> <mark>background</mark> shorthand property </u></h2>  
-    <p> - the <mark>background</mark> shorthand property can handlle all background properties </p>
-    <pre class="syntax">
-SYNTAX :    background:	<i>color image position/size repeat origin clip attachment</i>	
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>background</mark> shorthand property </u></h2>  
+<details class="example">
+<summary> DEMO </summary>    
     <pre>
     &lt;div class="demo"&gt;&lt;/div&gt;
     
@@ -830,6 +1000,7 @@ SYNTAX :    background:	<i>color image position/size repeat origin clip attachme
         background: url("small-tile.png") no-repeat content-box fixed;                  // background shorthand property
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary> 
     <div class="shorthand_BG"></div>
@@ -851,42 +1022,32 @@ SYNTAX :    background:	<i>color image position/size repeat origin clip attachme
 <!----------------------------------------------------------------------------------------------------------------->
 <hr>
 <h2><u> Using Gradients as Backgrounds </u></h2>
-    <p> - gradient functions generate special kind of images what can be used as property values anywhere where images can be uses (background, borders, ...) </p>
-    <p> - the <mark>linear-gradient()</mark> function sets a linear gradient</p>
-    <p> - the <mark>repeating-linear-gradient()</mark> function sets and repeats a linear gradient </p>
-    <p> - the <mark>radial-gradient()</mark> function sets a radial gradient </p>
-    <p> - the <mark>repeating-radial-gradient()</mark> function sets and repeats a radial gradient </p>
-    <pre class="syntax">
-SYNTAX :    linear-gradient(<i>to right|to..|nr</i>deg, <strong>cssColor</strong> <i>nr</i>%, <strong>cssColor</strong> <i>nr</i>%, <i>...</i>) 
-            repeating-linear-gradient(<i>to right|to..|nr</i>deg, <strong>cssColor</strong> <i>nr</i>%, <strong>cssColor</strong> <i>nr</i>%, <i>...</i>)
-                - <i>to right/to../nr</i>deg : specifies the gradient angle (can be <mark>to left</mark>, <mark>to bottom right</mark>, <mark>ect...</mark> or <strong>nr</strong><mark>deg</mark>)
-                - <strong>cssColor</strong> <i>nr</i>% : "color stop" = valid CSS color, can be followed by an optional stop position
-                
-            radial-gradient(<i>ellipse|circle farthers-corner|closest-corner|closest-side|farthest-side at center|nrX% nrY%</i>, <strong>cssColor</strong> <i>nr</i>%, <strong>cssColor</strong> <i>nr</i>%, <i>...</i>)    
-            repeating-radial-gradient(<i>ellipse|circle farthers-corner|closest-corner|closest-side|farthest-side at center|nrX% nrY%</i>, <strong>cssColor</strong> <i>nr</i>%, <strong>cssColor</strong> <i>nr</i>%, <i>...</i>)    
-                - <i>ellipse|circle</i> : defines the gradient shape, possible values : <mark>ellipse</mark>(default) <mark>circle</mark>
-                - <i>farthers-corner|closest-corner|closest-side|farthest-side</i> : defines the gradient size, possible values = <mark>farthest-corner</mark>(default) <mark>closest-side</mark> <mark>closest-corner</mark> <mark>farthest-side</mark>
-                - <i>center|nrX% nrY%</i> : defines the gradient's positions, possible values = <mark>center</mark>(default) <strong>nr</strong>% <strong>nr</strong>%
-                - <strong>cssColor</strong> <i>nr</i>% : "color stop" = valid CSS color, can be followed by an optional stop position
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>linear-gradient()</mark> / <mark>repeating-linear-gradient()</mark> / <mark>radial-gradient()</mark> / <mark>repeating-radial-gradient()</mark> / <mark>conic-gradient()</mark> properties </u></h2>
+    <p> - gradient functions generate special kind of images what can be used as property values anywhere where images can be uses (background, borders, etc...) </p>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
+// HTML -------------------------------------------------------------------------------
     &lt;div class="demo"&gt;&lt;/div&gt;
     
--- CSS --
+// CSS --------------------------------------------------------------------------------
     .demo {
         width: 20%;
         height: 150px;
-        background: linear-gradient(to top, red , white)                                // linear gradient bottom-top
-        background: repeating-linear-gradient(90deg, red 5%, white 10%);                // color stops are specified but repeated to fill the background
-// radial gradient -----    
-        background: radial-gradient(circle farthest-side at 100% 100%, blue, red);      // circle shaped radial gradient goes from bottom right to the "farthest-sie" of the element
-        background: repeating-radial-gradient(blue 2%, red 4%);                         // ellipse shaped radial gradient placed in the center (default values), color stops are specified but repeated to fill the background of the element  
+  // linear gradient -------------------------
+        background: linear-gradient(to top, red , white)                               // linear gradient bottom-top
+        background: repeating-linear-gradient(90deg, red 5%, white 10%);               // color stops are specified but repeated to fill the background
+  // radial gradient -------------------------
+        background: radial-gradient(circle farthest-side at 100% 100%, blue, red);     // circle shaped radial gradient goes from bottom right to the "farthest-sie" of the element
+        background: repeating-radial-gradient(blue 2%, red 4%);                        // ellipse shaped radial gradient placed in the center (default values), color stops are specified but repeated to fill the background of the element  
+  // conic gradient --------------------------
+        
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example :</summary>
-    
-<h4><u> linear gradients </u></h4>
+<h4 style="color:darkblue;"><u> linear gradients </u></h4>
     <div class="linear-gradient-defalut">
         <p> - Default Gradient goes Top to Bottom</p>
     </div>
@@ -959,7 +1120,9 @@ SYNTAX :    linear-gradient(<i>to right|to..|nr</i>deg, <strong>cssColor</strong
     }                                                                   }
     </pre>
         </details>
-<h4><u> color stops </u></h4>
+<hr>
+<!---------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> color stops </u></h4>
     <p> - It is possible to specify the starting points of color stops in the Gradient, this can create fancy color transitions and colons as well </p>
     <div class="linear-gradient-multiple-propotions">
         <p> - This Gradient has 3 colors without any specified starging ponts</p>
@@ -1031,7 +1194,9 @@ SYNTAX :    linear-gradient(<i>to right|to..|nr</i>deg, <strong>cssColor</strong
     }
     </pre>
         </details>
-<h4><u> repeating linear gradient</u></h4> 
+<hr>
+<!---------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> repeating linear gradient</u></h4> 
     <p> - Gradient color patterns can be repeated to fill up the whole background </p>
     <div class="linear-gradient-repeat1">
         <p> - Simple Repeat Fading Gradient width 3 colors </p>
@@ -1083,7 +1248,9 @@ SYNTAX :    linear-gradient(<i>to right|to..|nr</i>deg, <strong>cssColor</strong
     }
     </pre>
         </details>
-<h4><u> radial gradient </u></h4>
+<hr>
+<!---------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> radial gradient </u></h4>
     <div class="radial-gradient-radial1">
         <p> - This is a 3 color default gradient </p>
     </div>
@@ -1130,7 +1297,9 @@ SYNTAX :    linear-gradient(<i>to right|to..|nr</i>deg, <strong>cssColor</strong
     }
     </pre>
         </details>
-<h4><u> radial gradient size </u></h4>
+<hr>
+<!---------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> radial gradient size </u></h4>
     <p> - When the Radial Gradient Center is not in the middle we can size the Gradient </p>
     <p> - With these sizes we basicaly specifies WHERE TO extend the Gradient</p>
     <p> - The remaining space is always filled out with the LAST "color stop"</p>
@@ -1199,7 +1368,9 @@ SYNTAX :    linear-gradient(<i>to right|to..|nr</i>deg, <strong>cssColor</strong
     }
     </pre>
         </details>
-<h4><u> repeating radial gradient </u></h4>
+<hr>
+<!---------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> repeating radial gradient </u></h4>
     <p> - Repeating Radial Gradient is like its linear brother but it repeats itself radialy that's the thing</p>
     <div class="repeating-radial-gradient-1">
         <p> - Fading Colors </p>
@@ -1279,7 +1450,9 @@ SYNTAX :    linear-gradient(<i>to right|to..|nr</i>deg, <strong>cssColor</strong
     }
     </pre>
         </details>
-<h4><u> some fancy gradients </u></h4>
+<hr>
+<!---------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> some fancy gradients </u></h4>
     <p> - image combined widht gradient </p>
     <p> - In this exemple we have 2 gradients on top of each other, the top has transparent color in order to let be seen the bottom one</p>
     <p> - NOTE that when you declare on the same code line several properties like in this example always the first is on top unlike code lines where the last one is the pirority!</p>
@@ -1345,6 +1518,78 @@ SYNTAX :    linear-gradient(<i>to right|to..|nr</i>deg, <strong>cssColor</strong
     }                                                                   }
     </pre>
         </details>
+<hr>
+<!---------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> <mark>conic-gradient</mark> TEST </u></h4>
+    <div class="conic-gradient-1">
+    </div>
+    <div class="conic-gradient-2">
+    </div>
+    <div class="conic-gradient-3">
+    </div>
+    <div class="conic-gradient-4">
+    </div>
+    <div class="conic-gradient-5">
+    </div>
+        <details style="clear:left;">
+    <pre>
+// HTML -------------------------------------------------------------------------------
+    &lt;div class="conic-gradient-1"&gt;
+    &lt;/div&gt;
+    &lt;div class="conic-gradient-2"&gt;
+    &lt;/div&gt;
+    &lt;div class="conic-gradient-3"&gt;
+    &lt;/div&gt;
+    &lt;div class="conic-gradient-4"&gt;
+    &lt;/div&gt;
+    &lt;div class="conic-gradient-5"&gt;
+    &lt;/div&gt;
+    
+// CSS --------------------------------------------------------------------------------
+    .conic-gradient-1{
+        float: left;
+        margin: 5px 0 0 5px;
+        border: solid 3px white;
+        width: 32%;
+        height: 250px;
+        background: conic-gradient(red, blue)
+    }
+    .conic-gradient-2{
+        float: left;
+        margin: 5px 0 0 5px;
+        border: solid 3px white;
+        width: 32%;
+        height: 250px;
+        background: conic-gradient(red 45deg, white 190deg, green 210deg);
+    }
+    .conic-gradient-3{
+        float: left;
+        margin: 5px 0 0 5px;
+        border: solid 3px white;
+        width: 32%;
+        height: 250px;
+        background: conic-gradient(red 45deg, white 45deg 190deg, green 180deg 210deg);
+    }   
+    .conic-gradient-4{
+        float: left;
+        margin: 5px 0 0 5px;
+        border: solid 3px white;
+        width: 32%;
+        height: 250px;
+        background: conic-gradient(from 90deg, red, white, green);
+    }   
+    .conic-gradient-5{
+        float: left;
+        margin: 5px 0 0 5px;
+        border: solid 3px white;
+        width: 32%;
+        height: 250px;
+        background: conic-gradient(from 90deg at 25% 25%, red, white, green);
+    }
+    </pre>
+        </details>
+        
+        
 </details>
     
     <br><br>

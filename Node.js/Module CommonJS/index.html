@@ -9,59 +9,65 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Module: CommonJS (ver 3.4.1) </h1>
+<h1> Module: CommonJS (ver 4.0.0) </h1>
     <p> Updated ( 2019-06-07 / 2020-01-19 / 2021-01-11 )</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">Node.js></a> Module: CommonJS  
     </p>
 <table class="table">
-<caption> loading files as CommonJS module </caption>
+<caption> 
+    loading files as CommonJS module 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
         <th style="width:30%;"> File </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> <strong>moduleFile</strong>.cjs </td>
-        <td> Node.js loads the file as CommonJS module </td>
+        <td> - Node.js loads the file as CommonJS module </td>
     </tr>
-    <tr>
+    <tr class="06.01">
         <td> <strong>moduleFile</strong>.js </td>
         <td> 
             - if the nearest <mark>package.json</mark> file contains a top-level <mark>"type":"commonjs"</mark> field or doesn't contain any <mark>"type"</mark> field then Node.js loads this file as CommonJS module <br>
             - if the nearest <mark>package.json</mark> file cotains a top-level <mark>"type":"module"</mark> field then Node.js loads this file as ECMAScript module
         </td>
     </tr>
-    <tr>
+    <tr class="07.01">
         <td> <strong>file</strong>.json </td>
-        <td> loads the file then converts the JSON to JavaScript data and returns it </td>
+        <td> - loads the file then converts the JSON to JavaScript data and returns it </td>
     </tr>
 </table>
     <br>
 <table class="table">
-<caption> CommonJS module methods and properties </caption>
+<caption> 
+    CommonJS module methods and properties 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
         <th style="width:30%;"> Object / Property </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class='05.01'>
         <td> __dirname </td>
         <td> 
-            returns the <u>absolute path</u> of the directory where this file is located 
+            - returns the <u>absolute path</u> of the directory where this file is located 
             <span id="browserSupport" title="updated : 2019-06-08">
                 <span><i class="fab fa-node-js"></i> 0.1.27 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> __pathname </td>
+    <tr class='05.02'>
+        <td> __filename </td>
         <td> 
-            returns the <u>absolute path</u> of the file (location of this file)
+            - returns the <u>absolute path</u> of this file 
             <span id="browserSupport" title="updated : 2019-06-08">
                 <span><i class="fab fa-node-js"></i> 0.0.1 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class='06.02'>
         <td> exports<strong>.prop = data</strong> </td>
         <td> 
             - creates an object and adds the passed property/value (<i>prop = data</i>) to it, then exports the object to the requiring modules <br>
@@ -72,7 +78,7 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class='07.02'>
         <td> 
             import(<strong class="openable">specifier:str<div>
                 <p><b><u>Relative Specifier</u></b></p>
@@ -94,16 +100,16 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class='06.01'>
         <td> module </td>
         <td> 
-            represents this module 
+            - references this module 
             <span id="browserSupport" title="updated : 2021-01-11">
                 <span><i class="fab fa-node-js"></i> 0.1.16 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class='07.01'>
         <td> 
             require(<strong class="openable">specifier:str<div>
                 <p><b><u>Relative Specifier</u></b></p>
@@ -115,19 +121,19 @@
             </div></strong>)
         </td>
         <td> 
-            statically calls (requires) the targeted module and returns its <mark>module.exports</mark> object
+            - statically calls (requires) the targeted module and returns its <mark>module.exports</mark> object
             <span id="browserSupport" title="updated : 2021-01-11">
                 <span><i class="fab fa-node-js"></i> 0.1.13 </span>
             </span>
         </td>
     </tr>
-    <tr> 
+    <tr class="20.01"> 
         <td colspan="2"> <mark>module</mark> object (the module itself) </td>
     </tr>
-    <tr>
+    <tr class="25.01"> 
         <td> <em>module</em>.children </td>
         <td> 
-            returns all <span class="openable">direct child modules (<mark>module</mark> objects of child modules)<div>
+            - returns all <span class="openable">direct child modules (<mark>module</mark> objects of child modules)<div>
                 <p> - modules that are required by this module (but no furhter) </p>
             </div></span> of this module in an Array
             <span id="browserSupport" title="updated : 2021-01-12">
@@ -135,7 +141,7 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.02"> 
         <td> 
             <em>module</em>.exports<strong>.prop = data</strong>
         </td>
@@ -147,47 +153,49 @@
             </span>
         </td>
     </tr>
+    <tr class="20.03"> 
         <tr><td></td><td></td></tr>
-    <tr>
+    </tr>
+    <tr class="20.04"> 
         <td> 
             <em>module</em>.exports<strong> = data</strong>
         </td>
         <td> 
-            - exports the assigned data to the requiring modules <br>
+            - exports the assigned data to the requiring modules (Default export) <br>
             - calling it multiple times will override the previously assigned value 
             <span id="browserSupport" title="updated : 2021-01-10">
                 <span><i class="fab fa-node-js"></i> 0.1.16 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="22.02"> 
         <td> <em>module</em>.filename </td>
         <td> 
-            returns the absolute file path of this module in a string
+            - returns the absolute file path of this module in a string
             <span id="browserSupport" title="updated : 2021-01-12">
                 <span><i class="fab fa-node-js"></i> 0.1.16 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="22.01"> 
         <td> <em>module</em>.id </td>
         <td> 
-            returns the identifier of this module in a string (usually the absolute file path of this module) 
+            - returns the identifier of this module in a string (usually the absolute file path of this module) 
             <span id="browserSupport" title="updated : 2021-01-11">
                 <span><i class="fab fa-node-js"></i> 0.1.16 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="23.01"> 
         <td> <em>module</em>.loaded </td>
         <td> 
-            returns <mark>false</mark> if this module main thread is still running, <mark>true</mark> if the synchronous thread is finished
+            - returns <mark>false</mark> if this module main thread is still running, <mark>true</mark> if the synchronous thread is finished
             <span id="browserSupport" title="updated : 2021-01-11">
                 <span><i class="fab fa-node-js"></i> 0.1.16 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.02"> 
         <td> <em>module</em>.parent </td>
         <td> 
             - <u>[Derecated v12.19.0 / 14.6.0]</u> returns the parent module (<mark>module</mark> object) that required this module <u>first</u> <br>
@@ -198,25 +206,25 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="22.03"> 
         <td> <em>module</em>.path </td>
         <td> 
-            returns the absolute directory path of this module in a string   
+            - returns the absolute directory path of this module in a string   
             <span id="browserSupport" title="updated : 2021-01-12">
                 <span><i class="fab fa-node-js"></i> 11.14.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="24.01"> 
         <td> <em>module</em>.paths </td>
         <td> 
-            returns the paths in an Array where nodejs looks for modules (<mark>node_modules</mark> directory locations) (when we require a module without path)
+            - returns the paths in an Array where nodejs looks for modules (<mark>node_modules</mark> directory locations) (when we require a module without path)
             <span id="browserSupport" title="updated : 2021-01-12">
                 <span><i class="fab fa-node-js"></i> 0.4.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="21.01"> 
         <td> 
             <em>module.</em>require(<strong class="openable">specifier:str<div>
                 <p><b><u>Relative Specifier</u></b></p>
@@ -228,15 +236,16 @@
             </div></strong>)
         </td>
         <td> 
-            statically calls (requires) the targeted module and returns its <mark>module.exports</mark> object
+            - statically calls (requires) the targeted module and returns its <mark>module.exports</mark> object
             <span id="browserSupport" title="updated : 2021-01-12">
                 <span><i class="fab fa-node-js"></i> 0.5.1 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="30.01">
         <td colspan="2"> <mark>require</mark> method/object </td>
-    <tr>
+    </tr>
+    <tr class="30.02">
         <td> 
             require(<strong class="openable">moduleName:str|modulePath:str<div>
                 <p> - if <strong>moduleName</strong> passed (ex: <mark>reaquire(someModule)</mark> nodejs looks for the module in <mark>module.paths</mark> directories </p>
@@ -252,7 +261,7 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="32.01">
         <td> <em>require</em>.cache </td>
         <td> 
             - returns this and all the required modules <u>and their dependencies</u> (<mark>module</mark> objects) <br>
@@ -263,33 +272,33 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="31.01">
         <td> <em>require</em>.main </td>
         <td> 
-            returns the <mark>module</mark> object of this module    
+            - returns the <mark>module</mark> object of this module    
             <span id="browserSupport" title="updated : 2021-01-12">
                 <span><i class="fab fa-node-js"></i> 0.1.17 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="33.01">
         <td> 
             <em>require</em>.resolve(<strong>moduleName:str|modulePath:str</strong>, <i class="openable">option:obj<div>
                 <p> paths: <strong>[path:str, ...]</strong> - if passed the <mark>node_modules</mark> directory is serached from the passed locations (nodejs searches for the <mark>node_modules</mark> directory from the current location to the root, passing these paths nodejs will search from those directores to root) </p>
             </div></i>) 
         </td>
         <td> 
-            returns the absolute file path of the targeted module <u>without requiring (calling) it</u> (uses the same machinery as the <mark>require()</mark> method)  
+            - returns the absolute file path of the targeted module <u>without requiring (calling) it</u> (uses the same machinery as the <mark>require()</mark> method)  
             <span id="browserSupport" title="updated : 2021-01-12">
                 <span><i class="fab fa-node-js"></i> 0.3.0 </span>
                 <span><i class="fab fa-node-js"></i> 8.9.0 <mark>path</mark> option </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="33.02">
         <td> <em>require</em>.resolve.paths(<strong>moduleName:str|modulePath:str</strong>) </td>
         <td> 
-            returns the searching paths in an Array where nodejs searches for the passed module (uses the same machinery as the <mark>require()</mark> method)
+            - returns the searching paths in an Array where nodejs searches for the passed module (uses the same machinery as the <mark>require()</mark> method)
             <span id="browserSupport" title="updated : 2019-06-10">
                 <span><i class="fab fa-node-js"></i> 8.9.0 </span>
             </span>
@@ -310,15 +319,6 @@
     <p> - CommonJS modules can import (require) other CommonJS modules <u>but cannot required ECMAScript modules Statically <span style="color:yellow;">(Dynamically can <mark>import()</mark>)</u></p>
     <p> - the code inside CommonJS modules does not run in strict mode (like in ECMAScript modules) </p>
     <p> - CommonJS modules can require <mark>*.json</mark> files, the required JSON data is returned as JavaScript data (also can require <mark>*.node</mark> = compiled addon file [NOT TESTED]) </p>
-    <pre class="syntax">
-SYNTAX:     <strong>moduleFile</strong>.cjs                                                             // Node.js loads the file as CommonJS module    
-            
-            <strong>moduleFile</strong>.js                                                              // if the nearest <mark>package.json</mark> file contains a top-level <mark>"type":"commonjs"</mark> field or doesn't contain any <mark>"type"</mark> field then Node.js loads this file as CommonJS module    
-                                                                                          if the nearest <mark>package.json</mark> file cotains a top-level <mark>"type":"module"</mark> field then Node.js loads this file as ECMAScript module    
-            
-            
-            <strong>file</strong>.json                                                                  // loads the file then converts the JSON to JavaScript data and returns it    
-    </pre>   
 <details class="example">
 <summary> DEMO </summary>
     <p> - <mark>main.cjs</mark> file (loades as CommonJS module) </p>
@@ -620,38 +620,6 @@ pall@Ryzen:~/Documents/CodePlus/My Site/03 Improuve/Learn WebDesign/Node.js/Modu
 <!------------------------------------------------------------------------------------------------------------------>
 <hr>
 <h2 style="color:darkblue;"><u> The <mark>__filename</mark> / <mark>__dirname</mark> / <mark>module</mark> / <mark>exports</mark> / <mark>require</mark> / <mark>import()</mark> properties and method </u></h2>
-    <pre class="syntax">
-SYNTAX :    __dirname                                                                  // returns the <u>absolute path</u> of the directory where this file is located  
-            __filename                                                                 // returns the <u>absolute path</u> of the file (location of this file)
-            
-            
-            module                                                                     // represents this module 
-            exports<strong>.prop = data</strong>                                                        // creates an object and adds the passed property/value (<i>prop = data</i>) to it, then exports the object to the requiring modules    
-                                                                                          calling it multiple times will add the new property/value to the export object 
-                                                                                          <u>cannot export assigned data (like: <mark>exports = <strong>data</strong></mark>)</u>   
-            
-            
-            require(<strong class="openable">specifier:str<div>
-                <p><b><u>Relative Specifier</u></b></p>
-                <p> - <mark>./main.js</mark> - relative path from the current location <u>(file extensions are required)</u>
-                <p><b><u>Absolute Specifier</u></b></p>
-                <p> - <mark>/home/dev/main.js</mark> - absolute path <u>in ECMAscript modules we can also pass file protocol path <mark>"file:///home/dev/main.js</mark> (browser percent encoded)</u> </p>
-                <p><b><u>Bare Specifier</u></b></p>
-                <p> - <mark>main</mark> | <mark>mymodule/main</mark> - (no prefixed path given) - refers as package entry point to the nearest <mark>node_modules</mark> directory <u>(file extensions are required in some cases)</u> </p>
-            </div></strong>)                                                    // statically calls (requires) the targeted module and returns its <mark>module.exports</mark> object   
-            import(<strong class="openable">specifier:str<div>
-                <p><b><u>Relative Specifier</u></b></p>
-                <p> - <mark>./main.js</mark> - relative path from the current location <u>(file extensions are required)</u>
-                <p><b><u>Absolute Specifier</u></b></p>
-                <p> - <mark>/home/dev/main.js</mark> - absolute path <u>in ECMAscript modules we can also pass file protocol path <mark>"file:///home/dev/main.js</mark> (browser percent encoded)</u> </p>
-                <p><b><u>Bare Specifier</u></b></p>
-                <p> - <mark>main</mark> | <mark>mymodule/main</mark> - (no prefixed path given) - refers as package entry point to the nearest <mark>node_modules</mark> directory <u>(file extensions are required in some cases)</u> </p>
-            </div></strong>)                                                     // returns a Promise which resolves to the required module    
-                                                                                          the specified module starts loading once the current module is fully loaded (does not block the current module)    
-                                                                                          this syntax can be called from a function body ('dynamically')   
-                                                                                          can load ECMAScript modules    
-                                                                                          does not load the specified module asynchronously!   
-    </pre>
 <details class="example">
 <summary> DEMO </summary>
     <pre>
@@ -732,41 +700,6 @@ SYNTAX :    __dirname                                                           
 <h2 style="color:darkblue;"><u> The <mark>module</mark> object </u></h2>
     <p> - each CommonJS Module has its own <mark>module</mark> object that references the module itself </p>
 <h3 style="color:darkblue;"><u> The <mark>exports</mark> / <mark>require()</mark> / <mark>id</mark> / <mark>filename</mark> / <mark>loaded</mark> / <mark>paths</mark> / <mark>children</mark> / <mark>parent</mark> properties and method </u></h3>
-    <pre class="syntax">
-SYNTAX :    <em>module</em>.exports<strong>.prop = data</strong>                                                 // creates an object and adds the passed property/value (<i>prop = data</i>) to it, then exports the object to the requiring modules
-                                                                                          calling it multiple times will add the new property/value to the export object 
-            <em>module</em>.exports<strong> = data</strong>                                                      // exports the assigned data to the requiring modules    
-                                                                                          calling it multiple times will override the previously assigned value 
-            
-            
-            <em>module.</em>require(<strong class="openable">specifier:str<div>
-                <p><b><u>Relative Specifier</u></b></p>
-                <p> - <mark>./main.js</mark> - relative path from the current location <u>(file extensions are required)</u>
-                <p><b><u>Absolute Specifier</u></b></p>
-                <p> - <mark>/home/dev/main.js</mark> - absolute path <u>in ECMAscript modules we can also pass file protocol path <mark>"file:///home/dev/main.js</mark> (browser percent encoded)</u> </p>
-                <p><b><u>Bare Specifier</u></b></p>
-                <p> - <mark>main</mark> | <mark>mymodule/main</mark> - (no prefixed path given) - refers as package entry point to the nearest <mark>node_modules</mark> directory <u>(file extensions are required in some cases)</u> </p>
-            </div></strong>)                                             // statically calls (requires) the targeted module and returns its <mark>module.exports</mark> object   
-                          
-                        
-            <em>module</em>.id                                                                  // returns the identifier of this module in a string (usually the absolute file path of this module)    
-            <em>module</em>.filename                                                            // returns the absolute file path of this module in a string    
-            <em>module</em>.path                                                                // returns the absolute directory path of this module in a string    
-            
-            
-            <em>module</em>.loaded                                                              // returns <mark>false</mark> if this module main thread is still running, <mark>true</mark> if the synchronous thread is finished     
-            
-            
-            <em>module</em>.paths                                                               // returns the paths in an Array where nodejs looks for modules (<mark>node_modules</mark> directory locations) (when we require a module without path)    
-            
-            
-            <em>module</em>.children                                                            // returns all <span class="openable">direct child modules (<mark>module</mark> objects of child modules)<div>
-                <p> - modules that are required by this module (but no furhter) </p>
-            </div></span> of this module in an Array 
-            <em>module</em>.parent                                                              // returns the parent module (<mark>module</mark> object) that required this module <u>first</u>    
-                                                                                          returns <mark>null</mark> if this is the entry point of the current process  
-                                                                                          returns <mark>undefined</mark> if this module is not loaded by CommonJS module (when loaed by an ECMAScript module)    
-    </pre>
 <details class="example">
 <summary> DEMO </summary>
     <p> - <mark>main.js</mark> (file) </p>
@@ -1110,28 +1043,6 @@ SYNTAX :    <em>module</em>.exports<strong>.prop = data</strong>                
 <!------------------------------------------------------------------------------------------------------------------>
 <hr>
 <h2 style="color:darkblue;"><u> The <mark>require()</mark> / <mark>require.cache</mark> / <mark>require.main</mark> / <mark>require.resovle()</mark> / <mark>require.resolve.paths()</mark> objects and methods </u></h2>
-    <pre class="syntax">
-SYNTAX :    require(<strong class="openable">moduleName:str|modulePath:str<div>
-                <p> - if <strong>moduleName</strong> passed (ex: <mark>reaquire(someModule)</mark> nodejs looks for the module in <mark>module.paths</mark> directories </p>
-                <p> - if <strong>modulePath</strong> passed (ex: <mark>require(./someModule)</mark>) nodejs only check the specified file path </p>
-                <p><b> - in both cases the <mark>.js</mark> file extension can be omitted </b>
-            </div></strong>)                                    // calls (requires) the targeted module and returns its <mark>module.exports</mark> object   
-                                                                                          (<mark>*.js</mark> = CommonJS module) (<mark>*.json</mark> = JSON data (parsed and returned as JavaScript data)) (<mark>*.node</mark> = compiled addon module)    
-
-            
-            <em>require</em>.main                                                               // returns the <mark>module</mark> object of this module    
-            
-            
-            <em>require</em>.cache                                                              // returns this and all the required modules <u>and their dependencies</u> (<mark>module</mark> objects)    
-                                                                                          built-in modules (like: <mark>'fs'</mark>) are not cached 
-                                                                                          returns an object contining <mark>module</mark> objects referenced by their file path 
-            
-            
-            <em>require</em>.resolve(<strong>moduleName:str|modulePath:str</strong>, <i class="openable">option:obj<div>
-                <p> paths: <strong>[path:str, ...]</strong> - if passed the <mark>node_modules</mark> directory is serached from the passed locations (nodejs searches for the <mark>node_modules</mark> directory from the current location to the root, passing these paths nodejs will search from those directores to root) </p>
-            </div></i>)                // returns the absolute file path of the targeted module <u>without requiring (calling) it</u> (uses the same machinery as the <mark>require()</mark> method)    
-            <em>require</em>.resolve.paths(<strong>moduleName:str|modulePath:str</strong>)                       // returns the searching paths in an Array where nodejs searches for the passed module (uses the same machinery as the <mark>require()</mark> method)    
-    </pre>
 <details class="example">
 <summary> DEMO </summary>
     <p> - <mark>main.js</mark> (file) </p>

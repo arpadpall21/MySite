@@ -10,58 +10,46 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Animation (3.1) </h1>
-    <p> Updated (2017-01-15 / 2017-01-21 / 2019-01-06)</p>
+<h1> Animation (4.0.0) </h1>
+    <p> Updated (2017-01-15 / 2017-01-21 / 2019-01-06 / 2021-06-01)</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html" title="CSS">CSS></a> Animation
     </p>
 <table class="table">    
+<caption> 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <th> Property </th>
-        <th> Value </th>
+        <th style="width:15%"> Property </th>
+        <th style="width:40%"> Value </th>
         <th> Description </th>
     </tr>
-    <tr>
-        <td>  
-            @keyframes <i>animationName</i> { <br>
-            &nbsp; &nbsp; from / 0% {<i>CSS CODE</i>} <br>
-            &nbsp; &nbsp; <i>animation steps...</i> <br>
-            &nbsp; &nbsp; to / 100% {<i>CSS CODE</i>} <br>
-            }    
-        </td>
-        <td>  </td>
-        <td> the "keyframe rule" describes the animation steps (protocol) to animate the referenced element 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 43/4 -webkit- </span>
-                <span><i class="fab fa-firefox"></i> 16/5 -moz- </span>
-                <span><i class="fab fa-opera"></i> 30/15 -webkit- /12 -o- </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
-                <span><i class="fab fa-safari"></i> 9/4 -webkit- </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
+    <tr class="25.01">
         <td> animation </td>
         <td> 
             <i>name duration timing-function delay iteration-count direction fill-mode play-state</i><br>
         </td>
-        <td> <i class="fab fa-css3-alt"></i> animation shorthand property 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 43/4 -webkit- </span>
-                <span><i class="fab fa-firefox"></i> 16/5 -moz- </span>
-                <span><i class="fab fa-opera"></i> 30/15 -webkit- /12 -o- </span>
+        <td> 
+            - animation shorthand property 
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 4 -webkit- / 43 </span>
+                <span><i class="fab fa-firefox"></i> 5 -moz- / 16 </span>
+                <span><i class="fab fa-opera"></i> 12 -o- / 15 -webkit- / 30 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
-                <span><i class="fab fa-safari"></i> 9/4 -webkit- </span>
+                <span><i class="fab fa-safari"></i> 4 -webkit- / 9 </span>
             </span>
         </td>
     </tr>    
-    <tr>
+    <tr class="05.04">
         <td> animation-delay </td>
         <td>  
-            <strong>nr</strong>s/ms <span style="color:blue;">(default is <mark>0</mark>, negative values are allowed)</span><br>
+            <strong>nr</strong>s|ms<i>, ...</i> <span class="cssAV">(Default <mark>0</mark>, <span class="openable">negative values<div>
+                <p> - negative values starts the animation immediately and makes the animation already playing before 0 time </p>
+                <p> ex: (<mark>-2</mark> = starts the animation immediately but makes it as it was already playing for 2 seconds </p>
+            </div></span> allowed)</span>
         </td>
-        <td> <i class="fab fa-css3-alt"></i> sets a delay for the animation start 
-            <span id="browserSupport">
+        <td> - delay before the animation starts  
+            <span id="browserSupport" title="Updated: 2021-06-01">
                 <span><i class="fab fa-chrome"></i> 43/4 -webkit- </span>
                 <span><i class="fab fa-firefox"></i> 16/5 -moz- </span>
                 <span><i class="fab fa-opera"></i> 30/15 -webkit- /12 -o- </span>
@@ -70,129 +58,142 @@
             </span>
         </td>
     </tr> 
-    <tr>
+    <tr class="10.02">
         <td> animation-direction </td>
         <td>  
-            normal <span style="color:blue;">((default) start-end)</span><br>
-            reverse <span style="color:blue;">(end-start)</span><br>
-            alternate <span style="color:blue;">(start-end-start)</span><br>
-            alternate-reverse <span style="color:blue;">(end-start-end)</span><br>
+            normal<i>, ...</i> <span class="cssAV">((Default) start-end)</span><br>
+            reverse <span class="cssAV">(end-start)</span><br>
+            alternate <span class="cssAV">(start-end-start)</span><br>
+            alternate-reverse <span class="cssAV">(end-start-end)</span><br>
         </td>
-        <td> <i class="fab fa-css3-alt"></i> specifies the animation direction 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 43/4 -webkit- </span>
-                <span><i class="fab fa-firefox"></i> 16/5 -moz- </span>
-                <span><i class="fab fa-opera"></i> 30/15 -webkit- /12 -o- </span>
+        <td> 
+            - specifies the animation direction 
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 4 -webkit- / 43</span>
+                <span><i class="fab fa-firefox"></i> 5 -moz- / 16 </span>
+                <span><i class="fab fa-opera"></i> 12 -o- / 15 -webkit- / 30 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
-                <span><i class="fab fa-safari"></i> 9/4 -webkit- </span>
+                <span><i class="fab fa-safari"></i> 4 -webkit- / 9 </span>
             </span>
         </td>
     </tr>      
-    <tr>
+    <tr class="05.02">
         <td> animation-duration </td>
         <td>  
-            <strong>nr</strong>s/ms <span style="color:blue;">(default is <mark>0</mark>)</span><br>
+            <strong>nr</strong>s|ms<i>, ...</i> <span class="cssAV">(Default <mark>0</mark>)</span>
         </td>
-        <td> <i class="fab fa-css3-alt"></i> specifies the length of one animation cycle 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 43/3 -webkit- </span>
-                <span><i class="fab fa-firefox"></i> 16/5 -moz- </span>
-                <span><i class="fab fa-opera"></i> 30/15 -webkit- /12 -o- </span>
+        <td> 
+            - specifies the duration of one animation cycle (iteration) 
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 3 -webkit- / 43 </span>
+                <span><i class="fab fa-firefox"></i> 5 -moz- / 16 </span>
+                <span><i class="fab fa-opera"></i> 12 -o- / 15 -webkit- / 30 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
-                <span><i class="fab fa-safari"></i> 9/4 -webkit- </span>
+                <span><i class="fab fa-safari"></i> 4 -webkit- / 9 </span>
             </span>
         </td>
     </tr>  
-    <tr>
+    <tr class="20.01">
         <td> animation-fill-mode </td>
         <td>  
-            none <span style="color:blue;">((default) no style applied)</span><br>
-            forwards <span style="color:blue;">(the <u>last</u> <mark>@keyframes</mark> style is preserved when animation is finished)</span><br>
-            backwards <span style="color:blue;">(the <u>first</u> <mark>@keyframes</mark> style is preserved when animation starts (delayed period))</span><br> 
-            both <span style="color:blue;">(both the <u>first and last</u> <mark>@keyframes</mark> style are preserved (animation start (delayed period) / animation finished))</span><br>
+            none<i>, ...</i> <span class="cssAV">((Default) no animation style applied)</span><br>
+            forwards <span class="cssAV">(the <u>last</u> <mark>@keyframes</mark> style is preserved when animation is finished)</span><br>
+            backwards <span class="cssAV">(the <u>first</u> <mark>@keyframes</mark> style is preserved when animation starts (delayed period))</span><br> 
+            both <span class="cssAV">(both the <u>first and last</u> <mark>@keyframes</mark> style are preserved (animation start (delayed period) / animation finished))</span><br>
         </td>
-        <td> <i class="fab fa-css3-alt"></i> specifies the style for the element when the animation is fired <u>but NOT playing</u> (delayed, finished)
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 43/4 -webkit- </span>
-                <span><i class="fab fa-firefox"></i> 16/5 -moz- </span>
-                <span><i class="fab fa-opera"></i> 30/15 -webkit- /12 -o- </span>
+        <td> 
+            - specifies the CSS style for the element when the animation not playing (delayed of finished)
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 4 -webkit- / 43</span>
+                <span><i class="fab fa-firefox"></i> 5 -moz- / 16 </span>
+                <span><i class="fab fa-opera"></i> 12 -o- / 15 -webkit- / 30 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
-                <span><i class="fab fa-safari"></i> 9/4 -webkit- </span>
+                <span><i class="fab fa-safari"></i> 4 -webkit- / 9 </span>
             </span>
         </td>
     </tr>    
-    <tr>
+    <tr class="05.03">
         <td> animation-iteration-count </td>
         <td>  
-            <strong>nr</strong> <span style="color:blue;">(default is <mark>1</mark>)</span><br>
+            <strong>nr</strong><i>, ...</i> <span class="cssAV">(Default <mark>1</mark>)</span> <br>
+            infinite
         </td>
-        <td> <i class="fab fa-css3-alt"></i> specifies the number of times the animation is played 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 43/4 -webkit- </span>
-                <span><i class="fab fa-firefox"></i> 16/5 -moz- </span>
-                <span><i class="fab fa-opera"></i> 30/15 -webkit- /12 -o- </span>
+        <td> 
+            - specifies the number of cycles (iteration) the animation is played 
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 4 -webkit- / 43 </span>
+                <span><i class="fab fa-firefox"></i> 5 -moz- / 16 </span>
+                <span><i class="fab fa-opera"></i> 12 -o- / 15 -webkit- / 30</span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
-                <span><i class="fab fa-safari"></i> 9/4 -webkit- </span>
+                <span><i class="fab fa-safari"></i> 4 -webkit- / 9</span>
             </span>
         </td>
     </tr>    
-    <tr>
+    <tr class="05.01">
         <td> animation-name </td>
         <td>  
-            none <span style="color:blue;">((default) no animation bound)</span><br>
-            <strong>animationName</strong><br>
+            none <span class="cssAV">((Default) no animation bound)</span><br>
+            <strong>animName</strong><i>, ...</i><br>
         </td>
-        <td> <i class="fab fa-css3-alt"></i> references the <mark>@keyframes</mark> animation 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 43/4 -webkit- </span>
-                <span><i class="fab fa-firefox"></i> 16/5 -moz- </span>
-                <span><i class="fab fa-opera"></i> 30/15 -webkit- /12 -o- </span>
+        <td> 
+            - references the <strong>animName</strong> <mark>@keyframes</mark> animation(s) for the element 
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 4 -webkit- / 43  </span>
+                <span><i class="fab fa-firefox"></i> 5 -moz- / 16 </span>
+                <span><i class="fab fa-opera"></i> 12 -o- / 15 -webkit- / 30 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
-                <span><i class="fab fa-safari"></i> 9/4 -webkit- </span>
+                <span><i class="fab fa-safari"></i> 4 -webkit- / 9 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td> animation-play-state </td>
         <td>  
-            running <span style="color:blue;">(default)</span><br>
-            paused <span style="color:blue;">(pauses the animation)</span><br>
+            running<i>, ...</i> <span class="cssAV">(Default)</span><br>
+            paused 
         </td>
-        <td> <i class="fab fa-css3-alt"></i> pauses / runs the animation 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 43/4 -webkit- </span>
-                <span><i class="fab fa-firefox"></i> 16/5 -moz- </span>
-                <span><i class="fab fa-opera"></i> 30/15 -webkit- /12 -o- </span>
+        <td> 
+            - plays / pauses the animation 
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 4 -webkit- / 43 </span>
+                <span><i class="fab fa-firefox"></i> 5 -moz- / 16 </span>
+                <span><i class="fab fa-opera"></i> 12 -o- / 15 -webkit- / 30 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
-                <span><i class="fab fa-safari"></i> 9/4 -webkit- </span>
+                <span><i class="fab fa-safari"></i> 4 -webkit- / 9 </span>
             </span>
         </td>
     </tr> 
-    <tr>
+    <tr class="15.01">
         <td> animation-timing-function </td>
         <td>  
-            ease <span style="color:blue;">(default)</span><br>
+            ease<i>, ...</i> <span class="cssAV">(Default)</span><br>
             linear<br>
             ease-in<br>
             ease-out<br>
             ease-in-out<br>
-            step-start <span style="color:blue;">(same as <mark>step(1, start)</mark>)</span><br>
-            step-end <span style="color:blue;">(same as <mark>step(1, end)</mark>)</span><br>
-            steps(<strong>nr</strong>, <i>start|end</i>) <span style="color:blue;">(breaks the fluid animation into steps (2nd parameter default <mark>end</mark> = animation starts from step 0 | <mark>start</mark> animation starts from step 1))</span><br>
-            cubic-bezier(<strong>nr</strong>, <strong>nr</strong>, <strong>nr</strong>,<strong>nr</strong>) <span style="color:blue;">(sets a custom animation speed curve <a href="http://cubic-bezier.com/#1,.19,0,.81" target="_blank">cubic-bezier generator [link]</a>)</span>
+            step-start <span class="cssAV">(same as <mark>step(1, start)</mark>)</span><br>
+            step-end <span class="cssAV">(same as <mark>step(1, end)</mark>)</span><br>
+            steps(<strong>nr</strong>, <strong class="openable">jumpterm<div>
+                <p> - <mark>jump-start|start</mark> - denotes a left-continuous function, so that the first jump happens when the animation begins </p>
+                <p> - <mark>jump-end|end</mark> - denotes a right-continuous function, so that the last jump happens when the animation ends </p>
+                <p> - <mark>jump-none</mark> - there is no jump on either end. Instead, holding at both the 0% mark and the 100% mark, each for 1/n of the duration </p>
+                <p> - <mark>jump-both</mark> - includes pauses at both the 0% and 100% marks, effectively adding a step during the animation iteration </p>
+            </div></strong> ) <span class="cssAV">(breaks the fluid animation into steps)</span> <br>
+            cubic-bezier(<strong>nr</strong>, <strong>nr</strong>, <strong>nr</strong>,<strong>nr</strong>) <span class="cssAV">(sets a custom animation speed curve <a href="http://cubic-bezier.com/#1,.19,0,.81" target="_blank">cubic-bezier generator [link]</a>)</span>
         </td>
-        <td> <i class="fab fa-css3-alt"></i> specifies the speed curve of the animation 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 43/4 -webkit- </span>
-                <span><i class="fab fa-firefox"></i> 16/5 -moz- </span>
-                <span><i class="fab fa-opera"></i> 30/15 -webkit- /12 -o- </span>
+        <td> 
+            - specifies the speed curve of the animation 
+            <span id="browserSupport" title="Updated: 2021-06-01">
+                <span><i class="fab fa-chrome"></i> 4 -webkit- / 43 </span>
+                <span><i class="fab fa-firefox"></i> 5 -moz- / 16 </span>
+                <span><i class="fab fa-opera"></i> 12 -o- / 15 -webkit- / 30 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
-                <span><i class="fab fa-safari"></i> 9/4 -webkit- </span>
+                <span><i class="fab fa-safari"></i> 4 -webkit- / 9 </span>
             </span>
         </td>
     </tr>       
 </table>
-<h2 style="color:green;"><u> Notes : </u></h2>
+    <br>
     <details class="example" id="notes">
     <summary> Notes :</summary>
 <h2 style="color:darkblue;"><u> <mark>timing-function</mark> other step parameters </u></h2>
@@ -204,28 +205,39 @@
 <h2 style="color:green;"><ins> Remember This : </ins></h2>
     <p> - an animation can run only once, there is no way to reset it in CSS (solution: replace the element by script [TESTED on the test page here])</p>
 <h2 style="color:green;"><u> Description and Demonstration : </u></h2>
-    <p> - CSS uses the <mark>@keyframes</mark> rule to animate elements in HTML </p>
-    <p> - the <mark>@keyframes</mark> rule describes the animation steps (protocol) to animate the referenced element </p>
-    <pre class="syntax">
-SYNTAX :    @keyframes <i>animationName</i> {
-                from / 0% {<i>CSS CODE</i>}
-                  <i>animation steps...</i>
-                to / 100% {<i>CSS CODE</i>}
-            }    
-                - from / to / 0% - 100% : "keyframes-selectors" select the animation steps
+    <p> - CSS allows us to animate most of the HTML elements </p>
+<h2 style="color:darkblue;"><u> The <mark>@keyframes</mark> roule and <mark>animation-name</mark> property </u></h2>
+    <p> - The <mark>@keyframes</mark> rule describes the animation step by step </p>
+        <pre class="syntax">
+SYNTAX :                                                                                 <span id="browserSupport" title="updated: 2021-06-01" style="color:yellow;"><span><i class="fab fa-chrome"></i> 43 -webkit- / 45 </span><span><i class="fab fa-firefox"></i> 5 -moz- / 16 </span><span><i class="fab fa-opera"></i> 15 -webkit- / 30 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span><span><i class="fab fa-safari"></i> 4 -webkit- / 9 </span></span>
+            @keyframes <i>animName</i> {                                                      // describes an animation step by step 
+                from|0% { <i>cssStyles</i> }                                                  // describes the start animation states  
+                
+                <small>1%-99%{ <i>cssStyles</i> }</small>                                                    // describes the animation at the <small>1%-99%</small> stage    
+                  
+                to|100% { <i>cssStyles</i> }                                                  // describes the end animation states 
+            }  
     </pre>
+<details class="example">
+<summary> DEMO </summary>    
     <pre>
+// HTML -------------------------------------------------------------------------------
     &lt;p class="myClass" &gt; myParagraph &lt;/p&gt;
     
--- CSS --
+// CSS --------------------------------------------------------------------------------
     .myClass {
-        animation: myAnimation 4s infinite;                     // animation protocol is called here ("myAnimation")
+        animation-name: myAnimation;                                                   // animation protocol (@keyframe) is called here 
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
     }
-    @keyframes myAnimation {                                    // specifies the animation steps (the "myAnimation" is the animation name)
+    
+    @keyframes myAnimation {                                                           // describes the animation steps by step 
         from {color: black;}
+        50% {color:blue;}
         to {color: red;}
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>    
 <h4><u> TEST 1 </u></h4>    
@@ -253,34 +265,28 @@ SYNTAX :    @keyframes <i>animationName</i> {
 </details> 
 <!---------------------------------------------------------------------------------------------------------->    
 <hr>
-<h2 style="color:darkblue;"><u> <mark>animation-name</mark> / <mark>animation-duration</mark> / <mark>animation-delay</mark> / <mark>animation-iteration-count</mark> </u></h2>
-    <pre class="syntax">
-SYNTAX :    animation-name: none            <span style="color:skyblue;">// (default) no animation bound </span>        // <i class="fab fa-css3-alt"></i> references the <mark>@keyframes</mark> animation
-                          : <strong>animName</strong> 
-                          
-            animation-duration: <strong>nr</strong>s/ms      <span style="color:skyblue;">// default is <mark>0</mark> </span>                        // <i class="fab fa-css3-alt"></i> specifies the length of one animation cycle    
-            
-            animation-delay: <strong>nr</strong>s/ms         <span style="color:skyblue;">// default is <mark>0</mark>, negative values are allowed </span>     // <i class="fab fa-css3-alt"></i> sets a delay for the animation start
-            
-            animation-iteration-count: <strong>nr</strong>   <span style="color:skyblue;">// default is <mark>1</mark> </span>                        // <i class="fab fa-css3-alt"></i> specifies the number of times the animation is played
-                                     : infinite
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>animation-name</mark> / <mark>animation-duration</mark> / <mark>animation-delay</mark> / <mark>animation-iteration-count</mark> properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>    
     <pre>
+// HTML -------------------------------------------------------------------------------
     &lt;p class="myElement"&gt; myParagraph &lt;/p&gt;
     
--- CSS --
+// CSS --------------------------------------------------------------------------------
     .myElement {
         position: relative;
-        animation-name: myAnimation;                                                 // references the keyframe id
-        animation-duration: 10s;
-        animation-iteration-count: infinite;
-        animation-delay: 2s;                                                         // 2 seconds before the animation starts (if value is negative the animation is handeled as it is already playing for the set time)  
+        animation-name: myAnimation;                                                   // references the @keyframe roule  
+        animation-duration: 10s;                                                       // animation duration (one iteration) is 10 seconds  
+        animation-iteration-count: infinite;                                           // endless animation 
+        animation-delay: 2s;                                                           // 2 seconds before the animation starts (if value is negative the animation is handeled as it is already playing for the set time)    
     }
+    
     @keyframes myAnimation{
         from {left: 0;}
         to {left: 200px;}
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>    
 <h4><u> Simple animation + Delay </u></h4>
@@ -363,26 +369,20 @@ SYNTAX :    animation-name: none            <span style="color:skyblue;">// (def
 </details> 
 <!---------------------------------------------------------------------------------------------------------->    
 <hr>
-<h2 style="color:darkblue;"><u> <mark>animation-play-state</mark> / <mark>animation-direction</mark> </u></h2>    
-    <pre class="syntax">
-SYNTAX :    animation-play-state: running   <span style="color:skyblue;">// (default) </span>                            // <i class="fab fa-css3-alt"></i> pauses / runs the animation
-                                : paused    <span style="color:skyblue;">// pauses the animation </span>
-
-            animation-direction: normal     <span style="color:skyblue;">// (default) start-end </span>                  // <i class="fab fa-css3-alt"></i> specifies the animation direction
-                               : reverse    <span style="color:skyblue;">// end-start </span>
-                               : alternate  <span style="color:skyblue;">// start-end-start </span>
-                               : alternate-reverse  <span style="color:skyblue;">// end-start-end </span>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>animation-play-state</mark> / <mark>animation-direction</mark> properties </u></h2>    
+<details class="example">
+<summary> DEMO </summary>    
     <pre>
+// HTML -------------------------------------------------------------------------------
     &lt;p class="demo"&gt; myParagraph &lt;/p&gt;
     
--- CSS --
+// CSS --------------------------------------------------------------------------------
     .demo {
         position: relative;
         animation-duration: 2s;
         animation-iteration-count: infinite;
-        animation-direction: alternate-reverse;                                      // animation atlernate and plays backwards
-        animation-play-state: paused;                                                // animation paused
+        animation-direction: alternate-reverse;                                        // animation atlernate and plays backwards
+        animation-play-state: paused;                                                  // animation paused
         animation-name: myAnimation;
     }
     @keyframes myAnimation {
@@ -390,6 +390,7 @@ SYNTAX :    animation-play-state: running   <span style="color:skyblue;">// (def
         to {left: 150px;}
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>    
 <h4><u> Animation Directions </u></h4>
@@ -510,29 +511,21 @@ SYNTAX :    animation-play-state: running   <span style="color:skyblue;">// (def
 </details>    
 <!---------------------------------------------------------------------------------------------------------->    
 <hr>
-<h2 style="color:darkblue;"><u> <mark>animation-timing-function</mark> </u></h2>     
-    <pre class="syntax">
-SYNTAX :    animation-timing-function: ease                         <span style="color:skyblue;">// (default) </span>    // <i class="fab fa-css3-alt"></i> specifies the speed curve of the animation  
-                                     : linear 
-                                     : ease-in  
-                                     : ease-out  
-                                     : ease-in-out  
-                                     : step-start                   <span style="color:skyblue;">// same as <mark>step(1, start)</mark></span>
-                                     : step-end                     <span style="color:skyblue;">// same as <mark>step(1, end)</mark></span>
-                                     : steps(<strong>nr</strong>, <i>start|end</i>)         <span style="color:skyblue;">// breaks the fluid animation into steps (2nd parameter default <mark>end</mark> = animation starts from step 0 | <mark>start</mark> animation starts from step 1)</span>
-                                     : cubic-bezier(<strong>nr</strong>, <strong>nr</strong>, <strong>nr</strong>,<strong>nr</strong>)  <span style="color:skyblue;">// sets a custom animation speed curve <a href="http://cubic-bezier.com/#1,.19,0,.81" target="_blank">cubic-bezier generator [link]</a></span>                      
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>animation-timing-function</mark> property </u></h2>  
+<details class="example">
+<summary> DEMO </summary>    
     <pre>
+// HTML -------------------------------------------------------------------------------
     &lt;p class="demo"&gt; I rotate&lt;/p&gt;
     
--- CSS --
+// CSS --------------------------------------------------------------------------------
     .demo {
         width: 150px;
         text-align: center;
         animation-direction: alternate;
         animation-iteration-count: infinite;
         animation-duration: 2s;
-        animation-timing-function: cubic-bezier(.03, .68, 1, .61);                   // custom speed curve used
+        animation-timing-function: cubic-bezier(.03, .68, 1, .61);                     // custom speed curve used
         animation-name: rotateMe;
     }
     @keyframes rotateMe {
@@ -540,6 +533,7 @@ SYNTAX :    animation-timing-function: ease                         <span style=
         to {transform:rotateZ(75deg)}
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>    
 <h4><u> Animation speed curves </u></h4>
@@ -658,34 +652,33 @@ SYNTAX :    animation-timing-function: ease                         <span style=
     }
         </pre>
         </details>
-</details>         
+</details>   
 <!---------------------------------------------------------------------------------------------------------->    
 <hr>    
-<h2 style="color:darkblue;"><u> <mark>animation-fill-mode</mark> </u></h2>  
-    <p style="color:yellow;"> - the <mark>animation-delay</mark> period is technically animation already, this is where the <mark>animation-fill-mode:backwards</mark> commes into play </p>
-    <pre class="syntax">
-SYNTAX :    animation-fill-mode: none               <span style="color:skyblue;">// (default) no style applied </span>   // <i class="fab fa-css3-alt"></i> specifies the style for the element when the animation is fired but NOT playing (delayed, finished)
-                               : forwards           <span style="color:skyblue;">// the <u>last</u> <mark>@keyframes</mark> style is preserved when animation is finished</span>
-                               : backwards          <span style="color:skyblue;">// the <u>first</u> <mark>@keyframes</mark> style is preserved when animation starts (delayed period)</span> 
-                               : both               <span style="color:skyblue;">// both the <u>first and last</u> <mark>@keyframes</mark> style are preserved (animation start (delayed period) / animation finished)</span>
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>animation-fill-mode</mark> property </u></h2>  
+    <p style="color:yellow;"> - the <mark>animation-delay</mark> is technically already animationy </p>
+<details class="example">
+<summary> DEMO </summary>    
     <pre>
+// HTML -------------------------------------------------------------------------------
     &lt;p class="fillMode"&gt; Fill Moded &lt;/p&gt;
     
--- CSS --
+// CSS --------------------------------------------------------------------------------
     .fillMode {
         position: relative;
-        left: 0;                                    // element never uses its original position in this case!
+        left: 0;                                                                       // -! the element never uses its original position in this case   
         animation-duration: 5s;
-        animation-delay: 3s;                        // during the delayed period the "left: 50px" is applied because of the "animation-fill-mode: both;"  
+        animation-delay: 3s;                                                           // during the delayed period the "left: 50px" is applied because of the "animation-fill-mode: both;"  
         animation-name: fillMe;
-        animation-fill-mode: both;                  // both the first and last keyframes styles are applied
+        animation-fill-mode: both;                                                     // both the first and last keyframes styles are applied
     }
+    
     @keyframes fillMe {
         0% {left: 50px;}
-        100% {left: 300px;}                         // at the end of the animation this style is preserved because of the "animation-fill-mode: both;"
+        100% {left: 300px;}                                                            // at the end of the animation this style is preserved because of the "animation-fill-mode: both;"
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>    
 <h4><u> TEST </u></h4>
@@ -748,26 +741,27 @@ SYNTAX :    animation-fill-mode: none               <span style="color:skyblue;"
     }
         </pre>
         </details>
-</details>      
+</details>  
 <!---------------------------------------------------------------------------------------------------------->    
 <hr>    
-<h2 style="color:darkblue;"><u> <mark>animation</mark> shorthand property </u></h2>  
-    <p> - animation shorthand property </p>
-    <pre class="syntax">
-SYNTAX :    animation: <i>name duration timing-function delay iteration-count direction fill-mode play-state</i>     
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>animation</mark> shorthand property </u></h2>  
+<details class="example">
+<summary> DEMO </summary>    
     <pre>
+// HTML -------------------------------------------------------------------------------
     &lt;p class="demo"&gt; I Skew &lt;/p&gt;
     
--- CSS --
+// CSS --------------------------------------------------------------------------------
     .demo {
-        animation: skewIt 2s ease-in-out 1s infinite alternate backwards;            // animation shorthand property
+        animation: skewIt 2s ease-in-out 1s infinite alternate backwards;              // animation shorthand property
     }
+    
     @keyframes skewIt {
         from {transform: skew(-45deg, 0)}
         to {transform: skew(45deg, 0)}
     }
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>    
 <h4><u> TEST </u></h4>    

@@ -9,17 +9,20 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Cluster (ver 3.4.1) </h1>
+<h1> Cluster (ver 4.0.0) </h1>
     <p> Updated ( 2020-07-07 )</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">Node.js></a> Cluster
     </p>
 <table class="table">
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
         <th style="width:30%;"> Method / Property </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td> <strong>cluster</strong>.disconnect(<i>fn</i>) </td>
         <td> 
             - calls <mark>disconnect()</mark> on each cluster workers present in the <mark>cluster.workers</mark> property <br>
@@ -30,7 +33,7 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td>  
             <strong>cluster</strong>.fork(<i class="openable">env:obj<div>
                 <p> - object sets environment varialbes in the spawned cluster worker (ex: <mark>{KEY1:'env var value'</mark>}) </p>
@@ -44,10 +47,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td> <strong>cluster</strong>.isMaster </td>
         <td> 
-            returns <span class="openable"><mark>true</mark> if this code is running in the master process<div>
+            - <u>[DEPRECATED V16.0.0 use <mark>isPrimary</mark> instead]</u> returns <span class="openable"><mark>true</mark> if this code is running in the master process<div>
                 <p> - if <mark>process.env.NODE_UNIQUE_ID</mark> is <mark>undefined</mark> this value is set to <mark>true</mark> </p>
             </div></span>, otherwise returns <mark>false</mark>
             <span class="browserSupport" title="updated : 2020-07-08">
@@ -55,18 +58,30 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.02">
+        <td> <strong>cluster</strong>.isPrimary </td>
+        <td> 
+            - returns <span class="openable"><mark>true</mark> if this code is running in the master process<div>
+                <p> - if <mark>process.env.NODE_UNIQUE_ID</mark> is <mark>undefined</mark> this value is set to <mark>true</mark> </p>
+            </div></span>, otherwise returns <mark>false</mark>
+            <span class="browserSupport" title="updated : 2021-06-09">
+                <span><i class="fab fa-node-js"></i> 16.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="15.03">
         <td> <strong>cluster</strong>.isWorker </td>
-        <td> returns <mark>true</mark> if this code is running in a cluster worker process, otherwise returns <mark>false</mark> 
+        <td> 
+            - returns <mark>true</mark> if this code is running in a cluster worker process, otherwise returns <mark>false</mark> 
             <span class="browserSupport" title="updated : 2020-07-08">
                 <span><i class="fab fa-node-js"></i> 0.6.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="16.01">
         <td> <strong>cluster</strong>.schedulingPolicy </td>
         <td> 
-            - gets or sets the how the load is distributed among cluster worker processes (Default except on Windows: <mark>2</mark>) <br>
+            - gets or sets how the load is distributed among cluster worker processes (Default except on Windows: <mark>2</mark>) <br>
             - (<mark>2</mark> | <mark>cluster.SCHED_RR</mark> = round-robin fashion) (<mark>1</mark> | <mark>cluster.SCHED_NONE</mark> = OS handles the load distribution) <br>
             - once the <mark>setupMaster()</mark> is called  or the first cluster worker process is spawned this option is frozen and cannot be changed anymore <br>
             - this option can be changed by the <mark>NODE_CLUSTER_SHED_POLICY</mark> environment variable (<mark>'rr'</mark> or <mark>'none'</mark>)
@@ -75,7 +90,7 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.01">
         <td> <strong>cluster</strong>.settings </td>
         <td> 
             - <u>after calling <mark>setupMaster()</mark> or <mark>fork()</mark></u> returns an <span class="openable">object<div>
@@ -104,9 +119,34 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.01">
         <td>  
-            <strong>cluster</strong>.setupMaster(<i class="openable">settings:obj<div>
+            <strong>cluster</strong>.setupMaster(<i class="openable">option:obj<div>
+                <p> execArgv: <strong>[str, ...]</strong> - list of argument passed to the Node.js executable (Default: <mark>process.execArgv</mark>) </p>
+                <p> exec: <strong>str</strong> - file path to the worker file (Default: <mark>process.argv[1]</mark>) </p>
+                <p> args: <strong>[str, ...]</strong> - string arguments passed to the worker (Default: <mark>process.argv.slice(2)</mark>)</p>
+                <p> cwd: <strong>str</strong> - Current Working Directory of the cluster worker process (Default: <mark>undefined</mark> = inherits from the parent) </p>
+                <p> serialization: <strong>str</strong> - serialization used to send message between processes (<mark>'json'</mark> or <mark>'advanced'</mark>) (Default: <mark>false</mark>) </p>
+                <p> silet: <strong>bol</strong> - send or not the output on the parent <mark>stdio</mark> (Default: <mark>false</mark>) </p>
+                <p> stdio: <strong>arr</strong> - stdio configuration for the cluster worker (must contain <mark>'ipc'</mark>) (this option overrides the <mark>silet</mark> option) </p>
+                <p> uid: <strong>nr</strong> - user Identifier of the process </p>
+                <p> gid: <strong>nr</strong> - group Identifier of the process </p>
+                <p> inspectPort: <strong>nr|fn</strong> - sets an inspector Port of the Worker (Default: workers get their debut port incremented form the parent <mark>process.debugPort</mark>) </p>
+                <p> windowsHide: <strong>bol</strong> - hide the forked process console window (Windows only) (Default: <mark>false</mark>) </p>
+            </div></i>)
+        </td>
+        <td> 
+            - <u>[DEPRECATED after V16.0.0 use <mark>setupPrimary()</mark> instead]</u> changes the default behaviour for future cluster worker processes (does not affect cluster workers already running) <br>
+            - this method callable only from the master process
+            <span class="browserSupport" title="updated : 2020-07-08">
+                <span><i class="fab fa-node-js"></i> 0.7.1 </span>
+                <span><i class="fab fa-node-js"></i> 6.4.0 <mark>stdio</mark> option </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="20.02">
+        <td>  
+            <strong>cluster</strong>.setupPrimary(<i class="openable">option:obj<div>
                 <p> execArgv: <strong>[str, ...]</strong> - list of argument passed to the Node.js executable (Default: <mark>process.execArgv</mark>) </p>
                 <p> exec: <strong>str</strong> - file path to the worker file (Default: <mark>process.argv[1]</mark>) </p>
                 <p> args: <strong>[str, ...]</strong> - string arguments passed to the worker (Default: <mark>process.argv.slice(2)</mark>)</p>
@@ -124,20 +164,20 @@
             - changes the default behaviour for future cluster worker processes (does not affect cluster workers already running) <br>
             - this method callable only from the master process
             <span class="browserSupport" title="updated : 2020-07-08">
-                <span><i class="fab fa-node-js"></i> 0.7.1 </span>
-                <span><i class="fab fa-node-js"></i> 6.4.0 <mark>stdio</mark> option </span>
+                <span><i class="fab fa-node-js"></i> 16.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="30.01">
         <td> <strong>cluster</strong>.worker </td>
-        <td> references the current worker object (not available in the master process)
+        <td> 
+            - references the current worker object (not available in the master process)
             <span class="browserSupport" title="updated : 2020-07-08">
                 <span><i class="fab fa-node-js"></i> 0.7.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="30.02">
         <td> <strong>cluster</strong>.workers </td>
         <td> 
             - returns an object which stores active cluster worker objects keyed by their <mark>id</mark> (available in the master process) <br>
@@ -147,22 +187,22 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="35.01">
         <td colspan="2"> events </td>
     </tr>
-    <tr>
+    <tr class="40.01">
         <td>  
             <strong>cluster.listener</strong>('disconnect', <strong class="openable">fn(clusterWorker)<div>
                 <p> - the cluster worker (object) which disconnects its IPC channel from the parent process </p> 
             </div></strong>)
         </td>
-        <td> emitted (master process) when a cluster worker disconnects its IPC channel linking it to the master process 
+        <td> - emitted (master process) when a cluster worker disconnects its IPC channel linking it to the master process 
             <span class="browserSupport" title="updated : 2020-07-08">
                 <span><i class="fab fa-node-js"></i> 0.7.9 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="40.02">
         <td>  
             <strong>cluster.listener</strong>('exit', <strong class="openable">fn(clusterWorker, exitCode, sig<div>
                 <p> - <strong>clusterWorker</strong> - the exited cluster worker (object) </p>
@@ -170,38 +210,38 @@
                 <p> - <strong>sig</strong> - signal that caused the process to be killed (ex: <mark>SIGHUP</mark>) </p>
             </div>)</strong>)
         </td>
-        <td> emitted (master process) when a cluster worked exited
+        <td> - emitted (master process) when a cluster worked exited
             <span class="browserSupport" title="updated : 2020-07-08">
                 <span><i class="fab fa-node-js"></i> 0.7.9 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="35.02">
         <td>  
             <strong>cluster.listener</strong>('fork', <strong class="openable">fn(clusterWorker)<div>
                 <p> - the newly forked (created) cluster worker (object) </p>
             </div></strong>)
         </td>
-        <td> emitted (master process) when a new cluster worker is created
+        <td> - emitted (master process) when a new cluster worker is created
             <span class="browserSupport" title="updated : 2020-07-08">
                 <span><i class="fab fa-node-js"></i> 0.7.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="45.01">
         <td>  
             <strong>cluster.listener</strong>('listening', <strong class="openable">fn(clusterWorker, address)<div>
                 <p> - <strong>clusterWorker</strong> - the cluster worker (object) from which the server emits the <mark>listening</mark> event </p>
                 <p> - <strong>address</strong> - object containing the address on which the server is listening (ex: <mark>{address:'127.0.0.1', port:1000, addressType:4}</mark>) </p>
             </div></strong>)
         </td>
-        <td> emitted (master process) when a server from a cluster worker emits the <mark>listening</mark> event
+        <td> - emitted (master process) when a server from a cluster worker emits the <mark>listening</mark> event
             <span class="browserSupport" title="updated : 2020-07-08">
                 <span><i class="fab fa-node-js"></i> 0.7.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="50.01">
         <td>  
             <strong>cluster.listener</strong>('message' <strong>fn(<spawn class="openable">clusterWorker<div>
                 <p> - the cluster worker which sends the message </p>
@@ -211,32 +251,32 @@
                 <p> - in not an active server or server socket was sent = <mark>undefined</mark> </p>
             </div></strong>)</strong>)
         </td>
-        <td> emitted (master process) when the master process receives a message from one of its cluster workers (through IPC)
+        <td> - emitted (master process) when the master process receives a message from one of its cluster workers (through IPC)
             <span class="browserSupport" title="updated : 2020-07-08">
                 <span><i class="fab fa-node-js"></i> 2.5.0 </span>
                 <span><i class="fab fa-node-js"></i> 6.0.0 <strong>clusterWorker</strong> argument </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="35.03">
         <td>  
             <strong>cluster.listener</strong>('online', <strong class="openable">fn(clusterWorker)<div>
                 <p> - the running cluster worker (object) </p>
             </div></strong>)
         </td>
-        <td> emitted (master process) when a newly created cluster worker starts running
+        <td> - emitted (master process) when a newly created cluster worker starts running
             <span class="browserSupport" title="updated : 2020-07-08">
                 <span><i class="fab fa-node-js"></i> 0.7.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="55.01">
         <td>  
             <strong>cluster.listener</strong>('setup', <strong class="openable">fn(setup:obj)<div>
                 <p> - <strong>setup:obj</strong> = <mark>cluster.settings</mark> (at the time the <mark>cluster.setupMaster()</mark> was called) </p>
             </div></strong>)
         </td>
-        <td> emitted (master process) each time the <mark><strong>cluster</strong>.setupMaster()</mark> method is called 
+        <td> - emitted (master process) each time the <mark><strong>cluster</strong>.setupMaster()</mark> or <mark><strong>cluster</strong>.setupPrimary()</mark> method is called 
             <span class="browserSupport" title="updated : 2020-07-08">
                 <span><i class="fab fa-node-js"></i> 0.7.1 </span>
             </span>
@@ -245,12 +285,15 @@
 </table>
     <br>
 <table class="table">
-<caption> Worker </caption>
+<caption> 
+    Worker 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
         <th style="width:30%;"> Method / Property </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> <strong>clusterWorker</strong> </td>
         <td> 
             - represents the cluster worker process which is basically a forked child process, created by <mark><strong>cluster</strong>.fork()</mark> <br>
@@ -262,7 +305,7 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td> <strong>clusterWorker</strong>.disconnect() </td>
         <td> 
             - in the cluster worker closes all servers, once all servers emit the <mark>close</mark> event then disconnects the IPC channel (so the cluster worker process can die gracefully) <br>
@@ -275,7 +318,7 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.03">
         <td> <strong>clusterWorker</strong>.exitedAfterDisconnect </td>
         <td> 
             - returns <mark>true</mark> if the cluster worker exited due to <mark>disconnect()</mark> or <mark>kill()</mark> methods <br>
@@ -286,31 +329,31 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td> <strong>clusterWorker</strong>.id </td>
-        <td> returns the (unique) Identifier (number) of the worker 
+        <td> - returns the (unique) Identifier (number) of the worker 
             <span class="browserSupport" title="updated : 2020-07-09">
                 <span><i class="fab fa-node-js"></i> 0.8.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.02">
         <td> <strong>clusterWorker</strong>.isConnected() </td>
-        <td> returns <mark>true</mark> if the cluster worker is connected to its master process via IPC channel, otherwise returns <mark>false</mark>   
+        <td> - returns <mark>true</mark> if the cluster worker is connected to its master process via IPC channel, otherwise returns <mark>false</mark>   
             <span class="browserSupport" title="updated : 2020-07-09">
                 <span><i class="fab fa-node-js"></i> 0.11.14 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.03">
         <td> <strong>clusterWorker</strong>.isDead() </td>
-        <td> returns <mark>true</mark> if the cluster worker process was terminated, otherwise returns <mark>false</mark>
+        <td> - returns <mark>true</mark> if the cluster worker process was terminated, otherwise returns <mark>false</mark>
             <span class="browserSupport" title="updated : 2020-07-09">
                 <span><i class="fab fa-node-js"></i> 0.11.14 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.02">
         <td>  
             <strong>clusterWorker</strong>.kill(<i class="openable">sig<div>
                 <p> - signal to send to the cluster worker process (Default: <mark>SIGTERM</mark>) </p>
@@ -325,15 +368,15 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.01">
         <td> <strong>clusterWorker</strong>.process </td>
-        <td> returns the created (forker) <strong>childProcess</strong> object (in the master process)  
+        <td> - returns the created (forker) <strong>childProcess</strong> object (in the master process)  
             <span class="browserSupport" title="updated : 2020-07-09">
                 <span><i class="fab fa-node-js"></i> 0.7.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.01">
         <td>  
             <strong>clusterWorker</strong>.send(<strong>msg</strong>, <i class="openable">handle<div>
                 <p> - running server object (server which is listening) </p>
@@ -355,47 +398,49 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="30.01">
         <td colspan="2"> events </td>
     </tr>
-    <tr>
+    <tr class="40.01">
         <td> <strong>clusterWorker.listener</strong>('disconnect', <strong>fn</strong>) </td>
-        <td> emitted when the cluster worker disconnects its IPC channel which links it to the master process   
+        <td> 
+            - emitted when the cluster worker disconnects its IPC channel which links it to the master process   
             <span class="browserSupport" title="updated : 2020-07-09">
                 <span><i class="fab fa-node-js"></i> 0.7.7 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="55.01">
         <td> <strong>clusterWorker.listener</strong>('error', <strong>fn(err)</strong>) </td>
-        <td> emitted when the child process cannot be spawned, cannot be killed or message sending fails
+        <td> 
+            - emitted when the child process cannot be spawned, cannot be killed or message sending fails
             <span class="browserSupport" title="updated : 2020-07-09">
                 <span><i class="fab fa-node-js"></i> 0.7.3 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="40.02">
         <td>  
             <strong>clusterWorker.listener</strong>('exit', <strong class="openable">fn(exitCode, sig)<div>
                 <p> - <strong>exitCode</strong> - exit code </p>
                 <p> - <strong>sig</strong> - signal that caused the process to be killed (ex: <strong>SIGHUP</strong>) </p>
             </div></strong>)
         </td>
-        <td> emitted when the cluster worker exited
+        <td> - emitted when the cluster worker exited
             <span class="browserSupport" title="updated : 2020-07-09">
                 <span><i class="fab fa-node-js"></i> 0.11.12 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="45.01">
         <td> <strong>clusterWorker.listener</strong>('listening', <strong>fn</strong>) </td>
-        <td> emitted when a server from the cluster worker emits the <mark>listening</mark> event <u>(not emitted in the worker)</u>
+        <td> - emitted when a server from the cluster worker emits the <mark>listening</mark> event <u>(not emitted in the worker)</u>
             <span class="browserSupport" title="updated : 2020-07-09">
                 <span><i class="fab fa-node-js"></i> 0.7.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="50.01">
         <td>  
             <strong>clusterWorker.listener</strong>('message' <strong>fn(msg, <strong class="openable">handle<div>
                 <p> - running server object (server which is listening) </p>
@@ -411,7 +456,7 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="35.01">
         <td> <strong>clusterWorker.listener</strong>('online', <strong>fn</strong>) </td>
         <td> emitted when the cluster worker starts running <u>(not emitted in the worker)</u>
             <span class="browserSupport" title="updated : 2020-07-09">
@@ -469,95 +514,8 @@
     </pre>
 <hr>
 <!----------------------------------------------------------------------------------------------------------->
-<h2 style="color:darkblue;"><u> The <mark>fork()</mark> / <mark>disconnect()</mark> / <mark>isMaster</mark> <mark>isWorker</mark> / <mark>schedulingPolicy</mark> / <mark>setupMaster()</mark> / <mark>settings</mark> / <mark>worker</mark> / <mark>workers</mark> properties and methods </u></h2>
+<h2 style="color:darkblue;"><u> The <mark>fork()</mark> / <mark>disconnect()</mark> / <mark>isMaster</mark> / <mark>isPrimary</mark> / <mark>isWorker</mark> / <mark>schedulingPolicy</mark> / <mark>setupMaster()</mark> / <mark>setupPrimary()</mark> / <mark>settings</mark> / <mark>worker</mark> / <mark>workers</mark> properties and methods </u></h2>
 <h3 style="color:darkblue;"><u> Events: <mark>fork</mark> / <mark>online</mark> / <mark>disconnect</mark> / <mark>exit</mark> / <mark>listening</mark> / <mark>message</mark> / <mark>setup</mark> </u></h3>
-    <pre class="syntax">
-SYNTAX :    <strong>cluster</strong>.fork(<i class="openable">env:obj<div>
-                <p> - object sets environment varialbes in the spawned cluster worker (ex: <mark>{KEY1:'env var value'</mark>}) </p>
-            </div></i>)                                                     // spawns a new cluster worker process (which immediately runs this file (code) in the newly spawned cluster worker process)    
-                                                                                          this method callable only from the master process  
-                            
-            <strong>cluster</strong>.disconnect(<i>fn</i>)                                                     // calls <mark>disconnect()</mark> on each cluster workers present in the <mark>cluster.workers</mark> property 
-                                                                                          once all cluster workers are disconnected all internal domain sockets (handles) are closed and the callback is called <u>(the master process can die gracefully)</u>    
-                                                                                          this method callable only from the master process   
-                            
-            <strong>cluster</strong>.isMaster                                                           // returns <span class="openable"><mark>true</mark> if this code is running in the master process<div>
-                <p> - if <mark>process.env.NODE_UNIQUE_ID</mark> is <mark>undefined</mark> this value is set to <mark>true</mark> </p>
-            </div></span>, otherwise returns <mark>false</mark>    
-            <strong>cluster</strong>.isWorker                                                           // returns <mark>true</mark> if this code is running in a cluster worker process, otherwise returns <mark>false</mark>    
-            
-            <strong>cluster</strong>.schedulingPolicy                                                   // gets or sets the how the load is distributed among cluster worker processes (Default except on Windows: <mark>2</mark>)
-                                                                                          (<mark>2</mark> | <mark>cluster.SCHED_RR</mark> = round-robin fashion) (<mark>1</mark> | <mark>cluster.SCHED_NONE</mark> = OS handles the load distribution) 
-                                                                                          once the <mark>setupMaster()</mark> is called  or the first cluster worker process is spawned this option is frozen and cannot be changed anymore    
-                                                                                          this option can be changed by the <mark>NODE_CLUSTER_SHED_POLICY</mark> environment variable (<mark>'rr'</mark> or <mark>'none'</mark>)    
-            
-            <strong>cluster</strong>.setupMaster(<i class="openable">settings:obj<div>
-                <p> execArgv: <strong>[str, ...]</strong> - list of argument passed to the Node.js executable (Default: <mark>process.execArgv</mark>) </p>
-                <p> exec: <strong>str</strong> - file path to the worker file (Default: <mark>process.argv[1]</mark>) </p>
-                <p> args: <strong>[str, ...]</strong> - string arguments passed to the worker (Default: <mark>process.argv.slice(2)</mark>)</p>
-                <p> cwd: <strong>str</strong> - Current Working Directory of the cluster worker process (Default: <mark>undefined</mark> = inherits from the parent) </p>
-                <p> serialization: <strong>str</strong> - serialization used to send message between processes (<mark>'json'</mark> or <mark>'advanced'</mark>) (Default: <mark>false</mark>) </p>
-                <p> silet: <strong>bol</strong> - send or not the output on the parent <mark>stdio</mark> (Default: <mark>false</mark>) </p>
-                <p> stdio: <strong>arr</strong> - stdio configuration for the cluster worker (must contain <mark>'ipc'</mark>) (this option overrides the <mark>silet</mark> option) </p>
-                <p> uid: <strong>nr</strong> - user Identifier of the process </p>
-                <p> gid: <strong>nr</strong> - group Identifier of the process </p>
-                <p> inspectPort: <strong>nr|fn</strong> - sets an inspector Port of the Worker (Default: workers get their debut port incremented form the parent <mark>process.debugPort</mark>) </p>
-                <p> windowsHide: <strong>bol</strong> - hide the forked process console window (Windows only) (Default: <mark>false</mark>) </p>
-            </div></i>)                                         // changes the default behaviour for future cluster worker processes (does not affect cluster workers already running)
-                                                                                          this method callable only from the master process   
-            <strong>cluster</strong>.settings                                                           // <u>after calling <mark>setupMaster()</mark> or <mark>fork()</mark></u> returns an <span class="openable">object<div>
-                <p> execArgv: <strong>[str, ...]</strong> - list of argument passed to the Node.js executable (Default: <mark>process.execArgv</mark>) </p>
-                <p> exec: <strong>str</strong> - file path to the worker file (Default: <mark>process.argv[1]</mark>) </p>
-                <p> args: <strong>[str, ...]</strong> - string arguments passed to the worker (Default: <mark>process.argv.slice(2)</mark>)</p>
-                <p> cwd: <strong>str</strong> - Current Working Directory of the cluster worker process (Default: <mark>undefined</mark> = inherits from the parent) </p>
-                <p> serialization: <strong>str</strong> - serialization used to send message between processes (<mark>'json'</mark> or <mark>'advanced'</mark>) (Default: <mark>false</mark>) </p>
-                <p> silet: <strong>bol</strong> - send or not the output on the parent <mark>stdio</mark> (Default: <mark>false</mark>) </p>
-                <p> stdio: <strong>arr</strong> - stdio configuration for the cluster worker (must contain <mark>'ipc'</mark>) (this option overrides the <mark>silet</mark> option) </p>
-                <p> uid: <strong>nr</strong> - user Identifier of the process </p>
-                <p> gid: <strong>nr</strong> - group Identifier of the process </p>
-                <p> inspectPort: <strong>nr|fn</strong> - sets an inspector Port of the Worker (Default: workers get their debut port incremented form the parent <mark>process.debugPort</mark>) </p>
-                <p> windowsHide: <strong>bol</strong> - hide the forked process console window (Windows only) (Default: <mark>false</mark>) </p>
-            </div></span> which contains cluster worker process settings for new cluster workers
-                                                                                          shouldn't be set manually (from a cluster worker process always returns <mark>undefined</mark>)    
-                            
-            <strong>cluster</strong>.worker                                                             // references the current worker object (not available in the master process)
-            <strong>cluster</strong>.workers                                                            // returns an object which stores active cluster worker objects keyed by their <mark>id</mark> (available in the master process)    
-                                                                                          a cluster worker is removed after it has been disconnected and exited (before the <mark>disconnect</mark> and <mark>exit</mark> events)    
-            
-    <span style="color:darkgray">// Events -------------------------------------------------------------------------</span>
-            <strong>cluster.listener</strong>('fork', <strong class="openable">fn(clusterWorker)<div>
-                <p> - the newly forked (created) cluster worker (object) </p>
-            </div></strong>)                               // emitted (master process) when a new cluster worker is created  
-            <strong>cluster.listener</strong>('online', <strong class="openable">fn(clusterWorker)<div>
-                <p> - the running cluster worker (object) </p>
-            </div></strong>)                             // emitted (master process) when a newly created cluster worker starts running     
-            
-            <strong>cluster.listener</strong>('disconnect', <strong class="openable">fn(clusterWorker)<div>
-                <p> - the cluster worker (object) which disconnects its IPC channel from the parent process </p> 
-            </div></strong>)                         // emitted (master process) when a cluster worker disconnects its IPC channel linking it to the master process 
-            <strong>cluster.listener</strong>('exit', <strong class="openable">fn(clusterWorker, exitCode, sig<div>
-                <p> - <strong>clusterWorker</strong> - the exited cluster worker (object) </p>
-                <p> - <strong>exitCode</strong> - exit code </p>
-                <p> - <strong>sig</strong> - signal that caused the process to be killed (ex: <mark>SIGHUP</mark>) </p>
-            </div>)</strong>)                // emitted (master process) when a cluster worked exited    
-            
-            <strong>cluster.listener</strong>('listening', <strong class="openable">fn(clusterWorker, address)<div>
-                <p> - <strong>clusterWorker</strong> - the cluster worker (object) from which the server emits the <mark>listening</mark> event </p>
-                <p> - <strong>address</strong> - object containing the address on which the server is listening (ex: <mark>{address:'127.0.0.1', port:1000, addressType:4}</mark>) </p>
-            </div></strong>)                 // emitted (master process) when a server from a cluster worker emits the <mark>listening</mark> event 
-                
-            <strong>cluster.listener</strong>('message' <strong>fn(<spawn class="openable">clusterWorker<div>
-                <p> - the cluster worker which sends the message </p>
-            </div></spawn>, msg, <strong class="openable">handle<div>
-                <p> - running server object (server which is listening) </p>
-                <p> - server socket <u>which is connected</u> </p>
-                <p> - in not an active server or server socket was sent = <mark>undefined</mark> </p>
-            </div></strong>)</strong>)               // emitted (master process) when the master process receives a message from one of its cluster workers (through IPC)   
-                
-            <strong>cluster.listener</strong>('setup', <strong class="openable">fn(setup:obj)<div>
-                <p> - <strong>setup:obj</strong> = <mark>cluster.settings</mark> (at the time the <mark>cluster.setupMaster()</mark> was called) </p>
-            </div></strong>)                                  // emitted (master process) each time the <mark><strong>cluster</strong>.setupMaster()</mark> method is called 
-    </pre>
 <details class="example">
 <summary> DEMO </summary>
     <pre>
@@ -949,63 +907,6 @@ pall@Ryzen:~/Documents/CodePlus/My Site/03 Improuve/Learn WebDesign/04 Node.js/C
 <!----------------------------------------------------------------------------------------------------------->
 <h2 style="color:darkblue;"><u> ClusterWorker <mark>disconnect()</mark> / <mark>kill()</mark> / <mark>exitedAfterDisconnect</mark> / <mark>id</mark> / <mark>isConnected()</mark> / <mark>idDead()</mark> / <mark>process</mark> / <mark>send()</mark> properties and methods </u></h2>
 <h3 style="color:darkblue;"><u> Events: <mark>online</mark> / <mark>disocnnect</mark> / <mark>exit</mark> / <mark>listening</mark> / <mark>message</mark> / <mark>error</mark> </u></h3>
-    <pre class="syntax">
-SYNTAX :    <strong>clusterWorker</strong>                                                              // represents the cluster worker process which is basically a forked child process, created by <mark><strong>cluster</strong>.fork()</mark> 
-                                                                                          contains all public informations and methods about the cluster worker (extends <mark>EventEmitter</mark>)    
-                                                                                          from the master process they are reachable in the <mark><strong>cluster</strong>.workers</mark> property  
-                                                                                          form the cluster worker process reachable by the <mark><strong>clusterWorker</strong>.worker</mark> property  
-            
-            <strong>clusterWorker</strong>.disconnect()                                                 // in the cluster worker closes all servers, once all servers emit the <mark>close</mark> event then disconnects the IPC channel (so the cluster worker process can die gracefully)    
-                                                                                          in the master process send an internal message to the worker causing the call <mark>disconnect()</mark> on itself  
-                                                                                          gracefully closes servers only <u>(client connections are shut down immediately)</u> 
-                                                                                          returns this <strong>clusterWorker</strong> object  
-            <strong>clusterWorker</strong>.kill(<i class="openable">sig<div>
-                <p> - signal to send to the cluster worker process (Default: <mark>SIGTERM</mark>) </p>
-            </div></i>)                                                   // in the cluster worker disconnects the IPC channel then exits the process with exit code <mark>0</mark>   
-                                                                                          in the master process disconnects the IPC channel then kills the cluster worker with a signal   
-                                                                                          this method is not identical with the <mark>process.kill()</mark> method because it attempts to disconnect the IPC channel before sending a signal    
-            <strong>clusterWorker</strong>.exitedAfterDisconnect                                        // returns <mark>true</mark> if the cluster worker exited due to <mark>disconnect()</mark> or <mark>kill()</mark> methods   
-                                                                                          returns <mark>false</mark> if the cluster worker exited for some other reasons
-                                                                                          returns <mark>undefined</mark> if the cluster worker is still running 
-            
-            <strong>clusterWorker</strong>.id                                                           // returns the (unique) Identifier (number) of the worker   
-            <strong>clusterWorker</strong>.isConnected()                                                // returns <mark>true</mark> if the cluster worker is connected to its master process via IPC channel, otherwise returns <mark>false</mark>   
-            <strong>clusterWorker</strong>.isDead()                                                     // returns <mark>true</mark> if the cluster worker process was terminated, otherwise returns <mark>false</mark>  
-            
-            <strong>clusterWorker</strong>.process                                                      // returns the created (forker) <strong>childProcess</strong> object (in the master process)
-            
-            <strong>clusterWorker</strong>.send(<strong>msg</strong>, <i class="openable">handle<div>
-                <p> - running server object (server which is listening) </p>
-                <p> - server socket <u>which is connected</u> </p>
-                <p> - in not an active server or server socket was sent the receiving side receives <mark>undefined</mark> </p>
-            </div></i>, <i class="openable">option:obj<div>
-                <p> keepOpen: <strong>bol</strong> - keepOpen: <strong>bol</strong> - used when passing <mark>net.Socket</mark> instances (as <i>handle</i>), when <mark>true</mark> the socket is kept open in the sending process (Default: <mark>false</mark>) </p>
-            </div></i>, <strong class="openable">fn(err)<div>
-                <p> - <strong>err</strong> - (if sending successful = <mark>null</mark>) (if sending fails = <mark>null</mark>) </p>
-            </div></strong>)                   // in the cluster worker sends a message to the master process  
-                                                                                          in the master process sends a message to this <strong>clusterWorker</strong>  
-                                                                                          on successful sending returns <mark>true</mark> and the callback is fired (if provided)    
-            
-    <span style="color:darkgray">// Events -------------------------------------------------------------------------</span>
-            <strong>clusterWorker.listener</strong>('online', <strong>fn</strong>)                                       // emitted when the cluster worker starts running <u>(not emitted in the worker)</u>    
-            
-            <strong>clusterWorker.listener</strong>('disconnect', <strong>fn</strong>)                                   // emitted when the cluster worker disconnects its IPC channel which links it to the master process   
-            <strong>clusterWorker.listener</strong>('exit', <strong class="openable">fn(exitCode, sig)<div>
-                <p> - <strong>exitCode</strong> - exit code </p>
-                <p> - <strong>sig</strong> - signal that caused the process to be killed (ex: <strong>SIGHUP</strong>) </p>
-            </div></strong>)                         // emitted when the cluster worker exited 
-            
-            <strong>clusterWorker.listener</strong>('listening', <strong>fn</strong>)                                    // emitted when a server from the cluster worker emits the <mark>listening</mark> event <u>(not emitted in the worker)</u>    
-            
-            <strong>clusterWorker.listener</strong>('message' <strong>fn(msg, <strong class="openable">handle<div>
-                <p> - running server object (server which is listening) </p>
-                <p> - server socket <u>which is connected</u> </p>
-                <p> - in not an active server or server socket was sent = <mark>undefined</mark> </p>
-            </div></strong>)</strong>)                         // in the cluster worker emitted when a message is received from the master process  
-                                                                                          in the master process emitted when a message is received from this <strong>clusterWorker</strong>   
-            
-            <strong>clusterWorker.listener</strong>('error', <strong>fn(err)</strong>)                                   // emitted when the child process cannot be spawned, cannot be killed or message sending fails 
-    </pre>
 <details class="example">
 <summary> DEMO </summary>
     <pre>
@@ -1300,6 +1201,6 @@ pall@Ryzen:~/Documents/CodePlus/My Site/03 Improuve/Learn WebDesign/04 Node.js/C
     </pre>
 </details>
 
-<br><br>
+    <br><br>
 </body>
 </html>

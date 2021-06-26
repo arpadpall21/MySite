@@ -10,282 +10,59 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Functions (ver 3.4.1) </h1>
+<h1> Functions (ver 4.0.0) </h1>
     <p> Updated: ( 2017-06-25 / 2018-01-27 / 2018-01-31 / 2018-03-14 / 2018-05-25 / 2019-04-18 / 2020-10-19)</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">JavaScript></a> Functions  
     </p>
 <table class="table">
+<caption>
+        Methods 
+        <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <th style="width:30%;"> Object / Method </th>
+        <th style="width:30%;"> Method </th>
         <th> Description </th>
     </tr>
-    <tr>
-        <td> <small>new</small> Function(<i>arg:str, ...</i>, <strong>fnBody:str</strong>) </td>
+    <tr class="01.02">
+        <td> <strong>obj.fn</strong>.apply(<strong>targObj</strong><small>, [<i>arg, ...</i>]</small>) </td>
         <td> 
-            creates and returns a function (not recommended) 
-            the enclosed function calls itself (self-invoking function) 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> yes </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-                <span><i class="fab fa-safari"></i> yes </span>
+            - calls an object's method on another object
+            <span id="browserSupport" title="updated: 2021-05-19">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> 
-            (<strong>fn(arg, ...)</strong>)(<i class="openable">arg, ...<div>
-                <p> - arguments to pass to the enclosed function </p>
-            </div></i>)  
-        </td>
-        <td> 
-            the enclosed function calls itself (self-invoking function) 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> yes </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-                <span><i class="fab fa-safari"></i> yes </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> function <strong>fn</strong></i>(<strong>arg</strong> = <strong>val</strong><i>, ...</i>){ }</strong> </td>
-        <td> <i class="fab fa-js">6</i> sets a default value for the argument (in case no value is passed)
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 49 </span>
-                <span><i class="fab fa-firefox"></i> 15 </span>
-                <span><i class="fab fa-opera"></i> 36 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 14 </span>
-                <span><i class="fab fa-safari"></i> 10 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <strong>function(){</strong> new.target <strong>}</strong> </td>
-        <td> 
-            <i class="fab fa-js">6</i> returns the function itself if it was called with the <mark>new</mark> keyword (called as Constructor) otherwise returns <mark>undefined</mark> 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 46 </span>
-                <span><i class="fab fa-firefox"></i> 41 </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
-                <span><i class="fab fa-safari"></i> yes </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <em>{<strong>fnId</strong>(){</em> super.<strong>protProp</strong> <em>}}</em> </td>
-        <td>             references the specified property <u>of the prototype object</u> <u>(only available in object methods that are declared with ES6 syntax)</u> 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 42 </span>
-                <span><i class="fab fa-firefox"></i> 45 </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
-                <span><i class="fab fa-safari"></i> yes </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2"> <mark>arguments</mark> object  </td>
-    </tr>
-    <tr>
-        <td> arguments </td>
-        <td> 
-            - contains the current executing function's arguments, it is available only inside a function <br>
-            - references the function arguments in an Array <u>(inside the function body) (ex: <mark>arguments[0]</mark> = first passed argument</u>
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> yes </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-                <span><i class="fab fa-safari"></i> yes </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <em>arguments</em>.callee </td>
-        <td> 
-            returns the parent function of the <mark>arguments</mark> object 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> yes </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 6 </span>
-                <span><i class="fab fa-safari"></i> yes </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <em>arguments</em>.length </td>
-        <td> 
-            returns the number of <u>passed arguments</u> by the caller 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> yes </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-                <span><i class="fab fa-safari"></i> yes </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2"> Calling an object's method on another object </td>
-    </tr>
-    <tr>
-        <td> <strong>obj.fn</strong>.apply(<strong>targObj</strong><i>, [arg, ...]</i>) </td>
-        <td> calls an object's method on another object (the 2nd argument is an <u>Array-like object</u> which holds the arguments to pass)
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> 4 </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-                <span><i class="fab fa-safari"></i> yes </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
+    <tr class="02.01">
         <td> <strong>obj.fn</strong>.bind(<strong>targObj</strong><i>, arg, ...</i>) </td>
-        <td> returns a new function which is when called its <mark>this</mark> keyword is bound to the <strong>targObj</strong>
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 7 </span>
-                <span><i class="fab fa-firefox"></i> 4 </span>
-                <span><i class="fab fa-opera"></i> 11.6 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
-                <span><i class="fab fa-safari"></i> 5.1 </span>
-            </span>
-        </td>
-    </tr>    
-    <tr>
-        <td> <strong>obj.fn</strong>.call(<strong>targObj</strong><i>, arg, ...</i>) </td>
-        <td> calls an object's method on another object 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> yes </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-                <span><i class="fab fa-safari"></i> yes </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2"> 
-            arrow function <i class="fab fa-js">6</i> 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 45 </span>
-                <span><i class="fab fa-firefox"></i> 22 </span>
-                <span><i class="fab fa-opera"></i> 32 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
-                <span><i class="fab fa-safari"></i> 10 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> (<i>arg1, arg2, ...</i>) => {<i>executedCode</i>} </td>
-        <td> the arrow functions is a shorter version of traditional functions, <u> the <mark>arguments</mark> / <mark>super()</mark> / <mark>new.target</mark> keywords are NOT available inside it</u> </p>
-</td>
-    </tr>
-    <tr>
-        <td> (<i>arg1, arg2, ...</i>) => <i>returnedCode</i> </td>
-        <td> if the curly brackets are omitted the code is returned after the arrow </td>
-    </tr>
-    <tr>
-        <td> <strong>arg1</strong> => <i>returnedCode</i> </td>
-        <td> if we pass only 1 argument the parentheses are optional </td>
-    </tr>
-    <tr>
-        <td> () => <i>returnedCode</i> </td>
-        <td> if no argument is passed the parentheses are required </td>
-    </tr>
-    <tr>
-        <td colspan="2"> <mark>this</mark> keyword </td>
-    </tr>
-    <tr>
-        <td> <em>function(){</em> this <em>}</em> </td>
-        <td>  
-            - (in regular function) the <mark>this</mark> keyword references the object that called the function <br>
-            - if not called by an object (ex: called from inside another function) the <mark>this</mark> keyword is a bit inconsistent (returned the global object in my tests)
-        </td>
-    </tr>
-    <tr>
-        <td> <em>()=>{</em> this <em>}</em> </td>
-        <td> (in arrow function) the this keyword awlays references the value of <mark>this</mark> keyword value <u>right before the arrow function</u>
-        </td>
-    </tr>    
-</table>
-    <br>
-<table class="table">
-    <caption> Generator Function (Run/Pause interface) (new in ES6)    
-        <span id="browserSupport" title="updated: 2019-09-19">
-            <span><i class="fab fa-chrome"></i> 39 </span>
-            <span><i class="fab fa-firefox"></i> 26 </span>
-            <span><i class="fab fa-opera"></i> 26 </span>
-            <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span>
-            <span><i class="fab fa-safari"></i> 10 </span>
-            <span><i class="fab fa-node-js"></i> 4.0.0 </span>
-        </span>
-    </caption>
-    <tr>
-        <th style="width:30%;"> Method / Keyword </th>
-        <th> Description </th>
-    </tr>
-    <tr>
-        <td> <em>function</em>* <strong>fnId</strong><em>(<i>arg, ...</i>) {</em> </td>
-        <td> when called returns an iterable object <u>without invoking the function's body</u>  </td>
-    </tr>
-    <tr>
-        <td> <em>function*</em> <strong>id</strong><em>() {</em>yield <i>exp</i> <em>}</em>  </td>
-        <td>  when the <mark>next()</mark> is called evalueates and returns its expression <u>then stops function body execution immediately after the expression</u> 
-        </td>
-    </tr>
-    <tr>
-        <td> <em>function*</em> <strong>id</strong><em>() {</em>yield* <i>iterableObj</i>; <em>}</em>  </td>
-        <td> delegates the iteration cycle to the passed iterable object </td>
-    </tr>
-    <tr> 
-        <td colspan="2"> Methods </td>
-    <tr>
         <td> 
-            <strong>genObj</strong>.next(<i class="openable">val<div>
-                <p> - the called <mark>yield</mark> keyword value (excluded from the yield's expression) </p>
-            </div></i>) 
-        </td>
-        <td> calls the next <mark>yield</mark> expression in the generator funtion's body and returns the value in an iterable result object (<mark>{value:val, done:bol}</mark>)  
-            <span id="browserSupport" title="updated: 2019-09-19">
-                <span><i class="fab fa-chrome"></i> 39 </span>
-                <span><i class="fab fa-firefox"></i> 26 </span>
-                <span><i class="fab fa-opera"></i> 26 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span>
-                <span><i class="fab fa-safari"></i> 10 </span>
-                <span><i class="fab fa-node-js"></i> 4.0.0 </span>
+            - returns a new function which is when called its <mark>this</mark> keyword is bound to the <strong>targObj</strong>
+            <span id="browserSupport" title="updated: 2021-05-19">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10 </span>
             </span>
         </td>
-    </tr>
-    <tr>
-        <td> <strong>genObj</strong>.return(<i>val</i>) </td>
-        <td> ends the generator object and returns the passed <i>val</i> as the generator's last value
-            <span id="browserSupport" title="updated: 2019-09-19">
-                <span><i class="fab fa-chrome"></i> 50 </span>
-                <span><i class="fab fa-firefox"></i> 38 </span>
-                <span><i class="fab fa-opera"></i> 37 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span>
-                <span><i class="fab fa-safari"></i> 10 </span>
-                <span><i class="fab fa-node-js"></i> 6.0.0 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <strong>genObj</strong>.throw(<i>err</i>) </td>
-        <td> throw the passed <i>err</i> in the generator function then resumes execution the function body untill the end of the next <mark>yield</mark> expression, which result is returned in an iterable result object (<mark>{value:val, done:bol}</mark>)    
-            <span id="browserSupport" title="updated: 2019-09-19">
-                <span><i class="fab fa-chrome"></i> 39 </span>
-                <span><i class="fab fa-firefox"></i> 26 </span>
-                <span><i class="fab fa-opera"></i> 26 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span>
-                <span><i class="fab fa-safari"></i> 10 </span>
-                <span><i class="fab fa-node-js"></i> 4.0.0 </span>
+    </tr>    
+    <tr class="01.01">
+        <td> <strong>obj.fn</strong>.call(<strong>targObj</strong><i>, arg, ...</i>) </td>
+        <td> 
+            - calls an object's method on another object  
+            <span id="browserSupport" title="updated: 2021-05-19">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10 </span>
             </span>
         </td>
     </tr>
@@ -304,20 +81,32 @@
     <p> - local variables are created when a function starts, and deleted when the function is completed </p>
     <p> - when a piece of code is executed in the function body without returning the value is called a <u>side effect</u></p>
     <pre class="syntax">
-SYNTAX :    function <strong>functionID</strong>(<i>arg1, arg2, ..</i>) {                                      // arguments are local variables
+SYNTAX:
+  <span style="color:darkgray;">// ----------------------------------------------------------------------------------</span>  <span id="browserSupport" style="color:yellow;" title="updated :2021-05-15"><span><i class="fab fa-chrome"></i> 1 </span><span><i class="fab fa-firefox"></i> 1 </span><span><i class="fab fa-opera"></i> 3 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span><span><i class="fab fa-safari"></i> 1 </span><span><i class="fab fa-node-js"></i> 0.10 </span></span>    
+            function <strong>fnID</strong>(<i>arg, ...</i>) {                                                  // arguments are local variables
                 this                                                                   // the <mark>this</mark> keyword refers to the object what called this function (in regular functions)   
-                new.target                                                             // refers to <u>this function</u> if this function was called with the <mark>new</mark> keyword, otherwise returns "undefined" <u>(used to detect if this function is called as a Constructor)</u>   
-                <i>some code...</i>
-                return <i>returnedCode</i>                                                    // value|expression to return <u>(after the "return" keyword no code will be executed)</u>
+                
+                <i>// some code...</i>
+                
+                return <i>exp</i>                                                             // returns the expression to the caller
+                <i>// omitted code...</i>                                                     // after the return keyword no code will be executed   
             }
             
             
-            <em>{<strong>fnId</strong>(){</em> super.<strong>protProp</strong> <em>}}</em>                                                 // references the specified property <u>of the prototype object</u> <u>(only available in object methods that are declared with ES6 syntax)</u>    
-                
-                
-  <span style="color:darkgray;">// <mark>Function</mark> constructor -------------------------------------------------------------</span>
-            <small>new</small> Function(<i>arg:str, ...</i>, <strong>fnBody:str</strong>)                                     // creates and returns a function (not recommended) 
-    </pre>    
+  <span style="color:darkgray;">// <mark>Function</mark> constructor -------------------------------------------------------------</span>  <span id="browserSupport" style="color:yellow;" title="updated :2021-05-15"><span><i class="fab fa-chrome"></i> 1 </span><span><i class="fab fa-firefox"></i> 1 </span><span><i class="fab fa-opera"></i> 3 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span><span><i class="fab fa-safari"></i> 1 </span><span><i class="fab fa-node-js"></i> 0.10 </span></span>    
+            new Function(<i>arg:str, ...</i>, <strong>fnBody:str</strong>)                                     // creates and returns a function (not recommended) 
+            
+            
+  <span style="color:darkgray;">// <mark>new.target</mark> -----------------------------------------------------------------------</span>  <span id="browserSupport" style="color:yellow;" title="updated :2021-05-15"><span><i class="fab fa-chrome"></i> 46 </span><span><i class="fab fa-firefox"></i> 41 </span><span><i class="fab fa-opera"></i> 33 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span><span><i class="fab fa-safari"></i> 11 </span><span><i class="fab fa-node-js"></i> 5.0.0 </span></span>    
+            <em><strong>fnId</strong>(){</em> new.target <em>}</em>                                                       // references <u>this function</u> if this function was called with the <mark>new</mark> keyword, otherwise returns <mark>undefined</mark> 
+                                                                                         // used to detect if this function is called as a Constructor 
+            
+            
+  <span style="color:darkgray;">// <mark>super</mark><strong>.prop|method</strong> ----------------------------------------------------------------</span>  <span id="browserSupport" style="color:yellow;" title="updated :2021-05-15"><span><i class="fab fa-chrome"></i> 42 </span><span><i class="fab fa-firefox"></i> 45 </span><span><i class="fab fa-opera"></i> 29 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span><span><i class="fab fa-safari"></i> 7 </span><span><i class="fab fa-node-js"></i> 6.0.0 </span></span>    
+            <em>{<strong>fnId</strong>(){</em> super<strong>.prop|method</strong> <em>}}</em>                                              // references the prototype object's property|method of the current object 
+                                                                                         // available only in object methods that are declared with ES6 function declaration   
+                                                                                         // calling <mark>super</mark> without property|method is not allowed (trows an error)  
+    </pre>  
 <details class="example">
 <summary> DEMO </summary>
     <pre>
@@ -342,19 +131,23 @@ SYNTAX :    function <strong>functionID</strong>(<i>arg1, arg2, ..</i>) {       
     new MyConstructor("val");                                                          // function is called as Constructor
     
 // super ------------------------------------------------------------------------------ 
-    var objA = {
-        prop1:"myValue", 
-        method1:function(){return "I am an 'objA' method"}                             // 'super' wouldn't be available here, method not declared with ES6 syntax   
-    }
-    var objB = {
-        getParentProp(){return super.prop1 },                                          // -! ES6 method syntax (only situation where the "super" keyword works (other than classes) [TESTED 2019-04-22])    
-        getParentMethod(){return super.method1}
+    var protObj = {p:'parentProp', parentFN(){ return 'parentMethod' }};
+    
+    var myObj = {
+        regularMethod:function(){ 
+            // super.p1                                                                // -! would throw an error the super keyword unexpected here (not ES6 object method) 
+        },
+        es6Method(){
+            console.log( super.p );                                                    // -> 'parentProp'       // references the prototype 'p' property    
+            console.log( super.parentFN() );                                           // -> 'parentMethod'     // references the prototype 'parentFN' method    
+            
+            // super;                                                                  // -! would thrown an error the super keyword cannot be called alone (we cannot reference the prototype like this)
+        }
     }
     
-    Object.setPrototypeOf(objB, objA);                                                 // set "objA" as prototype of "objB"
+    Object.setPrototypeOf(myObj, protObj);                                             // set protObj as prototype of myObj  
     
-    objB.getParentProp();                                                              // -> "myValue"                     // the 'super.prop1' references the prototype object property 
-    objB.getParentMethod()();                                                          // -> "objA response returned!"     // the 'super.method1' references and calls the prototype object method 
+    myObj.es6Method();    
     </pre>
 </details>
 <details class="example">  
@@ -453,7 +246,7 @@ SYNTAX :    function <strong>functionID</strong>(<i>arg1, arg2, ..</i>) {       
 </details>    
 <!----------------------------------------------------------------------------------------------------------------------->
 <hr>
-<h2><u> Function Definition|Expression VS Function Declaration </u></h2>
+<h2 style="color:darkblue"><u> Function definition|expression VS Function declaration </u></h2>
     <p> - <u>in JavaScript declarations are always moved on the top of the scope!</u> </p>
     <p> - <u>Function Definitions</u> or <u>Function Expressions</u> are created and structured with the document workflow </p>
     <p> - <u>Function Declarations</u> <u style="color:yellow;">are Hoisted!</u> not part of the document workflow, they are automatically moved on the top of their scope </p>
@@ -551,19 +344,23 @@ Example :   var <strong>funcID</strong> = function() {}                         
 </details>
 <!----------------------------------------------------------------------------------------------------------------------->
 <hr>
-<h2><u> Function Arguments <mark>arguments</u> / <mark>=</mark> (default argument <i class="fab fa-js">6</i>)</h2>
+<h2 style="color:darkblue"><u> Function arguments </u></h2>
     <p> - function arguments are the real values passed and received by the function </p>
     <p> - JavaScript does not perform any type checking on passed arguments and will return "undefined" on missing arguments <u>(unless an optional argument is set with the <mark>=</mark> operator)</u> </p>
     <p> - because there is no type checking <span style="color:yellow;">actions can also be passed</span> not just values </p>
-    <p> - the <mark>arguments</mark> object contains the current executing function's arguments, it is available only inside a function, created automatically when the function start executing </p>
     <pre class="syntax">
-SYNTAX :    function(<i>arg</i> = <strong>val</strong>) {                                                      // <i class="fab fa-js">6</i> sets a default value for the argument (in case no value is passed)  
-                arguments                                                              // references the function arguments in an Array <u>(inside the function body) (ex: <mark>arguments[0]</mark> = first passed argument</u>   
-            }
+SYNTAX : 
+  <span style="color:darkgray;">// default argument -----------------------------------------------------------------</span>  <span id="browserSupport" style="color:yellow;" title="updated :2021-05-15"><span><i class="fab fa-chrome"></i> 49 </span><span><i class="fab fa-firefox"></i> 15 </span><span><i class="fab fa-opera"></i> 36 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 14 </span><span><i class="fab fa-safari"></i> 10 </span><span><i class="fab fa-node-js"></i> 6.0.0 </span></span>    
+            <em>function(</em><i>arg</i> = <strong>val</strong><em>) { }</em>                                                    // <i class="fab fa-js">6</i> sets a default value for the argument (in case no value is passed)    
             
-  <span style="color:darkgray;">// <mark>arguments</mark> ojbect properties ------------------------------------------------------</span>
-            <em>arguments</em>.length                                                           // returns the number of <u>passed arguments</u> by the caller 
-            <em>arguments</em>.callee                                                           // returns the parent function of the <mark>arguments</mark> object    
+            
+  <span style="color:darkgray;">// <mark>arguments</mark> object -----------------------------------------------------------------</span>  <span id="browserSupport" style="color:yellow;" title="updated :2021-05-15"><span><i class="fab fa-chrome"></i> 1 </span><span><i class="fab fa-firefox"></i> 1 </span><span><i class="fab fa-opera"></i> 3 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 3 </span><span><i class="fab fa-safari"></i> 1 </span><span><i class="fab fa-node-js"></i> 0.10 </span></span>    
+            <em>function <strong>fnId</strong>() {</em>
+                arguments                                                              // references the passed function arguments in an Array <u>(available only inside the function body)</u>    
+                                                                                         
+                arguments.length                                                       // returns the number of <u>recevied arguments</u> by the function    <span id="browserSupport" style="color:yellow;" title="updated :2021-05-15"><span><i class="fab fa-chrome"></i> 1 </span><span><i class="fab fa-firefox"></i> 1 </span><span><i class="fab fa-opera"></i> 4 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span><span><i class="fab fa-safari"></i> 1 </span><span><i class="fab fa-node-js"></i> 0.10 </span></span>     
+                arguments.callee                                                       // returns the parent function of the <mark>arguments</mark> object         <span id="browserSupport" style="color:yellow;" title="updated :2021-05-15"><span><i class="fab fa-chrome"></i> 1 </span><span><i class="fab fa-firefox"></i> 1 </span><span><i class="fab fa-opera"></i> 4 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 6 </span><span><i class="fab fa-safari"></i> 1 </span><span><i class="fab fa-node-js"></i> 0.10 </span></span>     
+            <em>}</em>
     </pre>
 <details class="example">
 <summary> DEMO </summary>
@@ -741,99 +538,12 @@ $(function(){
     </details>
 </details>
 <!--------------------------------------------------------------------------------------------------------------------------------->
-<hr> 
-<h2><u> the "Call Stack" and Recursive Function </u></h2> 
-    <p> - a function that calls itsef is called <u>recursive function</u> </p>
-    <p> - the "Call Stack" is where JavaScript registers "addresses" <u>Stack Frames</u> (line addresses in the document) </p>
-    <p> - when JavaScript must jump in the code (like function calls) these "addresses" <u>Stack Frames</u> are registered in the "Call Stack", in order to the JS engine to remember where to continue the execution once the called task is finished </p>
-<details class="example">
-<summary> DEMO </summary>
-    <pre>
-    function multiply(x, y) {
-        return x * y;
-    }
-    function printSquare(x) {
-        var s = multiply(x, x);                                                        // : 2nd stack frame        // another address is registered JS jups further to execute this function 
-        return s;                                                                      // the returned vale will trace the call stack back to the original caller
-    }
-    printSquare(5);                                                                    // : 1st stack frame        // JS registers this address and jumps to the actual function to execute 
-    
-// recursive function -----------------------------------------------------------------
-    function myFunction(){
-        myFunction();                                                                  // function recalls itself utnill the "call stack is full"    // -! this would blows the stack
-    }
-    </pre>
-</details>
-<details class="example">
-<summary> Example : </summary>
-<h4 style="color:darkblue;"><u> "blow the stack"</u></h4>
-    <p> - if you fire this recursive function it will "blow the stack" (keeps calling itself so many times that it fill the JavaScript Stack and trhows an error) see console </p>
-    <button onmouseup="blowStack()"> Blow the Stack </button>
-<script>
-    let blowStack = function() {
-        blowStack();  
-    };
-</script>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;button onmouseup="blowStack()"&gt; Blow the Stack &lt;/button&gt;
-&lt;script&gt;
-    let blowStack = function() {
-        blowStack();  
-    };
-&lt;/script&gt;
-        </pre>
-        </details>
-<!----------------------------------------------------------------------------------------------------------------------->
-<h4 style="color:darkblue;"><u> counting to 100 with a recursive function </u></h4>
-    <p id="recursCount"></p>
-<script>
-$(document).ready(function(){
-    countHundredFrom(50);                           // we can set the number from what we want to count to 100
-    
-    function countHundredFrom(a) {
-        if (arguments[0] == 101) {                  // set a condition in order to stop the recursion once argument hit 100
-            
-        }
-        else {
-            $("#recursCount").append(arguments[0] + " ");   // add the current number to the element 
-            arguments[0]++                                  // increment the argument (which is a sort of counter in this case)
-            return countHundredFrom(arguments[0]);          // calling the recursion with the incremented argument
-        }
-    };
-});    
-</script>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p id="recursCount"&gt;&lt;/p&gt;
-&lt;script&gt;
-$(document).ready(function(){
-    countHundredFrom(50);                           // we can set the number from what we want to count to 100
-    
-    function countHundredFrom(a) {
-        if (arguments[0] == 101) {                  // set a condition in order to stop the recursion once argument hit 100
-            
-        }
-        else {
-            $("#recursCount").append(arguments[0] + " ");   // add the current number to the element 
-            arguments[0]++                                  // increment the argument (which is a sort of counter in this case)
-            return countHundredFrom(arguments[0]);          // calling the recursion with the incremented argument
-        }
-    };
-});    
-&lt;/script&gt;
-        </pre>
-        </details>
-</details>
-<!--------------------------------------------------------------------------------------------------------------------------------->
 <hr>    
-<h2><u> Self-Invoking function </u></h2>
+<h2 style="color:darkblue;"><u> Self-Invoking function </u></h2>
     <pre class="syntax">
-SYNTAX :    (<strong>fn(arg, ...)</strong>)(<i class="openable">arg, ...<div>
+SYNTAX :    (<strong>fn</strong>)(<i class="openable">arg, ...<div>
                 <p> - arguments to pass to the enclosed function </p>
-            </div></i>)                                                  // the enclosed function calls itself (self-invoking function)
+            </div></i>)                                                            // the enclosed function calls itself (self-invoking function)
     </pre>
 <details class="example">
 <summary> DEMO </summary>
@@ -879,429 +589,8 @@ SYNTAX :    (<strong>fn(arg, ...)</strong>)(<i class="openable">arg, ...<div>
         </details>
 </details>
 <!--------------------------------------------------------------------------------------------------------------------------------->
-<hr>        
-<h2><u> Closures and Higher-Order Function </u></h2>
-    <p> - a JavaScript closure is a function which basically "encloses" and returns another function </p>
-    <pre class="syntax">
-SYNTAX :    function funcA(<i>arg</i>) {                                                      // function higher in the closure hierarchy has "Higher-Order" 
-                return function(<i>arg</i>) {};
-            }    
-            var funcB = funcA(<i>value</i>);                                                  // we call funcA here which returns the enclosed function and stores that in funcB
-            funcB(<i>value</i>)                                                               // we call the "enclosed" function here
-    </pre>
-<details class="example">
-<summary> DEMO </summary>
-    <pre>
-    function fnA(a) {
-        return function(b) {                                                           // enclosed function  
-            return b + " " + a;                                                        // enclosed function's return value     // -! the higher order function "encloses" its passed value in here 
-        };  
-    }
-    var fnB = fnA("Pie");                                                              // we "enclose" the "Pie" value here (the fnB holds the enclosed value) 
-    fnB("Apple");                                                                      // -> "Apple" Pie"                      // the enclosed value returned here (with another passed value)
-  // ---------------
-    fnA("Pie")("Apple");                                                               // we can call the enclosed function right away like this     
-    
-// Higher-Order Function calls an action  ---------------------------------------------
-    function fireAction(action) {                                                      // this is the "Higher-Order" function which is called first 
-        return action();                                                               // the "Lower-Order" function is returned and executed here 
-    }
-    function displayAlert() {                                                          // this function will be passed as the "action" argument of the function above (this is the "Lower-order" function)
-        alert("alert!");
-    }
-    
-    fireAction(displayAlert);                                                          // function is passed as argument here 
-    fireAction(() => {alert("alert!");});                                              // this does the same as the above call 
-    </pre>
-</details>
-<details class="example">
-<summary> Example : </summary>
-<h4 style="color:darkblue;"><u> simple counter with closure </u></h4>
-    <p id="closure"></p>
-<script>
-$(document).ready(function(){
-    function counterHost(){
-        var counter = 0;                // define collection container
-        return () => counter = counter + 1;
-    }
-    let count = counterHost();          // define closure
-    count();
-    count();
-    count();                            // no matter how many times the closure is called the parent function holds the value 
-// print
-    $("#closure").text("The result of the magical Closure is = " + count()); 
-});
-</script>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p id="closure"&gt;&lt;/p&gt;
-&lt;script&gt;
-$(document).ready(function(){
-    function counterHost(){
-        var counter = 0;                // define collection container
-        return () => counter = counter + 1;
-    }
-    let count = counterHost();          // define closure
-    count();
-    count();
-    count();                            // no matter how many times the closure is called the parent function holds the value 
-// print
-    $("#closure").text("The result of the magical Closure is = " + count()); 
-});
-&lt;/script&gt;
-        </pre>
-        </details>
-<h4 style="color:darkblue;"><u> closure with multiple arguments </u></h4>
-    <p id="closureArg"></p>
-<script> 
-$(document).ready(function(){
-    function hostFn(a, b, c) {
-        return (d, e, f) => a + " " + b + " " + c + " " + d + " " + e + " " + f;    // both functions' arguments are passed and returned   
-    }
-    var closFn = hostFn("1", "2", "3");
-// print
-    $("#closureArg").text(closFn("4", "5", "6") );
-});    
-</script>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p id="closureArg"&gt;&lt;/p&gt;
-&lt;script&gt; 
-$(document).ready(function(){
-    function hostFn(a, b, c) {
-        return (d, e, f) => a + " " + b + " " + c + " " + d + " " + e + " " + f;    // both functions' arguments are passed and returned   
-    }
-    var closFn = hostFn("1", "2", "3");
-// print
-    $("#closureArg").text(closFn("4", "5", "6") );
-});    
-&lt;/script&gt;
-        </pre>
-        </details>
-<h4 style="color:darkblue;"><u> repeat Acttion with Higher-Order a function </u></h4>
-    <p id="addCars"></p>
-<script>
-    let cars = [];
-    
-    function repeatAction(nr, action) {
-        for(let i = 0; i < nr; i++) {
-            action(i);                          // this is where "addArr_items" function executed a number of times the loop calls it
-        }                                       // the value is passed by the "repeatAction" function ! 
-    }
-    
-    function addArr_items(i) {                  // this is a simple function which pushes a new item in the targeted array
-        cars.push("Car" + (i + 1));
-    }
-    repeatAction(4, addArr_items);              // call the parent functions, the second value is the nested function
-                                                    // 4 new items are added to the array
-    
-    repeatAction(4, (i) => {cars.push("Car" + (i + 1));});
-                                                // we do the same thing here but on the spot with an arrow function 
-    
-    document.getElementById("addCars").innerHTML = cars;
-</script>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p id="addCars"&gt;&lt;/p&gt;
-&lt;script&gt;
-    let cars = [];
-    
-    function repeatAction(nr, action) {
-        for(let i = 0; i &lt; nr; i++) {
-            action(i);                          // this is where "addArr_items" function executed a number of times the loop calls it
-        }                                       // the value is passed by the "repeatAction" function ! 
-    }
-    
-    function addArr_items(i) {                  // this is a simple function which pushes a new item in the targeted array
-        cars.push("Car" + (i + 1));
-    }
-    repeatAction(4, addArr_items);              // call the parent functions, the second value is the nested function
-                                                    // 4 new items are added to the array
-    
-    repeatAction(4, (i) => {cars.push("Car" + (i + 1));});
-                                                // we do the same thing here but on the spot with an arrow function 
-    
-    document.getElementById("addCars").innerHTML = cars;
-&lt;/script&gt;
-        </pre>
-        </details>
-<h4 style="color:darkblue;"><u> Double Call </u></h4>
-    <p id="doubleCall"></p>
-<script>
-    var doubleCall = function(a, b) {
-        return (c, d) => a + b + c + d;
-    }
-    document.getElementById("doubleCall").innerHTML = doubleCall(4, 5)(3, 7);     
-</script>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p id="doubleCall"&gt;&lt;/p&gt;
-&lt;script&gt;
-    var doubleCall = function(a, b) {
-        return (c, d) =&gt; a + b + c + d;
-    }
-    document.getElementById("doubleCall").innerHTML = doubleCall(4, 5)(3, 7);     
-&lt;/script&gt;
-        </pre>
-        </details>
-</details>
-<!--------------------------------------------------------------------------------------------------------------------------------->
-<hr>
-<h2><u> Calling an object's method on another object <mark>call()</mark> / <mark>apply()</mark> / <mark>bind()</mark> </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>obj.fn</strong>.call(<strong>targObj</strong><i>, arg, ...</i>)                                             // calls an object's method on another object 
-            <strong>obj.fn</strong>.apply(<strong>targObj</strong><i>, [arg, ...]</i>)                                          // calls an object's method on another object (the 2nd argument is an <u>Array-like object</u> which holds the arguments to pass)
-                
-                
-            <strong>obj.fn</strong>.bind(<strong>targObj</strong><i>, arg, ...</i>)                                             // returns a new function which is when called its <mark>this</mark> keyword is bound to the <strong>targObj</strong>    
-    </pre>
-<details class="example">
-<summary> DEMO </summary>
-    <pre>
-    var audi = {
-        mark:"audi", 
-        type:"A4", 
-        year:2010, 
-        allData:function(a, b) {return this.mark + " " + this.type + " " + this.year + a}
-    };
-    
-    var mercedess = {
-        mark:"mercedess", type:
-        "class C", year:
-        2014
-    };
-    
-// call() / apply() ------------------------------------------------------------------- 
-
-    audi.allData.call(mercedess, " is a nice", " car");                                // -> "mercedess class C 2014 is a nice car"    // audi.allData method called on 'mercedess' object 
-    audi.allData.apply(mercedess, [" is a nice, " car"]);                              // -> "mercedess class C 2014 is a nice car"    // does the same (uses different syntax)
-    
-// bind() -----------------------------------------------------------------------------
-    var myObj = {p1:21};
-    
-    var globFn = function(){
-        return this;
-    }
-    
-    globFn();                                                                          // -> Window         // references the global object (as expected)
-    
-    var bindTest = window.globFn.bind(myObj);                                          // the 'window.globFn' 'this' keyword is bound to the 'myObj' object and returned a new function 
-    
-    bindTest();                                                                        // -> 'myObj'        // the 'this' keyword is bound to the 'myObj' object when the new function is called   
-    </pre>
-</details>
-<details class="example">
-<summary> CODE : </summary>
-<h4 style="color:darkblue;"><u> the <mark>call()</mark> method </u></h4>
-    <p id="call_demo"></p>
-<script>
-    var mouse_A = {mark:"MadCatz", type:"RAT 8", wired:true, buttunNumbers:12, 
-                   printData:function(a) {
-                       return "mark : " + this.mark + " | type : " + this.type + " | Wired : " + this.wired + " | button Numbers : " + this.buttunNumbers + a;
-                   }};
-    var mouse_B = {mark:"Microsoft", type:"54 series", wired:true, buttunNumbers:4};
-    var mouse_C = {mark:"Creative", type:"office 7", wired:false, buttunNumbers:7};
-    var mouse_D = {mark:"Terminator", type:"T-4", wired:false, buttunNumbers:57};
-    
-    document.getElementById('call_demo').innerHTML = 
-        mouse_A.printData(" / ") + "<br>" +
-        mouse_A.printData.call(mouse_B, " / ") + "<br>" +
-        mouse_A.printData.call(mouse_C, " / ") + "<br>" +
-        mouse_A.printData.call(mouse_D, " / ");
-</script>
-    <details>
-    <summary> CODE : </summary>
-    <pre>
-    &lt;p id="call_demo"&gt;&lt;/p&gt;
-&lt;script&gt;
-    var mouse_A = {mark:"MadCatz", type:"RAT 8", wired:true, buttunNumbers:12, 
-                   printData:function(a) {
-                       return "mark : " + this.mark + " | type : " + this.type + " | Wired : " + this.wired + " | button Numbers : " + this.buttunNumbers + a;
-                   }};
-    var mouse_B = {mark:"Microsoft", type:"54 series", wired:true, buttunNumbers:4};
-    var mouse_C = {mark:"Creative", type:"office 7", wired:false, buttunNumbers:7};
-    var mouse_D = {mark:"Terminator", type:"T-4", wired:false, buttunNumbers:57};
-    
-    document.getElementById('call_demo').innerHTML = 
-        mouse_A.printData(" / ") + "&lt;br&gt;" +
-        mouse_A.printData.call(mouse_B, " / ") + "&lt;br&gt;" +
-        mouse_A.printData.call(mouse_C, " / ") + "&lt;br&gt;" +
-        mouse_A.printData.call(mouse_D, " / ");
-&lt;/script&gt;
-    </pre>
-    </details>
-    <p id="greetingsCall"></p>
-<script>
-    var mario = {name:"Mario", 
-                 greetings:function(a, b) {
-                     return "Hi " + this.name + " it's " + a + " have a " + b + " day!";
-                           }
-                }; 
-    var luigi = {name:"Luigi"};
-    var mary = {name:"Mary"};
-    var bobby = {name:"Bobby"};
-    
-    document.getElementById('greetingsCall').innerHTML = 
-        mario.greetings("Arpad", "sunny") + "<br>" +
-        mario.greetings.call(luigi, "Bircsy", "nice") + "<br>" +
-        mario.greetings.call(mary, "Any", "smily") + "<br>" +
-        mario.greetings.call(bobby, "the Lucifer", "carpy");
-</script>
-    <details>
-    <summary> CODE : </summary>
-    <pre>
-    &lt;p id="greetingsCall"&gt;&lt;/p&gt;
-&lt;script>
-    var mario = {name:"Mario", 
-                 greetings:function(a, b) {
-                     return "Hi " + this.name + " it's " + a + " have a " + b + " day!";
-                           }
-                }; 
-    var luigi = {name:"Luigi"};
-    var mary = {name:"Mary"};
-    var bobby = {name:"Bobby"};
-    
-    document.getElementById('greetingsCall').innerHTML = 
-        mario.greetings("Arpad", "sunny") + "&lt;br&gt;" +
-        mario.greetings.call(luigi, "Bircsy", "nice") + "&lt;br&gt;" +
-        mario.greetings.call(mary, "Any", "smily") + "&lt;br&gt;" +
-        mario.greetings.call(bobby, "the Lucifer", "carpy");
-&lt;/script&gt;
-    </pre>
-    </details>
-<!--------------------------------------------------------------------------------------------------------------------------------->
-<h4 style="color:darkblue;"><u> the <mark>apply()</mark> method </u></h4>
-    <p id="apply_demo"></p>
-<script>
-(function(){
-    var javaScript = {language:"JavaScript", nature:"awesome",
-                     description:function() {
-                        return this.language + " is " + arguments[0] + " " + this.nature + " programing language " + arguments[1]; 
-                     }};
-    var rubyOnRails = {language:"Ruby on Rails", nature:"sophisticated"};
-    var phyton = {language:"Phyton", nature:"complex"};
-    
-    document.getElementById('apply_demo').innerHTML = 
-        javaScript.description("an", "to learn") + "<br>" +
-        javaScript.description.apply(rubyOnRails, ["a", "to have fun with"]) + "<br>" +
-        javaScript.description.apply(phyton, ["a", "to play"]);
-})();
-</script>
-    <details>
-    <summary> CODE : </summary>
-    <pre>
-    &lt;p id="apply_demo"&gt;&lt;/p&gt;
-&lt;script&gt;
-(function(){
-    var javaScript = {language:"JavaScript", nature:"awesome",
-                     description:function() {
-                        return this.language + " is " + arguments[0] + " " + this.nature + " programing language " + arguments[1]; 
-                     }};
-    var rubyOnRails = {language:"Ruby on Rails", nature:"sophisticated"};
-    var phyton = {language:"Phyton", nature:"complex"};
-    
-    document.getElementById('apply_demo').innerHTML = 
-        javaScript.description("an", "to learn") + "&lt;br&gt;" +
-        javaScript.description.apply(rubyOnRails, ["a", "to have fun with"]) + "&lt;br&gt;" +
-        javaScript.description.apply(phyton, ["a", "to play"]);
-})();
-&lt;/script&gt;
-    </pre>
-    </details>
-<!--------------------------------------------------------------------------------------------------------------------------------->
-<h4 style="color:darkblue;"><u> using the <mark>apply()</mark> method with the <mark>Math</mark> object </u></h4>
-    <p id="apply_with_Math"></p>
-<script>
-    var nrArray = [4, 74, 24, 84, 12, 54, 44];
-    
-    document.getElementById('apply_with_Math').innerHTML = 
-        " Original Array = " + nrArray + "<br>" +
-        " Largerst value = " + Math.max.apply(null, nrArray) + " / " + " Lowest value = " + Math.min.apply(null, nrArray);
-                        
-                    // the "apply()" method makes it possible to use an array with the "Math.min()" or "Math.max()" methods
-</script>
-    <details>
-    <summary> CODE : </summary>
-    <pre>
-    &lt;p id="apply_with_Math">&lt;/p&gt;
-&lt;script&gt;
-    var nrArray = [4, 74, 24, 84, 12, 54, 44];
-    
-    document.getElementById('apply_with_Math').innerHTML = 
-        " Original Array = " + nrArray + "&lt;br&gt;" +
-        " Largerst value = " + Math.max.apply(null, nrArray) + " / " + " Lowest value = " + Math.min.apply(null, nrArray);
-                        
-                    // the "apply()" method makes it possible to use an array with the "Math.min()" or "Math.max()" methods
-&lt;/script&gt;
-    </pre>
-    </details>
-<!--------------------------------------------------------------------------------------------------------------------------------->
-<h4 style="color:darkblue;"><u> implement <mark>bind()</mark> method </u></h4>
-    <p id="result_bind"></p>
-<script>
-// global method and variables
-    var AA = 41;
-    var BB = 12;
-    var CC = 11;
-        function additionDivide (FF) {
-            return (this.AA + this.BB + this.CC) / FF;
-        }
-            // "window.additionDivide(2);" returns "32"
-    
-// object properties and method
-    var numberS = {AA:41, BB:12, CC:11, additionDivide:function(FF){return (this.AA + this.BB + this.CC) / FF;}}
-            // "numberS.additionDivide(2);" returns "32"
-    
-// implement both these methods on a different object
-    var numberX = {AA:11, BB:23, CC:42};
-    var additionDivide_extracted = numberS.additionDivide;      // extract the method from the object 
-    
-    var result_1 = additionDivide.bind(numberX, 2);             // implement the global method on the object
-    var result_2 = additionDivide_extracted.bind(numberX, 2);   // implement the extracted methodn on the object
-    
-    document.getElementById('result_bind').innerHTML = 
-        "Implement global method on the object = " + result_1() + "<br>" +
-        "Implement extracted methodn on the object = " + result_2();
-</script>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p id="result_bind"&gt;>&lt;/p&gt;
-&lt;script&gt;
-// global method and variables
-    var AA = 41;
-    var BB = 12;
-    var CC = 11;
-        function additionDivide (FF) {
-            return (this.AA + this.BB + this.CC) / FF;
-        }
-            // "window.additionDivide(2);" returns "32"
-    
-// object properties and method
-    var numberS = {AA:41, BB:12, CC:11, additionDivide:function(FF){return (this.AA + this.BB + this.CC) / FF;}}
-            // "numberS.additionDivide(2);" returns "32"
-    
-// implement both these methods on a different object
-    var numberX = {AA:11, BB:23, CC:42};
-    var additionDivide_extracted = numberS.additionDivide;      // extract the method from the object 
-    
-    var result_1 = additionDivide.bind(numberX, 2);             // implement the global method on the object
-    var result_2 = additionDivide_extracted.bind(numberX, 2);   // implement the extracted methodn on the object
-    
-    document.getElementById('result_bind').innerHTML = 
-        "Implement global method on the object = " + result_1() + "&lt;br&gt;" +
-        "Implement extracted methodn on the object = " + result_2();
-&lt;/script&gt;
-        </pre>
-        </details>
-</details>
-<!--------------------------------------------------------------------------------------------------------------------------------->
 <hr>     
-<h2><u> Arrow Function <i class="fab fa-js">6</i> </u></h2>
+<h2 style="color:darkblue;"><u> Arrow Function <i class="fab fa-js">6</i> <span id="browserSupport" title="updated :2021-05-15"><span><i class="fab fa-chrome"></i> 45 </span><span><i class="fab fa-firefox"></i> 22 </span><span><i class="fab fa-opera"></i> 32 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span><span><i class="fab fa-safari"></i> 10 </span><span><i class="fab fa-node-js"></i> 4.0.0 </span></span> </u></h2>
     <p> - the arrow functions is a shorter version of traditional functions, <u> the <mark>arguments</mark> / <mark>super()</mark> / <mark>new.target</mark> keywords are NOT available inside it</u></p>
     <p> - in normal functions the <mark>this</mark> keyword always references the object that <u>called</u> the function where the <mark>this</mark> is </p>
     <p> - in arrow functions the <mark>this</mark> keyword awlays references the value of <mark>this</mark> keyword value <u>right before the arrow function</u> </p>
@@ -1528,7 +817,7 @@ SYNTAX :    const <strong>fnId</strong> = (<i>arg1, arg2, ...</i>) => {<i>execut
 </details>
 <!--------------------------------------------------------------------------------------------------------------------------------->
 <hr>     
-<h2><u> Generator <mark>function*</mark> <i class="fab fa-js">6</i> </u></h2>  
+<h2 style="color:darkblue;" id="genFN_"><u> Generator <mark>function*</mark> <i class="fab fa-js">6</i> <span id="browserSupport" title="updated :2021-05-15"><span><i class="fab fa-chrome"></i> 39 </span><span><i class="fab fa-firefox"></i> 26 </span><span><i class="fab fa-opera"></i> 26 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span><span><i class="fab fa-safari"></i> 10 </span><span><i class="fab fa-node-js"></i> 4.0.0 </span></span></u></h2>  
     <p> - the ES6 generator function returns an iterable object without calling the function's body </p>
     <p> - calling the <mark>next()</mark> method on the returned iterable object executes the generator function's body <u>untill the next <mark>yield</mark> keyword which evaluates its expression and returns the value to the caller <b>than pauses the function's body</b></u></p>
     <p> - every time the <mark>next()</mark> called the generator function resumes from the previously paused position and runs untill the end of the next <mark>yield</mark> keyword's expression, <u style="color:yellow;">(Run/Pause interface)</u></p>
@@ -1541,10 +830,15 @@ SYNTAX :    <em>function</em>* <strong>fnId</strong><em>(<i>arg, ...</i>) {</em>
                 return <i>exp;</i>                                                              // returns the expression as last iterable object value 
             <em>}</em> 
             
+                                                                                          <span id="browserSupport" title="updated :2021-05-15" style="color:yellow;"><span><i class="fab fa-chrome"></i> 39 </span><span><i class="fab fa-firefox"></i> 26 </span><span><i class="fab fa-opera"></i> 26 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span><span><i class="fab fa-safari"></i> 10 </span><span><i class="fab fa-node-js"></i> 4.0.0 </span></span>
             <strong>genObj</strong>.next(<i class="openable">val<div>
                 <p> - the called <mark>yield</mark> keyword value (excluded from the yield's expression) </p>
-            </div></i>)                                                          // calls the next <mark>yield</mark> expression in the generator funtion's body and returns the value in an iterable result object (<mark>{value:val, done:bol}</mark>)     
+            </div></i>)                                                          // calls the next <mark>yield</mark> expression in the generator funtion's body and returns the value in an iterable result object (<mark>{value:val, done:bol}</mark>)    
+            
+                                                                                          <span id="browserSupport" title="updated :2021-05-15" style="color:yellow;"><span><i class="fab fa-chrome"></i> 50 </span><span><i class="fab fa-firefox"></i> 38 </span><span><i class="fab fa-opera"></i> 37 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span><span><i class="fab fa-safari"></i> 10 </span><span><i class="fab fa-node-js"></i> 6.0.0 </span></span>
             <strong>genObj</strong>.return(<i>val</i>)                                                         // ends the generator object and returns the passed <i>val</i> as the generator's last value    
+            
+                                                                                          <span id="browserSupport" title="updated :2021-05-15" style="color:yellow;"><span><i class="fab fa-chrome"></i> 39 </span><span><i class="fab fa-firefox"></i> 26 </span><span><i class="fab fa-opera"></i> 26 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span><span><i class="fab fa-safari"></i> 10 </span><span><i class="fab fa-node-js"></i> 4.0.0 </span></span>
             <strong>genObj</strong>.throw(<i>err</i>)                                                          // throw the passed <i>err</i> in the generator function then resumes execution the function body untill the end of the next <mark>yield</mark> expression, which result is returned in an iterable result object (<mark>{value:val, done:bol}</mark>)    
     </pre>
 <details class="example">
@@ -1903,6 +1197,251 @@ SYNTAX :    <em>function</em>* <strong>fnId</strong><em>(<i>arg, ...</i>) {</em>
         </pre>
         </details>
 </details>
+<!--------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2><u> Methods <mark>call()</mark> / <mark>apply()</mark> / <mark>bind()</mark> </u></h2>
+<details class="example">
+<summary> DEMO </summary>
+    <pre>
+    var audi = {
+        mark:"audi", 
+        type:"A4", 
+        year:2010, 
+        allData:function(a, b) {return this.mark + " " + this.type + " " + this.year + a}
+    };
+    
+    var mercedess = {
+        mark:"mercedess", type:
+        "class C", year:
+        2014
+    };
+    
+// call() / apply() ------------------------------------------------------------------- 
+
+    audi.allData.call(mercedess, " is a nice", " car");                                // -> "mercedess class C 2014 is a nice car"    // audi.allData method called on 'mercedess' object 
+    audi.allData.apply(mercedess, [" is a nice, " car"]);                              // -> "mercedess class C 2014 is a nice car"    // does the same (uses different syntax)
+    
+// bind() -----------------------------------------------------------------------------
+    var myObj = {p1:21};
+    
+    var globFn = function(){
+        return this;
+    }
+    
+    globFn();                                                                          // -> Window         // references the global object (as expected)
+    
+    var bindTest = window.globFn.bind(myObj);                                          // the 'window.globFn' 'this' keyword is bound to the 'myObj' object and returned a new function 
+    
+    bindTest();                                                                        // -> 'myObj'        // the 'this' keyword is bound to the 'myObj' object when the new function is called   
+    </pre>
+</details>
+<details class="example">
+<summary> CODE : </summary>
+<h4 style="color:darkblue;"><u> the <mark>call()</mark> method </u></h4>
+    <p id="call_demo"></p>
+<script>
+    var mouse_A = {mark:"MadCatz", type:"RAT 8", wired:true, buttunNumbers:12, 
+                   printData:function(a) {
+                       return "mark : " + this.mark + " | type : " + this.type + " | Wired : " + this.wired + " | button Numbers : " + this.buttunNumbers + a;
+                   }};
+    var mouse_B = {mark:"Microsoft", type:"54 series", wired:true, buttunNumbers:4};
+    var mouse_C = {mark:"Creative", type:"office 7", wired:false, buttunNumbers:7};
+    var mouse_D = {mark:"Terminator", type:"T-4", wired:false, buttunNumbers:57};
+    
+    document.getElementById('call_demo').innerHTML = 
+        mouse_A.printData(" / ") + "<br>" +
+        mouse_A.printData.call(mouse_B, " / ") + "<br>" +
+        mouse_A.printData.call(mouse_C, " / ") + "<br>" +
+        mouse_A.printData.call(mouse_D, " / ");
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="call_demo"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var mouse_A = {mark:"MadCatz", type:"RAT 8", wired:true, buttunNumbers:12, 
+                   printData:function(a) {
+                       return "mark : " + this.mark + " | type : " + this.type + " | Wired : " + this.wired + " | button Numbers : " + this.buttunNumbers + a;
+                   }};
+    var mouse_B = {mark:"Microsoft", type:"54 series", wired:true, buttunNumbers:4};
+    var mouse_C = {mark:"Creative", type:"office 7", wired:false, buttunNumbers:7};
+    var mouse_D = {mark:"Terminator", type:"T-4", wired:false, buttunNumbers:57};
+    
+    document.getElementById('call_demo').innerHTML = 
+        mouse_A.printData(" / ") + "&lt;br&gt;" +
+        mouse_A.printData.call(mouse_B, " / ") + "&lt;br&gt;" +
+        mouse_A.printData.call(mouse_C, " / ") + "&lt;br&gt;" +
+        mouse_A.printData.call(mouse_D, " / ");
+&lt;/script&gt;
+    </pre>
+    </details>
+    <p id="greetingsCall"></p>
+<script>
+    var mario = {name:"Mario", 
+                 greetings:function(a, b) {
+                     return "Hi " + this.name + " it's " + a + " have a " + b + " day!";
+                           }
+                }; 
+    var luigi = {name:"Luigi"};
+    var mary = {name:"Mary"};
+    var bobby = {name:"Bobby"};
+    
+    document.getElementById('greetingsCall').innerHTML = 
+        mario.greetings("Arpad", "sunny") + "<br>" +
+        mario.greetings.call(luigi, "Bircsy", "nice") + "<br>" +
+        mario.greetings.call(mary, "Any", "smily") + "<br>" +
+        mario.greetings.call(bobby, "the Lucifer", "carpy");
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="greetingsCall"&gt;&lt;/p&gt;
+&lt;script>
+    var mario = {name:"Mario", 
+                 greetings:function(a, b) {
+                     return "Hi " + this.name + " it's " + a + " have a " + b + " day!";
+                           }
+                }; 
+    var luigi = {name:"Luigi"};
+    var mary = {name:"Mary"};
+    var bobby = {name:"Bobby"};
+    
+    document.getElementById('greetingsCall').innerHTML = 
+        mario.greetings("Arpad", "sunny") + "&lt;br&gt;" +
+        mario.greetings.call(luigi, "Bircsy", "nice") + "&lt;br&gt;" +
+        mario.greetings.call(mary, "Any", "smily") + "&lt;br&gt;" +
+        mario.greetings.call(bobby, "the Lucifer", "carpy");
+&lt;/script&gt;
+    </pre>
+    </details>
+<!--------------------------------------------------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> the <mark>apply()</mark> method </u></h4>
+    <p id="apply_demo"></p>
+<script>
+(function(){
+    var javaScript = {language:"JavaScript", nature:"awesome",
+                     description:function() {
+                        return this.language + " is " + arguments[0] + " " + this.nature + " programing language " + arguments[1]; 
+                     }};
+    var rubyOnRails = {language:"Ruby on Rails", nature:"sophisticated"};
+    var phyton = {language:"Phyton", nature:"complex"};
+    
+    document.getElementById('apply_demo').innerHTML = 
+        javaScript.description("an", "to learn") + "<br>" +
+        javaScript.description.apply(rubyOnRails, ["a", "to have fun with"]) + "<br>" +
+        javaScript.description.apply(phyton, ["a", "to play"]);
+})();
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="apply_demo"&gt;&lt;/p&gt;
+&lt;script&gt;
+(function(){
+    var javaScript = {language:"JavaScript", nature:"awesome",
+                     description:function() {
+                        return this.language + " is " + arguments[0] + " " + this.nature + " programing language " + arguments[1]; 
+                     }};
+    var rubyOnRails = {language:"Ruby on Rails", nature:"sophisticated"};
+    var phyton = {language:"Phyton", nature:"complex"};
+    
+    document.getElementById('apply_demo').innerHTML = 
+        javaScript.description("an", "to learn") + "&lt;br&gt;" +
+        javaScript.description.apply(rubyOnRails, ["a", "to have fun with"]) + "&lt;br&gt;" +
+        javaScript.description.apply(phyton, ["a", "to play"]);
+})();
+&lt;/script&gt;
+    </pre>
+    </details>
+<!--------------------------------------------------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> using the <mark>apply()</mark> method with the <mark>Math</mark> object </u></h4>
+    <p id="apply_with_Math"></p>
+<script>
+    var nrArray = [4, 74, 24, 84, 12, 54, 44];
+    
+    document.getElementById('apply_with_Math').innerHTML = 
+        " Original Array = " + nrArray + "<br>" +
+        " Largerst value = " + Math.max.apply(null, nrArray) + " / " + " Lowest value = " + Math.min.apply(null, nrArray);
+                        
+                    // the "apply()" method makes it possible to use an array with the "Math.min()" or "Math.max()" methods
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="apply_with_Math">&lt;/p&gt;
+&lt;script&gt;
+    var nrArray = [4, 74, 24, 84, 12, 54, 44];
+    
+    document.getElementById('apply_with_Math').innerHTML = 
+        " Original Array = " + nrArray + "&lt;br&gt;" +
+        " Largerst value = " + Math.max.apply(null, nrArray) + " / " + " Lowest value = " + Math.min.apply(null, nrArray);
+                        
+                    // the "apply()" method makes it possible to use an array with the "Math.min()" or "Math.max()" methods
+&lt;/script&gt;
+    </pre>
+    </details>
+<!--------------------------------------------------------------------------------------------------------------------------------->
+<h4 style="color:darkblue;"><u> implement <mark>bind()</mark> method </u></h4>
+    <p id="result_bind"></p>
+<script>
+// global method and variables
+    var AA = 41;
+    var BB = 12;
+    var CC = 11;
+        function additionDivide (FF) {
+            return (this.AA + this.BB + this.CC) / FF;
+        }
+            // "window.additionDivide(2);" returns "32"
+    
+// object properties and method
+    var numberS = {AA:41, BB:12, CC:11, additionDivide:function(FF){return (this.AA + this.BB + this.CC) / FF;}}
+            // "numberS.additionDivide(2);" returns "32"
+    
+// implement both these methods on a different object
+    var numberX = {AA:11, BB:23, CC:42};
+    var additionDivide_extracted = numberS.additionDivide;      // extract the method from the object 
+    
+    var result_1 = additionDivide.bind(numberX, 2);             // implement the global method on the object
+    var result_2 = additionDivide_extracted.bind(numberX, 2);   // implement the extracted methodn on the object
+    
+    document.getElementById('result_bind').innerHTML = 
+        "Implement global method on the object = " + result_1() + "<br>" +
+        "Implement extracted methodn on the object = " + result_2();
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="result_bind"&gt;>&lt;/p&gt;
+&lt;script&gt;
+// global method and variables
+    var AA = 41;
+    var BB = 12;
+    var CC = 11;
+        function additionDivide (FF) {
+            return (this.AA + this.BB + this.CC) / FF;
+        }
+            // "window.additionDivide(2);" returns "32"
+    
+// object properties and method
+    var numberS = {AA:41, BB:12, CC:11, additionDivide:function(FF){return (this.AA + this.BB + this.CC) / FF;}}
+            // "numberS.additionDivide(2);" returns "32"
+    
+// implement both these methods on a different object
+    var numberX = {AA:11, BB:23, CC:42};
+    var additionDivide_extracted = numberS.additionDivide;      // extract the method from the object 
+    
+    var result_1 = additionDivide.bind(numberX, 2);             // implement the global method on the object
+    var result_2 = additionDivide_extracted.bind(numberX, 2);   // implement the extracted methodn on the object
+    
+    document.getElementById('result_bind').innerHTML = 
+        "Implement global method on the object = " + result_1() + "&lt;br&gt;" +
+        "Implement extracted methodn on the object = " + result_2();
+&lt;/script&gt;
+        </pre>
+        </details>
+</details>
+    
+    
     
     
 <h2 class="test" style=""><a href="TEST/index.html"> TEST > </a></h2>

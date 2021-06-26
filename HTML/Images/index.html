@@ -10,21 +10,69 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Images (ver 3.1) </h1>
-<p> Updated (2016-10-17 / 2016-11-16 / 2017-05-24 / 2017-06-10 / 2018-10-18 / 2019-04-11) </p>
+<h1> Images (ver 4.0.0) </h1>
+<p> Updated (2016-10-17 / 2016-11-16 / 2017-05-24 / 2017-06-10 / 2018-10-18 / 2019-04-11 / 2021-05-22) </p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">HTML></a> Images 
     </p>
 <table class="table">
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
-        <th> Attribute </th>
-        <th> Values </th>
+        <th style="width:15%"> Tag </th>
+        <th style="width:40%"> Attribute </th>
         <th> Description </th>
     </tr>
-    <tr>  
-        <td colspan="3"> 
-            <mark>&lt;img&gt;</mark> tag defines an image 
-            <span id="browserSupport">
+    <tr class="05.01">
+        <td> &lt;img&gt; </td>
+        <td> 
+            alt="<strong>txt</strong>" <span class="cssAV">(message in case the image is not reachable <u>(required)</u>)</span><br>
+            crossorigin="<strong class="openable">cors<div>
+                <p> anonymous - credentials (cookies, localstorage, etc..) won't be sent with the request </p> 
+                <p> use-credentials - credentials (cookies, localstorage, etc..) will be sent with the request </p> 
+            </div></strong>" <span class="cssAV">(image request must be done using CORS request)</span> <br>
+            height="<strong>px</strong>" <span class="cssAV">(sets the image height in pixels)</span><br>
+            decoding="<strong class="openable">hint<div>
+                <p> sync - synchronous, for atomic presentation with other content </p>
+                <p> async - asynchronously </p>
+                <p> auto - browser decides </p>
+            </div></strong>" <span class="cssAV">(decoding hint to the browser)</span>
+            <span id="browserSupport" title="Updated: 2021-05-22">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 63 </span>
+                <span><i class="fab fa-opera"></i>  </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 11.1 </span>
+            </span><br>
+            ismap <span class="cssAV">((Boolean) image is part of a server-side map)</span><br>
+            referrerpolicy="<strong class="openable">ref<div>
+                <p> "" - (Default) the higher level of referrer policy </p>
+                <p> no-referrer - the <mark>Referer</mark> header excluded in the request </p>
+                <p> no-referrer-when-downgrade - the <mark>Referrer</mark> header excluded in non TLS (HTTPS) requests </p>
+                <p> origin - only the origin (scheme, host, port) is included in the <mark>Referrer</mark> header in the request </p>
+                <p> origin-when-cross-origin - for cross-origin request only the origin (scheme, host, port) is included in the <mark>Referrer</mark> header, for same-site request the <mark>Referrer</mark> header contains the full referrer</p>
+                <p> same-origin - the <mark>Referer</mark> header is included only in same-origin requests (omitted for cross-origin requests) </p>
+                <p> strict-origin - the <mark>Referer</mark> header is included in the request if the security level stays the same (included in HTTPS -> HTTPS, excluded in HTTPS -> HTTP) </p>
+                <p> strict-origin-when-corss-origin - the <mark>Referer</mark> header is included in the request for same-site request, for cross-origin requests include only if the security level stays the same (included in HTTPS -> HTTPS, excluded in HTTPS -> HTTP) </p>
+                <p> unsafe-url - the <mark>Referer</mark> header includes only the origin and the path (but not the document fragment, password, username) </p>
+            </div></strong>" <span class="cssAV">(controls the <mark>Referer</mark> header for this request)</span> 
+            <span id="browserSupport" title="Updated: 2021-05-22">
+                <span><i class="fab fa-chrome"></i> 51 </span>
+                <span><i class="fab fa-firefox"></i> 50 </span>
+                <span><i class="fab fa-opera"></i> 38 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 11.1 </span>
+            </span><br>
+            sizes="<strong><em>(</em>mediaQuery<em>)</em> nr<em>w</em></strong><i>, ...</i>" <span class="cssAV">(source sizes, used along with the <mark>srcset</mark> to request different images for different screen sizes)</span> <br>
+            src="<strong>URL</strong>" <span class="cssAV">(URL of the image (source))</span> <br>
+            srcset="<strong>URL nr</strong><em>w</em><i>, ...</i>" <span class="cssAV">(different image sources for different screen sizes, used along with the <mark>sizes</mark> to request different images for different screen sizes)</span> <br>
+            width="<strong>px</strong>" <span class="cssAV">(sets the image width in pixels)</span><br>
+            usemap="<em>#</em><strong>mapName</strong>" <span class="cssAV">(specifies the image as client-side image-map (image with clickable areas) (the <mark>&lt;map&gt;</mark> tag describes the map)) </span>
+        </td>
+        <td> 
+            - embeds an image in the HTML page 
+            <span id="browserSupport" title="Updated: 2021-05-22">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> yes </span>
                 <span><i class="fab fa-opera"></i> yes </span>
@@ -33,165 +81,12 @@
             </span>
         </td>
     </tr>
-    <tr>
-        <td> alt </td>
-        <td> <strong>text</strong> </td>
-        <td> message in case the image is not reachable <u>(required)</u> </td>
-    </tr>
-    <tr>
-        <td> crossorigin </td>
+    <tr class="10.01">
+        <td> &lt;picture&gt;&lt;/picture&gt; </td>
+        <td>  </td>
         <td> 
-            anonymous <span style="color:blue;">(credentials won't be sent)</span> <br> 
-            use-credentials <span style="color:blue;">(credentials will be sent)</span>
-        </td>
-        <td> credentials (cookies, localstorage, etc..) send with a cross-origin request  </td>
-    </tr>
-    <tr>
-        <td> height </td>
-        <td> <strong>px</strong> </td>
-        <td> sets the image height </td>
-    </tr>
-    <tr>
-        <td> ismap </td>
-        <td> <span style="color:blue;">(boolean)</span> </td>
-        <td> specifies the image as server-side image-map (image with clickable areas) <b style="color:red;">[NOT TESTED]</b> </td>
-    </tr>
-    <tr>
-        <td> longdesc </td>
-        <td> <strong>URL</strong> </td>
-        <td> 
-            specifies a hyperlink to a detailed description of the image 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> NO </span>
-                <span><i class="fab fa-firefox"></i> NO </span>
-                <span><i class="fab fa-opera"></i> NO </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
-                <span><i class="fab fa-safari"></i> NO </span>
-            </span>
-        </td>
-    <tr>
-        <td> src </td>
-        <td> <strong>URL</strong> </td>
-        <td> URL of the image (source) <u>(required)</u> </td>
-    </tr>
-    <tr>
-        <td> usemap </td>
-        <td> #<strong>mapName</strong> </td>
-        <td> specifies the image as client-side image-map (image with clickable areas) </td>
-    </tr>
-    <tr>
-        <td> width </td>
-        <td> <strong>px</strong> </td>
-        <td> sets the image width </td>
-    </tr>
-    <tr>  
-        <td colspan="3"> 
-            <mark>&lt;map&gt;&lt;/map&gt;</mark> defines an image-map (image with clickable areas) 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> yes </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-                <span><i class="fab fa-safari"></i> yes </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> name </td>
-        <td> <strong>mapName</strong> </td>
-        <td> targets the <mark>&lt;img usemap='#<strong>mapName</strong>'</mark> to create an image-map <u>(required)</u> </td>
-    </tr>
-    <tr>  
-        <td colspan="3"> 
-            <mark>&lt;area&gt;</mark> defines an area inside the image-map 
-        <span id="browserSupport">
-            <span><i class="fab fa-chrome"></i> yes </span>
-            <span><i class="fab fa-firefox"></i> yes </span>
-            <span><i class="fab fa-opera"></i> yes </span>
-            <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-            <span><i class="fab fa-safari"></i> yes </span>
-        </span>
-        </td>
-    </tr>
-    <tr>
-        <td> alt </td>
-        <td> <strong>text</strong> </td>
-        <td> alternative text for the area <u>(required if the <mark>href</mark> attribute is present)</u> </td>
-    </tr>
-    <tr>
-        <td> coords </td>
-        <td>  
-            <strong>x1,y1,x2,y2</strong> <span style="color:blue;">(rectangle shape [px])</span><br>
-            <strong>x1,y1,radius</strong> <span style="color:blue;">(circle shape [px])</span><br>
-            <strong>x1,y1,x2,y2,x3,y3,...</strong> <span style="color:blue;">(polygon shape edges [px])</span>
-        </td>
-        <td> specifies the coordinates of the shape set by the <mark>shape</mark> attribute </td>
-    </tr>
-    <tr>
-        <td> download </td>
-        <td> <i>renameFileName</i> <span style="color:blue;">(boolean optionally)</span></td>
-        <td> <i class="fab fa-html5"></i> the the content specified by the <mark>href</mark> attribute </td>
-    </tr>
-    <tr>
-        <td> href </td>
-        <td> <strong>URL</strong> </td>
-        <td> hyperlink target for the area </td>
-    </tr>
-    <tr>
-        <td> hreflang </td>
-        <td> <strong>languageCode</strong> <span style="color:blue;">( <a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_blank">W3School language code reference [link]</a> )</span> </td>
-        <td> <i class="fab fa-html5"></i> specifies the language of the target URL </td>
-    </tr>
-    <tr>
-        <td> media </td>
-        <td> <strong>mediaQuery</strong> </td>
-        <td> <i class="fab fa-html5"></i> specifies what media/device the URL is optimized for </td>
-    </tr>
-    <tr>
-        <td> rel </td>
-        <td>  
-            alternate <span style="color:blue;">(alternate version of the document)</span><br>
-            author <span style="color:blue;">(link to the author of the document)</span><br>
-            bookmark <span style="color:blue;">(URL used for bookmark)</span><br>
-            help <span style="color:blue;">(help document)</span><br>
-            license <span style="color:blue;">(copyright informations)</span><br>
-            next <span style="color:blue;">(next document in the selection)</span><br>
-            prev <span style="color:blue;">(previous document in the selection)</span><br>
-            search <span style="color:blue;">(search tool for the document)</span><br>
-            ...
-        </td>
-        <td> <i class="fab fa-html5"></i> specifies the relation between the current document and the target URL </td>
-    </tr>
-    <tr>
-        <td> shape </td>
-        <td>  
-            default <span style='color:blue;'>(entire region)</span><br>
-            rect <span style='color:blue;'>(rectangle)</span><br>
-            circle <span style='color:blue;'>(circle)</span><br>
-            poly <span style='color:blue;'>(polygon)</span>
-        </td>
-        <td> specifies the area shape </td>
-    </tr>
-    <tr>
-        <td> target </td>
-        <td> 
-            _blank <span style='color:blue;'>(new window tab)</span><br>
-            _parent <span style='color:blue;'>(parent frame)</span><br>
-            _self <span style='color:blue;'>(same frame as it was clicked)</span><br>
-            _top <span style='color:blue;'>(full body of the window)</span><br>
-            <strong>frameName</strong> <span style='color:blue;'>(target frame)</span>
-        </td>
-        <td> specifies where to open the linked document </td>
-    </tr>
-    <tr>
-        <td> type </td>
-        <td> <strong>mediaType(MIME)</strong> </td>
-        <td> specifies the target type <u>(purely advisory)</u> </td>
-    </tr>
-    <tr style="border-bottom:1px solid black;">  
-        <td colspan="3"> 
-            <mark>&lt;picture&gt;&lt;/picture&gt;</mark> defines one or multiple images in HTML5 
-            <span id="browserSupport">
+            - <i class="fab fa-html5"></i> defines one or multiple images for different display scenarios 
+            <span id="browserSupport" title="Updated: 2021-05-22">
                 <span><i class="fab fa-chrome"></i> 38 </span>
                 <span><i class="fab fa-firefox"></i> 38 </span>
                 <span><i class="fab fa-opera"></i> 25 </span>
@@ -200,72 +95,139 @@
             </span>
         </td>
     </tr>
-    <tr>  
-        <td colspan="3"> 
-            <mark>&lt;source&gt;</mark> <i class="fab fa-html5"></i> specifies multiple media resources for media elements (&lt;audio&gt; / &lt;picture&gt; / &lt;video&gt;) 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 4 </span>
-                <span><i class="fab fa-firefox"></i> 3.5 </span>
-                <span><i class="fab fa-opera"></i> 10.5 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
-                <span><i class="fab fa-safari"></i> 4 </span>
-            </span>
-        </td>
-    </tr>    
-    <tr>
-        <td> src </td>
-        <td> <strong>URL</strong> </td>
-        <td> specifies the URL for <u><mark>&lt;audio&gt;</mark> and <mark>&lt;video&gt;</mark></u> </td>
-    </tr>
-    <tr>
-        <td> size </td>
-        <td> ??? </td>
-        <td>
-            specifies the picture size for different page layouts (<mark>&lt;picture&gt;</mark> element only) (I couldn't figure out WTF is that, makes no sence for me and looks very complicated and useless [TESTED 2019-03-31]) 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> 38 </span>
-                <span><i class="fab fa-opera"></i> ? </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
-                <span><i class="fab fa-safari"></i> 9 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> srcset </td>
-        <td> <strong>URL</strong> </td>
+    <tr class="10.02">
+        <td> &lt;source&gt; </td>
         <td> 
-            specifies the URL for <u><mark>&lt;picture&gt;</mark></u> 
-            <span id="browserSupport">
+            media="<strong>mediaQuery"</strong> <span class="cssAV">(mediaquery condition where to display this source)</span> <br>
+            srcset="<strong>URL</strong>" <span class="cssAV">(image url for this source)</span> <br>
+            type="<strong>mimeType"</strong> <span class="cssAV">(image mime type) 
+        </td>
+        <td> 
+            - <i class="fab fa-html5"></i> provides multiple image sources for the &gt;picutre&gt; tag 
+            <span id="browserSupport" title="Updated: 2021-05-22">
                 <span><i class="fab fa-chrome"></i> 38 </span>
                 <span><i class="fab fa-firefox"></i> 38 </span>
                 <span><i class="fab fa-opera"></i> 25 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span>
                 <span><i class="fab fa-safari"></i> 9.1 </span>
             </span>
         </td>
-    </tr>
-    <tr>
-        <td> media </td>
-        <td> <strong>mediaQuery</strong> </td>
-        <td> 
-            mediaquery condition to display this source 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 38 </span>
-                <span><i class="fab fa-firefox"></i> 38 </span>
-                <span><i class="fab fa-opera"></i> 25 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-                <span><i class="fab fa-safari"></i> 9.1 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> type </td>
-        <td> <strong>mediaType(MIME)</strong> </td>
-        <td> type of the media source </td>
     </tr>
 </table>
-<h2 style="color:green;"><u> Notes : </u></h2>
+    <br>
+<table class="table">
+<caption>
+    Image Map (Client-side map)
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
+    <tr>
+        <th style="width:15%"> Tag </th>
+        <th style="width:40%"> Attribute </th>
+        <th> Description </th>
+    </tr>
+    <tr class="10.01">
+        <td> &lt;area&gt; </td>
+        <td>  
+            alt="<strong>txt</strong>" <span class="cssAV">(message in case the image is not reachable)</span><br>
+            coords="<strong class="openable">cords<div>
+                    <p> <strong>x1,y1,x2,y2</strong> - rectangle shape (values are in pixels) </p>
+                    <p> <strong>x1,y1,radius</strong> - circle shape (values are in pixels) </p>
+                    <p> <strong>x1,y1,x2,y2,x3,y3,...</strong> - polygon shape (values are in pixels) </p>
+            </div></strong>" <span class="cssAV">(coordinates of the shape set by the <mark>shape</mark> attribute)</span>
+            download="<i>fileName</i>" <span class="cssAV">(donwloads the content instead of navigating to it, optionally we can rename the downloading content with <i>filename</i>)</span> 
+            href="<strong>URL</strong>" <span class="cssAV">(url of the targeted space)</span> <br>
+            hreflang="<strong>langCode</strong>" <span class="cssAV">(specifies the language of the targeted page)</span> <br>
+            ping="<strong>URL</strong> <i>URL</i>" <span class="cssAV">(a list of URL's to which ping bodies are sent (for tracking))</span> 
+            <span id="browserSupport" title="Updated: 2021-05-22">
+                <span><i class="fab fa-chrome"></i> 12 </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> 15 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 17 </span>
+                <span><i class="fab fa-safari"></i> 6 </span>
+            </span><br>
+            referrerpolicy="<strong class="openable">ref<div>
+                <p> "" - (Default) the higher level of referrer policy </p>
+                <p> no-referrer - the <mark>Referer</mark> header excluded in the request </p>
+                <p> no-referrer-when-downgrade - the <mark>Referrer</mark> header excluded in non TLS (HTTPS) requests </p>
+                <p> origin - only the origin (scheme, host, port) is included in the <mark>Referrer</mark> header in the request </p>
+                <p> origin-when-cross-origin - for cross-origin request only the origin (scheme, host, port) is included in the <mark>Referrer</mark> header, for same-site request the <mark>Referrer</mark> header contains the full referrer</p>
+                <p> same-origin - the <mark>Referer</mark> header is included only in same-origin requests (omitted for cross-origin requests) </p>
+                <p> strict-origin - the <mark>Referer</mark> header is included in the request if the security level stays the same (included in HTTPS -> HTTPS, excluded in HTTPS -> HTTP) </p>
+                <p> strict-origin-when-corss-origin - the <mark>Referer</mark> header is included in the request for same-site request, for cross-origin requests include only if the security level stays the same (included in HTTPS -> HTTPS, excluded in HTTPS -> HTTP) </p>
+                <p> unsafe-url - the <mark>Referer</mark> header includes only the origin and the path (but not the document fragment, password, username) </p>
+            </div></strong>" <span class="cssAV">(controls the <mark>Referer</mark> header for this request)</span> 
+            <span id="browserSupport" title="Updated: 2021-05-22">
+                <span><i class="fab fa-chrome"></i> 51 </span>
+                <span><i class="fab fa-firefox"></i> 50 </span>
+                <span><i class="fab fa-opera"></i> 38 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
+                <span><i class="fab fa-safari"></i> 11.1 </span>
+            </span><br>
+            rel="<strong class="openable">relation<div>
+                <p> alternative - alternative page </p>
+                <p> author - link to the document's author </p>
+                <p> dns-prefetch - hint the browser that the resource is needed, so the browser can make a pre dns lookup so when the client click the resource is ready </p>
+                <p> help - help about this page </p>
+                <p> icon - 'favicon' represents the page (auditory or visual) (page icon usually) </p>
+                <p> license - links to licensing informations </p>
+                <p> manifest - link is a Web App Manifest </p>
+                <p> module-preload - high priority loading module scripts </p>
+                <p> next - leads to the next resource </p>
+                <p> pingback - link to make comments or citation about the page </p>
+                <p> prefetch - suggest that the browser fetch the linked resource in advance </p>
+                <p> prerender - suggests the browser to fetch the linke resource in advance and render the pre-fetched content </p>
+                <p> prev - leads to the previous resource </p>
+                <p> search - specially designed for searching this document </p>
+                <p> stylesheet - stylesheet </p>
+                <p> tag - refers to a tag that applices to this document </p>
+            </div></strong>" <span class="cssAV">(describes the relation between the document and the linked file)</span><br> 
+            shape="<strong class="openable">shape<div>
+                <p> default - the entire region </p>
+                <p> rect - rectangle </p>
+                <p> circle - circle </p>
+                <p> poly - polygon </p>
+            </div></strong>" <span class="cssAV">(the shape of the targeted area)</span> <br>
+            target="<strong class="openable">trg<div>
+                <p> _blank - new window or tab) </p>
+                <p> _self - same frame the link is on </p>
+                <p> _parent - parent frame </p>
+                <p> _top - in the full body of the window </p>
+                <p> <strong>frame_name</strong> - in the targeted frame </p>
+            </div></strong>" <span class="cssAV">(where (which frame) to open the linked file)</span> <br>
+        </td>
+        <td>  
+            - describes an area within the image map 
+            <span id="browserSupport" title="Updated: 2021-05-22">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="05.01">
+        <td> &lt;map&gt;&lt;/map&gt; </td>
+        <td>  
+            name="<strong>mapName</strong>" <span class="cssAV">(links the image to this map, links the <mark>&lt;img usemap="<strong>mapName</strong>"</mark> as target for this map)  
+        </td>
+        <td> 
+            - defines an image map (image with clickable areas) 
+            <span id="browserSupport" title="Updated: 2021-05-22">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+</table>
+
+
+
+
+<br>
     <details class="example" id="notes">
     <summary> Notes :</summary>
     </details>
@@ -280,16 +242,32 @@
     <p> - the <mark>filter</mark> CSS proerty can be used on almost any elements not just on images! </p>
     <p> - nor the <mark>&lt;picutre&gt;</mark> neighter the <mark>&lt;source&gt;</mark> elements can be styled by CSS, we can target the <mark>&lt;img&gt;</mark> element inside the <mark>&lt;picture&gt;</mark> element (styles will be applied to all sources) </p>
 <h2 style="color:green;"><u> Description and Demonstration : </u></h2> 
-    <p> - the <mark>&lt;img&gt;</mark> tag inserts image in the document, <u style="color:yellow;">the <mark>src</mark> and <mark>alt</mark> attributes are required</u> </p>
-    <pre class="syntax">
-SYNTAX :    &lt;img <em>src=</em>"<strong>imageSource</strong>" <em>alt=</em>"<strong>text</strong>"&gt;   
-    </pre>    
+<h2 style="color:darkblue;"><u> The <mark>&lt;img&gt;</mark> / <mark>&lt;picture&gt;</mark> / <mark>&lt;source&gt;</mark> tags </u></h2> 
+    <p> - the <mark>&lt;img&gt;</mark> tag inserts image in the document, <u>(the <mark>src</mark> and <mark>alt</mark> attributes are required)</u> </p>
+    <p> - the <mark>&lt;picture&gt;</mark> and <mark>&lt;source&gt;</mark> tags is a more fine grained image insertion approach im HTML5 (allows to server different images on responsive design) </p>   
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     &lt;img src="myImage.jpg" alt="backupText"&gt;
     &lt;a herf="https://demo.com"&gt; &lt;img src="myImage.jpg" alt="backupText"&gt; &lt;/a&gt;         // image used as hyperlink
     </pre>
+    <pre>
+    &lt;img 
+        srcset="elva-fairy-480w.jpg 480w, elva-fairy-800w.jpg 800w"
+        sizes="(max-width: 600px) 480px, 800px"
+        src="elva-fairy-800w.jpg"
+        alt="Elva dressed as a fairy"&gt;
+    </pre>
+    <pre>
+    &lt;picture&gt;
+        &lt;source srcset="image_1.jpg" media="(max-width:500px)"&gt;   // if screen size is less than 500px this source will be displayed (display precedence order is form top to bottom)
+        &lt;source srcset="image_2.jpg" media="(min-width:501px)"&gt;   // if screen size is higher than 501px this source will be displayed
+        &lt;img src="backupImage.jpg" alt="backup Image" id="target"&gt;// backup image (used for backward compatibility)   // !! only the "img" tag can be targeted by CSS which styles will be applied to all picture sources   
+    &lt;/picture&gt;
+    </pre>
+</details>
 <details class="example">
-    <summary> Example : </summary>
+<summary> Example : </summary>
 <h4><u> image form a server </u></h4>    
     <p><img src="http://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com" width="40px;"></p>
         <details>
@@ -306,89 +284,6 @@ SYNTAX :    &lt;img <em>src=</em>"<strong>imageSource</strong>" <em>alt=</em>"<s
 			&lt;p style="text-align:center;"&gt;&lt;img src="Images/Me.jpg" alt="me" height="200"&gt;&lt;/p&gt;
 		</pre>
     </details>
-</details>    
-<!--------------------------------------------------------------------------------------------------------------------->
-<hr>
-<h2 style="color:darkblue;"><u> Image Map (Client-Side) <mark>&lt;map&gt;</mark> / <mark>&lt;area&gt;</mark></u></h2>
-    <p> - we can specify areas on an image as clickable areas acting as hyperlinks with the help of <mark>map</mark> and <mark>area</mark> tags </p>
-    <pre class="syntax">
-SYNTAX :    &lt;img <em>src=</em>"<strong>imageSource</strong>" <em>alt=</em>"<strong>text</strong>" <em>usemap</em>="<strong>myMap</strong>"&gt; 
-            &lt;map <em>name=</em>"<strong>myMap</strong>"&gt;
-                &lt;area <i>shape="rect"</i> <i>coords="nr,nr,nr,nr"</i>&gt;
-                &lt;area <i>shape="circle"</i> <i>coords="nr,nr,nr"</i>&gt;
-                &lt;area <i>shape="poly"</i> <i>coords="nr,nr,nr,nr,nr,nr,nr,nr,nr,nr,nr,nr"</i>&gt;
-            &lt;/map&gt;
-    </pre>
-    <pre>
-    &lt;img src="myImage.jpg" alt="image-map" usemap="#angryBirds"&gt;          // the "usemap" attribute targets "map" tag which describes the clickable areas
-    &lt;map name="angryBirds"&gt;
-        &lt;area shape="rect" coords="2,2,100,100" href="demoSite.html" alt="demoTarget"&gt;
-            // rectangle clickable area (coords="2,2,100,100" [2,2 = top left corner coordinates] [100,100 = bottom rigth corner coordinates])
-        &lt;area shape="circle" coords="75,75,20" href="demoSite.html" alt="demoTarget"&gt;
-            // circle clickable area (cords="75,75,30" [75,75 = coordinates of the circle center] [30 = defines the circle radius size])    
-        &lt;area shape="poly" coords="2,2,40,40,45,100,20,75" href="Images/angry_birds.png" alt="angryBirds" download="CusomImageName"&gt;
-            // polygon clickable area (cords="2,2,40,40,45,100,20,75" [every number pair "2,2" "40,40" "45,100" "20,75"] defines polygon edges) 
-            // "angry_birds.png" will be downloaded and renamed to "angyrBirds"
-    &lt;/map&gt;                                                                                    
-    </pre>
-<details class="example">
-    <summary> Example : </summary>
-<h4><u> circle / rectangle / polygon shaped image maps </u></h4>    
-    <p> - This image has 3 different shape targeted areas, the food stick with rectangle, the cookie with circle and the McFlury with polygon, each leads to a page TRY IT!</p>
-    <img id="img" src="Images/Food animo.png" alt="Animatied Foods" usemap="animofood" width="484px" height="185px">
-    <map name="animofood">
-        <area shape="rect" coords="45,30,130,160" alt="food stick" title="food stick" href="http://www.cookinglight.com/food/recipe-finder/food-on-stick-recipes" target="_blank">
-        <area shape="circle" coords="240,100,68" alt="cookie" title="cookie" href="https://en.wikipedia.org/wiki/Cookie" target="_blank">
-        <area shape="poly" coords="390,20,450,90,430,160,370,160,340,90" alt="McFlury" title="McFlury" href="http://www.mcdonalds.co.uk/ukhome/promotions/mcflurry-malteaser.html" target="_blank"> 
-    </map>
-        <details>
-        <summary> CODE: </summary>
-        <pre>
-    &lt;img id="img" src="Images/Food animo.png" alt="Animatied Foods" usemap="animofood" width="484px" height="185px"&gt;
-    &lt;map name="animofood"&gt;
-        &lt;area shape="rect" coords="45,30,130,160" alt="food stick" title="food stick" href="http://www.cookinglight.com/food/recipe-finder/food-on-stick-recipes" target="_blank"&gt;
-        &lt;area shape="circle" coords="240,100,68" alt="cookie" title="cookie" href="https://en.wikipedia.org/wiki/Cookie" target="_blank"&gt;
-        &lt;area shape="poly" coords="390,20,450,90,430,160,370,160,340,90" alt="McFlury" title="McFlury" href="http://www.mcdonalds.co.uk/ukhome/promotions/mcflurry-malteaser.html" target="_blank"&gt; 
-    &lt;/map&gt;
-        </pre>
-        </details>
-<h4><u> <mark>shape="default"</mark> TEST </u></h4> 
-    <p> - the entire area is clickable of this image-map </p>
-    <img src="Images/lightning.jpg" height="100" usemap="#lightningMap">
-    <map name="lightningMap">
-        <area shape="default" href="https://www.w3schools.com/tags/att_area_type.asp" target="_parent">
-    </map>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;img src="Images/lightning.jpg" height="100" usemap="#lightningMap"&gt;
-    &lt;map name="lightningMap"&gt;
-        &lt;area shape="default" href="https://www.w3schools.com/tags/att_area_type.asp" target="_parent"&gt;
-    &lt;/map&gt;    
-        </pre>
-        </details>
-</details>    
-<!--------------------------------------------------------------------------------------------------------------------->
-<hr>
-<h2 style="color:darkblue;"><u> Define image in HTML5 (additinal way not replacement) <mark>&lt;picture&gt;</mark> / <mark>&lt;source&gt;</mark> </u></h2>    
-    <p> - in HTML5 we can use the <mark>&lt;picture&gt;</mark> tag along with the <mark>&lt;source&gt;</mark> tags to display images (same system as <mark>&lt;video&gt;</mark> and <mark>&lt;audio&gt;</mark> tags) </p>
-    <p> - the responsive webdesign benefits this system because we can declare multiple images in the same tag and define different screen sizes as "mediaQueries" for each image, this way different images will be displayed on different screens sizes </p>
-    <pre class="syntax">
-SYNTAX :    &lt;picture&gt;
-                &lt;source <i>srcset="img" media="mediaQuery"</i>&gt;   
-                &lt;source <i>srcset="img" media="mediaQuery"</i>&gt;  
-                &lt;img <em>src=</em>"<strong>imageSource</strong>" <em>alt</em>="<strong>text</strong>"&gt;                // the only targetable element by CSS in order to style the images [2019-03-31]         
-            &lt;/picture&gt;    
-    </pre>
-    <pre>
-    &lt;picture&gt;
-        &lt;source srcset="image_1.jpg" media="(max-width:500px)"&gt;   // if screen size is less than 500px this source will be displayed (display precedence order is form top to bottom)
-        &lt;source srcset="image_2.jpg" media="(min-width:501px)"&gt;   // if screen size is higher than 501px this source will be displayed
-        &lt;img src="backupImage.jpg" alt="backup Image" id="target"&gt;// backup image (used for backward compatibility)   // !! only the "img" tag can be targeted by CSS which styles will be applied to all picture sources   
-    &lt;/picture&gt;
-    </pre>
-<details class="example">    
-    <summary> Example : </summary>
 <h4><u> display different pictures on different window sizes (resize to see) </u></h4>
     <picture>
         <source srcset="Images/pink_flowers.jpg" media="(min-width:500px)" type="image/jpg">
@@ -453,7 +348,64 @@ SYNTAX :    &lt;picture&gt;
     }
         </pre>
         </details>
+</details>  
+<!--------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> Image Map <mark>&lt;map&gt;</mark> / <mark>&lt;area&gt;</mark> tags </u></h2>
+    <p> - we can specify areas on an image as clickable areas acting as hyperlinks with the help of the <mark>&lt;map&gt;</mark> and <mark>&lt;area&gt;</mark> tags </p>
+<details class="example">
+<summary> DEMO </summary>
+    <pre>
+    &lt;img src="myImage.jpg" alt="image-map" usemap="#angryBirds"&gt;                       // the "usemap" attribute targets "map" tag which describes the clickable areas
+    &lt;map name="angryBirds"&gt;
+        &lt;area shape="rect" coords="2,2,100,100" href="demoSite.html" alt="demoTarget"&gt;
+            // rectangle clickable area (coords="2,2,100,100" [2,2 = top left corner coordinates] [100,100 = bottom rigth corner coordinates])
+        &lt;area shape="circle" coords="75,75,20" href="demoSite.html" alt="demoTarget"&gt;
+            // circle clickable area (cords="75,75,30" [75,75 = coordinates of the circle center] [30 = defines the circle radius size])    
+        &lt;area shape="poly" coords="2,2,40,40,45,100,20,75" href="Images/angry_birds.png" alt="angryBirds" download="CusomImageName"&gt;
+            // polygon clickable area (cords="2,2,40,40,45,100,20,75" [every number pair "2,2" "40,40" "45,100" "20,75"] defines polygon edges) 
+            // "angry_birds.png" will be downloaded and renamed to "angyrBirds"
+    &lt;/map&gt;                                                                                    
+    </pre>
 </details>
+<details class="example">
+<summary> Example : </summary>
+<h4><u> circle / rectangle / polygon shaped image maps </u></h4>    
+    <p> - This image has 3 different shape targeted areas, the food stick with rectangle, the cookie with circle and the McFlury with polygon, each leads to a page TRY IT!</p>
+    <img id="img" src="Images/Food animo.png" alt="Animatied Foods" usemap="animofood" width="484px" height="185px">
+    <map name="animofood">
+        <area shape="rect" coords="45,30,130,160" alt="food stick" title="food stick" href="http://www.cookinglight.com/food/recipe-finder/food-on-stick-recipes" target="_blank">
+        <area shape="circle" coords="240,100,68" alt="cookie" title="cookie" href="https://en.wikipedia.org/wiki/Cookie" target="_blank">
+        <area shape="poly" coords="390,20,450,90,430,160,370,160,340,90" alt="McFlury" title="McFlury" href="http://www.mcdonalds.co.uk/ukhome/promotions/mcflurry-malteaser.html" target="_blank"> 
+    </map>
+        <details>
+        <summary> CODE: </summary>
+        <pre>
+    &lt;img id="img" src="Images/Food animo.png" alt="Animatied Foods" usemap="animofood" width="484px" height="185px"&gt;
+    &lt;map name="animofood"&gt;
+        &lt;area shape="rect" coords="45,30,130,160" alt="food stick" title="food stick" href="http://www.cookinglight.com/food/recipe-finder/food-on-stick-recipes" target="_blank"&gt;
+        &lt;area shape="circle" coords="240,100,68" alt="cookie" title="cookie" href="https://en.wikipedia.org/wiki/Cookie" target="_blank"&gt;
+        &lt;area shape="poly" coords="390,20,450,90,430,160,370,160,340,90" alt="McFlury" title="McFlury" href="http://www.mcdonalds.co.uk/ukhome/promotions/mcflurry-malteaser.html" target="_blank"&gt; 
+    &lt;/map&gt;
+        </pre>
+        </details>
+<h4><u> <mark>shape="default"</mark> TEST </u></h4> 
+    <p> - the entire area is clickable of this image-map </p>
+    <img src="Images/lightning.jpg" height="100" usemap="#lightningMap">
+    <map name="lightningMap">
+        <area shape="default" href="https://www.w3schools.com/tags/att_area_type.asp" target="_parent">
+    </map>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;img src="Images/lightning.jpg" height="100" usemap="#lightningMap"&gt;
+    &lt;map name="lightningMap"&gt;
+        &lt;area shape="default" href="https://www.w3schools.com/tags/att_area_type.asp" target="_parent"&gt;
+    &lt;/map&gt;    
+        </pre>
+        </details>
+</details>    
+    
     
     <br><br>
 </body>

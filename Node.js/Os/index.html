@@ -9,171 +9,182 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Os (ver 3.2) </h1>
+<h1> Os (ver 4.0.0) </h1>
 	<p> Updated ( 2019-08-27 )</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">Node.js></a> OS  
     </p>
 <table class="table">
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
         <th style="width:25%;"> Method / Property </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> <strong>os</strong>.arch() </td>
-        <td> retunrs the CPU architecture (same as <mark>process.arch</mark>)
+        <td> - retunrs the CPU architecture (same as <mark>process.arch</mark>)
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.5.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td> <strong>os</strong>.constants </td>
-        <td>  returns an object which contains os constants for error codes, process signals, ect... (<a href="https://nodejs.org/dist/latest-v12.x/docs/api/os.html#os_os_constants_1" target="_blanc">OS Constants [link]</a>)
+        <td>  - returns an object which contains os constants for error codes, process signals, ect... (<a href="https://nodejs.org/dist/latest-v12.x/docs/api/os.html#os_os_constants_1" target="_blanc">OS Constants [link]</a>)
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 6.3.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.02">
         <td> <strong>os</strong>.cpus() </td>
-        <td> retunrs informations about each <u>logical</u> CPUs in an Array
+        <td> - returns informations about each <u>logical</u> CPUs in an Array
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.3.3 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.03">
         <td> <strong>os</strong>.endianness() </td>
-        <td> returns the endianness of the CPU (for which the Node.js binary was compiled) (endianness = order of bytes to represent a number, <mark>BE</mark> (big endianness) = most significant bytes first | <mark>LE</mark> = less significant bytes first)
+        <td> - returns the endianness of the CPU (for which the Node.js binary was compiled) (endianness = order of bytes to represent a number, <mark>BE</mark> (big endianness) = most significant bytes first | <mark>LE</mark> = less significant bytes first)
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.9.4 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.02">
         <td> <strong>os</strong>.EOL </td>
-        <td> returns the os end-of-line marker
+        <td> - returns the os end-of-line marker
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i>  </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.05">
         <td> <strong>os</strong>.freemem() </td>
-        <td> returns the free system memory in bytes
+        <td> - returns the free system memory in bytes
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.3.3 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.02">
         <td> <strong>os</strong>.getPriority(<i>pid:nr</i>) </td>
-        <td> returns the scheduling priority of the targeted process
+        <td> - returns the scheduling priority of the targeted process
             <span id="browserSupport" title="updated : 2019-08-28">
                 <span><i class="fab fa-node-js"></i> 10.10.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.06">
         <td> <strong>os</strong>.homedir() </td>
-        <td> returns the home directory of the current user
+        <td> - returns the home directory of the current user
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 2.3.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.04">
         <td> <strong>os</strong>.hostname() </td>
-        <td> returns the operating system name in a string
+        <td> - returns the operating system name in a string
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.3.3 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.06">
         <td> <strong>os</strong>.loadavg() </td>
-        <td> returns an Array containing the load averages of 1, 5 and 15 seconds (UNIX only on windows is always <mark>[0, 0, 0]</mark>) [NOT TESTED : 2019-08-27]
+        <td> 
+            - returns an Array containing the <span class="openable">loading averages in the last 1, 5 and 15 seconds<div>
+                <p> - each number indicates the average number of processes waiting to be executed in the last 1, 5 and 15 minutes </p>
+                <p> - normal values = below the number of processors the system have </p>
+                <p> - system overload = above the number of processors the system have </p>
+                <p> Example of a 12 core system </p>
+                <p> - <mark>0.25, 0.27, 0.33</mark> = normal values </p>
+                <p> - <mark>17.11, 14.55, 13.02</mark> = system overloaded </p>
+            </div></span> (UNIX only on windows is always <mark>[0, 0, 0]</mark>)
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.3.3 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.05">
         <td> <strong>os</strong>.networkInterfaces() </td>
-        <td> returns the <u>active</u> network interfaces in an object
+        <td> - returns the <u>active</u> network interfaces in an object
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.6.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td> <strong>os</strong>.platform() </td>
-        <td> identifies the operating system (same as <mark>process.platform</mark>)
+        <td> - identifies the operating system (same as <mark>process.platform</mark>)
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.5.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.03">
         <td> <strong>os</strong>.release() </td>
-        <td> returns the operating system release informations in a string
+        <td> - returns the operating system release informations in a string
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.3.3 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.01">
         <td> <strong>os</strong>.setPriority(<i>pid:nr</i>, <strong>priority:nr</strong>) </td>
-        <td> attempts to set the scheduling priority to the targeted process (any process on the system) (use the <mark>os.constants.priority</mark> property in order to get the available priority values of the system)
+        <td> - attempts to set the scheduling priority to the targeted process (any process on the system) (use the <mark>os.constants.priority</mark> property in order to get the available priority values of the system)
             <span id="browserSupport" title="updated : 2019-08-28">
                 <span><i class="fab fa-node-js"></i> 10.10.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.05">
         <td> <strong>os</strong>.tmpdir() </td>
-        <td> returns the default temporary files directory of the system in a string
+        <td> - returns the default temporary files directory of the system in a string
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.9.9 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.04">
         <td> <strong>os</strong>.totalmem() </td>
-        <td> returns the total amount of system memory in bytes
+        <td> - returns the total amount of system memory in bytes
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.3.3 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.02">
         <td> <strong>os</strong>.type() </td>
-        <td> returns the operating system name in a string
+        <td> - returns the operating system name in a string
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.3.3 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.03">
         <td> <strong>os</strong>.uptime() </td>
-        <td> retunrs the system uptime in seconds (time from the system started)
+        <td> - retunrs the system uptime in seconds (time from the system started)
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 0.3.3 </span>
                 <span><i class="fab fa-node-js"></i> 10.0.0 no fraction components on windows </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.04">
         <td> <strong>os</strong>.userInfo(<small>{encoding:<i>encode:str</i>}</small>) </td>
-        <td> returns an object which contains current user informations
+        <td> - returns an object which contains current user informations
             <span id="browserSupport" title="updated : 2019-08-27">
                 <span><i class="fab fa-node-js"></i> 6.0.0 </span>
             </span>
         </td>
     </tr>
 </table>
-<h2 style="color:green;"><u> Notes : </u></h2>
+    <br>
     <details class="example" id="notes">
     <summary> Notes :</summary>
     </details>
@@ -185,15 +196,9 @@
     <p> - the <mark>os</mark> module provides a number of operating system related utility methods </p>
 <hr>
 <!------------------------------------------------------------------------------------------------------------------->
-<h2 style="color:darkblue;"><u> <mark>arch()</mark> / <mark>cpus()</mark> / <mark>endianness()</mark> / <mark>totalmem()</mark> / <mark>freemem()</mark> methods </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>os</strong>.cpus()                                                            // returns informations about each <u>logical</u> CPUs in an Array
-            <strong>os</strong>.arch()                                                            // returns the CPU architecture (same as <mark>process.arch</mark>)
-            <strong>os</strong>.endianness()                                                      // returns the endianness of the CPU (for which the Node.js binary was compiled) (endianness = order of bytes to represent a number, <mark>BE</mark> (big endianness) = most significant bityes first | <mark>LE</mark> = less significant bytes first)   
-            
-            <strong>os</strong>.totalmem()                                                        // returns the total amount of system memory in bytes 
-            <strong>os</strong>.freemem()                                                         // returns the free system memory in bytes 
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>arch()</mark> / <mark>cpus()</mark> / <mark>endianness()</mark> / <mark>totalmem()</mark> / <mark>freemem()</mark> methods </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const os = require('os');
     
@@ -206,6 +211,7 @@ SYNTAX :    <strong>os</strong>.cpus()                                          
     os.totalmem();                                                               // -> 17129938944                              // total memory of the system (in bytes)   
     os.freemem();                                                                // -> 11014127616                              // free memory of the system (in bytes)
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h3 style="color:darkblue;"><u> <mark>arch()</mark> / <mark>endianness()</mark> TEST </u></h3>
@@ -393,16 +399,9 @@ SYNTAX :    <strong>os</strong>.cpus()                                          
 </details>
 <hr>
 <!------------------------------------------------------------------------------------------------------------------->
-<h2 style="color:darkblue;"><u> <mark>platform()</mark> / <mark>type()</mark> / <mark>release()</mark> / <mark>hostname()</mark> / <mark>tmpdir()</mark> / <mark>homedir()</mark> /  methods </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>os</strong>.platform()                                                        // identifies the operating system (same as <mark>process.platform</mark>)   
-            <strong>os</strong>.type()                                                            // returns the operating system name in a string   
-            <strong>os</strong>.release()                                                         // returns the operating system release informations in a string 
-            <strong>os</strong>.hostname()                                                        // returns the operating system name in a string 
-            
-            <strong>os</strong>.tmpdir()                                                          // returns the default temporary files directory of the system in a string 
-            <strong>os</strong>.homedir()                                                         // returns the home directory of the current user 
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>platform()</mark> / <mark>type()</mark> / <mark>release()</mark> / <mark>hostname()</mark> / <mark>tmpdir()</mark> / <mark>homedir()</mark> /  methods </u></h2>
+<details class="example">
+<summary>DEMO </summary>
     <pre>
     const os = require('os');
     
@@ -416,6 +415,7 @@ SYNTAX :    <strong>os</strong>.platform()                                      
     os.tmpdir();                                                                 // -> 'C:\Users\Pall\AppData\Local\Temp'   // temporary files directory
     os.homedir();                                                                // -> 'C:\Users\Pall'                      // user home directory 
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h3 style="color:darkblue;"><u> <mark>platform()</mark> / <mark>type()</mark> / <mark>release()</mark> / <mark>hostname()</mark> TEST </u></h3>
@@ -452,18 +452,9 @@ SYNTAX :    <strong>os</strong>.platform()                                      
     </pre>
 </details>
 <!------------------------------------------------------------------------------------------------------------------->
-<h2 style="color:darkblue;"><u> <mark>constants</mark> / <mark>loadavg()</mark> / <mark>EOL</mark> / <mark>uptime()</mark> / <mark>userInfo()</mark> / <mark>networkInterfaces()</mark> methods and properties </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>os</strong>.userInfo(<small>{encoding:<i>encode:str</i>}</small>)                                   // returns an object which contains current user informations
-                - <small>{encoding:<i>encode:str</i>}</small> : character encoding to interpert the resulting string (Default: <mark>'utf-8'</mark>)
-            <strong>os</strong>.EOL                                                               // returns the os end-of-line marker 
-            <strong>os</strong>.uptime()                                                          // retunrs the system uptime in seconds (time from the system started)
-            
-            <strong>os</strong>.constants                                                         // returns an object which contains os constants for error codes, process signals, ect... (<a href="https://nodejs.org/dist/latest-v12.x/docs/api/os.html#os_os_constants_1" target="_blanc">OS Constants [link]</a>)
-            <strong>os</strong>.loadavg()                                                         // returns an Array containing the load averages of 1, 5 and 15 seconds (UNIX only on windows is always <mark>[0, 0, 0]</mark>) [NOT TESTED : 2019-08-27]   
-            
-            <strong>os</strong>.networkInterfaces()                                               // returns the <u>active</u> network interfaces in an object 
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>constants</mark> / <mark>loadavg()</mark> / <mark>EOL</mark> / <mark>uptime()</mark> / <mark>userInfo()</mark> / <mark>networkInterfaces()</mark> methods and properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>    
     <pre>
     const os = require('os');
     
@@ -479,6 +470,7 @@ SYNTAX :    <strong>os</strong>.userInfo(<small>{encoding:<i>encode:str</i>}</sm
 // networkInterfaces() ----------------------------------------------------------
     os.networkInterfaces()                                                       // -> { active networks... }       // retunrs the active networks and their details 
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h3 style="color:darkblue;"><u> <mark>userInfo()</mark> / <mark>EOL</mark> / <mark>uptime()</mark> TEST </u></h3>
@@ -730,11 +722,9 @@ PS D:\safe\code +\my site\03 improuve\learn webdesign\04 node.js\os\07 constats 
     </pre>
 </details>
 <!------------------------------------------------------------------------------------------------------------------->
-<h2 style="color:darkblue;"><u> <mark>setPriority()</mark> / <mark>getPriority()</mark> methods </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>os</strong>.setPriority(<i>pid:nr</i>, <strong>priority:nr</strong>)                                  // attempts to set the scheduling priority to the targeted process (any process on the system) (use the <mark>os.constants.priority</mark> property in order to get the available priority values of the system)   
-            <strong>os</strong>.getPriority(<i>pid:nr</i>)                                               // returns the scheduling priority of the targeted process   
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>setPriority()</mark> / <mark>getPriority()</mark> methods </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const os = require('os');
     
@@ -745,6 +735,7 @@ SYNTAX :    <strong>os</strong>.setPriority(<i>pid:nr</i>, <strong>priority:nr</
     os.getPriority(9680);                                                        // -> -7                                           // get scheduling priority of the targeted pid 
     os.getPriority(process.pid);                                                 // -> 0                                            // current process priority (Default value)
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h3 style="color:darkblue;"><u> <mark>setPriority()</mark> / <mark>getPriority()</mark> TEST </u></h3>
@@ -783,6 +774,6 @@ SYNTAX :    <strong>os</strong>.setPriority(<i>pid:nr</i>, <strong>priority:nr</
     PS D:\safe\code +\my site\03 improuve\learn webdesign\04 node.js\os\09 setPriority() getPriority() TEST>    </pre>
 </details>
     
-    
+    <br><br>
 </body>
 </html>

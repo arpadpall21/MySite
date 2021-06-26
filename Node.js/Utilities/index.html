@@ -9,74 +9,121 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Utilities (ver 3.2) </h1>
+<h1> Utilities (ver 4.0.0) </h1>
     <p> Updated ( 2019-11-24 )</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">Node.js></a> Utilities  
     </p>
 <table class="table">
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
         <th style="width:30%;"> Method / Property </th>
         <th> Description </th>
     </tr>
-    <tr>
-        <td> <strong>util</strong>.callbackify(<strong>asyncFn</strong>) </td>
-        <td> - transforms and returns the passed <strong>asyncFn</strong> to an 'error-first callback style' callback based function (method) (the callback is always the <u>last argument</u> and it's asynchronous) <br>
-             - the first argument in the callback function holds the value of the rejected promise returned by <strong>asyncFn</strong> (returns <mark>null</mark> if the <strong>asyncFn</strong> returns a resolved promise) (<mark>null</mark> as rejected promise value will be wrapped in an Error object and thrown) <br>
-             - the second argument in the callback function holds the value of the resolved promise returned by <strong>asyncFn</strong>
+    <tr class="10.01">
+        <td> 
+            <strong>util</strong>.callbackify(<strong class="openable">asyncFn<div>
+                <p> - async function or a function that returns a Promise </p>
+            </div></strong>) </td>
+        <td> 
+            - transforms and returns the passed <strong>asyncFn</strong> to an 'error-first callback style' callback based function (method) (the callback is always the <u>last argument</u> and it's asynchronous) <br>
+            - the first argument in the callback function holds the value of the rejected promise returned by <strong>asyncFn</strong> (returns <mark>null</mark> if the <strong>asyncFn</strong> returns a resolved promise) (<mark>null</mark> as rejected promise value will be wrapped in an Error object and thrown) <br>
+            - the second argument in the callback function holds the value of the resolved promise returned by <strong>asyncFn</strong>
             <span id="browserSupport" title="updated : 2019-12-01">
                 <span><i class="fab fa-node-js"></i> 8.2.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong>.debuglog(<strong>envVarVal:str</strong>) </td>
-        <td> returns a 'logging function' which will emit its argument to <mark>stderr</mark> if this process uppon start recognizes the <mark>NODE_DEBUG=<strong>envVal</strong></mark> environment variable (universal sign <mark>*</mark> suppored in environment variable values)
+    <tr class="20.01">
+        <td> <strong>util</strong>.debuglog(<strong class="openable">envVarVal:str<div>
+            <p> - environment Variable Value </p>
+            <p> - the universal asterisk sign <mark>*</mark> is suppored </p>
+        </div></strong>) </td>
+        <td> 
+            - returns a 'logging function' which will emit its argument to <mark>stderr</mark> if this process uppon start recognizes the <mark>NODE_DEBUG=<strong>envVal</strong></mark> environment variable (universal sign <mark>*</mark> suppored in environment variable values)
             <span id="browserSupport" title="updated : 2019-11-28">
                 <span><i class="fab fa-node-js"></i> 0.11.3 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.02">
         <td> <strong>util</strong>.deprecate(<strong>fn</strong>, <strong>deprMsg:str</strong>, <i>deprCode:str</i>) </td>
-        <td> - returns a 'deprecation function' which is when called emits a deprecation warning by using the 'warning' event (asynchronous) and prints the <strong>depMsg</strong> to <mark>stderr</mark> (deprecation and warning flags affect this function) <br> 
-             - first emits the deprecation warning (asynchronous), then invokes the passed function (1st argument) <u>(only one warning emitted per deprecation code <i>depCode</i>)</u>   
+        <td> 
+            - returns a 'deprecation function' which is when called emits a deprecation warning by using the 'warning' event (asynchronous) and prints the <strong>depMsg</strong> to <mark>stderr</mark> (deprecation and warning flags affect this function) <br> 
+            - first emits the deprecation warning (asynchronous), then invokes the passed function (1st argument) <u>(only one warning emitted per deprecation code <i>depCode</i>)</u>  
             <span id="browserSupport" title="updated : 2019-11-28">
                 <span><i class="fab fa-node-js"></i> 0.8.0 </span>
                 <span><i class="fab fa-node-js"></i> 10.0.0 one warning per deprecation code </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong>.format(<strong>printf:str</strong>, <i>data:any</i>, <i>...</i>) </td>
-        <td> - formats the arguments in the passed order according to <strong>printf</strong> strings order and returns the result in one string <br>
-             - <strong>printf</strong> used as <mark>'%s'</mark> = <mark>String</mark> | <mark>'%d'</mark> = <mark>Number</mark> | <mark>%i</mark> = <mark>parseInt(val, 10)</mark> | <mark>'%f'</mark> = <mark>parseFloat(value)</mark> | <mark>'%o'|'%O'</mark> = <mark>util.inspect()</mark>
+    <tr class="15.02">
+        <td> 
+            <strong>util</strong>.format(<strong class="openable">printf:str<div>
+                <p> %s - <mark>String</mark> used to convert all values, objects are formated with <mark>util.inspect()</mark> </p>
+                <p> %d - <mark>Number</mark> used to convert all values except Symbol and BigIng </p>
+                <p> %i - <mark>parseInt(value, 10)</mark> used to convert all values except Symbol and BigInt </p>
+                <p> %f - <mark>parseFloat(value)</mark> used to convert all values except Symbol and BigInt </p>
+                <p> %j - <mark>JSON</mark> replaced with the string '[Circular]' if the argument contains circular references [NOT TESTED: 2019-12-02] </p>
+                <p> %O - <mark>Object</mark> uses the <mark>util.inspect()</mark> method, formats the full object excluding non-enumerable properties and proxies </p>
+                <p> %o - <mark>Object</mark> uses the <mark>util.inspect()</mark> method, formats the full object including non-enumerable properties and proxies </p>
+            </div></strong>, <i>data:any</i>, <i>...</i>) 
+        </td>
+        <td> 
+            - formats the <i>data</i> according to the <strong>printf</strong> string and returns the result in one string <br>
+            
+            
             <span id="browserSupport" title="updated : 2019-12-01">
                 <span><i class="fab fa-node-js"></i> 0.5.3 </span>
                 <span><i class="fab fa-node-js"></i> 8.4.0 <mark>'%o'|'%O'</mark> support </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.01">
         <td> <strong>util</strong>.getSystemErrorName(<strong>err:nr</strong>) </td>
-        <td> returns the system error name in a string of the system error number (error comming from a Node.js API) (error codes and names are platform-dependent)
+        <td> - returns the system error name of the error code (<strong>err</strong>) in a string (error comming from a Node.js API) (error codes and names are platform-dependent)
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 9.7.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.02">
+        <td> <strong>util</strong>.getSystemErrorMap(<strong>err:nr</strong>) </td>
+        <td> 
+            - returns a JS <strong>map</strong> object which contains node.js error codes mapped to their names (error codes comming from a Node.js API) (error codes and names are platform-dependent)    
+            <span id="browserSupport" title="updated : 2021-05-20">
+                <span><i class="fab fa-node-js"></i> 16.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="05.01">
         <td> <strong>util</strong>.inherits(<strong>Constructor|Class</strong>, <strong>super(Constructor|Class)</strong>) </td>
-        <td> inherits prototype methods from one constructor|class into another one <u>(discouraged to use, use ES6 <mark>extends</mark> mechanism instead)</u>
+        <td> 
+            - inherits prototype methods from one constructor|class into another one <u>(discouraged to use, use ES6 <mark>extends</mark> mechanism instead)</u>
             <span id="browserSupport" title="updated : 2019-12-01">
                 <span><i class="fab fa-node-js"></i> 0.3.0 </span>
                 <span><i class="fab fa-node-js"></i> 5.0.0 ES6 class </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong>.inspect(<strong>data:any</strong>, <i>option:obj</i>) </td>
-        <td> maps the passed data (primitive or object) and returns a formated string about it
+    <tr class="15.01">
+        <td> 
+            <strong>util</strong>.inspect(<strong>data:any</strong>, <i class="openable">option:obj<div>
+                <p> showHidden: <strong>bol</strong> - show non-enumerable symbols and properties and includes WeakMap and WeakSet entries (Default: <mark>false</mark>) </p>
+                <p> depth: <strong>nr</strong> - recurse time while formating object (object depth level) (Default: <mark>2</mark> / null = full depth)  </p>
+                <p> colors: <strong>bol</strong> - styles the output with ANSI colors (Defalut:false) (can be changed through the util.inspect.colors property) </p>
+                <p> customInspect: <strong>bol</strong> - invokes the [util.inspect.custom](depth, opts) function (Default: <mark>false</mark>) </p>
+                <p> showProxy: <strong>bol</strong> - Proxy inspection includes target and handler objects (Default: <mark>false</mark>) </p> 
+                <p> maxArrayLength: <strong>nr</strong> - maximum number of Array items to inspect (Default: <mark>100</mark> / null = all items) </p>
+                <p> breakLength: <strong>nr</strong> - if the length of a key/value pair toghether is longer than this value, each value is displayed in a new line (Default: <mark>80</mark>) </p>   
+                <p> compact: <strong>bol|nr</strong> - <mark>false</mark> = each object key displayed on a new line (Defalut: <mark>3</mark>) [NOT fully tested!] </p>
+                <p> sorted: <strong>bol|fn</strong> - sort object properties (Default: false), we can use a compare function to make a custom sort </p>
+                <p> getters: <strong>bol:str</strong> - <mark>true</mark> = getter property values are inspected (Default:<mark>false</mark>) [NOT fully tested!] </p>
+            </div></i>) </td>
+        <td> 
+            - maps the passed data (primitive or object) and returns a formated string about it
             <span id="browserSupport" title="updated : 2019-12-01">
                 <span><i class="fab fa-node-js"></i> 0.3.0 </span>
                 <span><i class="fab fa-node-js"></i> 6.1.0 <mark>showProxy</mark> | <mark>maxArrayLength</mark> option </span>
@@ -87,8 +134,10 @@
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong>.isDeepStrictEqual(<strong>val:any</strong>, <strong>val:any</strong>) </td>
+    <tr class="05.02">
+        <td> 
+            <strong>util</strong>.isDeepStrictEqual(<strong>val:any</strong>, <strong>val:any</strong>) 
+        </td>
         <td> - deeply compares the equality between the 2 arguments (can compare objects), returns <mark>true</mark> if they are equal <mark>false</mark> otherwise <br>   
              - primitive values are compared with the "Same Value Equality" <mark>===</mark> operator <br>
              - only enumerable own properties are considered <br>
@@ -101,9 +150,13 @@
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong>.promisify(<strong>fnError_firstCallbackStyle</strong>) </td>
-        <td> returns a function which is when called returns a promise based API version of the passed 'error-first callback style' function (mainly used to transform built-in asynchronous methods (like: <mark>fs.write</mark>) into a promise based API)
+    <tr class="10.02">
+        <td> 
+            <strong>util</strong>.promisify(<strong class="openable">fnErr1st<div>
+                <p> - a Node.js error first callback style method (like <mark>fs.write</mark>) </p>
+            </div></strong>) </td>
+        <td> 
+            - returns a function which is when called returns a promise based API version of the passed 'error-first callback style' Node.js function (mainly used to transform built-in asynchronous methods (like: <mark>fs.write</mark>) into a promise based API)  
             <span id="browserSupport" title="updated : 2019-12-02">
                 <span><i class="fab fa-node-js"></i> 8.0.0 </span>
             </span>
@@ -112,321 +165,324 @@
 </table>
     <br>
 <table class="table">
-<caption> Data and Object Type Checking <mark>util.types</mark> </caption>    
+<caption> 
+    Data Type Checking <mark>util.types</mark> 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>    
     <tr>
         <th style="width:30%;"> Method / Property </th>
         <th> Description </th>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isBoxedPrimitive(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a boxed primitive value, (primitive value created and wrapped by object (ex: <mark>new String()</mark>)), otherwise returns <mark>false</mark>
+    <tr class="05.01">
+        <td> <strong>util</strong><em>.types</em>.isAnyArrayBuffer(<strong>val:any</strong>) </td>
+        <td> 
+            - returns <mark>true</mark> if the <strong>val</strong> is either an <mark>ArrayBuffer</mark> or a <mark>SharedArrayBuffer</mark> instance,, otherwise returns <mark>false</mark>
+            <span id="browserSupport" title="updated : 2019-12-03">
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="15.01">
+        <td> <strong>util</strong><em>.types</em>.isArgumentsObject(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is an <mark>arguments</mark> object, otherwise returns <mark>false</mark>
+            <span id="browserSupport" title="updated : 2019-12-03">
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="05.02">
+        <td> <strong>util</strong><em>.types</em>.isArrayBuffer(<strong>val:any</strong>) </td>
+        <td> 
+            - returns <mark>true</mark> if the <strong>val</strong> is an <mark>ArrayBuffer</mark> instance, otherwise returns <mark>false</mark>
+            <span id="browserSupport" title="updated : 2019-12-03">
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="21.01">
+        <td> <strong>util</strong><em>.types</em>.isAsyncFunction(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a async function, otherwise returns <mark>false</mark>
+            <span id="browserSupport" title="updated : 2019-12-03">
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="10.10">
+        <td> <strong>util</strong><em>.types</em>.isBigInt64Array(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>BigInt64Array</mark> instance, otherwise returns <mark>false</mark>
+            <span id="browserSupport" title="updated : 2019-12-03">
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="10.11">
+        <td> <strong>util</strong><em>.types</em>.isBigUint64Array(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>BigUint64Array</mark> instance, otherwise returns <mark>false</mark>
+            <span id="browserSupport" title="updated : 2019-12-03">
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="25.04">
+        <td> <strong>util</strong><em>.types</em>.isBooleanObject(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a boolean object, otherwise returns <mark>false</mark>
+            <span id="browserSupport" title="updated : 2019-12-03">
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="25.01">
+        <td> <strong>util</strong><em>.types</em>.isBoxedPrimitive(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a boxed primitive value, (primitive value created and wrapped by object (ex: <mark>new String()</mark>)), otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.10.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isAnyArrayBuffer(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is either an <mark>ArrayBuffer</mark> or a <mark>SharedArrayBuffer</mark> instance,, otherwise returns <mark>false</mark>
+    <tr class="05.04">
+        <td> <strong>util</strong><em>.types</em>.isDataView(<strong>val:any</strong>) </td>
+        <td> 
+            - returns <mark>true</mark> if the <strong>val</strong> is a <mark>DataView</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isArgumentsObject(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is an <mark>arguments</mark> object, otherwise returns <mark>false</mark>
+    <tr class="30.01">
+        <td> <strong>util</strong><em>.types</em>.isDate(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>Date</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isArrayBuffer(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is an <mark>ArrayBuffer</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="40.02">
+        <td> <strong>util</strong><em>.types</em>.isExternal(<strong>val:any</strong>) </td>
+        <td> - [NOT TESTED: 2019-12-03] no usage example in Node.js docs and I cant' figure out what's this!
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isAsyncFunction(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a async function, otherwise returns <mark>false</mark>
+    <tr class="10.09">
+        <td> <strong>util</strong><em>.types</em>.isFloat32Array(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>Float32Array</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isBooleanObject(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a boolean object, otherwise returns <mark>false</mark>
+    <tr class="10.12">
+        <td> <strong>util</strong><em>.types</em>.isFloat64Array(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>Float64Array</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isDataView(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>DataView</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="21.02">
+        <td> <strong>util</strong><em>.types</em>.isGeneratorFunction(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a generator function, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isDate(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>Date</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="21.03">
+        <td> <strong>util</strong><em>.types</em>.isGeneratorObject(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a generator object (object returned by a generator function), otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isExternal(<strong>value:any</strong>) </td>
-        <td> [NOT TESTED: 2019-12-03] no usage example in Node.js docs and I cant' figure out what's this!
+    <tr class="10.02">
+        <td> <strong>util</strong><em>.types</em>.isInt8Array(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is an <mark>Int8Array</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isGeneratorFunction(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a generator function, otherwise returns <mark>false</mark>
+    <tr class="10.05">
+        <td> <strong>util</strong><em>.types</em>.isInt16Array(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is an <mark>Int16Array</mark> instance, otherwise returns <mark>false</mark>
+            <span id="browserSupport" title="updated : 2019-12-03">
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+        </td>
+    </tr>  
+    <tr class="10.07">
+        <td> <strong>util</strong><em>.types</em>.isInt32Array(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is an <mark>Int32Array</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isGeneratorObject(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a generator object (object returned by a generator function), otherwise returns <mark>false</mark>
+    <tr class="35.01">
+        <td> <strong>util</strong><em>.types</em>.isMap(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>Map</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isMap(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>Map</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="35.05">
+        <td> <strong>util</strong><em>.types</em>.isMapIterator(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is an iterator object returned by a <mark>Map</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isMapIterator(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is an iterator object returned by a <mark>Map</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="40.01">
+        <td> <strong>util</strong><em>.types</em>.isModuleNameSpace(<strong>val:any</strong>) </td>
+        <td> - [NOT TESTED: 2019-12-03] it does something with ES6 module which is not natively supported right now
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isModuleNameSpace(<strong>value:any</strong>) </td>
-        <td> [NOT TESTED: 2019-12-03] it does something with ES6 module which is not natively supported right now
+    <tr class="30.05">
+        <td> <strong>util</strong><em>.types</em>.isNativeError(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a built-in JavaScript Error instance (ex: <mark>new TypeError()</mark>), otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isNativeError(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a built-in JavaScript Error instance (ex: <mark>new TypeError()</mark>), otherwise returns <mark>false</mark>
+    <tr class="25.03">
+        <td> <strong>util</strong><em>.types</em>.isNumberObject(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a number object, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isNumberObject(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a number object, otherwise returns <mark>false</mark>
+    <tr class="30.04">
+        <td> <strong>util</strong><em>.types</em>.isPromise(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a promise, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isPromise(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a promise, otherwise returns <mark>false</mark>
+    <tr class="30.03">
+        <td> <strong>util</strong><em>.types</em>.isProxy(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>Proxy</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isProxy(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>Proxy</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="30.02">
+        <td> <strong>util</strong><em>.types</em>.isRegExp(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>RegExp</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isRegExp(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>RegExp</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="35.02">
+        <td> <strong>util</strong><em>.types</em>.isSet(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>Set</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isSet(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>Set</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="35.06">
+        <td> <strong>util</strong><em>.types</em>.isSetIterator(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is an iterator object returned by a <mark>Set</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isSetIterator(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is an iterator object returned by a <mark>Set</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="05.03">
+        <td> <strong>util</strong><em>.types</em>.isSharedArrayBuffer(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>SharedArrayBuffer</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isSharedArrayBuffer(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>SharedArrayBuffer</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="25.02">
+        <td> <strong>util</strong><em>.types</em>.isStringObject(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a string object, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isStringObject(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a string object, otherwise returns <mark>false</mark>
+    <tr class="25.05">
+        <td> <strong>util</strong><em>.types</em>.isSymbolObject(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a symbol object (ex: <mark>Object(Symbol())</mark>), otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isSymbolObject(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a symbol object (ex: <mark>Object(Symbol())</mark>), otherwise returns <mark>false</mark>
+    <tr class="10.01">
+        <td> <strong>util</strong><em>.types</em>.isTypedArray(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>TypedArray</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isWeakMap(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>WeakMap</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="10.03">
+        <td> <strong>util</strong><em>.types</em>.isUint8Array(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is an <mark>Uint8Array</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isWeakSet(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>WeakSet</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="10.04">
+        <td> <strong>util</strong><em>.types</em>.isUint8ClampedArray(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is an <mark>Uint8ClampedArray</mark> instance, otherwise returns <mark>false</mark>
+            <span id="browserSupport" title="updated : 2019-12-03">
+                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
+            </span>
+        </td>
+    </tr>  
+    <tr class="10.06">
+        <td> <strong>util</strong><em>.types</em>.isUint16Array(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is an <mark>Uint16Array</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isWebAssemblyCompiledModule(<strong>value:any</strong>) </td>
-        <td> [NOT TESTED: 2019-12-03] returns <mark>true</mark> if the value is a <mark>WebAssembly.Module</mark> instance
+    <tr class="10.08">
+        <td> <strong>util</strong><em>.types</em>.isUint32Array(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is an <mark>Uint32Array</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td colspan="2"> TypedArrays </td>
-    </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isTypedArray(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>TypedArray</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="35.03">
+        <td> <strong>util</strong><em>.types</em>.isWeakMap(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>WeakMap</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isInt8Array(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is an <mark>Int8Array</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="35.04">
+        <td> <strong>util</strong><em>.types</em>.isWeakSet(<strong>val:any</strong>) </td>
+        <td> - returns <mark>true</mark> if the <strong>val</strong> is a <mark>WeakSet</mark> instance, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isUint8Array(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is an <mark>Uint8Array</mark> instance, otherwise returns <mark>false</mark>
-            <span id="browserSupport" title="updated : 2019-12-03">
-                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isUint8ClampedArray(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is an <mark>Uint8ClampedArray</mark> instance, otherwise returns <mark>false</mark>
-            <span id="browserSupport" title="updated : 2019-12-03">
-                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isInt16Array(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is an <mark>Int16Array</mark> instance, otherwise returns <mark>false</mark>
-            <span id="browserSupport" title="updated : 2019-12-03">
-                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isUint16Array(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is an <mark>Uint16Array</mark> instance, otherwise returns <mark>false</mark>
-            <span id="browserSupport" title="updated : 2019-12-03">
-                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isInt32Array(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is an <mark>Int32Array</mark> instance, otherwise returns <mark>false</mark>
-            <span id="browserSupport" title="updated : 2019-12-03">
-                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isUint32Array(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is an <mark>Uint32Array</mark> instance, otherwise returns <mark>false</mark>
-            <span id="browserSupport" title="updated : 2019-12-03">
-                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isFloat32Array(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>Float32Array</mark> instance, otherwise returns <mark>false</mark>
-            <span id="browserSupport" title="updated : 2019-12-03">
-                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isBigInt64Array(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>BigInt64Array</mark> instance, otherwise returns <mark>false</mark>
-            <span id="browserSupport" title="updated : 2019-12-03">
-                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isBigUint64Array(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>BigUint64Array</mark> instance, otherwise returns <mark>false</mark>
-            <span id="browserSupport" title="updated : 2019-12-03">
-                <span><i class="fab fa-node-js"></i> 10.0.0 </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <strong>util</strong><em>.types</em>.isFloat64Array(<strong>value:any</strong>) </td>
-        <td> returns <mark>true</mark> if the value is a <mark>Float64Array</mark> instance, otherwise returns <mark>false</mark>
+    <tr class="40.03">
+        <td> <strong>util</strong><em>.types</em>.isWebAssemblyCompiledModule(<strong>val:any</strong>) </td>
+        <td> - [NOT TESTED: 2019-12-03] returns <mark>true</mark> if the <strong>val</strong> is a <mark>WebAssembly.Module</mark> instance
             <span id="browserSupport" title="updated : 2019-12-03">
                 <span><i class="fab fa-node-js"></i> 10.0.0 </span>
             </span>
@@ -435,95 +491,120 @@
 </table>
     <br>
 <table class="table">
-<caption> Text Encoder and Decoder (WHATWG Encoder API) </caption>    
+<caption> 
+    Text Encoder (WHATWG Encoder API) 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>    
     <tr>
         <th style="width:30%;"> Method / Property </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="01.01">
         <td colspan="2"> TextEncoder </td>
     </tr>
-    <tr>
+    <tr class="01.02">
         <td> new <strong>util</strong>.TextEncoder() </td>
-        <td> returns a text encoder object which is used encode a string into an <mark>Uint8Array</mark> <u>(supports only UTF-8 encoding)</u> (implements the WHATWG Encoding Standard)
+        <td> 
+            - returns a <strong>textEncoder</strong> object which is used encode a string into an <mark>Uint8Array</mark> <u>(supports only UTF-8 encoding)</u> (implements the WHATWG Encoding Standard)
             <span id="browserSupport" title="updated : 2019-12-04">
                 <span><i class="fab fa-node-js"></i> 8.3.0 </span>
                 <span><i class="fab fa-node-js"></i> 11.0.0 available in global object </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="02.01">
         <td> <strong>textEncoder</strong>.encode(<strong>str</strong>) </td>
-        <td> encodes the passed string into an <mark>Uint8Array</mark> and returns it 
+        <td> - encodes the passed string as Uint8 format and returns the result in an <strong>Uint8Array</strong> 
             <span id="browserSupport" title="updated : 2019-12-04">
                 <span><i class="fab fa-node-js"></i> 8.3.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>textEncoder</strong>.encodeInto(<strong>src:str</strong>, <strong>targ:Uint8Array</strong>) </td>
-        <td> - encodes the passed string into the passed Uint8Array and returns a feedback object about the operation <mark>{read, written}</mark> <br>
-              - feedback object <mark>read</mark> property = number of unicode code units read from src | <mark>written</mark> = number of utf-8 bytes written to target
+    <tr class="02.02">
+        <td> <strong>textEncoder</strong>.encodeInto(<strong>data:str</strong>, <strong>targ:Uint8Array</strong>) </td>
+        <td> 
+            - encodes the passed string as Uint8 format and stores the result in the passed <strong>targ</strong> Uint8Array <br>
+            - returns a feedback object about the operation <mark class="openable">{read, written}<div>
+              <p> read: <strong>nr</strong> - the number of unicode code points read from src </p>
+              <p> written: <strong>nr</strong> - the number of utf-8 bytes written to target </p>
+            </div></mark>
             <span id="browserSupport" title="updated : 2019-12-04">
                 <span><i class="fab fa-node-js"></i> 8.3.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="03.01">
         <td> <strong>textEncoder</strong>.encoding </td>
-        <td> returns <mark>'utf-8'</mark>, the only encoding format supported by the textEncoder
+        <td> - returns <mark>'utf-8'</mark>, the only encoding format supported by the textEncoder
             <span id="browserSupport" title="updated : 2019-12-04">
                 <span><i class="fab fa-node-js"></i> 8.3.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td colspan="2"> TextDecoder </td>
     </tr>
-    <tr>
-        <td> new <strong>util</strong>.TextDecoder(<i>encode:str</i>, <small>{fatal:<i>bol</i>, ignoreBOM:<i>bol</i>}</small>) </td>
-        <td> returns a text decoder object which is used to decode binary data to string (implements the WHATWG Encoding Standard, which supports a very large amount of <a href="https://nodejs.org/dist/latest-v13.x/docs/api/util.html#util_whatwg_supported_encodings" target="_blank">encoding formats [link]</a>)  
+    <tr class="10.02">
+        <td> 
+            new <strong>util</strong>.TextDecoder(<i class="openable">encode:str<div>
+                <p> - encoding format (Default: <mark>utf-8</mark>) </p>
+                <p> - available encodings <a href="https://nodejs.org/dist/latest-v16.x/docs/api/util.html#util_whatwg_supported_encodings" target="_blank">[link]</a></p>
+            </div></i>, <i class="openable">option:obj<div>
+                <p> fatal: <strong>bol</strong> - throws a TypeError if an error occurs during decoding (no error thrown otherwise) (Default: <strong>false</strong>) (no support if ICU (Internationalization) is disabled) </p>
+                <p> ignoreBOM: <strong>bol</strong> - ignores the BOM (byte order mark) character at the beginning of the returned string (Default: <mark>false</mark>) (available only for <mark>utf-8</mark>, <mark>utf-16le</mark> and <mark>utf-16be</mark> encodings) </p>
+            </div></i>) 
+        </td>
+        <td> 
+            - returns a <strong>textDecoder</strong> object which is used to decode binary data into string (implements the WHATWG encoding standards)  
             <span id="browserSupport" title="updated : 2019-12-04">
                 <span><i class="fab fa-node-js"></i> 8.3.0 </span>
                 <span><i class="fab fa-node-js"></i> 11.0.0 available in global object </span>
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>textDecoder</strong>.decode(<strong>data:ArrayBuffer|DataView|TypedArray</strong>, <small>{stream:<i>bol</i>}</small>) </td>
-        <td> - decodes the passed data to a string and returns it (according to the decoder's encoding format) <br>
-             - <mark>{stream:true}</mark> = stores undecodable trailing bytes in the internal decoder buffer and returns them at the next call (Default: <mark>false</mark>)
+    <tr class="11.01">
+        <td> 
+            <strong>textDecoder</strong>.decode(<strong class="openable">data:ArrayBuffer|...<div>
+            <p> - <strong>ArrayBuffer|DataView|TypedArray</strong> </p>
+            </div></strong>, <i class="openable">option:obj<div>
+                <p> stream: <strong>bol</strong> - stores undecodable trailing bytes in the internal decoder buffer and returns them at the next call (Default: <mark>false</mark>) </p>
+            </div></i>) 
+        </td>
+        <td> - decodes the passed <strong>data</strong> into a string and returns it 
             <span id="browserSupport" title="updated : 2019-12-04">
                 <span><i class="fab fa-node-js"></i> 8.3.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="12.02">
         <td> <strong>textDecoder</strong>.fatal </td>
-        <td> returns <mark>true</mark> if the decoder throws a TypeError if an error occurs, returns <mark>false</mark> if the decoder does not throw any error if an error occurs
+        <td> 
+            - returns value of the decoder's <mark>fatal</mark> option 
             <span id="browserSupport" title="updated : 2019-12-04">
                 <span><i class="fab fa-node-js"></i> 8.3.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="12.01">
         <td> <strong>textDecoder</strong>.encoding </td>
-        <td> returns the encoding format used by the decoder
+        <td> 
+            - returns the encoding format used by the decoder 
             <span id="browserSupport" title="updated : 2019-12-04">
                 <span><i class="fab fa-node-js"></i> 8.3.0 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="12.03">
         <td> <strong>textDecoder</strong>.ignoreBOM </td>
-        <td> returns <mark>true</mark> if the decoder includes the <b>B</b>yte <b>O</b>rder <b>M</b>ark character at the beginning of the returned string (if any), <mark>false</mark> otherwise
+        <td> 
+            - returns value of the decoder's <mark>ignoreBOM</mark> option 
             <span id="browserSupport" title="updated : 2019-12-04">
                 <span><i class="fab fa-node-js"></i> 8.3.0 </span>
             </span>
         </td>
     </tr>
 </table>
-<h2 style="color:green;"><u> Notes : </u></h2>
+    <br>
     <details class="example" id="notes">
     <summary> Notes :</summary>
     <!-- <p> - paragraph removes the 'empty' message from the detail TAG -->
@@ -535,11 +616,11 @@
 <h2 style="color:green;"><u> Description and Demonstration : </u></h2>
     <p> - the util module is designed to support Node.js internal APIs, it's a sort of 'support' kind of module </p>
     <p> - the util module is not really designed for production codes, some methods might have some impacts on the performance! </p>
-<h2 style="color:darkblue;"><u> The <mark>inherits()</mark> method </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>util</strong>.inherits(<strong>Constructor|Class</strong>, <strong>super(Constructor|Class)</strong>)                 // inherits prototype methods from one constructor|class into another one <u>(discouraged to use, use ES6 <mark>extends</mark> mechanism instead)</u>    
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>inherits()</mark> / <mark>isDeepStrictEqual()</mark> methods </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
+// inherits() -------------------------------------------------------------------------
     const util = require('util');
         
     function Const1() { }                                                              // (ES6 class supported as well)
@@ -550,7 +631,15 @@ SYNTAX :    <strong>util</strong>.inherits(<strong>Constructor|Class</strong>, <
     
     var testObj = new Const1();
     testObj.testProp;                                                                  // -> 'testVal'          // object inherits the 'testProp' prototype property from the super constructor (Const2)    
+    
+// isDeepStrictEqual() ----------------------------------------------------------------
+    var obj_A = {propA:415, probB:{subPropA:441, subPropB:[342, 543]}}
+    var obj_B = {propA:415, probB:{subPropA:441, subPropB:[342, 543]}};
+    
+    util.isDeepStrictEqual('975', '975');                                              // -> true                           // values are strictly equal (same value same type )
+    util.isDeepStrictEqual(obj_A, obj_B);                                              // -> true                           // objects are strictly equal  
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>inherits()</mark> TEST </u></h4>
@@ -587,17 +676,34 @@ console.log( 'ES6 class test ------------------------------------------------' )
         some value
     PS D:\safe\code +\my site\03 improuve\learn webdesign\04 node.js\utilities\04 - inherits() TEST>    
     </pre>
+<!---------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> <mark>isDeepStrictEqual()</mark> TEST </u></h4>
+    <pre style="margin-bottom:1px;">
+    const util = require('util');
+    
+    var myObj1 = {p1:'string', p2:{subP1:'subVal'}, p3:[1, 2, 3, [11, 13, [415]]]};
+    var myObj2 = {p1:'string', p2:{subP1:'subVal'}, p3:[1, 2, 3, [11, 13, [415]]]};
+    
+    console.log( util.isDeepStrictEqual(myObj1, myObj2) );                             // -> true
+    
+    function MyConstructor() {}
+    Object.setPrototypeOf(myObj2, MyConstructor);                                      // myObj2 has different constructor than myObj1
+    
+    console.log( util.isDeepStrictEqual(myObj1, myObj2) );                             // -> false         // because objects does not have the same constructor
+    </pre>
+    <pre class="cmd" style="margin-top:1px;">
+    PS D:\safe\code +\my site\03 improuve\learn webdesign\04 node.js\utilities\10 - isDeepStrictEqual() TEST> node main
+        true
+        false
+    PS D:\safe\code +\my site\03 improuve\learn webdesign\04 node.js\utilities\10 - isDeepStrictEqual() TEST>    
+    </pre>
 </details>
 <!---------------------------------------------------------------------------------------------------------->
 <hr>
 <h2 style="color:darkblue;"><u> The <mark>callbackify()</mark> / <mark>promisify()</mark> methods </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>util</strong>.callbackify(<strong>asyncFn</strong>)                                                  // transforms and returns the passed <strong>asyncFn</strong> to an 'error-first callback style' callback based function (method) (the callback is always the <u>last argument</u> and it's asynchronous)     
-                - <strong>asyncFn</strong> : async function or a function that returns a promise           the first argument in the callback function holds the value of the rejected promise returned by <strong>asyncFn</strong> (returns <mark>null</mark> if the <strong>asyncFn</strong> returns a resolved promise) (<mark>null</mark> as rejected promise value will be wrapped in an Error object and thrown)    
-                                                                                          the second argument in the callback function holds the value of the resolved promise returned by <strong>asyncFn</strong>    
-            
-            <strong>util</strong>.promisify(<strong>fnError_firstCallbackStyle</strong>)                                 // returns a function which is when called returns a promise based API version of the passed 'error-first callback style' function (mainly used to transform built-in asynchronous methods (like: <mark>fs.write</mark>) into a promise based API)    
-    </pre>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
 const util = require('util');
 const fs = require('fs');
@@ -622,6 +728,7 @@ const fs = require('fs');
         .then(res => console.log(res))                                                 // -> ['index.html', 'main.js', 'styles.css']               // consuming the promise   
         .catch(res => console.log(res));
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>callbackify()</mark> TEST </u></h4>
@@ -792,29 +899,8 @@ const fs = require('fs');
 <!---------------------------------------------------------------------------------------------------------->
 <hr>
 <h2 style="color:darkblue;"><u> The <mark>inspect()</mark> / <mark>format()</mark> methods </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>util</strong>.inspect(<strong>data:any</strong>, <i>option:obj</i>)                                         // maps the passed data (primitive or object) and returns a formated string about it 
-                - <i>option:obj</i> : {showHidden:<strong>bol</strong>         : show non-enumerable symbols and properties and includes <mark>WeakMap</mark> and <mark>WeakSet</mark> entries (Default: <mark>false</mark>)
-                                depth:<strong>nr</strong>               : recurse time while formating object (object depth level) (Default: <mark>2</mark> / <mark>null</mark> = full depth)   
-                                colors:<strong>bol</strong>             : styles the output with ANSI colors (Defalut:<mark>false</mark>) (can be changed through the <mark>util.inspect.colors</mark> property)   
-                                customInspect:<strong>bol</strong>      : invokes the <mark>[util.inspect.custom](depth, opts)</mark> function (Default: <mark>false</mark>)
-                                showProxy:<strong>bol</strong>          : Proxy inspection includes <mark>target</mark> and <mark>handler</mark> objects (Default: <mark>false</mark>)   
-                                maxArrayLength:<strong>nr</strong>      : maximum number of Array items to inspect (Default: <mark>100</mark> / <mark>null</mark> = all items)    
-                                breakLength:<strong>nr</strong>         : if the length of a key/value pair toghether is longer than this value, each value is displayed in a new line (Default: <mark>80</mark>)   
-                                compact:<strong>bol|nr</strong>         : <mark>false</mark> = each object key displayed on a new line (Defalut: <mark>3</mark>) [NOT fully tested!]
-                                sorted:<strong>bol|fn</strong>          : sort <u>object properties</u> (Default: <mark>false</mark>), we can use a compare function to make a custom sort   
-                                getters:<strong>bol:str</strong>}       : <mark>true</mark> = getter property values are inspected (Default:<mark>false</mark>) [NOT fully tested!]    
-                    
-            <strong>util</strong>.format(<strong>printf:str</strong>, <i>data:any</i>, <i>...</i>)                                     // formats the arguments in the passed order according to <strong>printf</strong> strings order and returns the result in one string    
-                                                                                          <strong>printf</strong> used as <mark>'%s'</mark> = <mark>String</mark> | <mark>'%d'</mark> = <mark>Number</mark> | <mark>%i</mark> = <mark>parseInt(val, 10)</mark> | <mark>'%f'</mark> = <mark>parseFloat(value)</mark> | <mark>'%o'|'%O'</mark> = <mark>util.inspect()</mark>   
-                - <strong>printf</strong> = <mark>'%s'</mark> : <mark>String</mark> used to convert all values, objects are formated with <mark>util.inspect()</mark>
-                         = <mark>'%d'</mark> : <mark>Number</mark> used to convert all values except Symbol and BigIng 
-                         = <mark>'%i'</mark> : <mark>parseInt(value, 10)</mark> used to convert all values except Symbol and BigInt
-                         = <mark>'%f'</mark> : <mark>parseFloat(value)</mark> used to convert all values except Symbol and BigInt  
-                         = <mark>'%j'</mark> : <mark>JSON</mark> replaced with the string <mark>'[Circular]'</mark> if the argument contains circular references [NOT TESTED: 2019-12-02]  
-                         = <mark>'%O'</mark> : <mark>Object</mark> uses the <mark>util.inspect()</mark> method, formats the full object excluding non-enumerable properties and proxies    
-                         = <mark>'%o'</mark> : <mark>Object</mark> uses the <mark>util.inspect()</mark> method, formats the full object including non-enumerable properties and proxies    
-    </pre>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const util = require('util');
     
@@ -828,6 +914,7 @@ SYNTAX :    <strong>util</strong>.inspect(<strong>data:any</strong>, <i>option:o
     util.format('%i', '4145.41', '4154.14');                                           // -> '4145 4154.14'         // -! the second argument is not formated because there is no second formatf string     
     util.format('%i%f%d', '4145.41', '4154.14', true);                                 // -> '41454154.141'         // all 3 arguments are formated in the order of the printf strings
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>inspect()</mark> TEST </u></h4>
@@ -942,12 +1029,9 @@ console.log( 'combining multiple fromatf ---------------------------------------
 <!---------------------------------------------------------------------------------------------------------->
 <hr>
 <h2 style="color:darkblue;"><u> The <mark>debuglog()</mark> / <mark>deprecate()</mark> methods </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>util</strong>.debuglog(<strong>envVarVal:str</strong>)                                               // returns a 'logging function' which will emit its argument to <mark>stderr</mark> if this process uppon start recognizes the <mark>NODE_DEBUG=<strong>envVal</strong></mark> environment variable (universal sign <mark>*</mark> suppored in environment variable values)    
 
-            <strong>util</strong>.deprecate(<strong>fn</strong>, <strong>deprMsg:str</strong>, <i>deprCode:str</i>)                              // returns a 'deprecation function' which is when called emits a deprecation warning by using the 'warning' event (asynchronous) and prints the <strong>depMsg</strong> to <mark>stderr</mark> (deprecation and warning flags affect this function)    
-                                                                                          first emits the deprecation warning (asynchronous), then invokes the passed function (1st argument) <u>(only one warning emitted per deprecation code <i>depCode</i>)</u>   
-    </pre>
+<details class="example">
+<summary> DEMO </summary>
     <pre style="margin-bottom:1px;">
     const util = require('util');
     
@@ -981,6 +1065,7 @@ SYNTAX :    <strong>util</strong>.debuglog(<strong>envVarVal:str</strong>)      
         (node:10844) [DEP-CODE2] DeprecationWarning: myFunc is deprecated              // only one deprecation message is printed for 'DEP-CODE2' deprecation code    
     >
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>debuglog()</mark> TEST </u></h4>
@@ -1057,18 +1142,9 @@ console.log( 'end of module -----------' );
 </details>
 <!---------------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> The <mark>getSystemErrorName()</mark> / <mark>isDeepStrictEqual()</mark> methods </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>util</strong>.getSystemErrorName(<strong>err:nr</strong>)                                            // returns the system error name in a string of the system error number (error comming from a Node.js API) (error codes and names are platform-dependent)    
-            
-            <strong>util</strong>.isDeepStrictEqual(<strong>val:any</strong>, <strong>val:any</strong>)                                   // deeply compares the equality between the 2 arguments (can compare objects), returns <mark>true</mark> if they are equal <mark>false</mark> otherwise    
-                                                                                          primitive values are compared with the "Same Value Equality" <mark>===</mark> operator 
-                                                                                          only enumerable own properties are considered
-                                                                                          compared enumerable own Symbol properties - Error names and messages are alwasy compared, even if they aren't enumerable properties   
-                                                                                          Object wrappers are compared both as objects and unwrapped values 
-                                                                                          Object / Map / Set properties|items are compared unordered 
-                                                                                          compares prototypes by using  the "Same Value Comparison" <mark>===</mark> operator   
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>getSystemErrorName()</mark> / <mark>getSystemErrorMap()</mark> methods </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const util = require('util');
     
@@ -1076,13 +1152,10 @@ SYNTAX :    <strong>util</strong>.getSystemErrorName(<strong>err:nr</strong>)   
     util.getSystemErrorName(-3010);                                                    // -> 'EAI_SERVICE'                  // returns the name of the passed system error number   
     util.getSystemErrorName(-2999);                                                    // -> 'Unknown system error -2999'   // no a valid system error number 
     
-// isDeepStrictEqual() ----------------------------------------------------------------
-    var obj_A = {propA:415, probB:{subPropA:441, subPropB:[342, 543]}}
-    var obj_B = {propA:415, probB:{subPropA:441, subPropB:[342, 543]}};
-    
-    util.isDeepStrictEqual('975', '975');                                              // -> true                           // values are strictly equal (same value same type )
-    util.isDeepStrictEqual(obj_A, obj_B);                                              // -> true                           // objects are strictly equal  
+// getSystemErrorMap() ----------------------------------------------------------------
+    util.getSystemErrorMap();                                                          // -> Map{7 -> ['E2BIG', 'argument list too long'], ...}     // Map object    
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>getSystemErrorName()</mark> TEST </u></h4>
@@ -1199,80 +1272,13 @@ console.log( 'map possible errors ----------------------------------' );
         -4058
     PS D:\safe\code +\my site\03 improuve\learn webdesign\04 node.js\utilities\09 - getSystemErrorName() TEST>    
     </pre>
-<!---------------------------------------------------------------------------------------------------------->
-<hr>
-<h4 style="color:darkblue;"><u> <mark>isDeepStrictEqual()</mark> TEST </u></h4>
-    <pre style="margin-bottom:1px;">
-    const util = require('util');
-    
-    var myObj1 = {p1:'string', p2:{subP1:'subVal'}, p3:[1, 2, 3, [11, 13, [415]]]};
-    var myObj2 = {p1:'string', p2:{subP1:'subVal'}, p3:[1, 2, 3, [11, 13, [415]]]};
-    
-    console.log( util.isDeepStrictEqual(myObj1, myObj2) );                             // -> true
-    
-    function MyConstructor() {}
-    Object.setPrototypeOf(myObj2, MyConstructor);                                      // myObj2 has different constructor than myObj1
-    
-    console.log( util.isDeepStrictEqual(myObj1, myObj2) );                             // -> false         // because objects does not have the same constructor
-    </pre>
-    <pre class="cmd" style="margin-top:1px;">
-    PS D:\safe\code +\my site\03 improuve\learn webdesign\04 node.js\utilities\10 - isDeepStrictEqual() TEST> node main
-        true
-        false
-    PS D:\safe\code +\my site\03 improuve\learn webdesign\04 node.js\utilities\10 - isDeepStrictEqual() TEST>    
-    </pre>
 </details>
 <!---------------------------------------------------------------------------------------------------------->
 <hr>
-<h2><u> Data and Object Type Checking </u></h2>
-    <pre class="syntax">
-SYNTAX :    <strong>util</strong><em>.types</em>.isAnyArrayBuffer(<strong>value:any</strong>)                                     // returns <mark>true</mark> if the value is either an <mark>ArrayBuffer</mark> or a <mark>SharedArrayBuffer</mark> instance,, otherwise returns <mark>false</mark>     
-            <strong>util</strong><em>.types</em>.isArrayBuffer(<strong>value:any</strong>)                                        // returns <mark>true</mark> if the value is an <mark>ArrayBuffer</mark> instance, otherwise returns <mark>false</mark>   
-            <strong>util</strong><em>.types</em>.isSharedArrayBuffer(<strong>value:any</strong>)                                  // returns <mark>true</mark> if the value is a <mark>SharedArrayBuffer</mark> instance, otherwise returns <mark>false</mark>   
-            <strong>util</strong><em>.types</em>.isDataView(<strong>value:any</strong>)                                           // returns <mark>true</mark> if the value is a <mark>DataView</mark> instance, otherwise returns <mark>false</mark>     
-            
-            <strong>util</strong><em>.types</em>.isTypedArray(<strong>value:any</strong>)                                         // returns <mark>true</mark> if the value is a <mark>TypedArray</mark> instance, otherwise returns <mark>false</mark>     
-            <strong>util</strong><em>.types</em>.isInt8Array(<strong>value:any</strong>)                                          // returns <mark>true</mark> if the value is an <mark>Int8Array</mark> instance, otherwise returns <mark>false</mark>     
-            <strong>util</strong><em>.types</em>.isUint8Array(<strong>value:any</strong>)                                         // returns <mark>true</mark> if the value is an <mark>Uint8Array</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isUint8ClampedArray(<strong>value:any</strong>)                                  // returns <mark>true</mark> if the value is an <mark>Uint8ClampedArray</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isInt16Array(<strong>value:any</strong>)                                         // returns <mark>true</mark> if the value is an <mark>Int16Array</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isUint16Array(<strong>value:any</strong>)                                        // returns <mark>true</mark> if the value is an <mark>Uint16Array</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isInt32Array(<strong>value:any</strong>)                                         // returns <mark>true</mark> if the value is an <mark>Int32Array</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isUint32Array(<strong>value:any</strong>)                                        // returns <mark>true</mark> if the value is an <mark>Uint32Array</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isFloat32Array(<strong>value:any</strong>)                                       // returns <mark>true</mark> if the value is a <mark>Float32Array</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isBigInt64Array(<strong>value:any</strong>)                                      // returns <mark>true</mark> if the value is a <mark>BigInt64Array</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isBigUint64Array(<strong>value:any</strong>)                                     // returns <mark>true</mark> if the value is a <mark>BigUint64Array</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isFloat64Array(<strong>value:any</strong>)                                       // returns <mark>true</mark> if the value is a <mark>Float64Array</mark> instance, otherwise returns <mark>false</mark>    
-            
-            <strong>util</strong><em>.types</em>.isArgumentsObject(<strong>value:any</strong>)                                    // returns <mark>true</mark> if the value is an <mark>arguments</mark> object, otherwise returns <mark>false</mark>    
-            
-            <strong>util</strong><em>.types</em>.isAsyncFunction(<strong>value:any</strong>)                                      // returns <mark>true</mark> if the value is a async function, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isGeneratorFunction(<strong>value:any</strong>)                                  // returns <mark>true</mark> if the value is a generator function, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isGeneratorObject(<strong>value:any</strong>)                                    // returns <mark>true</mark> if the value is a generator object (object returned by a generator function), otherwise returns <mark>false</mark>    
-            
-            <strong>util</strong><em>.types</em>.isBoxedPrimitive(<strong>value:any</strong>)                                     // returns <mark>true</mark> if the value is a boxed primitive value, (primitive value created and wrapped by object (ex: <mark>new String()</mark>)), otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isStringObject(<strong>value:any</strong>)                                       // returns <mark>true</mark> if the value is a string object, otherwise returns <mark>false</mark>   
-            <strong>util</strong><em>.types</em>.isNumberObject(<strong>value:any</strong>)                                       // returns <mark>true</mark> if the value is a number object, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isBooleanObject(<strong>value:any</strong>)                                      // returns <mark>true</mark> if the value is a boolean object, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isSymbolObject(<strong>value:any</strong>)                                       // returns <mark>true</mark> if the value is a symbol object (ex: <mark>Object(Symbol())</mark>), otherwise returns <mark>false</mark>    
-            
-            <strong>util</strong><em>.types</em>.isDate(<strong>value:any</strong>)                                               // returns <mark>true</mark> if the value is a <mark>Date</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isRegExp(<strong>value:any</strong>)                                             // returns <mark>true</mark> if the value is a <mark>RegExp</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isProxy(<strong>value:any</strong>)                                              // returns <mark>true</mark> if the value is a <mark>Proxy</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isPromise(<strong>value:any</strong>)                                            // returns <mark>true</mark> if the value is a promise, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isNativeError(<strong>value:any</strong>)                                        // returns <mark>true</mark> if the value is a built-in JavaScript Error instance (ex: <mark>new TypeError()</mark>), otherwise returns <mark>false</mark>    
-            
-            <strong>util</strong><em>.types</em>.isMap(<strong>value:any</strong>)                                                // returns <mark>true</mark> if the value is a <mark>Map</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isSet(<strong>value:any</strong>)                                                // returns <mark>true</mark> if the value is a <mark>Set</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isWeakMap(<strong>value:any</strong>)                                            // returns <mark>true</mark> if the value is a <mark>WeakMap</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isWeakSet(<strong>value:any</strong>)                                            // returns <mark>true</mark> if the value is a <mark>WeakSet</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isMapIterator(<strong>value:any</strong>)                                        // returns <mark>true</mark> if the value is an iterator object returned by a <mark>Map</mark> instance, otherwise returns <mark>false</mark>    
-            <strong>util</strong><em>.types</em>.isSetIterator(<strong>value:any</strong>)                                        // returns <mark>true</mark> if the value is an iterator object returned by a <mark>Set</mark> instance, otherwise returns <mark>false</mark>    
-            
-            <strong>util</strong><em>.types</em>.isModuleNameSpace(<strong>value:any</strong>)                                    // [NOT TESTED: 2019-12-03] it does something with ES6 module which is not natively supported right now    
-            <strong>util</strong><em>.types</em>.isExternal(<strong>value:any</strong>)                                           // [NOT TESTED: 2019-12-03] no usage example in Node.js docs and I cant' figure out what's this!   
-            <strong>util</strong><em>.types</em>.isWebAssemblyCompiledModule(<strong>value:any</strong>)                          // [NOT TESTED: 2019-12-03] returns <mark>true</mark> if the value is a <mark>WebAssembly.Module</mark> instance   
-    </pre>
+<h2><u> Data Type Checking <mark>util.types</mark> </u></h2>
+<h3 style="color:darkblue;"><u> The <mark>isAnyArrayBuffer()</mark> / <mark>isArrayBuffer()</mark> / <mark>isSharedArrayBuffer()</mark> / <mark>isDataView()</mark> / <mark>isTypedArray()</mark> / <mark>isInt8Array()</mark> / <mark>isUint8Array()</mark> / <mark>isUint8ClampedArray()</mark> / <mark>isInt16Array()</mark> / <mark>isUint16Array()</mark> / <mark>isInt32Array()</mark> / <mark>isUint32Array()</mark> / <mark>isFloat32Array()</mark> / <mark>isBigInt64Array()</mark> / <mark>isBigUint64Array()</mark> / <mark>isFloat64Array()</mark> / <mark>isArgumentObject()</mark> / <mark>isAsyncFunction()</mark> / <mark>isGeneratorFunction()</mark> / <mark>isGeneratorObject()</mark> / <mark>isBoxedPrimitive()</mark> / <mark>isStringObject()</mark> / <mark>isNumberObject()</mark> / <mark>isBooleanObject()</mark> / <mark>isSymbolObject()</mark> / <mark>isDate()</mark> / <mark>isRegExp()</mark> / <mark>isPromise()</mark> / <mark>isNativeError()</mark> / <mark>isMap()</mark> / <mark>isSet()</mark> / <mark>isWeakMap()</mark> / <mark>isWeakSet()</mark> / <mark>isMapIterator()</mark> / <mark>isSetIterator()</mark> / <mark>isModuleNameSpace()</mark> / <mark>isExternal()</mark> / <mark>isWebAssemblyCompiledModule()</mark> </u></h3>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const util = require('util');
     
@@ -1286,6 +1292,7 @@ SYNTAX :    <strong>util</strong><em>.types</em>.isAnyArrayBuffer(<strong>value:
     util.types.isBoxedPrimitive( new String('myString') );                             // -> true           // boxed primitive 
     util.types.isBoxedPrimitive( Object(Symbol('testSymbol')) );                       // -> true           // boxed primitive 
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>util.types</mark> TEST </u></h4>
@@ -1430,18 +1437,11 @@ console.log( 'isMap() / isSet() / isWeakMap() / isWeakSet() / isMapIterator() / 
 </details>
 <!---------------------------------------------------------------------------------------------------------->
 <hr>
-<h2><u> Text Encoder and Decoder (WHATWG Encoder API) </u></h2>
-    <p> - this is a WHATWG Encoding Standar TextDecoder API </p>
-<h2 style="color:darkblue;"><u> The <mark>util.TextEncoder</mark> / <mark>encode()</mark> / <mark>encodeInto()</mark> / <mark>encoding</mark> Methods and Properties </u></h2>
-    <pre class="syntax">
-SYNTAX :    new <strong>util</strong>.TextEncoder()                                                     // returns a text encoder object which is used encode a string into an <mark>Uint8Array</mark> <u>(supports only UTF-8 encoding)</u> (implements the WHATWG Encoding Standard)    
-            
-            <strong>textEncoder</strong>.encode(<strong>str</strong>)                                                    // encodes the passed string into an <mark>Uint8Array</mark> and returns it    
-            <strong>textEncoder</strong>.encodeInto(<strong>src:str</strong>, <strong>targ:Uint8Array</strong>)                           // encodes the passed string into the passed Uint8Array and returns a feedback object about the operation <mark>{read, written}</mark> 
-                                                                                          feedback object <mark>read</mark> property = number of unicode code units read from src | <mark>written</mark> = number of utf-8 bytes written to target    
-            
-            <strong>textEncoder</strong>.encoding                                                       // returns <mark>'utf-8'</mark>, the only encoding format supported by the textEncoder    
-    </pre>
+<h2><u> Text Encoder (WHATWG Text Encoder API) <mark>util.textEncoder()</mark> </u></h2>
+    <p> - this API implements the WHATWG text encoder standards </p>
+<h2 style="color:darkblue;"><u> Text Encoder <mark>util.TextEncoder()</mark> / <mark>encode()</mark> / <mark>encodeInto()</mark> / <mark>encoding</mark> methods and properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const util = require('util');
         
@@ -1452,15 +1452,16 @@ SYNTAX :    new <strong>util</strong>.TextEncoder()                             
     encoder.encode('Páll');                                                            // -> Uint8Array [80, 195, 161, 108, 108]    // encodes the passed string into an Uint8Array 
     
  // encodeInto() ----------------------------------------------------------------------
-    var contUint8Array = new Uint8Array(7);                                            // -> Uint8Array [0, 0, 0, 0, 0, 0, 0]
+    var contUint8Array = new Uint8Array(7);                                            // -> Uint8Array [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
-    encoder.encodeInto('Páll', contUint8Array);                                        // -> {read:4, written:5}                    // encodes the string into the passed Uint8Array (2nd argument)
-                                                                                           // 4 unicode points read | 5 utf-8 bytes written    
-    contUint8Array;                                                                    // -> Uint8Array [80, 195, 161, 108, 108, 0, 0]
+    encoder.encodeInto('Páll', contUint8Array);                                        // -> {read:4, written:5}                    // encodes the passed string and stores the result in the 'contUint8Array' uint8Array (TypedArray)    
+    
+    contUint8Array;                                                                    // -> Uint8Array [80, 195, 161, 108, 108, 0, 0, 0, 0, 0]
     
  // encoding --------------------------------------------------------------------------
     encoder.encoding;                                                                  // -> 'utf-8'                                // encoding format used by the text encoder object (only supported format)    
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>util.TextEncoder</mark> / <mark>encode()</mark> / <mark>encodeInto()</mark> / <mark>encoding</mark> TEST </u></h4>
@@ -1506,39 +1507,35 @@ console.log( 'encoding ---------------------------------------------------------
 </details>
 <!---------------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> The <mark>util.TextDecoder</mark> / <mark>decode()</mark> / <mark>encoding</mark> / <mark>fatal</mark> / <mark>ignoreBOM</mark> Methods and Properties </u></h2>
-    <pre class="syntax">
-SYNTAX :    new <strong>util</strong>.TextDecoder(<i>encode:str</i>, <small>{fatal:<i>bol</i>, ignoreBOM:<i>bol</i>}</small>)               // returns a text decoder object which is used to decode binary data to string (implements the WHATWG Encoding Standard, which supports a very large amount of <a href="https://nodejs.org/dist/latest-v13.x/docs/api/util.html#util_whatwg_supported_encodings" target="_blank">encoding formats [link]</a>)    
-                - <small>{fatal:<i>bol</i></small>          : throws a TypeError if an error occurs during decoding (no error thrown otherwise) (Default: <mark>false</mark>) <u>(no support if ICU (<a href="https://nodejs.org/dist/latest-v13.x/docs/api/intl.html" target="_blank">Internationalization</a>) is disabled)</u>   
-                -  <small>ignoreBOM:<i>bol</i>}</small>     : ignores the BOM (byte order mark) character at the beginning of the returned string (Default: <mark>false</mark>)  
-                
-            <strong>textDecoder</strong>.decode(<strong>data:ArrayBuffer|DataView|TypedArray</strong>, <small>{stream:<i>bol</i>}</small>)     // decodes the passed data to a string and returns it (according to the decoder's encoding format) 
-                                                                                          <mark>{stream:true}</mark> = stores undecodable trailing bytes in the internal decoder buffer and returns them at the next call (Default: <mark>false</mark>)    
-                
-            <strong>textDecoder</strong>.encoding                                                       // returns the encoding format used by the decoder 
-            <strong>textDecoder</strong>.fatal                                                          // returns <mark>true</mark> if the decoder throws a TypeError if an error occurs, returns <mark>false</mark> if the decoder does not throw any error if an error occurs   
-            <strong>textDecoder</strong>.ignoreBOM                                                      // returns <mark>true</mark> if the decoder includes the <b>B</b>yte <b>O</b>rder <b>M</b>ark character at the beginning of the returned string (if any), <mark>false</mark> otherwise   
-    </pre>
+<h2 style="color:darkblue;"><u> Text Decoder <mark>util.TextDecoder</mark> / <mark>decode()</mark> / <mark>encoding</mark> / <mark>fatal</mark> / <mark>ignoreBOM</mark> methods and properties </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     const util = require('util');
     
 // TextDecoder() ----------------------------------------------------------------------
-    var decoder = new TextDecoder('utf8', {                                            // returns a text decoder object with UTF-8 encoding format (Default)
-        fatal:true,                                                                    // if decoding fails throws a TypeError (if false (Default) no error thrown uppon decoding faliure!)   
-        ignoreBOM:true });                                                             // will include byte order mark character at the beginning of the decoded string (if any)   
+    var decoder = new TextDecoder('utf-8', {                                           // returns a text decoder object (will decode utf-8 encoded data)    
+        fatal:true,                                                                    // if decoding fails throws a TypeError is thrown    
+        ignoreBOM:true });                                                             // ignores the Byte Order Mark character from the beginning of the decoded string 
     
 // decode() ---------------------------------------------------------------------------
-    var pall = new Uint8Array([239, 187, 191, 80, 195, 161, 108, 108, 195])            // the 3 first bytes is aN UTF-8 BOM character (239, 187, 191)    // -! the last byte (195) alone cannot be interpreted in UTF-8 (first encoder byte of the 'Á' character)    
-    var arpad = new Uint8Array([129, 114, 112, 195, 161, 100]);                        // -! the first byte (129) is the second encoder byte of the 'Á' character 
+    var pall = new Uint8Array([239, 187, 191, 80, 195, 161, 108, 108, 195])            // the 3 first bytes is the UTF-8 BOM character (239, 187, 191)    // -! the last byte (195) alone cannot be interpreted in UTF-8 code poin 
     
-    decoder.decode(pall, {stream:true});                                               // -> '�Páll'    // the BOM character is returned at the beginning of the string     // -! stream:true = stores the undecodable trailing byte (195) in the internal buffer   
-    decoder.decode(arpad);                                                             // -> 'Árpád'     // (195, 129 = 'Á') first the stored byte (195) is returned from the internal decoder buffer, then the passed Uint8Array decoded        
+    decoder.decode(pall);                                                              // -> '�Páll'    // the BOM character is included in the beginning of the string     
+    
+    
+    var a1stHalf = new Uint8Array([195]);                                              // the 'á' character is encoded as [195 161] utf-8 Uint8Array 
+    var a2ndHalf = new Uint8Array([161]); 
+    
+    decoder.decode(a1stHalf, {stream:true});                                           // the decoder object keeps trailing bytes in the internal buffer when finishes 
+    decoder.decode(a2ndHalf, {stream:true});                                           // -> 'á'         // the trailing byte is used here first (so [195, 161] will build the á character)     
     
 // decoding / fatal / ignoreBOM -------------------------------------------------------
     decoder.encoding;                                                                  // -> 'utf-8'     // decoder object encoding format 
     decoder.fatal;                                                                     // -> true        // throws a TypeError uppon decode failure 
     decoder.ignoreBOM;                                                                 // -> true        // returns the BOM character at the beginning of the decoded string (if any)   
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>util.TextDecoder</mark> / <mark>decode()</mark> / <mark>encoding</mark> / <mark>fatal</mark> / <mark>ignoreBOM</mark> TEST </u></h4>

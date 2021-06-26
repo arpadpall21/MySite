@@ -66,6 +66,7 @@
                 <span><i class="fab fa-opera"></i> 51 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
                 <span><i class="fab fa-safari"></i> 11.1 </span>
+                <span><i class="fab fa-node-js"></i> 15.3.0 </span>
             </span>
         </td>
     </tr>
@@ -81,6 +82,7 @@
                 <span><i class="fab fa-opera"></i> 48 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 16 </span>
                 <span><i class="fab fa-safari"></i> 10.1 </span>
+                <span><i class="fab fa-node-js"></i> 15.3.0 </span>
                 <span class="openable"> more... <div>
                     <p> - dynamic import (<mark>import()</mark>) </p>
                     <span><i class="fab fa-chrome"></i> 63 </span>
@@ -180,8 +182,30 @@
             - the specified module starts loading once the current module is fully loaded (does not block the current module) <br>
             - this syntax can be called from a function body ('dynamically') <br>
             - does not load the specified module asynchronously!
-            <span class="browserSupport" title="updated : 2021-01-16">
-                <span><i class="fab fa-node-js"></i> 13.2.0 </span>
+        </td>
+    </tr>
+        <tr class="01.12"><td></td><td></td></tr>
+    <tr class="01.13">
+        <td> 
+            await import(<strong class="openable">specifier:str<div>
+                <p><b><u>Relative Specifier</u></b></p>
+                <p> - <mark>./main.js</mark> - relative path from the current location <u>(file extensions are required)</u>
+                <p><b><u>Absolute Specifier</u></b></p>
+                <p> - <mark>/home/dev/main.js</mark> - absolute path <u>in ECMAscript modules we can also pass file protocol path <mark>"file:///home/dev/main.js</mark> (browser percent encoded)</u> </p>
+                <p><b><u>Bare Specifier</u></b></p>
+                <p> - <mark>main</mark> | <mark>mymodule/main</mark> - (no prefixed path given) - refers as package entry point to the nearest <mark>node_modules</mark> directory <u>(file extensions are required in some cases)</u> </p>
+            </div></strong>)
+        </td>
+        <td> 
+            - <u>statically requires</u> the <strong>specifier</strong> module (does the same as <mark>import * as <strong>name</strong> from <strong>specifier</strong></mark>) <br>
+            - returns a <mark>{default:<i>defVal, ...</i>}</strong></mark> object which holds the data exported by <strong>specifier</strong> module    <br>
+            <span class="browserSupport" title="updated : 2021-05-28">
+                <span><i class="fab fa-chrome"></i> 89 </span>
+                <span><i class="fab fa-firefox"></i> 89 </span>
+                <span><i class="fab fa-opera"></i> NO </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                <span><i class="fab fa-safari"></i> NO </span>
+                <span><i class="fab fa-node-js"></i> 14.8.0 </span>
             </span>
         </td>
     </tr>
@@ -199,6 +223,7 @@
                 <span><i class="fab fa-opera"></i> 48 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 16 </span>
                 <span><i class="fab fa-safari"></i> 10.1 </span>
+                <span><i class="fab fa-node-js"></i> 15.3.0 </span>
                 <span class="openable"> more... <div>
                     <p> - syntax <mark>export * as <strong>namespace</strong></mark> </p>
                     <span><i class="fab fa-chrome"></i> 72 </span>
@@ -396,10 +421,6 @@
         def;                                                                           // -> imported data from 'module1.mjs'   
     &lt;/script&gt;
     </pre>
-    
-    
-    
-    </pre>
 </details>
 <details class="example">
 <summary> Example : </summary>
@@ -479,7 +500,7 @@
 </details>
 <hr>
 <!--------------------------------------------------------------------------------------------------->
-<h2 style="color:darkblue;"><u> The ECMAScript module <mark>import</mark> / <mark>export</mark> / <mark>import.meta.url</mark> statements and property </u></h2>
+<h2 style="color:darkblue;"><u> The ECMAScript module <mark>import</mark> / <mark>import()</mark> / <mark>await import()</mark> / <mark>export</mark> / <mark>import.meta.url</mark> statements and property </u></h2>
 <details class="example">
 <summary> DEMO </summary>
     <p> <mark>import</mark> </p>
@@ -560,9 +581,18 @@
     
     export { default } from './module2.mjs';                                           // imports the default value then exports it as default value 
     </pre>
-    <p> - other property </p>
+    <p> - <mark>import.meat.url</mark> property </p>
     <pre>
     import.meta.url;                                                                   // -> 'http://localhost:1000/03%20Improuve/Learn%20WebDesign/JavaScript/Web%20Browser%20APIs/Front-End%20Modules/main.mjs'       // the URL of the module    
+    </pre>
+    <p> - top level <mark>await</mark> (<mark>await import()</mark>) </p>
+    <pre>
+    await import('./module1.mjs');                                                     // -> {default:'data from module-1'}     // statically imports the './module1.mjs' module   
+                                                                                       // does the same as 'import * as imp from './module1.mjs';'   
+    
+    function importFn1(){                                                              // the await import() is a satic import so cannot be used in a function body
+        await import('./module1.mjs');                                                 // -! throws a SyntaxError: Unexpected reserved word 
+    }
     </pre>
 </details>
 <details class="example">
