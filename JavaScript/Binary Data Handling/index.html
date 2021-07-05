@@ -9,23 +9,27 @@
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
-<h1> Binary Data Handling (ver 3.4.1) </h1>
+<h1> Binary Data Handling (ver 4.0.0) </h1>
     <p> Updated ( 2019-10-21 / 2020-07-01 / 2020-07-04 )</p>
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">JavaScript></a> Binary Data Handling 
     </p>
 <table class="table">
-<caption> <mark>ArrayBuffer</mark> and <mark>SharedArrayBuffer</mark> object </caption>
+<caption> 
+    <mark>ArrayBuffer</mark> and <mark>SharedArrayBuffer</mark> object 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
     <tr>
         <th style="width:30%;"> Method / Property  </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class=05.01>
         <td colspan="2"> <mark>ArrayBuffer</mark> </td>
     </tr>
-    <tr>
+    <tr class=10.01>
         <td> new ArrayBuffer(<strong>length:nr</strong>) </td>
-        <td> - creates a <mark>0</mark> filled ArrayBuffer object instance of the specified size <u>in bytes</u><br>
+        <td> 
+            - creates a <mark>0</mark> filled ArrayBuffer object instance of the specified size <u>in bytes</u><br>
              - the ArrayBuffer object represents a fixed length <u>RAW binary data</u> buffer <u>(called 'Byte Array' = 1 address represents 1 byte)</u><br>
              - it cannot be modified directly (the <mark>DataView</mark> object can get and set it or use one of the <mark>TypedArray</mark>s)
             <span id="browserSupport" title="updated : 2019-10-25">
@@ -38,9 +42,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td> <em>ArrayBuffer</em>.isView(<strong>arg</strong>) </td>
-        <td> returns <mark>true</mark> if the passed argument is eighter a <mark>TypedArray</mark> or a <mark>DataView</mark> object, otherwise returns <mark>false</mark>
+        <td> 
+            - returns <mark>true</mark> if the passed argument is eighter a <mark>TypedArray</mark> or a <mark>DataView</mark> object, otherwise returns <mark>false</mark>
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> 29 </span>
@@ -51,9 +56,9 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.01">
         <td> <strong>arrayBuffer</strong>.byteLength </td>
-        <td> returns the length of the ArrayBuffer in bytes
+        <td> - returns the length of the ArrayBuffer in bytes
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -64,9 +69,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.02">
         <td> <strong>arrayBuffer</strong>.slice(<strong>st(inc):index</strong>, <i>end(exc):index</i>) </td>
-        <td> returns a new ArrayBuffer object copy whose content is between the specified byte range (end omitted = all remaining data)
+        <td> 
+            - returns a new ArrayBuffer object copy whose content is between the specified byte range (end omitted = all remaining data)
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> 12 </span>
@@ -77,10 +83,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.01">
         <td colspan="2"> <mark>SharedArrayBuffer</mark> </td>
     </tr>
-    <tr>
+    <tr class="25.02">
         <td> new SharedArrayBuffer(<strong>length:nr</strong>) </td>
         <td> 
             - creates a <mark>0</mark> filled SharedArrayBuffer object instance of the specified size <u>in bytes</u> <br>
@@ -104,9 +110,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="30.01">
         <td> <strong>sharedArrayBuffer</strong>.byteLength </td>
-        <td> returns the length of the SharedArrayBuffer in bytes
+        <td> 
+            - returns the length of the SharedArrayBuffer in bytes
             <span id="browserSupport" title="updated : 2020-07-04">
                 <span><i class="fab fa-chrome"></i> 68 </span>
                 <span><i class="fab fa-firefox"></i> 79 </span>
@@ -117,9 +124,10 @@
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>arrayBuffer</strong>.slice(<strong>st(inc):index</strong>, <i>end(exc):index</i>) </td>
-        <td> returns a new SharedArrayBuffer object copy whose content is between the specified byte range (end omitted = all remaining data)
+    <tr class="30.02">
+        <td> <strong>sharedArrayBuffer</strong>.slice(<strong>st(inc):index</strong>, <i>end(exc):index</i>) </td>
+        <td> 
+            - returns a new SharedArrayBuffer object copy whose content is between the specified byte range (end omitted = all remaining data)
             <span id="browserSupport" title="updated : 2020-07-04">
                 <span><i class="fab fa-chrome"></i> 68 </span>
                 <span><i class="fab fa-firefox"></i> 79 </span>
@@ -133,14 +141,18 @@
 </table>
     <br>
 <table class="table">
-<caption> <mark>DataView</mark> object </caption>
+<caption> 
+    <mark>DataView</mark> object 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span> 
+</caption>
     <tr>
         <th style="width:30%;"> Method / Property  </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> new DataView(<strong>arrayBuffer</strong>, <i>byteOffset:index</i>, <i>byteLength</i>) </td>
-        <td> - returns a <mark>DataView</mark> object which is a low-level interface for reading and writing an ArrayBuffer (or part of it)<br>
+        <td> 
+            - returns a <mark>DataView</mark> object which is a low-level interface for reading and writing an ArrayBuffer (or part of it)<br>
              - converts integers, BigIntegers and floating point numbers to binary data and vice versa <u>(handles endianness regardless of the platform's architecture)</u>
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
@@ -152,9 +164,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td> <strong>dataView</strong>.buffer </td>
-        <td> returns the original ArrayBuffer object referenced by this DataView object
+        <td> 
+            - returns the original ArrayBuffer object referenced by this DataView object
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -165,9 +178,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.02">
         <td> <strong>dataView</strong>.byteLength </td>
-        <td> returns the length <u>in bytes</u> of this DataView object
+        <td> 
+            - returns the length <u>in bytes</u> of this DataView object
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -178,9 +192,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.03">
         <td> <strong>dataView</strong>.byteOffset </td>
-        <td> returns the offset in bytes of this DataView object (index where the original ArrayBuffer is viewed from)
+        <td> 
+            - returns the offset in bytes of this DataView object (index where the original ArrayBuffer is viewed from)
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -191,12 +206,13 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td colspan="2"> 8bit </td>
     </tr>
-    <tr>
+    <tr class="15.02">
         <td> <strong>dataView</strong>.getInt8(<strong>byteOffset:index</strong>) </td>
-        <td> gets 8 bits of binary data at the specified byte position and interprets it as an <u>8bit Signed Integer value</u> (<mark>-128</mark> to <mark>127</mark>)
+        <td> 
+            - gets 8 bits of binary data at the specified byte position and interprets it as an <u>8bit Signed Integer value</u> (<mark>-128</mark> to <mark>127</mark>)
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -207,9 +223,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.03">
         <td> <strong>dataView</strong>.setInt8(<strong>byteOffset:index</strong>, <strong>int:nr</strong>) </td>
-        <td> sets 8 bits of binary data at the specified byte position as an <u>8bit Signed Integer value</u> (<mark>-128</mark> to <mark>127</mark>, (decimal values are floored)), <u>this modifies the referenced ArrayBuffer</u>
+        <td> 
+            - sets 8 bits of binary data at the specified byte position as an <u>8bit Signed Integer value</u> (<mark>-128</mark> to <mark>127</mark>, (decimal values are floored)), <u>this modifies the referenced ArrayBuffer</u>
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -220,9 +237,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="16.01">
         <td> <strong>dataView</strong>.getUint8(<strong>byteOffset:index</strong>) </td>
-        <td> gets 8 bits of binary data at the specified byte position and interprets it as an <u>8bit Unsigned Integer value</u> (<mark>0</mark> to <mark>255</mark>)
+        <td> 
+            - gets 8 bits of binary data at the specified byte position and interprets it as an <u>8bit Unsigned Integer value</u> (<mark>0</mark> to <mark>255</mark>)
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -233,9 +251,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="16.02">
         <td> <strong>dataView</strong>.setUint8(<strong>byteOffset:index</strong>, <strong>uint:nr</strong>) </td>
-        <td> sets 8 bits of binary data at the specified byte position as an <u>8bit Unsigned Integer value</u> (<mark>0</mark> to <mark>255</mark>, (decimal values are floored)), <u>this modifies the referenced ArrayBuffer</u>
+        <td> 
+            - sets 8 bits of binary data at the specified byte position as an <u>8bit Unsigned Integer value</u> (<mark>0</mark> to <mark>255</mark>, (decimal values are floored)), <u>this modifies the referenced ArrayBuffer</u>
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -246,12 +265,13 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.01">
         <td colspan="2"> 16bit </td>
     </tr>
-    <tr>
+    <tr class="20.02">
         <td> <strong>dataView</strong>.getInt16(<strong>byteOffset:index</strong>, <i>endianness:bol</i>) </td>
-        <td> gets 16 bits of birany data from the specified byte position and interprets it as a <u>16bit Signed Integer value</u> (<mark>-32768</mark> to <mark>32767</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
+        <td> 
+            - gets 16 bits of birany data from the specified byte position and interprets it as a <u>16bit Signed Integer value</u> (<mark>-32768</mark> to <mark>32767</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -260,10 +280,12 @@
                 <span><i class="fab fa-safari"></i> 5.1 </span>
                 <span><i class="fab fa-node-js"></i> yes </span>
             </span>
+        </td>
     </tr>
-    <tr>
+    <tr class="20.03">
         <td> <strong>dataView</strong>.setInt16(<strong>byteOffset:index</strong>, <strong>int:nr</strong>, <i>endianness:bol</i>) </td>
-        <td> sets 16 bits of binary data at the specified byte position as a <u>16bit Signed Integer value</u> (<mark>-32768</mark> to <mark>32767</mark>, (decimal values are floored)) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u> 
+        <td> 
+            - sets 16 bits of binary data at the specified byte position as a <u>16bit Signed Integer value</u> (<mark>-32768</mark> to <mark>32767</mark>, (decimal values are floored)) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u> 
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -274,9 +296,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="21.01">
         <td> <strong>dataView</strong>.getUint16(<strong>byteOffset:index</strong>, <i>endianness:bol</i>) </td>
-        <td> gets 16 bits of binary data from the specified byte position and interprets it as <u>16bit Unsigned Integer value</u> (<mark>0</mark> to <mark>65535</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
+        <td> 
+            - gets 16 bits of binary data from the specified byte position and interprets it as <u>16bit Unsigned Integer value</u> (<mark>0</mark> to <mark>65535</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -287,9 +310,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="21.02">
         <td> <strong>dataView</strong>.setUint16(<strong>byteOffset:index</strong>, <strong>uint:nr</strong>, <i>endianness:bol</i>) </td>
-        <td> sets 16 bits of binary data at the specified byte position as a <u>16bit Unsigned Integer value</u> (<mark>0</mark> to <mark>65535</mark>, (decimal values are floored)) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
+        <td> 
+            - sets 16 bits of binary data at the specified byte position as a <u>16bit Unsigned Integer value</u> (<mark>0</mark> to <mark>65535</mark>, (decimal values are floored)) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -300,12 +324,13 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.01">
         <td colspan="2"> 32bit </td>
     </tr>
-    <tr>
+    <tr class="25.02">
         <td> <strong>dataView</strong>.getInt32(<strong>byteOffset:index</strong>, <i>endianness:bol</i>) </td>
-        <td> gets 32 bits of binary data from the specified byte position and interpretes it as <u>32bit Signed Integer value</u> (<mark>-2147483648</mark> to <mark>2147483647</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
+        <td> 
+            - gets 32 bits of binary data from the specified byte position and interpretes it as <u>32bit Signed Integer value</u> (<mark>-2147483648</mark> to <mark>2147483647</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -316,9 +341,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.03">
         <td> <strong>dataView</strong>.setInt32(<strong>byteOffset:index</strong>, <strong>int:nr</strong>, <i>endianness:bol</i>) </td>
-        <td> sets 32 bits of binary data at the specified byte position as a <u>32bit Signed Integer value</u> (<mark>-2147483648</mark> to <mark>2147483647</mark>, (decimal values are floored)) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
+        <td> 
+            - sets 32 bits of binary data at the specified byte position as a <u>32bit Signed Integer value</u> (<mark>-2147483648</mark> to <mark>2147483647</mark>, (decimal values are floored)) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -329,9 +355,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="26.01">
         <td> <strong>dataView</strong>.getUint32(<strong>byteOffset:index</strong>, <i>endianness:bol</i>) </td>
-        <td> gets 32 bits of binary data from the specified byte position and interpretes it as <u>32bit Unsigned Integer value</u> (<mark>0</mark> to <mark>4294967295</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
+        <td> 
+            - gets 32 bits of binary data from the specified byte position and interpretes it as <u>32bit Unsigned Integer value</u> (<mark>0</mark> to <mark>4294967295</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -342,9 +369,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="26.02">
         <td> <strong>dataView</strong>.setUint32(<strong>byteOffset:index</strong>, <strong>uint:nr</strong>, <i>endianness:bol</i>) </td>
-        <td> sets 32 bits of binary data at the specified byte position as a <u>32bit Unsigned Integer value</u> (<mark>0</mark> to <mark>4294967295</mark>, (decimal values are floored)) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
+        <td> 
+            - sets 32 bits of binary data at the specified byte position as a <u>32bit Unsigned Integer value</u> (<mark>0</mark> to <mark>4294967295</mark>, (decimal values are floored)) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -355,9 +383,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="27.01">
         <td> <strong>dataView</strong>.getFloat32(<strong>byteOffset:index</strong>, <i>endianness:bol</i>) </td>
-        <td> gets 32 bits of binary data from the specified byte position and interpretes it as <u>32bit Floating Point value</u> (<mark>1.2*10**-38</mark> to <mark>3.4*10**38</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
+        <td> 
+            - gets 32 bits of binary data from the specified byte position and interpretes it as <u>32bit Floating Point value</u> (<mark>1.2*10**-38</mark> to <mark>3.4*10**38</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -368,9 +397,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="27.02">
         <td> <strong>dataView</strong>.setFloat32(<strong>byteOffset:index</strong>, <strong>float:nr</strong>, <i>endianness:bol</i>) </td>
-        <td> sets 32 bits of binary data at the specified byte position as a <u>32bit Floating Point value</u> (<mark>1.2*10**-38</mark> to <mark>3.4*10**38</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
+        <td> 
+            - sets 32 bits of binary data at the specified byte position as a <u>32bit Floating Point value</u> (<mark>1.2*10**-38</mark> to <mark>3.4*10**38</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -381,12 +411,13 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="30.01">
         <td colspan="2"> 64bit </td>
     </tr>
-    <tr>
+    <tr class="30.02">
         <td> <strong>dataView</strong>.getBigInt64(<strong>byteOffset:index</strong>, <i>endianness:bol</i>) </td>
-        <td> gets 64 bits of binary data from the specified byte position and interpretes as <u>64bit Signed BigInteger value</u> (<mark>-9223372036854775808n</mark> to <mark>9223372036854775807n</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
+        <td> 
+            - gets 64 bits of binary data from the specified byte position and interpretes as <u>64bit Signed BigInteger value</u> (<mark>-9223372036854775808n</mark> to <mark>9223372036854775807n</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 67 </span>
                 <span><i class="fab fa-firefox"></i> 68 </span>
@@ -397,9 +428,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="30.03">
         <td> <strong>dataView</strong>.setBigInt64(<strong>byteOffset:index</strong>, <strong>bigInt:nr</strong>, <i>endianness:bol</i>) </td>
-        <td> sets 64 bits of binary data at the specified byte position as a <u>64bit Signed BigInteger value</u> (<mark>-9223372036854775808n</mark> to <mark>9223372036854775807n</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
+        <td> 
+            - sets 64 bits of binary data at the specified byte position as a <u>64bit Signed BigInteger value</u> (<mark>-9223372036854775808n</mark> to <mark>9223372036854775807n</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 67 </span>
                 <span><i class="fab fa-firefox"></i> 68 </span>
@@ -410,9 +442,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="31.01">
         <td> <strong>dataView</strong>.getBigUint64(<strong>byteOffset:index</strong>, <i>endianness:bol</i>) </td>
-        <td> gets 64 bits of binary data from the specified byte position and interpretes as <u>64bit Unsigned BigInteger value</u> (<mark>0n</mark> to <mark>18446744073709551615n</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
+        <td> 
+            - gets 64 bits of binary data from the specified byte position and interpretes as <u>64bit Unsigned BigInteger value</u> (<mark>0n</mark> to <mark>18446744073709551615n</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 67 </span>
                 <span><i class="fab fa-firefox"></i> 68 </span>
@@ -423,9 +456,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="31.02">
         <td> <strong>dataView</strong>.setBigUint64(<strong>byteOffset:index</strong>, <strong>bigUint:nr</strong>, <i>endianness:bol</i>) </td>
-        <td> sets 64 bits of binary data at the specified byte position as a <u>64bit Unsigned BigInteger value</u> (<mark>0n</mark> to <mark>18446744073709551615n</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
+        <td> 
+            - sets 64 bits of binary data at the specified byte position as a <u>64bit Unsigned BigInteger value</u> (<mark>0n</mark> to <mark>18446744073709551615n</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 67 </span>
                 <span><i class="fab fa-firefox"></i> 68 </span>
@@ -436,9 +470,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="32.01">
         <td> <strong>dataView</strong>.getFloat64(<strong>byteOffset:index</strong>, <i>endianness:bol</i>) </td>
-        <td> gets 64 bits of binary data from the specified byte position and interpretes it as <u>64bit Floating Point value</u> (<mark>5*10**-324</mark> to <mark>1.8*10**308</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
+        <td> 
+            - gets 64 bits of binary data from the specified byte position and interpretes it as <u>64bit Floating Point value</u> (<mark>5*10**-324</mark> to <mark>1.8*10**308</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -449,9 +484,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="32.02">
         <td> <strong>dataView</strong>.setFloat64(<strong>byteOffset:index</strong>, <strong>float:nr</strong>, <i>endianness:bol</i>) </td>
-        <td> sets 64 bits of binary data at the specified byte position as a <u>64bit Floating Point value</u> (<mark>5*10**-324</mark> to <mark>1.8*10**308</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
+        <td> 
+            - sets 64 bits of binary data at the specified byte position as a <u>64bit Floating Point value</u> (<mark>5*10**-324</mark> to <mark>1.8*10**308</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 9 </span>
                 <span><i class="fab fa-firefox"></i> 15 </span>
@@ -467,48 +503,48 @@
 <table class="table">
 <caption> 
     TypedArray 
-    <!-- <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span> -->
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
 </caption>
     <tr>
         <th style="width:30%;"> Method / Property  </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> <strong>TypedArray</strong> </td>
         <td> 
             - Array-like view of the underlying raw data (ArrayBuffer) <br>
             - ex: <mark>Int8Array</mark> gets or sets the underlying raw data (ArrayBuffer) as 8bit Integers 
         </td>
     </tr>
-    <tr>
+    <tr class="05.02">
         <td> new <strong>TypedArray</strong>() </td>
         <td>  
             - empty (new in ES2017) 
         </td>
     </tr>
-        <tr><td></td><td></td></tr>
-    <tr>
+        <tr class="05.03"><td></td><td></td></tr>
+    <tr class="05.04">
         <td> new <strong>TypedArray</strong>(<strong>length:nr</strong>) </td>
         <td>  
             - item length (ex: <mark>new Int8Array(1)</mark> = allocates 1 byte / <mark>new Int32Array(1)</mark> = allocates 4 bytes)
         </td>
     </tr>
-        <tr><td></td><td></td></tr>
-    <tr>
+        <tr class="05.05"><td></td><td></td></tr>
+    <tr class="05.06">
         <td> new <strong>TypedArray</strong>(<strong>TypedArray</strong>) </td>
         <td>  
             - the passed TypedArray passes its items and not the underlying ArrayBuffer
         </td>
     </tr>
-        <tr><td></td><td></td></tr>
-    <tr>
+        <tr class="05.07"><td></td><td></td></tr>
+    <tr class="05.08">
         <td> new <strong>TypedArray</strong>(<strong>iterableObj</strong>) </td>
         <td>  
             - object impelmenting the 'iterable' symbol interface
         </td>
     </tr>
-        <tr><td></td><td></td></tr>
-    <tr>
+        <tr class="05.09"><td></td><td></td></tr>
+    <tr class="05.10">
         <td> new <strong>TypedArray</strong>(<strong>arrayBuffer</strong>, <i>byteOffset:index</i>, <i>elementLength:nr</i>) </td>
         <td>  
             - ArrayBuffer object <u>shares the memory</u> with the newly created TypedArray
@@ -533,9 +569,13 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.01">
+        <td colspan="2"> <mark><strong>TypedArray</strong></mark> types </td>
+    </tr>
+    <tr class="10.02">
         <td> Int8Array </td>
-        <td> the underlying binary data is represented as <u>8bit Signed Integer value</u> (<mark>-128</mark> to <mark>127</mark> (decimal numbers are floored when set)) (1 byte = 1 Array item)
+        <td> 
+            - the underlying binary data is represented as <u>8bit Signed Integer value</u> (<mark>-128</mark> to <mark>127</mark> (decimal numbers are floored when set)) (1 byte = 1 Array item)
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -546,9 +586,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.03">
         <td> Uint8Array </td>
-        <td> the underlying binary data is represented as <u>8bit Unsigned Integer value</u> (<mark>0</mark> to <mark>255</mark> (decimal numbers are floored when set)) (1 byte = 1 Array item)
+        <td> 
+            - the underlying binary data is represented as <u>8bit Unsigned Integer value</u> (<mark>0</mark> to <mark>255</mark> (decimal numbers are floored when set)) (1 byte = 1 Array item)
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -559,9 +600,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.04">
         <td> Uint8ClampedArray </td>
-        <td> - the underlying binary data is represented as <u>8bit Unsigned Integer value</u> (<mark>0</mark> to <mark>255</mark>) (1 byte = 1 Array item) <br>
+        <td> 
+            - the underlying binary data is represented as <u>8bit Unsigned Integer value</u> (<mark>0</mark> to <mark>255</mark>) (1 byte = 1 Array item) <br>
              - setting an off range value will be clamped to the closest valid value (ex: any negative will be set as <mark>0</mark>), decimal numbers are rounded when set
             <span id="browserSupport" title="updated : 2019-10-25">
                 <span><i class="fab fa-chrome"></i> 7 </span>
@@ -573,9 +615,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.05">
         <td> Int16Array </td>
-        <td> the underlying binary data is represented as <u>16bit Signed Integer value</u> (<mark>-32768</mark> to <mark>32767</mark> (decimal numbers are floored when set)) (2 bytes = 1 Array item)
+        <td> 
+            - the underlying binary data is represented as <u>16bit Signed Integer value</u> (<mark>-32768</mark> to <mark>32767</mark> (decimal numbers are floored when set)) (2 bytes = 1 Array item)
             <span id="browserSupport" title="updated : 2019-10-26">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -586,9 +629,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.06">
         <td> Uint16Array </td>
-        <td> the underlying binary data is represented as <u>16bit Unsigned Integer value</u> (<mark>0</mark> to <mark>65535</mark> (decimal numbers are floored when set)) (2 bytes = 1 Array item)
+        <td> 
+            - the underlying binary data is represented as <u>16bit Unsigned Integer value</u> (<mark>0</mark> to <mark>65535</mark> (decimal numbers are floored when set)) (2 bytes = 1 Array item)
             <span id="browserSupport" title="updated : 2019-10-26">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -599,9 +643,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.07">
         <td> Int32Array </td>
-        <td> the underlying binary data is represented as <u>32 bit Signed Integer value</u> (<mark>-2147483648</mark> to <mark>2147483647</mark> (decimal numbers are floored when set)) (4 bytes = 1 Array item)
+        <td> 
+            - the underlying binary data is represented as <u>32 bit Signed Integer value</u> (<mark>-2147483648</mark> to <mark>2147483647</mark> (decimal numbers are floored when set)) (4 bytes = 1 Array item)
             <span id="browserSupport" title="updated : 2019-10-26">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -612,9 +657,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.08">
         <td> Uint32Array </td>
-        <td> the underlying binary data is represented as <u>32 bit Unsigned Integer value</u> (<mark>0</mark> to <mark>4294967295</mark> (decimal numbers are floored when set)) (4 bytes = 1 Array item)
+        <td> 
+            - the underlying binary data is represented as <u>32 bit Unsigned Integer value</u> (<mark>0</mark> to <mark>4294967295</mark> (decimal numbers are floored when set)) (4 bytes = 1 Array item)
             <span id="browserSupport" title="updated : 2019-10-26">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -625,9 +671,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.09">
         <td> Float32 </td>
-        <td> the underlying binary data is represented as <u>32 bit Floating Point value</u> (<mark>1.2*10**38</mark> to <mark>3.4*10**308</mark>) (4 bytes = 1 Array Item)
+        <td> 
+            - the underlying binary data is represented as <u>32 bit Floating Point value</u> (<mark>1.2*10**38</mark> to <mark>3.4*10**308</mark>) (4 bytes = 1 Array Item)
             <span id="browserSupport" title="updated : 2019-10-26">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -638,9 +685,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.10">
         <td> BigInt64Array </td>
-        <td> the underlying binary data is represented as <u>64bit Signed BigInteger value</u> (<mark>-9223372036854775808n</mark> to <mark>9223372036854775807n</mark> (no decimals allowed)) (8bytes = 1 Array Item)
+        <td> 
+            - the underlying binary data is represented as <u>64bit Signed BigInteger value</u> (<mark>-9223372036854775808n</mark> to <mark>9223372036854775807n</mark> (no decimals allowed)) (8bytes = 1 Array Item)
             <span id="browserSupport" title="updated : 2019-10-26">
                 <span><i class="fab fa-chrome"></i> 64 </span>
                 <span><i class="fab fa-firefox"></i> 68 </span>
@@ -651,9 +699,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.11">
         <td> BigUint64Array </td>
-        <td> the underlying binary data is represented as <u>64bit Unsigned BigInteger value</u> (<mark>0</mark> to <mark>18446744073709551615n</mark> (no decimals allowed)) (8bytes = 1 Array Item)
+        <td> 
+            - the underlying binary data is represented as <u>64bit Unsigned BigInteger value</u> (<mark>0</mark> to <mark>18446744073709551615n</mark> (no decimals allowed)) (8bytes = 1 Array Item)
             <span id="browserSupport" title="updated : 2019-10-26">
                 <span><i class="fab fa-chrome"></i> 64 </span>
                 <span><i class="fab fa-firefox"></i> 68 </span>
@@ -664,9 +713,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.12">
         <td> Float64Array </td>
-        <td> the underlying binary data is represented as <u>64bit Floating Point value</u> (<mark>5.0*10**-324</mark> to <mark>1.8*10**308</mark>) (8bytes = 1 Array Item)
+        <td> 
+            - the underlying binary data is represented as <u>64bit Floating Point value</u> (<mark>5.0*10**-324</mark> to <mark>1.8*10**308</mark>) (8bytes = 1 Array Item)
             <span id="browserSupport" title="updated : 2019-10-26">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -677,12 +727,13 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td colspan="2"> Properties and Methods </td>
     </tr>
-    <tr>
+    <tr class="15.02">
         <td> <strong>TypedArray(constructor)</strong>.BYTES_PER_ELEMENT </td>
-        <td> returns a number indicating how many bytes are represented by one Array element
+        <td> 
+            - returns a number indicating how many bytes are represented by one Array element
             <span id="browserSupport" title="updated : 2019-10-28">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -693,9 +744,9 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.03">
         <td> <strong>TypedArray(constructor)</strong>.name </td>
-        <td> returns the constructor name in a string
+        <td> - returns the constructor name in a string
             <span id="browserSupport" title="updated : 2019-10-28">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -706,14 +757,16 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="20.01">
         <td> <strong>typedArray.arrayMethod</strong> </td>
-        <td> TypedArrays are basically Arrays, so any Array method works on them as well <a href="../../03 JS/Arrays/index.html#methods" target="_blank">Array methods [link]</a> </td>
+        <td> 
+            - TypedArrays are basically Arrays, so any Array method works on them as well <a href="../../03 JS/Arrays/index.html#methods" target="_blank">Array methods [link]</a> 
         </td>
     </tr>
-    <tr>
+    <tr class="30.01">
         <td>  <strong>typedArray</strong>.buffer </td>
-        <td> returns the underlying binary data (<mark>ArrayBuffer</mark> object)
+        <td> 
+            - returns the underlying binary data (<mark>ArrayBuffer</mark> object)
             <span id="browserSupport" title="updated : 2019-10-28">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -724,9 +777,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.02">
         <td> <strong>typedArray</strong>.byteLength </td>
-        <td> returns the length <u>in bytes</u> of the typed array
+        <td> 
+            - returns the length <u>in bytes</u> of the typed array
             <span id="browserSupport" title="updated : 2019-10-28">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -737,9 +791,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="30.01">
         <td> <strong>typedArray</strong>.byteOffset </td>
-        <td> byte offset from the underlying ArrayBuffer (when TypedArray is created by an ArrayBuffer)
+        <td> 
+            - returns the byte offset from the underlying ArrayBuffer (when TypedArray is created by an ArrayBuffer)
             <span id="browserSupport" title="updated : 2019-10-28">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -750,9 +805,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="25.01">
         <td> <strong>typedArray</strong>.length </td>
-        <td> returns the length of the typed array (number of elements in the array)
+        <td> 
+            - returns the length of the typed array (number of elements in the array)
             <span id="browserSupport" title="updated : 2019-10-28">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -763,9 +819,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="35.01">
         <td> <strong>typedArray</strong>.set(<strong>iteralbeObj|typedArray</strong>, <i>stIndex(inc)</i>) </td>
-        <td> sets multiple values (by using the passed object's values) from the specified index
+        <td> 
+            - sets multiple values (by using the passed object's values) from the specified index
             <span id="browserSupport" title="updated : 2019-10-28">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -776,9 +833,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="40.01">
         <td> <strong>typedArray</strong>.subarray(<i>stIndex(inc)</i>, <i>endIndex(exc)</i>) </td>
-        <td> returns a <u>view</u> (of the targeted region) of the TypedArray (does not create a new TypedArray)   
+        <td> 
+            - returns a <strong>typedArray</strong> which is a <u>view</u> (of the targeted region) of the TypedArray 
             <span id="browserSupport" title="updated : 2019-11-10">
                 <span><i class="fab fa-chrome"></i> 7 </span>
                 <span><i class="fab fa-firefox"></i> 4 </span>
@@ -804,73 +862,6 @@
 <h2 style="color:green;"><u> Description and Demonstration : </u></h2>
     <p> - From ECMA 6 JavaScript can easily handle binary data by using various methods </p>
 <h2><u> <mark>ArrayBuffer</mark> / <mark>SharedArrayBuffer</mark> / <mark>DataView</mark> </u></h2>
-    <pre class="syntax">
-<span style="color:darkgrey;">// ArrayBuffer ------------------------------------------------------------------------</span>
-SYNTAX :    new ArrayBuffer(<strong>length:nr</strong>)                                                 // creates a <mark>0</mark> filled ArrayBuffer object instance of the specified size <u>in bytes</u>   
-                                                                                          the ArrayBuffer object represents a fixed length <u>RAW binary data</u> buffer <u>(called 'byte array' = 1 address represents 1 byte)</u>    
-                                                                                          it cannot be modified directly (the <mark>DataView</mark> object can get and set it or use one of the <mark>TypedArray</mark>s)   
-            
-            <em>ArrayBuffer</em>.isView(<strong>arg</strong>)                                                    // returns <mark>true</mark> if the passed argument is eighter a <mark>TypedArray</mark> or a <mark>DataView</mark> object, otherwise returns <mark>false</mark>    
-            
-            <strong>arrayBuffer</strong>.byteLength                                                     // returns the length of the ArrayBuffer in bytes 
-            <strong>arrayBuffer</strong>.slice(<strong>st(inc):index</strong>, <i>end(exc):index</i>)                           // returns a new ArrayBuffer object copy whose content is between the specified byte range (end omitted = all remaining data)    
-            
-            
-<span style="color:darkgrey;">// SharedArrayBuffer ------------------------------------------------------------------</span>
-            new SharedArrayBuffer(<strong>length:nr</strong>)                                           // creates a <mark>0</mark> filled SharedArrayBuffer object instance of the specified size <u>in bytes</u>   
-                                                                                          the SharedArrayBuffer object represents a fixed length <u>RAW binary data</u> buffer <u>(called 'byte array' = 1 address represents 1 byte)</u>    
-                                                                                          it cannot be modified directly (the <mark>DataView</mark> object can get and set it or use one of the <mark>TypedArray</mark>s)   
-                                                                                          unlike the ArrayBuffer the SharedArrayBuffer <u class="openable">shares its memory between threads and cannot be transfered from one thread to another<div>
-                <p><b><u> SharedArrayBuffer </u></b></p>
-                <p> - shared memory (ex: <mark>main.js</mark> <mark>worker_1.js</mark> <mark>worker_2.js</mark> sees the same underlying memory 'SharedArrayBuffer') </p>
-                <p> - not transferable (ex: the SharedArrayBuffer cannot be transfered from <mark>main.js</mark> to <mark>worker_1.js</mark> only shared!) </p>
-                <p><b><u> ArrayBuffer </u></b></p>
-                <p> - cloned memory (ex: <mark>main.js</mark> <mark>worker_1.js</mark> <mark>worker_2.js</mark> gets individual copies 'clones' of the send ArrayBuffer) </p>
-                <p> - transferable memory (ex: the transfered ArrayBuffer from <mark>main.js</mark> to <mark>worker_1.js</mark> is moved so it won't be visible in <mark>main.js</mark> anymore) </p>
-            </div></u>    
-            
-            <strong>sharedArrayBuffer</strong>.byteLength                                               // returns the length of the SharedArrayBuffer in bytes 
-            <strong>arrayBuffer</strong>.slice(<strong>st(inc):index</strong>, <i>end(exc):index</i>)                           // returns a new SharedArrayBuffer object copy whose content is between the specified byte range (end omitted = all remaining data)    
-            
-            
-<span style="color:darkgrey;">// DataView ---------------------------------------------------------------------------</span>
-            new DataView(<strong>arrayBuffer</strong>, <i>byteOffset:index</i>, <i>byteLength</i>)                    // returns a <mark>DataView</mark> object which is a low-level interface for reading and writing an ArrayBuffer (or part of it)    
-                                                                                          converts integers, BigIntegers and floating point numbers to binary data and vice versa <u>(handles endianness regardless of the platform's architecture)</u>    
-            
-            <strong>dataView</strong>.buffer                                                            // returns the original ArrayBuffer object referenced by this DataView object    
-            <strong>dataView</strong>.byteLength                                                        // returns the length <u>in bytes</u> of this DataView object  
-            <strong>dataView</strong>.byteOffset                                                        // returns the offset in bytes of this DataView object (index where the original ArrayBuffer is viewed from)    
-            
-            <strong>dataView</strong>.getInt8(<strong>byteOffset:index</strong>)                                         // gets 8 bits of binary data at the specified byte position and interprets it as an <u>8bit Signed Integer value</u> (<mark>-128</mark> to <mark>127</mark>)
-            <strong>dataView</strong>.setInt8(<strong>byteOffset:index</strong>, <strong>int:nr</strong>)                                 // sets 8 bits of binary data at the specified byte position as an <u>8bit Signed Integer value</u> (<mark>-128</mark> to <mark>127</mark>, (decimal values are floored)), <u>this modifies the referenced ArrayBuffer</u>    
-            
-            <strong>dataView</strong>.getUint8(<strong>byteOffset:index</strong>)                                        // gets 8 bits of binary data at the specified byte position and interprets it as an <u>8bit Unsigned Integer value</u> (<mark>0</mark> to <mark>255</mark>)    
-            <strong>dataView</strong>.setUint8(<strong>byteOffset:index</strong>, <strong>uint:nr</strong>)                               // sets 8 bits of binary data at the specified byte position as an <u>8bit Unsigned Integer value</u> (<mark>0</mark> to <mark>255</mark>, (decimal values are floored)), <u>this modifies the referenced ArrayBuffer</u>    
-            
-            <strong>dataView</strong>.getInt16(<strong>byteOffset:index</strong>, <i>endianness:bol</i>)                        // gets 16 bits of birany data from the specified byte position and interprets it as a <u>16bit Signed Integer value</u> (<mark>-32768</mark> to <mark>32767</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))    
-            <strong>dataView</strong>.setInt16(<strong>byteOffset:index</strong>, <strong>int:nr</strong>, <i>endianness:bol</i>)                // sets 16 bits of binary data at the specified byte position as a <u>16bit Signed Integer value</u> (<mark>-32768</mark> to <mark>32767</mark>, (decimal values are floored)) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>    
-            
-            <strong>dataView</strong>.getUint16(<strong>byteOffset:index</strong>, <i>endianness:bol</i>)                       // gets 16 bits of binary data from the specified byte position and interprets it as <u>16bit Unsigned Integer value</u> (<mark>0</mark> to <mark>65535</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))    
-            <strong>dataView</strong>.setUint16(<strong>byteOffset:index</strong>, <strong>uint:nr</strong>, <i>endianness:bol</i>)              // sets 16 bits of binary data at the specified byte position as a <u>16bit Unsigned Integer value</u> (<mark>0</mark> to <mark>65535</mark>, (decimal values are floored)) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>    
-            
-            <strong>dataView</strong>.getInt32(<strong>byteOffset:index</strong>, <i>endianness:bol</i>)                        // gets 32 bits of binary data from the specified byte position and interpretes it as <u>32bit Signed Integer value</u> (<mark>-2147483648</mark> to <mark>2147483647</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)) 
-            <strong>dataView</strong>.setInt32(<strong>byteOffset:index</strong>, <strong>int:nr</strong>, <i>endianness:bol</i>)                // sets 32 bits of binary data at the specified byte position as a <u>32bit Signed Integer value</u> (<mark>-2147483648</mark> to <mark>2147483647</mark>, (decimal values are floored)) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>    
-            
-            <strong>dataView</strong>.getUint32(<strong>byteOffset:index</strong>, <i>endianness:bol</i>)                       // gets 32 bits of binary data from the specified byte position and interpretes it as <u>32bit Unsigned Integer value</u> (<mark>0</mark> to <mark>4294967295</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)) 
-            <strong>dataView</strong>.setUint32(<strong>byteOffset:index</strong>, <strong>uint:nr</strong>, <i>endianness:bol</i>)              // sets 32 bits of binary data at the specified byte position as a <u>32bit Unsigned Integer value</u> (<mark>0</mark> to <mark>4294967295</mark>, (decimal values are floored)) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>    
-            
-            <strong>dataView</strong>.getFloat32(<strong>byteOffset:index</strong>, <i>endianness:bol</i>)                      // gets 32 bits of binary data from the specified byte position and interpretes it as <u>32bit Floating Point value</u> (<mark>1.2*10**-38</mark> to <mark>3.4*10**38</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)) 
-            <strong>dataView</strong>.setFloat32(<strong>byteOffset:index</strong>, <strong>float:nr</strong>, <i>endianness:bol</i>)            // sets 32 bits of binary data at the specified byte position as a <u>32bit Floating Point value</u> (<mark>1.2*10**-38</mark> to <mark>3.4*10**38</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>    
-            
-            <strong>dataView</strong>.getFloat64(<strong>byteOffset:index</strong>, <i>endianness:bol</i>)                      // gets 64 bits of binary data from the specified byte position and interpretes it as <u>64bit Floating Point value</u> (<mark>5*10**-324</mark> to <mark>1.8*10**308</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))  
-            <strong>dataView</strong>.setFloat64(<strong>byteOffset:index</strong>, <strong>float:nr</strong>, <i>endianness:bol</i>)            // sets 64 bits of binary data at the specified byte position as a <u>64bit Floating Point value</u> (<mark>5*10**-324</mark> to <mark>1.8*10**308</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>    
-            
-            <strong>dataView</strong>.getBigInt64(<strong>byteOffset:index</strong>, <i>endianness:bol</i>)                     // gets 64 bits of binary data from the specified byte position and interpretes as <u>64bit Signed BigInteger value</u> (<mark>-9223372036854775808n</mark> to <mark>9223372036854775807n</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))    
-            <strong>dataView</strong>.setBigInt64(<strong>byteOffset:index</strong>, <strong>bigInt:nr</strong>, <i>endianness:bol</i>)          // sets 64 bits of binary data at the specified byte position as a <u>64bit Signed BigInteger value</u> (<mark>-9223372036854775808n</mark> to <mark>9223372036854775807n</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>     
-            
-            <strong>dataView</strong>.getBigUint64(<strong>byteOffset:index</strong>, <i>endianness:bol</i>)                    // gets 64 bits of binary data from the specified byte position and interpretes as <u>64bit Unsigned BigInteger value</u> (<mark>0n</mark> to <mark>18446744073709551615n</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>))    
-            <strong>dataView</strong>.setBigUint64(<strong>byteOffset:index</strong>, <strong>bigUint:nr</strong>, <i>endianness:bol</i>)        // sets 64 bits of binary data at the specified byte position as a <u>64bit Unsigned BigInteger value</u> (<mark>0n</mark> to <mark>18446744073709551615n</mark>) (Default Big endianness format (<i>endianness</i> = <mark>false</mark>)), <u>this modifies the referenced ArrayBuffer</u>     
-    </pre>
 <details class="example">
 <summary> DEMO </summary>
     <pre>
@@ -1364,48 +1355,10 @@ var run64bit = function(){
 </details>
 <!------------------------------------------------------------------------------------------->
 <hr>
-<h2><u> TypedArray </u></h2>    
+<h2><u> TypedArrays </u></h2>    
     <p> - TypedArrays are Array-like view of the underlying binary data buffer (the underlying ArrayBuffer) </p>
     <p> - there is not directy visible <mark>TypedArray</mark> constructor, instead there are global properties what implements typed Arrays for specific element types </p>
     <p> - TypedArrays use the <u>platform's hardware endianness</u> to get or set the underlying ArrayBuffer </p>
-    <pre class="syntax">
-SYNTAX :    new <strong>TypedArray</strong>()                                                     // empty (new in ES2017)
-            new <strong>TypedArray</strong>(<strong>length:nr</strong>)                                            // item length (ex: 16bit Unsigned Integer allocates 2 bytes per unit)    
-            new <strong>TypedArray</strong>(<strong>TypedArray</strong>)                                           // the passed TypedArray passes its items and <u>not the underlying ArrayBuffer</u>
-            new <strong>TypedArray</strong>(<strong>iterableObj</strong>)                                          // object impelmenting the 'iterable' symbol interface   
-            new <strong>TypedArray</strong>(<strong>arrayBuffer</strong>, <i>byteOffset:index</i>, <i>elementLength:nr</i>)      // ArrayBuffer object <u>shares the memory</u> with the newly created TypedArray
-            
-<span style="color:darkgrey;">// TypedArray types -------------------------------------------------------------</span>
-            Int8Array                                                            // the underlying binary data is represented as <u>8bit Signed Integer value</u> (<mark>-128</mark> to <mark>127</mark> (decimal numbers are floored when set)) (1 byte = 1 Array item)    
-            Uint8Array                                                           // the underlying binary data is represented as <u>8bit Unsigned Integer value</u> (<mark>0</mark> to <mark>255</mark> (decimal numbers are floored when set)) (1 byte = 1 Array item)
-            Uint8ClampedArray                                                    // the underlying binary data is represented as <u>8bit Unsigned Integer value</u> (<mark>0</mark> to <mark>255</mark>) (1 byte = 1 Array item)
-                                                                                    setting an off range value will be clamped to the closest valid value (ex: any negative will be set as <mark>0</mark>), decimal numbers are rounded when set    
-            
-            Int16Array                                                           // the underlying binary data is represented as <u>16bit Signed Integer value</u> (<mark>-32768</mark> to <mark>32767</mark> (decimal numbers are floored when set)) (2 bytes = 1 Array item)    
-            Uint16Array                                                          // the underlying binary data is represented as <u>16bit Unsigned Integer value</u> (<mark>0</mark> to <mark>65535</mark> (decimal numbers are floored when set)) (2 bytes = 1 Array item)    
-            
-            Int32Array                                                           // the underlying binary data is represented as <u>32 bit Signed Integer value</u> (<mark>-2147483648</mark> to <mark>2147483647</mark> (decimal numbers are floored when set)) (4 bytes = 1 Array item)    
-            Uint32Array                                                          // the underlying binary data is represented as <u>32 bit Unsigned Integer value</u> (<mark>0</mark> to <mark>4294967295</mark> (decimal numbers are floored when set)) (4 bytes = 1 Array item)
-            Float32Array                                                         // the underlying binary data is represented as <u>32 bit Floating Point value</u> (<mark>1.2*10**38</mark> to <mark>3.4*10**308</mark>) (4 bytes = 1 Array Item)   
-            
-            BigInt64Array                                                        // the underlying binary data is represented as <u>64bit Signed BigInteger value</u> (<mark>-9223372036854775808n</mark> to <mark>9223372036854775807n</mark> (no decimals allowed)) (8bytes = 1 Array Item)    
-            BigUint64Array                                                       // the underlying binary data is represented as <u>64bit Unsigned BigInteger value</u> (<mark>0</mark> to <mark>18446744073709551615n</mark> (no decimals allowed)) (8bytes = 1 Array Item);
-            Float64Array                                                         // the underlying binary data is represented as <u>64bit Floating Point value</u> (<mark>5.0*10**-324</mark> to <mark>1.8*10**308</mark>) (8bytes = 1 Array Item)    
-            
-<span style="color:darkgrey;">// Properties and Methods -------------------------------------------------------</span>
-            <strong>TypedArray(constructor)</strong>.BYTES_PER_ELEMENT                            // returns a number indicating how many bytes are represented by one Array element  
-            <strong>TypedArray(constructor)</strong>.name                                         // returns the constructor name in a string   
-            
-            <strong>typedArray</strong>.buffer                                                    // returns the underlying binary data (<mark>ArrayBuffer</mark> object)    
-            <strong>typedArray</strong>.byteOffset                                                // byte offset from the underlying ArrayBuffer (when TypedArray is created by an ArrayBuffer)   
-            <strong>typedArray</strong>.byteLength                                                // returns the length <u>in bytes</u> of the typed array   
-            <strong>typedArray</strong>.length                                                    // returns the length of the typed array (number of elements in the array)   
-            
-            <span style="color:orange;">TypedArrays are basically Arrays, so any Array method works on them as well <a href="../../03 JS/Arrays/index.html#methods" target="_blank">Array methods [link]</a></span>
-            
-            <strong>typedArray</strong>.set(<strong>iteralbeObj|typedArray</strong>, <i>stIndex(inc)</i>)                 // sets multiple values (by using the passed object's values) from the specified index 0   
-            <strong>typedArray</strong>.subarray(<i>stIndex(inc)</i>, <i>endIndex(exc)</i>)                     // returns a <u>view</u> (of the targeted region) of the TypedArray (does not create a new TypedArray)   
-    </pre>
 <details class="example">
 <summary> DEMO </summary>
     <pre>
@@ -1796,6 +1749,7 @@ console.warn( 'subarray() ---------------------------------------------------' )
     </pre>
     </details>
 </details>
+    
     
 <br><br>
 </body>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="r">    
 <head>
-	<meta charset="utf-8">
-	<title> HTML Elements </title>    
+    <meta charset="utf-8">
+    <title> HTML Elements </title>    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" href="../../Assets/stylesPages.css">
+    <link rel="stylesheet" href="../../Assets/stylesPages.css">
     <script src="../../Assets/scriptPages.js"></script>
 </head>
 <body>
@@ -15,105 +15,6 @@
     <p class="sitenav"> <a href="../../index.html">MySite></a>
         <a href="../index.html">HTML></a> HTML Elements  
     </p>
-    <table class="table">
-    <tr>
-        <td> &lt;br&gt; </td>
-        <td>  </td>
-        <td> defines a sigle line break </td>
-    </tr>    
-    <tr>
-        <td> &lt;code&gt; </td>
-        <td>  </td>
-        <td> defines a piece of computer code </td>
-    </tr> 
-    <tr>
-        <td> &lt;del&gt; </td>
-        <td>  
-            cite="<strong>URL</strong>" <span style="color:blue;">(URL that explains why the text was deleted)</span><br>
-            datetime="<strong>YYYY-MM-DD</strong>T<strong>HH:MM:SS</strong>Z" <span style="color:blue;">(time when text was deleted)</span>
-        </td>
-        <td> defines a deleted text </td>
-    </tr>
-    <tr>
-        <td> &lt;hr&gt; </td>
-        <td>  </td>
-        <td> defines a thematic break (draws a horizontal (separation) line on the page) </td>
-    </tr>    
-    <tr>
-        <td> &lt;ins&gt; </td>
-        <td> 
-            cite="<strong>URL</strong>" <span style="color:blue;">(URL that explains why the text was inserted)</span><br>
-            datetime="<strong>YYYY-MM-DD</strong>T<strong>HH:MM:SS</strong>Z" <span style="color:blue;">(time when text was inserted/changed)</span>
-        </td>    
-        <td> defines an inserted text </td>
-    </tr>
-    <tr>
-        <td> &lt;kbr&gt; </td>
-        <td>  </td>
-        <td> defines a keyboard input </td>
-    </tr>    
-    <tr>
-        <td> &lt;mark&gt; </td>
-        <td>  </td>
-        <td> <i class="fab fa-html5"></i> defines a marked/highlighted text </td>
-    </tr>
-    <tr>
-        <td> &lt;samp&gt; </td>
-        <td>  </td>
-        <td> defines a sample output from a computer program </td>
-    </tr>    
-    <tr>
-        <td> &lt;small&gt; </td>
-        <td>  </td>
-        <td> defines a smaller text and side comments </td>
-    </tr>
-    <tr>
-        <td> &lt;span&gt; </td>
-        <td>  </td>
-        <td> groups inline elements (has no styling effects used to isolate and target text part) </td>
-    </tr>
-    <tr>
-        <td> &lt;sub&gt; </td>
-        <td>  </td>
-        <td> defines a subscript text (text appears half a character below the normal line) </td>
-    </tr>    
-    <tr>
-        <td> &lt;sup&gt; </td>
-        <td>  </td>
-        <td> defines a superscript text (text appears half a character above the normal line) </td>
-    </tr>
-    <tr>
-        <td> &lt;template&gt; </td>
-        <td>  </td>
-        <td><i class="fab fa-html5"></i> holds its content hidden form the client in a separate document fragment (its content is <u>only</u> accessible through the <mark>content</mark> property)  </td>
-    </tr> 
-    <tr>
-        <td> <strong>templateElement</strong>.content </td>
-        <td>  </td>
-        <td> returns the content of the template element as a document fragment  </td>
-    </tr>
-    <tr>
-        <td> &lt;var&gt; </td>
-        <td>  </td>
-        <td> defines a variable (italic text) </td>
-    </tr>
-    <tr>
-        <td> &lt;wbr&gt; </td>
-        <td>  </td>
-        <td> 
-            <i class="fab fa-html5"></i> (word break opportunity) specifies a position in a text where a word-break would be ok 
-            <span id="browserSupport">
-                <span><i class="fab fa-chrome"></i> 1 </span>
-                <span><i class="fab fa-firefox"></i> 3 </span>
-                <span><i class="fab fa-opera"></i> 11.7 </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
-                <span><i class="fab fa-safari"></i> 4 </span>
-            </span>
-        </td>
-    </tr>
-</table>
-
-
 <table class="table">
 <caption>
     <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
@@ -207,6 +108,20 @@
             </span>
         </td>
     </tr>
+    <tr class="60.01">
+        <td> &lt;br&gt; </td>
+        <td>  </td>
+        <td> 
+            - produces a line break (carriage-return)
+            <span id="browserSupport" title="Updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>  
     <tr class="10.03">
         <td> &lt;cite&gt;&lt;/cite&gt; </td>
         <td>  </td>
@@ -221,6 +136,20 @@
             </span>
         </td>
     </tr>
+    <tr class="50.01">
+        <td> &lt;code&gt;&lt;/code&gt; </td>
+        <td>  </td>
+        <td> 
+            - defines a piece of computer code 
+            <span id="browserSupport" title="Updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span> 
+        </td>
+    </tr> 
     <tr class="20.02">
         <td> &lt;data&gt;&lt;/data&gt; </td>
         <td> value="<strong>value</strong>" <span class="cssAV">(machine readable data)</span> </td>
@@ -235,6 +164,22 @@
             </span>
         </td>
     </tr>
+    <tr class="35.01">
+        <td> &lt;del&gt;&lt;/del&gt; </td>
+        <td>  
+            cite="<strong>URL</strong>" <span class="cssAV">(URL that explains why the text was deleted)</span><br>
+            datetime="<strong>YYYY-MM-DD</strong>T<strong>HH:MM:SS</strong>Z" <span class="cssAV">(time when text was deleted)</span>
+        </td>
+        <td> - defines a deleted text 
+            <span id="browserSupport" title="Updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>   
+    </tr>    
     <tr class="10.06">
         <td> &lt;dfn&gt;&lt;/dfn&gt; </td>
         <td>  </td>
@@ -249,35 +194,19 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="70.01">
         <td> &lt;dialog&gt;&lt;/dialog&gt; </td>
         <td> open <span class="cssAV">(boolean) shows/hides the dialog box)</span></td>
         <td> 
-            <span class="fab fa-html5">.2</span> defines a dialog box <u>(Modal)</u> (as wide as it's content, centerd and absolute positioned box) 
+            - <span class="fab fa-html5">.2</span> defines a dialog box <u>(Modal)</u> (as wide as it's content, centerd and absolute positioned box) 
             <span id="browserSupport" title="updated: 2020-03-06">
                 <span><i class="fab fa-chrome"></i> 37 </span>
-                <span><i class="fab fa-firefox"></i> 53 (must be enabled!) </span>
+                <span><i class="fab fa-firefox"></i> 53 (must be enabled <mark>dom.dialog_element.enabled</mark>) </span>
                 <span><i class="fab fa-opera"></i> 24 </span>
                 <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 79 </span>
                 <span><i class="fab fa-safari"></i> NO </span>
             </span>
         </td>
-    </tr>
-    <tr>
-        <td colspan="2" style="background-color:inherit; text-align:left;"> <prot>HTMLDialogElement</prot>.show() </td>
-        <td> opens the dialog box (same as <mark>open</mark> attribute) <span style="color:orangered;">(Chromium Only! [2019-02-01])</span> </td>
-    </tr>
-    <tr>
-        <td colspan="2" style="background-color:inherit; text-align:left;"> <prot>HTMLDialogElement</prot>.showModal() </td>
-        <td> opens the dialog box <u>with backdrop</u> (user unable to click on other elements, <u>closable by the "Esc" button</u>) <span style="color:orangered;">(Chromium Only! [2019-02-01])</span> </td>
-    </tr>
-    <tr>
-        <td colspan="2" style="background-color:inherit; text-align:left;"> <prot>HTMLDialogElement</prot>.close(<i>"message"</i>) </td>
-        <td> closes the dialog box (same as <mark>open</mark> attribute) <span style="color:orangered;">(Chromium Only! [2019-02-01])</span> </td>
-    </tr>
-    <tr>
-        <td colspan="2" style="background-color:inherit; text-align:left;"> <prot>HTMLDialogElement</prot>.returnValue </td>
-        <td> returns the message passed by the <mark>close()</mark> method <span style="color:orangered;">(Chromium Only! [2019-02-01])</span> </td>
     </tr>
     <tr class="05.04">
         <td> &lt;div&gt;&lt;/div&gt; </td>
@@ -321,6 +250,20 @@
             </span>
         </td>
     </tr>
+    <tr class="60.02">
+        <td> &lt;hr&gt; </td>
+        <td>  </td>
+        <td> 
+            - defines a thematic break (draws a horizontal (separation) line on the page) 
+            <span id="browserSupport" title="Updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 12.1 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> 3 </span>
+            </span>
+        </td>
+    </tr>    
     <tr class="30.03">
         <td> &lt;i&gt;&lt;/i&gt; </td>
         <td>  </td>
@@ -335,6 +278,37 @@
             </span>
         </td>
     </tr>
+    <tr class="35.02">
+        <td> &lt;ins&gt;&lt;/ins&gt; </td>
+        <td> 
+            cite="<strong>URL</strong>" <span class="cssAV">(URL that explains why the text was inserted)</span><br>
+            datetime="<strong>YYYY-MM-DD</strong>T<strong>HH:MM:SS</strong>Z" <span class="cssAV">(time when text was inserted/changed)</span>
+        </td>    
+        <td> 
+            - defines an inserted text 
+            <span id="browserSupport" title="Updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="50.02">
+        <td> &lt;kbr&gt;&lt;/kbr&gt; </td>
+        <td>  </td>
+        <td> 
+            - defines a keyboard input 
+            <span id="browserSupport" title="Updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>    
     <tr class="20.03">
         <td> &lt;mark&gt;&lt;/mark&gt; </td>
         <td>  </td>
@@ -445,12 +419,26 @@
             </span>
         </td>
     </tr>
-    <tr class="30.02">
-        <td> &lt;strong&gt;&lt;/strong&gt; </td>
+    <tr class="50.03">
+        <td> &lt;samp&gt;&lt;/samp&gt; </td>
         <td>  </td>
         <td> 
-            - defines a strong importance content (bold) text 
-            <span id="browserSupport" title="updated">
+            - defines a sample output from a computer program 
+            <span id="browserSupport" title="updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span> 
+        </td>
+    </tr> 
+    <tr class="40.01">
+        <td> &lt;small&gt;&lt;/small&gt; </td>
+        <td>  </td>
+        <td> 
+            - defines a smaller text and side comments 
+            <span id="browserSupport" title="updated: 2021-07-03">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> yes </span>
                 <span><i class="fab fa-opera"></i> yes </span>
@@ -458,6 +446,83 @@
                 <span><i class="fab fa-safari"></i> yes </span>
             </span>
         </td>
+    </tr>
+    <tr class="45.01">
+        <td> &lt;span&gt;&lt;/span&gt; </td>
+        <td>  </td>
+        <td> 
+            - groups inline elements (grouping for styling purposes) 
+            <span id="browserSupport" title="updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span> 
+        </td>
+    </tr>
+    <tr class="30.02">
+        <td> &lt;strong&gt;&lt;/strong&gt; </td>
+        <td>  </td>
+        <td> 
+            - defines a strong importance content (bold) text 
+            <span id="browserSupport" title="Updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr class="40.02">
+        <td> &lt;sub&gt;&lt;/sub&gt; </td>
+        <td>  </td>
+        <td> 
+            - defines a subscript text (text appears half a character below the normal line) 
+            <span id="browserSupport" title="Updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span> 
+        </td>
+    </tr>  
+    <tr class="40.03">
+        <td> &lt;sup&gt;&lt;/sup&gt; </td>
+        <td>  </td>
+        <td> 
+            - defines a superscript text (text appears half a character above the normal line) 
+            <span id="browserSupport" title="Updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span> 
+        </td>
+    </tr>
+    <tr class="65.01">
+        <td> &lt;template&gt;&lt;template&gt; </td>
+        <td>  </td>
+        <td>
+            - <i class="fab fa-html5"></i> document fragment that is not rendered <u>but parsed</u> <br>
+            - this element's content is <u>only</u> accessible through its <mark>content</mark> property in JavaScript (cannot be targeted by CSS)
+            <span id="browserSupport" title="Updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> 26 </span>
+                <span><i class="fab fa-firefox"></i> 22 </span>
+                <span><i class="fab fa-opera"></i> y15 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span>
+                <span><i class="fab fa-safari"></i> 8 </span>
+            </span> 
+        </td>
+    </tr> 
+        <tr class="65.02"><td></td><td></td><td></td></tr>
+    <tr class="65.03">
+        <td> <strong>HTMLtemplateElement</strong>.content </td>
+        <td>  </td>
+        <td> - (In JavaScript) returns the content of the template element as a document fragment </td>
     </tr>
     <tr class="20.01">
         <td> &lt;time&gt;&lt;/time&gt; </td>
@@ -495,7 +560,34 @@
                 <span><i class="fab fa-safari"></i> yes </span>
             </span>
         </td>
-    </tr>     
+    <tr class="50.04">
+        <td> &lt;var&gt;&lt;/var&gt; </td>
+        <td>  </td>
+        <td> 
+            - defines a variable (italic text) 
+            <span id="browserSupport" title="Updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span> 
+        </td>
+    </tr>
+    <tr class="60.03">
+        <td> &lt;wbr&gt; </td>
+        <td>  </td>
+        <td> 
+            - <i class="fab fa-html5"></i> (word break opportunity) specifies a position in a text where a word-break would be ok 
+            <span id="browserSupport" title="Updated: 2021-07-03">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 3 </span>
+                <span><i class="fab fa-opera"></i> 11.7 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 6-7 / 12 </span>
+                <span><i class="fab fa-safari"></i> 4 </span>
+            </span>
+        </td>
+    </tr>
 </table>
 <h2 style="color:green;"><u> Notes : </u></h2>
     <details class="example" id="notes">
@@ -508,10 +600,13 @@
     <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank"> HTML Elements (MDN) </a></p>
 <h2 style="color:green;"><u> Remember This : </u></h2>
     <p> - if you define thresholds in the <mark>&lt;meter&gt;</mark> element with the "low" and "high" attributes, it is highly <u>recommended to use "optimum" attribute</u> to define the optimal range (otherwise it produces weird color threshold results [TESTED 2019-01-31])</p>
-    <p> - the <mark>&lt;p&gt;&lt;/p&gt;</mark> element can only have parsing content, flow content is not allowed inside it <a href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content">flow content [link]</a></p>
-    <p> - in HTML5 we should no use elements for their styling (like <mark>&lt;b&gt;</mark>), we should use CSS to style elements explicitly</mark>
-    
+    <p> - in HTML5 we should no use elements for their styling (like <mark>&lt;b&gt;</mark>), we should use CSS to style elements explicitly </p>
 <h2 style="color:green;"><u> Description and Demonstration : </u></h2>
+<h2 style="color:darkblue;"><u> Flow content VS Pharsing content </u></h2>    
+    <p> - Flow content contains text (parsing content) or embeded content (most HTML elements are flow content) </p>
+    <p> - Parsing content is the content what can be inside in a sentence (paragraph mostly) (like image, link), <u>the parsing content cannot contain flow content (ex: a paragraph cannot contain a div element)</u> </p>
+<!--------------------------------------------------------------------------------------------------------------------------->
+<hr>    
 <h2 style="color:darkblue;"><u> The <mark>&lt;h1&gt; to &lt;h6&gt;</mark> / <mark>&lt;p&gt;</mark> / <mark>&lt;pre&gt;</mark> / <mark>&lt;div&gt;</mark> tags </u></h2>    
 <details class="example">
 <summary> DEMO </summary>
@@ -561,7 +656,7 @@
     &lt;/div&gt;    
         </pre>
         </details>
-</details>    
+</details>     
 <!--------------------------------------------------------------------------------------------------------------------------->
 <hr>    
 <h2 style="color:darkblue;"><u> The <mark>&lt;q&gt;</mark> / <mark>&lt;blockquote&gt;</mark> / <mark>&lt;cite&gt;</mark> / <mark>&lt;abbr&gt;</mark> / <mark>&lt;address&gt;</mark> / <mark>&lt;dfn&gt;</mark> tags </u></h2>    
@@ -1011,206 +1106,155 @@
 <!--------------------------------------------------------------------------------------------------------------------------->
 <hr>    
 <h2 style="color:darkblue;"><u> The <mark>&lt;del&gt;</mark> / <mark>&lt;ins&gt;</mark> tags </u></h2>
-<details class="example" open>
+<details class="example">
 <summary> DEMO </summary>
     <pre>
-    
-    
-    
-    
-    
-    
+    &lt;del datetime="2018-12-18T20:01"&gt;deleted text&lt;/del&gt;                                // deleted text (text line through)
+    &lt;ins datetime="2018-12-18T20:02"&gt;inserted text&lt;/ins&gt;                               // inserted text (underlined text)
+    </pre>
+</details>
+<details class="example">
+<summary> Example: </summary>
+<h4 style="color:blue;"><u> <mark>&lt;ins&gt;</mark> / <mark>&lt;del&gt;</mark> TEST </u></h4>
+    <p> <ins> This text is inserted </ins> </p>
+    <p> <del> This text is deleted </del> </p>
+<details>
+<summary> CODE: </summary>
+    <pre>
+    &lt;p&gt; &lt;ins&gt; This text is inserted &lt;/ins&gt; &lt;/p&gt;
+    &lt;p&gt; &lt;del&gt; This text is deleted &lt;/del&gt; &lt;/p&gt; 
     </pre>
 </details>
 
-
-
-
-
-
-    <pre class="syntax">
-            &lt;del&gt;                                         // defines a deleted text
-            &lt;ins&gt;                                         // defines an inserted text
-            
-            &lt;mark&gt;                                        // <i class="fab fa-html5"></i> defines a marked/highlighted text
-            &lt;small&gt;                                       // defines a smaller text and side comments
-            &lt;span&gt;                                        // groups inline elements (has no styling effects used to isolate and target text part)
-            &lt;sub&gt;                                         // defines a subscript text (text appears half a character below the normal line)  
-            &lt;sup&gt;                                         // defines a superscript text (text appears half a character above the normal line) 
-            
-            &lt;code&gt;                                        // defines a piece of computer code
-            &lt;kbr&gt;                                         // defines a keyboard input 
-            &lt;samp&gt;                                        // defines a sample output from a computer program
-            &lt;var&gt;                                         // defines a variable (italic text)
-        <span style="color:darkgray;">--------------------------------</span>    
-            &lt;br&gt;                                          // defines a sigle line break 
-            &lt;hr&gt;                                          // defines a thematic break (draws a horizontal (separation) line on the page)
-            &lt;wbr&gt;                                         // <i class="fab fa-html5"></i> (word break opportunity) specifies a position in a text where a word-break would be ok <span style="color:orange;">(no IE support)</span>
-            
-    <span style="color:skyblue;">// <mark>del</mark> attributes - - - - - </span>   
-            cite="<strong>URL</strong>"                         <span style="color:skyblue;">// URL that explains why the text was deleted </span>
-            datetime="<strong>YYYY-MM-DD</strong>T<strong>HH:MM:SS</strong>Z"    <span style="color:skyblue;">// time when text was deleted</span>
-            
-    <span style="color:skyblue;">// <mark>ins</mark> attributes - - - - - </span>   
-            cite="<strong>URL</strong>"                         <span style="color:skyblue;">// URL that explains why the text was inserted </span>
-            datetime="<strong>YYYY-MM-DD</strong>T<strong>HH:MM:SS</strong>Z"    <span style="color:skyblue;">// time when text was inserted/changed</span>        
-    </pre>
+</details>
+<!--------------------------------------------------------------------------------------------------------------------------->
+<hr>    
+<h2 style="color:darkblue;"><u> The <mark>&lt;small&gt;</mark> / <mark>&lt;sub&gt;</mark> / <mark>&lt;sup&gt;</mark> tags </u></h2>
+<details class="example">
+<summary> DEMO </summary>
     <pre>
-    &lt;b&gt;bold text&lt;/b&gt;                                      // bold text
-    &lt;strong&gt;strong (bold) text&lt;/strong&gt;                   // strong but bold :)
-    &lt;i&gt;italic text&lt;/i&gt;                                    // italic text
-    &lt;em&gt;emphasized (italic) text&lt;/em&gt;                     // emphasized but italic text :)
-    &lt;u&gt;different text than normal&lt;/u&gt;                     // underlined (indicating a different text than normal)
-    &lt;s&gt;not a correct text any more&lt;/s&gt;                    // linethrough (indicating a no longer correct text)
-    
-    &lt;del datetime="2018-12-18T20:01"&gt;deleted text&lt;/del&gt;   // deleted text (text line through)
-    &lt;ins datetime="2018-12-18T20:02"&gt;inserted text&lt;/ins&gt;  // inserted text (underlined text)
-    
-    &lt;mark&gt;marked text &lt;/mark&gt;                             // marked/highlighted text
-    &lt;small&gt;smallert text &lt;/small&gt;                         // smaller text (smaller than the font size)
-    &lt;span&gt;unstyled text&lt;/span&gt;                            // unstyled text (element used to target specific inline lement parts)
-    &lt;sub&gt;supscript text&lt;/sub&gt;                             // subscript text (half a character below the normal)
-    &lt;sup&gt;superscript text&lt;/sup&gt;                           // superscript text (half a character above the normal)
-    
-    &lt;code&gt;computer code&lt;/code&gt;                            // tag specifies a computer code
-    &lt;kbr&gt;keyboard input&lt;/kbr&gt;                             // tag specifies a keyboard input
-    &lt;samp&gt;output sample&lt;/samp&gt;                            // tag specifies an output sample 
-    &lt;var&gt;variable&lt;/var&gt;                                   // tag specifies a variable
-    
-    &lt;p&gt;broken &lt;br&gt; line &lt;/p&gt;                              // breaks the current line
-    &lt;hr&gt;                                                  // draws a horizontal line
-    
-//  ------------------
-    &lt;p&gt; This is a longlonglonglonglonglonglonglonglonglong&lt;wbr&gt;longlonglonglonglonglonglonglong word &lt;/p&gt;     // browser will break the word at the "&lt;wbr&gt;" position if necessary
+    &lt;p&gt; Normal Text &lt;small&gt;small text&lt;/small&gt;&lt;/p&gt; 
+    &lt;p&gt; Normal content &lt;sub&gt;sub content &lt;/sub&gt;&lt;/p&gt;
+    &lt;p&gt; Normal content &lt;sup&gt;sup content &lt;/sup&gt;&lt;/p&gt;
     </pre>
-<details class="example">     
-<summary> Example : </summary>     
-<h4><ins> Bold letters <mark>&lt;b&gt;</mark> VS Strong Letters <mark>&lt;strong&gt;</mark> </ins></h4>
-    <p> - <b> Bold </b> element makes the text bold, the <strong> Strong </strong> element also makes the text bold but it means higher important content for search engines!</p>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p&gt; - &lt;b&gt; Bold &lt;/b&gt; element makes the text bold, 
-    the &lt;strong&gt; Strong &lt;/strong&gt; element also makes the text bold but it means higher important content for search engines!&lt;/p&gt;
-        </pre>
-        </details>    
-<h4><u> Italic letters <mark>&lt;i&gt;</mark> VS Ephazised Lettres <mark>&lt;em&gt;</mark></u></h4>
-    <p> - The <i> italic </i> element makes the set text italic and just like in bold case the <em> empasize </em> element not only visualy changes the text but it ephasizes for search engines! </p>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-        &lt;p&gt; - The &lt;i&gt; italic &lt;/i&gt; "&lt;i&gt;" element makes the set text italic and just like in bold case 
-        the &lt;em&gt; empasize &lt;/em&gt; "&lt;em&gt;" element not only visualy changes the text but it ephasizes for search engines! &lt;/p&gt;
-        </pre>
-        </details>
-<h4><u> The <mark>&lt;mark&gt;</mark> element</u></h4>    
-    <p> - This is a <mark>marked</mark> text </p>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p&gt; - This is a &lt;mark&gt;marked&lt;/mark&gt; text &lt;/p&gt;
-        </pre>
-        </details>
-<h4><u> The <mark>&lt;del&gt;</mark> and <mark>ins</mark> elements </u></h4>
-    <p> - This as <del>inserted</del> and this is a <del>deleted</del> text </p>
-        <details>
-        <summary> CODE : </summary>    
-        <pre>
-    &lt;p&gt; - This as &lt;del&gt;inserted&lt;/del&gt; and this is a &lt;del&gt;deleted&lt;/del&gt; text &lt;/p&gt;
-        </pre>
-        </details>
-<h4><u> Superscript <mark>&lt;sup&gt;</mark> and Subscript <mark>&lt;sub&gt;</mark> elements </u></h4>
-    <p> - This is <sup> some superscript text </sup> and this one is <sub> Subscript </sub> Text. </p>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p&gt; - This is &lt;sup&gt; some superscript text &lt;/sup&gt; and this one is &lt;sub&gt; Subscript &lt;/sub&gt; Text. &lt;/p&gt;
-        </pre>
-        </details>
-<h4><u> The <mark>&lt;small&gt;</mark> element </u></h4> 
-    <p> - This tag makes the targeted text <small> One size smaller </small> like this. </p>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;p&gt; - This tag makes the targeted text &lt;small&gt; One size smaller &lt;/small&gt; like this. &lt;/p&gt;
-        </pre>
-        </details>
-<h4><u> <mark>&lt;code&gt;</mark> / <mark>&lt;kbr&gt;</mark> / <mark>&lt;s&gt;</mark> / <mark>&lt;samp&gt;</mark> / <mark>&lt;span&gt;</mark> / <mark>&lt;u&gt;</mark> / <mark>&lt;var&gt;</mark> / <mark>&lt;hr&gt;</mark> / <mark>&lt;br&gt;</mark> TEST </u></h4>    
-    <u> different text than normal </u> <br>
-    <s> no longer a correct text </s> <br>
-    <span> unstyled text </span>
-    <hr>
-    <code> computer code </code> <br>
-    <kbr> keyboard input </kbr> <br>
-    <samp> sample output </samp> <br>
-    <var> variable </var>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;u&gt; different text than normal &lt;/u&gt; &lt;br&gt;
-    &lt;s&gt; no longer a correct text &lt;/s&gt; &lt;br&gt;
-    &lt;span&gt; unstyled text &lt;/span&gt;
+</details>
+<details class="example">
+<summary> Example: </summary>
+<h4 style="color:darkblue;"><u> <mark>&lt;small&gt;</mark> / <mark>&lt;span&gt;</mark> / <mark>&lt;sub&gt;</mark> / <mark>&lt;sup&gt;</mark> TEST </u></h4>
+    <p> Normal Text <small>small text</small></p> 
+    <p> Normal content <sub>sub content </sub></p>
+    <p> Normal content <sup>sup content </sup></p>
+<details>
+<summary> CODE: </summary>
+    <pre>
+    &lt;p&gt; Normal Text &lt;small&gt;small text&lt;/small&gt;&lt;/p&gt; 
+    &lt;p&gt; Normal content &lt;span&gt;span content&lt;/span&gt;&lt;/p&gt; 
+    &lt;p&gt; Normal content &lt;sub&gt;sub content &lt;/sub&gt;&lt;/p&gt;
+    &lt;p&gt; Normal content &lt;sup&gt;sup content &lt;/sup&gt;&lt;/p&gt;
+    </pre>
+</details>
+
+</details>
+<!--------------------------------------------------------------------------------------------------------------------------->
+<hr>    
+<h2 style="color:darkblue;"><u> The <mark>&lt;span&gt;</mark> tag </u></h2>
+<details class="example">
+<summary> DEMO </summary>
+    <pre>
+    &lt;p&gt; Normal content &lt;span style="background-color:red;"&gt;span content&lt;/span&gt;&lt;/p&gt; 
+    </pre>
+</details>
+<details class="example">
+<summary> Example: </summary>
+<h4 style="color:darkblue;"><u> <mark>&lt;span&gt;</mark> TEST </u></h4>
+    <p> Normal content <span style="background-color:red;">span content</span></p> 
+<details>
+<summary> CODE: </summary>
+    <pre>
+    &lt;p&gt; Normal content &lt;span&gt;span content&lt;/span&gt;&lt;/p&gt; 
+    </pre>
+</details>
+
+</details>
+<!--------------------------------------------------------------------------------------------------------------------------->
+<hr>    
+<h2 style="color:darkblue;"><u> The <mark>&lt;code&gt;</mark> / <mark>&lt;kbr&gt;</mark> / <mark>&lt;samp&gt;</mark> / <mark>&lt;var&gt;</mark> tags </u></h2>
+<details class="example">
+<summary> DEMO </summary>
+    <pre>
+    &lt;p&gt; Normal text &lt;code&gt;code text&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt; Normal text &lt;kbr&gt;kbr text&lt;/kbr&gt;&lt;/p&gt;
+    &lt;p&gt; Normal text &lt;samp&gt;samp text&lt;/samp&gt;&lt;/p&gt;
+    &lt;p&gt; Normal text &lt;var&gt;var text&lt;/var&gt;&lt;/p&gt;
+    </pre>
+</details>
+<details class="example">
+<summary> Example: </summary>
+<h4 style="color:darkblue;"><u> <mark>&lt;code&gt;</mark> / <mark>&lt;kbr&gt;</mark> / <mark>&lt;samp&gt;</mark> / <mark>&lt;var&gt;</mark> TEST </u></h4>
+    <p> Normal text <code>code text</code></p>
+    <p> Normal text <kbr>kbr text</kbr></p>
+    <p> Normal text <samp>samp text</samp></p>
+    <p> Normal text <var>var text</var></p>
+<details>
+<summary> CODE: </summary>
+    <pre>
+    &lt;p&gt; Normal text &lt;code&gt;code text&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt; Normal text &lt;kbr&gt;kbr text&lt;/kbr&gt;&lt;/p&gt;
+    &lt;p&gt; Normal text &lt;samp&gt;samp text&lt;/samp&gt;&lt;/p&gt;
+    &lt;p&gt; Normal text &lt;var&gt;var text&lt;/var&gt;&lt;/p&gt;
+    </pre>
+</details>
+
+</details>
+<!--------------------------------------------------------------------------------------------------------------------------->
+<hr>    
+<h2 style="color:darkblue;"><u> The <mark>&lt;br&gt;</mark> / <mark>&lt;hr&gt;</mark> / <mark>&lt;wbr&gt;</mark>  tags </u></h2>
+<details class="example">
+<summary> DEMO </summary>
+    <pre>
+    &lt;p&gt; line 1 &lt;br&gt; line 2 &lt;/p&gt;
     &lt;hr&gt;
-    &lt;code&gt; computer code &lt;/code&gt; &lt;br&gt;
-    &lt;kbr&gt; keyboard input &lt;/kbr&gt; &lt;br&gt;
-    &lt;samp&gt; sample output &lt;/samp&gt; &lt;br&gt;
-    &lt;var&gt; variable &lt;/var&gt;    
-        </pre>
-        </details>
-<h4><u> <mark>&lt;template&gt;</mark> TEST </u></h4>    
-    <template>
-        <p> paragraph 1 </p>
-        <p> paragraph 2 </p>
-    </template>
-        <details>   
-        <summary> CODE : </summary>
-        <pre>
-    &lt;template&gt;                            // hides its content
-        &lt;p&gt; paragraph 1 &lt;/p&gt;
-        &lt;p&gt; paragraph 2 &lt;/p&gt;
-    &lt;/template&gt;   
-        </pre>
-        </details>
-<h4><u> <mark>&lt;wbr&gt;</mark> TEST </u></h4>    
-    <div style="width:150px; border:solid black 2px;">
-        <p> BlablablaBlablabla<wbr>BlablablaBlablabla<wbr>BlablablaBlablabla<wbr>BlablablaBlablabla </p>
-    </div>
-        <details>
-        <summary> CODE : </summary>
-        <pre>
-    &lt;div style="width:150px; border:solid black 2px;"&gt;
-        &lt;p&gt; BlablablaBlablabla&lt;wbr&gt;BlablablaBlablabla&lt;wbr&gt;BlablablaBlablabla&lt;wbr&gt;BlablablaBlablabla &lt;/p&gt;
-    &lt;/div&gt;    
-                            // preferable word breaks specified by the &lt;wbr&gt; element
-        </pre>
-        </details>
-</details>    
+    &lt;p&gt; Loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo&lt;wbr&gt;oooooooooooooooong &lt;/p&gt;
+    </pre>
+</details>
+<details class="example">
+<summary> Example: </summary>
+<h4 style="color:darkblue;"><u> <mark>&lt;br&gt;</mark> / <mark>&lt;hr&gt;</mark> / <mark>&lt;wbr&gt;</mark> TEST </u></h4>
+    <p> line 1 <br> line 2 </p>
+    <hr>
+    <p> Loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<wbr>oooooooooooooooong </p>
+<details>
+<summary> CODE: </summary>
+    <pre>
+    &lt;p&gt; line 1 &lt;br&gt; line 2 &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt; Loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo&lt;wbr&gt;oooooooooooooooong &lt;/p&gt;
+    </pre>
+</details>
+
+</details>  
 <!-------------------------------------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> the <mark>&lt;template&gt;</mark> element </u></h2>   
-    <p> - the <mark>&lt;template&gt;</mark> element's content is not rendered when the page loads but it is <u>parsed</u> </p>
-    <p> - the <mark>&lt;template&gt;</mark> element's content is <u>only</u> accessible through the <mark>content</mark> property of the <mark>template</mark> object by using JS, (not accessible by CSS or direct targeting!) </p>
-    <!-- only accessible through the "content" propety -->
-    <pre class="syntax">
-SYNTAX :    &lt;template&gt;                                    // <i class="fab fa-html5"></i> holds its content hidden form the client in a separate document fragment (its content is only accessible through the <mark>content</mark> property)   
-            <strong>templateElement</strong>.content                       // returns the content of the template element as a document fragment 
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>&lt;template&gt;</mark> element </u></h2>   
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     &lt;template id="myTemplate"&gt;
-        &lt;p id="first"&gt; first element &lt;/p&gt;                 // all neseted elements are hidden from the client
+        &lt;p id="first"&gt; first element &lt;/p&gt;                                             // all neseted elements are hidden from the client
         &lt;p&gt; second element &lt;/p&gt;
     &lt;/template&gt;
     
 &lt;script&gt;
     var myTemplate = document.getElementById("myTemplate"); 
-    myTemplate.style.visibility = "visible";              // this doesn't do anything (not hidden with CSS)
-    document.getElementById("first");                     // -> null                                // <b>child elements cannot be targeted directly!</b> 
+    myTemplate.style.visibility = "visible";                                          // this doesn't do anything (not hidden with CSS)
+    document.getElementById("first");                                                 // -> null                                // <b>child elements cannot be targeted directly!</b> 
     
-    myTemplate.content.nodeType;                          // -> 11                                  // 11 = document fragment
-    myTemplate.content.children[0]                        // -> &lt;p id="first"&gt; first element &lt;/p&gt;   // first child of the document fragment
-    myTemplate.content.children[1]                        // -> &lt;p&gt; second element &lt;/p&gt;             // second child of the document fragment
+    myTemplate.content.nodeType;                                                      // -> 11                                  // 11 = document fragment
+    myTemplate.content.children[0]                                                    // -> &lt;p id="first"&gt; first element &lt;/p&gt;   // first child of the document fragment
+    myTemplate.content.children[1]                                                    // -> &lt;p&gt; second element &lt;/p&gt;             // second child of the document fragment
 &lt;/script&gt;
     </pre>
+</details>
 <details class="example">
 <summary> Example : </summary>    
 <h4><u> <mark>&lt;template&gt;</mark> element TEST </u></h4>    
@@ -1258,56 +1302,32 @@ SYNTAX :    &lt;template&gt;                                    // <i class="fab
         </pre>
         </details>
 </details>
-
-
-
-
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
-
-
 <!--------------------------------------------------------------------------------------------------------------------------->
 <hr>
-<h2 style="color:darkblue;"><u> <mark>&lt;dialog&gt;</mark> tag | <mark>::backdrop</mark> pseudo-element </u></h2> 
-    <pre class="syntax">
-SYNTAX :    &lt;dialog&gt;                                  // <span class="fab fa-html5">.2</span> defines a dialog box <u>(Modal)</u> (as wide as it's content, centerd and absolute positioned box)
-    
-    <span style="color:skyblue;">// <mark>&lt;dialog&gt;</mark> element attributes - - - - - </span>        
-            open  <span style="color:skyblue;">(boolean)            // shows/hides the dialog box</span>
-
-    --- JS ---
-            <prot>HTMLDialogElement</prot>.show()                  // opens the dialog box (same as <mark>open</mark> attribute) <span style="color:orange;">(Chromium Only! [2019-02-01])</span>
-            <prot>HTMLDialogElement</prot>.showModal()             // opens the dialog box <u>with backdrop</u> (user unable to click on other elements, <u>closable by the "Esc" button</u>) <span style="color:orange;">(Chromium Only! [2019-02-01])</span>   
-            <prot>HTMLDialogElement</prot>.close(<i>"message"</i>)        // closes the dialog box (same as <mark>open</mark> attribute) <span style="color:orange;">(Chromium Only! [2019-02-01])</span> 
-            <prot>HTMLDialogElement</prot>.returnValue             // returns the message passed by the <mark>close()</mark> method <span style="color:orange;">(Chromium Only! [2019-02-01])</span>
-
-    --- CSS --- 
-            <strong>element</strong>::backdrop                         // selects the backdrop <u>(box rendered beneath a "full screen-mode element")(usually <mark>&lt;dialog&gt;</mark> element) </u> 
-    </pre>
+<h2 style="color:darkblue;"><u> The <mark>&lt;dialog&gt;</mark> tag </u></h2> 
+<details class="example">
+<summary> DEMO </summary>
     <pre>
     &lt;dialog class="myModal"&gt; Hello I'm a Dialog Box &lt;/dialog&gt;
-&lt;script&gt;
-<span style="color:orangered;">JavaScript only works in Chromium [TESTED 2019-02-01]</span>
-    var modal = document.querySelector("dialog");
-    modal.show();                                     // opens the dialog box (same as the "open" attribute)
-    modal.showModal();                                // opens the dialog box (as modal window "full screen-mode" | creates a backdrop element | <u>user can close the modal by pressing "Esc" button</u> )  
     
-    modal.close("box closed");                        // closes the dialog box (message is returned (optionnal))
-    modal.returnValue                                 // -> "box closed" (returns the value passed by the "close()" method)
+// -! ---------------------------------------------------------------------------------[Experimental: TESTED 2021-07-03]   
+&lt;script&gt;
+    var modal = document.querySelector("dialog");
+    modal.show();                                                                      // opens the dialog box (same as the "open" attribute)
+    modal.showModal();                                                                 // opens the dialog box (as modal window "full screen-mode" | creates a backdrop element | <u>user can close the modal by pressing "Esc" button</u> )  
+    
+    modal.close("box closed");                                                         // closes the dialog box (message is returned (optionnal))
+    modal.returnValue                                                                  // -> "box closed" (returns the value passed by the "close()" method)
 &lt;/script&gt;
 
 -- CSS --
-    .myModal::backdrop {                              // style only the backdrop (dialog box opened with the "showModal()" method)
+    .myModal::backdrop {                                                               // style only the backdrop (dialog box opened with the "showModal()" method)
         background-color:red;
     }
     </pre>
+</details>
 <details class="example">
-        <summary> Example : </summary>
+<summary> Example : </summary>
 <h4><u> <mark>&lt;dialog&gt;</mark> TEST </u></h4>
     <p style="color:yellow;"> - these method are supported only in Chrome for now [TESTED 2019-02-01] </p>
     <dialog id="myDialogBox">myDialog Box</dialog>
@@ -1397,13 +1417,42 @@ SYNTAX :    &lt;dialog&gt;                                  // <span class="fab 
     }
         </pre>
         </details>
-</details>     
+<!------------------------------------------------------------------------------------------>
+<h4 style="color:darkblue;"><u> simple <mark>&lt;dialog&gt;</mark> TEST </u></h4>
+    <dialog id="myDial"> TEST <br> TEST </dialog>
+    <button onmouseup="dispDial()"> Show/Hide Dialog Box </button>
+<script>
+    function dispDial(){
+        let dialBox = document.querySelector('#myDial');
+        
+        if(dialBox.open){
+            dialBox.open = false;
+        } else {
+            dialBox.open = true;
+        }
+    }
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;dialog id="myDial"&gt; TEST &lt;br&gt; TEST &lt;/dialog&gt;
+    &lt;button onmouseup="dispDial()"&gt; Show/Hide Dialog Box &lt;/button&gt;
+&lt;script&gt;
+    function dispDial(){
+        let dialBox = document.querySelector('#myDial');
+        
+        if(dialBox.open){
+            dialBox.open = false;
+        } else {
+            dialBox.open = true;
+        }
+    }
+&lt;/script&gt; 
+        </pre>
+        </details>
+</details> 
     
     
-<!--
-    - flow content VS parsing content 
-    - update the 'p' nest 'div' problem 
--->
     
     
     
