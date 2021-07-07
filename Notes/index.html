@@ -17,6 +17,57 @@
     <p> - State pattern => allows an object to alter its behaviour when the internal state changes </p> 
     <p> - Lazy Loading => Load an object only when it's needed </p>
     <p> - Eager Loading => Loading an object on loadtime </p>
+<!--------------------------------------------------------------------------------------------------------------------------------->
+<hr>     
+<h2 style="color:darkblue;"><u> JavaScript Module (by using closures) </u></h2>
+    <p> - we can use the closure technique to create a module, which is an isolated lexical scope basically </p>
+<details class="example">
+<summary> DEMO </summary>
+    <pre>
+    function makeClient(client){
+        let client_ = client;
+        let account = 0;
+        
+        function deposit(sum){
+            account += sum;
+        }
+        
+        function withdraw(sum){
+            account -= sum
+        }
+        
+        function getBalance(){
+            return account + 'Ft';
+        }
+        
+        return {                                                                       // an object returned with all closures  
+            client: client_,
+            deposit: deposit,
+            withdraw: withdraw,
+            getBalance: getBalance 
+        }
+    }
+    
+    var steven = makeClient('Steven');                                                 // creating the client 
+    
+    steven.client;                                                                     // -> 'Steven'    
+    steven.getBalance();                                                               // -> '0Ft'
+    
+    steven.deposit(1500);
+    steven.deposit(5000);
+    
+    steven.getBalance();                                                               // -> '6500Ft'
+    
+    steven.withdraw(3000);
+    
+    steven.getBalance();                                                               // -> '3500Ft'
+    </pre>
+</details>
+    
+    
+    
+    
+    
     
 </body>
 </html>

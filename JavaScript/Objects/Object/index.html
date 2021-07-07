@@ -79,7 +79,6 @@
                 <p> configurable: <strong>bol</strong> - property can be deleted with <mark>delete</mark> (Default: <mark>false</mark> for existing properties) </p>
                 <p> get: <strong>fn</strong> - runs this function when getting this property <u>(not allowed with the <mark>value</mark> property)</u> </p>
                 <p> set: <strong>fn(val)</strong> - runs this function when setting this property (the <strong>val</strong> argument is the received set value <u>(not allowed with the <mark>value</mark> property)</u> </p>
-the             
             </div></strong>) 
 </td>
 <td> 
@@ -188,6 +187,22 @@ the
 </td>
 </tr>
 <tr class="01.01">
+<td> 
+            <strong>key:str</strong> in <strong>obj</strong>
+</td>
+<td> 
+            - returns <mark>true</mark> if the property appears anywhere in the object's prototype chain, otherwise returns <mark>false</mark>
+            <span id="browserSupport" title="updated : 2021-07-06">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 4 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 5.5 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
+                <span><i class="fab fa-node-js"></i> 0.10.0 </span>
+            </span>
+</td>
+</tr>
+<tr class="01.02">
 <td> 
             delete <strong>obj.property</strong> 
 </td>
@@ -397,7 +412,7 @@ the
             </span>
 </td>
 </tr>
-<tr class="01.04">
+<tr class="01.05">
 <td> 
             this
 </td>

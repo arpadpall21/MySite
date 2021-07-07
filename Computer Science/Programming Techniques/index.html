@@ -145,6 +145,64 @@
 <h2 style="color:darkblue;"><u> Closure </u></h2>
     <p> - a Closure is basically an isolated environemt (scope), in Javascript function bodies provide scopes (closures) </p>
     <p> - code (variables, expressions, etc...) in the function body are isolated from the upper scope </p>
+<details class="example">
+<summary> DEMO </summary>
+    <pre>
+    function makeUser(user){
+        let user_ = user;
+        
+        function getUser(){                                                            // closure 
+            return user_;
+        }
+        
+        return getUser;                                                                // returns the closure   
+    }
+    
+    var steven = makeUser('Steven');                                                   // the parent function called and finished here 
+    
+    steven();                                                                          // -> 'Steven'               // the closure remembers its parent scope even when the parent function is finished     
+    </pre>
+    <p> - in JavaScript we can create a Module (code pattern) with closures </p>
+    <pre>
+    function makeClient(client){
+        let client_ = client;
+        let account = 0;
+        
+        function deposit(sum){
+            account += sum;
+        }
+        
+        function withdraw(sum){
+            account -= sum
+        }
+        
+        function getBalance(){
+            return account + 'Ft';
+        }
+        
+        return {                                                                       // an object returned with all closures  
+            client: client_,
+            deposit: deposit,
+            withdraw: withdraw,
+            getBalance: getBalance 
+        }
+    }
+    
+    var steven = makeClient('Steven');                                                 // creating the client 
+    
+    steven.client;                                                                     // -> 'Steven'    
+    steven.getBalance();                                                               // -> '0Ft'
+    
+    steven.deposit(1500);
+    steven.deposit(5000);
+    
+    steven.getBalance();                                                               // -> '6500Ft'
+    
+    steven.withdraw(3000);
+    
+    steven.getBalance();                                                               // -> '3500Ft'
+    </pre>
+</details>
 <!---------------------------------------------------------------------------------------------------------->
 <hr>
 <h2 style="color:darkblue;"><u> Higher-Order Function </u></h2>

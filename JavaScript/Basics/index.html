@@ -26,6 +26,7 @@
 <h2 style="color:green;"><u> Useful Links : </u></h2>
     <p><a href="https://www.w3schools.com/js/js_scope.asp" target="_blank" >W3Schools JavaScript Scope </a></p>
 <h2 style="color:green;"><u> Remember This : </u></h2>
+    <p> - avoid using <mark>eval()</mark> and <mark>with()</mark> => slows down your code because of how scopes work in JavaScript </p>
 <h2 style="color:green;"><u> Description and Demonstration: </u></h2>
     <p> - JavaScript is an OOP (Object Oriented Programing) language officialy <span style="background-color:yellow;">ECMA-262</span>, developed to powers web browser scripting </p>
     <img src="Event Loop.jpg" height="350px">
@@ -110,6 +111,8 @@ SYNTAX:     <strong>jsCode</strong>                   // <strong>comment</strong
 <hr>
 <h2 style="color:darkblue;"><u> Variables and Scoping </u></h2> 
     <p> - JavaScript variables are identified by unique names, these unique names are called "identifiers" </p>
+    <p> - JavaScript uses Lexical scope only (does not use any Dynamic scopes)  </p>
+    <p> - Lexical Scope is created at write-time, whereas Dynamic Scope (and <mark>this</mark>) are created at runtime </p>
     <pre class="syntax">
 SYNTAX :    var|let|const <strong class="openable">identifier<div>
                 <p> - can contain <mark>a-z|A-Z</mark> (letters) / <mark>0-9</mark> (digits) / <mark>$</mark> (dollar signs) / <mark>_</mark> (underscore) </p>
@@ -201,6 +204,26 @@ SYNTAX :    var|let|const <strong class="openable">identifier<div>
             }
         }
     }
+    </pre>
+    <p> - Lexical VS Dynamic scoping </p>
+    <pre>
+    var x = 10;
+    
+    function fn1(){
+        return x;
+    }
+    
+    function fn2(){
+        var x = 20;
+        
+        return fn1();
+    }
+    
+// lexical scoping --------------------------------------------------------------------
+    fn2();                                                                             // -> 10             // lexical scopes are declared at write-time 
+    
+// -! dynamic scoping (JavaScript does not uses this) ---------------------------------
+    fn2();                                                                             // -> 20             // dynamic scopes are called at runtime (looks up the call stack)    
     </pre>
 </details>
 <!--------------------------------------------------------------------------------------------------------------------------->
@@ -534,6 +557,108 @@ console.warn("undeclared varialbe");
 &lt;/script&gt;
     </pre>
         </details>
+</details>
+<!--------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> Explicit VS Implicit data coerction </u></h2>
+    <p> - Explicit coerction when we intentionally convert a data type </p>
+    <p> - JavaScript tries to convert the 'wrong' data type into the 'right' data type on operation <u>this is called implicit coerction in JavaScript</u> </p>
+    <p> - JavaScript uses the <mark>+</mark> operatior for both additon and concatenation, addition for Numbers and concatenations for Strings</p>
+    <p> - JavaScript Operates from left to right, <u>any number after a string will be concatenated</u> in a statement!</p>
+    <pre>
+// explicit coerction -----------------------------------------------------------------
+    var x = '1';
+    
+    var y = Boolean(x);                                                                // -! explicit coerction (we intended to convert the data type)
+    
+    y;                                                                                 // -> true 
+    typeof y;                                                                          // -> 'boolean'
+    
+// implicit coerction -----------------------------------------------------------------
+    var x = '2' * 2;                                                                   // -!
+    
+    x;                                                                                 // -> 4 
+    typeof x;                                                                          // -> 'number'
+    
+// the + operator ---------------------------------------------------------------------
+    1 + 1 + 1;                                                                         // -> 3              // when used with numers performs addition 
+    
+    1 + '1'                                                                            // -> '11'           // data after the '+' operator is concatenated  
+    1 + 1 + '1' + 1 + 1;                                                               // -> '2111' 
+    </pre>
+<details class="example">
+        <summary> Example : </summary>
+<p><u> Adding numbers and strings </u></p>
+    <p id="numberVSstring"></p>
+<script>
+    var a = "The" + " " + "Boss";           // concatenation    - result (string)
+    var b = 5 * 2 - 2;                      // operation        - result (number)
+    var c = "The" + 85 + "'s";              // concatenation    - result (string)
+    var d = 40 + 45 + "is" + 40 + 45;       // concatenation    - result (string) 
+                                            //  numbers before the string calculated, after the string concatenated
+    document.getElementById('numberVSstring').innerHTML = a + " / " + b + " / " + c + " / " + d;
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="numberVSstring"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var a = "The" + " " + "Boss";           // concatenation    - result (string)
+    var b = 5 * 2 - 2;                      // operation        - result (number)
+    var c = "The" + 85 + "'s";              // concatenation    - result (string)
+    var d = 40 + 45 + "is" + 40 + 45;       // concatenation    - result (string) 
+                                            //  numbers before the string calculated, after the string concatenated
+    document.getElementById('numberVSstring').innerHTML = a + " / " + b + " / " + c + " / " + d;
+&lt;/script&gt;
+    </pre>    
+    </details>
+<p><u> String Convertion to Number </u></p>
+    <p id="convert_string_to_number"></p>
+<script>
+    var a = "5" * "5";                              // returns a number
+    var b = "50" / "10";                            // returns a number
+    var c = "25" - "10";                            // returns a number
+    var d = "10" + "10";                            // returns a string
+    var e = "50" * "2" / "5" - "1" + "85";          // returns a string (what a mess) :D 
+    document.getElementById('convert_string_to_number').innerHTML = a + " / " + b + " / " + c + " / " + d + " / " + e;
+    typeof 20;
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="convert_string_to_number"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var a = "5" * "5";                              // returns a number
+    var b = "50" / "10";                            // returns a number
+    var c = "25" - "10";                            // returns a number
+    var d = "10" + "10";                            // returns a string
+    var e = "50" * "2" / "5" - "1" + "85";          // returns a string (what a mess) :D 
+    document.getElementById('convert_string_to_number').innerHTML = a + " / " + b + " / " + c + " / " + d + " / " + e;
+&lt;/script&gt;
+    </pre>
+    </details>
+<p><u> Result <mark>infinity</mark></u></p>
+    <p id="infinity"></p>
+<script>
+    var a = 25 / 0;                     // division by "0"
+    var b = -22 / 0;                    // division by "0"
+    var x = 1542e16000 + 1254e154;
+    var y = -154e355 - 125e546;
+    document.getElementById('infinity').innerHTML = x + " / " + y + " // " + a + " / " + b;
+</script>
+    <details>
+    <summary> CODE : </summary>
+    <pre>
+    &lt;p id="infinity"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var a = 25 / 0;                     // division by "0"
+    var b = -22 / 0;                    // division by "0"
+    var x = 1542e16000 + 1254e154;
+    var y = -154e355 - 125e546;
+    document.getElementById('infinity').innerHTML = x + " / " + y + " // " + a + " / " + b;
+&lt;/script&gt;
+    </pre>
+    </details>
 </details>
 <!--------------------------------------------------------------------------------------------------------------------------->
 <hr>

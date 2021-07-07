@@ -613,7 +613,7 @@
     </tr>
     <tr class="40.07">
         <td style="background-color:deepskyblue;"> 12 </td>
-        <td> <strong>prop</strong> in <strong>obj</strong> </td>
+        <td> <strong>prop:str</strong> in <strong>obj</strong> </td>
         <td> 
             - checks if the the object or its prototype chain contains the specified property <a href="../Loops/index.html#in_" target="_blank">[link]</a>
             <span id="browserSupport" title="updated: 2021-05-25">
@@ -1212,7 +1212,8 @@
         <td> let <strong>id</strong><i> = value</i> </td>
         <td> 
             - declares a <u>non-hoisted block-scope <mark>{}</mark></u> local-variable (<span style="color:green;">Reassignable</span> / <span style="color:orangered;">NOT-Redeclarable</span>) <br>
-            - registered in the <b>D</b>eclarative <b>E</b>nvironment <b>R</b>ecord (DER) = does NOT create properties in the current scope 
+            - registered in the <b>D</b>eclarative <b>E</b>nvironment <b>R</b>ecord (DER) = does NOT create properties in the current scope <br>
+            - when used in a <mark>for</mark> loop it is redeclared at each iteration 
             <span id="browserSupport" title="updated: 2021-05-26">
                 <span><i class="fab fa-chrome"></i> 48 </span>
                 <span><i class="fab fa-firefox"></i> 44 </span>
@@ -2337,6 +2338,20 @@
     myArray.push("element");                    // add a new element through a method
     
     myArray[0];                                 // -> "element"
+    </pre>
+    <p> - using <mark>let</mark> let in <mark>for</mark> loop </p>
+    <pre>
+    for(var i = 0; i &lt; 5; i++){                                                        // the var keyword's value changes at each iteration  
+        setTimeout(function(){
+            i;                                                                         // -> 5 | 5 | 5 | 5 | 5
+        }, i * 1000);
+    }
+    
+    for(let i = 0; i &lt; 5; i++){                                                        // -! the let keyword is redeclared at each iteration (let keyword special case when used in a for loop)    
+        setTimeout(function(){
+            i;                                                                         // -> 0 | 1 | 2 | 3 | 4
+        }, i * 1000);
+    }
     </pre>
 </details>
 <details class="example">

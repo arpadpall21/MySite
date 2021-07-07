@@ -75,7 +75,6 @@
     <p><a href="https://www.w3schools.com/js/js_function_definition.asp" target="_blank">W3Schools JavaScript Function </a></p>
     <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*" target="_blank"> Generator Function (developer.mozilla.org)</a></p>
 <h2 style="color:green;"><u> Remember This : </u></h2>
-    <p> - in JavaScript only functions can create scopes other than the global scope, that's why the default value of <mark>this</mark> <u>in arrow functions</u> is the global object (<mark>Window</mark> or <mark>Global</mark>) </p>
 <h2 style="color:green;"><u> Description and Demonstration : </u></h2>
     <p> - JavaScript function is a block of code executed when something invokes (calls) it</p>
     <p> - local variables are created when a function starts, and deleted when the function is completed </p>
@@ -590,8 +589,116 @@ SYNTAX :    (<strong>fn</strong>)(<i class="openable">arg, ...<div>
 </details>
 <!--------------------------------------------------------------------------------------------------------------------------------->
 <hr>     
+<h2 style="color:darkblue;"><u> Closures </u></h2>
+    <p> - in JavaScript a closure is a function that can access to its outer function scope <u>even after the outer function has finished</u> </p>
+    <p> - the closure can 'remember' and access of its outer function <u>even after the outer function has finished</u> </p>
+    <pre class="syntax">
+SYNTAX:     function <strong>fn</strong>(){
+                <strong style="color:darkgray;">// outer function scope </strong> 
+                
+                function <strong>closureFn</strong>(){
+                    <strong style="color:darkgray;">// has access to the outer function's scope </strong> 
+                }
+                
+                return <strong>closureFn</strong>
+            }
+            
+            var <strong>id</strong> = <strong>fn</strong>();                                                             // the outer function is called and finished  
+            <strong>id</strong>();                                                                      // the closure has access to the outer function's scope here  
+    </pre>
+<details class="example">
+<summary> DEMO </summary>
+    <pre>
+    function makeUser(user){
+        let user_ = user;
+        
+        function getUser(){                                                            // closure 
+            return user_;
+        }
+        
+        return getUser;                                                                // returns the closure   
+    }
+    
+    var steven = makeUser('Steven');                                                   // the parent function called and finished here 
+    
+    steven();                                                                          // -> 'Steven'               // the closure remembers its parent scope even when the parent function is finished     
+    </pre>
+    <p> - in JavaScript we can create a Module (code pattern) with closures </p>
+    <pre>
+    function makeClient(client){
+        let client_ = client;
+        let account = 0;
+        
+        function deposit(sum){
+            account += sum;
+        }
+        
+        function withdraw(sum){
+            account -= sum
+        }
+        
+        function getBalance(){
+            return account + 'Ft';
+        }
+        
+        return {                                                                       // an object returned with all closures  
+            client: client_,
+            deposit: deposit,
+            withdraw: withdraw,
+            getBalance: getBalance 
+        }
+    }
+    
+    var steven = makeClient('Steven');                                                 // creating the client 
+    
+    steven.client;                                                                     // -> 'Steven'    
+    steven.getBalance();                                                               // -> '0Ft'
+    
+    steven.deposit(1500);
+    steven.deposit(5000);
+    
+    steven.getBalance();                                                               // -> '6500Ft'
+    
+    steven.withdraw(3000);
+    
+    steven.getBalance();                                                               // -> '3500Ft'
+    </pre>
+</details>
+<!--------------------------------------------------------------------------------------------------------------------------------->
+<hr>     
+<h2 style="color:darkblue;"><u> Callback Functions </u></h2>
+    <p> - a callback function is basically a function which is passed as argument into another function </p>
+    <pre class="syntax">
+SYNTAX:     function <strong>someFn</strong>(){
+                <span style="color:darkgray;">// do some business logic here ...</span>
+            }
+            
+            function <strong>fn</strong>(<strong>callback</strong>){
+                <span style="color:darkgray;">// do some business logic here ...</span>
+                
+                <strong>callback</strong>();                                                            // callback called here  
+            }
+            
+            <strong>fn</strong>(<strong>someFn</strong>);                                                                // we pass the callback function as argument   
+    </pre>
+<details class="example">
+<summary> DEMO </summary>
+    <pre>
+    function someFn(){
+        return 'callback value'
+    }
+    
+    function myFn(clb){
+        return clb();
+    }
+    
+    myFn(someFn);                                                                      // -> 'callback value'   
+    </pre>
+</details> 
+<!--------------------------------------------------------------------------------------------------------------------------------->
+<hr>     
 <h2 style="color:darkblue;"><u> Arrow Function <i class="fab fa-js">6</i> <span id="browserSupport" title="updated :2021-05-15"><span><i class="fab fa-chrome"></i> 45 </span><span><i class="fab fa-firefox"></i> 22 </span><span><i class="fab fa-opera"></i> 32 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span><span><i class="fab fa-safari"></i> 10 </span><span><i class="fab fa-node-js"></i> 4.0.0 </span></span> </u></h2>
-    <p> - the arrow functions is a shorter version of traditional functions, <u> the <mark>arguments</mark> / <mark>super()</mark> / <mark>new.target</mark> keywords are NOT available inside it</u></p>
+    <p> - the arrow functions is a <u>nameless functions</u> which is a shortes version of traditional functions, <u> the <mark>arguments</mark> / <mark>super()</mark> / <mark>new.target</mark> keywords are NOT available inside it</u></p>
     <p> - in normal functions the <mark>this</mark> keyword always references the object that <u>called</u> the function where the <mark>this</mark> is </p>
     <p> - in arrow functions the <mark>this</mark> keyword awlays references the value of <mark>this</mark> keyword value <u>right before the arrow function</u> </p>
     <pre class="syntax">
