@@ -937,6 +937,9 @@ SYNTAX :    <em>function</em>* <strong>fnId</strong><em>(<i>arg, ...</i>) {</em>
                 return <i>exp;</i>                                                              // returns the expression as last iterable object value 
             <em>}</em> 
             
+            var <strong>genObj</strong> = <strong>fnId</strong>();                                                       // creates the generator object    
+    
+  <span style="color:darkgray;">// ----------------------------------------------------------------------------------</span>
                                                                                           <span id="browserSupport" title="updated :2021-05-15" style="color:yellow;"><span><i class="fab fa-chrome"></i> 39 </span><span><i class="fab fa-firefox"></i> 26 </span><span><i class="fab fa-opera"></i> 26 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 13 </span><span><i class="fab fa-safari"></i> 10 </span><span><i class="fab fa-node-js"></i> 4.0.0 </span></span>
             <strong>genObj</strong>.next(<i class="openable">val<div>
                 <p> - the called <mark>yield</mark> keyword value (excluded from the yield's expression) </p>
@@ -1547,7 +1550,6 @@ SYNTAX :    <em>function</em>* <strong>fnId</strong><em>(<i>arg, ...</i>) {</em>
         </pre>
         </details>
 </details>
-    
     
     
     
