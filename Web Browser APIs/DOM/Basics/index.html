@@ -29,15 +29,18 @@
         <th style="width:30%;"> Method / Property </th>
         <th> Description </th>
     </tr>
-    <tr>
+    <tr class="40.01">
         <td> <em>document</em>.doctype </td>
-        <td> returns the document's doctype 
+        <td> 
+            - returns the <strong class="openable">documentType<div>
+                <p> - a <strong>node</strong> containing the doctype </p>
+            </div></strong> API <a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentType" target="_blank">[link]</a>
             <span id="browserSupport" title="updated : 2019-11-13">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> yes </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-                <span><i class="fab fa-safari"></i> yes </span>
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 12.1 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 6 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
             </span>
         </td>
     </tr>
@@ -57,7 +60,7 @@
         <td> <em>document</em>.domain </td>
         <td> 
             - [DEPRECATED] retunrs the document's domain name 
-            <span id="browserSupport" title="updated : 2019-11-13">
+            <span id="browserSupport" title="Updated: 2021-07-11">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> yes </span>
                 <span><i class="fab fa-opera"></i> yes </span>
@@ -66,21 +69,23 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="40.02">
         <td> <em>document</em>.implementation </td>
-        <td> returns the DOM implementation 
-            <span id="browserSupport" title="updated : 2019-11-13">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> yes </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-                <span><i class="fab fa-safari"></i> yes </span>
+        <td> 
+            - returns the <strong>domImplementation</strong> API <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/implementation" target="_blank">[link]</a>  
+            <span id="browserSupport" title="Updated: 2021-07-11">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 12.1 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 6 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.02">
         <td> <em>document</em>.inputEncoding </td>
-        <td> returns the document's encoding (character set) 
+        <td> 
+            - returns the document's character encoding format in a string  
             <span id="browserSupport" title="updated : 2019-11-13">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> yes </span>
@@ -90,21 +95,27 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.01">
         <td> <em>document</em>.lastModified </td>
-        <td> returns a time <u>as a string</u> when the document was last modified 
-            <span id="browserSupport" title="updated : 2019-11-13">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> yes </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-                <span><i class="fab fa-safari"></i> yes </span>
+        <td> 
+            - returns the date and time in a string when the document was last modified  
+            <span id="browserSupport" title="updated : 2021-07-11">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i>1 </span>
+                <span><i class="fab fa-opera"></i> 12.1 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.03">
         <td> <em>document</em>.readyState </td>
-        <td> returns the loading status of the document 
+        <td> 
+            - returns the <span class="openable">loading status<div>
+                <p> <mark>loading</mark> - still loading </p>
+                <p> <mark>interactive</mark> - document loaded but sub-resources (scripts, images, stylesheets, etc...) still loading</p>
+                <p> <mark>complete</mark> - document and sub-resources are finished loading </p>
+            </div></span> of the document in a string 
             <span id="browserSupport" title="updated : 2019-11-13">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> 3.6 </span>
@@ -114,27 +125,16 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.04">
         <td> <em>document</em>.referrer </td>
-        <td> Returns the URI of the referrer (the linking document) 
-            <span id="browserSupport" title="updated : 2019-11-13">
-                <span><i class="fab fa-chrome"></i> yes </span>
-                <span><i class="fab fa-firefox"></i> yes </span>
-                <span><i class="fab fa-opera"></i> yes </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
-                <span><i class="fab fa-safari"></i> yes </span>
-            </span>
-        </td>
-    </tr>
-    <tr>
-        <td> <em>document</em>.scriptErrorChecking </td>
-        <td> returns if error checking is enforced 
-            <span id="browserSupport" title="updated : 2019-11-13">
-                <span><i class="fab fa-chrome"></i> NO </span>
-                <span><i class="fab fa-firefox"></i> NO </span>
-                <span><i class="fab fa-opera"></i> NO </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
-                <span><i class="fab fa-safari"></i> NO </span>
+        <td> 
+            - returns the page that linked to this page (<mark>referrer</mark> response header value) 
+            <span id="browserSupport" title="updated : 2021-07-11">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 3 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 1 </span>
             </span>
         </td>
     </tr>
@@ -153,7 +153,6 @@
     </tr>
 </table>
     <br>    
-    
 <table class="table">
 <caption> DOM Navigation </caption>
     <tr>

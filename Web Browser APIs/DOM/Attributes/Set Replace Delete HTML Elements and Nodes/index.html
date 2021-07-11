@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> Create Replace Delete HTML Elements and Nodes </title> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="../../../Assets/stylesPages.css"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../../Assets/scriptPages.js"></script>
+</head>
+<body>
+<h1> Create Replace Delete HTML Elements and Nodes (ver 3.1) </h1>
+    <p> Updated ( 2018-02-02 / 2018-02-14 / 2018-09-03 / 2018-10-18 / 2018-12-23 / 2019-11-13 )</p>
+    <p class="sitenav"> <a href="../../../index.html">MySite></a>
+        <a href="../../index.html"> Web Browser APIs> </a> 
+        <a href="../index.html"> DOM> </a> Create Replace Delete HTML Elements and Nodes
+    </p>
+<table class="table">
+<caption> Create Replace Delete HTML Elements </caption>
+    <tr>
+        <th style="width:30%;"> Method / Property  </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td> <em>document</em>.adoptNode(<strong>node/docFragment</strong>) </td>
+        <td> transfers (removes) a node from another document and returns it as an element of the current document    
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 3 </span>
+                <span><i class="fab fa-opera"></i> 9 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr> 
+    <tr>
+        <td> <strong>node</strong>.after(<strong>node|domString</strong>, <i>...</i>) </td>
+        <td> <i class="fas fa-flask" title="updated: 2019-11-15"></i> inserts the passed node(s) (arguments) right after the <strong>node</strong>
+            <span id="browserSupport" title="updated : 2019-11-15">
+                <span><i class="fab fa-chrome"></i> 54 </span>
+                <span><i class="fab fa-firefox"></i> 49 </span>
+                <span><i class="fab fa-opera"></i> 39 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                <span><i class="fab fa-safari"></i> 10 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>parentNode</strong>.append(<strong>node|domString</strong>, <i>...</i>) </td>
+        <td> appends the passed node(s) as <u>last child (children)</u> in the <strong>parentNode</strong>
+            <span id="browserSupport" title="updated : 2019-11-15">
+                <span><i class="fab fa-chrome"></i> 54 </span>
+                <span><i class="fab fa-firefox"></i> 49 </span>
+                <span><i class="fab fa-opera"></i> 39 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 17 </span>
+                <span><i class="fab fa-safari"></i> 10 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>parentNode</strong>.appendChild(<strong>node</strong>) </td>
+        <td> appends the passed node as <u>last child</u> of the parentNode, returns the appended node
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>node</strong>.before(<strong>node|domString</strong>, <i>...</i>) </td>
+        <td> <i class="fas fa-flask" title="updated: 2019-11-15"></i> inserts the passed node(s) (arguments) right before the <strong>node</strong>
+            <span id="browserSupport" title="updated : 2019-11-15">
+                <span><i class="fab fa-chrome"></i> 54 </span>
+                <span><i class="fab fa-firefox"></i> 49 </span>
+                <span><i class="fab fa-opera"></i> 39 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> NO </span>
+                <span><i class="fab fa-safari"></i> 10 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>referenceNode</strong>.cloneNode(<i>deepCopy:bol</i>) </td>
+        <td> creates a new cloned Node and returns it 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i>  </span>
+                <span><i class="fab fa-firefox"></i>  </span>
+                <span><i class="fab fa-opera"></i>  </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i>  </span>
+                <span><i class="fab fa-safari"></i>  </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.createComment("<strong>commentValue</strong>") </td>
+        <td> creates a comment Node and returns it 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.createElement("<strong>htmlTag</strong>") </td>
+        <td> creates an HTML element and returns it
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.createTextNode("<strong>value</strong>") </td>
+        <td> creates a text Node and returns it
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.importNode(<strong>node/docFragment</strong>, <i>deepCopy[bool]</i>) </td>
+        <td> clones a node from another document and returns it as an element of the current document   
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 9 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>parentNode</strong>.insertBefore(<strong>newNode</strong>, <strong>referenceNode</strong>) </td>
+        <td> inserts the new node <u>before</u> the reference node and returns it 
+            <span id="browserSupport" title="updated : 2019-11-13">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 3 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>parentNode</strong>.prepend(<strong>node|domString</strong>, <i>...</i>) </td>
+        <td> <i class="fas fa-flask" title="updated: 2019-11-15"></i> appends the passed node(s) as <u>first child</u> of the parent node
+            <span id="browserSupport" title="updated : 2019-11-15">
+                <span><i class="fab fa-chrome"></i> 54 </span>
+                <span><i class="fab fa-firefox"></i> 49 </span>
+                <span><i class="fab fa-opera"></i> 39 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 17 </span>
+                <span><i class="fab fa-safari"></i> 10 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>node</strong>.remove() </td>
+        <td> removes the <strong>node</strong> (does not return it)
+            <span id="browserSupport" title="updated : 2019-11-15">
+                <span><i class="fab fa-chrome"></i> 23 </span>
+                <span><i class="fab fa-firefox"></i> 23 </span>
+                <span><i class="fab fa-opera"></i> 15 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> 7 </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>parentNode</strong>.removeChild(<strong>childNode</strong>) </td>
+        <td> removes and returns the parent's child Node
+            <span id="browserSupport" title="updated : 2019-11-15">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>parentNode</strong>.replaceChild(<strong>newNode</strong>, <strong>oldNode</strong>) </td>
+        <td> replaces the parent's child node by a new node, returns the old node
+            <span id="browserSupport" title="updated : 2019-11-15">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 2 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 9 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>node</strong>.replaceWith(<strong>node|domString</strong>, <i>...</i>) </td>
+        <td> replaces the <strong>node</strong> by the passed node(s) (arguments) 
+            <span id="browserSupport" title="updated : 2019-11-15">
+                <span><i class="fab fa-chrome"></i> 54 </span>
+                <span><i class="fab fa-firefox"></i> 49 </span>
+                <span><i class="fab fa-opera"></i> 39 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 17 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>
+        </td>
+    </tr>
+</table>
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+<h2 style="color:green;"><u> Remember This : </u></h2>
+<h2 style="color:green;"><u> Description and Demonstration : </u></h2>
+    <p style="color:yellow;"> - a node can exist in the document in only one place, so if you take off and paste it elsewere in the document the original node will be removed! </p>
+<h2 style="color:darkblue;"><u> The <mark>createElement()</mark> / <mark>createTextNode()</mark> / <mark>createAttribute()</mark> / <mark>createCommend()</mark> methods </u></h2>
+    <pre class="syntax">
+SYNTAX :    <em>document</em>.createElement("<strong>htmlTag</strong>")                                          // creates an HTML element and returns it
+            <em>document</em>.createTextNode("<strong>value</strong>")                                           // creates a text Node and returns it
+            <em>document</em>.createAttribute("<strong>attribute</strong>")                                      // creates an attribute Node and returns it
+            <em>document</em>.createComment("<strong>commentValue</strong>")                                     // creates a comment Node and returns it
+    </pre>
+    <pre>
+    &lt;div id="demo-parent"&gt;
+        &lt;p id="demo"&gt; HTML Paragraph &lt;/p&gt;
+    &lt;/div&gt;
+&lt;script&gt;
+    var parent = document.getElementById('demo-parent');                               // load parent in a variable 
+    var element = document.getElementById("demo");                                     // load element in a variable
+    
+// createAttribute() ------------------------------------------------------------------    
+    var attributeNode = document.createAttribute('style');                             // create the "style" attributeNode
+    attributeNode.value = "text-decoration:underline;";                                // adding value to an attribute Node
+    element.setAttributeNode(attributeNode);                                           // add the attribute Node to the element    = <u>HTML Paragraph</u>
+    
+// createElement() / createTextNode() -------------------------------------------------    
+    var element_new = document.createElement("p");                                     // create a new paragraph Node
+    var text_new = document.createTextNode("JavaScript Paragraph");                    // create a new text Node
+    element_new.appendChild(text_new);                                                 // add the text Node as element's child
+    parent.appendChild(element_new);                                                   // add the newly created Node as element's child (added as last element)
+    
+// createComment() --------------------------------------------------------------------
+    var myCommentNode = document.createComment("myComment");                           // comment node created with its value
+    document.getElementById("demo-parent").insertBefore(myCommentNode, element);       // comment node inserted before the targeted element
+&lt;/script&gt;
+    </pre>
+<details class="example">
+    <summary> Example : </summary>
+<h4><u> create elements </u></h4>
+    <div id="create_element">
+        <p> Paragraph (original HTML element)</p>
+    </div>
+<script>
+    var parent_DIV = document.getElementById('create_element');                             // parent loaded in a variable
+    
+    var frame_Attr = document.createAttribute('style');                                     // new attribute Node created
+    frame_Attr.value = "border:solid black 2px; display:inline-block; padding:0 10px;";     // add attribute value to the attribute Node
+    parent_DIV.setAttributeNode(frame_Attr);                                                // add attribute Node to the element
+    
+    var new_TAG = document.createElement('p');                                              // new paragraph created
+    var new_txtNode = document.createTextNode(" Paragraph (JavaScript Created element)");   // new text Node
+    new_TAG.appendChild(new_txtNode);                                                       // append the text Node as the element's child
+    
+    parent_DIV.appendChild(new_TAG);                                                        // add the newly created element as parent's child (last element)
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;div id="create_element"&gt;
+        &lt;p&gt; Paragraph (original HTML element)&lt;/p&gt;
+    &lt;/div&gt;
+&lt;script&gt;
+    var parent_DIV = document.getElementById('create_element');                             // parent loaded in a variable
+    
+    var frame_Attr = document.createAttribute('style');                                     // new attribute Node created
+    frame_Attr.value = "border:solid black 2px; display:inline-block; padding:0 10px;";     // add attribute value to the attribute Node
+    parent_DIV.setAttributeNode(frame_Attr);                                                // add attribute Node to the element
+    
+    var new_TAG = document.createElement('p');                                              // new paragraph created
+    var new_txtNode = document.createTextNode(" Paragraph (JavaScript Created element)");   // new text Node
+    new_TAG.appendChild(new_txtNode);                                                       // append the text Node as the element's child
+    
+    parent_DIV.appendChild(new_TAG);                                                        // add the newly created element as parent's child (last element)
+&lt;/script&gt;
+        </pre>
+        </details>
+</details>
+<!----------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> The <mark>appendChild()</mark> / <mark>append()</mark> / <mark>insertBefore()</mark> / <mark>prepend()</mark> / <mark>before()</mark> / <mark>after()</mark> /  <mark>remove()</mark> / <mark>removeChild()</mark> / <mark>replaceChild()</mark> / <mark>replaceWith()</mark> methods </u></h2>
+    <pre class="syntax">
+SYNTAX :    <strong>parentNode</strong>.appendChild(<strong>node</strong>)                                               // appends the passed node as <u>last child</u> of the parentNode, returns the appended node
+            <strong>parentNode</strong>.append(<strong>node|domString</strong>, <i>...</i>)                                     // appends the passed node(s) as <u>last child</u> of the parent node  
+            <strong>parentNode</strong>.prepend(<strong>node|domString</strong>, <i>...</i>)                                    // appends the passed node(s) as <u>first child</u> of the parent node
+            
+            <strong>parentNode</strong>.insertBefore(<strong>newNode</strong>, <strong>referenceNode</strong>)                            // inserts the new node <u>before</u> the reference node and returns it    
+            <strong>node</strong>.before(<strong>node|domString</strong>, <i>...</i>)                                           // inserts the passed node(s) (arguments) right before the <strong>node</strong>
+            <strong>node</strong>.after(<strong>node|domString</strong>, <i>...</i>)                                            // inserts the passed node(s) (arguments) right after the <strong>node</strong>
+            
+            <strong>parentNode</strong>.removeChild(<strong>childNode</strong>)                                          // removes and returns the parent's child Node
+            <strong>node</strong>.remove()                                                              // removes the <strong>node</strong> (does not return it)   
+            
+            <strong>parentNode</strong>.replaceChild(<strong>newNode</strong>, <strong>oldNode</strong>)                                  // replaces the parent's child node by a new node, returns the old node     
+            <strong>node</strong>.replaceWith(<strong>node|domString</strong>, <i>...</i>)                                      // replaces the <strong>node</strong> by the passed node(s) (arguments)   
+    </pre>
+    <pre>
+    &lt;div id="parent"&gt;
+        &lt;p id="child1"&gt; paragraph 1 &lt;/p&gt;
+        &lt;p id="child2"&gt; paragraph 2 &lt;/p&gt;
+        &lt;p id="child3"&gt; paragraph 3 &lt;/p&gt;
+    &lt;/div&gt;
+&lt;script&gt;
+        var parent = document.getElementById('parent');
+        var chidl1 = document.getElementById('child1');
+        var chidl2 = document.getElementById('child2');
+        var chidl3 = document.getElementById('child3');
+        
+        var element1 = document.createElement('p');                                    // create a new element with text content in it 
+            var textNode = document.createTextNode('paragraph X');
+            element1.appendChild(textNode);
+        var element2 = element1.cloneNode(true);                                       // clone other elements
+        var element3 = element1.cloneNode(true);
+        var element4 = element1.cloneNode(true);
+    
+// appendChild() / append() / prepend() / ---------------------------------------------
+        parent.appendChild(element1);                                                  // -> &lt;p&gt;paragraph X&lt/p&gt;   // appends the passed element as last child of the parent and returns it   
+        parent.append(element2, 'some DOMString');                                     // appends the created element and DOMString as last child of the parent (does not return it)   
+        parent.prepend(element3, 'some DOMString');                                    // appends the created element and DOMString as first child of the parent (does not return it)   
+        
+// insertBefore() / before() / after() ------------------------------------------------
+        parent.insertBefore(element1, chidl2);                                         // -> &lt;p&gt;paragraph X&lt/p&gt;   // insert the created element before the second child and returns it 
+        child2.before(element2);                                                       // inserts the created element before the second child (does not return it)
+        child2.after(element3);                                                        // inserts the created element after the second child (does not return it)
+        
+// removeChild() / remove() -----------------------------------------------------------
+        parent.removeChild(child2);                                                    // -> &lt;p&gt; paragraph 2 &lt;/p&gt; // removes and returns the targeted child element    
+        child3.remove();                                                               // removes the the element (does not return it)   
+        
+// replaceChild() / replaceWith() -----------------------------------------------------
+        parent.replaceChild(element1, child2);                                         // -> &lt;p"&gt; paragraph 2 &lt;/p&gt; // replaces the parent's second child with the new element and returns the replaced element    
+        child3.replaceWith(element2);                                                  // replaces the 3rd child element with the created element (does not return the old element)    
+&lt;/script&gt;
+    </pre>    
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> duplicate and insert </u></h4>
+    <p id="insertNode"> Original HTMTL paragraph </p>
+<script>
+    var refChild = document.getElementById('insertNode');
+    var refParent = document.body;                                           // we need the parent to insert an element always
+    
+    var par_ = document.createElement('p');
+    var tx = document.createTextNode(' JavaScript created paragraph ');
+    par_.appendChild(tx);
+    
+    refParent.insertBefore(par_, refChild);                                 // insert the New node before the targeted Node
+    
+    var par_2 = par_.cloneNode(true);                                       // since we cannot insert the same Node we have to clone a new one with its child (text Node)
+    par_2.setAttribute('style', "color:green; text-decoration:underline;");
+    
+    refParent.insertBefore(par_2, refChild.nextSibling);                    // insert the New node after the targeted Node
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="insertNode"&gt; Original HTMTL paragraph &lt;/p&gt;
+&lt;script&gt;
+    var refChild = document.getElementById('insertNode');
+    var refParent = document.body;                                           // we need the parent to insert an element always
+    
+    var par_ = document.createElement('p');
+    var tx = document.createTextNode(' JavaScript created paragraph ');
+    par_.appendChild(tx);
+    
+    refParent.insertBefore(par_, refChild);                                 // insert the New node before the targeted Node
+    
+    var par_2 = par_.cloneNode(true);                                       // since we cannot insert the same Node we have to clone a new one with its child (text Node)
+    par_2.setAttribute('style', "color:green; text-decoration:underline;");
+    
+    refParent.insertBefore(par_2, refChild.nextSibling);                    // insert the New node after the targeted Node
+&lt;/script&gt;
+        </pre>
+        </details>
+<!----------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> remove and replace </u></h4>
+    <p id="rem_1"> Paragraph - 1 </p>
+    <p id="rem_2"> Paragraph - 2 </p>
+    <p id="rem_3"> Paragraph - 3 </p>
+<script>
+    var Lmt_1 = document.getElementById('rem_1');
+    var Lmt_2 = document.getElementById('rem_2');
+    var Lmt_3 = document.getElementById('rem_3');
+    var Lmt_parent = document.body;
+    
+    Lmt_parent.removeChild(Lmt_3);                      // removes and returs an element
+    
+    Lmt_parent.replaceChild(Lmt_2, Lmt_1);              // because an element can be present only once on a page the element is removed and palced to its new place
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="rem_1"&gt; Paragraph - 1 &lt;/p&gt;
+    &lt;p id="rem_2"&gt; Paragraph - 2 &lt;/p&gt;
+    &lt;p id="rem_3"&gt; Paragraph - 3 &lt;/p&gt;
+&lt;script&gt;
+    var Lmt_1 = document.getElementById('rem_1');
+    var Lmt_2 = document.getElementById('rem_2');
+    var Lmt_3 = document.getElementById('rem_3');
+    var Lmt_parent = document.body;
+    
+    Lmt_parent.removeChild(Lmt_3);                      // removes and returs an element
+    
+    Lmt_parent.replaceChild(Lmt_2, Lmt_1);              // because an element can be present only once on a page the element is removed and palced to its new place
+&lt;/script&gt;
+        </pre>
+        </details>
+<!----------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> <mark>remove()</mark> VS <mark>removeChild()</mark> demo </u></h4>
+    <p id="removeMe"> Blah Blah </p>
+    <p id="removeMe2"> Blah Blah </p>
+<script>
+    var removed = document.getElementById("removeMe").remove();                         // returns "undefined", Node NOT returned!!!   
+    var removed2 = document.body.removeChild(document.getElementById("removeMe2"));     // returns the removed element
+</script>
+        <details>
+        <summary> CODE: </summary>
+        <pre>
+    &lt;p id="removeMe"&gt; Blah Blah &lt;/p&gt;
+    &lt;p id="removeMe2"&gt; Blah Blah &lt;/p&gt;
+&lt;script&gt;
+    var removed = document.getElementById("removeMe").remove();                         // returns "undefined", Node NOT returned!!!   
+    var removed2 = document.body.removeChild(document.getElementById("removeMe2"));     // returns the removed element
+&lt;/script&gt;    
+        </pre>
+        </details>
+<!----------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> <mark>replaceData()</mark> / <mark>createComment</mark> TEST </u></h4>    
+    <p id="replaceD"> kicsi pityu </p>
+<script>
+    var custComment = document.createComment("custom Comment");             // comment Node created and inserted before the above element
+    var refNode = document.getElementById("replaceD");
+    document.appendChild(custComment);
+    document.getElementById("replaceD").parentNode.insertBefore(custComment, refNode);
+    custComment.replaceData(0, 6, "modified");                              // comment Node modified
+    
+    document.getElementById("replaceD").childNodes[0].replaceData(7, 12, "kutya");     // text node value (part of it) modified
+</script>  
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="replaceData_1" row="1"&gt; kicsi pityu &lt;/p&gt;
+&lt;script&gt;
+    var custComment = document.createComment("custom Comment");             // comment Node created and inserted before the above element
+    var refNode = document.getElementById("replaceD");
+    document.appendChild(custComment);
+    document.getElementById("replaceD").parentNode.insertBefore(custComment, refNode);
+    custComment.replaceData(0, 6, "modified");                              // comment Node modified
+    
+    document.getElementById("replaceD").childNodes[0].replaceData(7, 12, "kutya");     // text node value (part of it) modified
+&lt;/script&gt;   
+        </pre>
+        </details>  
+<!----------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> <mark>append()</mark> / <mark>prepend()</mark> TEST </u></h4>    
+    <ul id="app-prepp">
+        <li> 1 </li>
+        <li> 2 </li>
+        <li> 3 </li>
+    </ul>
+<script>
+    (function(){
+        var parent = document.getElementById('app-prepp');
+        
+        var element1 = document.createElement('li') 
+        var textNode = document.createTextNode('added item');
+        element1.appendChild(textNode);
+        var element2 = element1.cloneNode(true);
+        
+        parent.append(element1, 'appended item');                   // appends a node and a domString
+        
+        parent.prepend(element2, 'prepended item');                 // prepends a node and a domString
+    })();
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;ul id="app-prepp"&gt;
+        &lt;li&gt; 1 &lt;/li&gt;
+        &lt;li&gt; 2 &lt;/li&gt;
+        &lt;li&gt; 3 &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;script&gt;
+    (function(){
+        var parent = document.getElementById('app-prepp');
+        
+        var element1 = document.createElement('li') 
+        var textNode = document.createTextNode('added item');
+        element1.appendChild(textNode);
+        var element2 = element1.cloneNode(true);
+        
+        parent.append(element1, 'appended item');                   // appends a node and a domString
+        
+        parent.prepend(element2, 'prepended item');                 // prepends a node and a domString
+    })();
+&lt;/script&gt;
+        </pre>
+        </details>  
+<!----------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> <mark>before()</mark> / <mark>after()</mark> / <mark>remove()</mark> / <mark>replaceWith()</mark> TEST </u></h4>    
+    <ul id="changeStuff">
+        <li> 1 </li>
+        <li> 2 </li>
+        <li> 3 </li>
+    </ul>
+<script>
+    (function(){
+        var first = document.getElementById('changeStuff').firstElementChild;
+        var second = document.getElementById('changeStuff').children[1];
+        var third = document.getElementById('changeStuff').lastElementChild;
+        
+        var element1 = document.createElement('li');
+        var textNode = document.createTextNode('Added Element');
+            element1.appendChild(textNode);
+        var element2 = element1.cloneNode(true);
+        var element3 = element1.cloneNode(true);
+        
+// before() / after() ----------------------------------------------------------------------------------------------
+        second.before(element1, 'DOMString insterted before');
+        second.after(element2, 'DOMString insterted after');
+        
+// remove() --------------------------------------------------------------------------------------------------------
+        third.remove();
+        
+// replaceWith() ---------------------------------------------------------------------------------------------------
+        first.replaceWith(element3);
+    })();
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;ul id="changeStuff"&gt;
+        &lt;li&gt; 1 &lt;/li&gt;
+        &lt;li&gt; 2 &lt;/li&gt;
+        &lt;li&gt; 3 &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;script&gt;
+    (function(){
+        var first = document.getElementById('changeStuff').firstElementChild;
+        var second = document.getElementById('changeStuff').children[1];
+        var third = document.getElementById('changeStuff').lastElementChild;
+        
+        var element1 = document.createElement('li');
+        var textNode = document.createTextNode('Added Element');
+        element1.appendChild(textNode);
+        var element2 = element1.cloneNode(true);
+        var element3 = element1.cloneNode(true);
+        
+// before() / after() ----------------------------------------------------------------------------------------------
+        second.before(element1, 'DOMString insterted before');
+        second.after(element2, 'DOMString insterted after');
+        
+// remove() --------------------------------------------------------------------------------------------------------
+        third.remove();
+        
+// replaceWith() ---------------------------------------------------------------------------------------------------
+        first.replaceWith(element3);
+    })();
+&lt;/script&gt;
+        </pre>
+        </details>  
+</details>
+<!----------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> The <mark>cloneNode()</mark> / <mark>importNode()</mark> / <mark>adoptNode()</mark> methods </u></h2>
+    <pre class="syntax">
+SYNTAX :    <strong>referenceNode</strong>.cloneNode(<i>deepCopy[bool]</i>)                                    // creates a new cloned Node and returns it
+            <em>document</em>.importNode(<strong>node/docFragment</strong>, <i>deepCopy[bool]</i>)                      // clones a node from another document and returns it as an element of the current document     
+            <em>document</em>.adoptNode(<strong>node/docFragment</strong>)                                       // transfers (removes) a node from another document and returns it as an element of the current document    
+                - <i>deepCopy[bool]</i> : (default <mark>false</mark>) clone children elements or not 
+    </pre>
+    <pre>
+    &lt;p id="demo"7&gt; Demo Paragraph &lt;/p&gt;
+&lt;script&gt;
+    var child = document.getElementById('demo');
+    var parent = document.body;                                                        // the "body" element is the parent here 
+    
+    var child_2 = child.cloneNode(true);                                               // clone the Node's children too!
+    parent.insertBefore(child_2, child);                                               // the clone inserted before the original element
+    parent.insertBefore(child_2, child.nextSibling);                                   // this is how you would insert the new Node after the original element   
+&lt;script&gt;
+    </pre>
+    <pre>
+    &lt;template id="myTemplate"&gt;                                                         // the template element is a "document fragment" not part of the current document 
+        &lt;p&gt; elso elem &lt;/p&gt;
+        &lt;p&gt; masodik elem &lt;/p&gt;
+    &lt;/template&gt;
+&lt;script&gt;
+    var extDoc = document.getElementById("myTemplate");                                // document fragment
+    
+// importNode -----------------------
+    var nd_1 = extDoc.content.firstElementChild;                                       // select the targeted node from the source document
+    var copyNode = document.importNode(nd_1, true);                                    // node cloned and iported to the current document 
+    extDoc.parentElement.insertBefore(copyNode, extDoc);                               // insert the imported node
+    
+// adoptNode ------------------------
+    var nd_2 = extDoc.content.lastElementChild;                                        // select the targeted node from the source document     
+    var adoptedNode = document.adoptNode(nd_2);                                        // node removed from the source document and imported to the current document (no deep copy argument)
+    extDoc.parentElement.insertBefore(adoptedNode, extDoc);                            // insert the imported noe
+&lt;/script&gt;    
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4><u> duplicate and insert </u></h4>
+    <p id="insertNode"> Original HTMTL paragraph </p>
+<script>
+    var refChild = document.getElementById('insertNode');
+    var refParent = document.body;                                           // we need the parent to insert an element always
+    
+    var par_ = document.createElement('p');
+    var tx = document.createTextNode(' JavaScript created paragraph ');
+    par_.appendChild(tx);
+    
+    refParent.insertBefore(par_, refChild);                                 // insert the New node before the targeted Node
+    
+    var par_2 = par_.cloneNode(true);                                       // since we cannot insert the same Node we have to clone a new one with its child (text Node)
+    par_2.setAttribute('style', "color:green; text-decoration:underline;");
+    
+    refParent.insertBefore(par_2, refChild.nextSibling);                    // insert the New node after the targeted Node
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="insertNode"&gt; Original HTMTL paragraph &lt;/p&gt;
+&lt;script&gt;
+    var refChild = document.getElementById('insertNode');
+    var refParent = document.body;                                           // we need the parent to insert an element always
+    
+    var par_ = document.createElement('p');
+    var tx = document.createTextNode(' JavaScript created paragraph ');
+    par_.appendChild(tx);
+    
+    refParent.insertBefore(par_, refChild);                                 // insert the New node before the targeted Node
+    
+    var par_2 = par_.cloneNode(true);                                       // since we cannot insert the same Node we have to clone a new one with its child (text Node)
+    par_2.setAttribute('style', "color:green; text-decoration:underline;");
+    
+    refParent.insertBefore(par_2, refChild.nextSibling);                    // insert the New node after the targeted Node
+&lt;/script&gt;
+        </pre>
+        </details>
+<!----------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4><u> remove and replace </u></h4>
+    <p id="rem_1"> Paragraph - 1 </p>
+    <p id="rem_2"> Paragraph - 2 </p>
+    <p id="rem_3"> Paragraph - 3 </p>
+<script>
+    var Lmt_1 = document.getElementById('rem_1');
+    var Lmt_2 = document.getElementById('rem_2');
+    var Lmt_3 = document.getElementById('rem_3');
+    var Lmt_parent = document.body;
+    
+    Lmt_parent.removeChild(Lmt_3);                      // removes and returs an element
+    
+    Lmt_parent.replaceChild(Lmt_2, Lmt_1);              // because an element can be present only once on a page the element is removed and palced to its new place
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="rem_1"&gt; Paragraph - 1 &lt;/p&gt;
+    &lt;p id="rem_2"&gt; Paragraph - 2 &lt;/p&gt;
+    &lt;p id="rem_3"&gt; Paragraph - 3 &lt;/p&gt;
+&lt;script&gt;
+    var Lmt_1 = document.getElementById('rem_1');
+    var Lmt_2 = document.getElementById('rem_2');
+    var Lmt_3 = document.getElementById('rem_3');
+    var Lmt_parent = document.body;
+    
+    Lmt_parent.removeChild(Lmt_3);                      // removes and returs an element
+    
+    Lmt_parent.replaceChild(Lmt_2, Lmt_1);              // because an element can be present only once on a page the element is removed and palced to its new place
+&lt;/script&gt;
+        </pre>
+        </details>
+<h4><u> <mark>remove()</mark> VS <mark>removeChild()</mark> demo </u></h4>
+    <p id="removeMe"> Blah Blah </p>
+    <p id="removeMe2"> Blah Blah </p>
+<script>
+    var removed = document.getElementById("removeMe").remove();                         // returns "undefined", Node NOT returned!!!   
+    var removed2 = document.body.removeChild(document.getElementById("removeMe2"));     // returns the removed element
+</script>
+        <details>
+        <summary> CODE: </summary>
+        <pre>
+    &lt;p id="removeMe"&gt; Blah Blah &lt;/p&gt;
+    &lt;p id="removeMe2"&gt; Blah Blah &lt;/p&gt;
+&lt;script&gt;
+    var removed = document.getElementById("removeMe").remove();                         // returns "undefined", Node NOT returned!!!   
+    var removed2 = document.body.removeChild(document.getElementById("removeMe2"));     // returns the removed element
+&lt;/script&gt;    
+        </pre>
+        </details>
+<h4><u> <mark>replaceData()</mark> / <mark>createComment</mark> TEST </u></h4>    
+    <p id="replaceD"> kicsi pityu </p>
+<script>
+    var custComment = document.createComment("custom Comment");             // comment Node created and inserted before the above element
+    var refNode = document.getElementById("replaceD");
+    document.appendChild(custComment);
+    document.getElementById("replaceD").parentNode.insertBefore(custComment, refNode);
+    custComment.replaceData(0, 6, "modified");                              // comment Node modified
+    
+    document.getElementById("replaceD").childNodes[0].replaceData(7, 12, "kutya");     // text node value (part of it) modified
+</script>  
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="replaceData_1" row="1"&gt; kicsi pityu &lt;/p&gt;
+&lt;script&gt;
+    var custComment = document.createComment("custom Comment");             // comment Node created and inserted before the above element
+    var refNode = document.getElementById("replaceD");
+    document.appendChild(custComment);
+    document.getElementById("replaceD").parentNode.insertBefore(custComment, refNode);
+    custComment.replaceData(0, 6, "modified");                              // comment Node modified
+    
+    document.getElementById("replaceD").childNodes[0].replaceData(7, 12, "kutya");     // text node value (part of it) modified
+&lt;/script&gt;   
+        </pre>
+        </details>  
+        
+        
+        
+        
+        
+        
+        
+<h4><u> <mark>importNode</mark> / <mark>adoptNode</mark> TEST </u></h4>    
+    <template id="myTemplate">
+        <p> first element </p>
+        <p> second element </p>
+    </template>
+    <div id="paste"></div>
+<script>
+    var template_ = document.getElementById("myTemplate");          // template is a "document fragment" = not part of this document!
+    
+// importNode -----------    
+    var foreignNode_1 = template_.content.firstElementChild;
+    var importNode_1 = document.importNode(foreignNode_1, true);    // we imported the node to the current document (this is a clone)
+    document.getElementById("paste").appendChild(importNode_1);
+    
+// adoptNode ------------
+    var foreignNode_2 = template_.content.children[1];
+    var importNode_2 = document.adoptNode(foreignNode_2, true);     // we adopted the node from the original (node removed and stored) 
+    document.getElementById("paste").appendChild(importNode_2);
+</script>    
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;template id="myTemplate"&gt;
+        &lt;p&gt; first element &lt;/p&gt;
+        &lt;p&gt; second element &lt;/p&gt;
+    &lt;/template&gt;
+    &lt;div id="paste"&gt;&lt;/div&gt;
+&lt;script&gt;
+    var template_ = document.getElementById("myTemplate");          // template is a "document fragment" = not part of this document!
+    
+// importNode -----------    
+    var foreignNode_1 = template_.content.firstElementChild;
+    var importNode_1 = document.importNode(foreignNode_1, true);    // we imported the node to the current document (this is a clone)
+    document.getElementById("paste").appendChild(importNode_1);
+    
+// adoptNode ------------
+    var foreignNode_2 = template_.content.children[1];
+    var importNode_2 = document.adoptNode(foreignNode_2, true);     // we adopted the node from the original (node removed and stored) 
+    document.getElementById("paste").appendChild(importNode_2);
+&lt;/script&gt;    
+        </pre>
+        </details>
+</details>
+    
+    
+    
+<h2 class="test" style=""><a href="TEST/index.html"> TEST (empty) > </a></h2>
+</body>
+</html>

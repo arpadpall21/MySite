@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Element Informations / Content Management / Styling </title> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="../../../Assets/stylesPages.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../../Assets/scriptPages.js"></script>
+    <style>
+        #styleTest { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<h1> Element Informations / Content Management / Styling (ver 3.1) </h1>
+    <p> Updated ( 2018-02-02 / 2018-02-14 / 2018-09-03 / 2018-10-18 / 2018-12-23 )</p>
+    <p class="sitenav"> <a href="../../../index.html">MySite></a>
+        <a href="../../index.html"> Web Browser APIs> </a> 
+        <a href="../index.html"> DOM> </a> Element Informations / Content Management / Styling
+    </p>
+<table class="table">
+<caption> Element Informations / Content Management / Styling  </caption>
+    <tr>
+        <th> Method / Property </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.innerHTML </td>
+        <td> gets or sets the element's content as a string <u>(parses the string into HTML code when set)</u>
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> 33/1 node </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> 7 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 9 </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.innerText </td>
+        <td> - returns the element's <u>and all its children</u> elements' text content in one string <u>(rendered element only, if the element is hidden by CSS this property cannot see the element but it stil can set it!)</u> <br>
+             -when set replaces all descendent nodes by the set text node 
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> 1 </span>
+                <span><i class="fab fa-firefox"></i> 45 </span>
+                <span><i class="fab fa-opera"></i> 9.6 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 10 </span>
+                <span><i class="fab fa-safari"></i> 3 </span>
+            </span>  
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.outerHTML </td>
+        <td> gets or sets the element itself and its content as a string <u>(parses the string into HTML code when set)</u> 
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> 33/1 node </span>
+                <span><i class="fab fa-firefox"></i> 11 </span>
+                <span><i class="fab fa-opera"></i> 7 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 4 </span>
+                <span><i class="fab fa-safari"></i> 9 </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>node</strong>.textContent </td>
+        <td> - returns the element's <u>and all its children</u> elements' text content in one string (handles hidden elements as well) <br>
+             - when set replaces all descendent nodes by the set text node
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> 1 </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> 3 </span>
+            </span>  
+        </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.write(<strong>exp</strong>, <i>...</i>) </td>
+        <td> - writes the expression(s) to the document on the current line (if it is used after the document is loaded, this will delete all existing HTML) <br> 
+             - parses the string into HTML code 
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>  
+        </td>
+    </tr>
+    <tr>
+        <td> <em>document</em>.writeln(<strong>exp</strong>, <i>...</i>) </td>
+        <td> - writes the expression(s) to the document on the current line and inserts a <mark>\n</mark> (new line) character after the statement automatically (if it is used after the document is loaded, this will delete all existing HTML) <br> 
+             - parses the string to HTML code 
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>  
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"> Element / Node Informations </td>
+    </tr>
+    <tr>
+        <td> <strong>node</strong>.nodeName </td>
+        <td> returns the node's name 
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>node</strong>.nodeType </td>
+        <td> returns a number referring to the Node's type (<mark>1</mark> (element), <mark>2</mark> (attribute[depricated]), <mark>3</mark> (text), <mark>8</mark> (comment), <mark>9</mark> (document), <mark>10</mark> (document type), <mark>11</mark> (document fragment)) 
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>node</strong>.nodeValue </td>
+        <td> returns the Node's value (different than <mark>innerHTML</mark>) 
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.tagName </td>
+        <td> returns the element's tag name as a string 
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> 43 </span>
+                <span><i class="fab fa-firefox"></i> 70 </span>
+                <span><i class="fab fa-opera"></i> 64 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 11 </span>
+                <span><i class="fab fa-safari"></i> 6 </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"> Text and Comment Node </td>
+    </tr>
+    <tr>
+        <td> <strong>textNode|commentNode</strong>.appendData(<strong>str</strong>) </td>
+        <td> adds a text <u>at the end</u> of the node's text
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>textNode|commentNode</strong>.data </td>
+        <td> gets or sets the nodes text
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>textNode|commentNode</strong>.deleteData(<strong>st(inc):index</strong>, <strong>howMany:nr</strong>) </td>
+        <td> deletes a part of the node's text
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>textNode|commentNode</strong>.insertData(<strong>st(inc):index</strong>, <strong>str</strong>) </td>
+        <td> inserts a text in the node (before the index) by shifting the characters (stretches the content, does not replace characters)
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>textNode|commentNode</strong>.length </td>
+        <td> returns the text length of the node
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>textNode|commentNode</strong>.replaceData(<strong>st(inc):index</strong>, <strong>howMany:nr</strong>, <strong>str</strong>) </td>
+        <td> replaces a part of the node's text with the passed string
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>textNode|commentNode</strong>.substirngData(<strong>st(inc):index</strong>, <strong>howMany:nr</strong>) </td>
+        <td> returns a new string from the node's text portion
+            <span id="browserSupport" title="updated: 2019-11-17">
+                <span><i class="fab fa-chrome"></i> yes </span>
+                <span><i class="fab fa-firefox"></i> yes </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span>
+                <span><i class="fab fa-safari"></i> yes </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"> Styling Elements </td>
+    </tr>
+    <tr>
+        <td> <em>window</em>.getComputedStyle(<strong>element</strong><i>, pseudoElement</i>) </td>
+        <td> - returns the <mark>CSSStyleDeclaration</mark> object which holds the styling information of the element <br>
+             - the returned <mark>CSSStyleDeclaration</mark> object is read-only in this situation
+            <span id="browserSupport" title="updated: 2019-11-15">
+                <span><i class="fab fa-chrome"></i> 11 </span>
+                <span><i class="fab fa-firefox"></i> 4 CSS2Properties </span>
+                <span><i class="fab fa-opera"></i> 11.5 </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 8 </span>
+                <span><i class="fab fa-safari"></i> 5 </span>
+            </span>        
+        </td>
+    </tr>
+    <tr>
+        <td> <strong>element</strong>.style </td>
+        <td> - returns the <mark>CSSStyleDeclaration</mark> object which holds the styling information of the element <u>(inline styles returned only!)</u> <br>
+             - the returned <mark>CSSStyleDeclaration</mark> get or set inline styles
+            <span id="browserSupport" title="updated: 2019-11-15">
+                <span><i class="fab fa-chrome"></i> 45 </span>
+                <span><i class="fab fa-firefox"></i> yes CSS2Properties </span>
+                <span><i class="fab fa-opera"></i> yes </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> yes </span>
+                <span><i class="fab fa-safari"></i> 11 </span>
+            </span>        
+        </td>
+    </tr>
+</table>
+<h2 style="color:green;"><u> Notes : </u></h2>
+    <details class="example" id="notes">
+    <summary> Notes :</summary>
+	<!-- <p> - paragraph removes the 'empty' message from the detail TAG -->
+    </details>
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+<h2 style="color:green;"><u> Remember This : </u></h2>
+    <p> - creating nodes are faster with direct methods (ex: <mark>createElement()</mark>) than parsing a string to HTML code (ex: <mark>innerHTML</mark>)</p>
+<h2 style="color:green;"><u> Description and Demonstration : </u></h2>
+<h2><u> Element Content Management </u></h2>
+    <pre class="syntax">
+SYNTAX :    <strong>element</strong>.innerHTML                                                          // gets or sets the element's content as a string <u>(parses the string into HTML code when set)</u>   
+            <strong>element</strong>.outerHTML                                                          // gets or sets the element itself and its content as a string <u>(parses the string into HTML code when set)</u>   
+            
+            <strong>node</strong>.textContent                                                           // returns the element's <u>and all its children</u> elements' text content in one string (handles hidden elements as well)    
+                                                                                          when set replaces all descendent nodes by the set text node     
+            <strong>element</strong>.innerText                                                          // returns the element's <u>and all its children</u> elements' text content in one string <u>(rendered element only, if the element is hidden by CSS this property cannot see the element but it stil can set it!)</u>    
+                                                                                          when set replaces all descendent nodes by the set text node     
+            
+            <em>document</em>.write(<strong>exp</strong>, <i>...</i>)                                                   // writes the expression(s) to the document on the current line (if it is used after the document is loaded, this will delete all existing HTML)    
+                                                                                          parses the string into HTML code    
+            <em>document</em>.writeln(<strong>exp</strong>, <i>...</i>)                                                 // writes the expression(s) to the document on the current line and inserts a <mark>\n</mark> (new line) character after the statement automatically (if it is used after the document is loaded, this will delete all existing HTML)    
+                                                                                          parses the string into HTML code    
+    </pre>
+    <pre>
+    &lt;p id="demo"&gt; myParagraph &lt;u&gt;underlined&lt;/u&gt; &lt;/p&gt;
+    &lt;p id="demo2" style="visibility:hidden;"&gt; myParagraph &lt;span&gt;mySpan&lt;/span&gt; myParagraph &lt;/p&gt;
+&lt;script&gt;
+    var myElement = document.getElementById('demo');
+    var myElement2 = document.getElementById('demo2');
+    
+// innerHTML --------------------------------------------------------------------------
+    myElement.innerHTML;                                                               // -> ' myParagraph &lt;u&gt;underlined&lt;/u&gt; '                    // returns element's content in a string   
+    myElement.innerHTML = "&lt;mark&gt;marked&lt;/mark&gt;";                                       // element looks like this =  &lt;p id="demo"&gt;&lt;mark&gt;marked&lt;/mark&gt;&lt;/p&gt;
+    
+// outerHTML --------------------------------------------------------------------------
+    myElement.outerHTML;                                                               // -> '&lt;p id="demo"&gt; myParagraph &lt;u&gt;underlined&lt;/u&gt; &lt;/p&gt;'   // returns element itself and it's content in a string 
+    myElement.outerHTML = "&lt;mark&gt;marked&lt;/mark&gt;";                                       // element looks like this =  &lt;mark&gt;marked&lt;/mark&gt;
+    
+// textContent / innerText ------------------------------------------------------------
+    myElement2.textContent;                                                            // ->  "myParagraph mySpan myParagraph"      // the content of each descendent element is returned 
+    myElement2.innerText;                                                              // ->  ""                                    // this method cannot see the element because it's hidden by CSS (otherwise would do the same as the method above)    
+    
+    myElement2.textContent = "replaced content";                                       // element looks like this = &lt;p id="demo2" style="visibility:hidden;"&gt;replaced content&lt;/p&gt;
+    myElement2.innerText = "replaced content";                                         // element looks like this = &lt;p id="demo2" style="visibility:hidden;"&gt;replaced content&lt;/p&gt;   // -! no matter if the element is hidden we stil can set its content    
+    
+// write() / writeln() ----------------------------------------------------------------
+    document.write('&lt;p&gt;', 200+2, '&lt;/p&gt;');                                              // returns and renders this on the current line =  &lt;p&gt;202&lt;/p&gt;
+    document.writeln('&lt;p&gt;', 200+2, '&lt;/p&gt;');                                            // returns and renders this on the current line =  &lt;p&gt;202&lt;/p&gt;\n       // new line character automatically added at the end of the statement  
+&lt;/script&gt;
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> content management </u></h4>
+    <button id="write_demo" onclick="document.write('your document has been overwriten!')"></button>
+<script>
+    document.getElementById('write_demo').innerHTML = "Click to overwrite you document!";       // content of the button element is overwritten!
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;button id="write_demo" onclick="document.write('your document has been overwriten!')"&gt;&lt;/button&gt;
+&lt;script&gt;
+    document.getElementById('write_demo').innerHTML = "Click to overwrite you document!";       // content of the button element is overwritten!
+&lt;/script&gt;
+        </pre>
+        </details>
+<!-------------------------------------------------------------------------------------------------------------------------> 
+<hr>
+<h4 style="color:darkblue;"><u> Node Informations </u></h4>
+    <p id="nodeProp_demo" style="text-decoration:underline;">Paragraph's text content</p><!-- HTML comment -->
+    <p id="nodeProp_disp"></p>
+<script>
+    var nodeChild = document.getElementById('nodeProp_demo');
+    
+    document.getElementById('nodeProp_disp').innerHTML = 
+        " Display paragraph's content with 'innerHTML' property = " + nodeChild.innerHTML + "<br>" +
+        " Display paragraph's content with 'nodeValue' property = " + nodeChild.firstChild.nodeValue + "<br>" +   // we need to acces to the element's child text node!
+        " Paragraph's Node name =  " + nodeChild.nodeName + "<br>" + 
+        " Paragraph's cild Node name = " + nodeChild.firstChild.nodeName + "<br>" +
+        " Comment Node's name = " + nodeChild.nextSibling.nodeName + "<br>" +
+        " Paragraph type = " + nodeChild.nodeType + "<br>" +
+        " Paragraph's child type = " + nodeChild.firstChild.nodeType + "<br>" +
+        " Comment Node Type = " + nodeChild.nextSibling.nodeType + "<br>" + 
+        " Paragraph's attributes = " + nodeChild.attributes + "<br>" + 
+        " First Attribute Name and Value = " + nodeChild.attributes[0].nodeName + " / " + nodeChild.attributes[0].nodeValue + "<br>" +
+        " Second Attribute Name and Value = " + nodeChild.attributes[1].nodeName + " / " + nodeChild.attributes[1].nodeValue;
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="nodeProp_demo" style="text-decoration:underline;"&gt;Paragraph's text content&lt;/p&gt;&lt;!-- HTML comment --&gt;
+    &lt;p id="nodeProp_disp"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var nodeChild = document.getElementById('nodeProp_demo');
+    
+    document.getElementById('nodeProp_disp').innerHTML = 
+        " Display paragraph's content with 'innerHTML' property = " + nodeChild.innerHTML + "&lt;br&gt;" +
+        " Display paragraph's content with 'nodeValue' property = " + nodeChild.firstChild.nodeValue + "&lt;br&gt;" +   // we need to acces to the element's child text node!
+        " Paragraph's Node name =  " + nodeChild.nodeName + "&lt;br&gt;" + 
+        " Paragraph's cild Node name = " + nodeChild.firstChild.nodeName + "&lt;br&gt;" +
+        " Comment Node's name = " + nodeChild.nextSibling.nodeName + "&lt;br&gt;" +
+        " Paragraph type = " + nodeChild.nodeType + "&lt;br&gt;" +
+        " Paragraph's child type = " + nodeChild.firstChild.nodeType + "&lt;br&gt;" +
+        " Comment Node Type = " + nodeChild.nextSibling.nodeType + "&lt;br&gt;" +
+        " Paragraph's attributes = " + nodeChild.attributes + "&lt;br&gt;" +
+        " First Attribute Name and Value = " + nodeChild.attributes[0].nodeName + " / " + nodeChild.attributes[0].nodeValue + "&lt;br&gt;" +
+        " Second Attribute Name and Value = " + nodeChild.attributes[1].nodeName + " / " + nodeChild.attributes[1].nodeValue;
+&lt;/script&gt;
+        </pre>
+        </details>
+<!------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> <mark>innerHTML</mark> / <mark>outerHTML</mark> / <mark>innerContent</mark> / <mark>innerText</mark> TEST </u></h4>    
+    <button onmouseup="renderTest()"> TEST (print test results in console)</button>
+    <p id='inner-1'></p>
+    <p id='inner-2'></p>
+    <ol id='inner-3' style=> ordered list
+        <li> first item <u>underlineed</u> </li>
+        <li> second item <mark>marked</mark> </li>
+        <li> third item <del>deleted</del> </li>
+    </ol>
+    <p id='inner-4' style='visibility:hidden;'> demo <u>demo</u> </p>
+<script id="scriptContent">
+var renderTest = function(){
+// innerHTML / outerHTML --------------------------------------------------------------------
+        document.getElementById('inner-1').innerHTML = '<mark>marked text</mark> <u>underlined text</mark>';    // element content onnly (string parsed to HTML code)  
+        document.getElementById('inner-2').outerHTML = '<ol><li>item</li><li>item</li><li>item</li></ol>';      // element and its content (string parsed to HTML code)
+        
+// textContent / innerText ------------------------------------------------------------------
+        var allContent = document.getElementById('inner-3').textContent;
+            console.log( allContent );                                                                          // content of the element itself and the content of all descendent elements    
+        document.getElementById('inner-3').textContent = 'replaced text! <u>underlined</u>';                    // all descendednt nodes are replaced by a text node 
+        
+        console.log( document.getElementById('inner-4').textContent );                                          // returns the element and all its children element's content 
+        console.log( document.getElementById('inner-4').innerText );                                            // nothing is returned because the element is not rendered (hidden by CSS)  
+    };
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;button onmouseup="renderTest()"&gt; TEST (print test results in console)&lt;/button&gt;
+    &lt;p id='inner-1'&gt;&lt;/p&gt;
+    &lt;p id='inner-2'&gt;&lt;/p&gt;
+    &lt;ol id='inner-3' style=&gt; ordered list
+        &lt;li&gt; first item &lt;u&gt;underlineed&lt;/u&gt; &lt;/li&gt;
+        &lt;li&gt; second item &lt;mark&gt;marked&lt;/mark&gt; &lt;/li&gt;
+        &lt;li&gt; third item &lt;del&gt;deleted&lt;/del&gt; &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p id='inner-4' style='visibility:hidden;'&gt; demo &lt;u&gt;demo&lt;/u&gt; &lt;/p&gt;
+&lt;script id="scriptContent"&gt;
+var renderTest = function(){
+// innerHTML / outerHTML --------------------------------------------------------------------
+        document.getElementById('inner-1').innerHTML = '&lt;mark&gt;marked text&lt;/mark&gt; &lt;u&gt;underlined text&lt;/mark&gt;';    // element content onnly (string parsed to HTML code)  
+        document.getElementById('inner-2').outerHTML = '&lt;ol&gt;&lt;li&gt;item&lt;/li&gt;&lt;li&gt;item&lt;/li&gt;&lt;li&gt;item&lt;/li&gt;&lt;/ol&gt;';      // element and its content (string parsed to HTML code)
+        
+// textContent / innerText ------------------------------------------------------------------
+        var allContent = document.getElementById('inner-3').textContent;
+            console.log( allContent );                                                                          // content of the element itself and the content of all descendent elements    
+        document.getElementById('inner-3').textContent = 'replaced text! &lt;u&gt;underlined&lt;/u&gt;';                    // all descendednt nodes are replaced by a text node 
+        
+        console.log( document.getElementById('inner-4').textContent );                                          // returns the element and all its children element's content 
+        console.log( document.getElementById('inner-4').innerText );                                            // nothing is returned because the element is not rendered (hidden by CSS)  
+    };
+&lt;/script&gt;
+        </pre>
+        </details>
+<!------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> <mark>innerHTML</mark> VS <mark>outerHTML</mark> TEST </u></h4>    
+    <p id="inner_outer"> myParagraph <u>child Element</u></p>
+    <p id="inner"></p>
+    <p id="outer"></p>
+<script>
+$(function(){  
+// innerHTML    
+    $("#inner").text("innerHTML returns = " + document.getElementById("inner_outer").innerHTML);
+// outerHTML
+    $("#outer").text("outerHTML returns = " + document.getElementById("inner_outer").outerHTML);
+}); 
+</script>    
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="inner_outer"&gt; myParagraph &lt;u&gt;child Element&lt;/u&gt;&lt;/p&gt;
+    &lt;p id="inner"&gt;&lt;/p&gt;
+    &lt;p id="outer"&gt;&lt;/p&gt;
+&lt;script&gt;
+$(function(){  
+// innerHTML    
+    $("#inner").text("innerHTML returns = " + document.getElementById("inner_outer").innerHTML);
+// outerHTML
+    $("#outer").text("outerHTML returns = " + document.getElementById("inner_outer").outerHTML);
+}); 
+&lt;/script&gt;    
+        </pre>
+        </details> 
+<!------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> <mark>insertData</mark> / <mark>replaceData()</mark> / <mark>createComment</mark> TEST </u></h4>    
+    <p id="replaceData_1" row="1"> kicsi pityu </p>
+    <p id="replaceData_2"> tarka farka</p>
+<script>
+    var custComment = document.createComment("custom Comment");             // comment Node created and inserted before the above element
+    var refNode = document.getElementById("replaceData_1");
+    document.appendChild(custComment);
+    document.getElementById("replaceData_1").parentNode.insertBefore(custComment, refNode);
+    custComment.replaceData(0, 6, "modified");                              // comment Node modified
+    custComment.insertData(9, "- ");                                        // dash added between the two words
+    
+// replaceData ------    
+    document.getElementById("replaceData_1").firstChild.replaceData(7, 12, "kutya");    // text node value (part of it) modified
+           
+// insertData -------
+    document.getElementById("replaceData_2").firstChild.insertData(6, " se fule se");   // string inserted in the text node
+</script>    
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="replaceData_1" row="1"&gt; kicsi pityu &lt;/p&gt;
+    &lt;p id="replaceData_2"&gt; tarka farka &lt;/p&gt;
+&lt;script&gt;
+    var custComment = document.createComment("custom Comment");             // comment Node created and inserted before the above element
+    var refNode = document.getElementById("replaceData_1");
+    document.appendChild(custComment);
+    document.getElementById("replaceData_1").parentNode.insertBefore(custComment, refNode);
+    custComment.replaceData(0, 6, "modified");                              // comment Node modified
+    custComment.insertData(9, "- ");                                        // dash added between the two words
+    
+// replaceData ------    
+    document.getElementById("replaceData_1").firstChild.replaceData(7, 12, "kutya");    // text node value (part of it) modified
+           
+// insertData -------
+    document.getElementById("replaceData_2").firstChild.insertData(6, " se fule se");   // string inserted in the text node
+&lt;/script&gt;   
+        </pre>
+        </details>
+<!------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h4 style="color:darkblue;"><u> <mark>write()</mark> / <mark>writeln()</mark> TEST </u></h4>    
+    <p style="color:yellow;"> - the printed results by these methods are rendered as inline elements in HTML, in which case the <mark>\n</mark> (new line character) is ignored, so we wrap the printed result in <mark>&lt;pre&gt;</mark> like element which renders new line characters</p>
+    <p style="white-space:pre;">
+<script>
+    var writeFn = function(a, b) {
+        return a**b;
+    }
+    
+// write() ---------------------------------------------------------------------------------
+    document.write('calculation result is = ', writeFn(4, 4));
+    document.write('calculation result is = ', writeFn(4, 4));
+    document.write('calculation result is = ', writeFn(4, 4));
+    document.write('<br>');                                                 // parses the string into HTML code 
+    
+// writeln() -------------------------------------------------------------------------------
+    document.writeln('calculation result is = ', writeFn(4, 4));
+    document.writeln('calculation result is = ', writeFn(4, 4));
+    document.writeln('calculation result is = ', writeFn(4, 4));
+    
+// string to HTML code ---------------------------------------------------------------------
+    document.writeln('<ol><li>item</li><li>item</li><li>item</li></ol>');
+    document.write('<ol><li>item</li><li>item</li><li>item</li></ol>');
+</script>
+    </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p style="white-space:pre;"&gt;
+&lt;script&gt;
+    var writeFn = function(a, b) {
+        return a**b;
+    }
+    
+// write() ---------------------------------------------------------------------------------
+    document.write('calculation result is = ', writeFn(4, 4));
+    document.write('calculation result is = ', writeFn(4, 4));
+    document.write('calculation result is = ', writeFn(4, 4));
+    document.write('&lt;br&gt;');                                                 // parses the string into HTML code 
+    
+// writeln() -------------------------------------------------------------------------------
+    document.writeln('calculation result is = ', writeFn(4, 4));
+    document.writeln('calculation result is = ', writeFn(4, 4));
+    document.writeln('calculation result is = ', writeFn(4, 4));
+    
+// string to HTML code ---------------------------------------------------------------------
+    document.writeln('&lt;ol&gt;&lt;li&gt;item&lt;/li&gt;&lt;li&gt;item&lt;/li&gt;&lt;li&gt;item&lt;/li&gt;&lt;/ol&gt;');
+    document.write('&lt;ol&gt;&lt;li&gt;item&lt;/li&gt;&lt;li&gt;item&lt;/li&gt;&lt;li&gt;item&lt;/li&gt;&lt;/ol&gt;');
+&lt;/script&gt;
+    &lt;/p>
+        </pre>
+        </details>
+</details>
+<!---------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2 style="color:darkblue;"><u> Text and Comment Node </u></h2>
+    <pre class="syntax">
+SYNTAX :    <strong>textNode|commentNode</strong>.length                                                // returns the text length of the node      
+            <strong>textNode|commentNode</strong>.data                                                  // gets or sets the nodes text   
+            <strong>textNode|commentNode</strong>.substirngData(<strong>st(inc):index</strong>, <strong>howMany:nr</strong>)              // returns a new string from the node's text portion    
+            
+            <strong>textNode|commentNode</strong>.insertData(<strong>st(inc):index</strong>, <strong>str</strong>)                        // inserts a text in the node (before the index) by shifting the characters (stretches the content, does not replace characters)    
+            <strong>textNode|commentNode</strong>.replaceData(<strong>st(inc):index</strong>, <strong>howMany:nr</strong>, <strong>str</strong>)           // replaces a part of the node's text with the passed string    
+            <strong>textNode|commentNode</strong>.appendData(<strong>str</strong>)                                       // adds a text <u>at the end</u> of the node's text    
+            
+            <strong>textNode|commentNode</strong>.deleteData(<strong>st(inc):index</strong>, <strong>howMany:nr</strong>)                 // deletes a part of the node's text       
+    </pre>
+    <pre>
+    &lt;p id="text"&gt;text node&lt;/p&gt;&lt;!--comment node--&gt;
+&lt;script&gt;
+    var textNode = document.getElementById('text').childNodes[0];
+    var commentNode = document.getElementById('text').nextSibling;
+    
+// data / length / substringData() ----------------------------------------------------
+    textNode.length;                                                                   // -> 9                          
+    
+    textNode.data;                                                                     // -> 'text node'        
+    textNode.data = 'modified node';                                                   // sets the node's value (text)  
+    
+    commentNode.substringData(0, 7);                                                   // -> 'comment'          // new string returned from the targeted part (7 characters from index 0)   
+    
+// insertData() -----------------------------------------------------------------------
+    textNode.insertData(4, ' -');                                                      // inserts the passed string before the 4th index (stretches the node)   
+        textNode.data;                                                                 // -> 'text - node'
+    
+// replaceData() -----------------------------------------------------------------------
+    textNode.replaceData(4, 1, ' - ');                                                 // replaces 1 character at 4th index with the passed string (stretches the node in this case)   
+        textNode.data;                                                                 // -> 'text - node'
+    
+// appendData() -----------------------------------------------------------------------
+    textNode.appendData('!');                                                          // appends the passed string at the end of the node   
+        textNode.data;                                                                 // -> 'text - node'
+        
+// deleteData() -----------------------------------------------------------------------
+    textNode.deleteData(4, 5);                                                         // deletes 5 characters from index 4
+        textNode.data;                                                                 // -> 'text'
+&lt;/script&gt;
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+    <h4 style="color:darkblue;"><u>  TEST </u></h4>    
+    <button onmouseup="directContent()"> TEST (print test result in console)</button>
+    <p id="directContent">some content</p><!--comment node content-->
+<script>
+var directContent = function(){
+    var textNode = document.getElementById('directContent').firstChild;
+    var commentNode = document.getElementById('directContent').nextSibling;
+    
+console.warn('// data / length -----------------------------------------------------------------' );
+    console.log( commentNode.data );                                            // get node's content 
+    console.log( textNode.data );                                               // get node's content 
+    
+    textNode.data = 'new content';                                              // set node's content
+    commentNode.data = 'new comment';                                           // set node's content
+        console.log( textNode.data );                                           // new comment node content set 
+        
+    console.log( commentNode.length );                                          // new content length  
+    console.log( textNode.length );
+    
+console.warn('// substringData() ---------------------------------------------------------------' );
+    console.log( textNode.substringData(0, 3) );                                // -> 'new'     // new string part returned from the node 
+    
+console.warn('// insertData() ------------------------------------------------------------------' );
+    console.log( commentNode.length );                                          // -> 11 
+    commentNode.insertData(3, ' -');                                            // inserts data by stretching the string  
+        console.log( commentNode.data );
+    console.log( commentNode.length );                                          // -> 13        // characters added  
+    
+console.warn('// appendData() ------------------------------------------------------------------' );
+    textNode.appendData(' appended content!');                                  // append text  
+        console.log( textNode.data );
+    
+console.warn('// replaceData() -----------------------------------------------------------------' );
+        console.log( commentNode.data );
+    commentNode.replaceData(0, 3, 'old');                                       // replace 3 characters from index 0 by the passed string  
+        console.log( commentNode.data );
+    
+console.warn('// deleteData() ------------------------------------------------------------------' );
+        console.log( textNode.data );
+            textNode.deleteData(12, 9);                                         // remove 9 characters from index 12 
+        console.log( textNode.data );
+};
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;button onmouseup="directContent()"&gt; TEST (print test result in console)&lt;/button&gt;
+    &lt;p id="directContent"&gt;some content&lt;/p&gt;&lt;!--comment node content--&gt;
+&lt;script&gt;
+var directContent = function(){
+    var textNode = document.getElementById('directContent').firstChild;
+    var commentNode = document.getElementById('directContent').nextSibling;
+    
+console.warn('// data / length -----------------------------------------------------------------' );
+    console.log( commentNode.data );                                            // get node's content 
+    console.log( textNode.data );                                               // get node's content 
+    
+    textNode.data = 'new content';                                              // set node's content
+    commentNode.data = 'new comment';                                           // set node's content
+        console.log( textNode.data );                                           // new comment node content set 
+        
+    console.log( commentNode.length );                                          // new content length  
+    console.log( textNode.length );
+    
+console.warn('// substringData() ---------------------------------------------------------------' );
+    console.log( textNode.substringData(0, 3) );                                // -&gt; 'new'     // new string part returned from the node 
+    
+console.warn('// insertData() ------------------------------------------------------------------' );
+    console.log( commentNode.length );                                          // -&gt; 11 
+    commentNode.insertData(3, ' -');                                            // inserts data by stretching the string  
+        console.log( commentNode.data );
+    console.log( commentNode.length );                                          // -&gt; 13        // characters added  
+    
+console.warn('// appendData() ------------------------------------------------------------------' );
+    textNode.appendData(' appended content!');                                  // append text  
+        console.log( textNode.data );
+    
+console.warn('// replaceData() -----------------------------------------------------------------' );
+        console.log( commentNode.data );
+    commentNode.replaceData(0, 3, 'old');                                       // replace 3 characters from index 0 by the passed string  
+        console.log( commentNode.data );
+    
+console.warn('// deleteData() ------------------------------------------------------------------' );
+        console.log( textNode.data );
+            textNode.deleteData(12, 9);                                         // remove 9 characters from index 12 
+        console.log( textNode.data );
+};
+&lt;/script&gt;
+        </pre>
+        </details>
+</details>
+<!---------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2><u> Element / Node Informations </u></h2>
+    <pre class="syntax">
+SYNTAX :    <strong>element</strong>.tagName                                                            // returns the element's tag name in a string
+            <strong>node</strong>.nodeValue                                                             // gets or sets the node's value (ex: text content of a text node)
+            <strong>node</strong>.nodeName                                                              // returns name of the node in a string     
+            <strong>node</strong>.nodeType                                                              // returns a number referring to the node's type (<mark>1</mark> = element | <mark>2</mark> = attribute[depricated] | <mark>3</mark> = text | <mark>4</mark> = CDATA | <mark>8</mark> = comment | <mark>9</mark> = document | <mark>10</mark> = document type | <mark>11</mark> = document fragment)   
+    </pre>
+    <pre>
+&lt;p id="innerDemo"&gt; demo &lt;u&gt;demo&lt;/u&gt; &lt;/p&gt;
+&lt;script&gt;    
+    var myElement = document.getElementById("innerDemo");
+    
+    myElement.tagName;                                                                 // -&gt; "P"
+    myElement.nodeValue;                                                               // -&gt; null      // the element's value as a node!
+    myElement.nodeName;                                                                // -&gt; P         // paragraph Node (element)
+    myElement.nodeType;                                                                // -&gt; 1         // 1 = refers to an element
+    
+    myElement.childNodes[0].nodeValue;                                                 // -&gt; demoDemo  // the text node's value
+    myElement.childNodes[0].nodeName;                                                  // -&gt; #text     // text node
+    myElement.childNodes[0].nodeType;                                                  // -&gt; 3         // 3 = refers to a text node
+&lt;/script&gt;    
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> Node Informations </u></h4>
+    <p id="nodeProp_demo" style="text-decoration:underline;">Paragraph's text content</p><!-- HTML comment -->
+    <p id="nodeProp_disp"></p>
+<script>
+    var nodeChild = document.getElementById('nodeProp_demo');
+    
+    document.getElementById('nodeProp_disp').innerHTML = 
+        " Display paragraph's content with 'innerHTML' property = " + nodeChild.innerHTML + "<br>" +
+        " Display paragraph's content with 'nodeValue' property = " + nodeChild.firstChild.nodeValue + "<br>" +   // we need to acces to the element's child text node!
+        " Paragraph's Node name =  " + nodeChild.nodeName + "<br>" + 
+        " Paragraph's cild Node name = " + nodeChild.firstChild.nodeName + "<br>" +
+        " Comment Node's name = " + nodeChild.nextSibling.nodeName + "<br>" +
+        " Paragraph type = " + nodeChild.nodeType + "<br>" +
+        " Paragraph's child type = " + nodeChild.firstChild.nodeType + "<br>" +
+        " Comment Node Type = " + nodeChild.nextSibling.nodeType + "<br>" + 
+        " Paragraph's attributes = " + nodeChild.attributes + "<br>" + 
+        " First Attribute Name and Value = " + nodeChild.attributes[0].nodeName + " / " + nodeChild.attributes[0].nodeValue + "<br>" +
+        " Second Attribute Name and Value = " + nodeChild.attributes[1].nodeName + " / " + nodeChild.attributes[1].nodeValue;
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    &lt;p id="nodeProp_demo" style="text-decoration:underline;"&gt;Paragraph's text content&lt;/p&gt;&lt;!-- HTML comment --&gt;
+    &lt;p id="nodeProp_disp"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var nodeChild = document.getElementById('nodeProp_demo');
+    
+    document.getElementById('nodeProp_disp').innerHTML = 
+        " Display paragraph's content with 'innerHTML' property = " + nodeChild.innerHTML + "&lt;br&gt;" +
+        " Display paragraph's content with 'nodeValue' property = " + nodeChild.firstChild.nodeValue + "&lt;br&gt;" +   // we need to acces to the element's child text node!
+        " Paragraph's Node name =  " + nodeChild.nodeName + "&lt;br&gt;" + 
+        " Paragraph's cild Node name = " + nodeChild.firstChild.nodeName + "&lt;br&gt;" +
+        " Comment Node's name = " + nodeChild.nextSibling.nodeName + "&lt;br&gt;" +
+        " Paragraph type = " + nodeChild.nodeType + "&lt;br&gt;" +
+        " Paragraph's child type = " + nodeChild.firstChild.nodeType + "&lt;br&gt;" +
+        " Comment Node Type = " + nodeChild.nextSibling.nodeType + "&lt;br&gt;" +
+        " Paragraph's attributes = " + nodeChild.attributes + "&lt;br&gt;" +
+        " First Attribute Name and Value = " + nodeChild.attributes[0].nodeName + " / " + nodeChild.attributes[0].nodeValue + "&lt;br&gt;" +
+        " Second Attribute Name and Value = " + nodeChild.attributes[1].nodeName + " / " + nodeChild.attributes[1].nodeValue;
+&lt;/script&gt;
+        </pre>
+        </details>
+</details>
+<!---------------------------------------------------------------------------------------------------------------------------->
+<hr>
+<h2><u> Element Styling </u></h2>
+    <pre class="syntax">
+SYNTAX :    <strong>element</strong>.style                                                              // returns the <mark>CSSStyleDeclaration</mark> object which holds the styling information of the element <u>(inline styles returned only!)</u>    
+                                                                                          the returned <mark>CSSStyleDeclaration</mark> get or set inline styles   
+                                                                                          
+            <em>window</em>.getComputedStyle(<strong>element</strong><i>, pseudoElement</i>)                            // returns the <mark>CSSStyleDeclaration</mark> object which holds the styling information of the element 
+                                                                                          the returned <mark>CSSStyleDeclaration</mark> object is read-only in this situation  
+    </pre>
+    <pre>
+    &lt;p id="demo"&gt; demo paragraph &lt;/p&gt;
+&lt;script&gt;  
+    var demoElement = document.getElementById('demo');
+    
+// style ------------------------------------------------------------------------------
+    var cssInline = demoElement.style;                                                 // -> CSSStyleDeclaration {...}      // -! the returned object holds inline styles only!   
+    cssInline.color = 'orange';                                                        // object can be used to set inline styles 
+    
+// getComputedstyle() -----------------------------------------------------------------
+    var cssAll = window.getComputedStyle(demoElement);                                 // -> CSSStyleDeclaration {...}      // the returned object holds all element styles (head, external and inline styles)    
+    cssAll.padding = '10px';                                                           // -! we cannot set styles in this situation (throws a DOMExeption error)   
+&lt;/script&gt;    
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> content management </u></h4>
+<h4><u> <mark>style</mark> VS <mark>getComputedStyle()</mark> TEST </u></h4>
+    <p id="styleTest" style="background-color:white;"> Style Test element </p>
+<script>
+    var styleTest = document.getElementById("styleTest");
+    
+// style attribute CSS values 
+    var styleDec = styleTest.style;                         // -> CSSStyleDeclaration object returned
+    var headStyle = styleDec.textDecoration;                // -> ""        // style attribute does note return head styles 
+    var extFileStyle = styleDec.color;                      // -> ""        // style attribute does not return external file styes 
+    var inlineStyle = styleDec.backgroundColor;             // -> "white"   // style attribute ONLY returns inline styles 
+    
+// getComputedStyle CSS values
+    var getCompStyle = window.getComputedStyle(styleTest);  // -> CSSStyleDeclaration object returned (holds ALL the current CSS values)
+    var headStyle_2 = getCompStyle.textDecoration;          // -> "underline solid rgb(255, 0, 0)"    // head styles returned 
+    var extFileStyle_2 = getCompStyle.color;                // -> "rgb(255, 0, 0)"                    // external file styes returned 
+    var inlineStyle_2 = getCompStyle.backgroundColor;       // -> "rgb(255, 255, 255)"                // inline styles returned
+    
+// set style with the style attribute 
+    styleDec.fontSize = "2em";
+    styleDec.letterSpacing = ".5em";
+</script>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+-- in the head element --
+    <style>
+        #styleTest { text-decoration: underline; }
+    </style>
+            
+-- CODE (HTML) -- 
+    <p id="styleTest" style="background-color:white;"> Style Test element </p>
+<script>
+    var styleTest = document.getElementById("styleTest");
+    
+// style attribute CSS values 
+    var styleDec = styleTest.style;                         // -> CSSStyleDeclaration object returned
+    var headStyle = styleDec.textDecoration;                // -> ""        // style attribute does note return head styles 
+    var extFileStyle = styleDec.color;                      // -> ""        // style attribute does not return external file styes 
+    var inlineStyle = styleDec.backgroundColor;             // -> "white"   // style attribute ONLY returns inline styles 
+    
+// getComputedStyle CSS values
+    var getCompStyle = window.getComputedStyle(styleTest);  // -> CSSStyleDeclaration object returned (holds ALL the current CSS values)
+    var headStyle_2 = getCompStyle.textDecoration;          // -> "underline solid rgb(255, 0, 0)"    // head styles returned 
+    var extFileStyle_2 = getCompStyle.color;                // -> "rgb(255, 0, 0)"                    // external file styes returned 
+    var inlineStyle_2 = getCompStyle.backgroundColor;       // -> "rgb(255, 255, 255)"                // inline styles returned
+    
+// set style with the style attribute 
+    styleDec.fontSize = "2em";
+    styleDec.letterSpacing = ".5em";
+</script>
+    
+-- CODE (CSS) --
+    #styleTest {
+        color: red;
+    }
+        </pre>
+        </details>
+</details>
+   
+   
+    
+<h2 class="test" style=""><a href="TEST/index.html"> TEST (empty) > </a></h2>
+</body>
+</html>
