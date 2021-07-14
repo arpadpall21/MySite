@@ -268,12 +268,14 @@
     </tr>
     <tr class="10.01">
         <td> tabindex </td>
-        <td> <strong>nr</strong> </td>
+        <td> <strong class="openable">nr<div>
+            <p> <mark>0</mark> - element becomes focusable </p>
+            <p> <mark>-<strong>nr</strong></mark> (negative number) - element becomes focusable but excluded from the tabbing sequence </p>
+        </div></strong> </td>
         <td> 
             - defines the tabbing order for the element (tabbing order within the tabbing group) <br>
             - not focusable elements become focusable in HTML5 <br>
             - when the user iterates with the TAB button elements having this attribute will come before elements not having this attribute <br>
-            - passing a negative value (ex: <mark>-1</mark>) element becomes focusable but excluded from the tabbing sequence  
             <span id="browserSupport" title="Updated: 2021-05-28">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> yes </span>

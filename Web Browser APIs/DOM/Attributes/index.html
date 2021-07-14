@@ -210,18 +210,17 @@
     <br>
 <table class="table">
 <caption> 
-    The DOMTokenList API (attribute collection/list) returned by <mark><strong>element</strong>.attributes</mark>
+    The DOMTokenList API (class attribute collection/list) returned by <mark><strong>element</strong>.classList</mark>
     <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
  </caption>
     <tr>
         <th style="width:30%;"> Method / Property </th>
         <th> Description </th>
     </tr>
-    
-    <tr>
+    <tr class="10.01">
         <td> <strong>domTokenList</strong>.add(<strong>classId:str</strong><i>, ...</i>) </td>
         <td> 
-            add new class id(s) to the Class List 
+            - add new class id(s) to the Class List 
             <span id="browserSupport" title="updated : 2019-05-23">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> yes </span>
@@ -231,10 +230,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="10.13">
         <td> <strong>domTokenList</strong>.contains(<strong>classId:str</strong>) </td>
         <td> 
-            returns a boolean indicating if the specified class id is present in the Class List 
+            - returns a boolean indicating if the specified class id is present in the Class List 
             <span id="browserSupport" title="updated : 2019-05-23">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> yes </span>
@@ -270,10 +269,10 @@
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>domTokenList</strong>.intem(<strong>index</strong>) </td>
+    <tr class="10.12">
+        <td> <strong>domTokenList</strong>.item(<strong>idx:nr</strong>) </td>
         <td> 
-            returns the targeted classId in the sequence 
+            - returns the targeted classId in the sequence 
             <span id="browserSupport" title="updated : 2019-05-23">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> yes </span>
@@ -296,10 +295,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="05.01">
         <td> <strong>domTokenList</strong>.length </td>
         <td> 
-            returns the number of class id's in the Class List 
+            - returns the number of class id's in the Class List 
             <span id="browserSupport" title="updated : 2019-05-23">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> 50 </span>
@@ -309,10 +308,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.01">
         <td> <strong>domTokenList</strong>.remove(<strong>classId:str</strong><i>, ...</i>) </td>
         <td> 
-            remove the specified classId(s) from the Class List 
+            - remove the specified classId(s) from the Class List 
             <span id="browserSupport" title="updated : 2019-05-23">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> yes </span>
@@ -322,10 +321,10 @@
             </span>
         </td>
     </tr>
-    <tr>
+    <tr class="15.02">
         <td> <strong>domTokenList</strong>.replace(<strong>oldClassId:str, newClassId:str</strong>) </td>
         <td> 
-            replaces the targeted classId with the passed new classId 
+            - replaces the targeted classId with the passed new classId 
             <span id="browserSupport" title="updated : 2019-05-23">
                 <span><i class="fab fa-chrome"></i> 61 </span>
                 <span><i class="fab fa-firefox"></i> 49 </span>
@@ -335,10 +334,12 @@
             </span>
         </td>
     </tr>
-    <tr>
-        <td> <strong>domTokenList</strong>.toggle(<strong>classId:str</strong><i>, force:bol</i>) </td>
+    <tr class='20.01'>
+        <td> <strong>domTokenList</strong>.toggle(<strong>classId:str</strong>, <i class="openable">force:bol<div>
+            <p> - permanent toggle state (<mark>ture</mark> = toggled on | <mark>flase</mark> = toggled off)</p>
+        </div></i>) </td>
         <td> 
-            toggles the specified classId every time it's called and returns a boolean indicating of the current toggle state 
+            - toggles the specified classId every time it's called and returns a boolean indicating of the current toggled status 
             <span id="browserSupport" title="updated : 2019-05-23">
                 <span><i class="fab fa-chrome"></i> yes </span>
                 <span><i class="fab fa-firefox"></i> yes </span>
