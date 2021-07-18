@@ -372,8 +372,13 @@
     </tr>
     <tr>
         <td> systemctl reload <strong>serviceName</strong> </td>
-        <td> reloads the system (reloads configurations) </td>
+        <td> reloads the <strong>serviceName</strong>'s configuration file (without restarting the service if possible) </td>
     </tr>
+    <tr>
+        <td> systemctl restart <strong>serviceName</strong>|all </td>
+        <td> - restart the specified service or all running services </td>
+    </tr>
+    
     <tr>
         <td> systemctl start <strong>serviceName</strong> </td>
         <td> starts the specified service </td>
@@ -621,9 +626,10 @@
         <td> prints the stats of the specified file(s) or directory(ies) </td>
     </tr>
     <tr>
-        <td> tail <small>[-n <i>nr</i>]</small> <strong>filePath</strong> <i>...</i> </td>
+        <td> tail <small>[-n <i>nr</i>]</small> <small>[-f]</small> <strong>filePath</strong> <i>...</i> </td>
         <td>  
              - returns the last 10 lines of the specified file(s) <br>
+             - (<small>-f</small>) continuously prints the file's last lines when the file is updated (used to continuously monitor server log files) 
              - (<small>-n <i>nr</i></small>) specifies the number of lines to display 
         </td>
     </tr>

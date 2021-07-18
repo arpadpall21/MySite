@@ -1,2 +1,4 @@
-FROM node
-RUN echo 'this is a test!'
+FROM node:latest
+WORKDIR "/home/apall/Documents/Pall's Stuff/CodePlus/My Site/Docker"
+ADD . .
+CMD node testSrv.js

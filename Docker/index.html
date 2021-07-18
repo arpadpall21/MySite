@@ -84,8 +84,10 @@
     
     - images                                        -> list of docker images 
     
+    - image rm dockerImg ...                        -> removes the specified docker image(s)
+    
     - run [-d] [-p srcPort:contPort] [--name contName] [-v srcDir:trgDir[:ro]] [--volumes-from contName] image:tag
-                                                    -> runs the specified image as a container 
+                                                    -> creates from the specified image a container 
                                                         -d -> detached mode  
                                                         -p srcPort:trgPort -> port mapping (multiple ports can be mapped)
                                                         --name name  -> sets the name of the container 
@@ -110,27 +112,31 @@
 - Dockerfile
     - create a 'Dockerfile' in the directory (context)
     - file content is caseinsensitive but the convertion is that instructions are written with UPPERCASE 
-    
+    - the Dockerfile is build by the daemon not the CLI
     
     
     
     - in file
         # comment 
-        FROM image:tag                  // from which image we are building (must be the first command)   
-        ADD src trg                     // add a volume to the Dcoker image 
-        WORKDIR dirPath                 // sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, ADD instructions that follow int hte Dockerfile  
-        RUN cmd                         // runs the command when building a the image 
-        CMD cmd                         // this command will be executed when the container starts 
+        FROM image[:tag] [AS name]                              // from which image we are building (must be the first command)   
+        ADD src trg                                             // add a volume to the Dcoker image 
+        WORKDIR dirPath                                         // sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, ADD instructions that follow int hte Dockerfile  
+        RUN cmd                                                 // runs the command when building a the image 
+        CMD cmd                                                 // this command will be executed when the container starts 
+        ENV key=val                                             // sets an environment variable (multiple can be used)  
     
     
-    - build [-f path/Dockerfile] [t trgDir] [--tag imageName:tagName]  -> builds an image from the Dockerfile and a contxt
+    
+    - build [-f path/Dockerfile] [t trgDir] [--tag imageName:tagName] path  -> builds an image from the Dockerfile and a contxt
                                                             -f path/Dockerfile builds from this source Dockerfile    
-                                                            -t target directory where to build the new image    
+                                                            -t repository and tage at which to save the new image  
                                                             --tag 
                                                             
                                                             
 - dockerignore                          // files or directories specified here will be excluded when building the docker image   
-    filePath|dirPath
+    filePath|dirPath                    // files and directories to exclude from the docker images (line by line) unix shell globs can be used here! 
+    # comment 
+    
     
     
 - in order to use the BuildKit (supported from 18.09) set the DOCKER_BUILDKIT=1 before you build the image   
