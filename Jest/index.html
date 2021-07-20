@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Jest </title> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="../Assets/stylesPages.css"> 
+    <script src="../Assets/scriptPages.js"></script>
+</head>
+<body>
+<h1> Jest (ver 4.0.0) </h1>
+    <p> Updated ( 2021-07-18 )</p>
+    <p class="sitenav"> <a href="../index.html">MySite></a> Jest </p>
+<table class="table">
+<caption>
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
+    <tr>
+        <th style="width:30%;"> Method / Property / statement ect... </th>
+        <th> Description </th>
+    </tr>
+<tr class="0">
+<td> 
+            Demo Prop 
+</td>
+<td> 
+            demo description 
+            <span class="browserSupport" title="updated : yyyy-mm-dd">
+                <span><i class="fab fa-chrome"></i> 0/0 -webkit- </span>
+                <span><i class="fab fa-firefox"></i>  </span>
+                <span><i class="fab fa-opera"></i>  </span>
+                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i>  </span>
+                <span><i class="fab fa-safari"></i>  </span>
+                <span><i class="fab fa-node-js"></i>  </span>
+            </span>
+</td>
+</tr>
+
+
+
+
+</table>
+    <br>
+    <details class="example" id="notes">
+    <summary> Notes :</summary>
+        <!-- <p> - paragraph removes the 'empty' message from the detail TAG -->
+    </details>
+<h2 style="color:green;"><u> Useful Links : </u></h2>
+    
+<h2 style="color:green;"><u> Remember This : </u></h2>
+    
+<h2 style="color:green;"><u> Description and Demonstration : </u></h2>
+
+
+<pre>
+- jest command will find in the current directory the *.test.js file and runs it 
+  
+  
+- toBe 	-> same value comparison only (==)
+- toEqual 	-> strict value comparison (===) 
+  
+  
+------------------------------------------------------------------------------------------------
+- with asynch code in the callback the done must be used to signal the end of an async operation
+	it('nested TEST', function(done){
+		function result(err, data){
+		    console.log( data.toString() );
+		    expect(data.toString()).toBe('some content')
+		    done()
+		}
+		
+		fs.readFile('./someDummyFile.txt', result)
+	})
+  
+  
+- a promise must be returned, otherwise jest times out with a failed test 
+	it('some test', function(){
+		return promise
+		    .then((res) => {
+		        expect(res).toBe('timed out!')
+		        
+		    }).catch((rej) => {
+		        console.log( rej );
+		    })
+	})
+  
+  
+- if we expect a promise to fail we should specify how many assersion we expect to fail  
+	it('some test', function(){
+    expect.assertions(1);  
+    
+    return promise
+        .then((res) => {
+            
+        }).catch((rej) => {
+            expect(rej).toMatch('timed out!')
+        })
+	})
+  
+- rejected promise can be handled by this as well 
+it('some test', function(){
+    return expect(promise).rejects.toBe('timed out!')
+})
+  
+  
+  - jest waits promises to be resolved to handle asynchronous tests (must be returned)
+    test(<label>, () => {
+      return fetchData().catch(e => expect(e).toMatch('error'));
+    });
+    
+    test('the data is peanut butter', () => {
+      return expect(fetchData()).resolves.toBe('peanut butter');
+    });
+    
+    test('the fetch fails with an error', () => {
+      return expect(fetchData()).rejects.toMatch('error');
+    });
+    
+  - async/await
+    est('the data is peanut butter', async () => {
+      await expect(fetchData()).resolves.toBe('peanut butter');
+    });
+  
+    test('the fetch fails with an error', async () => {
+      await expect(fetchData()).rejects.toMatch('error');
+    });
+  
+  
+  
+  
+  
+-- taks for the whole test (these  methods can be placed in a specific group (scopes))
+  beforeEach(() => {
+    // stuff to do before each test case 
+  })
+  
+  afterEach(() => {
+    // stuff to do after each test 
+  })
+  
+  beforeAll(() => {
+    // stuff to do before all test 
+  })
+  
+  afterAll(() => {
+    // stuff to do avert all test   
+  })
+  
+  
+  
+  
+  test(<label>, function(){
+    // test cases are comming here ....
+  })
+  
+  
+-- expection in test callback 
+  - expect().not<.method>         // negates the expected test result 
+  
+  - expect().toBe()               // expected value 
+  - expect().toEqual()            // recursively checks every filed in an object or array | or must be an exact number 
+  - expect().toBeNull()  
+  - expect().toBeUndefined()  
+  - expect().toBeDefined()  
+  - expect().toBeTruthy()
+  - expect().toBeFalsy()
+  
+  - expect().toBeGreaterThan()
+  - expect().toBeGreaterThanOrEqual()
+  - expect().toBeLessThan()
+  - expect().toBeLessThanOrEqual()
+  
+  - expect().toMatch()            // expected string (regExp can be passed as expected value)
+  
+  - expect().toContain()          // array or iterable object contains the expected value  
+  
+  - expect().toThrow()            // expects a thrown error by a function 
+  
+</pre>
+
+
+
+<!--
+---------------------------------------------------------------------------------------------
+WRITE DOWN EVERYTHING NEW
+---------------------------------------------------------------------------------------------
+
+
+
+
+
+?????????????????????????????????????????????????????????????????????????????????????????????
+WRITE DOWN WHAT YOU DON'T UNDERSTAD OR MUST BE TESTED AS QUESTIONS HERE
+?????????????????????????????????????????????????????????????????????????????????????????????
+
+-->
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr><hr><hr><hr><hr>
+    
+    
+<h2><u> Title 1 </u></h2>
+<h2 style="color:darkblue;"> Title 1.1 </h2>
+<h3 style="color:darkblue;"> Title 1.1.1 </h3>
+<h4 style="color:darkblue;"> Title 1.1.1.1 </h4>
+    <p> - stuff to learn <mark>keywords_are_highlighted()</mark> bla bla bla </p>
+    <p style="text-decoration:underline;"> - important information is underlined </p>
+    <p style="color:yellow;"> - very important information is written with yellow colors </p>
+    <p style="background-color:yellow;"> - highly important information has yellow background color </p>
+    <div style="background-color:red;">
+        <p> - red background block means not learned or not tested information! </p>
+        <p> - </p>
+    </div>
+    
+    <pre class="syntax">
+SYNTAX :    main syntax
+            <em>literally used </em>
+            <small>literally used optional </small>
+            <prot style="color:#049500;">prototype chain</prot>
+            <strong>required value </strong>
+            <i>optional value </i>
+                - some descriptions will come here (like arguments)
+                - ??? (3 question marks) in syntax means not tested or not learned yet
+                
+            <span class="openable"> this is an openable element<div>
+                <p> - openable elements listed here in paragraphs </p>
+                <p> - </p>
+            </div></span>
+    </pre>
+    
+<details class="example">
+<summary> DEMO </summary>
+    <pre>
+    examples of the current lessons 
+    
+// -----------------------------------------
+
+// -----------------------------------------
+    </pre>
+</details>
+    
+    <pre class="cmd">
+    command line demo 
+    </pre>
+    <pre class="formula">
+    formula code (like conversion meter...)
+    </pre>
+<details class="example">
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> example title </u></h4>
+    <p> - live tests will come here </p>
+        <details>
+        <summary> CODE : </summary>
+        <pre>
+    copy of the exaple code 
+        </pre>
+        </details>
+</details>
+<!---------------------------------------------------------------------------------------------------------------------------------->    
+<hr>
+    
+<h2 class="test" style=""><a href="TEST/index.html"> TEST > </a></h2>
+    
+    
+    <br><br>
+</body>
+</html>
