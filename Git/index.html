@@ -61,6 +61,13 @@
         <td> <em>git</em> log --oneline --all --graph </td>
         <td> - displays the Git Tree of the Git history </td>
     </tr>
+    
+    <tr class="05.01">
+        <td> <em>git</em> reflog </td>
+        <td> 
+             - displays the git command history log 
+        </td>
+    </tr>
     <tr class="03">
         <td> <em>git</em> status </td>
         <td> 
@@ -84,6 +91,12 @@
         <td> <em>git</em> add --all </td>
         <td>
             - adds <u>all changes</u> from the Modified area to the Staging area 
+        </td>
+    </tr>
+    <tr class="27.01">
+        <td> <em>git</em> cherry-pick <strong>commitId</strong> </td>
+        <td>
+            - pircks the specified <strong>commitId</strong> and put at the top of the current branch  
         </td>
     </tr>
     <tr class="24.01">
@@ -110,21 +123,28 @@
     </tr>
         <tr class="22.02"><td></td><td></td></tr>
     <tr class="22.03">
-        <td> <em>git</em> commit <small>[--amend] [-m <strong>message</strong>]</small> </td>
+        <td> <em>git</em> commit --amend <small>[-m <strong>message</strong>]</small> </td>
         <td> 
-             - modifies <u>the most recent</u> commit's message (opens the default text editor to input the commit message) <br>
-             - (<small>-m <strong>message</strong>)</small> adds a commit message directly (without opening the text editor) 
+             - deletes all changes in the modified and staging area (removes all modification after the current commit) <br>
+             - (<small>-m <strong>message</strong></small>) modifies <u>the most recent</u> commit's message (opens the default text editor to input the commit message) 
         </td>
     </tr>
     <tr class="26.1">
         <td> <em>git</em> reset <small>[--hard]</small> <strong>tagName|commitId</strong> </td>
         <td> 
              - (no option) removes all commits on the branch <u>aftert the specified one</u> <u>(only commits are removed, any file modifications are kept in the Modified Area)</u> <br>
-             - (<small>--hard</small>) completely destroys commits and any file modifications after the specified commit 
+             - (<small>--hard</small>) completely destroys commits and any file modifications after the specified commit <br>
         </td>
     </tr>
         <tr class="26.2"><td></td><td></td></tr>
     <tr class="26.3">
+        <td> <em>git</em> reset --hard <strong>remoteVar</strong>/<strong>branch</strong> </td>
+        <td> 
+             - pulls the branch from the remote repository and <u>overwrites</u> the current branch 
+        </td>
+    </tr>
+        <tr class="26.4"><td></td><td></td></tr>
+    <tr class="26.5">
         <td> <em>git</em> reset HEAD <i>path</i> </td>
         <td> 
             - empties the Staging Area by putting files back to their previos place (or only the specified file) 
@@ -229,11 +249,17 @@
 </td><td>        
             - creates a new branch from the current commit (or from the specified commit) 
 </td></tr>
-<tr class="41"><td> 
+<tr class="41.01"><td> 
             <em>git</em> diff <small>[--staged]</small> 
 </td><td> 
              - (no option) prints file differences between the previous Commit and the Modified Area <br>
              - (<small>--staged</small>) prints file differences between the previous Commit and the Staging Area   
+</td></tr>
+<tr class="41.02"><td></td><td></td></tr>
+<tr class="41.03"><td> 
+            <em>git</em> diff <strong>localBranch</strong> <strong>remoteVar</strong>/<strong>remoteBranch</strong>
+</td><td> 
+             - displays the difference between the local and the remoted branch <u>(used afer <mark>fetch</mark>)
 </td></tr>
 <tr class="42.01"><td> 
             <em>git</em> merge <strong>branchName</strong> <small>[-m <strong>message</strong>]</small> 
@@ -259,6 +285,15 @@
 <tr class="43.02"><td></td><td></td></tr>
 <tr class="43.03">
 <td> 
+            <em>git</em> rebase -i <strong>branchId</strong> 
+</td>
+<td> 
+            - move back to the <strong>branchId</strong> and rebases this branch in interactive mode (-i)
+</td>    
+</tr>
+<tr class="43.04"><td></td><td></td></tr>
+<tr class="43.05">
+<td> 
             <em>git</em> rebase --abort|--continue 
 </td>
 <td>        - aborts or continues the rebase conflict <u>(rebase conflicts must be either resolved and continued or aborted)</u> 
@@ -275,6 +310,15 @@
 </td>
 <td>        
             - clones the remote repository in the current local directory 
+</td>
+</tr>
+<tr class="60.01">
+<td> 
+            <em>git</em> fetch <small>branch</small> 
+</td>
+<td>        
+            - fetches the commints from the remote repository of the curren branch or the specified one <br>
+            - fetched commits are not visible use the <mark>git diff <strong>localBranch</strong> <strong>remoteVar</strong>/<strong>remoteBranch</strong> to compare the difference  
 </td>
 </tr>
 <tr class="54">
@@ -1012,6 +1056,8 @@
 <hr>
 <!-------------------------------------------------------------------------------------------------------------------------------->
 <h2 style="color:darkblue;"><u> Branches and Merging Branches <mark>branch</mark> / <mark>diff</mark> / <mark>merge</mark> / <mark>rebase</mark> </u></h2>
+    <p> - commit hashes are basically computed from the content of the commit, every commit contains the hash which is ahead of it, this is how they form the commit chain (or tree) </p>
+    <p> - merging is basically going back to a specific commit then 'merging' the commits ahead, so git recomputes the hashes and check if ther's any change compared to the content what it has now </p>
     <img src="Merge VS Rebase.jpg" height="250">
 <details class="example">
 <summary> DEMO </summary>
@@ -1234,7 +1280,7 @@
 </details>
 <hr>
 <!-------------------------------------------------------------------------------------------------------------------------------->
-<h2 style="color:darkblue;"><u> Remote Repository (no GitHub) <mark>clone</mark> / <mark>remote</mark> / <mark>push</mark> / <mark>pull</mark> </u></h2>
+<h2 style="color:darkblue;"><u> Remote Repository (no GitHub) <mark>clone</mark> / <mark>remote</mark> / <mark>push</mark> / <mark>pull</mark> / <mark>fetch</mark></u></h2>
 <details class="example">
 <summary> DEMO </summary>
     <pre class="cmd">
@@ -1251,8 +1297,15 @@
     git push origin --all                                                                  // uploads all local branches to the 'origin' remote repository    
     git push origin --delete feature2                                                      // deletes the 'feature2' branch in the 'origin' remote repository (does not delete the branch locally)    
     
+// fetch ----------------------------------------------------------------------------------
+    git fetch origin                                                                       // fetches the commits from the remote (origin) repository  
+    git diff master origin/master                                                          // displays the difference between the local master and the remote master branches 
+    
+    git merge                                                                              // merges the fetched commints into the local branch  
+    
 // pull -----------------------------------------------------------------------------------
     git pull origin                                                                        // downloads and updates all branches from the 'origin' remote repository   
+                                                                                           // pull = fetch + merge commands 
     </pre>
 </details>
 <details class="example">
