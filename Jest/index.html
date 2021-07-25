@@ -14,117 +14,87 @@
     <p class="sitenav"> <a href="../index.html">MySite></a> Jest </p>
 <table class="table">
 <caption>
+  Jest v27.0
     <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
 </caption>
     <tr>
-        <th style="width:30%;"> Method / Property / statement ect... </th>
+        <th style="width:30%;"> Method / Property </th>
         <th> Description </th>
     </tr>
+<tr class="05.01">
+  <td> 
+        <em>npm install</em> jest</em> 
+  </td>
+  <td> 
+        - installs jest 
+  </td>
+</tr>
+<tr class="05.02">
+  <td> 
+         <strong>fileName</strong>.test.js
+  </td>
+  <td> 
+        - jest file, jest will run these files in the current directory for testing 
+  </td>
+</tr>
+<tr class="05.03">
+  <td> 
+        jest <small>[--coverage]</small> <i>jestFile</i>
+  </td>
+  <td> 
+        - runs all jest files in the current direcoty or the specified file (the <mark>.test.js</mark> extension can be omitted ex: (<mark>jest someTest.test.js</mark> can be called as <mark>jest someTest</mark>)) <br>
+        - (<small>--coverage</small>) also runs the coverage test (prints the result at the end of the test)
+  </td>
+</tr>
+
+
+
+
+
+
 <tr class="0">
-<td> 
-            Demo Prop 
-</td>
-<td> 
-            demo description 
-            <span class="browserSupport" title="updated : yyyy-mm-dd">
-                <span><i class="fab fa-chrome"></i> 0/0 -webkit- </span>
-                <span><i class="fab fa-firefox"></i>  </span>
-                <span><i class="fab fa-opera"></i>  </span>
-                <span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i>  </span>
-                <span><i class="fab fa-safari"></i>  </span>
-                <span><i class="fab fa-node-js"></i>  </span>
-            </span>
-</td>
+  <td> 
+        Demo Prop 
+  </td>
+  <td> 
+        demo description 
+  </td>
 </tr>
 
 
 
 
 </table>
+  
     <br>
     <details class="example" id="notes">
     <summary> Notes :</summary>
         <!-- <p> - paragraph removes the 'empty' message from the detail TAG -->
     </details>
 <h2 style="color:green;"><u> Useful Links : </u></h2>
-    
+    <p><a href="https://jestjs.io/" target="_blank">JestJs.io </a></p>
 <h2 style="color:green;"><u> Remember This : </u></h2>
     
 <h2 style="color:green;"><u> Description and Demonstration : </u></h2>
-
-
+  <p> - Jest is a JavaScript testing framework </p>
+  <pre class="syntax">
+<span style="color:darkgray;">// <strong>fileName</strong>.test.js (file) ------------------------------------------------------------</span>
+  test|it(<strong>)
+  
+  
+  </pre>
+  
+  
+  
+  
+  
 <pre>
-- jest command will find in the current directory the *.test.js file and runs it 
+  - npm instal yest -> to install jest 
+  - jest command will find in the current directory the *.test.js file and runs it 
   
   
 - toBe 	-> same value comparison only (==)
 - toEqual 	-> strict value comparison (===) 
-  
-  
-------------------------------------------------------------------------------------------------
-- with asynch code in the callback the done must be used to signal the end of an async operation
-	it('nested TEST', function(done){
-		function result(err, data){
-		    console.log( data.toString() );
-		    expect(data.toString()).toBe('some content')
-		    done()
-		}
-		
-		fs.readFile('./someDummyFile.txt', result)
-	})
-  
-  
-- a promise must be returned, otherwise jest times out with a failed test 
-	it('some test', function(){
-		return promise
-		    .then((res) => {
-		        expect(res).toBe('timed out!')
-		        
-		    }).catch((rej) => {
-		        console.log( rej );
-		    })
-	})
-  
-  
-- if we expect a promise to fail we should specify how many assersion we expect to fail  
-	it('some test', function(){
-    expect.assertions(1);  
-    
-    return promise
-        .then((res) => {
-            
-        }).catch((rej) => {
-            expect(rej).toMatch('timed out!')
-        })
-	})
-  
-- rejected promise can be handled by this as well 
-it('some test', function(){
-    return expect(promise).rejects.toBe('timed out!')
-})
-  
-  
-  - jest waits promises to be resolved to handle asynchronous tests (must be returned)
-    test(<label>, () => {
-      return fetchData().catch(e => expect(e).toMatch('error'));
-    });
-    
-    test('the data is peanut butter', () => {
-      return expect(fetchData()).resolves.toBe('peanut butter');
-    });
-    
-    test('the fetch fails with an error', () => {
-      return expect(fetchData()).rejects.toMatch('error');
-    });
-    
-  - async/await
-    est('the data is peanut butter', async () => {
-      await expect(fetchData()).resolves.toBe('peanut butter');
-    });
-  
-    test('the fetch fails with an error', async () => {
-      await expect(fetchData()).rejects.toMatch('error');
-    });
   
   
   
@@ -178,6 +148,219 @@ it('some test', function(){
   - expect().toThrow()            // expects a thrown error by a function 
   
 </pre>
+
+
+
+<details class="example" open> 
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> coverage test </u></h4>
+  <p> - <mark>myTest.test.js</mark> file </p>
+  <pre>
+  const {myFn1, myFn2} = require('./testFn')
+  
+  test('should run imported functions', function(){
+    expect(myFn1()).toBe(5)
+    expect(myFn2()).toBe(7)
+    
+  })
+  </pre>
+  <p> - <mark>testFn.js</mark> file </p>
+  <pre>
+  function myFn1(){
+    let x = 2;
+    let y = 3;
+    const result = x + y
+    
+    return result
+  }
+  
+  function myFn2(){
+    let x = 7
+    let y = 8
+    const result = x + y
+    
+    return result
+  }
+  
+  module.exports = {
+    myFn1,
+    myFn2
+  }
+  </pre>
+  <pre class="cmd">
+  pall@Aspire:~/Documents/CodePlus/My Site/Jest/TEST$ jest --coverage
+    PASS  ./myTest.test.js
+      ✓ should run imported functions (4 ms)
+      
+    -----------|---------|----------|---------|---------|-------------------
+    File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+    -----------|---------|----------|---------|---------|-------------------
+    All files  |     100 |      100 |     100 |     100 |                   
+    testFn.js  |     100 |      100 |     100 |     100 |                   
+    -----------|---------|----------|---------|---------|-------------------
+    Test Suites: 1 passed, 1 total
+    Tests:       1 passed, 1 total
+    Snapshots:   0 total
+    Time:        0.472 s, estimated 1 s
+    Ran all test suites.
+  pall@Aspire:~/Documents/CodePlus/My Site/Jest/TEST$ 
+  </pre>
+</details>
+
+<hr>
+<!------------------------------------------------------------------------------------------------------>
+<h2 style="color:darkblue;"><u> Testing Asynchronous code </u></h2>
+  <pre class="syntax">
+<span style="color:darkgray;">// asynchronous callback --------------------------------------------------------------</span>
+  test(<strong>testLabel:str</strong>, function(done){                                                  // the <mark>done</mark> callback will signal the end of an async task   
+    function <strong>callback</strong>(){
+      expect(<strong>something</strong>).<strong>matcherMethod</strong>                                                  // we verify the async returned result 
+      done()                                                                           // signals the end of the async task   
+    }
+    
+    someAsyncApi(<strong>callback</strong>)                                                             // calling the async api 
+  })
+  
+  
+<span style="color:darkgray;">// promises ---------------------------------------------------------------------------</span>
+  test(<strong>testLabel:str</strong>, function(){
+    return <strong>promise</strong>                                                                     // promises must be returned 
+  })
+  
+  
+  test(<strong>testLabel:str</strong>, function(){
+    return expect(<strong>promise</strong>).resolves.<strong>matcherMethod</strong>                                      // the <mark>.resolves</mark> expects a resolved promise    
+    
+    return expect(<strong>promise</strong>).rejects.<strong>matcherMethod</strong>                                       // the <mark>.rejects</mark> expects a rejected promise    
+  })
+  
+  
+<span style="color:darkgray;">// async functions --------------------------------------------------------------------</span>
+  test(<strong>testLabel:str</strong>, async function(){
+    await <strong>promise</strong>                                                                      // waits the promise to be resolved or rejected 
+    
+    await expect(<strong>promise</strong>).resolves.<strong>matcherMethod</strong>                                       // we can directly write a test after the await 
+    await expect(<strong>promise</strong>).rejects.<strong>matcherMethod</strong> 
+  })
+  </pre>
+<details class="example">
+<summary> DEMO </summary>
+  <p> - asynchronous callback </p>
+  <pre>
+  const fs = require('fs')
+  
+  test('should read file', function(done){
+    function cb(err, data){
+      expect(data.toString()).toBe('test file content')
+      done()                                                                           // the doen callback signals the end of an async task 
+    }
+    
+    fs.readFile('testFile.txt', cb)
+  })
+  </pre>
+  <p> - promises </p>
+  <pre>
+  const fs = require('fs').promises
+  const resPromise = Promise.resolve('res')
+  const rejPromise = Promise.reject('rej')
+  
+  test('should read file', function(){
+    return fs.readFile('./testFile.txt')                                               // promises should be returned 
+      .then((res) => {
+        expect(res.toString()).toBe('test file content')
+      })
+  })
+  
+// ------------------------------------------------------------------------------------
+  test('should resolve promise', function(){
+    return expect(resPromise).resolves.toBe('res')                                     // the '.resolves' property expects a resolved promise result  
+  })
+  
+  test('should reject promise', function(){
+    return expect(rejPromise).rejects.toBe('rej')                                      // the '.rejects' property expects a rejected promise result  
+  })
+  </pre>
+  <p> - async function </p>
+  <pre>
+  const resPromise = Promise.resolve('res')
+  const rejPromise = Promise.reject('rej')
+  
+  test('async test', async function(){
+    await expect(resPromise).resolves.toBe('res')                                      // waits for the promise then tests the result directly   
+    await expect(rejPromise).rejects.toBe('rej')
+  })
+  </pre>
+</details>
+<details class="example"> 
+<summary> Example : </summary>
+<h4 style="color:darkblue;"><u> testing async code </u></h4>
+  <p> - both cases work fine, however the jest specification says that the <mark>done</mark> callback should be used for accurate testing </p>
+  <pre>
+  const fs = require('fs')
+  
+// -------------------------------------------------------------------------
+  test('should read file', function(){
+    function cb(err, data){
+      expect(data.toString()).toBe('test file content')
+    }
+    
+    fs.readFile('testFile.txt', cb)
+  })
+  
+// -------------------------------------------------------------------------
+  test('should read file', function(done){
+    function cb(err, data){
+      expect(data.toString()).toBe('test file content')
+      done()
+    }
+    
+    fs.readFile('testFile.txt', cb)
+  })
+  </pre>
+<hr>
+<!------------------------------------------------------------------------------------------------------>
+<h4 style="color:darkblue;"><u> testing promisses </u></h4>
+  <pre>
+  const fs = require('fs').promises
+  
+  test('should read file', function(){
+    return fs.readFile('./testFile.txt')
+      .then((res) => {
+        expect(res.toString()).toBe('test file content')
+      })
+  })
+  </pre>
+  <pre>
+  const resPromise = Promise.resolve('res')
+  const rejPromise = Promise.reject('rej')
+  
+  test('should resolve promise', function(){
+    return expect(resPromise).resolves.toBe('res')
+  })
+  
+  test('should reject promise', function(){
+    return expect(rejPromise).rejects.toBe('rej')
+  })
+  </pre>
+  <p> - async functions </p>
+  <pre>
+  const resPromise = Promise.resolve('res')
+  const rejPromise = Promise.reject('rej')
+
+  test('async test', async function(){
+    await expect(resPromise).resolves.toBe('res')
+    await expect(rejPromise).rejects.toBe('rej')
+  })
+  </pre>
+</details>
+
+
+
+
+
+
+
+
 
 
 
