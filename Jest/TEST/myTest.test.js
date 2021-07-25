@@ -1,8 +1,10 @@
-const {myFn1, myFn2} = require('./testFn')
+function throwErr(){
+  throw new Error('some error')
+}
 
-test('should run imported functions', function(){
-  expect(myFn1()).toBe(5)
-  expect(myFn2()).toBe(15)
-  
+test('test-1', function(){
+  expect(throwErr()).toThrow()
+  expect(throwErr()).toThrow('some error')
 })
+
 

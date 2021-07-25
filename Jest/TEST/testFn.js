@@ -18,3 +18,4 @@ module.exports = {
   myFn1,
   myFn2
 }
+
