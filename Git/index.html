@@ -130,9 +130,9 @@
         </td>
     </tr>
     <tr class="26.1">
-        <td> <em>git</em> reset <small>[--hard]</small> <strong>tagName|commitId</strong> </td>
+        <td> <em>git</em> reset <small>[--hard]</small> <i>tagName|commitId</i> </td>
         <td> 
-             - (no option) removes all commits on the branch <u>aftert the specified one</u> <u>(only commits are removed, any file modifications are kept in the Modified Area)</u> <br>
+             - (no option) removes all commits on the branch <u>aftert the specified or the current commit</u> <u>(only commits are removed, any file modifications are kept in the Modified Area)</u> <br>
              - (<small>--hard</small>) completely destroys commits and any file modifications after the specified commit <br>
         </td>
     </tr>
@@ -216,6 +216,15 @@
 </td>
 <td> 
             - moves the most recent (or the specified) stash entry files to the Modified Area (careful about conflicts) 
+</td>
+</tr>
+<tr class="30.03">
+<td> 
+            <em>git</em> stash push <small>[-m <i>stashName</i>]</small>  <strong>filePath</strong> 
+</td>
+<td> 
+            - moves only the specified file (<strong>filePath</strong>) in the stash <br>
+            (<small>-m</small> <i>stashName</i>) adds a stash name to this stash 
 </td>
 </tr>
 <tr class="30.02">

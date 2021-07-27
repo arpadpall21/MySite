@@ -633,7 +633,7 @@ pall@Ryzen:~/Documents/CodePlus/My Site/03 Improuve/Learn WebDesign/03 JS/Asynch
 SYNTAX :                                                                                 <span id="browserSupport" title="updated: 2019-08-06" style="color:yellow;"><span><i class="fab fa-chrome"></i> 32 </span><span><i class="fab fa-firefox"></i> 29 </span><span><i class="fab fa-opera"></i> 19 </span><span><i class="fab fa-internet-explorer"></i><i class="fab fa-edge"></i> 12 </span><span><i class="fab fa-safari"></i> 8 </span><span><i class="fab fa-node-js"></i> 0.12 </span></span>
             async function <strong>fnId</strong>() {                                                    // returns a Promise    
                 <small>await</small> <strong>promise</strong>                                                          // pauses the async function body utill the promise is resolved or rejected    
-                                                                                         <span style="color:lightgreen;">// resolved promise = function body continues execution</span> 
+                                                                                         <span style="color:lightgreen;">// resolved promise = the resolved data is returned and function body continues execution</span> 
                                                                                          <span style="color:orange;">// rejected promise = blocks the function body and the rejected promise is returned by the async function </span>    
                 
                 return <strong>promise|val:any</strong>                                                 // any returned data will be wrapped in a resolved promise by the async function 
@@ -661,7 +661,7 @@ SYNTAX :                                                                        
 // await ------------------------------------------------------------------------------
     async function asyncFunc1() {
         var promise = Promise.resolve('resolved result!');                             // resolved Promise 
-        await promise;                                                                 // function body pauses untill the promise is resolved    
+        await promise;                                                                 // -> 'resolved result!' // function body pauses untill the promise is resolved, if the promise is resolved its value is retured here   
         
         // further code will execute when the promise is resolved ....
         
@@ -901,7 +901,6 @@ console.warn("9) await resolve/reject demo");
         )    
     </pre>
 </details>
-    
 <script>
     console.error(" - Timed Operations printed after ");
 </script>    
