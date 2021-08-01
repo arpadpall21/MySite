@@ -1,11 +1,9 @@
-describe('desc-1', function(){
-  test('test', function(){})
-})
+test('test-1', () => {})
+test('test-2', () => {})
+test('test-3', () => {})
 
-describe.skip.each(['des-1', 'desc-2', 'desc-3'])('name: %s', function(){            // only this describe each is executed 
-  test('test', function(){})
-})
+test.todo('we should have 4 tests')
 
-describe('desc-3', function(){
-  test('test', function(){})
-})
+test('test-4', () => {})
+
+test.todo('ok we have 4 tests now')

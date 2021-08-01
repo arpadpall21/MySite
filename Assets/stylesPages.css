@@ -48,7 +48,7 @@ pre{
     margin-bottom: 5px;
 }
 .example > summary {
-    background-color: lightgreen;
+    background-color: rgb(193, 255, 201);
     font-size: 1.25em;
     font-weight: bold;
     text-decoration: underline;
@@ -79,7 +79,7 @@ caption{
     background-color: lightcyan;
 }
 .table tr:nth-child(even){
-    background-color: lightgreen;
+    background-color: rgb(194, 248, 194);
 }
 .table th, .table td{
     text-align: left;

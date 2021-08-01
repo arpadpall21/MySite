@@ -49,13 +49,175 @@
   <br>
 <table class="table">
 <caption>
-    Matchers 
+    Scopes and Teardown
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
+    <tr>
+        <th style="width:30%;"> Method / Property </th>
+        <th> Description </th>
+    </tr>
+<tr class="05.0">
+  <td colspan="2"> Scope Methods </td>
+</tr>
+<tr class="05.01">
+  <td> 
+        describe<small class="openable">.only|skip<div>
+          <p> <small>only</small> - only this describe scope will be executed in this test file </p>
+          <p> <small>skip</small> - skips this describe scope </p>
+        </div></small>(<strong>name:str</strong>, <strong>fn</strong>)
+  </td>
+  <td> 
+        - creates a scope for test suites 
+  </td>
+</tr>
+<tr class="10.01">
+  <td> 
+        describe<small class="openable">.only|skip<div>
+          <p> <small>only</small> - only this describe scope will be executed in this test file </p>
+          <p> <small>skip</small> - skips this describe scope </p>
+        </div></small>.each([<strong>item:any</strong>, <i>...</i>])(<strong class="openable">name:str<div>
+          <p> <mark>%s</mark> - String </p>
+          <p> <mark>%d</mark> - Number </p>
+          <p> <mark>%i</mark> - Integer </p>
+          <p> <mark>%f</mark> - Floating point value </p>
+          <p> <mark>%j</mark> - JSON </p>
+          <p> <mark>%o</mark> - Object </p>
+          <p> <mark>%#</mark> - Index of the test case </p>
+          <p> <mark>%%</mark> - single percent sign ('%'). This does not consume an argument </p>
+        </div></strong>, <strong>fn</strong>)
+  </td>
+  <td> 
+        - runs a describe scope for each <strong>item</strong> 
+  </td>
+</tr>
+<tr class="20.01">
+  <td colspan="2"> Teardown Methods </td>
+</tr>
+<tr class="20.02">
+  <td> 
+        afterAll(<strong>fn</strong>, <i class="openable">timeout:nr<div>
+          <p> - default <mark>5000</mark> </p>
+        </div></i>)
+  </td>
+  <td> 
+        - runs the <strong>fn</strong> after all test suite cases in this scope  
+  </td>
+</tr>
+<tr class="20.03">
+  <td> 
+        afterEach(<strong>fn</strong>, <i class="openable">timeout:nr<div>
+          <p> - default <mark>5000</mark> </p>
+        </div></i>)
+  </td>
+  <td> 
+        - runs the <strong>fn</strong> after each test suite cases in this scope  
+  </td>
+</tr>
+<tr class="25.01">
+  <td> 
+        beforeAll(<strong>fn</strong>, <i class="openable">timeout:nr<div>
+          <p> - default <mark>5000</mark> </p>
+        </div></i>)
+  </td>
+  <td> 
+        - runs the <strong>fn</strong> before all test suite cases in this scope  
+  </td>
+</tr>
+<tr class="25.02">
+  <td> 
+        beforeEach(<strong>fn</strong>, <i class="openable">timeout:nr<div>
+          <p> - default <mark>5000</mark> </p>
+        </div></i>)
+  </td>
+  <td> 
+        - runs the <strong>fn</strong> before each test suite cases in this scope  
+  </td>
+</tr>
+</table>
+  <br>
+<table class="table">
+<caption>
+    Test Cases   
     <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
 </caption>
     <tr>
         <th style="width:30%;"> Method </th>
         <th> Description </th>
     </tr>
+<tr class="5">
+  <td> 
+        test<small class="openable">.only|skip<div>
+          <p> <small>only</small> - runs only this test case in the file </p>
+          <p> <small>skip</small> - skips this test case </p>
+        </div></small>(<strong>name:str</strong>, <strong>fn</strong>, <i class="openable">timeout:nr<div>
+          <p> - default <mark>5000</mark> </p>
+        </div></i>)
+  </td>
+  <td> 
+        - runs a test case (executes its <strong>fn</strong>) and prints the test <strong>name</strong> in the output  
+  </td>
+</tr>
+<tr class="10">
+  <td> 
+        test<small class="openable">.only|skip<div>
+          <p> <small>only</small> - runs only this test case in the file </p>
+          <p> <small>skip</small> - skips this test case </p>
+        </div></small>.each([<strong>item:any</strong>, <i>...</i>])(<strong class="openable">name:str<div>
+          <p> <mark>%s</mark> - String </p>
+          <p> <mark>%d</mark> - Number </p>
+          <p> <mark>%i</mark> - Integer </p>
+          <p> <mark>%f</mark> - Floating point value </p>
+          <p> <mark>%j</mark> - JSON </p>
+          <p> <mark>%o</mark> - Object </p>
+          <p> <mark>%#</mark> - Index of the test case </p>
+          <p> <mark>%%</mark> - single percent sign ('%'). This does not consume an argument </p>
+        </div></strong>, <strong>fn</strong>, <i class="openable">timeout:nr<div>
+          <p> - default <mark>5000</mark> </p>
+        </div></i>)
+  </td>
+  <td> 
+        - runs a test case for each <strong>item</strong> (executes its <strong>fn</strong>) and prints the test <strong>name</strong> in the output  
+  </td>
+</tr>
+<tr class="15">
+  <td> 
+        test.todo(<strong>name:str</strong>)
+  </td>
+  <td> 
+        - writes a todo <strong>name</strong> at the end of the of the output (used to write notes in the test)
+  </td>
+</tr>
+</table>
+  <br>
+<table class="table">
+<caption>
+    Expect and Matchers 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
+    <tr>
+        <th style="width:30%;"> Method </th>
+        <th> Description </th>
+    </tr>
+<tr class="0">
+  <td colspan="2"> Expect </td>
+</tr>
+<tr class="0">
+  <td> 
+        expect(<strong>exp</strong>).<strong>matcherMethod</strong>
+  </td>
+  <td>
+        - the <strong>exp</strong> should return a result which is passes through the <strong>matcherMethod</strong> 
+  </td>
+</tr>
+
+
+
+
+
+
+<tr class="0">
+  <td colspan="2"> Matchers </td>
+</tr>  
 <tr class="0">
   <td> 
         <em>expect(<strong>exp</strong>)</em>.not<strong>matcherMethod</strong>
@@ -178,129 +340,6 @@
 </tr>
 </table>
   <br>
-<table class="table">
-<caption>
-    Scopes and Teardown
-    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
-</caption>
-    <tr>
-        <th style="width:30%;"> Method / Property </th>
-        <th> Description </th>
-    </tr>
-<tr class="05.0">
-  <td colspan="2"> Scope Methods </td>
-</tr>
-<tr class="05.01">
-  <td> 
-        describe(<strong>label:str</strong>, <strong>fn</strong>)
-  </td>
-  <td> 
-        - creates a scope for test suites 
-  </td>
-</tr>
-<tr class="10.01">
-  <td> 
-        describe.each([<strong>item:any</strong>, <i>...</i>])(<strong class="openable">label:str<div>
-          <p> <mark>%s</mark> - String </p>
-          <p> <mark>%d</mark> - Number </p>
-          <p> <mark>%i</mark> - Integer </p>
-          <p> <mark>%f</mark> - Floating point value </p>
-          <p> <mark>%j</mark> - JSON </p>
-          <p> <mark>%o</mark> - Object </p>
-          <p> <mark>%#</mark> - Index of the test case </p>
-          <p> <mark>%%</mark> - single percent sign ('%'). This does not consume an argument </p>
-        </div></strong>, <strong>fn</strong>)
-  </td>
-  <td> 
-        - runs a describe scope for each <strong>item</strong> 
-  </td>
-</tr>
-<tr class="05.03">
-  <td> 
-        describe.only(<strong>label:str</strong>, <strong>fn</strong>)
-  </td>
-  <td> 
-        - only this describe scope will be executed (all other describe scopes are skipped)
-  </td>
-</tr>
-<tr class="10.03">
-  <td> 
-        describe.only.each([<strong>item:any</strong>, <i>...</i>])(<strong class="openable">label:str<div>
-          <p> <mark>%s</mark> - String </p>
-          <p> <mark>%d</mark> - Number </p>
-          <p> <mark>%i</mark> - Integer </p>
-          <p> <mark>%f</mark> - Floating point value </p>
-          <p> <mark>%j</mark> - JSON </p>
-          <p> <mark>%o</mark> - Object </p>
-          <p> <mark>%#</mark> - Index of the test case </p>
-          <p> <mark>%%</mark> - single percent sign ('%'). This does not consume an argument </p>
-        </div></strong>, <strong>fn</strong>)
-  </td>
-  <td> 
-        - only these describe each scopes will be executed (all other describe scopes are skipped)
-  </td>
-</tr>
-<tr class="05.02">
-  <td> 
-        describe.skip(<strong>label:str</strong>, <strong>fn</strong>)
-  </td>
-  <td> 
-        - skips this describe scope 
-  </td>
-</tr>
-<tr class="10.02">
-  <td> 
-        describe.skip.each([<strong>item:any</strong>, <i>...</i>])(<strong class="openable">label:str<div>
-          <p> <mark>%s</mark> - String </p>
-          <p> <mark>%d</mark> - Number </p>
-          <p> <mark>%i</mark> - Integer </p>
-          <p> <mark>%f</mark> - Floating point value </p>
-          <p> <mark>%j</mark> - JSON </p>
-          <p> <mark>%o</mark> - Object </p>
-          <p> <mark>%#</mark> - Index of the test case </p>
-          <p> <mark>%%</mark> - single percent sign ('%'). This does not consume an argument </p>
-        </div></strong>, <strong>fn</strong>)
-  </td>
-  <td> 
-        - skips thes describe each scopes  
-  </td>
-</tr>
-<tr class="20.01">
-  <td colspan="2"> Teardown Methods </td>
-</tr>
-<tr class="20.02">
-  <td> 
-        afterAll(<strong>fn</strong>, <i>timeout:nr</i>)
-  </td>
-  <td> 
-        - runs the <strong>fn</strong> after all test suite cases in this scope  
-  </td>
-</tr>
-<tr class="20.03">
-  <td> 
-        afterEach(<strong>fn</strong>, <i>timeout:nr</i>)
-  </td>
-  <td> 
-        - runs the <strong>fn</strong> after each test suite cases in this scope  
-  </td>
-</tr>
-<tr class="25.01">
-  <td> 
-        beforeAll(<strong>fn</strong>, <i>timeout:nr</i>)
-  </td>
-  <td> 
-        - runs the <strong>fn</strong> before all test suite cases in this scope  
-  </td>
-</tr>
-<tr class="25.02">
-  <td> 
-        beforeEach(<strong>fn</strong>, <i>timeout:nr</i>)
-  </td>
-  <td> 
-        - runs the <strong>fn</strong> before each test suite cases in this scope  
-  </td>
-</tr>
-</table>
   
   
   
@@ -309,6 +348,7 @@
     <details class="example" id="notes">
     <summary> Notes :</summary>
         <p> - I did not tested mock functions because I haven't find them usefull <a href="https://jestjs.io/docs/mock-functions" target="_blank">[link]</a> </p>
+        <p> - concurrent (parallel) testing <mark>test.concurrent()</mark> is experimental [TESTED: 2021-07-31] </p>
     </details>
 <h2 style="color:green;"><u> Useful Links : </u></h2>
     <p><a href="https://jestjs.io/" target="_blank">JestJs.io </a></p>
@@ -623,6 +663,8 @@
   })
   
   // other tests ...
+  
+  // other tests ...
   </pre>
 </details>
 <details class="example"> 
@@ -822,8 +864,124 @@
 </details>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
-<h2 style="color:darkblue;"><u> Matchers  </u></h2>
-<h3 style="color:darkblue;"><u> The <mark>not</mark> / <mark>toBe()</mark> / <mark>toEqual()</mark> <mark>not</mark> / <mark>toThrow()</mark> / <mark>toBeNull()</mark> / <mark>toBeUndefined()</mark> / <mark>toBeDefined()</mark> / <mark>toBeTruthy()</mark> / <mark>toBeFalsy()</mark> / <mark>toBeGreaterThan()</mark> / <mark>toBeGreaterThanOrEqual()</mark> / <mark>toBeLessThan()</mark> / <mark>toBeLessThanOrEqual()</mark> / <mark>toBeCloseTo()</mark> / <mark>toMatch()</mark> / <mark>toContain()</mark> </u></h3>
+<h2 style="color:darkblue;"><u> Test cases </u></h2>
+<h3 style="color:darkblue;"><u> Methods <mark>test()</mark> / <mark>test.only()</mark> / <mark>test.skip()</mark> / <mark>test.each()()</mark> / <mark>test.only.each()()</mark> / <mark>test.skip.each()()</mark> / <mark>test.todo()</mark> </u></h3>
+<details class="example"> 
+<summary> DEMO </summary>
+  <pre>
+  test('some test', function(){
+    // expect test case here...
+  })
+  
+// test.only() ------------------------------------------------------------------------
+  test.only('some test', function(){                                                   // only this test case is executed in this jest file   
+    // expect test case here...
+  })
+  
+// test.skip() ------------------------------------------------------------------------
+  test.skip('some test', function(){                                                   // this test case is skipped 
+    // expect test case here...
+  })
+  
+// test.each() ------------------------------------------------------------------------
+  test.each([1, 2, 3])('test-%d', function(){                                          // executes the test case function 3 times for each item  ('test-1' | 'test-2' 'test-3') 
+    // expect test case here...
+  })
+  
+// test.only.each() -------------------------------------------------------------------
+  test.only.each([1, 2, 3])('test-%d', function(){                                     // only these test cases will be executed in this jest file 
+    // expect test case here...
+  })
+  
+// test.skip.each() -------------------------------------------------------------------
+  test.skip.each([1, 2, 3])('test-%d', function(){                                     // these test cases will be skipped 
+    // expect test case here...
+  })
+  
+// test.todo() ------------------------------------------------------------------------
+  test('test-1', () => {})
+  test('test-2', () => {})
+  test('test-3', () => {})
+  
+  test.todo('we should do 5 tests')                                                    // this is basically a note which is printed at the end of the test cases in the output  
+  
+  test('test-4', () => {})
+  test('test-5', () => {})
+  </pre>
+</details>
+<details class="example"> 
+<summary> Example : </summary>
+<h4 style='color:darkblue'><u> <mark>test()</mark> / <mark>test.only()</mark> / <mark>test.skip()</mark> TEST </u></h4>
+  <pre>
+  test('test-1', function(){
+    console.log( 'test1')
+  })
+  
+// ------------------------------------------------------------------------------------
+  test.only('test2', function(){                                                       // only this test case is executed in this jest file   
+    console.log( 'test2')
+  })
+  
+// ------------------------------------------------------------------------------------
+  test.skip('test3', function(){                                                       // this test case is skipped 
+    console.log( 'test2')
+  })
+  </pre>
+<hr>
+<!------------------------------------------------------------------------------------------------------>
+<h4 style='color:darkblue'><u> <mark>test.eac()</mark> / <mark>test.only.each()</mark> / <mark>test.skip.each()</mark> TEST </u></h4>
+  <pre>
+  test.each([1, 2, 3])('test-%d', function(){
+    console.log( 'test')                                                               // 3 test cases are executed here 
+  })
+  
+// ------------------------------------------------------------------------------------
+  test.only.each([1, 2, 3])('test-%d', function(){                                     // only these test cases will be executed in this jest file 
+    console.log( 'test')
+  })
+  
+// ------------------------------------------------------------------------------------
+  test.skip.each([1, 2, 3])('test-%d', function(){                                     // these test cases will be skipped 
+    console.log( 'test')
+  })
+  </pre>
+<hr>
+<!------------------------------------------------------------------------------------------------------>
+<h4 style='color:darkblue'><u> <mark>test.todo()</mark> TEST </u></h4>
+  <pre>
+  test('test-1', () => {})
+  test('test-2', () => {})
+  test('test-3', () => {})
+  
+  test.todo('we should have 4 tests')
+  
+  test('test-4', () => {})
+  
+  test.todo('ok we have 4 tests now')  
+  </pre>
+  <pre class="cmd">
+  apall@apall-notebook:~/Documents/Pall's Stuff/CodePlus/My Site/Jest/TEST$ ./node_modules/.bin/jest
+    PASS  ./myTest.test.js
+      ✓ test-1
+      ✓ test-2
+      ✓ test-3
+      ✓ test-4 (1 ms)
+      ✎ todo we should have 4 tests
+      ✎ todo ok we have 4 tests now
+    
+    Test Suites: 1 passed, 1 total
+    Tests:       2 todo, 4 passed, 6 total
+    Snapshots:   0 total
+    Time:        0.181 s, estimated 1 s
+    Ran all test suites.
+  apall@apall-notebook:~/Documents/Pall's Stuff/CodePlus/My Site/Jest/TEST$  
+  </pre>
+</details>
+<hr>
+<!------------------------------------------------------------------------------------------------------>
+<h2 style="color:darkblue;"><u> Expect and Matchers  </u></h2>
+<h3 style="color:darkblue"><u> Expect <mark>expect()</mark> </u></h3>
+<h3 style="color:darkblue;"><u> Matchers <mark>not</mark> / <mark>toBe()</mark> / <mark>toEqual()</mark> <mark>not</mark> / <mark>toThrow()</mark> / <mark>toBeNull()</mark> / <mark>toBeUndefined()</mark> / <mark>toBeDefined()</mark> / <mark>toBeTruthy()</mark> / <mark>toBeFalsy()</mark> / <mark>toBeGreaterThan()</mark> / <mark>toBeGreaterThanOrEqual()</mark> / <mark>toBeLessThan()</mark> / <mark>toBeLessThanOrEqual()</mark> / <mark>toBeCloseTo()</mark> / <mark>toMatch()</mark> / <mark>toContain()</mark> </u></h3>
 <details class="example" open> 
 <summary> DEMO </summary>
   <pre>
@@ -927,8 +1085,6 @@
   
   
 </details>
-<hr>
-<!------------------------------------------------------------------------------------------------------>
   
   
   
@@ -938,17 +1094,17 @@
   
   
   
-
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 <!--
