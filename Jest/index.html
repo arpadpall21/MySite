@@ -210,6 +210,21 @@
         - used inside a <mark>test</mark> function 
   </td>
 </tr>
+<tr class="0">
+  <td> 
+        expect.extend({<strong class="openable">fn(received)<div>
+          <p> - the <strong>received</strong> is the value passed by the expect method preceding this matcher </p>
+          <p> - the function returns an object <mark>{pass:<strong>bol</strong>, message:<strong>fn</strong>}</mark> based on a passed or failed test (<strong>fn</strong> generates and returns the message) </p>
+        </div></strong><i>, ...</i>}) 
+  </td>
+  <td>
+        - creates custom <strong>matcherMethod</strong>s that can be used anywhere in the jest scope (just like any other matcher methods)
+  </td>
+</tr>
+
+
+
+
 
 
 
@@ -986,19 +1001,36 @@
 <details class="example" open> 
 <summary> DEMO </summary>
   <pre>
+// expect.extend() --------------------------------------------------------------------
+  expect.extend({
+    toBeNotString(received){                                                           // creating a custom matcher method 
+      if(typeof received !== 'string'){
+        return {pass:true, message:() => 'not a string data type'}
+      } else {
+        return {pass:false, message:() => `${received} is a string data type`}
+      }
+    }
+  })
   
-  expect.extend() - creates you own matcher 
-    - test this with promisses as well
+  test('should not be a string', function(){
+    expect(21).toBeNotString()                                                         // test passes     // custom matcher method used   
+    expect('21').toBeNotString()                                                       // test fails 
+  })
+
+
+
   
-  expect.anything()
-  expect.any()
-    - does something with mocks 
   
-    
+  
+  
+  
+  
   expect[.not].arrayContaining()
     - the expected array contains all these array elements (passed inside a matcher method)
     - shallow check only
-    - remember to check this with toEqual
+    - can be used in a toEqual or toBeCalledWith matcher 
+    - to match a property in objectContaining or toMatchObject 
+  
   
   expect[.not].objectContaining()
     - the expected object contains all these key/value pairs
@@ -1012,6 +1044,19 @@
   expect[.not].stringMatching(str|regExp)
     - the expected string contains this pattern
     - check with toEqual  
+  
+  
+  
+  expect.anything()
+    - matches anything but undefined or null
+    - can be used in toEqual() or toBeCalledWith()
+    
+  expect.any(constructor)
+    - matches anything that was created with the given constructor 
+    - does something with mocks 
+    - can be used in toEqual() or toBeCalledWith()
+  
+  
   
   expect.assertions(nr)
     - verifies if certain number of assertions are called in the test (useful with async code)
@@ -1030,13 +1075,65 @@
 </details>
 <details class="example" open> 
 <summary> Example : </summary>
-<h4 style="color:darkblue;"><u> <mark>toBe()</mark> VS <mark>toEqual()</mark> TEST </u></h4>
+<h4 style="color:darkblue;"><u> <mark>expect.extend()</mark> TEST </u></h4>
   <pre>
+  expect.extend({
+    toBeBiggerThan0(received){
+      if(received > 0){
+        return {
+          pass: true,
+          message: () => 'bigger than 0'
+        }
+      } else {
+        return {
+          pass: false,
+          message: () => 'smaller or equal 0'
+        }
+      }
+    },
+    toBeInRangeOf(received, min, max){
+      if(received >= min && received &lt;= max){
+        return {
+          pass: true,
+          message: () => `${received} is in range of min ${min} max ${max}`
+        }
+      } else {
+        return {
+          pass: false,
+          message: () => `${received} is not in range of min ${min} max ${max}`
+        }
+      }
+    }
+  })
   
+  test('should be bigger than 0', function(){
+    expect(42).toBeBiggerThan0()                                                       // test passes 
+  })
   
+  test('should be bigger than 0', function(){
+    expect(-8).toBeBiggerThan0()                                                       // test fails
+  })
   
+  test('should be in range', function(){
+    expect(10).toBeInRangeOf(5, 15)                                                    // test passes 
+  })
   
+  test('should be in range', function(){                                               // test fails  
+    expect(10).toBeInRangeOf(11, 25)
+  })
   </pre>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 <hr>
 <!------------------------------------------------------------------------------------------------------>
 <h4 style="color:darkblue;"><u> <mark>toBe()</mark> VS <mark>toEqual()</mark> TEST </u></h4>
