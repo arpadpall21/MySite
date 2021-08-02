@@ -206,7 +206,8 @@
         expect(<strong>exp</strong>).<strong>matcherMethod</strong>
   </td>
   <td>
-        - the <strong>exp</strong> should return a result which is passes through the <strong>matcherMethod</strong> 
+        - the <strong>exp</strong> return a result which is verified by the <strong>matcherMethod</strong> to check if the test passes of fails <br>
+        - used inside a <mark>test</mark> function 
   </td>
 </tr>
 
@@ -216,7 +217,7 @@
 
 
 <tr class="0">
-  <td colspan="2"> Matchers </td>
+  <td colspan="2"> Matchers Methods </td>
 </tr>  
 <tr class="0">
   <td> 
@@ -986,11 +987,58 @@
 <summary> DEMO </summary>
   <pre>
   
+  expect.extend() - creates you own matcher 
+    - test this with promisses as well
+  
+  expect.anything()
+  expect.any()
+    - does something with mocks 
+  
+    
+  expect[.not].arrayContaining()
+    - the expected array contains all these array elements (passed inside a matcher method)
+    - shallow check only
+    - remember to check this with toEqual
+  
+  expect[.not].objectContaining()
+    - the expected object contains all these key/value pairs
+    - shallow check only
+    - remember to check this with toEqual
+  
+  expect[.not].stringContaining()
+    - the expected string contains this string part
+    - remember to check this with toEqual
+  
+  expect[.not].stringMatching(str|regExp)
+    - the expected string contains this pattern
+    - check with toEqual  
+  
+  expect.assertions(nr)
+    - verifies if certain number of assertions are called in the test (useful with async code)
+  
+  expect.hasAssertions()
+    - at least one assertion must be called or the test pass
+  
+  
+  
+  
+  
+  
+  
   
   </pre>
 </details>
 <details class="example" open> 
 <summary> Example : </summary>
+<h4 style="color:darkblue;"><u> <mark>toBe()</mark> VS <mark>toEqual()</mark> TEST </u></h4>
+  <pre>
+  
+  
+  
+  
+  </pre>
+<hr>
+<!------------------------------------------------------------------------------------------------------>
 <h4 style="color:darkblue;"><u> <mark>toBe()</mark> VS <mark>toEqual()</mark> TEST </u></h4>
   <pre>
   test('test-1', function(){
