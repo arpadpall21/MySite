@@ -231,20 +231,22 @@
 
 
 
+
+
 <tr class="0">
   <td colspan="2"> Matchers Methods </td>
 </tr>  
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.not<strong>matcherMethod</strong>
+        not<strong>.matcherMethod</strong>
   </td>
   <td> 
-        - inverses the <strong>matcherMethod</strong>'s operation 
+        - negates the <strong>matcherMethod</strong> 
   </td>
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toBe(<strong>data</strong>)
+        toBe(<strong>data</strong>)
   </td>
   <td> 
         - uses the <mark>===</mark> comparison operator to check the expected data 
@@ -252,7 +254,7 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toEqual(<strong>data</strong>)
+        toEqual(<strong>data</strong>)
   </td>
   <td> 
         - recursively checks the expected data <u>(used to compare objects)</u>
@@ -260,7 +262,7 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toBeNull()
+        toBeNull()
   </td>
   <td> 
         - expected value should be <mark>null</mark> 
@@ -268,7 +270,7 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toBeUndefined()
+        toBeUndefined()
   </td>
   <td> 
         - expected value should be <mark>undefined</mark> 
@@ -276,7 +278,7 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toBeDefined()
+        toBeDefined()
   </td>
   <td> 
         - expected value should be <u>other than</u> <mark>undefined</mark> 
@@ -284,7 +286,7 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toBeTruthy()
+        toBeTruthy()
   </td>
   <td> 
         - expected value should be evaluated <mark>true</mark>
@@ -292,7 +294,7 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toBeFalsy()
+        toBeFalsy()
   </td>
   <td> 
         - expected value should be evaluated <mark>false</mark>
@@ -300,7 +302,7 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toBeGreaterThan(<strong>nr</strong>)
+        toBeGreaterThan(<strong>nr</strong>)
   </td>
   <td> 
         - the <strong>exp</strong> result should be greater than the <strong>nr</strong>  
@@ -308,7 +310,7 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toBeGreaterThanOrEqual(<strong>nr</strong>)
+        toBeGreaterThanOrEqual(<strong>nr</strong>)
   </td>
   <td> 
         - the <strong>exp</strong> result should be greater or equal than the <strong>nr</strong>  
@@ -316,7 +318,7 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toBeLessThan(<strong>nr</strong>)
+        toBeLessThan(<strong>nr</strong>)
   </td>
   <td> 
         - the <strong>exp</strong> result should be less than the <strong>nr</strong>  
@@ -324,7 +326,7 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toBeLessThanOrEqual(<strong>nr</strong>)
+        toBeLessThanOrEqual(<strong>nr</strong>)
   </td>
   <td> 
         - the <strong>exp</strong> result should be less or equal than the <strong>nr</strong>  
@@ -332,7 +334,7 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toBeCloseTo(<strong>nr</strong>)
+        toBeCloseTo(<strong>nr</strong>)
   </td>
   <td> 
         - the <strong>exp</strong> result should close to the <strong>nr</strong> (ex: <mark>0.1 + 0.2</mark> will be close to <mark>0.3</mark>)
@@ -340,7 +342,7 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toMatch(<strong>str|regExp</strong>)
+        toMatch(<strong>str|regExp</strong>)
   </td>
   <td> 
         - the <strong>str|regExp</strong> should match the <strong>exp</strong> result string   
@@ -348,12 +350,35 @@
 </tr>
 <tr class="0">
   <td> 
-        <em>expect(<strong>exp</strong>)</em>.toContain(<strong>data</strong>)
+        toContain(<strong>data</strong>)
   </td>
   <td> 
         - the <strong>exp</strong> result should be an iterable object which contains <strong>data</strong>
   </td>
 </tr>
+
+<tr class="0">
+  <td colspan="2"> Expect can be used in <mark>toEqual()</mark> / <mark>toBeCalledWith()</mark> matchers </td>
+</tr>
+<tr class="0">
+  <td> 
+        expect<small>[.not]</small>.stringContaining(<strong>str</strong>)
+  </td>
+  <td>
+        - test passes if the expeced value contains <strong>str</strong> part
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        expect<small>[.not]</small>.stringMatching(<strong>str|regExp</strong>)
+  </td>
+  <td>
+        - test passes if the expeced value contains <strong>str|regExp</strong> part
+  </td>
+</tr>
+
+
+
 </table>
   <br>
   
@@ -1031,17 +1056,18 @@
     - can be used in a toEqual or toBeCalledWith matcher 
     - to match a property in objectContaining or toMatchObject 
   
-  
   expect[.not].objectContaining()
     - the expected object contains all these key/value pairs
     - shallow check only
     - remember to check this with toEqual
   
   expect[.not].stringContaining()
+    - can be used in a toEqual or toBeCalledWith matcher 
     - the expected string contains this string part
     - remember to check this with toEqual
   
   expect[.not].stringMatching(str|regExp)
+    - can be used in a toEqual or toBeCalledWith matcher 
     - the expected string contains this pattern
     - check with toEqual  
   
@@ -1122,7 +1148,35 @@
     expect(10).toBeInRangeOf(11, 25)
   })
   </pre>
+<hr>
+<!------------------------------------------------------------------------------------------------------>
+<h4 style="color:darkblue;"><u> <mark>expect.stringContaining()</mark> / <mark>expectStringMatching()</mark> TEST </u></h4>
+  <pre>
+  test('some test-1', function(){
+    expect('Kicsi kutya tarka').toEqual(expect.stringContaining('kutya'))              // test passes 
+    expect('Kicsi kutya tarka').toEqual(expect.stringContaining('macka'))              // test fails 
+  })
   
+  test('some test-2', function(){
+    expect('Kicsi kutya tarka').toEqual(expect.stringMatching('ta'))                   // test passes 
+    expect('Kicsi kutya tarka').toEqual(expect.stringMatching(/k.cs.\s/i))             // test passes 
+    
+    expect('Kicsi kutya tarka').toEqual(expect.stringMatching('farka'))                // test fails
+    expect('Kicsi kutya tarka').toEqual(expect.stringMatching(/k.cs.\s/))              // test fails 
+  })
+  
+  const mock = jest.fn()
+  
+  function testFn(a, b, cb){
+    cb(a, b)
+  }
+  
+  test('mock called with', function(){
+    testFn('one', 'two', mock)
+    
+    expect(mock).toBeCalledWith(expect.stringContaining('one'), expect.stringContaining('two'))   // test passes 
+  })
+  </pre>
   
   
   
@@ -1237,6 +1291,29 @@
   
   
   
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  
+<hr>
+<!------------------------------------------------------------------------------------------------------>
+<h2 style="color:darkblue;"><u> Mock Functions  </u></h2>
+  
+  
+  
+  
+  
+<details class="example" open> 
+<summary> DEMO </summary>
+  
+  
+  
+</details>
+  
+<details class="example" open> 
+<summary> Example : </summary>
+<h4 style="color:darkblue"><u> 
+  
+  
+</details>
   
   
   

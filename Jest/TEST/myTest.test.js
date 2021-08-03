@@ -1,15 +1,24 @@
-expect.extend({
-  toBeNotString(received){
-    if(typeof received !== 'string'){
-      return {pass:true, message:() => 'not a string data type'}
-    } else {
-      return {pass:false, message:() => `${received} is a string data type`}
-    }
-  }
+test('some test-1', function(){
+  expect('Kicsi kutya tarka').toEqual(expect.stringContaining('kutya'))   // test passes 
+  expect('Kicsi kutya tarka').toEqual(expect.stringContaining('macka'))   // test fails 
 })
 
-test('should not be a string', function(){
-  expect(21).toBeNotString()                  // test passes 
-  expect('21').toBeNotString()                // test fails 
+test('some test-2', function(){
+  expect('Kicsi kutya tarka').toEqual(expect.stringMatching('ta'))        // test passes 
+  expect('Kicsi kutya tarka').toEqual(expect.stringMatching(/k.cs.\s/i))  // test passes 
+  
+  expect('Kicsi kutya tarka').toEqual(expect.stringMatching('farka'))     // test fails
+  expect('Kicsi kutya tarka').toEqual(expect.stringMatching(/k.cs.\s/))   // test fails 
 })
 
+const mock = jest.fn()
+
+function testFn(a, b, cb){
+  cb(a, b)
+}
+
+test('mock called with', function(){
+  testFn('one', 'two', mock)
+  
+  expect(mock).toBeCalledWith(expect.stringContaining('one'), expect.stringContaining('two'))   // test passes 
+})
