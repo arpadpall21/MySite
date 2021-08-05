@@ -221,18 +221,22 @@
         - creates custom <strong>matcherMethod</strong>s that can be used anywhere in the jest scope (just like any other matcher methods)
   </td>
 </tr>
-
-
-
-
-
-
-
-
-
-
-
-
+<tr class="0">
+  <td> 
+        expect.assertions(<strong>nr</strong>)
+  </td>
+  <td>
+        - this test case must have <strong>nr</strong> of assertions in order for the test to pass <u>(supports asynchronous code)</u>
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        expect.hasAssertions()
+  </td>
+  <td>
+        - this test case must have at least one assertion for the test to pass <u>(supports asynchronous code)</u>
+  </td>
+</tr>
 <tr class="0">
   <td colspan="2"> Matchers Methods </td>
 </tr>  
@@ -350,10 +354,10 @@
 </tr>
 <tr class="0">
   <td> 
-        toContain(<strong>data</strong>)
+        toContain(<strong>val</strong>)
   </td>
   <td> 
-        - the <strong>exp</strong> result should be an iterable object which contains <strong>data</strong>
+        - the expected data shold be an iterable object which contains <strong>val</strong>
   </td>
 </tr>
 
@@ -365,7 +369,7 @@
         expect<small>[.not]</small>.stringContaining(<strong>str</strong>)
   </td>
   <td>
-        - test passes if the expeced value contains <strong>str</strong> part
+        - expect value should contain <strong>str</strong> part
   </td>
 </tr>
 <tr class="0">
@@ -373,12 +377,41 @@
         expect<small>[.not]</small>.stringMatching(<strong>str|regExp</strong>)
   </td>
   <td>
-        - test passes if the expeced value contains <strong>str|regExp</strong> part
+        - the expect value should contain <strong>str|regExp</strong> part
   </td>
 </tr>
-
-
-
+<tr class="0">
+  <td> 
+        expect<small>[.not]</small>.objectContaining(<strong>obj</strong>)
+  </td>
+  <td>
+        - the expect object should contain key/value pairs in <strong>obj</strong> 
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        expect<small>[.not]</small>.arrayContaining(<strong>arr</strong>)
+  </td>
+  <td>
+        - the expect array should contain items in <strong>arr</strong> 
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        expect.anything(<strong>val</strong>)
+  </td>
+  <td>
+        - the expected value should NOT be <mark>undefined</mark> or <mark>null</mark> 
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        expect.any(<strong>constructor</strong>)
+  </td>
+  <td>
+        - the expected value should be created by the <strong>constructor</strong>  
+  </td>
+</tr>
 </table>
   <br>
   
@@ -1021,7 +1054,7 @@
 <hr>
 <!------------------------------------------------------------------------------------------------------>
 <h2 style="color:darkblue;"><u> Expect and Matchers  </u></h2>
-<h3 style="color:darkblue"><u> Expect <mark>expect()</mark> </u></h3>
+<h3 style="color:darkblue"><u> Expect <mark>expect()</mark> / <mark>expect.extend()</mark> / <mark>expect.assertions()</mark> / <mark>expect.hasAssertions()</mark> / <mark>expect.stringContaining()</mark> / <mark>expect.stringMatching()</mark> / <mark>objectContaining()</mark> / <mark>arrayContaining()</mark> / <mark>expect.anything()</mark> / <mark>expect.any()</mark> </u></h3>
 <h3 style="color:darkblue;"><u> Matchers <mark>not</mark> / <mark>toBe()</mark> / <mark>toEqual()</mark> <mark>not</mark> / <mark>toThrow()</mark> / <mark>toBeNull()</mark> / <mark>toBeUndefined()</mark> / <mark>toBeDefined()</mark> / <mark>toBeTruthy()</mark> / <mark>toBeFalsy()</mark> / <mark>toBeGreaterThan()</mark> / <mark>toBeGreaterThanOrEqual()</mark> / <mark>toBeLessThan()</mark> / <mark>toBeLessThanOrEqual()</mark> / <mark>toBeCloseTo()</mark> / <mark>toMatch()</mark> / <mark>toContain()</mark> </u></h3>
 <details class="example" open> 
 <summary> DEMO </summary>
@@ -1041,62 +1074,79 @@
     expect(21).toBeNotString()                                                         // test passes     // custom matcher method used   
     expect('21').toBeNotString()                                                       // test fails 
   })
-
-
-
   
   
+// expect.objectContaining() ----------------------------------------------------------
+  test('obj containing-1', function(){
+    expect({p1:21, p2:22}).toEqual(expect.objectContaining({p2:22}))                   // test passes 
+  })
+  
+  test('obj containing-2', function(){
+    expect({p1:21, p2:22}).toEqual(expect.objectContaining({p1:21, p2:22, p3:23}))     // test fails (expected object does not contain 'p3:23')
+  })
+  
+  test('obj containing-3', function(){
+    expect({p1:21, p2:{nest:22}}).toEqual(expect.objectContaining({nest:22}))          // test fails 
+  })
+  
+  test('obj containing-4', function(){
+    expect({p1:21, p2:{nest:22}}).toEqual(expect.objectContaining({p2:{nest:22}}))     // test passes  
+  })
   
   
+// expect.arrayContaining() -----------------------------------------------------------
+  test('array containing-1', function(){
+    expect([1, 2, 3, 4, 5]).toEqual(expect.arrayContaining([2, 5]))                    // test passes  
+  }) 
+  
+  test('array containing-2', function(){
+    expect([1, 2, 3, 4, 5]).toEqual(expect.arrayContaining([2, 5]))                    // test passes  
+  })
   
   
-  expect[.not].arrayContaining()
-    - the expected array contains all these array elements (passed inside a matcher method)
-    - shallow check only
-    - can be used in a toEqual or toBeCalledWith matcher 
-    - to match a property in objectContaining or toMatchObject 
-  
-  expect[.not].objectContaining()
-    - the expected object contains all these key/value pairs
-    - shallow check only
-    - remember to check this with toEqual
-  
-  expect[.not].stringContaining()
-    - can be used in a toEqual or toBeCalledWith matcher 
-    - the expected string contains this string part
-    - remember to check this with toEqual
-  
-  expect[.not].stringMatching(str|regExp)
-    - can be used in a toEqual or toBeCalledWith matcher 
-    - the expected string contains this pattern
-    - check with toEqual  
+// expect.anything() ------------------------------------------------------------------
+  test('anything-1', function(){
+    expect(0).toEqual(expect.anything())                                               // test passes
+    expect('str').toEqual(expect.anything())                                           // test passes 
+    expect(undefined).toEqual(expect.anything())                                       // test fails
+  })
   
   
-  
-  expect.anything()
-    - matches anything but undefined or null
-    - can be used in toEqual() or toBeCalledWith()
+// expect.any() -----------------------------------------------------------------------
+  test('any-1', function(){
+    expect(12).toEqual(expect.any(Number))                                             // test passes 
     
-  expect.any(constructor)
-    - matches anything that was created with the given constructor 
-    - does something with mocks 
-    - can be used in toEqual() or toBeCalledWith()
+    function Animal(race){
+      this.race = race
+    }
+    
+    var cat = new Animal('cat')
+    
+    expect(cat).toEqual(expect.any(Animal))                                            // test passes 
+  })
   
   
+// expect.assertions() / expect.hasAssertions() ---------------------------------------  
+  const myTimeout = new Promise(function(res, rej){
+    setTimeout(function(){
+      res('timeout promise OK!')
+    }, 2000)
+  })
   
-  expect.assertions(nr)
-    - verifies if certain number of assertions are called in the test (useful with async code)
+  test('assert test-1', async function(){
+    expect.assertions(2)                                                               // 2 assertions in this test => test passes 
+    
+    expect(2**2).toBe(4)
+    await expect(myTimeout).resolves.toBe('timeout promise OK!')                       // also works with async code 
+  })
   
-  expect.hasAssertions()
-    - at least one assertion must be called or the test pass
-  
-  
-  
-  
-  
-  
-  
-  
+  test('assert test-1', async function(){
+    expect.hasAssertions()                                                             // test should have at least 1 assertion
+    
+    expect(2**2).toBe(4)
+    expect(2**4).toBe(16)
+    await expect(myTimeout).resolves.toBe('timeout promise OK!')                       // also works with async code 
+  })
   </pre>
 </details>
 <details class="example" open> 
@@ -1150,7 +1200,32 @@
   </pre>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
-<h4 style="color:darkblue;"><u> <mark>expect.stringContaining()</mark> / <mark>expectStringMatching()</mark> TEST </u></h4>
+<h4 style="color:darkblue;"><u> <mark>expect.assertions()</mark> / <mark>expect.hasAssertions()</mark> TEST </u></h4>
+  <pre>
+  const myTimeout = new Promise(function(res, rej){
+    setTimeout(function(){
+      res('timeout promise OK!')
+    }, 2000)
+  })
+  
+  test('assert test-1', async function(){
+    expect.assertions(2)                                                               // 2 assertions in this test => test passes 
+    
+    expect(2**2).toBe(4)
+    await expect(myTimeout).resolves.toBe('timeout promise OK!')                       // assertios() also works with async code 
+  })
+  
+  test('assert test-1', async function(){
+    expect.hasAssertions()                                                             // test should have at least 1 assertion
+    
+    expect(2**2).toBe(4)
+    expect(2**4).toBe(16)
+    await expect(myTimeout).resolves.toBe('timeout promise OK!')                       // assertios() also works with async code 
+  })
+  </pre>
+<hr>
+<!------------------------------------------------------------------------------------------------------>
+<h4 style="color:darkblue;"><u> <mark>expect.stringContaining()</mark> / <mark>expect.StringMatching()</mark> TEST </u></h4>
   <pre>
   test('some test-1', function(){
     expect('Kicsi kutya tarka').toEqual(expect.stringContaining('kutya'))              // test passes 
@@ -1177,17 +1252,73 @@
     expect(mock).toBeCalledWith(expect.stringContaining('one'), expect.stringContaining('two'))   // test passes 
   })
   </pre>
+<hr>
+<!------------------------------------------------------------------------------------------------------>
+<h4 style="color:darkblue;"><u> <mark>expect.objectContaining()</mark> / <mark>expectArrayContaining()</mark> TEST </u></h4>
+  <pre>
+// expect.objectContaining() ----------------------------------------------------------
+  test('obj containing-1', function(){
+    expect({p1:21, p2:22}).toEqual(expect.objectContaining({p2:22}))                   // test passes 
+  })
   
+  test('obj containing-2', function(){
+    expect({p1:21, p2:22}).toEqual(expect.objectContaining({p1:21, p2:22, p3:23}))     // test fails (expected object does not contain 'p3:23')
+  })
   
+  test('obj containing-3', function(){
+    expect({p1:21, p2:{nest:22}}).toEqual(expect.objectContaining({nest:22}))          // test fails 
+  })
   
+  test('obj containing-4', function(){
+    expect({p1:21, p2:{nest:22}}).toEqual(expect.objectContaining({p2:{nest:22}}))     // test passes  
+  })
   
+  // expect.arrayContaining() ---------------------------------------------------------
+  test('array containing-1', function(){
+    expect([1, 2, 3, 4, 5]).toEqual(expect.arrayContaining([2, 5]))                    // test passes  
+  }) 
   
+  test('array containing-2', function(){
+    expect([1, 2, 3, 4, 5]).toEqual(expect.arrayContaining([2, 5]))                    // test passes  
+  })
+  </pre>
+<hr>
+<!------------------------------------------------------------------------------------------------------>
+<h4 style="color:darkblue;"><u> <mark>expect.anything()</mark> / <mark>any()</mark> TEST </u></h4>
+  <pre>
+// expect.anything() ------------------------------------------------------------------
+  test('anything-1', function(){
+    expect(0).toEqual(expect.anything())                                               // test passes
+    expect('str').toEqual(expect.anything())                                           // test passes 
+  })
   
+  test('anything-2', function(){
+    expect(undefined).toEqual(expect.anything())                                       // test fails
+  })
   
+  test('anything-3', function(){
+    expect(null).toEqual(expect.anything())                                            // test fails
+  })
+    
+// expect.any() -----------------------------------------------------------------------
+  test('any-1', function(){
+    expect(12).toEqual(expect.any(Number))                                             // test passes 
+  })
   
+  test('any-2', function(){
+    function Animal(race){
+      this.race = race
+    }
+    
+    var cat = new Animal('cat')
+    
+    expect(cat).toEqual(expect.any(Animal))                                            // test passes 
+  })
   
-  
-  
+  test('any-3', function(){
+    expect(/r/).toEqual(expect.any(RegExp))                                            // test passes 
+  })
+  </pre>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
 <h4 style="color:darkblue;"><u> <mark>toBe()</mark> VS <mark>toEqual()</mark> TEST </u></h4>
@@ -1286,7 +1417,22 @@
 </details>
   
   
+<pre>
+  .toHaveLength(nr)
+      - the expected data has lenght items 
+  .toHaveProperty(keyPath:str, val)
+      - the expected object should have these keypath values 
+  .toBeInstanceOf(class)
+      - the expected object should be instance of class 
+  .toBeNaN()
+      - the expected value should be a NaN
+  .toContainEqual(item)
+      - check if an array contains item 
+      - the item can have any complexly deep structure 
   
+
+
+</pre>
   
   
   
@@ -1296,7 +1442,34 @@
 <hr>
 <!------------------------------------------------------------------------------------------------------>
 <h2 style="color:darkblue;"><u> Mock Functions  </u></h2>
+  <pre>
+  .toHaveBeenCalled() 
+      - the mock function have been called 
+  .toHaveBeenCalledTimes(nr)
+      - the mock function have been called nr times 
+  .toHaveBeenCalledWith(arg, ...)
+      - the mock function have been called with these argumenst 
+  .toHaveBeenLastCalledWith(arg, ...)
+      - the mock function have been called with these argument when it was called for the last time 
+  .toHaveBeenNthCalledWith(nthCall, arg, ...)
+      - the mock function habe been called with these argument when it was called nth time 
+  .toHaveReturned()
+      - the mock function returned (not thrown)
+      - test if nothing is returned what happesn then 
+  .toHaveReturnedTime(nr)
+      - the mock function returned nth of times 
+  .toHaveReturnedWith(val)
+      - the mock function retuned val
+  .toHaveLastReturnedWith(val)
+      - the mock function lastly returned val
+  .toHaveNthReturnedWith(nthCall, val)
+      - the mock function returned val at the nth call 
   
+  
+  
+  
+  
+  </pre>
   
   
   
@@ -1310,7 +1483,12 @@
   
 <details class="example" open> 
 <summary> Example : </summary>
-<h4 style="color:darkblue"><u> 
+<h4 style="color:darkblue"><u> Mock Function TEST </u></h4>
+  <pre>
+  
+  
+  
+  </pre>
   
   
 </details>
