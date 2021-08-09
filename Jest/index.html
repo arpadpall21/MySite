@@ -146,7 +146,7 @@
     </tr>
 <tr class="5">
   <td> 
-        test<small class="openable">.only|skip<div>
+        test|it<small class="openable">.only|skip<div>
           <p> <small>only</small> - runs only this test case in the file </p>
           <p> <small>skip</small> - skips this test case </p>
         </div></small>(<strong>name:str</strong>, <strong>fn</strong>, <i class="openable">timeout:nr<div>
@@ -159,7 +159,7 @@
 </tr>
 <tr class="10">
   <td> 
-        test<small class="openable">.only|skip<div>
+        test|it<small class="openable">.only|skip<div>
           <p> <small>only</small> - runs only this test case in the file </p>
           <p> <small>skip</small> - skips this test case </p>
         </div></small>.each([<strong>item:any</strong>, <i>...</i>])(<strong class="openable">name:str<div>
@@ -181,7 +181,7 @@
 </tr>
 <tr class="15">
   <td> 
-        test.todo(<strong>name:str</strong>)
+        test|it.todo(<strong>name:str</strong>)
   </td>
   <td> 
         - writes a todo <strong>name</strong> at the end of the of the output (used to write notes in the test)
@@ -250,10 +250,10 @@
 </tr>
 <tr class="0">
   <td> 
-        toBe(<strong>data</strong>)
+        toBe(<strong>val</strong>)
   </td>
   <td> 
-        - uses the <mark>===</mark> comparison operator to check the expected data 
+        - the expected value should be equal <strong>val</strong> (uses the <mark>===</mark> operator) 
   </td>
 </tr>
 <tr class="0">
@@ -261,15 +261,33 @@
         toEqual(<strong>data</strong>)
   </td>
   <td> 
-        - recursively checks the expected data <u>(used to compare objects)</u>
+        - the expected data should be equal <strong>data</strong> <u>(recursively checks the expected data (used to compare objects))</u>
   </td>
 </tr>
+<tr class="0">
+  <td> 
+        toStrictEqual(<strong>data</strong>)
+  </td>
+  <td> 
+        - the expected data should be equal <strong>data</strong> <u>(recursively checks the expected data (used to compare objects))</u> <br>
+        - stricter version of <mark>toEqual</mark> (<mark>{}</mark> not equal <mark>{p1:undefined}</mark>, strict object check = class instances are not equal literal objects)
+  </td>
+</tr>
+
 <tr class="0">
   <td> 
         toBeNull()
   </td>
   <td> 
-        - expected value should be <mark>null</mark> 
+        - the expected value should be <mark>null</mark> 
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toBeNaN()
+  </td>
+  <td> 
+        - the expected value should be <mark>NaN</mark>
   </td>
 </tr>
 <tr class="0">
@@ -277,7 +295,7 @@
         toBeUndefined()
   </td>
   <td> 
-        - expected value should be <mark>undefined</mark> 
+        - the expected value should be <mark>undefined</mark> 
   </td>
 </tr>
 <tr class="0">
@@ -285,7 +303,7 @@
         toBeDefined()
   </td>
   <td> 
-        - expected value should be <u>other than</u> <mark>undefined</mark> 
+        - the expected value should be <u>other than</u> <mark>undefined</mark> 
   </td>
 </tr>
 <tr class="0">
@@ -293,7 +311,7 @@
         toBeTruthy()
   </td>
   <td> 
-        - expected value should be evaluated <mark>true</mark>
+        - the expected value should be evaluated <mark>true</mark>
   </td>
 </tr>
 <tr class="0">
@@ -301,7 +319,7 @@
         toBeFalsy()
   </td>
   <td> 
-        - expected value should be evaluated <mark>false</mark>
+        - the expected value should be evaluated <mark>false</mark>
   </td>
 </tr>
 <tr class="0">
@@ -309,7 +327,7 @@
         toBeGreaterThan(<strong>nr</strong>)
   </td>
   <td> 
-        - the <strong>exp</strong> result should be greater than the <strong>nr</strong>  
+        - the expected value should be greater than the <strong>nr</strong>   
   </td>
 </tr>
 <tr class="0">
@@ -317,7 +335,7 @@
         toBeGreaterThanOrEqual(<strong>nr</strong>)
   </td>
   <td> 
-        - the <strong>exp</strong> result should be greater or equal than the <strong>nr</strong>  
+        - the expected value should be greater or equal than the <strong>nr</strong>   
   </td>
 </tr>
 <tr class="0">
@@ -325,7 +343,7 @@
         toBeLessThan(<strong>nr</strong>)
   </td>
   <td> 
-        - the <strong>exp</strong> result should be less than the <strong>nr</strong>  
+        - the expected value should be less than the <strong>nr</strong>   
   </td>
 </tr>
 <tr class="0">
@@ -333,7 +351,7 @@
         toBeLessThanOrEqual(<strong>nr</strong>)
   </td>
   <td> 
-        - the <strong>exp</strong> result should be less or equal than the <strong>nr</strong>  
+        - the expected value should be less or equal than the <strong>nr</strong>   
   </td>
 </tr>
 <tr class="0">
@@ -341,7 +359,7 @@
         toBeCloseTo(<strong>nr</strong>)
   </td>
   <td> 
-        - the <strong>exp</strong> result should close to the <strong>nr</strong> (ex: <mark>0.1 + 0.2</mark> will be close to <mark>0.3</mark>)
+        - the expected value should close to the <strong>nr</strong> (ex: <mark>0.1 + 0.2</mark> will be close to <mark>0.3</mark>)
   </td>
 </tr>
 <tr class="0">
@@ -349,7 +367,7 @@
         toMatch(<strong>str|regExp</strong>)
   </td>
   <td> 
-        - the <strong>str|regExp</strong> should match the <strong>exp</strong> result string   
+        - the expected data should match <strong>str|regExp</strong>    
   </td>
 </tr>
 <tr class="0">
@@ -357,9 +375,20 @@
         toContain(<strong>val</strong>)
   </td>
   <td> 
-        - the expected data shold be an iterable object which contains <strong>val</strong>
+        - the expected data should be iterable that contains <strong>val</strong>   
   </td>
 </tr>
+<tr class="0">
+  <td> 
+        toHaveLength(<strong>nr</strong>)
+  </td>
+  <td> 
+        - the expected data should be iterable and should contain <strong>nr</strong> items 
+  </td>
+</tr>
+
+
+
 
 <tr class="0">
   <td colspan="2"> Expect can be used in <mark>toEqual()</mark> / <mark>toBeCalledWith()</mark> matchers </td>
@@ -385,7 +414,7 @@
         expect<small>[.not]</small>.objectContaining(<strong>obj</strong>)
   </td>
   <td>
-        - the expect object should contain key/value pairs in <strong>obj</strong> 
+        - the expected object should contain key/value pairs in <strong>obj</strong> (shallow comparison)
   </td>
 </tr>
 <tr class="0">
@@ -393,7 +422,7 @@
         expect<small>[.not]</small>.arrayContaining(<strong>arr</strong>)
   </td>
   <td>
-        - the expect array should contain items in <strong>arr</strong> 
+        - the expect array should contain items in <strong>arr</strong> (shallow comparison)
   </td>
 </tr>
 <tr class="0">
@@ -1284,7 +1313,7 @@
   </pre>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
-<h4 style="color:darkblue;"><u> <mark>expect.anything()</mark> / <mark>any()</mark> TEST </u></h4>
+<h4 style="color:darkblue;"><u> <mark>expect.anything()</mark> / <mark>expect.any()</mark> TEST </u></h4>
   <pre>
 // expect.anything() ------------------------------------------------------------------
   test('anything-1', function(){
@@ -1321,7 +1350,7 @@
   </pre>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
-<h4 style="color:darkblue;"><u> <mark>toBe()</mark> VS <mark>toEqual()</mark> TEST </u></h4>
+<h4 style="color:darkblue;"><u> <mark>toBe()</mark> / <mark>toEqual()</mark> / <mark>toStrictEqual()</mark> TEST </u></h4>
   <pre>
   test('test-1', function(){
     expect(2).toBe('2')                                                                // test fails because the toBe() uses the same value comparison operator (===)
@@ -1347,6 +1376,40 @@
     expect([1, 2, 3]).toEqual([1, 2, 3])                                               // test fails because the toBe() can compare only values   
   })
   </pre>
+  <p> - <mark>toEqual()</mark> VS <mark>toStrictEqual()</mark> </p>
+  <pre>
+  class TestClass {
+    constructor(a, b){
+      this.a = a
+      this.b = b;
+    }
+  }
+  
+  var myObj = new TestClass(21, 22)
+  
+// toEqual() --------------------------------------------------------------------------
+  test('test-1', function(){
+    expect({}).toEqual({p1:undefined})                                                 // test passes 
+    
+    expect([,1]).toEqual([undefined,1])                                                // test passes 
+    
+    expect({a:21, b:22}).toEqual(myObj)
+  })
+  
+  
+// toStrictEqual() --------------------------------------------------------------------
+  test('test-2', function(){
+    expect({}).toStrictEqual({p1:undefined})                                           // test fails  
+  })
+  
+  test('test-3', function(){
+    expect([,1]).toStrictEqual([undefined,1])                                          // test fails
+  })
+
+  test('test-4', function(){
+    expect({a:21, b:22}).toStrictEqual(myObj)                                          // test fails
+  })
+  </pre>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
 <h4 style="color:darkblue;"><u> <mark>.not</mark> / <mark>toThrow()</mark> TEST </u></h4>  
@@ -1363,10 +1426,12 @@
   </pre>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
-<h4 style="color:darkblue;"><u> <mark>toBeNull()</mark> / <mark>toBeUndefined()</mark> / <mark>toBeDefined()</mark> / <mark>toBeTruthy()</mark> / <mark>toBeFalsy()</mark> TEST </u></h4>  
+<h4 style="color:darkblue;"><u> <mark>toBeNull()</mark> / <mark>toBeNaN()</mark> / <mark>toBeUndefined()</mark> / <mark>toBeDefined()</mark> / <mark>toBeTruthy()</mark> / <mark>toBeFalsy()</mark> TEST </u></h4>  
   <pre>
   test('test-1', function(){
     expect(null).toBeNull()  
+    
+    expect(NaN).toBeNaN()
     
     expect(undefined).toBeUndefined()
     expect('').toBeDefined()                                                           // any value which is not undefined 
@@ -1402,36 +1467,42 @@
   </pre>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
-<h4 style="color:darkblue;"><u> <mark>toContain()</mark> TEST </u></h4>  
+<h4 style="color:darkblue;"><u> <mark>toHaveLength()</mark> / <mark>toContain()</mark> TEST </u></h4>  
   <pre>
+// toHaveLength() ---------------------------------------------------------------------
   test('test-1', function(){
+    expect([1, 2, 3]).toHaveLength(3)
+    
+    expect('some string').toHaveLength(11)
+  })
+  
+// toContain() ------------------------------------------------------------------------
+  test('test-2', function(){
     expect([1, 2, 3]).toContain(2)
+    
     expect(['egy', 'ketto', 'harom']).toContain('ketto')
+    
+    expect('some string').toContain(' ')
   })
   </pre>
-  
-  
-  
-  
-  
 </details>
   
   
+  
+  
 <pre>
-  .toHaveLength(nr)
-      - the expected data has lenght items 
   .toHaveProperty(keyPath:str, val)
       - the expected object should have these keypath values 
   .toBeInstanceOf(class)
       - the expected object should be instance of class 
-  .toBeNaN()
-      - the expected value should be a NaN
   .toContainEqual(item)
       - check if an array contains item 
       - the item can have any complexly deep structure 
+  .toMatchObject(obj)
+      - object comparison with recursive search 
   
-
-
+  
+  
 </pre>
   
   
