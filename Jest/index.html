@@ -61,10 +61,10 @@
 </tr>
 <tr class="05.01">
   <td> 
-        describe<small class="openable">.only|skip<div>
+        describe<small class="openable">[.only|skip<div>
           <p> <small>only</small> - only this describe scope will be executed in this test file </p>
           <p> <small>skip</small> - skips this describe scope </p>
-        </div></small>(<strong>name:str</strong>, <strong>fn</strong>)
+        </div>]</small>(<strong>name:str</strong>, <strong>fn</strong>)
   </td>
   <td> 
         - creates a scope for test suites 
@@ -72,10 +72,10 @@
 </tr>
 <tr class="10.01">
   <td> 
-        describe<small class="openable">.only|skip<div>
+        describe<small class="openable">[.only|skip<div>
           <p> <small>only</small> - only this describe scope will be executed in this test file </p>
           <p> <small>skip</small> - skips this describe scope </p>
-        </div></small>.each([<strong>item:any</strong>, <i>...</i>])(<strong class="openable">name:str<div>
+        </div>]</small>.each([<strong>item:any</strong>, <i>...</i>])(<strong class="openable">name:str<div>
           <p> <mark>%s</mark> - String </p>
           <p> <mark>%d</mark> - Number </p>
           <p> <mark>%i</mark> - Integer </p>
@@ -146,10 +146,10 @@
     </tr>
 <tr class="05.01">
   <td> 
-        test|it<small class="openable">.only|skip<div>
+        test|it<small class="openable">[.only|skip<div>
           <p> <small>only</small> - runs only this test case in the file </p>
           <p> <small>skip</small> - skips this test case </p>
-        </div></small>(<strong>name:str</strong>, <strong>fn</strong>, <i class="openable">timeout:nr<div>
+        </div>]</small>(<strong>name:str</strong>, <strong>fn</strong>, <i class="openable">timeout:nr<div>
           <p> - default <mark>5000</mark> </p>
         </div></i>)
   </td>
@@ -159,10 +159,10 @@
 </tr>
 <tr class="10.01">
   <td> 
-        test|it<small class="openable">.only|skip<div>
+        test|it<small class="openable">[.only|skip<div>
           <p> <small>only</small> - runs only this test case in the file </p>
           <p> <small>skip</small> - skips this test case </p>
-        </div></small>.each([<strong>item:any</strong>, <i>...</i>])(<strong class="openable">name:str<div>
+        </div>]</small>.each([<strong>item:any</strong>, <i>...</i>])(<strong class="openable">name:str<div>
           <p> <mark>%s</mark> - String </p>
           <p> <mark>%d</mark> - Number </p>
           <p> <mark>%i</mark> - Integer </p>
@@ -256,12 +256,160 @@
         - the expected value should be equal <strong>val</strong> (uses the <mark>===</mark> operator) 
   </td>
 </tr>
+<tr class="35.05">
+  <td> 
+        toBeCloseTo(<strong>nr</strong>)
+  </td>
+  <td> 
+        - the expected value should close to the <strong>nr</strong> (ex: <mark>0.1 + 0.2</mark> will be close to <mark>0.3</mark>)
+  </td>
+</tr>
+<tr class="30.04">
+  <td> 
+        toBeDefined()
+  </td>
+  <td> 
+        - the expected value should be <u>other than</u> <mark>undefined</mark> 
+  </td>
+</tr>
+<tr class="30.06">
+  <td> 
+        toBeFalsy()
+  </td>
+  <td> 
+        - the expected value should be evaluated <mark>false</mark>
+  </td>
+</tr>
+<tr class="35.01">
+  <td> 
+        toBeGreaterThan(<strong>nr</strong>)
+  </td>
+  <td> 
+        - the expected value should be greater than the <strong>nr</strong>   
+  </td>
+</tr>
+<tr class="35.02">
+  <td> 
+        toBeGreaterThanOrEqual(<strong>nr</strong>)
+  </td>
+  <td> 
+        - the expected value should be greater or equal than the <strong>nr</strong>   
+  </td>
+</tr>
+<tr class="50.02">
+  <td> 
+        toBeInstanceOf(<strong>class</strong>)
+  </td>
+  <td> 
+        - the expected data should be an instance of <strong>class</strong>
+  </td>
+</tr>
+<tr class="35.03">
+  <td> 
+        toBeLessThan(<strong>nr</strong>)
+  </td>
+  <td> 
+        - the expected value should be less than the <strong>nr</strong>   
+  </td>
+</tr>
+<tr class="35.04">
+  <td> 
+        toBeLessThanOrEqual(<strong>nr</strong>)
+  </td>
+  <td> 
+        - the expected value should be less or equal than the <strong>nr</strong>   
+  </td>
+</tr>
+<tr class="30.02">
+  <td> 
+        toBeNaN()
+  </td>
+  <td> 
+        - the expected value should be <mark>NaN</mark>
+  </td>
+</tr>
+<tr class="30.01">
+  <td> 
+        toBeNull()
+  </td>
+  <td> 
+        - the expected value should be <mark>null</mark> 
+  </td>
+</tr>
+<tr class="30.05">
+  <td> 
+        toBeTruthy()
+  </td>
+  <td> 
+        - the expected value should be evaluated <mark>true</mark>
+  </td>
+</tr>
+<tr class="30.03">
+  <td> 
+        toBeUndefined()
+  </td>
+  <td> 
+        - the expected value should be <mark>undefined</mark> 
+  </td>
+</tr>
+<tr class="40.02">
+  <td> 
+        toContain(<strong>val</strong>)
+  </td>
+  <td> 
+        - the expected data should be iterable that contains <strong>val</strong>   
+  </td>
+</tr>
+<tr class="40.03">
+  <td> 
+        toContainEqual(<strong>data:any</strong>)
+  </td>
+  <td> 
+        - the expected data should be an Array, one of the Array item should have the same data structure as <strong>data</strong> 
+  </td>
+</tr>
 <tr class="25.02">
   <td> 
         toEqual(<strong>data</strong>)
   </td>
   <td> 
         - the expected data should be equal <strong>data</strong> <u>(recursively checks the expected data (used to compare objects))</u>
+  </td>
+</tr>
+<tr class="45.01">
+  <td> 
+        toHaveLength(<strong>nr</strong>)
+  </td>
+  <td> 
+        - the expected data should be iterable and should contain <strong>nr</strong> items 
+  </td>
+</tr>
+<tr class="50.01">
+  <td> 
+        toHaveProperty(<strong class="openable">propPath:str<div>
+          <p> - ex: an object nested property <mark>{p1:{n2:21}}</mark> can be reached as <mark>p1.n2</mark> </p> 
+        </div></strong>)
+  </td>
+  <td> 
+        - the expected data should be an object having <strong>propPath</strong> (nested properties can be reached)
+  </td>
+</tr>
+<tr class="40.01">
+  <td> 
+        toMatch(<strong>str|regExp</strong>)
+  </td>
+  <td> 
+        - the expected data should match <strong>str|regExp</strong>    
+  </td>
+</tr>
+<tr class="40.02">
+  <td> 
+        toMatchObject(<strong>obj</strong>)
+  </td>
+  <td> 
+        - the expected data should be an object, the <strong>obj</strong> should contain at least one key/value pair that is present in the expected object <br>
+        - recusively checks for nested objects too (ex: <mark>expect( {p1:{n1:22, n2:23}} ).toMatchObject( {p1:{n2:23}} )</mark> will pass) <br>
+        - does not work with Arrays (ex: <mark>expect( {p1:[1, 2]} ).toMatchObject( {p1:[1]} )</mark> will fail)
   </td>
 </tr>
 <tr class="25.03">
@@ -273,156 +421,7 @@
         - stricter version of <mark>toEqual</mark> (<mark>{}</mark> not equal <mark>{p1:undefined}</mark>, strict object check = class instances are not equal literal objects)
   </td>
 </tr>
-
-<tr class="30.01">
-  <td> 
-        toBeNull()
-  </td>
-  <td> 
-        - the expected value should be <mark>null</mark> 
-  </td>
-</tr>
-<tr class="30.02">
-  <td> 
-        toBeNaN()
-  </td>
-  <td> 
-        - the expected value should be <mark>NaN</mark>
-  </td>
-</tr>
-<tr class="30.03">
-  <td> 
-        toBeUndefined()
-  </td>
-  <td> 
-        - the expected value should be <mark>undefined</mark> 
-  </td>
-</tr>
-<tr class="30.04">
-  <td> 
-        toBeDefined()
-  </td>
-  <td> 
-        - the expected value should be <u>other than</u> <mark>undefined</mark> 
-  </td>
-</tr>
-<tr class="30.05">
-  <td> 
-        toBeTruthy()
-  </td>
-  <td> 
-        - the expected value should be evaluated <mark>true</mark>
-  </td>
-</tr>
-<tr class="30.06">
-  <td> 
-        toBeFalsy()
-  </td>
-  <td> 
-        - the expected value should be evaluated <mark>false</mark>
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        toBeGreaterThan(<strong>nr</strong>)
-  </td>
-  <td> 
-        - the expected value should be greater than the <strong>nr</strong>   
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        toBeGreaterThanOrEqual(<strong>nr</strong>)
-  </td>
-  <td> 
-        - the expected value should be greater or equal than the <strong>nr</strong>   
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        toBeLessThan(<strong>nr</strong>)
-  </td>
-  <td> 
-        - the expected value should be less than the <strong>nr</strong>   
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        toBeLessThanOrEqual(<strong>nr</strong>)
-  </td>
-  <td> 
-        - the expected value should be less or equal than the <strong>nr</strong>   
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        toBeCloseTo(<strong>nr</strong>)
-  </td>
-  <td> 
-        - the expected value should close to the <strong>nr</strong> (ex: <mark>0.1 + 0.2</mark> will be close to <mark>0.3</mark>)
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        toMatch(<strong>str|regExp</strong>)
-  </td>
-  <td> 
-        - the expected data should match <strong>str|regExp</strong>    
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        toMatchObject(<strong>obj</strong>)
-  </td>
-  <td> 
-        - the expected data should be an object, the <strong>obj</strong> should contain at least one key/value pair that is present in the expected object <br>
-        - recusively checks for nested objects too (ex: <mark>expect( {p1:{n1:22, n2:23}} ).toMatchObject( {p1:{n2:23}} )</mark> will pass) <br>
-        - does not work with Arrays (ex: <mark>expect( {p1:[1, 2]} ).toMatchObject( {p1:[1]} )</mark> will fail)
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        toContain(<strong>val</strong>)
-  </td>
-  <td> 
-        - the expected data should be iterable that contains <strong>val</strong>   
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        toContainEqual(<strong>data:any</strong>)
-  </td>
-  <td> 
-        - the expected data should be an Array, one of the Array item should have the same data structure as <strong>data</strong> 
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        toHaveLength(<strong>nr</strong>)
-  </td>
-  <td> 
-        - the expected data should be iterable and should contain <strong>nr</strong> items 
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        toHaveProperty(<strong class="openable">propPath:str<div>
-          <p> - ex: an object nested property <mark>{p1:{n2:21}}</mark> can be reached as <mark>p1.n2</mark> </p> 
-        </div></strong>)
-  </td>
-  <td> 
-        - the expected data should be an object having <strong>propPath</strong> (nested properties can be reached)
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        toBeInstanceOf(<strong>class</strong>)
-  </td>
-  <td> 
-        - the expected data should be an instance of <strong>class</strong>
-  </td>
-</tr>
-<tr class="0">
+<tr class="55.01">
   <td> 
         toThrow(<i class="openable">err<div>
           <p> - thrown error object </p>
@@ -435,54 +434,10 @@
         - the expected data should be a function that optionally throws an error <u>(don't call the expected function, <mark>expect()</mark> will call it) 
   </td>
 </tr>
-
-
-
-
-<tr class="0">
+<tr class="60.01">
   <td colspan="2"> Expect can be used in <mark>toEqual()</mark> / <mark>toBeCalledWith()</mark> matchers </td>
 </tr>
-<tr class="0">
-  <td> 
-        expect<small>[.not]</small>.stringContaining(<strong>str</strong>)
-  </td>
-  <td>
-        - expect value should contain <strong>str</strong> part
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        expect<small>[.not]</small>.stringMatching(<strong>str|regExp</strong>)
-  </td>
-  <td>
-        - the expect value should contain <strong>str|regExp</strong> part
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        expect<small>[.not]</small>.objectContaining(<strong>obj</strong>)
-  </td>
-  <td>
-        - the expected object should contain key/value pairs in <strong>obj</strong> (shallow comparison)
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        expect<small>[.not]</small>.arrayContaining(<strong>arr</strong>)
-  </td>
-  <td>
-        - the expect array should contain items in <strong>arr</strong> (shallow comparison)
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        expect.anything(<strong>val</strong>)
-  </td>
-  <td>
-        - the expected value should NOT be <mark>undefined</mark> or <mark>null</mark> 
-  </td>
-</tr>
-<tr class="0">
+<tr class="70.02">
   <td> 
         expect.any(<strong>constructor</strong>)
   </td>
@@ -490,8 +445,50 @@
         - the expected value should be created by the <strong>constructor</strong>  
   </td>
 </tr>
+<tr class="70.01">
+  <td> 
+        expect.anything(<strong>val</strong>)
+  </td>
+  <td>
+        - the expected value should NOT be <mark>undefined</mark> or <mark>null</mark> 
+  </td>
+</tr>
+<tr class="65.02">
+  <td> 
+        expect<small>[.not]</small>.arrayContaining(<strong>arr</strong>)
+  </td>
+  <td>
+        - the expect array should contain items in <strong>arr</strong> (shallow comparison)
+  </td>
+</tr>
+<tr class="65.01">
+  <td> 
+        expect<small>[.not]</small>.objectContaining(<strong>obj</strong>)
+  </td>
+  <td>
+        - the expected object should contain key/value pairs in <strong>obj</strong> (shallow comparison)
+  </td>
+</tr>
+<tr class="60.02">
+  <td> 
+        expect<small>[.not]</small>.stringContaining(<strong>str</strong>)
+  </td>
+  <td>
+        - expect value should contain <strong>str</strong> part
+  </td>
+</tr>
+<tr class="60.03">
+  <td> 
+        expect<small>[.not]</small>.stringMatching(<strong>str|regExp</strong>)
+  </td>
+  <td>
+        - the expect value should contain <strong>str|regExp</strong> part
+  </td>
+</tr>
 </table>
   <br>
+  
+  
   
   
   
@@ -1740,16 +1737,6 @@
   })
   </pre>
 </details>
-  
-  
-  
-  
-  
-  
-  
-  
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  
 <hr>
 <!------------------------------------------------------------------------------------------------------>
 <h2 style="color:darkblue;"><u> Mock Functions  </u></h2>
