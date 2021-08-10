@@ -144,7 +144,7 @@
         <th style="width:30%;"> Method </th>
         <th> Description </th>
     </tr>
-<tr class="5">
+<tr class="05.01">
   <td> 
         test|it<small class="openable">.only|skip<div>
           <p> <small>only</small> - runs only this test case in the file </p>
@@ -157,7 +157,7 @@
         - runs a test case (executes its <strong>fn</strong>) and prints the test <strong>name</strong> in the output  
   </td>
 </tr>
-<tr class="10">
+<tr class="10.01">
   <td> 
         test|it<small class="openable">.only|skip<div>
           <p> <small>only</small> - runs only this test case in the file </p>
@@ -179,7 +179,7 @@
         - runs a test case for each <strong>item</strong> (executes its <strong>fn</strong>) and prints the test <strong>name</strong> in the output  
   </td>
 </tr>
-<tr class="15">
+<tr class="15.01">
   <td> 
         test|it.todo(<strong>name:str</strong>)
   </td>
@@ -198,10 +198,10 @@
         <th style="width:30%;"> Method </th>
         <th> Description </th>
     </tr>
-<tr class="0">
+<tr class="05.01">
   <td colspan="2"> Expect </td>
 </tr>
-<tr class="0">
+<tr class="05.02">
   <td> 
         expect(<strong>exp</strong>).<strong>matcherMethod</strong>
   </td>
@@ -210,7 +210,15 @@
         - used inside a <mark>test</mark> function 
   </td>
 </tr>
-<tr class="0">
+<tr class="15.01">
+  <td> 
+        expect.assertions(<strong>nr</strong>)
+  </td>
+  <td>
+        - this test case must have <strong>nr</strong> of assertions in order for the test to pass <u>(supports asynchronous code)</u>
+  </td>
+</tr>
+<tr class="10.05">
   <td> 
         expect.extend({<strong class="openable">fn(received)<div>
           <p> - the <strong>received</strong> is the value passed by the expect method preceding this matcher </p>
@@ -221,15 +229,7 @@
         - creates custom <strong>matcherMethod</strong>s that can be used anywhere in the jest scope (just like any other matcher methods)
   </td>
 </tr>
-<tr class="0">
-  <td> 
-        expect.assertions(<strong>nr</strong>)
-  </td>
-  <td>
-        - this test case must have <strong>nr</strong> of assertions in order for the test to pass <u>(supports asynchronous code)</u>
-  </td>
-</tr>
-<tr class="0">
+<tr class="15.02">
   <td> 
         expect.hasAssertions()
   </td>
@@ -237,10 +237,10 @@
         - this test case must have at least one assertion for the test to pass <u>(supports asynchronous code)</u>
   </td>
 </tr>
-<tr class="0">
+<tr class="20.01">
   <td colspan="2"> Matchers Methods </td>
 </tr>  
-<tr class="0">
+<tr class="20.02">
   <td> 
         not<strong>.matcherMethod</strong>
   </td>
@@ -248,7 +248,7 @@
         - negates the <strong>matcherMethod</strong> 
   </td>
 </tr>
-<tr class="0">
+<tr class="25.01">
   <td> 
         toBe(<strong>val</strong>)
   </td>
@@ -256,7 +256,7 @@
         - the expected value should be equal <strong>val</strong> (uses the <mark>===</mark> operator) 
   </td>
 </tr>
-<tr class="0">
+<tr class="25.02">
   <td> 
         toEqual(<strong>data</strong>)
   </td>
@@ -264,7 +264,7 @@
         - the expected data should be equal <strong>data</strong> <u>(recursively checks the expected data (used to compare objects))</u>
   </td>
 </tr>
-<tr class="0">
+<tr class="25.03">
   <td> 
         toStrictEqual(<strong>data</strong>)
   </td>
@@ -274,7 +274,7 @@
   </td>
 </tr>
 
-<tr class="0">
+<tr class="30.01">
   <td> 
         toBeNull()
   </td>
@@ -282,7 +282,7 @@
         - the expected value should be <mark>null</mark> 
   </td>
 </tr>
-<tr class="0">
+<tr class="30.02">
   <td> 
         toBeNaN()
   </td>
@@ -290,7 +290,7 @@
         - the expected value should be <mark>NaN</mark>
   </td>
 </tr>
-<tr class="0">
+<tr class="30.03">
   <td> 
         toBeUndefined()
   </td>
@@ -298,7 +298,7 @@
         - the expected value should be <mark>undefined</mark> 
   </td>
 </tr>
-<tr class="0">
+<tr class="30.04">
   <td> 
         toBeDefined()
   </td>
@@ -306,7 +306,7 @@
         - the expected value should be <u>other than</u> <mark>undefined</mark> 
   </td>
 </tr>
-<tr class="0">
+<tr class="30.05">
   <td> 
         toBeTruthy()
   </td>
@@ -314,7 +314,7 @@
         - the expected value should be evaluated <mark>true</mark>
   </td>
 </tr>
-<tr class="0">
+<tr class="30.06">
   <td> 
         toBeFalsy()
   </td>
@@ -372,6 +372,16 @@
 </tr>
 <tr class="0">
   <td> 
+        toMatchObject(<strong>obj</strong>)
+  </td>
+  <td> 
+        - the expected data should be an object, the <strong>obj</strong> should contain at least one key/value pair that is present in the expected object <br>
+        - recusively checks for nested objects too (ex: <mark>expect( {p1:{n1:22, n2:23}} ).toMatchObject( {p1:{n2:23}} )</mark> will pass) <br>
+        - does not work with Arrays (ex: <mark>expect( {p1:[1, 2]} ).toMatchObject( {p1:[1]} )</mark> will fail)
+  </td>
+</tr>
+<tr class="0">
+  <td> 
         toContain(<strong>val</strong>)
   </td>
   <td> 
@@ -380,10 +390,49 @@
 </tr>
 <tr class="0">
   <td> 
+        toContainEqual(<strong>data:any</strong>)
+  </td>
+  <td> 
+        - the expected data should be an Array, one of the Array item should have the same data structure as <strong>data</strong> 
+  </td>
+</tr>
+<tr class="0">
+  <td> 
         toHaveLength(<strong>nr</strong>)
   </td>
   <td> 
         - the expected data should be iterable and should contain <strong>nr</strong> items 
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toHaveProperty(<strong class="openable">propPath:str<div>
+          <p> - ex: an object nested property <mark>{p1:{n2:21}}</mark> can be reached as <mark>p1.n2</mark> </p> 
+        </div></strong>)
+  </td>
+  <td> 
+        - the expected data should be an object having <strong>propPath</strong> (nested properties can be reached)
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toBeInstanceOf(<strong>class</strong>)
+  </td>
+  <td> 
+        - the expected data should be an instance of <strong>class</strong>
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toThrow(<i class="openable">err<div>
+          <p> - thrown error object </p>
+          <p> - the thrown error object's class (ex: <mark>Error</mark>) </p>
+          <p> - the thrown error's message as a string </p>
+          <p> - the thrown error's message as <strong>regExp</strong> </p>
+        </div></i>)
+  </td>
+  <td> 
+        - the expected data should be a function that optionally throws an error <u>(don't call the expected function, <mark>expect()</mark> will call it) 
   </td>
 </tr>
 
@@ -1084,8 +1133,8 @@
 <!------------------------------------------------------------------------------------------------------>
 <h2 style="color:darkblue;"><u> Expect and Matchers  </u></h2>
 <h3 style="color:darkblue"><u> Expect <mark>expect()</mark> / <mark>expect.extend()</mark> / <mark>expect.assertions()</mark> / <mark>expect.hasAssertions()</mark> / <mark>expect.stringContaining()</mark> / <mark>expect.stringMatching()</mark> / <mark>objectContaining()</mark> / <mark>arrayContaining()</mark> / <mark>expect.anything()</mark> / <mark>expect.any()</mark> </u></h3>
-<h3 style="color:darkblue;"><u> Matchers <mark>not</mark> / <mark>toBe()</mark> / <mark>toEqual()</mark> <mark>not</mark> / <mark>toThrow()</mark> / <mark>toBeNull()</mark> / <mark>toBeUndefined()</mark> / <mark>toBeDefined()</mark> / <mark>toBeTruthy()</mark> / <mark>toBeFalsy()</mark> / <mark>toBeGreaterThan()</mark> / <mark>toBeGreaterThanOrEqual()</mark> / <mark>toBeLessThan()</mark> / <mark>toBeLessThanOrEqual()</mark> / <mark>toBeCloseTo()</mark> / <mark>toMatch()</mark> / <mark>toContain()</mark> </u></h3>
-<details class="example" open> 
+<h3 style="color:darkblue;"><u> Matchers <mark>not</mark> / <mark>toBe()</mark> / <mark>toEqual()</mark> / <mark>toStrictEqual()</mark> / <mark>toBeNull()</mark> / <mark>toBeNaN</mark> / <mark>toBeUndefined()</mark> / <mark>toBeDefined()</mark> / <mark>toBeTruthy()</mark> / <mark>toBeFalsy()</mark> / <mark>toBeGreaterThan()</mark> / <mark>toBeGreaterThanOrEqual()</mark> / <mark>toBeLessThan()</mark> / <mark>toBeLessThanOrEqual()</mark> / <mark>toBeCloseTo()</mark> / <mark>toMatch()</mark> / <mark>toMatchObject</mark> / <mark>toContain()</mark> / <mark>toContainEqual()</mark> / <mark>toHaveLength()</mark> / <mark>toHaveProperty()</mark> / <mark>toBeInstanceOf()</mark> / <mark>toThrow()</mark>  </u></h3>
+<details class="example"> 
 <summary> DEMO </summary>
   <pre>
 // expect.extend() --------------------------------------------------------------------
@@ -1177,8 +1226,142 @@
     await expect(myTimeout).resolves.toBe('timeout promise OK!')                       // also works with async code 
   })
   </pre>
+  <pre>
+// not --------------------------------------------------------------------------------
+  test('test', function(){
+    expect(2).not.toBe(3)                                                              // test passes 
+    expect(2).not.toBe(2)                                                              // test fails 
+  })
+  
+// toBe() / toEqual() -----------------------------------------------------------------
+  test('test', function(){
+    expect(2).toBe(2)                                                                  // test passes 
+    expect(2).toBe('2')                                                                // test fails because the toBe() uses the same value comparison operator (===)
+    expect({p1:21, p2:22}).toBe({p1:21, p2:22})                                        // test fails because the toBe() cannot compare objects 
+  })
+  
+  test('test', function(){
+    expect({p1:21, p2:22}).toEqual({p1:21, p2:22})                                     // test passes (recursively compares object properties)
+    expect([1, 2, 3]).toEqual([1, 2, 3])                                               // test passes 
+  })
+  
+// toEqual() VS toStrictEqual() -------------------------------------------------------
+  class TestClass {
+    constructor(a, b){
+      this.a = a
+      this.b = b;
+    }
+  }
+  
+  var myObj = new TestClass(21, 22)
+  
+  test('test', function(){
+    expect({}).toEqual({p1:undefined})                                                 // test passes 
+    expect([,1]).toEqual([undefined,1])                                                // test passes 
+    expect({a:21, b:22}).toEqual(myObj)                                                // test passes
+  })
+  
+  test('test-2', function(){
+    expect({}).toStrictEqual({p1:undefined})                                           // the 'toStrictEqual()' is a stricter version of 'toEqual' all these tests will fail    
+    expect([,1]).toStrictEqual([undefined,1]) 
+    expect({a:21, b:22}).toStrictEqual(myObj) 
+  })
+  
+// toBeNull() / toBeNaN() / toBeUndefined() / toBeDefined() / toBeTruthy() / toBeFalsy() --
+  test('test', function(){
+    expect(null).toBeNull()                                                            // test passes 
+    
+    expect(NaN).toBeNaN()                                                              // test passes 
+    
+    expect(undefined).toBeUndefined()                                                  // test passes 
+    expect('').toBeDefined()                                                           // test passes (any value which is not undefined) 
+    
+    expect(1).toBeTruthy()                                                             // test passes 
+    expect(0).toBeFalsy()                                                              // test passes 
+  })
+  
+// toBeGreaterThan() / toBeGreaterThanOrEqual() / toBeLessThan() / toBeLessThanOrEqual() / toBeCloseTo() --
+  test('test', function(){
+    expect(5).toBeGreaterThan(3)                                                       // test passes 
+    expect(5).toBeGreaterThanOrEqual(3)                                                // test passes 
+    expect(5).toBeGreaterThanOrEqual(5)                                                // test passes 
+    
+    expect(5).toBeLessThan(7)                                                          // test passes   
+    expect(5).toBeLessThanOrEqual(7)                                                   // test passes   
+    expect(5).toBeLessThanOrEqual(5)                                                   // test passes   
+    
+    expect(0.1 + 0.2).toBeCloseTo(0.3)                                                 // test passes (used for double floating comparison)   
+  })
+  
+// toMatch() / toMatchObject() --------------------------------------------------------
+  test('test', function(){
+    expect('some test').toMatch('some test')                                           // test passes 
+    expect('some test').toMatch(/SOME TEST/i)                                          // test passes (also accepts regular expressions)
+  })
+  
+  test('test', function(){
+    expect({p1:21, p2:{a:1, b:2}, p3:{nest1:111, nest2:222}}).toMatchObject({p1:21})           // test passes 
+    expect({p1:21, p2:{a:1, b:2}, p3:{nest1:111, nest2:222}}).toMatchObject({p2:{b:2}})        // test passes (also check for nested objects)
+    expect({p1:21, p2:{a:1, b:2}, p3:{nest1:111, nest2:222}}).toMatchObject({p3:{nest2:222}})  // test passes 
+    
+    expect({p1:[1, 2, 3]}).toMatchObject({p1:[1, 2]})                                          // test fails (does not work with Arrays)
+    
+    expect({p1:[1, 2, 3]}).toMatchObject({p1:[1, 2, 3]})                                       // test passes (the nested Array has the same structure as in the expected object)    
+  })
+  
+// toHaveLength() / toContain() / toContainEqual() ------------------------------------
+  test('test', function(){
+    expect([1, 2, 3]).toHaveLength(3)                                                  // test passes 
+    expect('some string').toHaveLength(11)                                             // test passes 
+  })
+  
+  test('test', function(){
+    expect([1, 2, 3]).toContain(2)                                                     // test passes (Array contains the item)
+    expect(['egy', 'ketto', 'harom']).toContain('ketto')                               // test passes 
+    expect('some string').toContain(' ')                                               // test passes 
+  })
+  
+  test('test', function(){
+    expect([{p1:21, p2:22}, {nest:[1, 2]}, {p3:33}]).toContainEqual({p3:33})           // test passes (the expected array contains the item)
+    expect([{p1:21, p2:22}, {nest:[1, 2]}, {p3:33}]).toContainEqual({nest:[1, 2]})     // test passes 
+    expect([{p1:21, p2:22}, {nest:[1, 2]}, {p3:33}]).toContainEqual({p1:21, p2:22})    // test passes 
+    
+    expect([{p1:21, p2:22}, {nest:[1, 2]}, {p3:33}]).toContainEqual({p1:21})           // test fails 
+    expect({p1:21, p2:22, p3:[1, 2]}).toContainEqual({p2:22})                          // test fails (object is not expected)
+  })
+  
+// toHaveProperty() / toBeInstanceOf() ------------------------------------------------
+  test('test', function(){
+    expect({p1:21, p2:{n1:33}}).toHaveProperty('p1')                                   // test passes 
+    expect({p1:21, p2:{n1:33}}).toHaveProperty('p2.n1')                                // test passes (we can check for nested properties)
+    expect({p1:21, p2:{n1:33, n2:{d1:true}}}).toHaveProperty('p2.n2.d1')               // test passes 
+  })
+  
+  test('test', function(){
+    expect({p1:21}).toBeInstanceOf(Object)                                             // test passes 
+    expect([1, 2]).toBeInstanceOf(Array)                                               // test passes 
+    expect(/./).toBeInstanceOf(RegExp)                                                 // test passes 
+    
+    class SomeClass {}
+    let myInstance = new SomeClass()
+    
+    expect(myInstance).toBeInstanceOf(SomeClass)                                       // test passes 
+  })
+  
+// toThrow() --------------------------------------------------------------------------
+  function testFn(){
+    throw new Error('someError')
+  }
+    
+  test('test', function(){
+    expect(testFn).toThrow()                                                           // test passes 
+    expect(testFn).toThrow('someError')                                                // test passes 
+    expect(testFn).toThrow(/someError/)                                                // test passes 
+    expect(testFn).toThrow(Error)                                                      // test passes (the thrown error is an instance of this class)
+  })
+  </pre>
 </details>
-<details class="example" open> 
+<details class="example"> 
 <summary> Example : </summary>
 <h4 style="color:darkblue;"><u> <mark>expect.extend()</mark> TEST </u></h4>
   <pre>
@@ -1412,7 +1595,7 @@
   </pre>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
-<h4 style="color:darkblue;"><u> <mark>.not</mark> / <mark>toThrow()</mark> TEST </u></h4>  
+<h4 style="color:darkblue;"><u> <mark>.not</mark> TEST </u></h4>  
   <pre>
   test('test-1', function(){
     expect(2).not.toBe(3)                                                              // test passes 
@@ -1421,11 +1604,25 @@
   test('test-2', function(){
     expect(2).not.toBe(2)                                                              // test fails 
   })
-  
-  
   </pre>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
+<h4 style="color:darkblue;"><u> <mark>.toThrow()</mark> TEST </u></h4>  
+  <pre>
+  function testFn(){
+    throw new Error('someError')
+  }
+    
+  test('test-1', function(){
+    expect(testFn).toThrow()                                                           // the function instance is not called!
+    
+    expect(testFn).toThrow('someError')
+    
+    expect(testFn).toThrow(/someError/)
+    
+    expect(testFn).toThrow(Error)
+  })
+  </pre>
 <h4 style="color:darkblue;"><u> <mark>toBeNull()</mark> / <mark>toBeNaN()</mark> / <mark>toBeUndefined()</mark> / <mark>toBeDefined()</mark> / <mark>toBeTruthy()</mark> / <mark>toBeFalsy()</mark> TEST </u></h4>  
   <pre>
   test('test-1', function(){
@@ -1458,16 +1655,34 @@
   </pre>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
-<h4 style="color:darkblue;"><u> <mark>toMatch()</mark> TEST </u></h4>  
+<h4 style="color:darkblue;"><u> <mark>toMatch()</mark> / <mark>toMatchObject()</mark> TEST </u></h4>  
   <pre>
+// toMatch() --------------------------------------------------------------------------
   test('test-1', function(){
     expect('some test').toMatch('some test')
     expect('some test').toMatch(/SOME TEST/i)                                          // also accepts regular expressions  
   })
+  
+// toMatchObject() --------------------------------------------------------------------
+  test('test-2', function(){
+    expect({p1:21, p2:{a:1, b:2}, p3:{nest1:111, nest2:222, nest3:['str']}}).toMatchObject({p1:21})
+    
+    expect({p1:21, p2:{a:1, b:2}, p3:{nest1:111, nest2:222, nest3:['str']}}).toMatchObject({p2:{b:2}})
+    
+    expect({p1:21, p2:{a:1, b:2}, p3:{nest1:111, nest2:222, nest3:['str']}}).toMatchObject({p3:{nest2:222}})
+  })
+  
+  test('test-3', function(){
+    expect({p1:[1, 2, 3]}).toMatchObject({p1:[1, 2]})                                  // test fails (this matcher works with nested objects only) 
+  })
+  
+  test('test-4', function(){
+    expect({p1:[1, 2, 3]}).toMatchObject({p1:[1, 2, 3]})                               // test passes (the nested item has the same structure as in the expected object) 
+  })
   </pre>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
-<h4 style="color:darkblue;"><u> <mark>toHaveLength()</mark> / <mark>toContain()</mark> TEST </u></h4>  
+<h4 style="color:darkblue;"><u> <mark>toHaveLength()</mark> / <mark>toContain()</mark> / <mark>toContainEqual()</mark> TEST </u></h4>  
   <pre>
 // toHaveLength() ---------------------------------------------------------------------
   test('test-1', function(){
@@ -1484,26 +1699,51 @@
     
     expect('some string').toContain(' ')
   })
+  
+// toContainEqual() -------------------------------------------------------------------
+  test('test-3', function(){
+    expect([{p1:21, p2:22}, {nest:[1, 2]}, {p3:33}]).toContainEqual({p3:33})
+    
+    expect([{p1:21, p2:22}, {nest:[1, 2]}, {p3:33}]).toContainEqual({nest:[1, 2]})
+    
+    expect([{p1:21, p2:22}, {nest:[1, 2]}, {p3:33}]).toContainEqual({p1:21, p2:22})
+  })
+  
+  test('test-4', function(){
+    expect([{p1:21, p2:22}, {nest:[1, 2]}, {p3:33}]).toContainEqual({p1:21})           // test fails the array item must have a specific structure 
+  })
+  
+  test('test-5', function(){
+    expect({p1:21, p2:22, p3:[1, 2]}).toContainEqual({p2:22})                          // test fails this matcher expects an Array 
+  })
+  </pre>
+<hr>
+<!------------------------------------------------------------------------------------------------------>
+<h4 style="color:darkblue;"><u> <mark>toHaveProperty()</mark> / <mark>toBeInstanceOf()</mark> TEST </u></h4>  
+  <pre>
+  // toHaveProperty() ---------------------------------------------------------
+  test('test-1', function(){
+    expect({p1:21, p2:{n1:33}}).toHaveProperty('p1')
+    expect({p1:21, p2:{n1:33}}).toHaveProperty('p2.n1')
+    expect({p1:21, p2:{n1:33, n2:{d1:true}}}).toHaveProperty('p2.n2.d1')
+  })
+  
+// toBeInstanceOf() ---------------------------------------------------------
+  test('test-2', function(){
+    expect({p1:21}).toBeInstanceOf(Object)
+    expect([1, 2]).toBeInstanceOf(Array)
+    
+    class SomeClass {}
+    let myInstance = new SomeClass()
+    
+    expect(myInstance).toBeInstanceOf(SomeClass)
+  })
   </pre>
 </details>
   
   
   
   
-<pre>
-  .toHaveProperty(keyPath:str, val)
-      - the expected object should have these keypath values 
-  .toBeInstanceOf(class)
-      - the expected object should be instance of class 
-  .toContainEqual(item)
-      - check if an array contains item 
-      - the item can have any complexly deep structure 
-  .toMatchObject(obj)
-      - object comparison with recursive search 
-  
-  
-  
-</pre>
   
   
   
