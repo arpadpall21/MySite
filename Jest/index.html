@@ -1741,6 +1741,30 @@
 <!------------------------------------------------------------------------------------------------------>
 <h2 style="color:darkblue;"><u> Mock Functions  </u></h2>
   <pre>
+  mock / stub -> simulating (replacing) a specific behaviour / state (mock -> replace a specific behaviour) (stup -> replace a specific state)  
+  spy -> spying on the behaviour of areal object 
+  
+  
+  jest.fn(fn)  
+      - creates a mock function 
+  
+  
+  mockFn.mock
+      - property holds the mock functions parameters (how many times it was called, returned value, etc...)
+  mockFn.mock.instances 
+      - holds the instances when the mock function was instantained 
+  mockFn.mock.calls
+      - an Array containing all calls with call arguments 
+  mockFn.mock.results
+      - an Array containing all call resutls 
+  mockFn.mockReturnValue()
+  mockFn.mockReturnValueOnce()
+      - specifies the mock function return value (for one time)
+      
+  
+  
+  
+- expect (spy) matchers 
   .toHaveBeenCalled() 
       - the mock function have been called 
   .toHaveBeenCalledTimes(nr)
@@ -1762,7 +1786,6 @@
       - the mock function lastly returned val
   .toHaveNthReturnedWith(nthCall, val)
       - the mock function returned val at the nth call 
-  
   
   
   
