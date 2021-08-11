@@ -130,10 +130,11 @@
         </td>
     </tr>
     <tr class="26.1">
-        <td> <em>git</em> reset <small>[--hard]</small> <i>tagName|commitId</i> </td>
+        <td> <em>git</em> reset <small>[--hard]</small> <strong>tagName|commitId</strong> </td>
         <td> 
-             - (no option) removes all commits on the branch <u>aftert the specified or the current commit</u> <u>(only commits are removed, any file modifications are kept in the Modified Area)</u> <br>
+             - (no option) removes all commits on the branch <u>aftert the specified <strong>tagName|commitId</strong></u> <u>(commits are removed and modifications placed in the Modified Area)</u> <br>
              - (<small>--hard</small>) completely destroys commits and any file modifications after the specified commit <br>
+             - also can be used to undo changes from the <mark>git reflog</mark> list 
         </td>
     </tr>
         <tr class="26.2"><td></td><td></td></tr>
