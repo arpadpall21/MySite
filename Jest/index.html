@@ -1739,56 +1739,9 @@
 </details>
 <hr>
 <!------------------------------------------------------------------------------------------------------>
+<h2><u> Mocking and Spying </u></h2>
 <h2 style="color:darkblue;"><u> Mock Functions  </u></h2>
   <pre>
-  mock / stub -> simulating (replacing) a specific behaviour / state (mock -> replace a specific behaviour) (stup -> replace a specific state)  
-  spy -> spying on the behaviour of areal object 
-  
-  
-  jest.fn(fn)  
-      - creates a mock function 
-  
-  
-  mockFn.mock
-      - property holds the mock functions parameters (how many times it was called, returned value, etc...)
-  mockFn.mock.instances 
-      - holds the instances when the mock function was instantained 
-  mockFn.mock.calls
-      - an Array containing all calls with call arguments 
-  mockFn.mock.results
-      - an Array containing all call resutls 
-  mockFn.mockReturnValue()
-  mockFn.mockReturnValueOnce()
-      - specifies the mock function return value (for one time)
-      
-  
-  
-  
-- expect (spy) matchers 
-  .toHaveBeenCalled() 
-      - the mock function have been called 
-  .toHaveBeenCalledTimes(nr)
-      - the mock function have been called nr times 
-  .toHaveBeenCalledWith(arg, ...)
-      - the mock function have been called with these argumenst 
-  .toHaveBeenLastCalledWith(arg, ...)
-      - the mock function have been called with these argument when it was called for the last time 
-  .toHaveBeenNthCalledWith(nthCall, arg, ...)
-      - the mock function habe been called with these argument when it was called nth time 
-  .toHaveReturned()
-      - the mock function returned (not thrown)
-      - test if nothing is returned what happesn then 
-  .toHaveReturnedTime(nr)
-      - the mock function returned nth of times 
-  .toHaveReturnedWith(val)
-      - the mock function retuned val
-  .toHaveLastReturnedWith(val)
-      - the mock function lastly returned val
-  .toHaveNthReturnedWith(nthCall, val)
-      - the mock function returned val at the nth call 
-  
-  
-  
   
   </pre>
   
@@ -1832,6 +1785,82 @@
 ---------------------------------------------------------------------------------------------
 WRITE DOWN EVERYTHING NEW
 ---------------------------------------------------------------------------------------------
+  mock / stub -> simulating (replacing) a specific behaviour / state (mock -> replace a specific behaviour) (stup -> replace a specific state)  
+  spy -> spying on the behaviour of areal object 
+  
+  
+  
+  jest.fn(fn)  
+      - creates a mock function 
+  jest.mock(modulePath)
+      - mocks the module 
+      - so once the module is mocked we can use mockFn methods on it
+  
+  
+  
+  mockFn.mock
+      - property holds the mock functions parameters (how many times it was called, returned value, etc...)
+  mockFn.mock.instances 
+      - holds the instances when the mock function was instantained 
+  mockFn.mock.calls
+      - an Array containing all calls with call arguments 
+  mockFn.mock.results
+      - an Array containing all call resutls 
+  
+  mockFn.mockReturnValue()
+  mockFn.mockReturnValueOnce()
+      - specifies the mock function return value (for one time)
+  mockFn.mockResolvedValue(returnVal)
+      - syntax sugra for 'mockFn.mockImplementation(fn)'
+  mockFn.mockImplementation(fn)
+      - overrides the mock function 
+  mockFn.mockImplementaionOnce(fn)
+      - overrides the mock function once 
+  mockFn.mockReturnThis()
+      - returns the mock's this value 
+  mockFn.mockName(name:str)
+      - names the mock function 
+  mockFn.getMockName()
+      - returns the mock function's name 
+  mockFn.mockClear()
+      - resets all informations in 'mock.calls and mock.instances' -> basically replaces mockFn.mock
+  mockFn.mockReset()
+      - does what 'mockClear()' but also removes mock returns and implementations 
+  mockFn.mockResoter()
+      - does what 'mockReset()' does and resets the function before the mocked state
+  mockFn.mockImplementation(fn)
+      - 
+  
+  
+  
+  
+  
+- expect (spy) matchers 
+  .toHaveBeenCalled() 
+      - the mock function have been called 
+  .toHaveBeenCalledTimes(nr)
+      - the mock function have been called nr times 
+  .toHaveBeenCalledWith(arg, ...)
+      - the mock function have been called with these argumenst 
+  .toHaveBeenLastCalledWith(arg, ...)
+      - the mock function have been called with these argument when it was called for the last time 
+  .toHaveBeenNthCalledWith(nthCall, arg, ...)
+      - the mock function habe been called with these argument when it was called nth time 
+  .toHaveReturned()
+      - the mock function returned (not thrown)
+      - test if nothing is returned what happesn then 
+  .toHaveReturnedTime(nr)
+      - the mock function returned nth of times 
+  .toHaveReturnedWith(val)
+      - the mock function retuned val
+  .toHaveLastReturnedWith(val)
+      - the mock function lastly returned val
+  .toHaveNthReturnedWith(nthCall, val)
+      - the mock function returned val at the nth call 
+  
+  
+    mockResolvedValue(mockObj)
+  
 
 
 
@@ -1840,7 +1869,11 @@ WRITE DOWN EVERYTHING NEW
 ?????????????????????????????????????????????????????????????????????????????????????????????
 WRITE DOWN WHAT YOU DON'T UNDERSTAD OR MUST BE TESTED AS QUESTIONS HERE
 ?????????????????????????????????????????????????????????????????????????????????????????????
-
+  - when mocking modules only importe functions are mocked? (other properties are not)
+  
+  
+  
+  
 -->
 
 

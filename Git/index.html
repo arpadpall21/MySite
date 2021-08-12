@@ -129,10 +129,16 @@
              - (<small>-m <strong>message</strong></small>) modifies <u>the most recent</u> commit's message (opens the default text editor to input the commit message) 
         </td>
     </tr>
+    <tr class="26.00">
+        <td> <em>git</em> reflog </td>
+        <td> 
+             - prints the git history log, we can use the <mark>git restet <strong>commitId</strong></mark> to move back on the git history
+        </td>
+    </tr>
     <tr class="26.1">
         <td> <em>git</em> reset <small>[--hard]</small> <strong>tagName|commitId</strong> </td>
         <td> 
-             - (no option) removes all commits on the branch <u>aftert the specified <strong>tagName|commitId</strong></u> <u>(commits are removed and modifications placed in the Modified Area)</u> <br>
+             - (no option) removes all commits on the branch <u>aftert the specified <strong>tagName|commitId</strong></u> <u>(commits are removed and modifications placed back in the Modified Area)</u> <br>
              - (<small>--hard</small>) completely destroys commits and any file modifications after the specified commit <br>
              - also can be used to undo changes from the <mark>git reflog</mark> list 
         </td>
