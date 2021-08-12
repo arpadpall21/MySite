@@ -1,5 +1,9 @@
 const mod1 = require('./module_1')
-jest.mock('./module_1')
+jest.mock('./module_1', () => {
+  return {
+    get2: null
+  }
+})
 
 it('test', () => {
   console.log( mod1.get2() )        // undefined 
