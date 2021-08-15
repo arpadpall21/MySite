@@ -1,27 +1,18 @@
-const mod1 = require('./module_1')
-jest.mock('./module_1')
+let mod1 = require('./module_1')
+jest.mock('./module_1', function(){ return { get2: function(){return 2}, p2:22 }})
 
-it('test', () => {
-  console.log( mod1.get2 )        // undefined -> automatically mocked 
-  console.log( mod1.getRandom() )   // undefined
+it('test', async () => {
+  console.log( mod1.get2() )
   
-  mod1.getRandom.mockImplementation(() => 21)   // mocking an imported function setting a default value to the imported function 
-  console.log( mod1.getRandom() )               // -> 21
-    
-  console.log( mod1.p1 )                        // -> 21    // properties are not automatically mocked 
-  console.log( mod1.p2 )                        // -> []
-  console.log( mod1.p3.n2() )                   // -> undefined   // functions in any depth are mocked 
-  console.log( mod1.p4.n2 )
-  console.log( mod1.p5.n1.n2.n3.n4.n5() )       // -> undefined   // functions in any depth are mocked 
+  console.log( mod1.p2 )
   
+  console.log( mod2.p2 )
   
-  // mod1.get10.mockImplementationOnce(() => 11 )
-  // console.log( mod1.get10() )                   // -> 11
-  // console.log( mod1.get10() )                   // -> undefined 
+  // let myObj = new mod_.myClass(3, 5)
   
-  // mod1.getRandom.mockReturnThis()
-  // console.log( getRandom() )
+  // console.log( myObj.summAll() )
   
-  const mock
+  // console.log( myObj.a )
+  // console.log( myObj.b )
 })
 

@@ -1788,13 +1788,18 @@ WRITE DOWN EVERYTHING NEW
   mock / stub -> simulating (replacing) a specific behaviour / state (mock -> replace a specific behaviour) (stup -> replace a specific state)  
   spy -> spying on the behaviour of areal object 
   
-  
+  the 'jest' object is automatically in scope in all jest files 
   
   jest.fn(fn)  
       - creates a mock function 
-  jest.mock(modulePath)
-      - mocks the module 
-      - so once the module is mocked we can use mockFn methods on it
+  
+  
+  - mocked modules :
+    - exported functions are mocked as mockFn (return undefined)
+    - exported classes keep their original interface but their member functions and properties are mocked 
+    - exported objects are deeply cloned and keep their original keys but key values are mocked according to mockink values (ex a function is mocked, a primitive is not mocked)
+    - exported arrays will ba a new empty arrasy 
+    - exported primitives will be cloned as the original 
   
   
   
@@ -1835,9 +1840,6 @@ WRITE DOWN EVERYTHING NEW
   
   
   
-  
-  
-  
 - expect (spy) matchers 
   .toHaveBeenCalled() 
       - the mock function have been called 
@@ -1860,19 +1862,36 @@ WRITE DOWN EVERYTHING NEW
       - the mock function lastly returned val
   .toHaveNthReturnedWith(nthCall, val)
       - the mock function returned val at the nth call 
-  
-  
-    mockResolvedValue(mockObj)
-  
-
-
+    
+    
+    
+    mockResolvedValue(val)
+      - sets the resolved mock value for async mock functions 
+    mockResolvedValueOnce(val)
+      - sets the resolved mock value for async mock functions once 
+    mockRejectValue(val)
+      - sets the reject mock value for async mock functions 
+    mockRejectValueOnce(val)
+      - sets the reject mock value for async mock functions 
+    
+    
+    
+    jest.disableAutomock()
+      - disables automocking (set in configurations)
+    jest.enableAutomock()
+      - enables automocking 
+    jest.createMockFromModule(moduleName:str)
+      - creates a mock from the given module 
+    jest.mock(modulePath, factorymock, {virtual: true})
+      - mocks an imported module 
+      - so once the module is mocked we can use mockFn methods on it
 
 
 
 ?????????????????????????????????????????????????????????????????????????????????????????????
 WRITE DOWN WHAT YOU DON'T UNDERSTAD OR MUST BE TESTED AS QUESTIONS HERE
 ?????????????????????????????????????????????????????????????????????????????????????????????
-  - when mocking modules only importe functions are mocked? (other properties are not)
+  - when mocking modules only import functions are mocked? (other properties are not)
   
   
   

@@ -117,7 +117,7 @@
         <td> <em>git</em> commit <small>[-a] [-m <strong>message</strong>]</small> </td>
         <td> 
              - (no option) adds a new commit to the Git Tree from the files in the Stagin Area (opens the default text editor to input the commit message) <br>
-             - (<small>-a</small>) also commits files from the Modified Area (Untracked files are not commited) <br>
+             - (<small>-a</small>) also commits files from the Modified Area <u>(Untracked files are not commited)</u> <br>
              - (<small>-m <strong>message</strong>)</small> adds a commit message directly (without opening the text editor) 
         </td>
     </tr>
@@ -296,25 +296,19 @@
 </td></tr>
 <tr class="43.01">
 <td> 
-            <em>git</em> rebase <strong>branchName</strong> 
+            <em>git</em> rebase <small>[-i]</small> <strong>branchName|branchId</strong> 
 </td>
 <td> 
-             - moves the current branch on the top of the specified branch <br>
-             - <u>conficts are prompted</u> and written in the actual file(s) and <u>must be resolved</u> before we can finish the rebase (if there is any conflict) <br>
-             - if the branches are not separated the current commit is alligned with the specified one (moved on the top) 
+            - <span class="openable">rebases<div>
+              <p> 1) the tail where this branch is derived from is taken to the top of the <strong>branchName|branchId</strong> </p>
+              <p> 2) rebasing -> now git check if there's any conflicts or changes, once the rebase is successfully done git recalculates git commit hashes </p>
+            </div></span> the current branch with <strong>branchName</strong>  <br>
+            - <u>conficts are prompted</u> and written in the actual file(s) and <u>must be resolved</u> before we can finish the rebase (if there is any conflict) <br>
+            - (<small>-i</small>) interactive mode will open a text editor and we can specify how to want to rebase (what commits to include, etc...)
 </td>    
 </tr>
 <tr class="43.02"><td></td><td></td></tr>
 <tr class="43.03">
-<td> 
-            <em>git</em> rebase -i <strong>branchId</strong> 
-</td>
-<td> 
-            - move back to the <strong>branchId</strong> and rebases this branch in interactive mode (-i)
-</td>    
-</tr>
-<tr class="43.04"><td></td><td></td></tr>
-<tr class="43.05">
 <td> 
             <em>git</em> rebase --abort|--continue 
 </td>
