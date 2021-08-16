@@ -20,3 +20,5 @@ module.exports = {
   p5:{n1:{n2:{n3:{n4:{n5(){ return 'really deep!' }}}}}},
   myClass: TestClass
 }
+
+console.log( 'required!' )

@@ -10,8 +10,9 @@
 </head>
 <body>
 <h1> Jest v27.0 (ver 4.0.0) </h1>
-    <p> Updated ( 2021-07-18 )</p>
+    <p> Updated ( 2021-07-18 / 2021-08-16 )</p>
     <p class="sitenav"> <a href="../index.html">MySite></a> Jest </p>
+      <p class="subSite"><a href=""> Mocking Stabbing & Spying > </a></p>
 <table class="table">
 <caption>
     <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
@@ -1790,16 +1791,24 @@ WRITE DOWN EVERYTHING NEW
   
   the 'jest' object is automatically in scope in all jest files 
   
-  jest.fn(fn)  
-      - creates a mock function 
   
   
-  - mocked modules :
-    - exported functions are mocked as mockFn (return undefined)
-    - exported classes keep their original interface but their member functions and properties are mocked 
-    - exported objects are deeply cloned and keep their original keys but key values are mocked according to mockink values (ex a function is mocked, a primitive is not mocked)
-    - exported arrays will ba a new empty arrasy 
-    - exported primitives will be cloned as the original 
+  
+- Mock Functions 
+  jest.fn([fn])  
+      - returns an unused mock function (optionally can accept a mockImplementation function)
+  jest.isMockFunction(fn)
+      - checks if the passed function is a mock function or not 
+  jest.spyOn(obj, method, accessType)
+      - returns a mockFn which is called when obj[method] is called 
+      - this guy is used to spy on the obj[method] (ex: expect(mockFn).toHaveBeenCalled())
+      - accessType is supported from jest v.22.1.0  (get|set) we can specify to which property to spy on 
+  jest.clearAllMocks()
+      - equivalent to .mockClear()
+  jest.resetAllMocks()
+      - equivalent to .mockReset()
+  jest.restoreAllMocks()
+      - equivalent to .mockRestore()
   
   
   
@@ -1837,6 +1846,16 @@ WRITE DOWN EVERYTHING NEW
       - overrides a mock function or imported class 
   mockFn.mockImplementationOnce(fn)
       - overrides a mock functio for one call only (chainable)
+  mockFn.mockResolvedValue(val)
+      - sets the resolved mock value for async mock functions 
+  mockFn.mockResolvedValueOnce(val)
+      - sets the resolved mock value for async mock functions once 
+  mockFn.mockRejectValue(val)
+      - sets the reject mock value for async mock functions 
+  mockFn.mockRejectValueOnce(val)
+      - sets the reject mock value for async mock functions 
+  
+  
   
   
   
@@ -1865,29 +1884,58 @@ WRITE DOWN EVERYTHING NEW
     
     
     
-    mockResolvedValue(val)
-      - sets the resolved mock value for async mock functions 
-    mockResolvedValueOnce(val)
-      - sets the resolved mock value for async mock functions once 
-    mockRejectValue(val)
-      - sets the reject mock value for async mock functions 
-    mockRejectValueOnce(val)
-      - sets the reject mock value for async mock functions 
     
+- Mocking modules 
+  
+    - mocked modules :
+    - exported functions are mocked as mockFn (return undefined)
+    - exported classes keep their original interface but their member functions and properties are mocked 
+    - exported objects are deeply cloned and keep their original keys but key values are mocked according to mockink values (ex a function is mocked, a primitive is not mocked)
+    - exported arrays will ba a new empty arrasy 
+    - exported primitives will be cloned as the original 
     
     
     jest.disableAutomock()
       - disables automocking (set in configurations)
+      - returns the Jest (object for chaining)
     jest.enableAutomock()
       - enables automocking 
+      - returns the Jest (object for chaining)
     jest.createMockFromModule(moduleName:str)
       - creates a mock from the given module 
+      - returns the mocked module 
     jest.mock(modulePath, factorymock, {virtual: true})
       - mocks an imported module 
       - so once the module is mocked we can use mockFn methods on it
-
-
-
+      - returns the Jest object (for chaining)
+    jest.unmock(module)
+      - prevents the 'module' from mocking 
+      - returns the Jest object (for chaining)
+    jest.returnActual(module)
+      - returns the actual (original) module 
+      - does this guy request explicitly the module ??? TEST 
+    jest.requireMock(module)
+      - mocks the 'module' and returns the mock module object 
+    jest.resetModules()
+      - resets the require cache (node keeps already required modules, this guy resets that cache to the module will be required explicitly again)
+      - returns the jest object for chaining 
+    jest.isolateModules(fn)
+      - explicitly require modules and isolate them callback 
+      - returns the jest object 
+    
+    
+    
+    
+    
+    
+    
+    
+    - manual mocking ??? -> TEST
+    
+    
+    
+    
+    
 ?????????????????????????????????????????????????????????????????????????????????????????????
 WRITE DOWN WHAT YOU DON'T UNDERSTAD OR MUST BE TESTED AS QUESTIONS HERE
 ?????????????????????????????????????????????????????????????????????????????????????????????
