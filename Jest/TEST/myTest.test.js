@@ -1,11 +1,8 @@
-jest.useFakeTimers()
-// jest.useRealTimers()
-jest.runAllTimers()
-
 it('test', () => {
-  setTimeout( () => {
-    console.log( 'timed out after 2 seconds!' )
-  }, 2000)
-  console.log( 'TEST' )
+  expect(2).toBe(2)
+})
+
+it('test2', () => {
+  expect(3).toBe(3)
 })
 

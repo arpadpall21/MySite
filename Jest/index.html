@@ -1786,8 +1786,22 @@
 ---------------------------------------------------------------------------------------------
 WRITE DOWN EVERYTHING NEW
 ---------------------------------------------------------------------------------------------
-  mock / stub -> simulating (replacing) a specific behaviour / state (mock -> replace a specific behaviour) (stup -> replace a specific state)  
-  spy -> spying on the behaviour of areal object 
+  - jest configurations 
+    - we can write jest configs in the nearest package.json file in an object under "jest" top level key
+    - jest.config.js|ts file (I suppose this file is looked up in the directory where jest runs)
+    - we can use the --config [configFilePath] flag to setup where the jest config file is 
+    
+    
+  https://jestjs.io/docs/configuration#options
+    - link to jest config options 
+    
+  
+  
+  
+  mock -> simulating (replacing) a specific behaviour   
+  stub -> faking some data 
+  spy -> spying on some behaviour like mocked function 
+  
   
   the 'jest' object is automatically in scope in all jest files 
   
@@ -1895,6 +1909,9 @@ WRITE DOWN EVERYTHING NEW
     - exported primitives will be cloned as the original 
     
     
+    - manual mocking 
+
+    
     jest.disableAutomock()
       - disables automocking (set in configurations)
       - returns the Jest (object for chaining)
@@ -1925,12 +1942,46 @@ WRITE DOWN EVERYTHING NEW
     
     
     
+- Fake Timers 
+    - timers cannot be used in tests (unless wrapped in a Promise), so the solution is to use fake timers 
+    
+    jest.useFakeTimers()
+      - jest will use fake timers (timer are ignored setTimeout, setInterval, setImmediate, nextTick and Date)
+      - mocks out timers 
+      - affect all timers in the file, regardless of describe scoping 
+    jest.useRealTimers()
+      - jest will use original timers (usually we execute this after testing so 3rd party libraries are not confused)
+    jest.runAllTicks()
+      - immediately executes all mocked process.nextTick callbacks 
+      - synchronously executes timers 
+    jest.runAllTimers()
+      - immediately executes all mocked process.nextTick and all timers 
+      - basically synchronously executes timers 
+    jest.runAllImmediates()
+      - immediately executes all setImmediate
+    jest.advanceTimersByTime(ms:nr)
+      - advances the timer 
+    jest.runOnlyPendingTimers()
+      - only executes the currently pending timers (ex for setInterval is pending only the first interval thant the second is not pending )
+    jest.advanceTimersToNextTimer(step)
+      - advances the time till the next timer is called then stops 
+    jest.clearTimers()
+      - all pending timers are cleared and never executed in the future 
+    jest.getTimerCount()
+      - returns the number of pending timers 
+    jest.setSystemTime(ms)
+      - sets the system time when using fake timers 
+    jest.getRealSystemTime()
+      - returns the real time when we using fake timers 
+      
+      
+    jest.setTimeout(ms)
+      - number of millisecons jest waits for async tasks to finish (valid for this file only)
+    jest.retryTimes()
+      - number of tryes jest retryes failed tests 
     
     
     
-    
-    
-    - manual mocking ??? -> TEST
     
     
     
