@@ -24,7 +24,7 @@
         <th style="width:30%;"> Method  </th>
         <th> Description </th>
     </tr>
-<tr class="0">
+<tr class="05.01">
   <td> 
         jest.fn(<i class="openable">fn<div>
           <p> - 'mock implementation', we can pass a function here which is ececuted when the mock function is called </p>
@@ -34,7 +34,7 @@
       - creates and returns a <strong>mockFn</strong>, implements a mock function which returns <mark>undefined</mark> if not specified 
   </td>
 </tr>
-<tr class="0">
+<tr class="05.02">
   <td> 
         jest.isMockFunction(<strong>fn</strong>)
   </td>
@@ -42,87 +42,28 @@
         - returns <mark>true</mark> if the passed <strong>fn</strong> is a mock function, <mark>false</mark> otherwise
   </td>
 </tr>
-<tr class="0">
+<tr class="35.02">
   <td> 
-        <strong>mockFn</strong>.mockImplementation(<strong>fn</strong>)
+        jest.clearAllMocks()
   </td>
   <td> 
-      - overrides the mock implementation of <strong>mockFn</strong> 
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        <strong>mockFn</strong>.mockImplementationOnce(<strong>fn</strong>)
-  </td>
-  <td> 
-      - overrides the mock implementation of <strong>mockFn</strong> only once (expires when called once)
+      - resets (empties) all data in <mark>mock.calls</mark> and <mark>mock.results</mark> of <u>all</u> mock functions in this scope 
   </td>
 </tr>
-<tr class="0">
+<tr class="35.04">
   <td> 
-        <strong>mockFn</strong>.mockReturnValue(<strong>val</strong>)
+        jest.resetAllMocks()
   </td>
   <td> 
-      - sets the mock function's return value 
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        <strong>mockFn</strong>.mockReturnValueOnce(<strong>val</strong>)
-  </td>
-  <td> 
-      - sets the mock function's return value only once (expires when called once)
+      - resets (empties) all data in <mark>mock.calls</mark> and <mark>mock.results</mark> of <u>all</u> mock functions in this scope <br>
+      - also removes any mock function implementations 
   </td>
 </tr>
-<tr class="0">
-  <td> 
-        <strong>mockFn</strong>.mockReturnThis()
-  </td>
-  <td> 
-      - returns the <mark>this</mark> value of the <strong>mockFn</strong> (which is the Mock constructor) 
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        <strong>mockFn</strong>.mockResolvedValue(<strong>val</strong>)
-  </td>
-  <td> 
-      - sets the resolved value for a <strong>mockFn</strong> that returns a resolved promise 
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        <strong>mockFn</strong>.mockResolvedValueOnce(<strong>val</strong>)
-  </td>
-  <td> 
-      - sets the resolved value for a <strong>mockFn</strong> that returns a resolved promise only once (expires after the promise is resolved once)
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        <strong>mockFn</strong>.mockRejectedValue(<strong>val</strong>)
-  </td>
-  <td> 
-      - sets the rejected value for a <strong>mockFn</strong> that returns a resolved promise 
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        <strong>mockFn</strong>.mockRejectedValueOnce(<strong>val</strong>)
-  </td>
-  <td> 
-      - sets the rejected value for a <strong>mockFn</strong> that returns a resolved promise only once (expires after the promise is resolved once)
-  </td>
-</tr>
-<tr class="0">
-  <td> 
-        <strong>mockFn</strong>.mockName(<strong>name:str</strong>)
-  </td>
-  <td> 
-      - sets the <strong>mockFn</strong>'s name (which is displayed in failed tests) 
-  </td>
-</tr>
-<tr class="0">
+
+
+
+
+<tr class="25.02">
   <td> 
         <strong>mockFn</strong>.getMockName()
   </td>
@@ -130,7 +71,7 @@
       - returns the <strong>mockFn</strong>'s name (which is displayed in failed tests)
   </td>
 </tr>
-<tr class="0">
+<tr class="30.01">
   <td> 
         <strong>mockFn</strong>.mock.calls
   </td>
@@ -138,7 +79,7 @@
       - returns an Array in which each item is an Array containing the call arguments for each call (ex: <mark>[[1, 2], [5, 5]]</mark>)
   </td>
 </tr>
-<tr class="0">
+<tr class="30.02">
   <td> 
         <strong>mockFn</strong>.mock.results
   </td>
@@ -149,25 +90,109 @@
       </div></strong> containing the results for each call (ex: <mark>[{type:return, value:3}, {type:'throw', value:'err'}]</mark>)
   </td>
 </tr>
-
-
-
-
-
-
-
-
-
-
-<tr class="0">
+<tr class="35.01">
   <td> 
-        
+        <strong>mockFn</strong>.mockClear()
   </td>
   <td> 
-      - 
+      - resets (empties) all data in <mark>mock.calls</mark> and <mark>mock.results</mark> of <u>this</u> mock function
+  </td>
+</tr>
+<tr class="10.01">
+  <td> 
+        <strong>mockFn</strong>.mockImplementation(<strong>fn</strong>)
+  </td>
+  <td> 
+      - overrides the mock implementation of <strong>mockFn</strong> 
+  </td>
+</tr>
+<tr class="10.02">
+  <td> 
+        <strong>mockFn</strong>.mockImplementationOnce(<strong>fn</strong>)
+  </td>
+  <td> 
+      - overrides the mock implementation of <strong>mockFn</strong> only once (expires when called once)
+  </td>
+</tr>
+<tr class="25.01">
+  <td> 
+        <strong>mockFn</strong>.mockName(<strong>name:str</strong>)
+  </td>
+  <td> 
+      - sets the <strong>mockFn</strong>'s name (which is displayed in failed tests) 
+  </td>
+</tr>
+<tr class="20.03">
+  <td> 
+        <strong>mockFn</strong>.mockRejectedValue(<strong>val</strong>)
+  </td>
+  <td> 
+      - sets the rejected value for a <strong>mockFn</strong> that returns a resolved promise 
+  </td>
+</tr>
+<tr class="20.04">
+  <td> 
+        <strong>mockFn</strong>.mockRejectedValueOnce(<strong>val</strong>)
+  </td>
+  <td> 
+      - sets the rejected value for a <strong>mockFn</strong> that returns a resolved promise only once (expires after the promise is resolved once)
+  </td>
+</tr>
+<tr class="35.03">
+  <td> 
+        <strong>mockFn</strong>.mockReset()
+  </td>
+  <td> 
+      - resets (empties) all data in <mark>mock.calls</mark> and <mark>mock.results</mark> of <u>this</u> mock function <br>
+      - also removes any mock function implementations 
+  </td>
+</tr>
+<tr class="20.01">
+  <td> 
+        <strong>mockFn</strong>.mockResolvedValue(<strong>val</strong>)
+  </td>
+  <td> 
+      - sets the resolved value for a <strong>mockFn</strong> that returns a resolved promise 
+  </td>
+</tr>
+<tr class="20.02">
+  <td> 
+        <strong>mockFn</strong>.mockResolvedValueOnce(<strong>val</strong>)
+  </td>
+  <td> 
+      - sets the resolved value for a <strong>mockFn</strong> that returns a resolved promise only once (expires after the promise is resolved once)
+  </td>
+</tr>
+<tr class="15.03">
+  <td> 
+        <strong>mockFn</strong>.mockReturnThis()
+  </td>
+  <td> 
+      - returns the <mark>this</mark> value of the <strong>mockFn</strong> 
+  </td>
+</tr>
+<tr class="15.01">
+  <td> 
+        <strong>mockFn</strong>.mockReturnValue(<strong>val</strong>)
+  </td>
+  <td> 
+      - sets the mock function's return value 
+  </td>
+</tr>
+<tr class="15.02">
+  <td> 
+        <strong>mockFn</strong>.mockReturnValueOnce(<strong>val</strong>)
+  </td>
+  <td> 
+      - sets the mock function's return value only once (expires when called once)
   </td>
 </tr>
 </table>
+
+
+
+
+
     <br>
     <details class="example" id="notes">
     <summary> Notes :</summary>
@@ -183,19 +208,180 @@
   <p> - stabbing is replacing an original data with a fake one </p>
 <hr>
 <!----------------------------------------------------------------------------------->
-<h2 style='color:darkblue;'><u> Mock Functions <mark>jest.fn()</mark> / <mark>jest.isMockFunction()</mark> / <mark>mockImplementaion()</mark> / <mark>mockImplementaionOnce()</mark> / <mark>mockReturnValue()</mark> / <mark>mockReturnValueOnce()</mark> / <mark>mockReturnThis()</mark> / <mark>mockResolvedValue()</mark> / <mark>mockResolvedValueOnce()</mark> / <mark>mockRejectValue()</mark> / <mark>mockRejectValueOnce()</mark> / <mark>mockName()</mark> / <mark>getMockName()</mark> / <mark>mock.calls</mark> / <mark>mock.results</mark> / <mark>jest.clearAllMocks()</mark> / <mark>.mockClear()</mark> / <mark>jest.resetAllMocks()</mark> / <mark>.mockReset()</mark> / <mark>jest.restoreAllMocks()</mark> / <mark>.mockRestore()</mark>  </u></h2>
-
-
-
-
-<details class="example" open> 
+<h2 style='color:darkblue;'><u> Mock Functions <mark>jest.fn()</mark> / <mark>jest.isMockFunction()</mark> / <mark>mockImplementaion()</mark> / <mark>mockImplementaionOnce()</mark> / <mark>mockReturnValue()</mark> / <mark>mockReturnValueOnce()</mark> / <mark>mockReturnThis()</mark> / <mark>mockResolvedValue()</mark> / <mark>mockResolvedValueOnce()</mark> / <mark>mockRejectValue()</mark> / <mark>mockRejectValueOnce()</mark> / <mark>mockName()</mark> / <mark>getMockName()</mark> / <mark>mock.calls</mark> / <mark>mock.results</mark> / <mark>jest.clearAllMocks()</mark> / <mark>.mockClear()</mark> / <mark>jest.resetAllMocks()</mark> / <mark>.mockReset()</mark> </u></h2>
+<details class="example"> 
 <summary> DEMO </summary>
+  <pre>
+  test('some-test', function(){
+// jest.fn() / jest.isMockFunction() --------------------------------------------------
+    const mockFn = jest.fn()                                                           // creates a mock function (without implementation -> returns undefined) 
+    const mockFn2 = jest.fn(function(val, idx, arr){                                   // creates a mock function with a mock implementation (function which runs when the mock is called)   
+      return [idx, val]
+    })
+    
+    mockFn();                                                                          // -> undefined 
+    
+    const someArray = ['un', 'deux', 'trois'];
+    const newArray = someArray.map(mockFn2);                                           // the mock function is replaced and executed with te original (original callback is never called)
+    
+    newArray;                                                                          // -> [[0, 'un'], [1, 'deux'], [2, 'trois']] 
+    
+    
+    jest.isMockFunction(mockFn)                                                        // -> true
+    jest.isMockFunction(function(){})                                                  // -> false
+    
+// mockImplementation() / mockImplementaionOnce() -------------------------------------
+    const mockFn = jest.fn(() => 21)
+    mockFn.mockImplementation(() => 22)                                                // overrides the previous mock implementation 
+    
+    mockFn();                                                                          // -> 22
+    
+    mockFn.mockImplementationOnce(() => 'one');                                        // overrides the previous mock implementation for one call only 
+    mockFn.mockImplementationOnce(() => 'two');
+        
+    mockFn();                                                                          // -> 'one'
+    mockFn();                                                                          // -> 'two'
+    mockFn();                                                                          // -> 22 
+    mockFn();                                                                          // -> 22 
+    
+// mockReturnValue() / mockReturnValueOnce() / mockReturnthis() -----------------------
+    const mockFn = jest.fn(() => 21);
+    mockFn.mockReturnValue(22);                                                        // sets the return value of the mock function (regardless of the mock implementation)    
+    
+    mockFn();                                                                          // -> 22 
+    
+    mockFn.mockReturnValueOnce('one');                                                 // sets the return value for one call only  
+    mockFn.mockReturnValueOnce('two');
+    
+    mockFn();                                                                          // -> 'one'
+    mockFn();                                                                          // -> 'two'
+    mockFn();                                                                          // -> 22
+    mockFn();                                                                          // -> 22
+    
+    const mockFn2 = jest.fn().mockReturnThis()
+    const myObj = {mockFn2}
+    
+    myObj.mockFn2();                                                                   // -> returns the myObj (the this value of the mock function)   
+    
+// getMockName() / mockName() ---------------------------------------------------------
+    const mockFn = jest.fn();                                                          // jest function mock names are printed on the console 
+    
+    mockFn.getMockName();                                                              // -> 'jest.fn()'
+    
+    mockFn.mockName('awesome mock!');                                                  // sets the mock function's name 
+    mockFn.getMockName();                                                              // -> 'awesome mock!'
+  })
+  </pre>
+  <p> - <mark>mockResolvedValue()</mark> / <mark>mockResolvedValueOnce()</mark> / <mark>mockRejectedValue()</mark> / <mark>mockRejectedValueOnce()</mark> </p>
+  <pre>
+  test('some test', function(){
+// mockResolvedValue() / mockResolvedValueOnce() --------------------------------------
+    const mockFnRes = jest.fn(() => Promise.resolve());
+    
+    mockFnRes.mockResolvedValue(21);                                                   // sets the resolved value for a mock function that returns a resolved promise 
+    mockFnRes.mockResolvedValueOnce('one');                                            // sets the resolved value for one promise consumption  
+    mockFnRes.mockResolvedValueOnce('two');
+    
+    mockFnRes()
+      .then((res) => console.log(res))                                                 // -> 'one'
+      .catch((rej) => console.log(rej))
+    mockFnRes()
+      .then((res) => console.log(res))                                                 // -> 'two'
+      .catch((rej) => console.log(rej))
+    mockFnRes()
+      .then((res) => console.log(res))                                                 // -> 21
+      .catch((rej) => console.log(rej))
+    mockFnRes()
+      .then((res) => console.log(res))                                                 // -> 21
+      .catch((rej) => console.log(rej))
   
+// mockRejectedValue() / mockRejectedValueOnce() -------------------------------------
+    const mockFnRej = jest.fn(() => Promise.reject());
+    
+    mockFnRej.mockRejectedValue(22);                                                   // sets the rejected value for a mock function that returns a rejected promise
+    mockFnRej.mockRejectedValueOnce('un');                                             // sets the rejected value for one promise consumption  
+    mockFnRej.mockRejectedValueOnce('deux');
   
+    mockFnRej()
+      .then((res) => console.log(res))
+      .catch((rej) => console.log(rej))                                                // -> 'un'
+    mockFnRej()
+      .then((res) => console.log(res))
+      .catch((rej) => console.log(rej))                                                // -> 'deux'
+    mockFnRej()
+      .then((res) => console.log(res))
+      .catch((rej) => console.log(rej))                                                // -> 22
+    mockFnRej()
+      .then((res) => console.log(res))
+      .catch((rej) => console.log(rej))                                                // -> 22
+  })  
+  </pre>
+  <p> - <mark>mock.calls</mark> / <mark>mock.results</mark> / <mark>.mockClear()</mark> / <mark>jest.clearAllMocks()</mark> / <mark>.mockReset()</mark> / <mark>jest.resetAllMocks()</mark> </p>
+  <pre>
+  test('some-test', function(){
+// mock.calls / mock.results ----------------------------------------------------------
+    const mockFn = jest.fn( (a, b) => a + b );
+    
+    mockFn(1, 2);
+    mockFn(5, 5);
+    
+    mockFn.mock.calls;                                                                 // -> [[1, 2], [5, 5]]                                        // returns the mock call arguments for each call 
+    mockFn.mock.results;                                                               // -> [{type:'return', value:3}, {type:'return', value:10}]   // returns the results for each call 
   
+// .mockClear() / jest.crearAllMocks() ------------------------------------------------
+    const mockFn1 = jest.fn((a, b) => a + b);
+    const mockFn2 = jest.fn((a, b) => a + b);
+    const mockFn3 = jest.fn((a, b) => a + b);
+    
+    mockFn1(1, 2)
+    mockFn2(5, 5)
+    mockFn3(7, 4)
+    
+    mockFn1.mock.calls;                                                                // -> [[1, 2]]                    
+    mockFn2.mock.results;                                                              // -> [{type:'return', value:10}] 
+    mockFn3.mock.results;                                                              // -> [{type:'return', value:11}] 
+    
+    mockFn1.mockClear();                                                               // clears the 'mock.calls' and mock.results' for this mock function only 
+    
+    mockFn1.mock.calls;                                                                // -> [] 
+    mockFn2.mock.results;                                                              // -> [{type:'return', value:10}] 
+    mockFn3.mock.results;                                                              // -> [{type:'return', value:11}] 
+    
+    jest.clearAllMocks();                                                              // clears the 'mock.calls' and mock.results' for all mock functions of this scope  
+    
+    mockFn1.mock.calls;                                                                // -> [] 
+    mockFn2.mock.results;                                                              // -> [] 
+    mockFn3.mock.results;                                                              // -> []   
+    
+    mockFn1(1, 2);                                                                     // -> 3              // does not remove any mock implementation 
+    
+// .mockReset() / jest.resetAllMocks() ------------------------------------------------
+    const mockFn4 = jest.fn((a, b) => a + b);
+    const mockFn5 = jest.fn((a, b) => a + b);
+    
+    mockFn4(1, 2)
+    mockFn5(5, 5)
+    
+    mockFn4.mock.calls;                                                                // -> [[1, 2]]                    
+    mockFn5.mock.results;                                                              // -> [{type:'return', value:10}] 
+    
+    mockFn4.mockReset;                                                                              // clears the 'mock.calls' and mock.results' and also resets all mock implementations for this mock function only   
+    
+    mockFn4.mock.calls;                                                                // -> []
+    mockFn5.mock.results;                                                              // -> [{type:'return', value:10}]
+    mockFn4(1, 2);                                                                     // -> undefined        // because mock implementations are cleared as well 
+    mockFn5(5, 5);                                                                     // -> 10 
+    
+    jest.resetAllMocks;                                                                             // clears the 'mock.calls' and mock.results' and also resets all mock implementations for all mock functions of this scope   
+    
+    mockFn4.mock.calls;                                                                // -> []
+    mockFn5.mock.results;                                                              // -> []
+    mockFn4(1, 2);                                                                     // -> undefined        // because mock implementations are cleared as well 
+    mockFn5(5, 5);                                                                     // -> undefined  
+  })
+  </pre>
 </details>
-  
-<details class="example" open> 
+<details class="example"> 
 <summary> Example : </summary>
 <h4 style="color:darkblue"><u> <mark>jest.fn()</mark> / <mark>jest.isMockFunction()</mark> TEST </u></h4>
   <pre>
@@ -359,23 +545,93 @@
   </pre>
 <hr>
 <!----------------------------------------------------------------------------------->
-<h4 style="color:darkblue"><u> <mark>.mockClear()</mark> / <mark>jest.clearAllMocks()</mark> / <mark>.mockReset()</mark> / <mark>jest.resetAllMocks()</mark> / <mark>.mockRestore()</mark> / <mark>rest.restoreAllMocks()</mark> TEST </u></h4>
+<h4 style="color:darkblue"><u> <mark>.mockClear()</mark> / <mark>jest.clearAllMocks()</mark> / <mark>.mockReset()</mark> / <mark>jest.resetAllMocks()</mark> TEST </u></h4>
+  <pre>
+  test('some-test', async function(){
+// .mockClear() / jest.crearAllMocks() ------------------------------------------------
+    const mockFn1 = jest.fn((a, b) => a + b);
+    const mockFn2 = jest.fn((a, b) => a + b);
+    const mockFn3 = jest.fn((a, b) => a + b);
+    
+    mockFn1(1, 2)
+    mockFn2(5, 5)
+    mockFn3(7, 4)
+    
+    console.log( mockFn1.mock.calls );                                                 // -> [[1, 2]]                    
+    console.log( mockFn2.mock.results );                                               // -> [{type:'return', value:10}] 
+    console.log( mockFn3.mock.results );                                               // -> [{type:'return', value:11}] 
+    
+    mockFn1.mockClear();                                                               // clears the 'mock.calls' and mock.results' for this mock function only 
+    
+    console.log( mockFn1.mock.calls );                                                 // -> [] 
+    console.log( mockFn2.mock.results );                                               // -> [{type:'return', value:10}] 
+    console.log( mockFn3.mock.results );                                               // -> [{type:'return', value:11}] 
+    
+    jest.clearAllMocks();                                                              // clears the 'mock.calls' and mock.results' for all mock functions 
+    
+    console.log( mockFn1.mock.calls );                                                 // -> [] 
+    console.log( mockFn2.mock.results );                                               // -> [] 
+    console.log( mockFn3.mock.results );                                               // -> []   
+    
+    console.log( mockFn1(1, 2) )                                                       // -> 3              // does not remove any mock implementation 
+    
+// .mockReset() / jest.resetAllMocks() ------------------------------------------------
+    const mockFn4 = jest.fn((a, b) => a + b);
+    const mockFn5 = jest.fn((a, b) => a + b);
+    
+    mockFn4(1, 2)
+    mockFn5(5, 5)
+    
+    console.log( mockFn4.mock.calls );                                                 // -> [[1, 2]]                    
+    console.log( mockFn5.mock.results );                                               // -> [{type:'return', value:10}] 
+    
+    mockFn4.mockReset();                                                               // clears the 'mock.calls' and mock.results' and also resets all mock implementations for this mock  function only   
+    
+    console.log( mockFn4.mock.calls );                                                 // -> []
+    console.log( mockFn5.mock.results );                                               // -> [{type:'return', value:10}]
+    console.log( mockFn4(1, 2) );                                                      // -> undefined        // because mock implementations are cleared as well 
+    console.log( mockFn5(5, 5) );                                                      // -> 10 
+    
+    jest.resetAllMocks();                                                              // clears the 'mock.calls' and mock.results' and also resets all mock implementations for all mock   functions    
+    
+    console.log( mockFn4.mock.calls );                                                 // -> []
+    console.log( mockFn5.mock.results );                                               // -> []
+    console.log( mockFn4(1, 2) );                                                      // -> undefined        // because mock implementations are cleared as well 
+    console.log( mockFn5(5, 5) );                                                      // -> undefined  
+  })
+  </pre>
+</details>
+<hr>
+<!----------------------------------------------------------------------------------->
+<h2 style="color:darkblue;"><u> Spying <mark>jest.spyOn()</mark> / <mark>mockRestore()</mark> / <mark>jest.restoreAllMocks()</mark> / <mark>toHaveBeenCalled()</mark> / <mark>toHaveBeenCalledTimes()</mark> / <mark>toHaveBeenCalledWith()</mark> / <mark>toHaveBeenLastCalledWith()</mark> / <mark>toHaveBeenNthCalledWith()</mark> / <mark>toHaveReturned()</mark> / <mark>toHaveReturnedTime()</mark> / <mark>toHaveReturnedWith()</mark> / <mark>toHaveLastReturnedWith()</mark> / <mark>toHaveNthReturnedWith()</mark> </u></h2>
+<details class="example" open> 
+<summary> DEMO </summary>
   <pre>
   
   
   
   
+  </pre>
+</details>
+
+
+<details class="example" open> 
+<summary> Example </summary>
+<h4 style="color:darkblue"><u> <mark>jest.spyOn()</mark> TEST </u></h4>
+  <pre>
+  
   
   </pre>
-  
-  
-  
-  
-  
-  
+<hr>
+<!----------------------------------------------------------------------------------->
   
   
 </details>
+
+
+
+
+
 
 
 
@@ -393,90 +649,35 @@ WRITE DOWN EVERYTHING NEW
     - link to jest config options 
     
   
-  mock -> simulating (replacing) a specific behaviour   
-  stub -> faking some data 
-  spy -> spying on some behaviour like mocked function 
-  
   
   the 'jest' object is automatically in scope in all jest files 
   
   
   
-- Mock Functions 
-  jest.fn([fn])  
-      - returns an unused mock function (optionally can accept a mockImplementation function)
-  jest.isMockFunction(fn)
-      - checks if the passed function is a mock function or not 
-    
-  mockFn.mockImplementation(fn)
-      - overrides the mock function 
-  mockFn.mockImplementaionOnce(fn)
-      - overrides the mock function once 
-    
-  mockFn.mockReturnValue()
-  mockFn.mockReturnValueOnce()
-      - specifies the mock function return value (for one time)
-  mockFn.mockReturnThis()
-      - returns the mock's this value 
-      
-  mockFn.mockResolvedValue(val)
-      - sets the resolved mock value for async mock functions 
-  mockFn.mockResolvedValueOnce(val)
-      - sets the resolved mock value for async mock functions once 
-  mockFn.mockRejectValue(val)
-      - sets the reject mock value for async mock functions 
-  mockFn.mockRejectValueOnce(val)
-      - sets the reject mock value for async mock functions 
-    
-  mockFn.mockName(name:str)
-      - names the mock function 
-  mockFn.getMockName()
-      - returns the mock function's name 
-    
-  mockFn.mock.calls
-      - an Array containing all calls with call arguments 
-  mockFn.mock.results
-      - an Array containing all call resutls 
-    
-  jest.clearAllMocks()
-      - equivalent to .mockClear()
-  mockFn.mockClear()
-      - resets all informations in 'mock.calls and mock.instances' -> basically replaces mockFn.mock
-  jest.resetAllMocks()
-      - equivalent to .mockReset()
-  mockFn.mockReset()
-      - does what 'mockClear()' but also removes mock returns and implementations 
-  jest.restoreAllMocks()
-      - equivalent to .mockRestore()
-  mockFn.mockResoter()
-      - does what 'mockReset()' does and resets the function before the mocked state
-      
-      
-      
-  
-  
-  
-  
-  
-  
-  
-  
-  
-- expect (spy) matchers 
   jest.spyOn(obj, method, accessType)
-      - returns a mockFn which is called when obj[method] is called 
+      - returns a mockFn which acts as a spy for the specified obj[method] 
       - this guy is used to spy on the obj[method] (ex: expect(mockFn).toHaveBeenCalled())
       - accessType is supported from jest v.22.1.0  (get|set) we can specify to which property to spy on 
+  jest.restoreAllMocks()
+      - equivalent to .mockRestore()
+  mockFn.mockRestore()
+      - does what 'mockReset()' does and resets the function before the mocked state
+    
+- expect (spy) matchers 
   .toHaveBeenCalled() 
       - the mock function have been called 
   .toHaveBeenCalledTimes(nr)
       - the mock function have been called nr times 
+  
+  
   .toHaveBeenCalledWith(arg, ...)
       - the mock function have been called with these argumenst 
   .toHaveBeenLastCalledWith(arg, ...)
       - the mock function have been called with these argument when it was called for the last time 
   .toHaveBeenNthCalledWith(nthCall, arg, ...)
       - the mock function habe been called with these argument when it was called nth time 
+  
+  
   .toHaveReturned()
       - the mock function returned (not thrown)
       - test if nothing is returned what happesn then 
@@ -488,10 +689,6 @@ WRITE DOWN EVERYTHING NEW
       - the mock function lastly returned val
   .toHaveNthReturnedWith(nthCall, val)
       - the mock function returned val at the nth call 
-    
-    
-    
-    
     
     
     
@@ -597,7 +794,61 @@ WRITE DOWN WHAT YOU DON'T UNDERSTAD OR MUST BE TESTED AS QUESTIONS HERE
 
 
 <!--
+    mock -> simulating (replacing) a specific behaviour   
+  stub -> faking some data 
+  spy -> spying on some behaviour like mocked function 
   
+  
+  
+  
+- Mock Functions 
+  jest.fn([fn])  
+      - returns an unused mock function (optionally can accept a mockImplementation function)
+  jest.isMockFunction(fn)
+      - checks if the passed function is a mock function or not 
+    
+  mockFn.mockImplementation(fn)
+      - overrides the mock function 
+  mockFn.mockImplementaionOnce(fn)
+      - overrides the mock function once 
+    
+  mockFn.mockReturnValue()
+  mockFn.mockReturnValueOnce()
+      - specifies the mock function return value (for one time)
+  mockFn.mockReturnThis()
+      - returns the mock's this value 
+      
+  mockFn.mockResolvedValue(val)
+      - sets the resolved mock value for async mock functions 
+  mockFn.mockResolvedValueOnce(val)
+      - sets the resolved mock value for async mock functions once 
+  mockFn.mockRejectValue(val)
+      - sets the reject mock value for async mock functions 
+  mockFn.mockRejectValueOnce(val)
+      - sets the reject mock value for async mock functions 
+    
+  mockFn.mockName(name:str)
+      - names the mock function 
+  mockFn.getMockName()
+      - returns the mock function's name 
+    
+  mockFn.mock.calls
+      - an Array containing all calls with call arguments 
+  mockFn.mock.results
+      - an Array containing all call resutls 
+    
+  jest.clearAllMocks()
+      - equivalent to .mockClear()
+  mockFn.mockClear()
+      - resets all informations in 'mock.calls and mock.instances' -> basically replaces mockFn.mock
+  jest.resetAllMocks()
+      - equivalent to .mockReset()
+  mockFn.mockReset()
+      - does what 'mockClear()' but also removes mock returns and implementations 
+      
+      
+
+
 -->
 
 
