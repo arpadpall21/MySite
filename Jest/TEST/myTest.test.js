@@ -1,21 +1,40 @@
 test('some test', function(){
-  const myObj = { add(a, b){console.log('add was called!'); return a + b} }
+  const myObj = { 
+    add(a, b){ return a + b},
+    multiply(a, b){ return a * b}
+  }
   
-  const spy = jest.spyOn(myObj, 'add');                 // spying on the specified object method   
+  const myObj2 = {
+    divide(a, b) { return a / b }
+  }
   
-  myObj.add(1, 2);                                      // -> 3
+  const spy1 = jest.spyOn(myObj, 'add'); 
+  const spy2 = jest.spyOn(myObj, 'multiply'); 
+  const spy3 = jest.spyOn(myObj2, 'divide'); 
   
-  expect(spy).toHaveBeenCalled();                       // the spy is used to spy on the spied method 
+  myObj.add(3, 3);
+  myObj.multiply(3, 3);
+  myObj2.divide(3, 3);
   
-// apply mock implementation ---------------------------
-  spy.mockImplementation(() => 'new mock implementation!');   // mock implementation applied on the object's method 
-  console.log( myObj.add(1, 2) );                       // -> 'new mock implementation!' 
+  console.log( spy1.mock.calls );
+  console.log( spy2.mock.calls );
+  console.log( spy3.mock.calls );
   
-  myObj.add = jest.fn(() => 'another mock implementation!')
-  console.log( myObj.add(1, 2) );                       // -> 'another mock implementation!' 
+  myObj.add(3, 3);
+  myObj.multiply(3, 3);
+  myObj2.divide(3, 3);
   
-// using 'get' 'set' options ---------------------------
+  jest.restoreAllMocks();
+
+  myObj.add(3, 3);
+  myObj.multiply(3, 3);
+  myObj2.divide(3, 3);
+  myObj.add(3, 3);
+  myObj.multiply(3, 3);
+  myObj2.divide(3, 3);
   
-  
+  console.log( spy1.mock.calls );
+  console.log( spy2.mock.calls );
+  console.log( spy3.mock.calls );
   
 })

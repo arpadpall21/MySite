@@ -59,10 +59,6 @@
       - also removes any mock function implementations 
   </td>
 </tr>
-
-
-
-
 <tr class="25.02">
   <td> 
         <strong>mockFn</strong>.getMockName()
@@ -188,8 +184,65 @@
   </td>
 </tr>
 </table>
-
-
+  <br>
+<table class="table">
+<caption>
+    Spying
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
+    <tr>
+        <th style="width:30%;"> Method  </th>
+        <th> Description </th>
+    </tr>
+<tr class="0">
+  <td> 
+        jest.spyOn(<strong>obj</strong>, <strong>method:str</strong>, <small class="openable">get|set<div>
+          <p> Supported from Jest v22.1.0 </p>
+          <p> - spies only when the property is get or set </p>
+        </div></small>)
+  </td>
+  <td> 
+      - spies on the specified object's method by returning a <strong>mockFn</strong> <br>
+      - the returned <strong>mockFn</strong> holds the spied data <br>
+      - we can also mock the object method by registering a mock implementation (ex: <mark><strong>mockFn</strong>.mockImplementation(<strong>fn</strong>)</mark>)
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        <strong>mockFn</strong>.mockRestore()
+  </td>
+  <td> 
+      - for this <strong>mockFn</strong> returned by <mark>jest.spyOn()</mark> <br>
+      - resets (empties) all data in <mark>mock.calls</mark> and <mark>mock.results</mark>, removes any mock implementation and <u>stops spying</u> 
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        jest.restoreAllMocks()
+  </td>
+  <td> 
+      - for all <strong>mockFn</strong> returned by <mark>jest.spyOn()</mark> <u>in this scope</u> <br>
+      - stops spying 
+  </td>
+</tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<tr class="0">
+  <td> 
+        
+  </td>
+  <td> 
+      - 
+  </td>
+</tr>
+</table>
 
 
 
@@ -619,11 +672,84 @@
 <summary> Example </summary>
 <h4 style="color:darkblue"><u> <mark>jest.spyOn()</mark> TEST </u></h4>
   <pre>
-  
+  test('some test', function(){
+    const myObj = { add(a, b){ return a + b} }
+    
+    const spy = jest.spyOn(myObj, 'add');                                              // spying on the specified object method   
+    
+    myObj.add(1, 2);                                                                   // -> 3
+    
+    expect(spy).toHaveBeenCalled();                                                    // the spy is used to spy on the spied method 
+    
+// apply mock implementation ----------------------------------------------------------
+    spy.mockImplementation(() => 'new mock implementation!');                          // mock implementation applied on the object's method 
+    console.log( myObj.add(1, 2) );                                                    // -> 'new mock implementation!' 
+    
+    myObj.add = jest.fn(() => 'another mock implementation!')
+    console.log( myObj.add(1, 2) );                                                    // -> 'another mock implementation!' 
+    
+// using 'get' 'set' options ----------------------------------------------------------
+    const myObj2 = {
+      animal_: 'default animal',
+      get animal() { return this.animal_ },
+      set animal(val) { this.animal_ = val }
+    }
+    
+    const spy_get = jest.spyOn(myObj2, 'animal', 'get');                               // spies only when get the property 
+    const spy_set = jest.spyOn(myObj2, 'animal', 'set');                               // spies only when set the property 
+    
+    myObj2.animal = 'cat';
+    
+    console.log( spy_set.mock.calls )                                                  // -> [['cat]]    // only the set spy is triggered 
+    console.log( spy_get.mock.calls )                                                  // -> []          // empty because the spy_get does not spy when the property gets 
+    
+    jest.clearAllMocks();                                                              // clears all mocks in this scope 
+    
+    myObj2.animal; 
+    
+    console.log( spy_set.mock.calls )                                                  // -> []
+    console.log( spy_get.mock.calls )                                                  // -> [[]]        // only the get spy is triggered 
+  })
+
   
   </pre>
 <hr>
 <!----------------------------------------------------------------------------------->
+<h4 style="color:darkblue"><u> <mark>mockRestore()</mark> / <mark>jest.restoreAllMocks()</mark> TEST </u></h4>
+  <pre>
+  test('some test', function(){
+    const myObj = { 
+      add(a, b){ return a + b},
+      multiply(a, b){ return a * b}
+    }
+    
+    const spy1 = jest.spyOn(myObj, 'add'); 
+    const spy2 = jest.spyOn(myObj, 'multiply'); 
+    
+    myObj.add(3, 2);
+    myObj.multiply(3, 2);
+    
+    console.log( spy1.mock.calls );                                                    // -> [[3, 2]]
+    console.log( spy2.mock.calls );                                                    // -> [[3, 2]]
+    
+    spy1.mockRestore();                                                                // clears all data from 'mock.calls' and 'mock.results' removes the mock implementation and stops the spying  
+    
+    console.log( spy1.mock.calls );                                                    // -> []
+    console.log( spy2.mock.calls );                                                    // -> [[3, 2]]
+    
+    jest.restoreAllMocks();                                                            // stops all spies in this scope 
+    
+    myObj.add(3, 2);
+    myObj.multiply(3, 2);
+    
+    console.log( spy1.mock.calls );                                                    // -> []            // no further spying 
+    console.log( spy2.mock.calls );                                                    // -> [[3, 2]]
+  })
+  </pre>
+  
+  
+  
+  
   
   
 </details>
