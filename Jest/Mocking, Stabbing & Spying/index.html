@@ -203,7 +203,7 @@
   </td>
   <td> 
       - spies on the specified object's method by returning a <strong>mockFn</strong> <br>
-      - the returned <strong>mockFn</strong> holds the spied data <br>
+      - we can use spying methods on the returned <strong>mockFn</strong> which holds the spied data <br>
       - we can also mock the object method by registering a mock implementation (ex: <mark><strong>mockFn</strong>.mockImplementation(<strong>fn</strong>)</mark>)
   </td>
 </tr>
@@ -225,6 +225,91 @@
       - stops spying 
   </td>
 </tr>
+<tr class="0">
+  <td colspan="2"> Spying Matcher Methods </td>
+</tr>
+<tr class="0">
+  <td> 
+        toHaveBeenCalled()
+  </td>
+  <td> 
+      - the expected <strong>mockFn</strong> should have been called at least once 
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toHaveBeenCalledTimes(<strong>nr</strong>)
+  </td>
+  <td> 
+      - the expected <strong>mockFn</strong> should have been called <strong>nr</strong> times 
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toHaveBeenCalledWith(<strong>arg</strong>, <i>...</i>)
+  </td>
+  <td> 
+      - the expected <strong>mockFn</strong> should have been called with these arguments at least once 
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toHaveBeenLastCalledWith(<strong>arg</strong>, <i>...</i>)
+  </td>
+  <td> 
+      - the expected <strong>mockFn</strong> should have been called with these arguments for the last time   
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toHaveBeenNthCalledWith(<strong>nthCall:nr</strong>, <strong>arg</strong>, <i>...</i>)
+  </td>
+  <td> 
+      - the expected <strong>mockFn</strong> should have been called with these arguments for the <strong>nth</strong> time   
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toHaveReturned()
+  </td>
+  <td> 
+      - the expected <strong>mockFn</strong> has returned at least once (not thrown)
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toHaveReturnedTimes(<strong>nr</strong>)
+  </td>
+  <td> 
+      - the expected <strong>mockFn</strong> has returned <strong>nr</strong> times <br>
+      - when the <strong>mockFn</strong> throws that is excluded from this counter 
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toHaveReturnedWith(<strong>data:any</strong>)
+  </td>
+  <td> 
+      - the expected <strong>mockFn</strong> has returned <strong>data</strong> at least once 
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toHaveLastReturnedWith(<strong>data:any</strong>)
+  </td>
+  <td> 
+      - the expected <strong>mockFn</strong> has returned <strong>data</strong> for the last call  
+  </td>
+</tr>
+<tr class="0">
+  <td> 
+        toHaveNthReturnedWith(<strong>nthCall:nr</strong>, <strong>data:any</strong>) 
+  </td>
+  <td> 
+      - the expected <strong>mockFn</strong> has returned <strong>data</strong> for the <strong>nth</strong> call  
+  </td>
+</tr>
+    
     
     
     
@@ -656,7 +741,7 @@
 </details>
 <hr>
 <!----------------------------------------------------------------------------------->
-<h2 style="color:darkblue;"><u> Spying <mark>jest.spyOn()</mark> / <mark>mockRestore()</mark> / <mark>jest.restoreAllMocks()</mark> / <mark>toHaveBeenCalled()</mark> / <mark>toHaveBeenCalledTimes()</mark> / <mark>toHaveBeenCalledWith()</mark> / <mark>toHaveBeenLastCalledWith()</mark> / <mark>toHaveBeenNthCalledWith()</mark> / <mark>toHaveReturned()</mark> / <mark>toHaveReturnedTime()</mark> / <mark>toHaveReturnedWith()</mark> / <mark>toHaveLastReturnedWith()</mark> / <mark>toHaveNthReturnedWith()</mark> </u></h2>
+<h2 style="color:darkblue;"><u> Spying <mark>jest.spyOn()</mark> / <mark>mockRestore()</mark> / <mark>jest.restoreAllMocks()</mark> / <mark>toHaveBeenCalled()</mark> / <mark>toHaveBeenCalledTimes()</mark> / <mark>toHaveBeenCalledWith()</mark> / <mark>toHaveBeenLastCalledWith()</mark> / <mark>toHaveBeenNthCalledWith()</mark> / <mark>toHaveReturned()</mark> / <mark>toHaveReturnedTimes()</mark> / <mark>toHaveReturnedWith()</mark> / <mark>toHaveLastReturnedWith()</mark> / <mark>toHaveNthReturnedWith()</mark> </u></h2>
 <details class="example" open> 
 <summary> DEMO </summary>
   <pre>
@@ -746,6 +831,89 @@
     console.log( spy2.mock.calls );                                                    // -> [[3, 2]]
   })
   </pre>
+<hr>
+<!----------------------------------------------------------------------------------->
+<h4 style="color:darkblue"><u> <mark>toHaveBeenCalled()</mark> / <mark>toHaveBeenCalledTimes()</mark> TEST </u></h4>
+  <pre>
+  test('some test', function(){
+    const mockFn = jest.fn();
+    
+    mockFn();
+    mockFn();
+    mockFn();
+    
+    expect(mockFn).toHaveBeenCalled();                                                 // test passes because the mock function has been called 
+    expect(mockFn).toHaveBeenCalledTimes(3);                                           // test passes because the mock function has been called 2 times 
+  })
+  </pre>
+<hr>
+<!----------------------------------------------------------------------------------->
+<h4 style="color:darkblue"><u> <mark>toHaveBeenCalledWith()</mark> / <mark>toHaveBeenLastCalledWith()</mark> / <mark>toHaveBeenNthCalledWith()</mark> TEST </u></h4>
+  <pre>
+  test('some test', function(){
+    const mockFn = jest.fn(function(a, b){
+      return a + b;
+    });
+    
+    mockFn(2, 2);
+    mockFn(1, 6);
+    mockFn(7, 3);
+    
+    expect(mockFn).toHaveBeenCalledWith(2, 2);                                         // mock function has been called with these arguments 
+    expect(mockFn).toHaveBeenCalledWith(7, 3);
+    
+    expect(mockFn).toHaveBeenLastCalledWith(7, 3);                                     // has been called with these arguments for the last time 
+    
+    expect(mockFn).toHaveBeenNthCalledWith(1, 2, 2);                                   // has been called with these arguments with the 1st time 
+    expect(mockFn).toHaveBeenNthCalledWith(2, 1, 6);                                   // has been called with these arguments with the 2nd time 
+    expect(mockFn).toHaveBeenNthCalledWith(3, 7, 3);                                   // has been called with these arguments with the 3rd time 
+  })
+  </pre>
+<hr>
+<!----------------------------------------------------------------------------------->
+<h4 style="color:darkblue"><u> <mark>toHaveReturned()</mark> / <mark>toHaveReturnedTime()</mark> / <mark>toHaveReturnedWith()</mark> / <mark>toHaveLastReturnedWith()</mark> / <mark>toHaveNthReturnedWith()</mark> TEST </u></h4>
+  <pre>
+  test('some test', function(){
+    const mockFn = jest.fn(function(shouldThrow){
+      if (shouldThrow) {
+        throw new Error('some error');
+      } else {
+        return 'something';
+      }
+    })
+    
+    mockFn();
+    try { mockFn(true); } catch(e) { }
+    mockFn();
+    
+// toHaveReturned() / toHaveReturnedTimes() -------------------------------------------
+    expect(mockFn).toHaveReturned();                                                   // mock function returned (not throw) at least once 
+    expect(mockFn).toHaveReturnedTimes(2);                                             // mock function returned 2 times (of of 3 calls throws once)
+    
+// toHaveReturnedWith() / toHaveLastReturnedWith() / toHaveNthReturnedWith() ----------
+    let counter = 0;
+    const jestFn2 = jest.fn(function(){
+      counter++;
+      return counter;
+    })
+    
+    jestFn2();
+    jestFn2();
+    jestFn2();
+    
+    expect(jestFn2).toHaveReturnedWith(2);                                             // mock function have returned 2 at lest once 
+    
+    expect(jestFn2).toHaveLastReturnedWith(3);                                         // mock function have returned 3 for the last time  
+    
+    expect(jestFn2).toHaveNthReturnedWith(1, 1);                                       // mock function have returned 1 for the fist time 
+    expect(jestFn2).toHaveNthReturnedWith(2, 2);                                       // mock function have returned 2 for the 2nd time 
+    expect(jestFn2).toHaveNthReturnedWith(3, 3);                                       // mock function have returned 3 for the 3rd time 
+  })
+  </pre>
+  
+  
+  
+  
   
   
   
