@@ -187,14 +187,14 @@
   <br>
 <table class="table">
 <caption>
-    Spying
+    Spying 
     <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
 </caption>
     <tr>
         <th style="width:30%;"> Method  </th>
         <th> Description </th>
     </tr>
-<tr class="0">
+<tr class="05.01">
   <td> 
         jest.spyOn(<strong>obj</strong>, <strong>method:str</strong>, <small class="openable">get|set<div>
           <p> Supported from Jest v22.1.0 </p>
@@ -207,7 +207,7 @@
       - we can also mock the object method by registering a mock implementation (ex: <mark><strong>mockFn</strong>.mockImplementation(<strong>fn</strong>)</mark>)
   </td>
 </tr>
-<tr class="0">
+<tr class="10.01">
   <td> 
         <strong>mockFn</strong>.mockRestore()
   </td>
@@ -216,19 +216,19 @@
       - resets (empties) all data in <mark>mock.calls</mark> and <mark>mock.results</mark>, removes any mock implementation and <u>stops spying</u> 
   </td>
 </tr>
-<tr class="0">
+<tr class="10.02">
   <td> 
         jest.restoreAllMocks()
   </td>
   <td> 
       - for all <strong>mockFn</strong> returned by <mark>jest.spyOn()</mark> <u>in this scope</u> <br>
-      - stops spying 
+      - removes any mock implementation and <u>stops spying</u> (does not removes data from <mark>mock.calls</mark> and <mark>mock.results</mark>)
   </td>
 </tr>
-<tr class="0">
+<tr class="15.01">
   <td colspan="2"> Spying Matcher Methods </td>
 </tr>
-<tr class="0">
+<tr class="15.02">
   <td> 
         toHaveBeenCalled()
   </td>
@@ -236,7 +236,7 @@
       - the expected <strong>mockFn</strong> should have been called at least once 
   </td>
 </tr>
-<tr class="0">
+<tr class="15.03">
   <td> 
         toHaveBeenCalledTimes(<strong>nr</strong>)
   </td>
@@ -244,7 +244,7 @@
       - the expected <strong>mockFn</strong> should have been called <strong>nr</strong> times 
   </td>
 </tr>
-<tr class="0">
+<tr class="20.01">
   <td> 
         toHaveBeenCalledWith(<strong>arg</strong>, <i>...</i>)
   </td>
@@ -252,7 +252,7 @@
       - the expected <strong>mockFn</strong> should have been called with these arguments at least once 
   </td>
 </tr>
-<tr class="0">
+<tr class="20.02">
   <td> 
         toHaveBeenLastCalledWith(<strong>arg</strong>, <i>...</i>)
   </td>
@@ -260,7 +260,7 @@
       - the expected <strong>mockFn</strong> should have been called with these arguments for the last time   
   </td>
 </tr>
-<tr class="0">
+<tr class="20.03">
   <td> 
         toHaveBeenNthCalledWith(<strong>nthCall:nr</strong>, <strong>arg</strong>, <i>...</i>)
   </td>
@@ -268,7 +268,7 @@
       - the expected <strong>mockFn</strong> should have been called with these arguments for the <strong>nth</strong> time   
   </td>
 </tr>
-<tr class="0">
+<tr class="25.01">
   <td> 
         toHaveReturned()
   </td>
@@ -276,16 +276,15 @@
       - the expected <strong>mockFn</strong> has returned at least once (not thrown)
   </td>
 </tr>
-<tr class="0">
+<tr class="25.02">
   <td> 
         toHaveReturnedTimes(<strong>nr</strong>)
   </td>
   <td> 
-      - the expected <strong>mockFn</strong> has returned <strong>nr</strong> times <br>
-      - when the <strong>mockFn</strong> throws that is excluded from this counter 
+      - the expected <strong>mockFn</strong> has returned <strong>nr</strong> times (throws are excluded from this counter)  
   </td>
 </tr>
-<tr class="0">
+<tr class="30.01">
   <td> 
         toHaveReturnedWith(<strong>data:any</strong>)
   </td>
@@ -293,7 +292,7 @@
       - the expected <strong>mockFn</strong> has returned <strong>data</strong> at least once 
   </td>
 </tr>
-<tr class="0">
+<tr class="30.02">
   <td> 
         toHaveLastReturnedWith(<strong>data:any</strong>)
   </td>
@@ -301,7 +300,7 @@
       - the expected <strong>mockFn</strong> has returned <strong>data</strong> for the last call  
   </td>
 </tr>
-<tr class="0">
+<tr class="30.02">
   <td> 
         toHaveNthReturnedWith(<strong>nthCall:nr</strong>, <strong>data:any</strong>) 
   </td>
@@ -309,25 +308,48 @@
       - the expected <strong>mockFn</strong> has returned <strong>data</strong> for the <strong>nth</strong> call  
   </td>
 </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+</tr>
+</table>
+  <br>
+<table class="table">
+<caption>
+    Mocking Modules 
+    <span class="changeListOrder">[Ordered: <span>Alphabetically</span>]</span>
+</caption>
+    <tr>
+        <th style="width:30%;"> Method  </th>
+        <th> Description </th>
+    </tr>
 <tr class="0">
   <td> 
-        
   </td>
   <td> 
       - 
   </td>
 </tr>
+
+
+
+
+
+
+
+
+
+<tr class="0">
+  <td> 
+        
+  </td>
+  <td> 
+        - 
+  </td>
+</tr>
 </table>
+
+
+
+
+
 
 
 
@@ -742,18 +764,158 @@
 <hr>
 <!----------------------------------------------------------------------------------->
 <h2 style="color:darkblue;"><u> Spying <mark>jest.spyOn()</mark> / <mark>mockRestore()</mark> / <mark>jest.restoreAllMocks()</mark> / <mark>toHaveBeenCalled()</mark> / <mark>toHaveBeenCalledTimes()</mark> / <mark>toHaveBeenCalledWith()</mark> / <mark>toHaveBeenLastCalledWith()</mark> / <mark>toHaveBeenNthCalledWith()</mark> / <mark>toHaveReturned()</mark> / <mark>toHaveReturnedTimes()</mark> / <mark>toHaveReturnedWith()</mark> / <mark>toHaveLastReturnedWith()</mark> / <mark>toHaveNthReturnedWith()</mark> </u></h2>
-<details class="example" open> 
+  <p> - Jest allows us to spy on object methods or on mock functions </p>
+<details class="example"> 
 <summary> DEMO </summary>
+  <p> - <mark>jest.spyOn()</mark> </p>
   <pre>
+  test('some test', function(){
+    const myObj = { add(a, b){ return a + b} }
+    
+    const spy = jest.spyOn(myObj, 'add');                                              // spying on the specified object method   
+    
+    myObj.add(1, 2);                                                                   // -> 3
+    
+    expect(spy).toHaveBeenCalled();                                                    // the spy is used to spy on the spied method 
+    
+  // apply mock implementation ------------------------------------
+    spy.mockImplementation(() => 'new mock implementation!');                          // mock implementation applied on the object's method 
+    myObj.add(1, 2);                                                                   // -> 'new mock implementation!' 
+    
+    myObj.add = jest.fn(() => 'another mock implementation!')
+    myObj.add(1, 2);                                                                   // -> 'another mock implementation!' 
+    
+  // using 'get' 'set' options ------------------------------------
+    const myObj2 = {
+      animal_: 'default animal',
+      get animal() { return this.animal_ },
+      set animal(val) { this.animal_ = val }
+    }
+    
+    const spy_get = jest.spyOn(myObj2, 'animal', 'get');                               // spies only when get the property 
+    const spy_set = jest.spyOn(myObj2, 'animal', 'set');                               // spies only when set the property 
+    
+    myObj2.animal = 'cat';
+    
+    spy_set.mock.calls                                                                 // -> [['cat]]    // only the set spy is triggered 
+    spy_get.mock.calls                                                                 // -> []          // empty because the spy_get does not spy when the property gets 
+    
+    jest.clearAllMocks();                                                              // clears all mocks in this scope 
+    
+    myObj2.animal; 
+    
+    spy_set.mock.calls                                                                 // -> []
+    spy_get.mock.calls                                                                 // -> [[]]        // only the get spy is triggered 
+  })
+  </pre>
+   <p> - <mark>mockRestore()</mark> / <mark>jest.restoreAllMocks()</mark> </p>
+  <pre>
+  test('some test', function(){
+    const myObj = { 
+      add(a, b){ return a + b},
+      multiply(a, b){ return a * b}
+    }
+    
+    const spy1 = jest.spyOn(myObj, 'add'); 
+    const spy2 = jest.spyOn(myObj, 'multiply'); 
+    
+    spy1.mockImplementation((a, b) => `additions result is ${a + b}`);                 // mock implementation applied  
+    spy2.mockImplementation((a, b) => `multiplication result is ${a * b}`);
+    
+    myObj.add(3, 2);                                                                   // -> 'additions result is 5'
+    myObj.multiply(3, 2);                                                              // -> 'multiplication result is 6'
+    
+    spy1.mock.calls );                                                                 // -> [[3, 2]]
+    spy2.mock.calls );                                                                 // -> [[3, 2]]
+    
+// mockRestore() ----------------------------------------------------------------------
+    spy1.mockRestore();                                                                // stops spying, clears all data from 'mock.calls' and 'mock.results' and removes the mock implementation    
+    
+    myObj.add(3, 2);                                                                   // -> 5             // mock implementaiont also removed 
+    spy1.mock.calls;                                                                   // -> []            // data removed from the spy  
+    myObj.multiply(3, 2);                                                              // -> 'multiplication result is 6'
+    spy2.mock.calls;                                                                   // -> [[3, 2], [3, 2]]
+    
+// jest.restoreAllMocks() -------------------------------------------------------------
+    jest.restoreAllMocks();                                                            // stops all spies in this scope   // -! does not clears 'mock'calls', and 'mock.results' and does not remove mock implementation (as it was specified in the docs)    
+    
+    spy1.mock.calls;                                                                   // -> []  
+    myObj.add(3, 2);                                                                   // -> 5  
+    spy2.mock.calls;                                                                   // -> [[3, 2], [3, 2]]      // -! does not remove mock data for some reason 
+    myObj.multiply(3, 2);                                                              // -> 6             // removes mock implementations
+    
+  })
+  </pre>
+  <p> - Spying Matcher Methods <mark>toHaveBeenCalled()</mark> / <mark>toHaveBeenCalledTimes()</mark> / <mark>toHaveBeenCalledWith()</mark> / <mark>toHaveBeenLastCalledWith()</mark> / <mark>toHaveBeenNthCalledWith()</mark> </p>
+  <pre>
+  test('some test', function(){
+// toHaveBeenCalled() / toHaveBeenCalledTimes() ---------------------------------------
+    const mockFn = jest.fn();
+    
+    mockFn();
+    mockFn();
+    mockFn();
+    
+    expect(mockFn).toHaveBeenCalled();                                                 // test passes because the mock function has been called 
+    expect(mockFn).toHaveBeenCalledTimes(3);                                           // test passes because the mock function has been called 2 times 
   
-  
-  
-  
+// to toHaveBeenCalledWith() / toHaveBeenLastCalledWith() / toHaveBeenNthCalledWith() -
+    const mockFn2 = jest.fn(function(a, b){
+      return a + b;
+    });
+    
+    mockFn2(2, 2);
+    mockFn2(1, 6);
+    mockFn2(7, 3);
+    
+    expect(mockFn2).toHaveBeenCalledWith(2, 2);                                        // mock function has been called with these arguments 
+    expect(mockFn2).toHaveBeenCalledWith(7, 3);
+    
+    expect(mockFn2).toHaveBeenLastCalledWith(7, 3);                                    // has been called with these arguments for the last time 
+    
+    expect(mockFn2).toHaveBeenNthCalledWith(1, 2, 2);                                  // has been called with these arguments with the 1st time 
+    expect(mockFn2).toHaveBeenNthCalledWith(2, 1, 6);                                  // has been called with these arguments with the 2nd time 
+    expect(mockFn2).toHaveBeenNthCalledWith(3, 7, 3);                                  // has been called with these arguments with the 3rd time 
+    
+
+// toHaveReturned() / toHaveReturnedTimes() -------------------------------------------
+    const mockFn3 = jest.fn( function(shouldThrow){
+      if (shouldThrow) {
+        throw new Error('some error');
+      } else {
+        return 'something';
+      }
+    })
+    
+    mockFn3();
+    try { mockFn3(true); } catch(e) { }
+    mockFn3();
+    
+    expect(mockFn3).toHaveReturned();                                                  // mock function returned (not throw) at least once 
+    expect(mockFn3).toHaveReturnedTimes(2);                                            // mock function returned 2 times (of of 3 calls throws once)
+    
+// toHaveReturnedWith() / toHaveLastReturnedWith() / toHaveNthReturnedWith() ----------
+    let counter = 0;
+    const jestFn4 = jest.fn( function(){
+      counter++;
+      return counter;
+    })
+    
+    jestFn4();
+    jestFn4();
+    jestFn4();
+    
+    expect(jestFn4).toHaveReturnedWith(2);                                             // mock function have returned 2 at lest once 
+    
+    expect(jestFn4).toHaveLastReturnedWith(3);                                         // mock function have returned 3 for the last time  
+    
+    expect(jestFn4).toHaveNthReturnedWith(1, 1);                                       // mock function have returned 1 for the fist time 
+    expect(jestFn4).toHaveNthReturnedWith(2, 2);                                       // mock function have returned 2 for the 2nd time 
+    expect(jestFn4).toHaveNthReturnedWith(3, 3);                                       // mock function have returned 3 for the 3rd time 
+  })
   </pre>
 </details>
-
-
-<details class="example" open> 
+<details class="example"> 
 <summary> Example </summary>
 <h4 style="color:darkblue"><u> <mark>jest.spyOn()</mark> TEST </u></h4>
   <pre>
@@ -910,21 +1072,143 @@
     expect(jestFn2).toHaveNthReturnedWith(3, 3);                                       // mock function have returned 3 for the 3rd time 
   })
   </pre>
+</details>
+<hr>
+<!----------------------------------------------------------------------------------->
+<h2 style="color:darkblue;"><u> Mocking Modules </u></h2>
+  <p> - Jest can automatically mock imported modules, <u>the mocked data is cloned</u> </p>
+  <pre class="syntax">
+  <span style="color:yellow; font-weight:bold; font-size:1.2em;"> Imported data                                 Jest mocked data </span>
+  
+  'str' | 21 | false                                 ->   'str' | 21 | false                     <span style="color:darkgray">// any primitives are cloned </span>
+  function(){}                                       ->   <strong>mockFn</strong>                                 <span style="color:darkgray">// function are replaced with mock functions without mock implementation </span>
+  [1, 'str', true]                                   ->   []                                     <span style="color:darkgray">// Arrays are replaced with an empty Array  </span>
+  { p1:'str', p2(){}, p3:[1, 2] }                    ->   { p1:'str', p2:<strong>mockFn</strong>, p3:[] }         <span style="color:darkgray">// Objects keep their keys and transform their values according to the mock protocol</span>   
+  class SomeClass{}                                  ->   <strong>mockFn</strong>                                 <span style="color:darkgray">// Classes are replaced with a mock function <u>(their constructor and all functions are mocked)</u> 
+  </pre>
+<details class="example" open> 
+<summary> DEMO </summary>
+  <p> - Mocking imported modules </p>
+  <pre>
+// module_1.js (file) ----------------------------------------------------------------
+  module.exports = {
+    somePrimitive: 'some string',
+    someFunction(a) { return a },
+    someArray: [1, 'un', true],
+    someObject:{ p1:'str', p2:21, p3(){ return 'something' }, p4:[1, 2, 3] },
+    someClass: class SomeClass{
+      constructor(a){
+        this.a = a;
+      }
+      
+      getAll(){
+        return this.a + this.b;
+      }
+    }
+  }
+  
+  
+// myTest.test.js (file) -------------------------------------------------------------
+  jest.mock('./module_1');
+  const module_1 = require('./module_1');                                              // auto mocking 
+  
+  test('some test', function(){
+  // primitives --------------------------------------
+    console.log( module_1.somePrimitive );                                             // -> 'some string'                           // primitives are cloned 
+    
+  // functions ---------------------------------------
+    console.log( module_1.someFunction() );                                            // -> undefined                               // functions are automatically mocked 
+    console.log( jest.isMockFunction(module_1.someFunction) );                         // -> true  
+    
+  // Arrays ------------------------------------------
+    console.log( module_1.someArray );                                                 // -> []                                      // we get an empty Array 
+    
+  // Objects -----------------------------------------
+    console.log( module_1.someObject );                                                // -> { p1:'str, p2:21, p3:mockedFn, p4:[] }  // objects keep their original keys and transform key values according to the module mock    
+    
+  // Classes -----------------------------------------
+    const MockClass = module_1.someClass;                                              // mocked classes loose their constructor and all their functions are mocked 
+    console.log( jest.isMockFunction(MockClass) );                                     // -> true 
+    
+    const newObj = new MockClass('str', 21);
+    console.log( jest.isMockFunction(MockClass.prototype.constructor) );               // -> true                                    // the constructor is automatically mocked 
+    console.log( newObj.a );                                                           // -> undefined  
+    
+    console.log( MockClass.prototype.getAll() );                                       // -> undefined                               // class functions are mocked 
+    console.log( newObj.getAll() );                                                    // -> undefined 
+  })
+  </pre>
+</details>
+<details class="example" open> 
+<summary> Example:  </summary>
+<h4 style="color:darkblue"><u> module auto mocking TEST </u></h4>
+  <p> - <mark>module_1.js</mark> (file) </p>
+  <pre>
+  const somePrimitive = 'some string';
+  const someFunction = (a, b) => a + b;
+  const someArray = [1, 'un', true];
+  const someObject = { p1:'str', p2:21, p3(){ return 'something' }, p4:[1, 2, 3] };
+  const someClass = class SomeClass{
+    constructor(a, b){
+      this.a = a;
+      this.b = b;
+    }
+    
+    getAll(){
+      return this.a + this.b;
+    }
+  }
+  
+  module.exports = {
+    somePrimitive,
+    someFunction,
+    someArray,
+    someObject,
+    someClass
+  }
+  </pre>
+  <p> - <mark>myTest.test.js</mark> (file) </p>
+  <pre>
+  jest.mock('./module_1');
+  const module_1 = require('./module_1');                                              // auto mocking 
+  
+  test('some test', function(){
+// primitives -------------------------------------------------------------------------
+    console.log( module_1.somePrimitive );                                             // -> 'some string'                           // primitives are cloned 
+    
+// functions --------------------------------------------------------------------------
+    console.log( module_1.someFunction() );                                            // -> undefined                               // functions are automatically mocked 
+    console.log( jest.isMockFunction(module_1.someFunction) );                         // -> true  
+    
+// Arrays -----------------------------------------------------------------------------
+    console.log( module_1.someArray );                                                 // -> []                                      // we get an empty Array 
+    
+// Objects ----------------------------------------------------------------------------
+    console.log( module_1.someObject );                                                // -> { p1:'str, p2:21, p3:mockedFn, p4:[] }  // objects keep their original keys and transform key values according to the module mock    
+    
+// Classes ----------------------------------------------------------------------------
+    const MockClass = module_1.someClass;                                              // mocked classes loose their constructor and all their functions are mocked 
+    console.log( jest.isMockFunction(MockClass) );                                     // -> true 
+    
+    const newObj = new MockClass('str', 21);
+    console.log( jest.isMockFunction(MockClass.prototype.constructor) );               // -> true                                    // the constructor is automatically mocked 
+    console.log( newObj.a );                                                           // -> undefined  
+    
+    console.log( MockClass.prototype.getAll() );                                       // -> undefined                               // class functions are mocked 
+    console.log( newObj.getAll() );                                                    // -> undefined 
+  })
+  </pre>
+<hr>
+<!----------------------------------------------------------------------------------->
+<h4 style="color:darkblue"><u> <mark>jest.enableAutomock()</mark> / <mark>jest.disableAutomock()</mark> TEST </u></h4>
+  <pre>
   
   
   
   
-  
-  
-  
-  
-  
+  </pre>
   
 </details>
-
-
-
-
 
 
 
@@ -948,54 +1232,15 @@ WRITE DOWN EVERYTHING NEW
   
   
   
-  jest.spyOn(obj, method, accessType)
-      - returns a mockFn which acts as a spy for the specified obj[method] 
-      - this guy is used to spy on the obj[method] (ex: expect(mockFn).toHaveBeenCalled())
-      - accessType is supported from jest v.22.1.0  (get|set) we can specify to which property to spy on 
-  jest.restoreAllMocks()
-      - equivalent to .mockRestore()
-  mockFn.mockRestore()
-      - does what 'mockReset()' does and resets the function before the mocked state
-    
-- expect (spy) matchers 
-  .toHaveBeenCalled() 
-      - the mock function have been called 
-  .toHaveBeenCalledTimes(nr)
-      - the mock function have been called nr times 
-  
-  
-  .toHaveBeenCalledWith(arg, ...)
-      - the mock function have been called with these argumenst 
-  .toHaveBeenLastCalledWith(arg, ...)
-      - the mock function have been called with these argument when it was called for the last time 
-  .toHaveBeenNthCalledWith(nthCall, arg, ...)
-      - the mock function habe been called with these argument when it was called nth time 
-  
-  
-  .toHaveReturned()
-      - the mock function returned (not thrown)
-      - test if nothing is returned what happesn then 
-  .toHaveReturnedTime(nr)
-      - the mock function returned nth of times 
-  .toHaveReturnedWith(val)
-      - the mock function retuned val
-  .toHaveLastReturnedWith(val)
-      - the mock function lastly returned val
-  .toHaveNthReturnedWith(nthCall, val)
-      - the mock function returned val at the nth call 
-    
-    
-    
-    
 - Mocking modules 
   
     - mocked modules :
     - exported functions are mocked as mockFn (return undefined)
-    - exported classes (keep their original interface? -> well not so) but their member functions and properties are mocked 
-      - a mocked class is essentially becomes a mock function 
+    - exported primitives will be cloned as the original 
     - exported objects are deeply cloned and keep their original keys but key values are mocked according to mockink values (ex a function is mocked, a primitive is not mocked)
     - exported arrays will ba a new empty arrasy 
-    - exported primitives will be cloned as the original 
+    - exported classes (keep their original interface? -> well not so) but their member functions and properties are mocked 
+      - a mocked class is essentially becomes a mock function 
     
     
     - manual mocking 
@@ -1141,6 +1386,41 @@ WRITE DOWN WHAT YOU DON'T UNDERSTAD OR MUST BE TESTED AS QUESTIONS HERE
       - does what 'mockClear()' but also removes mock returns and implementations 
       
       
+  jest.spyOn(obj, method, accessType)
+      - returns a mockFn which acts as a spy for the specified obj[method] 
+      - this guy is used to spy on the obj[method] (ex: expect(mockFn).toHaveBeenCalled())
+      - accessType is supported from jest v.22.1.0  (get|set) we can specify to which property to spy on 
+  jest.restoreAllMocks()
+      - equivalent to .mockRestore()
+  mockFn.mockRestore()
+      - does what 'mockReset()' does and resets the function before the mocked state
+    
+- expect (spy) matchers 
+  .toHaveBeenCalled() 
+      - the mock function have been called 
+  .toHaveBeenCalledTimes(nr)
+      - the mock function have been called nr times 
+  
+  
+  .toHaveBeenCalledWith(arg, ...)
+      - the mock function have been called with these argumenst 
+  .toHaveBeenLastCalledWith(arg, ...)
+      - the mock function have been called with these argument when it was called for the last time 
+  .toHaveBeenNthCalledWith(nthCall, arg, ...)
+      - the mock function habe been called with these argument when it was called nth time 
+  
+  
+  .toHaveReturned()
+      - the mock function returned (not thrown)
+      - test if nothing is returned what happesn then 
+  .toHaveReturnedTime(nr)
+      - the mock function returned nth of times 
+  .toHaveReturnedWith(val)
+      - the mock function retuned val
+  .toHaveLastReturnedWith(val)
+      - the mock function lastly returned val
+  .toHaveNthReturnedWith(nthCall, val)
+      - the mock function returned val at the nth call 
 
 
 -->
